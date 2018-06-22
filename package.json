@@ -1,0 +1,29 @@
+{
+  "name": "dittnav",
+  "version": "0.1.0",
+  "private": true,
+  "author": "NAV",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-react": "^7.9.1",
+    "express": "^4.16.3",
+    "fs-extra": "^6.0.1",
+    "jsdom": "^11.11.0",
+    "mustache-express": "^1.2.6",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "request": "^2.87.0"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ./",
+    "server": "node ./server.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

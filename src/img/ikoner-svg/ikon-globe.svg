@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <style type="text/css">
+        .cls-1 { fill: none; stroke: #3e3832; stroke-linejoin: round; }
+    </style>
+    <path class="cls-1"
+          d="M23.5,12A11.54,11.54,0,0,1,12,23.5,11.66,11.66,0,0,1,.5,11.75,11.24,11.24,0,0,1,11.51.51H12
+          A11.43,11.43,0,0,1,23.5,12Zm-12-11.44c-6,6.5-6,15,0,23m1-23c6,6.5,6,15,0,23M2,17.48H22.06M2.41,5.48H21.47m-21,6H23.44"
+          transform="translate(0 0)"/>
+</svg>

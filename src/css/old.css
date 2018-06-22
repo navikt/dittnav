@@ -1,0 +1,1019 @@
+/*
+Dersom du ønsker å bruke typografi fra NAVs typografiske hierarki men
+ikke ønsker å bruke klassene for dem i HTML-en din, kan du bruke følgende mixins.
+
+De er også responsive slik at: 
+
+	.min-tittel {
+		.mixin-typo-sidetittel(); 
+	}
+
+...vil gi følgende output i CSS: 
+
+	.min-tittel {
+		// Regler
+	}
+
+	@media(min-width: 30em) {
+		.min-tittel {
+			// Regler
+		}
+	}
+*/
+@-webkit-keyframes rotering {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotering {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .hode {
+    margin-top: 0;
+    position: relative;
+    padding-top: 3.6rem;
+    text-align: center;
+  }
+  .hode:before {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    background-color: #3e3832;
+    border-radius: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .tittel-dekorert,
+  .hode-dekorert {
+    padding-bottom: 2rem;
+    position: relative;
+    text-align: center;
+  }
+  .tittel-dekorert:after,
+  .hode-dekorert:after {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
+    background-color: #3e3832;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .hode-innholdstittel {
+    font-family: Modus, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+  }
+  @media (min-width: 30em) {
+    .hode-innholdstittel {
+      font-size: 1.875rem;
+    }
+  }
+  .hode-undertittel {
+    font-family: Modus, Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding-top: 52px;
+    padding-bottom: 20px;
+  }
+  .hode-etikett-liten {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  @media (min-width: 30em) {
+    .hode-etikett-liten {
+      font-size: 0.75rem;
+    }
+  }
+  .hode-advarsel:before,
+  .hode-advarsel:after {
+    background-color: #ff9100;
+  }
+  .hode-advarsel:before {
+    background-image: url('../img/ikoner-svg/ikon-utropstegn.svg');
+  }
+  .hode-suksess:before,
+  .hode-suksess:after {
+    background-color: #119b49;
+  }
+  .hode-suksess:before {
+    background-image: url('../img/ikoner-svg/ikon-suksess.svg');
+  }
+  .hode-informasjon:before,
+  .hode-informasjon:after {
+    background-color: #b7b1a9;
+  }
+  .hode-informasjon:before {
+    background-image: url('../img/ikoner-svg/ikon-informasjon.svg');
+  }
+  .hode-feil:before,
+  .hode-feil:after {
+    background-color: #ba3a26;
+  }
+  .hode-feil:before {
+    background-image: url('../img/ikoner-svg/ikon-utropstegn.svg');
+  }
+  /*hode-vedlegg og hode-soknad brukes kun i søknadinnsending (temporær videreføring av gamle ikoner)*/
+  .hode-vedlegg:before,
+  .hode-vedlegg:after {
+    background-color: #bdbab7;
+  }
+  .hode-vedlegg:before {
+    background-image: url('../img/ikoner-svg/ikon-binders.svg');
+  }
+  .hode-soknad:before,
+  .hode-soknad:after {
+    background-color: #bdbab7;
+  }
+  .hode-soknad:before {
+    background-image: url('../img/ikoner-svg/ikon-dokument.svg');
+  }
+  .panel {
+    background: #ffffff;
+    padding: 1rem 1rem 1.25rem 1rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .panel:focus {
+    outline: 3px #ffbd66 solid;
+  }
+  .panel-komprimert {
+    padding: .5rem 1rem;
+  }
+  .panel-stablet {
+    margin-bottom: 0;
+  }
+  .panel-fremhevet {
+    background-color: #efefef;
+  }
+  .panel-ekstra,
+  .panel-relatert {
+    position: relative;
+    border: 1px solid #b7b1a9;
+    margin-top: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+  .panel-ekstra:before,
+  .panel-relatert:before {
+    content: "";
+    position: absolute;
+    border: 1px solid #b7b1a9;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    width: 1rem;
+    height: 1rem;
+    -webkit-transform: rotate(45deg) translateY(-100%) translateZ(0);
+    -moz-transform: rotate(45deg) translateY(-100%) translateZ(0);
+    -ms-transform: rotate(45deg) translateY(-100%) translateZ(0);
+    -o-transform: rotate(45deg) translateY(-100%) translateZ(0);
+    transform: rotate(45deg) translateY(-100%) translateZ(0);
+    -ms-transform: rotate(45deg) translateY(-100%);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    top: -1px;
+    left: 50%;
+    background-color: inherit;
+  }
+  .panel-relatert {
+    background-color: #ffffff;
+  }
+  .panel-ekstra {
+    background-color: #efefef;
+  }
+  .panel-klikkbart {
+    display: block;
+    background-image: url("../img/ikoner-svg/ikon-alarm.svg"), url("../img/ikoner-svg/ikon-pil-klikkbart.svg");
+    color: #3e3832;
+    border-bottom: none;
+    cursor: pointer;
+  }
+  .panel-klikkbart:focus {
+    box-shadow: 0 0 0 2px #ffbd66;
+    outline: none;
+    background-color: #ffffff;
+  }
+  .panel-klikkbart:hover {
+    box-shadow: #ccc 0 0 4px 2px;
+    background-image: url("../img/ikoner-svg/ikon-alarm_hover.svg"), url("../img/ikoner-svg/ikon-pil-klikkbart_hover.svg");
+  }
+  .panel-ramme,
+  a.panel-ramme {
+    border: 1px solid #b7b1a9;
+  }
+  a.panel-ramme:hover {
+    border: 1px solid #0067c5;
+  }
+  .panel-negativ,
+  .side-innhold .panel-negativ {
+    background-color: #3e3832;
+    color: #ffffff;
+  }
+  .panel-negativ a,
+  .side-innhold .panel-negativ a {
+    color: #66cbec;
+    border-bottom-color: #b7b1a9;
+  }
+  .panel-negativ a:visited,
+  .side-innhold .panel-negativ a:visited {
+    color: #ff9100;
+  }
+  .panel-negativ a:visited:hover,
+  .side-innhold .panel-negativ a:visited:hover {
+    border-bottom-color: #ff9100;
+  }
+  .panel-negativ a:hover,
+  .side-innhold .panel-negativ a:hover {
+    border-bottom-color: #66cbec;
+  }
+  .panel-negativ a:focus,
+  .side-innhold .panel-negativ a:focus,
+  .panel-negativ a:active:focus,
+  .side-innhold .panel-negativ a:active:focus {
+    color: #3e3832;
+    border-bottom: 0;
+  }
+  .panel-negativ a:active,
+  .side-innhold .panel-negativ a:active {
+    color: #ffbd66;
+    border-bottom-color: #ffbd66;
+  }
+  .panel-ekstra .panel-ekstra {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  .panel-ikon {
+    padding-right: 1.5rem;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 2.4rem 2.2rem, 98% 2.2rem;
+    background-size: 0 0, 20px 20px;
+    margin-bottom: 4px;
+  }
+  .panel-ikon:hover {
+    transition: opacity 0.1s ease-in-out;
+  }
+  @media (min-width: 30rem) {
+    .panel {
+      padding: 2rem 2rem 2.25rem 2rem;
+    }
+    .panel-komprimert {
+      padding: 1.25rem 2rem;
+    }
+    .panel-ikon {
+      padding-right: 2.8rem;
+    }
+    .panel-ekstra,
+    .panel-relatert {
+      border-left-width: 1px;
+      border-right-width: 1px;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 20px;
+    }
+    .panel-ekstra:before,
+    .panel-relatert:before {
+      left: 2rem;
+    }
+  }
+  @media (min-width: 38.75rem) {
+    .panel-ikon {
+      padding-left: 5.5rem;
+      background-position: 2.4rem 2.2rem, 97% 2.2rem;
+      background-size: 32px 32px, 24px 24px;
+    }
+  }
+  .knapperad {
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .knapperad-adskilt {
+    border-top: 1px solid #b7b1a9;
+  }
+  .knapperad-dekorert {
+    position: relative;
+  }
+  .knapperad-dekorert:before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1px;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    background-color: #b7b1a9;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @media (min-width: 30rem) {
+    .knapperad {
+      padding-top: 2rem;
+    }
+  }
+  .liste-ustilet {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .liste-vannrett {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .liste-vannrett li {
+    display: inline-block;
+  }
+  .liste-vannrett li:not(:last-child) {
+    padding-right: 1rem;
+    margin-right: 1rem;
+    position: relative;
+  }
+  .liste-vannrett li:not(:last-child):after {
+    right: 0;
+    top: 0;
+    content: "\2022";
+    position: absolute;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  .liste-sentrert {
+    text-align: center;
+  }
+  /*
+  .liste-ferdig og .liste-uferdig:
+  
+  dekorerer listepunktene med hhv hake og minus. Kan brukes på hele lister (ul, ol osv), eller listepunkter (li).
+  Fungerer også på alle andre elementer, som da får display: list-item i tillegg (nødvendig for at bildet skal vises).
+  */
+  .liste-ferdig {
+    list-style-image: url('../img/hake.svg');
+  }
+  .liste-uferdig {
+    list-style-image: url('../img/minus_mork_graa.svg');
+  }
+  .liste-ferdig:not(ul):not(ol):not(dl),
+  .liste-uferdig:not(ul):not(ol):not(dl) {
+    display: list-item;
+  }
+  .liste-normalisert {
+    list-style-type: disc;
+  }
+  .liste-venstrestilt {
+    padding-left: 1.1rem;
+  }
+  ul[class^=liste-] li:not(:last-child),
+  ol[class^=liste-] li:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+  /* Start - tjenestestatus */
+  .service-notification {
+    display: none;
+    padding: 10px 0;
+  }
+  .service-notification .typo-element {
+    color: #c30000;
+    margin: 0;
+  }
+  .infomeldinger {
+    margin: 40px 0 20px;
+  }
+  .infomeldinger a.melding {
+    border: none;
+  }
+  .infomeldinger .melding {
+    margin: 4px 0 0;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #3e3832;
+    border: none;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    min-height: 56px;
+    padding: 2px;
+  }
+  .infomeldinger .melding.klikkbar:focus {
+    box-shadow: 0 0 0 2px #ffbd66;
+    outline: none;
+    background-color: #fff;
+  }
+  .infomeldinger .melding.klikkbar:hover {
+    color: #0067c5;
+    border-bottom-color: #fff;
+    cursor: pointer;
+  }
+  .infomeldinger .melding.klikkbar:hover::after {
+    background-image: url(../img/ikoner-svg/ikon-pil-klikkbart_hover.svg);
+  }
+  .infomeldinger .melding.klikkbar::after {
+    background-image: url(../img/ikoner-svg/ikon-pil-klikkbart.svg);
+    background-repeat: no-repeat;
+    content: " ";
+    display: flex;
+    flex: 0 0 12px;
+    height: 20px;
+    align-self: center;
+    margin-right: 20px;
+  }
+  .infomeldinger .melding .varsel-tekster {
+    align-self: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 8px;
+    margin-right: 20px;
+  }
+  .infomeldinger .melding .varsel-tekster * {
+    margin: 0;
+  }
+  .infomeldinger .varsel-ikon {
+    display: none;
+  }
+  .alternativ-paalogging .element {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .alternativ-paalogging .element:first-child {
+    margin: 0 0 30px;
+  }
+  .alternativ-paalogging .element:last-child {
+    margin: 30px 0 0;
+  }
+  .alternativ-paalogging .element p {
+    margin-bottom: 30px;
+  }
+  .alternativ-paalogging .element a {
+    margin-bottom: 5px;
+  }
+  .alternativ-paalogging .element h3 {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .tjenester {
+    margin-bottom: 40px;
+  }
+  .tjenester h1 {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+  }
+  ul.lenkelister,
+  ul.lenkebokser {
+    display: -ms-flexbox;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -ms-flex-pack: start;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  ul.lenkelister {
+    margin: 3rem 0;
+  }
+  ul.lenkelister .lenkeliste a {
+    border-bottom: none;
+  }
+  li.lenkeliste {
+    display: block;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    list-style: none;
+    border-bottom: 1px solid #b7b1a9;
+    margin-right: 2%;
+  }
+  li.lenkeliste:last-child {
+    margin-right: 0;
+  }
+  li.lenkeliste a {
+    width: 105%;
+    padding: 0.5rem 0 0.5rem 13px;
+    color: #3e3832;
+    text-decoration: none;
+    margin-left: -13px;
+    border-bottom: none !important;
+  }
+  li.lenkeliste a:hover {
+    color: #0067c5;
+  }
+  li.lenkeliste a:hover:before {
+    content: " ";
+    border: 3px solid #0067c5;
+    border-radius: 50%;
+    left: -10px;
+    top: 16px;
+    position: absolute;
+  }
+  li.lenkeliste a:focus {
+    box-shadow: 0 0 0 2px #ffbd66;
+    outline: none;
+    background-color: transparent;
+  }
+  li.lenkeboks {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  li.lenkeboks .hode.hode-undertittel.hode-dekorert {
+    padding-top: 0;
+  }
+  li.lenkeboks .hode.hode-undertittel.hode-dekorert:before {
+    height: 0;
+  }
+  li.lenkeboks:hover .hode.hode-undertittel.hode-dekorert:after {
+    background-color: #0067c5;
+  }
+  li.lenkeboks a {
+    display: block;
+    width: 100%;
+    color: #3e3832;
+    border-radius: 1px;
+    padding: 100px 30px 30px;
+    text-align: center;
+    border-bottom: none;
+  }
+  li.lenkeboks a:focus {
+    box-shadow: 0 0 0 2px #ffbd66;
+    outline: none;
+  }
+  li.lenkeboks a.rediger_cv {
+    background: url(../img/dittnav/rediger_cv.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.rediger_cv:hover,
+  li.lenkeboks a.rediger_cv:focus,
+  li.lenkeboks a.rediger_cv:active {
+    background: url(../img/dittnav/rediger_cv-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.sett_opp_onsker {
+    background: url(../img/dittnav/sett_opp_onsker.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.sett_opp_onsker:hover,
+  li.lenkeboks a.sett_opp_onsker:focus,
+  li.lenkeboks a.sett_opp_onsker:active {
+    background: url(../img/dittnav/sett_opp_onsker-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.ledige_stillinger {
+    background: url(../img/dittnav/ledige_stillinger.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.ledige_stillinger:hover,
+  li.lenkeboks a.ledige_stillinger:focus,
+  li.lenkeboks a.ledige_stillinger:active {
+    background: url(../img/dittnav/ledige_stillinger-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.dine_sok {
+    background: url(../img/dittnav/dine_sok.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.dine_sok:hover,
+  li.lenkeboks a.dine_sok:focus,
+  li.lenkeboks a.dine_sok:active {
+    background: url(../img/dittnav/dine_sok-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.dine_stillinger {
+    background: url(../img/dittnav/dine_stillinger.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.dine_stillinger:hover,
+  li.lenkeboks a.dine_stillinger:focus,
+  li.lenkeboks a.dine_stillinger:active {
+    background: url(../img/dittnav/dine_stillinger-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.jobb_blogg {
+    background: url(../img/dittnav/jobb_blogg.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.jobb_blogg:hover,
+  li.lenkeboks a.jobb_blogg:focus,
+  li.lenkeboks a.jobb_blogg:active {
+    background: url(../img/dittnav/jobb_blogg-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.registrer_arbeidssoker {
+    background: url(../img/dittnav/registrer_arbeidssoker.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.registrer_arbeidssoker:hover,
+  li.lenkeboks a.registrer_arbeidssoker:focus,
+  li.lenkeboks a.registrer_arbeidssoker:active {
+    background: url(../img/dittnav/registrer_arbeidssoker-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.dine_innsendinger {
+    background: url(../img/dittnav/dine_innsendinger.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.dine_innsendinger:hover,
+  li.lenkeboks a.dine_innsendinger:focus,
+  li.lenkeboks a.dine_innsendinger:active {
+    background: url(../img/dittnav/dine_innsendinger-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.personopplysninger {
+    background: url(../img/dittnav/personopplysninger.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.personopplysninger:hover,
+  li.lenkeboks a.personopplysninger:focus,
+  li.lenkeboks a.personopplysninger:active {
+    background: url(../img/dittnav/personopplysninger-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.utbetalinger {
+    background: url(../img/dittnav/utbetalinger.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.utbetalinger:hover,
+  li.lenkeboks a.utbetalinger:focus,
+  li.lenkeboks a.utbetalinger:active {
+    background: url(../img/dittnav/utbetalinger-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.din_pensjon {
+    background: url(../img/dittnav/din_pensjon.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.din_pensjon:hover,
+  li.lenkeboks a.din_pensjon:focus,
+  li.lenkeboks a.din_pensjon:active {
+    background: url(../img/dittnav/din_pensjon-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.foreldrepengeveileder {
+    background: url(../img/dittnav/foreldrepengeveileder.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.foreldrepengeveileder:hover,
+  li.lenkeboks a.foreldrepengeveileder:focus,
+  li.lenkeboks a.foreldrepengeveileder:active {
+    background: url(../img/dittnav/foreldrepengeveileder-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.veiledningstjenester {
+    background: url(../img/dittnav/veiledningstjenester.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.veiledningstjenester:hover,
+  li.lenkeboks a.veiledningstjenester:focus,
+  li.lenkeboks a.veiledningstjenester:active {
+    background: url(../img/dittnav/veiledningstjenester-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.bidragsveileder {
+    background: url(../img/dittnav/bidragsveileder.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.bidragsveileder:hover,
+  li.lenkeboks a.bidragsveileder:focus,
+  li.lenkeboks a.bidragsveileder:active {
+    background: url(../img/dittnav/bidragsveileder-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.interessetesten {
+    background: url(../img/dittnav/interessetesten.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.interessetesten:hover,
+  li.lenkeboks a.interessetesten:focus,
+  li.lenkeboks a.interessetesten:active {
+    background: url(../img/dittnav/interessetesten-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.veivalg {
+    background: url(../img/dittnav/veivalg.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.veivalg:hover,
+  li.lenkeboks a.veivalg:focus,
+  li.lenkeboks a.veivalg:active {
+    background: url(../img/dittnav/veivalg-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.akademia {
+    background: url(../img/dittnav/akademia.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.akademia:hover,
+  li.lenkeboks a.akademia:focus,
+  li.lenkeboks a.akademia:active {
+    background: url(../img/dittnav/akademia-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.postkasse {
+    background: url(../img/dittnav/postkasse.svg) no-repeat center 20px;
+    background-size: 75px 75px;
+  }
+  li.lenkeboks a.postkasse:hover,
+  li.lenkeboks a.postkasse:focus,
+  li.lenkeboks a.postkasse:active {
+    background: url(../img/dittnav/postkasse-hover.svg) no-repeat center 20px;
+    background-size: 75px 75px;
+  }
+  li.lenkeboks a.din_innbox {
+    background: url(../img/dittnav/din_innbox.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.din_innbox:hover,
+  li.lenkeboks a.din_innbox:focus,
+  li.lenkeboks a.din_innbox:active {
+    background: url(../img/dittnav/din_innbox-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.innboks {
+    background: url(../img/dittnav/innboks.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.innboks:hover,
+  li.lenkeboks a.innboks:focus,
+  li.lenkeboks a.innboks:active {
+    background: url(../img/dittnav/innboks-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.meldinger {
+    background: url(../img/dittnav/meldinger.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.meldinger:hover,
+  li.lenkeboks a.meldinger:focus,
+  li.lenkeboks a.meldinger:active {
+    background: url(../img/dittnav/meldinger-hover.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.skjemaoversikt {
+    background: url(../img/dittnav/skjemaoversikt.svg) no-repeat center 30px;
+  }
+  li.lenkeboks a.skjemaoversikt:hover,
+  li.lenkeboks a.skjemaoversikt:focus,
+  li.lenkeboks a.skjemaoversikt:active {
+    background: url(../img/dittnav/skjemaoversikt-hover.svg) no-repeat center 30px;
+  }
+  .artikkel {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 30px 30px 50px;
+    background: #fff;
+    border-top: 1px solid #c0c0c0;
+  }
+  .artikkel .hode.hode-etikett-liten.hode-dekorert.lyspaere:before {
+    width: 46px;
+    height: 46px;
+    background-image: url(../img/dittnav/lyspaere.svg);
+    background-color: transparent;
+    background-position: top;
+    background-size: 90%;
+  }
+  .artikkel .typo-innholdstittel {
+    text-align: center;
+  }
+  @media (min-width: 38.75rem) {
+    .service-notification .typo-element {
+      font-size: 1.1rem;
+    }
+    .infomeldinger {
+      padding: 0;
+      margin: 40px 70px 20px;
+    }
+    .infomeldinger .melding .varsel-ikon {
+      display: inline;
+      flex: 0 0 54px;
+      background-size: auto 32px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../img/varsel/alarm.svg);
+      background-color: #ffe9cc;
+    }
+    .infomeldinger .melding .varsel-ikon.meldekort-varsel-ikon {
+      background-image: url(../img/varsel/alarm-clock.svg);
+      background-color: #ffe9cc;
+    }
+    .infomeldinger .melding .varsel-ikon.forbrukte-pleiepengedager-varsel-ikon {
+      background-image: url(../img/varsel/calendar-3.svg);
+      background-color: #ffe9cc;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon {
+      background-image: url(../img/varsel/alarm.svg);
+      background-color: #ffe9cc;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.dokument-melding-varsel-ikon {
+      background-image: url(../img/varsel/dokument_normal.svg);
+      background-color: #e0dae7;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.meldekort-varsel-ikon {
+      background-image: url(../img/varsel/alarm-clock.svg);
+      background-color: #ffe9cc;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.ubesvart-sporsmal-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat-2.svg);
+      background-color: #f1d8d4;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.ulest-melding-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat-2.svg);
+      background-color: #f1d8d4;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.ag-melding-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat-2.svg);
+      background-color: #f1d8d4;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.registrering-varsel-ikon {
+      background-image: url(../img/varsel/checklist.svg);
+      background-color: #cce1f3;
+    }
+    .infomeldinger .melding.klikkbar .varsel-ikon.oppgave-melding-varsel-ikon {
+      background-image: url(../img/varsel/checklist.svg);
+      background-color: #cce1f3;
+    }
+    .infomeldinger .melding.klikkbar:hover {
+      box-shadow: #b7b1a9 0 2px 1px 0;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon {
+      background-image: url(../img/varsel/alarm_hover-sort.svg);
+      background-color: #ffbd66;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.dokument-melding-varsel-ikon {
+      background-image: url(../img/varsel/file-new_hover-sort.svg);
+      background-color: #a190b8;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.meldekort-varsel-ikon {
+      background-image: url(../img/varsel/alarmclock_hover-sort.svg);
+      background-color: #ffbd66;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.ubesvart-sporsmal-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat_hover-sort.svg);
+      background-color: #d6897d;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.ulest-melding-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat_hover-sort.svg);
+      background-color: #d6897d;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.ag-melding-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat_hover-sort.svg);
+      background-color: #d6897d;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.registrering-varsel-ikon {
+      background-image: url(../img/varsel/checklist_hover-sort.svg);
+      background-color: #66a4dc;
+    }
+    .infomeldinger .melding.klikkbar:hover .varsel-ikon.oppgave-melding-varsel-ikon {
+      background-image: url(../img/varsel/checklist_hover-sort.svg);
+      background-color: #66a4dc;
+    }
+    .contrast .infomeldinger .melding .varsel-ikon {
+      background-image: url(../img/info_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon {
+      background-image: url(../img/varsel/alarm_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.dokument-melding-varsel-ikon {
+      background-image: url(../img/varsel/dokument_normal_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.meldekort-varsel-ikon {
+      background-image: url(../img/varsel/alarm-clock_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.ubesvart-sporsmal-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat-2_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.ulest-melding-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat-2_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.ag-melding-varsel-ikon {
+      background-image: url(../img/varsel/bubblechat-2_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.registrering-varsel-ikon {
+      background-image: url(../img/varsel/checklist_gul.svg) !important;
+    }
+    .contrast .infomeldinger .melding.klikkbar .varsel-ikon.oppgave-melding-varsel-ikon {
+      background-image: url(../img/varsel/checklist_gul.svg) !important;
+    }
+    li.lenkeliste {
+      width: 48%;
+      padding: 0;
+      display: flex;
+    }
+    li.lenkeliste:nth-child(-n+2) {
+      border-top: 1px solid #c0c0c0;
+    }
+    li.lenkeliste:nth-of-type(2n) {
+      margin-right: 0;
+    }
+    li.lenkeliste:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+    li.lenkeboks {
+      width: 48%;
+      margin: 10px 1%;
+    }
+    li.lenkeboks:hover {
+      box-shadow: #b7b1a9 0 2px 1px 0;
+    }
+    li.lenkeboks:nth-of-type(2n) {
+      margin-right: 0;
+    }
+    li.lenkeboks:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+  }
+  @media (min-width: 48rem) {
+    .velkommen {
+      margin: 0 auto;
+    }
+    li.lenkeboks {
+      width: 32%;
+    }
+    li.lenkeboks:nth-of-type(2n) {
+      margin-right: 1%;
+    }
+    li.lenkeboks:nth-of-type(2n+1) {
+      margin-left: 1%;
+    }
+    li.lenkeboks:nth-of-type(3n) {
+      margin-right: 0;
+    }
+    li.lenkeboks:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+    li.lenkeliste {
+      width: 32%;
+    }
+    li.lenkeliste:nth-child(-n+3) {
+      border-top: 1px solid #c0c0c0;
+    }
+    li.lenkeliste:nth-of-type(2n) {
+      margin-right: 1%;
+    }
+    li.lenkeliste:nth-of-type(2n+1) {
+      margin-left: 1%;
+    }
+    li.lenkeliste:nth-of-type(3n) {
+      margin-right: 0;
+    }
+    li.lenkeliste:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+  }
+  @media (min-width: 62rem) {
+    .service-notification .typo-element span + span:before {
+      content: "\2022";
+      color: #988f86;
+      margin: 0 0.8rem 0 0.7rem;
+    }
+  }
+  /* OVERSTYRINGER */
+  .menu-link-list a {
+    color: #3e3832;
+  }
+  .hode.hode-innholdstittel.hode-dekorert {
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+  }
+  .hode.hode-innholdstittel.hode-dekorert:before {
+    width: 41.3px;
+    height: 41.3px;
+    background-image: url(../img/person.svg);
+    background-color: transparent;
+    background-position: center top;
+    background-size: 100%;
+  }
+  .hode.hode-innholdstittel.hode-dekorert:after {
+    height: 0;
+  }
+  .contrast .hode.hode-innholdstittel.hode-dekorert:before {
+    background-image: url(../img/person_graa.svg);
+  }
+  .arbeidssokerstatus {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+  }
+  .typo-sidetittel {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  

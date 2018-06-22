@@ -1,0 +1,10 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "indent": 2,
+        "react/jsx-indent": 2,
+        "react/prefer-stateless-function": false,
+        "import/newline-after-import": false,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
+}
