@@ -17,4 +17,4 @@ For å kjøre tester:
 
 # Henvendelser
 
-Spørsmål knyttet til koden eller prosjektet kan rettes mot andrii.uvarov@nav.no.
+Spørsmål knyttet til koden eller prosjektet kan rettes mot https://github.com/orgs/navikt/teams/team-personbruker
