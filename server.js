@@ -31,6 +31,7 @@ const renderApp = decoratorFragments =>
   });
 
 const startServer = (html) => {
+  server.use('/mock-api.json', express.static(path.resolve(__dirname, 'src/mock-api.json')));
   server.use('/static/js', express.static(path.resolve(__dirname, 'build/static/js')));
 
   server.use(

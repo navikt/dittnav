@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-import PersonInfo from './PersonInfo';
-import InfoMeldinger from './InfoMeldinger';
-import Tjenester from './Tjenester';
-import Lenkelister from './Lenkelister';
-import Artikler from './Artikler';
+import PropTypes from 'prop-types';
 
-// // dittnav\web\src\main\java\no\nav\sbl\dialogarena\dittnav\web\pages\ForsideInnlogget.html
+import PersonInfo from './components/PersonInfo';
+import InfoMeldinger from './components/InfoMeldinger';
+import Tjenester from './components/Tjenester';
+import Lenkelister from './components/Lenkelister';
+import Artikler from './components/Artikler';
+import '../less/index.less';
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { linksList: [] };
+  }
+
+  componentWillMount() {
+    this.props.api().then((r) => {
+      this.setState(r);
+    });
+  }
+
   render() {
     return (
       <main role="main">
@@ -23,7 +36,7 @@ class App extends Component {
                 <PersonInfo />
                 <InfoMeldinger />
                 <Tjenester />
-                <Lenkelister />
+                <Lenkelister links={this.state.linksList} />
               </div>
             </div>
           </div>
@@ -35,5 +48,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  api: PropTypes.func.isRequired,
+};
 
 export default App;
