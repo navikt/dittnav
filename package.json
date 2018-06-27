@@ -11,19 +11,27 @@
     "eslint-plugin-react": "^7.9.1",
     "express": "^4.16.3",
     "fs-extra": "^6.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "jest": "^23.2.0",
     "jsdom": "^11.11.0",
+    "less-watch-compiler": "^1.11.3",
     "mustache-express": "^1.2.6",
+    "nav-frontend-core": "^4.0.5",
+    "nav-frontend-lenker-style": "^0.2.6",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
+    "react-test-renderer": "^16.4.1",
     "request": "^2.87.0"
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./",
     "server": "node ./server.js",
     "start": "react-scripts start",
+    "build-css": "less-watch-compiler --run-once --main-file=index.less src/less src/css",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "linksList": [
+    { "url": "https://tjenester.nav.no/veiledning/veivalg", "title": "Veivalg" },
+    { "url": "https://tjenester.nav.no/veiledning/interessetest", "title": "Interessetesten" },
+    { "url": "https://tjenester.nav.no/sbl/arbeid/registrering", "title": "Registrer deg som arbeidssøker" },
+    { "url": "/mininnboks", "title": "Min innboks" },
+    { "url": "/saksoversikt", "title": "Innsyn og oversikt" }
+  ]
+}
