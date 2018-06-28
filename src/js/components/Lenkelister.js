@@ -6,7 +6,7 @@ class Lenkelister extends Component {
     return (
       <section className="ditt-list">
         {this.props.links.map(link => (
-          <a href={link.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element">
+          <a href={link.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element" key={link.url}>
             {link.title}
           </a>
           ))}

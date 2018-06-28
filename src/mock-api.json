@@ -5,5 +5,10 @@
     { "url": "https://tjenester.nav.no/sbl/arbeid/registrering", "title": "Registrer deg som arbeidssøker" },
     { "url": "/mininnboks", "title": "Min innboks" },
     { "url": "/saksoversikt", "title": "Innsyn og oversikt" }
+  ],
+  "servicesList": [
+    {"url": "https://tjenester.nav.no/pselv/publisering/dinpensjon.jsf", "title": "Din Pensjon", "description": "Her kan du se hvor mye alderspensjon du har tjent opp og du kan søke om pensjon elektronisk.", "imageName": "din_pensjon"},
+    {"url": "https://tjenester.nav.no/sbl/nav_security_check?goto=https://tjenester.nav.no/meldekort", "title": "Meldekort", "description": "Her kan du sende inn meldekort", "imageName": "registrer_arbeidssoker"},
+    {"url": "https://tjenester.nav.no/foreldrepengeveilederen", "title": "Foreldrepengeveileder", "description": "Her kan du beregne hvor mye du vil få i foreldrepenger.", "imageName": "foreldrepengeveileder"}
   ]
 }

@@ -33,7 +33,7 @@ const getDecorator = () =>
         };
         resolve(data);
       } else {
-        console.log(error);
+        // todo better logging
         reject(new Error(error));
       }
     };

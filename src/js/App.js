@@ -11,7 +11,7 @@ import '../less/index.less';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { linksList: [] };
+    this.state = { linksList: [], servicesList: [] };
   }
 
   componentWillMount() {
@@ -35,7 +35,7 @@ class App extends Component {
               <div className="col-md-12">
                 <PersonInfo />
                 <InfoMeldinger />
-                <Tjenester />
+                <Tjenester services={this.state.servicesList} />
                 <Lenkelister links={this.state.linksList} />
               </div>
             </div>

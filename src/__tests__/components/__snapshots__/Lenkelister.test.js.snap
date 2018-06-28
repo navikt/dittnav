@@ -5,3 +5,24 @@ exports[`basic green component test 1`] = `
   className="ditt-list"
 />
 `;
+
+exports[`render a couple of links 1`] = `
+<section
+  className="ditt-list"
+>
+  <a
+    className="lenke ditt-list-element"
+    data-ga="Dittnav/Lenkeliste"
+    href="/mininnboks"
+  >
+    Min innboks
+  </a>
+  <a
+    className="lenke ditt-list-element"
+    data-ga="Dittnav/Lenkeliste"
+    href="/saksoversikt"
+  >
+    Innsyn og oversikt
+  </a>
+</section>
+`;

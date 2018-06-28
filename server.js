@@ -53,11 +53,11 @@ const startServer = (html) => {
 
   const port = process.env.PORT || 8080;
   server.listen(port, () => {
-    console.log(`App listening on port: ${port}`);
+    console.log(`App listening on port: ${port}`); // eslint-disable-line
   });
 };
 
-const logError = (errorMessage, details) => console.log(errorMessage, details);
+const logError = (errorMessage, details) => console.log(errorMessage, details); // eslint-disable-line
 
 getDecorator()
   .then(renderApp, error => logError('Failed to get decorator', error))
