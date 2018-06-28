@@ -6,7 +6,7 @@ class Tjenester extends Component {
     return (
       <section className="ditt-list">
         {this.props.services.map(o => (
-          <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ${o.imageName}`} key={o.url}>
+          <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ditt-nav-${o.imageName.replace(/_/g, '-')}`} key={o.url}>
             <h2>
               {o.title}
             </h2>
