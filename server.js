@@ -31,12 +31,21 @@ const renderApp = decoratorFragments =>
   });
 
 const startServer = (html) => {
+  // can be used for testing purposes
+  // const delayAllResponses = millis => (req, res, next) => setTimeout(next, millis);
+  // server.use(delayAllResponses(1000));
+
   server.use('/mock-api.json', express.static(path.resolve(__dirname, 'src/mock-api.json')));
   server.use('/static/js', express.static(path.resolve(__dirname, 'build/static/js')));
 
   server.use(
     '/static/css',
     express.static(path.resolve(__dirname, 'build/static/css')),
+  );
+
+  server.use(
+    '/static/fonts',
+    express.static(path.resolve(__dirname, 'build/static/fonts')),
   );
 
   server.use(
@@ -53,11 +62,11 @@ const startServer = (html) => {
 
   const port = process.env.PORT || 8080;
   server.listen(port, () => {
-    console.log(`App listening on port: ${port}`);
+    console.log(`App listening on port: ${port}`); // eslint-disable-line
   });
 };
 
-const logError = (errorMessage, details) => console.log(errorMessage, details);
+const logError = (errorMessage, details) => console.log(errorMessage, details); // eslint-disable-line
 
 getDecorator()
   .then(renderApp, error => logError('Failed to get decorator', error))

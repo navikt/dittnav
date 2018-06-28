@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic green Tjenester snaphot-test 1`] = `
+<section
+  className="ditt-list"
+/>
+`;
+
+exports[`render a couple of services 1`] = `
+<section
+  className="ditt-list"
+>
+  <a
+    className="lenke tjeneste-boks ditt-list-element din_pensjon"
+    data-ga="Dittnav/Lenkeboks"
+    href="https://nav.no/"
+  >
+    <h2>
+      Din Pensjon
+    </h2>
+    <p>
+      Short desc
+    </p>
+  </a>
+  <a
+    className="lenke tjeneste-boks ditt-list-element registrer_arbeidssoker"
+    data-ga="Dittnav/Lenkeboks"
+    href="https://nav.no/abc"
+  >
+    <h2>
+      Meldekort
+    </h2>
+    <p>
+      Mock desc
+    </p>
+  </a>
+</section>
+`;

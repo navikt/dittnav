@@ -6,4 +6,4 @@ import api from './js/Api';
 import './css/index.css';
 import './css/old.css';
 
-ReactDOM.render(<App api />, document.getElementById('app'));
+ReactDOM.render(<App api={api} />, document.getElementById('app')); // eslint-disable-line

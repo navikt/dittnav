@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Tjenester extends Component {
   render() {
     return (
-      <section className="tjenester clearfix" id="tjenesterBoks3">
-        <h1>Tjenester</h1>
-        <ul className="lenkebokser">
-          <li className="lenkeboks">
-            <a href="https://tjenester-t4.nav.no/pselv/publisering/dinpensjon.jsf" data-ga="Dittnav/Lenkeboks" className="din_pensjon">
-              <h2 className="hode hode-undertittel hode-dekorert">Din Pensjon</h2>
-              <p className="typo-normal">Her kan du se hvor mye alderspensjon du har tjent opp og du kan søke om pensjon elektronisk.</p>
-            </a>
-          </li>
-          <li className="lenkeboks">
-            <a href="https://tjenester-t4.nav.no/sbl/nav_security_check?goto=https://tjenester-t4.nav.no/meldekort" data-ga="Dittnav/Lenkeboks" className="registrer_arbeidssoker">
-              <h2 className="hode hode-undertittel hode-dekorert">Meldekort</h2>
-              <p className="typo-normal">Her kan du sende inn meldekort</p>
-            </a>
-          </li>
-          <li className="lenkeboks">
-            <a href="https://tjenester-t4.nav.no/foreldrepengeveilederen" data-ga="Dittnav/Lenkeboks" className="foreldrepengeveileder">
-              <h2 className="hode hode-undertittel hode-dekorert">Foreldrepengeveileder</h2>
-              <p className="typo-normal">Her kan du beregne hvor mye du vil få i foreldrepenger.</p>
-            </a>
-          </li>
-        </ul>
+      <section className="ditt-list">
+        {this.props.services.map(o => (
+          <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ditt-nav-${o.imageName.replace(/_/g, '-')}`} key={o.url}>
+            <h2>
+              {o.title}
+            </h2>
+            <p>
+              {o.description}
+            </p>
+          </a>
+          ))}
       </section>
     );
   }
 }
+
+Tjenester.propTypes = {
+  services: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Tjenester;
