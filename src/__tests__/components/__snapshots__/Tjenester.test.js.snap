@@ -6,16 +6,24 @@ exports[`basic green Tjenester snaphot-test 1`] = `
 />
 `;
 
+exports[`render Tjenester without services 1`] = `
+<section
+  className="ditt-list"
+/>
+`;
+
 exports[`render a couple of services 1`] = `
 <section
   className="ditt-list"
 >
   <a
-    className="lenke tjeneste-boks ditt-list-element din_pensjon"
+    className="lenke tjeneste-boks ditt-list-element ditt-nav-din-pensjon"
     data-ga="Dittnav/Lenkeboks"
     href="https://nav.no/"
   >
-    <h2>
+    <h2
+      className="underline"
+    >
       Din Pensjon
     </h2>
     <p>
@@ -23,11 +31,13 @@ exports[`render a couple of services 1`] = `
     </p>
   </a>
   <a
-    className="lenke tjeneste-boks ditt-list-element registrer_arbeidssoker"
+    className="lenke tjeneste-boks ditt-list-element ditt-nav-registrer-arbeidssoker"
     data-ga="Dittnav/Lenkeboks"
     href="https://nav.no/abc"
   >
-    <h2>
+    <h2
+      className="underline"
+    >
       Meldekort
     </h2>
     <p>

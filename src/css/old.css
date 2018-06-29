@@ -597,24 +597,6 @@ De er også responsive slik at:
     outline: none;
   }
   
-  .artikkel {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 30px 30px 50px;
-    background: #fff;
-    border-top: 1px solid #c0c0c0;
-  }
-  .artikkel .hode.hode-etikett-liten.hode-dekorert.lyspaere:before {
-    width: 46px;
-    height: 46px;
-    background-image: url(../img/dittnav/lyspaere.svg);
-    background-color: transparent;
-    background-position: top;
-    background-size: 90%;
-  }
-  .artikkel .typo-innholdstittel {
-    text-align: center;
-  }
   @media (min-width: 38.75rem) {
     .service-notification .typo-element {
       font-size: 1.1rem;
