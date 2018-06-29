@@ -5,13 +5,13 @@ import PersonInfo from './components/PersonInfo';
 import InfoMeldinger from './components/InfoMeldinger';
 import Tjenester from './components/Tjenester';
 import Lenkelister from './components/Lenkelister';
-import Artikler from './components/Artikler';
+import Artikkel from './components/Artikkel';
 import '../less/index.less';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { linksList: [], servicesList: [] };
+    this.state = {};
   }
 
   componentWillMount() {
@@ -35,13 +35,13 @@ class App extends Component {
               <div className="col-md-12">
                 <PersonInfo />
                 <InfoMeldinger />
-                <Tjenester services={this.state.servicesList} />
-                <Lenkelister links={this.state.linksList} />
+                <Tjenester services={this.state.services} />
+                <Lenkelister links={this.state.links} />
               </div>
             </div>
           </div>
 
-          <Artikler />
+          <Artikkel article={this.state.article} />
 
         </div>
       </main>

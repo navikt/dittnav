@@ -1,14 +1,21 @@
 {
-  "linksList": [
+  "links": [
     { "url": "https://tjenester.nav.no/veiledning/veivalg", "title": "Veivalg" },
     { "url": "https://tjenester.nav.no/veiledning/interessetest", "title": "Interessetesten" },
     { "url": "https://tjenester.nav.no/sbl/arbeid/registrering", "title": "Registrer deg som arbeidssøker" },
     { "url": "/mininnboks", "title": "Min innboks" },
     { "url": "/saksoversikt", "title": "Innsyn og oversikt" }
   ],
-  "servicesList": [
-    {"url": "https://tjenester.nav.no/pselv/publisering/dinpensjon.jsf", "title": "Din Pensjon", "description": "Her kan du se hvor mye alderspensjon du har tjent opp og du kan søke om pensjon elektronisk.", "imageName": "din_pensjon"},
-    {"url": "https://tjenester.nav.no/sbl/nav_security_check?goto=https://tjenester.nav.no/meldekort", "title": "Meldekort", "description": "Her kan du sende inn meldekort", "imageName": "registrer_arbeidssoker"},
-    {"url": "https://tjenester.nav.no/foreldrepengeveilederen", "title": "Foreldrepengeveileder", "description": "Her kan du beregne hvor mye du vil få i foreldrepenger.", "imageName": "foreldrepengeveileder"}
-  ]
+  "services": [
+    {"url": "https://tjenester.nav.no/pselv/publisering/dinpensjon.jsf", "title": "Din Pensjon", "description": "Her kan du se hvor mye alderspensjon du har tjent opp og du kan søke om pensjon elektronisk.", "className": "din_pensjon"},
+    {"url": "https://tjenester.nav.no/sbl/nav_security_check?goto=https://tjenester.nav.no/meldekort", "title": "Meldekort", "description": "Her kan du sende inn meldekort", "className": "registrer_arbeidssoker"},
+    {"url": "https://tjenester.nav.no/foreldrepengeveilederen", "title": "Foreldrepengeveileder", "description": "Her kan du beregne hvor mye du vil få i foreldrepenger.", "className": "foreldrepengeveileder"}
+  ],
+  "article": {
+    "url": "https://nav.no/no/Ditt+Nav/DittnavArtikler:443/Friskmelding+til+arbeidsformidling.347278.cms",
+    "preface": "Dette er en mindre overskirft",
+    "lead": "NAV har en rekke ulike tilretteleggingstiltak. Slike tiltak kan være aktuelle for deg som har en funksjonsnedsettelse, men som kan jobbe så lenge de praktiske forholdene blir lagt til rette. Du kan få hjelp til å vurdere hvordan arbeidsplassen kan tilpasses behovene dine. NAV kan også tilby hjelpemidler, eller gi tilskudd til arbeidsgiver for å gjennomføre nødvendige tilpasninger. Hvis du ser dårlig eller bruker tegnspråk, kan NAV betale en lesehjelp eller en hørselstolk slik at du får den informasjonen du trenger i arbeidshverdagen. NAV kan også betale for transport til arbeidet hvis du ikke kan bruke offentlig transport av medisinske grunner. Noen støtteordninger gjelder bare bedrifter som har avtale om et inkluderende arbeidsliv (IA-virksomheter)",
+    "heading": "Friskmelding til arbeidsformidling",
+    "className": "lyspaere"
+  }
 }

@@ -6,8 +6,8 @@ class Tjenester extends Component {
     return (
       <section className="ditt-list">
         {this.props.services.map(o => (
-          <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ditt-nav-${o.imageName.replace(/_/g, '-')}`} key={o.url}>
-            <h2>
+          <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ditt-nav-${o.className.replace(/_/g, '-')}`} key={o.url}>
+            <h2 className="underline">
               {o.title}
             </h2>
             <p>
@@ -21,7 +21,16 @@ class Tjenester extends Component {
 }
 
 Tjenester.propTypes = {
-  services: PropTypes.arrayOf(PropTypes.object).isRequired,
+  services: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    className: PropTypes.string,
+  })),
+};
+
+Tjenester.defaultProps = {
+  services: [],
 };
 
 export default Tjenester;

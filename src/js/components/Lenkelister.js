@@ -16,7 +16,14 @@ class Lenkelister extends Component {
 }
 
 Lenkelister.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.object).isRequired,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  })),
+};
+
+Lenkelister.defaultProps = {
+  links: [],
 };
 
 export default Lenkelister;
