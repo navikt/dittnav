@@ -5,9 +5,9 @@ class Lenkelister extends Component {
   render() {
     return (
       <section className="ditt-list">
-        {this.props.links.map(link => (
-          <a href={link.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element" key={link.url}>
-            {link.title}
+        {this.props.links.map(l => (
+          <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element" key={l.url}>
+            {l.title}
           </a>
           ))}
       </section>

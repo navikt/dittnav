@@ -2,3 +2,5 @@
 /build
 /src/__tests__
 /coverage
+/scripts
+/config

@@ -7,7 +7,7 @@ class InfoMeldinger extends Component {
         <section className="infomeldinger varsel-liste">
           <h1 className="vekk">Varsler</h1>
 
-          <a data-ga="Dittnav/Varsel" className="melding meldekort varsel klikkbar forsent" href="https://tjenester-t10.nav.no/sbl/nav_security_check?goto=/meldekort/">
+          <a data-ga="Dittnav/Varsel" className="melding meldekort varsel klikkbar " href="url">
             <span className="varsel-ikon meldekort-varsel-ikon" aria-label="alarm-ikon" />
             <span className="varsel-tekster">
               <span>Du har to meldekort klare for innsending</span>

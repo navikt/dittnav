@@ -12,8 +12,6 @@ server.set('views', `${__dirname}/build`);
 server.set('view engine', 'mustache');
 server.engine('html', mustacheExpress());
 
-createEnvSettingsFile(path.resolve(`${__dirname}/build/static/js/settings.js`));
-
 server.use((req, res, next) => {
   res.removeHeader('X-Powered-By');
   next();
@@ -37,6 +35,7 @@ const startServer = (html) => {
 
   server.use('/mock-api.json', express.static(path.resolve(__dirname, 'src/mock-api.json')));
   server.use('/static/js', express.static(path.resolve(__dirname, 'build/static/js')));
+  server.get('/static/js/settings.js', (req, res) => res.send(createEnvSettingsFile()));
 
   server.use(
     '/static/css',
