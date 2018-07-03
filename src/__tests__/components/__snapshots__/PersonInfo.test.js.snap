@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonInfo inactive 1`] = `
+<div
+  className="person-info"
+>
+  <h1
+    className="person-info"
+  >
+    Hello
+  </h1>
+</div>
+`;
+
+exports[`PersonInfo not registered 1`] = `
+<div
+  className="person-info"
+>
+  <h1
+    className="person-info"
+  >
+    Hello
+  </h1>
+</div>
+`;
+
+exports[`PersonInfo without personInfo 1`] = `null`;
+
+exports[`basic green PersonInfo snaphot-test 1`] = `
+<div
+  className="person-info"
+>
+  <h1
+    className="person-info"
+  >
+    Hello
+  </h1>
+  <p
+    className="arbeidssokerstatus"
+  >
+    <span>
+      Du er registrert som "ikke arbeidssøker"
+    </span>
+    <span />
+  </p>
+</div>
+`;
+
+exports[`basic green PersonInfo snaphot-test without fgkode/yrke 1`] = `
+<div
+  className="person-info"
+>
+  <h1
+    className="person-info"
+  >
+    Hello
+  </h1>
+  <p
+    className="arbeidssokerstatus"
+  >
+    <span />
+    <span />
+  </p>
+</div>
+`;

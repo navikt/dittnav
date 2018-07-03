@@ -1,4 +1,11 @@
 {
+  "personInfo": {
+    "name": "Ola Ytelssen",
+    "fgkode": "RARBS",
+    "ytelse": "ATTF",
+    "isRegistered": true,
+    "isInactive": false
+  },
   "links": [
     { "url": "https://tjenester.nav.no/veiledning/veivalg", "title": "Veivalg" },
     { "url": "https://tjenester.nav.no/veiledning/interessetest", "title": "Interessetesten" },

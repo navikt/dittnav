@@ -33,7 +33,7 @@ class App extends Component {
           <div className="row">
             <div className="maincontent side-innhold">
               <div className="col-md-12">
-                <PersonInfo />
+                <PersonInfo personInfo={this.state.personInfo} />
                 <InfoMeldinger />
                 <Tjenester services={this.state.services} />
                 <Lenkelister links={this.state.links} />
