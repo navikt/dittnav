@@ -793,21 +793,6 @@ De er også responsive slik at:
   .menu-link-list a {
     color: #3e3832;
   }
-  .hode.hode-innholdstittel.hode-dekorert {
-    margin-bottom: 0;
-    padding-bottom: 0.5rem;
-  }
-  .hode.hode-innholdstittel.hode-dekorert:before {
-    width: 41.3px;
-    height: 41.3px;
-    background-image: url(../img/person.svg);
-    background-color: transparent;
-    background-position: center top;
-    background-size: 100%;
-  }
-  .hode.hode-innholdstittel.hode-dekorert:after {
-    height: 0;
-  }
   .contrast .hode.hode-innholdstittel.hode-dekorert:before {
     background-image: url(../img/person_graa.svg);
   }
