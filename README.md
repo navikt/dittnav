@@ -14,13 +14,18 @@ For å kjøre tester:
 1.  `npm install`
 2.  `npm run test`
 
-For å kjøre i prod:
+Bygge for prod:
 
 1.  `npm install`
 2.  `npm run build`
-3.  `npm run server`
+
+Bygge/kjøre med docker:
+
+1.  `npm run docker-build`
+2.  `npm run docker-start`
+3.  `npm run docker-stop`
+4.  For å bygge på nytt: `npm run docker-rm && npm run docker-build`
 
 # Henvendelser
 
 Spørsmål knyttet til koden eller prosjektet kan rettes mot https://github.com/orgs/navikt/teams/team-personbruker
-
