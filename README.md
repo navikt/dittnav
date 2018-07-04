@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/navikt/dittnav.svg?style=svg)](https://circleci.com/gh/navikt/dittnav)
+
 # Ditt nav
 
 Kildekoden til frontend-appen for ny ditt nav.
