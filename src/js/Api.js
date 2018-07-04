@@ -1,5 +1,5 @@
 import * as fetch from 'isomorphic-fetch';
 
-const fetchAllData = () => fetch('/mock-api.json').then(r => r.json());
+const fetchAllData = () => fetch(window.dittnavSettings.DITTNAV_API_URL).then(r => r.json()); // eslint-disable-line no-undef
 
 export default fetchAllData;
