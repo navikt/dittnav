@@ -26,6 +26,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - run: chmod +x ./cc-test-reporter
       - run: npm install
 
       - save_cache:
@@ -34,4 +36,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
+
+      - run: ./cc-test-reporter before-build
       - run: npm test
+      - run: ./cc-test-reporter after-build --exit-code $?
