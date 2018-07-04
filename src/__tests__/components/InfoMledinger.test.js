@@ -9,6 +9,6 @@ test('render empty InfoMeldinger component', () => {
 
 test('render InfoMeldinger with empty infoMessages', () => {
   const infoMessages = [];
-  const component = ReactTestRenderer.create((<InfoMeldinger infoMessages={}/>));
+  const component = ReactTestRenderer.create((<InfoMeldinger infoMessages={infoMessages} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
