@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render empty Artikkel 1`] = `
+exports[`render empty InfoMeldinger component 1`] = `
 <section
   className="infomeldinger varsel-liste"
 >
