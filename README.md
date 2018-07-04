@@ -1,4 +1,7 @@
 [![CircleCI](https://circleci.com/gh/navikt/dittnav.svg?style=svg&circle-token=60a12a3cc1d5d27a5437e96faada24d80302442b)](https://circleci.com/gh/navikt/dittnav)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2cd3e2506b5064d4339c/maintainability)](https://codeclimate.com/github/navikt/dittnav/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2cd3e2506b5064d4339c/test_coverage)](https://codeclimate.com/github/navikt/dittnav/test_coverage)
+
 
 # Ditt nav
 
