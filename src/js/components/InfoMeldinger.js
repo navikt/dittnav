@@ -22,6 +22,7 @@ class InfoMeldinger extends Component {
               <p>Forbrukte pleiepengedager per i dag for barn med f.nr. 11111111111: <b>999</b></p>
               <p>Forbrukte pleiepengedager per i dag for barn med f.nr. 22222222222: <b>999</b></p>
               <p>Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: <b>999</b></p>
+              <p>Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: <b>999</b></p>
             </div>
           </div>
         </section>
