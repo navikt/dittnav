@@ -1,5 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`render InfoMeldinger with empty infoMessages 1`] = `
+<section
+  className="infomeldinger varsel-liste"
+>
+  <h1
+    className="vekk"
+  >
+    Varsler
+  </h1>
+  <a
+    className="melding meldekort varsel klikkbar "
+    data-ga="Dittnav/Varsel"
+    href="url"
+  >
+    <span
+      aria-label="alarm-ikon"
+      className="varsel-ikon meldekort-varsel-ikon"
+    />
+    <span
+      className="varsel-tekster"
+    >
+      <span>
+        Du har to meldekort klare for innsending
+      </span>
+      <span>
+        (Send inn nå, du risikerer trekk!)
+      </span>
+      <p>
+        Oversikt over meldekort
+      </p>
+    </span>
+  </a>
+  <div
+    className="melding"
+  >
+    <span
+      aria-label="alarm-ikon"
+      className="varsel-ikon forbrukte-pleiepengedager-varsel-ikon"
+    />
+    <div
+      className="varsel-tekster"
+    >
+      <p>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 11111111111: 
+        <b>
+          999
+        </b>
+      </p>
+      <p>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 22222222222: 
+        <b>
+          999
+        </b>
+      </p>
+      <p>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: 
+        <b>
+          999
+        </b>
+      </p>
+      <p>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: 
+        <b>
+          999
+        </b>
+      </p>
+    </div>
+  </div>
+</section>
+`;
+
 exports[`render empty InfoMeldinger component 1`] = `
 <section
   className="infomeldinger varsel-liste"
