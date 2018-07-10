@@ -69,7 +69,7 @@
     "clean": "rimraf ./build",
     "lint": "./node_modules/.bin/eslint ./",
     "server": "node ./server.js",
-    "start-js": "DITTNAV_API_URL=/mock-api.json node scripts/start.js",
+    "start-js": "DITTNAV_API_URL=/mock-api/person-info.json SAKSOVERSIKT_API_URL=/mock-api/paabegynte-saker.json node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "watch-css": "less-watch-compiler --main-file=index.less src/less src/css",
     "build-css": "less-watch-compiler --run-once --main-file=index.less src/less src/css",
@@ -82,7 +82,8 @@
       "src/**/*.{js,jsx,mjs}"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/config/jest/mock-api.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",

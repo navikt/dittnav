@@ -33,7 +33,7 @@ const startServer = (html) => {
   // const delayAllResponses = millis => (req, res, next) => setTimeout(next, millis);
   // server.use(delayAllResponses(1000));
 
-  server.use('/mock-api.json', express.static(path.resolve(__dirname, 'src/mock-api.json')));
+  server.use('/mock-api', express.static(path.resolve(__dirname, 'src/mock-api')));
   server.use('/static/js', express.static(path.resolve(__dirname, 'build/static/js')));
   server.get('/static/js/settings.js', (req, res) => res.send(createEnvSettingsFile()));
 

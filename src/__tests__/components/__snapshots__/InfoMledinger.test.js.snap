@@ -2,7 +2,7 @@
 
 exports[`render InfoMeldinger with empty infoMessages 1`] = `
 <section
-  className="infomeldinger varsel-liste"
+  className="infomeldinger-list"
 >
   <h1
     className="vekk"
@@ -10,16 +10,16 @@ exports[`render InfoMeldinger with empty infoMessages 1`] = `
     Varsler
   </h1>
   <a
-    className="melding meldekort varsel klikkbar "
+    className="message clickable meldekort"
     data-ga="Dittnav/Varsel"
     href="url"
   >
     <span
       aria-label="alarm-ikon"
-      className="varsel-ikon meldekort-varsel-ikon"
+      className="icon meldekort-icon"
     />
     <span
-      className="varsel-tekster"
+      className="texts"
     >
       <span>
         Du har to meldekort klare for innsending
@@ -33,14 +33,14 @@ exports[`render InfoMeldinger with empty infoMessages 1`] = `
     </span>
   </a>
   <div
-    className="melding"
+    className="message"
   >
     <span
       aria-label="alarm-ikon"
-      className="varsel-ikon forbrukte-pleiepengedager-varsel-ikon"
+      className="message-icon forbrukte-pleiepengedager-varsel-ikon"
     />
     <div
-      className="varsel-tekster"
+      className="texts"
     >
       <p>
         Forbrukte pleiepengedager per i dag for barn med f.nr. 11111111111: 
@@ -73,7 +73,7 @@ exports[`render InfoMeldinger with empty infoMessages 1`] = `
 
 exports[`render empty InfoMeldinger component 1`] = `
 <section
-  className="infomeldinger varsel-liste"
+  className="infomeldinger-list"
 >
   <h1
     className="vekk"
@@ -81,16 +81,16 @@ exports[`render empty InfoMeldinger component 1`] = `
     Varsler
   </h1>
   <a
-    className="melding meldekort varsel klikkbar "
+    className="message clickable meldekort"
     data-ga="Dittnav/Varsel"
     href="url"
   >
     <span
       aria-label="alarm-ikon"
-      className="varsel-ikon meldekort-varsel-ikon"
+      className="icon meldekort-icon"
     />
     <span
-      className="varsel-tekster"
+      className="texts"
     >
       <span>
         Du har to meldekort klare for innsending
@@ -104,14 +104,14 @@ exports[`render empty InfoMeldinger component 1`] = `
     </span>
   </a>
   <div
-    className="melding"
+    className="message"
   >
     <span
       aria-label="alarm-ikon"
-      className="varsel-ikon forbrukte-pleiepengedager-varsel-ikon"
+      className="message-icon forbrukte-pleiepengedager-varsel-ikon"
     />
     <div
-      className="varsel-tekster"
+      className="texts"
     >
       <p>
         Forbrukte pleiepengedager per i dag for barn med f.nr. 11111111111: 
