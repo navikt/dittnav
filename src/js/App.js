@@ -6,7 +6,6 @@ import InfoMeldinger from './components/InfoMeldinger';
 import Tjenester from './components/Tjenester';
 import Lenkelister from './components/Lenkelister';
 import Artikkel from './components/Artikkel';
-import RegStatusLink from './components/RegStatusLink';
 import '../less/index.less';
 
 class App extends Component {
@@ -39,9 +38,8 @@ class App extends Component {
           <div className="row">
             <div className="maincontent side-innhold">
               <div className="col-md-12">
-                <RegStatusLink />
                 <PersonInfo personInfo={s.info.personInfo} />
-                <InfoMeldinger paabegynteSaker={s.paabegynteSaker.paabegynte} />
+                <InfoMeldinger paabegynteSaker={s.paabegynteSaker.paabegynte} isRegisteredAtIArbeid={s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null} />
                 <Tjenester services={s.info.services} />
                 <Lenkelister links={s.info.links} />
               </div>

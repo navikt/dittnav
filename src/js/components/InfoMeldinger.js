@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import PaabegynteSoknader, { PaabegynteSakType } from './meldinger/PaabegynteSoknader';
+import RegStatusLink from './RegStatusLink';
 
 class InfoMeldinger extends Component {
   render() {
@@ -10,6 +11,7 @@ class InfoMeldinger extends Component {
         <section className="infomeldinger-list">
           <h1 className="vekk">Varsler</h1>
 
+          <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
           <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
 
           <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href="url">
@@ -38,10 +40,12 @@ class InfoMeldinger extends Component {
 
 InfoMeldinger.propTypes = {
   paabegynteSaker: PropTypes.arrayOf(PaabegynteSakType),
+  isRegisteredAtIArbeid: PropTypes.bool,
 };
 
 InfoMeldinger.defaultProps = {
   paabegynteSaker: [],
+  isRegisteredAtIArbeid: null,
 };
 
 export default InfoMeldinger;

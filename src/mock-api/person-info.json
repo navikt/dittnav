@@ -4,7 +4,8 @@
     "fgkode": "RARBS",
     "ytelse": "ATTF",
     "isRegistered": true,
-    "isInactive": false
+    "isInactive": false,
+    "isRegisteredAtIArbeid": true
   },
   "infoMessages": [
     

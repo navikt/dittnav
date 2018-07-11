@@ -634,14 +634,14 @@ De er også responsive slik at:
       background-image: url(../img/varsel/bubblechat-2.svg);
       background-color: #f1d8d4;
     }
-    .infomeldinger .melding.klikkbar .varsel-ikon.registrering-varsel-ikon {
+    /* .infomeldinger .melding.klikkbar .varsel-ikon.registrering-varsel-ikon {
       background-image: url(../img/varsel/checklist.svg);
       background-color: #cce1f3;
     }
     .infomeldinger .melding.klikkbar .varsel-ikon.oppgave-melding-varsel-ikon {
       background-image: url(../img/varsel/checklist.svg);
       background-color: #cce1f3;
-    }
+    } */
     .infomeldinger .melding.klikkbar:hover {
       box-shadow: #b7b1a9 0 2px 1px 0;
     }
@@ -669,14 +669,14 @@ De er også responsive slik at:
       background-image: url(../img/varsel/bubblechat_hover-sort.svg);
       background-color: #d6897d;
     }
-    .infomeldinger .melding.klikkbar:hover .varsel-ikon.registrering-varsel-ikon {
+    /* .infomeldinger .melding.klikkbar:hover .varsel-ikon.registrering-varsel-ikon {
       background-image: url(../img/varsel/checklist_hover-sort.svg);
       background-color: #66a4dc;
     }
     .infomeldinger .melding.klikkbar:hover .varsel-ikon.oppgave-melding-varsel-ikon {
       background-image: url(../img/varsel/checklist_hover-sort.svg);
       background-color: #66a4dc;
-    }
+    } */
     .contrast .infomeldinger .melding .varsel-ikon {
       background-image: url(../img/info_gul.svg) !important;
     }
