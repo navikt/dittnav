@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaabegynteSoknader empty array 1`] = `null`;
+
+exports[`PaabegynteSoknader green test 1`] = `null`;
+
+exports[`PaabegynteSoknader one soknad 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/Paabegynt soknad"
+  href="http://nav.no"
+>
+  <span
+    aria-label="dokument-ikon"
+    className="icon document-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har en søknad som du ikke har sendt
+    </p>
+    <p
+      id="paabegynte-tekst"
+    >
+      Fortsett innsending
+    </p>
+  </div>
+</a>
+`;
+
+exports[`PaabegynteSoknader several soknad 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/Paabegynt soknad"
+  href="/saksoversikt"
+>
+  <span
+    aria-label="dokument-ikon"
+    className="icon document-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har to søknader som du ikke har sendt
+    </p>
+    <p
+      id="paabegynte-tekst"
+    >
+      Fortsett innsending
+    </p>
+  </div>
+</a>
+`;

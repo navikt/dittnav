@@ -95,18 +95,22 @@ module.exports = function(proxy, allowedHost, decoratedIndexHtml) {
       // https://github.com/facebookincubator/create-react-app/issues/2272#issuecomment-302832432
       app.use(noopServiceWorkerMiddleware());
 
-      app.get('/mock-api.json', (req, res) => {
-        res.sendFile(
-            path.resolve(`${__dirname}/../src/mock-api.json`)
-        );
-      });
       app.get('/static/js/settings.js', (req, res) => {
         res.send(createEnvSettingsFile());
+      });
+      app.get('/mock-api/person-info.json', (req, res) => {
+        res.sendFile(
+            path.resolve(`${__dirname}/../src/mock-api/person-info.json`)
+        );
+      });
+      app.get('/mock-api/paabegynte-saker.json', (req, res) => {
+        res.sendFile(
+            path.resolve(`${__dirname}/../src/mock-api/paabegynte-saker.json`)
+        );
       });
       app.get(/^\/(?!.*static).*$/, (req, res) => {
         res.render('index.html', Object.assign(decoratedIndexHtml));
       });
-
       app.set('view engine', 'mustache');
       app.engine('html', mustacheExpress());
       app.set('views', `${__dirname}/../build`);

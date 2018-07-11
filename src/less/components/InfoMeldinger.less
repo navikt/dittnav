@@ -1,0 +1,90 @@
+.infomeldinger-list {
+  padding: 0;
+  margin: 40px 70px 20px;
+
+  .message {
+    margin: 4px 0 0;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #3e3832;
+    border: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    position: relative;
+    min-height: 56px;
+    padding: 2px;
+    a {
+      border: none;
+    }
+    .document-icon {
+      background-image: url(../images/infomeldinger/dokument-normal.svg);
+      background-color: #e0dae7;
+      &:hover {
+        background-image: url(../images/infomeldinger/dokument-hover.svg);
+        background-color: #a190b8;
+      }
+    }
+    // contrast background-image: url(../img/varsel/dokument_normal_gul.svg) !important;
+    .icon {
+      display: inline;
+      -ms-flex: 0 0 54px;
+      flex: 0 0 54px;
+      background-size: auto 32px;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      // background-image: url(/static/media/alarm.13803d22.svg);
+      background-color: #ffe9cc;
+    }
+    .texts {
+      * {
+        margin: 0;
+      }
+      -ms-flex-item-align: center;
+      align-self: center;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      margin: 16px 20px 16px 8px;
+    }
+  }
+  .clickable {
+    &:hover {
+      &:after {
+        background-image: url(../images/infomeldinger/ikon-pil-klikkbart-hover.svg);
+      }
+      color: #0067c5;
+      border-bottom-color: #fff;
+      cursor: pointer;
+      -webkit-box-shadow: #b7b1a9 0 2px 1px 0;
+      box-shadow: 0 2px 1px 0 #b7b1a9;
+    }
+    &:after {
+      background-image: url(../images/infomeldinger/ikon-pil-klikkbart.svg);
+      background-repeat: no-repeat;
+      content: " ";
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex: 0 0 12px;
+      flex: 0 0 12px;
+      height: 20px;
+      -ms-flex-item-align: center;
+      align-self: center;
+      margin-right: 20px;
+    }
+  }
+
+  .meldekort {
+    .meldekort-icon {
+      background-image: url(../images/infomeldinger/alarm-clock.svg);
+      background-color: #ffe9cc;
+      &:hover {
+        background-image: url(../images/infomeldinger/alarm-clock-hover.svg);
+        background-color: #ffbd66;
+      }
+    }
+  }
+}
