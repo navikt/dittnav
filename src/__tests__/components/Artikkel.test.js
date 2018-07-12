@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Artikkel from '../../js/components/Artikkel';
+import Artikkel from 'js/components/Artikkel';
 const ReactTestRenderer = require('react-test-renderer');
 
 test('render empty Artikkel', () => {

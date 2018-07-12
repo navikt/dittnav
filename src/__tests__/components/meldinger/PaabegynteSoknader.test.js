@@ -1,6 +1,6 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
-import PaabegynteSoknader from '../../../js/components/meldinger/PaabegynteSoknader';
+import PaabegynteSoknader from 'js/components/meldinger/PaabegynteSoknader';
 
 test('PaabegynteSoknader green test', () => {
   const component = ReactTestRenderer.create((<PaabegynteSoknader />));

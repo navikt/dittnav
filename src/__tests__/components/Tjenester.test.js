@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tjenester from '../../js/components/Tjenester';
+import Tjenester from 'js/components/Tjenester';
 const ReactTestRenderer = require('react-test-renderer');
 
 test('basic green Tjenester snaphot-test', () => {
