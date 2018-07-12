@@ -22,12 +22,20 @@
     .document-icon {
       background-image: url(../images/infomeldinger/dokument-normal.svg);
       background-color: #e0dae7;
-      &:hover {
-        background-image: url(../images/infomeldinger/dokument-hover.svg);
-        background-color: #a190b8;
-      }
+      // &:hover {
+      //   background-image: url(../images/infomeldinger/dokument-hover.svg);
+      //   background-color: #a190b8;
+      // }
     }
-    // contrast background-image: url(../img/varsel/dokument_normal_gul.svg) !important;
+    .registration-icon {
+      background-image: url(../images/infomeldinger/registration.svg);
+      background-color: #cce1f3;
+      // &:hover {
+      //   background-image: url(../images/infomeldinger/registration-hover.svg);
+      //   background-color: #a190b8;
+      // }
+    }
+
     .icon {
       display: inline;
       -ms-flex: 0 0 54px;
@@ -53,6 +61,22 @@
   }
   .clickable {
     &:hover {
+
+      .document-icon {
+        background-image: url(../images/infomeldinger/dokument-hover.svg);
+        background-color: #a190b8;
+      }
+
+      .registration-icon {
+        background-image: url(../images/infomeldinger/registration-hover.svg);
+        background-color: #a190b8;
+      }
+
+      .meldekort-icon {
+        background-image: url(../images/infomeldinger/alarm-clock-hover.svg);
+        background-color: #ffbd66;
+      }
+
       &:after {
         background-image: url(../images/infomeldinger/ikon-pil-klikkbart-hover.svg);
       }
@@ -81,10 +105,10 @@
     .meldekort-icon {
       background-image: url(../images/infomeldinger/alarm-clock.svg);
       background-color: #ffe9cc;
-      &:hover {
-        background-image: url(../images/infomeldinger/alarm-clock-hover.svg);
-        background-color: #ffbd66;
-      }
+      // &:hover {
+      //   background-image: url(../images/infomeldinger/alarm-clock-hover.svg);
+      //   background-color: #ffbd66;
+      // }
     }
   }
 }

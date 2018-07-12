@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PersonInfo from '../../js/components/PersonInfo';
+import PersonInfo from 'js/components/PersonInfo';
 const ReactTestRenderer = require('react-test-renderer');
 
 test('basic green PersonInfo snaphot-test', () => {

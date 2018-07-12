@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../js/App';
+import App from 'js/App';
 
 it('renders without crashing', () => {
   const mockApi = {
