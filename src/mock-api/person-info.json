@@ -7,6 +7,19 @@
     "isInactive": false,
     "isRegisteredAtIArbeid": true
   },
+  "meldekort": {
+    "newCards": {
+      "count": 2,
+      "nextCard": {
+        "week": "week 42",
+        "canBeSubmittedFrom": "13",
+        "until": "untildate",
+        "from": "fromDate"
+      },
+      "nextSendingDate": "date"
+    },
+    "remainingHolidays": 123
+  },
   "infoMessages": [
     
   ],
