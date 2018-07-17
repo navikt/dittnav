@@ -26,7 +26,7 @@ class Meldekort extends Component {
     const { count } = meldekort.newCards;
 
     const risikererTrekk = meldekort.newCards.nextCard && meldekort.newCards.nextCard.risikererTrekk;
-    const fremtidig = meldekort.nextSendingDate && new Date().getTime() < meldekort.nextSendingDate ? (<span>{translations['meldekort.melding.fremtidig'].format(formatDate(meldekort.nextSendingDate))}</span>) : null;
+    const fremtidig = meldekort.nextSendingDate && this.props.getCurrentDate.getTime() < meldekort.nextSendingDate ? (<span>{translations['meldekort.melding.fremtidig'].format(formatDate(meldekort.nextSendingDate))}</span>) : null;
     const advarsel = risikererTrekk ? (<span>{translations['meldekort.trekk']}</span>) : null;
     const feriedager = meldekort.remainingHolidays && meldekort.remainingHolidays > 0 ? (<span>{translations['meldekort.feriedager'].format(meldekort.remainingHolidays)}</span>) : null;
 
@@ -81,10 +81,12 @@ export const MeldekortType = PropTypes.shape({ newCards: NewCards, remainingHoli
 
 Meldekort.propTypes = {
   meldekort: MeldekortType,
+  getCurrentDate: PropTypes.func,
 };
 
 Meldekort.defaultProps = {
   meldekort: null,
+  getCurrentDate: () => new Date(),
 };
 
 export default Meldekort;
