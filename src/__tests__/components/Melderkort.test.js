@@ -2,7 +2,8 @@ import * as React from 'react';
 import Meldekort from 'js/components/Meldekort';
 const ReactTestRenderer = require('react-test-renderer');
 
-const getCurrentDate = () => new Date(1531830078487)
+const getCurrentDate = () => new Date(1531830078487);
+const formatDate = date => new Date(date).toLocaleDateString('en-US');
 
 test('basic Meldekort test with no meldekort', () => {
   const component = ReactTestRenderer.create((<Meldekort />));
@@ -26,7 +27,7 @@ test('basic Meldekort test', () => {
     "remainingHolidays": 12
   };
 
-  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} formatDate={formatDate} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -47,7 +48,7 @@ test('basic one Meldekort test', () => {
     "remainingHolidays": 12
   };
 
-  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} formatDate={formatDate} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -68,7 +69,7 @@ test('basic one Meldekort test no risk', () => {
     "remainingHolidays": 12
   };
 
-  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} formatDate={formatDate} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -90,7 +91,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     "remainingHolidays": null
   };
 
-  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} formatDate={formatDate} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -111,6 +112,6 @@ test('basic zero Meldekort test', () => {
     "remainingHolidays": 12
   };
 
-  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} formatDate={formatDate} />));
   expect(component.toJSON()).toMatchSnapshot();
 });

@@ -13,22 +13,26 @@ const translations = {
   'meldekort.info.om.trekk': '(Siste innsendingsfrist før trekk: {0})',
 };
 
-const formatDate = date => new Date(date).toLocaleDateString('nb-NO');
 const ARBEID_PATH = '/sbl/nav_security_check';
 const MELDEKORT_PATH = '/meldekort/';
 
 class Meldekort extends Component {
   render() {
-    const { meldekort } = this.props;
+    const { meldekort, formatDate, getCurrentDate } = this.props;
 
     if (!meldekort) return null;
 
     const { count } = meldekort.newCards;
 
     const risikererTrekk = meldekort.newCards.nextCard && meldekort.newCards.nextCard.risikererTrekk;
-    const fremtidig = meldekort.nextSendingDate && this.props.getCurrentDate.getTime() < meldekort.nextSendingDate ? (<span>{translations['meldekort.melding.fremtidig'].format(formatDate(meldekort.nextSendingDate))}</span>) : null;
+    const fremtidig = meldekort.nextSendingDate && getCurrentDate.getTime() < meldekort.nextSendingDate
+      ? (<span>{translations['meldekort.melding.fremtidig'].format(formatDate(meldekort.nextSendingDate))}</span>)
+      : null;
+
     const advarsel = risikererTrekk ? (<span>{translations['meldekort.trekk']}</span>) : null;
-    const feriedager = meldekort.remainingHolidays && meldekort.remainingHolidays > 0 ? (<span>{translations['meldekort.feriedager'].format(meldekort.remainingHolidays)}</span>) : null;
+    const feriedager = meldekort.remainingHolidays && meldekort.remainingHolidays > 0
+      ? (<span>{translations['meldekort.feriedager'].format(meldekort.remainingHolidays)}</span>)
+      : null;
 
     if (count > 0) {
       const next = meldekort.newCards.nextCard;
@@ -82,11 +86,13 @@ export const MeldekortType = PropTypes.shape({ newCards: NewCards, remainingHoli
 Meldekort.propTypes = {
   meldekort: MeldekortType,
   getCurrentDate: PropTypes.func,
+  formatDate: PropTypes.func,
 };
 
 Meldekort.defaultProps = {
   meldekort: null,
   getCurrentDate: () => new Date(),
+  formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
 };
 
 export default Meldekort;
