@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import PaabegynteSoknader, { PaabegynteSakType } from './meldinger/PaabegynteSoknader';
 import RegStatusLink from './RegStatusLink';
-import Meldekort from './Meldekort';
+import Meldekort, { MeldekortType } from './Meldekort';
 
 class InfoMeldinger extends Component {
   render() {
@@ -11,7 +11,7 @@ class InfoMeldinger extends Component {
       <React.Fragment>
         <section className="infomeldinger-list">
           <h1 className="vekk">Varsler</h1>
-          <Meldekort />
+          <Meldekort meldekort={this.props.meldekort} />
           <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
           <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
 
@@ -33,11 +33,13 @@ class InfoMeldinger extends Component {
 InfoMeldinger.propTypes = {
   paabegynteSaker: PropTypes.arrayOf(PaabegynteSakType),
   isRegisteredAtIArbeid: PropTypes.bool,
+  meldekort: MeldekortType,
 };
 
 InfoMeldinger.defaultProps = {
   paabegynteSaker: [],
   isRegisteredAtIArbeid: null,
+  meldekort: null,
 };
 
 export default InfoMeldinger;

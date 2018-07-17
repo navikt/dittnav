@@ -11,14 +11,16 @@
     "newCards": {
       "count": 2,
       "nextCard": {
+        "datoForTrekk": 1533814941280,
+        "risikererTrekk": true,
         "week": "week 42",
-        "canBeSubmittedFrom": "13",
-        "until": "untildate",
-        "from": "fromDate"
+        "canBeSubmittedFrom": 1531808013471,
+        "until": 1531808093471,
+        "from": 1531838093471
       },
-      "nextSendingDate": "date"
+      "nextSendingDate": 1541808093471
     },
-    "remainingHolidays": 123
+    "remainingHolidays": 12
   },
   "infoMessages": [
     

@@ -9,29 +9,6 @@ exports[`render InfoMeldinger with empty infoMessages 1`] = `
   >
     Varsler
   </h1>
-  <a
-    className="message clickable meldekort"
-    data-ga="Dittnav/Varsel"
-    href="url"
-  >
-    <span
-      aria-label="alarm-ikon"
-      className="icon meldekort-icon"
-    />
-    <span
-      className="texts"
-    >
-      <span>
-        Du har to meldekort klare for innsending
-      </span>
-      <span>
-        (Send inn nå, du risikerer trekk!)
-      </span>
-      <p>
-        Oversikt over meldekort
-      </p>
-    </span>
-  </a>
   <div
     className="message"
   >
@@ -80,29 +57,6 @@ exports[`render empty InfoMeldinger component 1`] = `
   >
     Varsler
   </h1>
-  <a
-    className="message clickable meldekort"
-    data-ga="Dittnav/Varsel"
-    href="url"
-  >
-    <span
-      aria-label="alarm-ikon"
-      className="icon meldekort-icon"
-    />
-    <span
-      className="texts"
-    >
-      <span>
-        Du har to meldekort klare for innsending
-      </span>
-      <span>
-        (Send inn nå, du risikerer trekk!)
-      </span>
-      <p>
-        Oversikt over meldekort
-      </p>
-    </span>
-  </a>
   <div
     className="message"
   >
