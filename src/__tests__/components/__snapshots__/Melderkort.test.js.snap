@@ -65,7 +65,7 @@ exports[`basic one Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (2018-7-17 - 2018-7-17) klart for innsending
+        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
       </span>
        
     </span>
@@ -110,13 +110,13 @@ exports[`basic one Meldekort test no risk 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (2018-7-17 - 2018-7-17) klart for innsending
+        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
       </span>
        
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 2018-8-9)
+        (Siste innsendingsfrist før trekk: 8/9/2018)
       </span>
        
     </span>
@@ -155,13 +155,13 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (2018-7-17 - 2018-7-17) klart for innsending
+        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
       </span>
        
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 2018-8-9)
+        (Siste innsendingsfrist før trekk: 8/9/2018)
       </span>
        
     </span>
