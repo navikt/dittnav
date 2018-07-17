@@ -13,7 +13,7 @@ const translations = {
   'meldekort.info.om.trekk': '(Siste innsendingsfrist før trekk: {0})',
 };
 
-const formatDate = date => new Date(date).toLocaleDateString();
+const formatDate = date => new Date(date).toLocaleDateString('nb-NO');
 const ARBEID_PATH = '/sbl/nav_security_check';
 const MELDEKORT_PATH = '/meldekort/';
 
