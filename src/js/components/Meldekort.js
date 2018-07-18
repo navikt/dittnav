@@ -48,7 +48,7 @@ class Meldekort extends Component {
           <span className="texts">
             <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
             <span>{melding(meldekort.newCards.nextCard, count, formatDate)} </span>
-            <span>{trekk((risikererTrekk, formatDate, meldekort.newCards.nextCard))} </span>
+            <span>{trekk(risikererTrekk, formatDate, meldekort.newCards.nextCard)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p id="meldekort.lenkeTekst">{(count > 1 ? i18n['meldekort.se.oversikt'] : i18n['meldekort.send'])}</p>
             <p>{feriedager(meldekort)}</p>
