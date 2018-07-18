@@ -7,6 +7,10 @@
     "isInactive": false,
     "isRegisteredAtIArbeid": true
   },
+  "pleiepenger": [
+    {"child": "11223312345", "usedPerToday": "123"},
+    {"child": "22113312345", "usedPerToday": "321"}
+  ],
   "meldekort": {
     "newCards": {
       "count": 2,
