@@ -73,6 +73,26 @@ test('basic one Meldekort test no risk', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
+test('no cards no risk', () => {
+  const meldekort = {
+    "newCards": {
+      "count": 0,
+      "nextCard": {
+        "datoForTrekk": 1533814941280,
+        "risikererTrekk": false,
+        "week": "week 42",
+        "canBeSubmittedFrom": 1531808013471,
+        "until": 1531808093471,
+        "from": 1531838093471
+      },
+      "nextSendingDate": 1541808093471
+    },
+    "remainingHolidays": 12
+  };
+
+  const component = ReactTestRenderer.create((<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} formatDate={formatDate} />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
 
 test('basic one Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
