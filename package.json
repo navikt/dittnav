@@ -69,7 +69,7 @@
     "clean": "rimraf ./build",
     "lint": "./node_modules/.bin/eslint ./",
     "server": "node ./server.js",
-    "start-js": "DITTNAV_API_URL=/mock-api/person-info.json SAKSOVERSIKT_API_URL=/mock-api/paabegynte-saker.json REG_STATUS_LINK=https://nav.no/sbl node scripts/start.js",
+    "start-js": "DITTNAV_API_URL=/mock-api/person-info.json SAKSOVERSIKT_API_URL=/mock-api/paabegynte-saker.json REG_STATUS_LINK=https://nav.no/sbl SERVICES_URL=https://tjenester-t10.nav.no node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "watch-css": "less-watch-compiler --main-file=index.less src/less src/css",
     "build-css": "less-watch-compiler --run-once --main-file=index.less src/less src/css",

@@ -39,7 +39,7 @@ class App extends Component {
             <div className="maincontent side-innhold">
               <div className="col-md-12">
                 <PersonInfo personInfo={s.info.personInfo} />
-                <InfoMeldinger paabegynteSaker={s.paabegynteSaker.paabegynte} isRegisteredAtIArbeid={s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null} />
+                <InfoMeldinger paabegynteSaker={s.paabegynteSaker.paabegynte} meldekort={s.info.meldekort} isRegisteredAtIArbeid={s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null} />
                 <Tjenester services={s.info.services} />
                 <Lenkelister links={s.info.links} />
               </div>
