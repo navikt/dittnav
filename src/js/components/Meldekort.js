@@ -29,6 +29,9 @@ const advarsel = risikererTrekk => (risikererTrekk ? (<span>{i18n['meldekort.tre
 const melding = (next, count, formatDate) =>
   (next ? (<span>{i18n[count === 1 ? 'meldekort.ett' : 'meldekort.flere'].format(next.week, formatDate(next.from), formatDate(next.until))}</span>) : null);
 
+const trekk = (risikererTrekk, formatDate, next) =>
+  (!risikererTrekk ? (<span>{i18n['meldekort.info.om.trekk'].format(formatDate(next.datoForTrekk))}</span>) : null);
+
 class Meldekort extends Component {
   render() {
     const { meldekort, formatDate, getCurrentDate } = this.props;
@@ -36,19 +39,16 @@ class Meldekort extends Component {
     if (!meldekort) return null;
 
     const { count } = meldekort.newCards;
-
     const risikererTrekk = meldekort.newCards.nextCard && meldekort.newCards.nextCard.risikererTrekk;
 
     if (count > 0) {
-      const next = meldekort.newCards.nextCard;
-      const trekk = !risikererTrekk ? (<span>{i18n['meldekort.info.om.trekk'].format(formatDate(next.datoForTrekk))}</span>) : null;
       return (
         <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${ARBEID_PATH}?goto=${MELDEKORT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
             <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
-            <span>{melding(next, count, formatDate)} </span>
-            <span>{trekk} </span>
+            <span>{melding(meldekort.newCards.nextCard, count, formatDate)} </span>
+            <span>{trekk((risikererTrekk, formatDate, meldekort.newCards.nextCard))} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p id="meldekort.lenkeTekst">{(count > 1 ? i18n['meldekort.se.oversikt'] : i18n['meldekort.send'])}</p>
             <p>{feriedager(meldekort)}</p>

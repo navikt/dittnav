@@ -14,7 +14,6 @@ class InfoMeldinger extends Component {
           <Meldekort meldekort={this.props.meldekort} />
           <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
           <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
-
           <div className="message">
             <span className="message-icon forbrukte-pleiepengedager-varsel-ikon" aria-label="alarm-ikon" />
             <div className="texts">
