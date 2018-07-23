@@ -1,6 +1,8 @@
 'use strict';
 
 if (!String.prototype.format) {
+  // TODO will be fixed in IN-365
+  // this should be removed and a proper format used instead
   String.prototype.format = function() {
     var args = arguments;
     return this.replace(/{(\d+)}/g, function(match, number) { 

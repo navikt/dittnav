@@ -7,6 +7,7 @@
     "isInactive": false,
     "isRegisteredAtIArbeid": true
   },
+  "navMessagesCount": 3,
   "pleiepenger": [
     {"child": "11223312345", "usedPerToday": "123"},
     {"child": "22113312345", "usedPerToday": "321"}
