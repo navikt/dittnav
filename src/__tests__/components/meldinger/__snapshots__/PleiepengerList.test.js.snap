@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PleiepengerList empty list 1`] = `
+<div
+  className="message"
+>
+  <span
+    aria-label="pleiepenger-ikon"
+    className="icon pleiepenger-icon"
+  />
+  <div
+    className="texts"
+  />
+</div>
+`;
+
+exports[`PleiepengerList list with one element 1`] = `
+<div
+  className="message"
+>
+  <span
+    aria-label="pleiepenger-ikon"
+    className="icon pleiepenger-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Forbrukte pleiepengedager per i dag for barn med f.nr. 
+      123321
+      : 
+      <b>
+        123
+      </b>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`PleiepengerList list with two elements 1`] = `
+<div
+  className="message"
+>
+  <span
+    aria-label="pleiepenger-ikon"
+    className="icon pleiepenger-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Forbrukte pleiepengedager per i dag for barn med f.nr. 
+      123321
+      : 
+      <b>
+        123
+      </b>
+    </p>
+    <p>
+      Forbrukte pleiepengedager per i dag for barn med f.nr. 
+      123321
+      : 
+      <b>
+        12
+      </b>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`empty PleiepengerList green test 1`] = `null`;

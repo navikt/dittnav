@@ -9,42 +9,6 @@ exports[`render InfoMeldinger with empty infoMessages 1`] = `
   >
     Varsler
   </h1>
-  <div
-    className="message"
-  >
-    <span
-      aria-label="alarm-ikon"
-      className="message-icon forbrukte-pleiepengedager-varsel-ikon"
-    />
-    <div
-      className="texts"
-    >
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 11111111111: 
-        <b>
-          999
-        </b>
-      </p>
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 22222222222: 
-        <b>
-          999
-        </b>
-      </p>
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: 
-        <b>
-          999
-        </b>
-      </p>
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: 
-        <b>
-          999
-        </b>
-      </p>
-    </div>
-  </div>
 </section>
 `;
 
@@ -57,41 +21,5 @@ exports[`render empty InfoMeldinger component 1`] = `
   >
     Varsler
   </h1>
-  <div
-    className="message"
-  >
-    <span
-      aria-label="alarm-ikon"
-      className="message-icon forbrukte-pleiepengedager-varsel-ikon"
-    />
-    <div
-      className="texts"
-    >
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 11111111111: 
-        <b>
-          999
-        </b>
-      </p>
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 22222222222: 
-        <b>
-          999
-        </b>
-      </p>
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: 
-        <b>
-          999
-        </b>
-      </p>
-      <p>
-        Forbrukte pleiepengedager per i dag for barn med f.nr. 33333333333: 
-        <b>
-          999
-        </b>
-      </p>
-    </div>
-  </div>
 </section>
 `;
