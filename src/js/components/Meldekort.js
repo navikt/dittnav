@@ -11,10 +11,7 @@ const i18n = {
   'meldekort.ett': 'Du har ett meldekort for uke {0} ({1} - {2}) klart for innsending',
   'meldekort.send': 'Send meldekort',
   'meldekort.info.om.trekk': '(Siste innsendingsfrist før trekk: {0})',
-};
-
-const ARBEID_PATH = '/sbl/nav_security_check';
-const MELDEKORT_PATH = '/meldekort/';
+}; // TODO will be fixed in IN-365
 
 const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nextSendingDate && getCurrentDate.getTime() < meldekort.nextSendingDate
   ? (<span>{i18n['meldekort.melding.fremtidig'].format(formatDate(meldekort.nextSendingDate))}</span>)
@@ -43,7 +40,7 @@ class Meldekort extends Component {
 
     if (count > 0) {
       return (
-        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${ARBEID_PATH}?goto=${MELDEKORT_PATH}`}>
+        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.ARBEID_PATH}?goto=${conf.MELDEKORT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
             <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>

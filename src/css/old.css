@@ -593,7 +593,7 @@ De er også responsive slik at:
       padding: 0;
       margin: 40px 70px 20px;
     }
-    .infomeldinger .melding .varsel-ikon {
+    /* .infomeldinger .melding .varsel-ikon {
       display: inline;
       flex: 0 0 54px;
       background-size: auto 32px;
@@ -601,7 +601,7 @@ De er også responsive slik at:
       background-position: center;
       background-image: url(../img/varsel/alarm.svg);
       background-color: #ffe9cc;
-    }
+    } */
     /* .infomeldinger .melding .varsel-ikon.meldekort-varsel-ikon {
       background-image: url(../img/varsel/alarm-clock.svg);
       background-color: #ffe9cc;
@@ -610,10 +610,10 @@ De er også responsive slik at:
       background-image: url(../img/varsel/calendar-3.svg);
       background-color: #ffe9cc;
     } */
-    .infomeldinger .melding.klikkbar .varsel-ikon {
+    /* .infomeldinger .melding.klikkbar .varsel-ikon {
       background-image: url(../img/varsel/alarm.svg);
       background-color: #ffe9cc;
-    }
+    } */
     /* .infomeldinger .melding.klikkbar .varsel-ikon.dokument-melding-varsel-ikon {
       background-image: url(../img/varsel/dokument_normal.svg);
       background-color: #e0dae7;
@@ -645,10 +645,10 @@ De er også responsive slik at:
     .infomeldinger .melding.klikkbar:hover {
       box-shadow: #b7b1a9 0 2px 1px 0;
     }
-    .infomeldinger .melding.klikkbar:hover .varsel-ikon {
+    /* .infomeldinger .melding.klikkbar:hover .varsel-ikon {
       background-image: url(../img/varsel/alarm_hover-sort.svg);
       background-color: #ffbd66;
-    }
+    } */
     /* .infomeldinger .melding.klikkbar:hover .varsel-ikon.dokument-melding-varsel-ikon {
       background-image: url(../img/varsel/file-new_hover-sort.svg);
       background-color: #a190b8;

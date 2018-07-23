@@ -5,6 +5,7 @@ import PaabegynteSoknader, { PaabegynteSakType } from 'js/components/meldinger/P
 import RegStatusLink from 'js/components/RegStatusLink';
 import Meldekort, { MeldekortType } from 'js/components/Meldekort';
 import PleiepengerList, { Pleiepenger } from 'js/components/meldinger/PleiepengerList';
+import NavMeldinger from './meldinger/NavMeldinger';
 
 class InfoMeldinger extends Component {
   render() {
@@ -14,6 +15,7 @@ class InfoMeldinger extends Component {
           <h1 className="vekk">Varsler</h1>
           <Meldekort meldekort={this.props.meldekort} />
           <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
+          <NavMeldinger navMessagesCount={this.props.navMessagesCount} />
           <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
           <PleiepengerList pleiepenger={this.props.pleiepenger} />
         </section>
@@ -27,6 +29,7 @@ InfoMeldinger.propTypes = {
   pleiepenger: PropTypes.arrayOf(Pleiepenger),
   isRegisteredAtIArbeid: PropTypes.bool,
   meldekort: MeldekortType,
+  navMessagesCount: PropTypes.number,
 };
 
 InfoMeldinger.defaultProps = {
@@ -34,6 +37,7 @@ InfoMeldinger.defaultProps = {
   isRegisteredAtIArbeid: null,
   meldekort: null,
   pleiepenger: null,
+  navMessagesCount: 0,
 };
 
 export default InfoMeldinger;

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import conf from '../Config';
+import conf from 'js/Config';
 
 const translations = {
   'regstatus.beskrivelse': 'Du har startet på en registrering som arbeidssøker.',
   'regstatus.lenke': 'Fullfør registrering',
-};
+}; // TODO will be fixed in IN-365
 
 class RegStatusLink extends Component {
   render() {

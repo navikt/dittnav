@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import conf from '../../Config';
+import conf from 'js/Config';
 
 const translations = {
   'saksoversikt.soknad.en': 'Du har en søknad som du ikke har sendt',
   'saksoversikt.soknad.flere': 'Du har {0} søknader som du ikke har sendt',
   'saksoversikt.lenke': 'Fortsett innsending',
   'feilmelding.saksoversikt': 'Det skjedde en feil under henting av saker',
-};
+}; // TODO will be fixed in IN-365
 
-const tallord = (tall) => {
+const numberToWord = (tall) => {
   const ord = ['to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve', 'tolv'];
   return tall > 12 ? tall : ord[tall - 2];
-};
+}; // TODO will be fixed in IN-365
 
 class PaabegynteSoknader extends Component {
   render() {
@@ -21,7 +21,7 @@ class PaabegynteSoknader extends Component {
     if (!saker || saker.length === 0) return null;
 
     const text = saker.length === 1 ? translations['saksoversikt.soknad.en'] :
-      translations['saksoversikt.soknad.flere'].replace('{0}', tallord(saker.length));
+      translations['saksoversikt.soknad.flere'].format(numberToWord(saker.length));
 
     const url = saker.length === 1 ? saker[0].uri : conf.dittNav.SAKSOVERSIKT_URL;
     return (

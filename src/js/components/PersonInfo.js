@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// Fixes i IN-365
 const translations = {
   'fgkode.IARBS': 'Du er registrert som "ikke arbeidssøker"',
   'fgkode.INGEN_FGKODE': '',
@@ -15,7 +14,7 @@ const translations = {
   'ytelse.AAP': 'Du er mottaker av arbeidsavklaringspenger.',
   'ytelse.INDS': 'Du er mottaker av tiltakspenger.',
   'ytelse.VENT': '',
-};
+}; // TODO will be fixed in IN-365
 
 class PersonInfo extends Component {
   render() {
