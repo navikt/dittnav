@@ -2,7 +2,7 @@
 
 exports[`NavMeldinger with 1 message 1`] = `
 <a
-  className="message varsel clickable"
+  className="message clickable"
   data-ga="Dittnav/Varsel/Nav-melding"
   href="undefined/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
 >
@@ -25,7 +25,7 @@ exports[`NavMeldinger with 1 message 1`] = `
 
 exports[`NavMeldinger with 5 messages 1`] = `
 <a
-  className="message varsel clickable"
+  className="message clickable"
   data-ga="Dittnav/Varsel/Nav-melding"
   href="undefined/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
 >

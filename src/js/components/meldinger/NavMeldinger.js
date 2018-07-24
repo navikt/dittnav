@@ -19,7 +19,7 @@ class NavMeldinger extends Component {
     const { navMessagesCount } = this.props;
     if (navMessagesCount === 0) return null;
     return (
-      <a className="message varsel clickable" data-ga="Dittnav/Varsel/Nav-melding" href={`${conf.dittNav.SERVICES_URL}${conf.ARBEID_PATH}?goto=${conf.MELDINGER_NAV_PATH}`}>
+      <a className="message clickable" data-ga="Dittnav/Varsel/Nav-melding" href={`${conf.dittNav.SERVICES_URL}${conf.ARBEID_PATH}?goto=${conf.MELDINGER_NAV_PATH}`}>
         <span className="icon default-icon" aria-label="default-ikon" />
         <div className="texts">
           <p>{navMessagesCount !== 1 ? i18n['nav.melding.flere'].format(numberToWord(navMessagesCount)) : i18n['nav.melding.en']}</p>

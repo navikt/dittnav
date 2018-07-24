@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InformasjonsMeldinger with both 1`] = `
+Array [
+  <div
+    className="message"
+>
+    <span
+        aria-label="alarm-ikon"
+        className="icon default-icon"
+    />
+    <div
+        className="texts"
+    >
+        <p>
+            Hello
+        </p>
+    </div>
+</div>,
+  <div
+    className="message"
+>
+    <span
+        aria-label="alarm-ikon"
+        className="icon meldekort-icon"
+    />
+    <div
+        className="texts"
+    >
+        <p>
+            Melderkort message
+        </p>
+    </div>
+</div>,
+]
+`;
+
+exports[`InformasjonsMeldinger with general 1`] = `
+<div
+  className="message"
+>
+  <span
+    aria-label="alarm-ikon"
+    className="icon default-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Hello
+    </p>
+  </div>
+</div>
+`;
+
+exports[`InformasjonsMeldinger with meldekort 1`] = `
+<div
+  className="message"
+>
+  <span
+    aria-label="alarm-ikon"
+    className="icon meldekort-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Melderkort message
+    </p>
+  </div>
+</div>
+`;
+
+exports[`InformasjonsMeldinger with meldekort but not user 1`] = `null`;
+
+exports[`InformasjonsMeldinger without messages 1`] = `null`;
