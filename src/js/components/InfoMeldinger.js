@@ -5,6 +5,7 @@ import PaabegynteSoknader, { PaabegynteSakType } from 'js/components/meldinger/P
 import RegStatusLink from 'js/components/RegStatusLink';
 import Meldekort, { MeldekortType } from 'js/components/Meldekort';
 import PleiepengerList, { Pleiepenger } from 'js/components/meldinger/PleiepengerList';
+import AgMeldinger from 'js/components/meldinger/AgMeldinger';
 import NavMeldinger from 'js/components/meldinger/NavMeldinger';
 import InformasjonsMeldinger, { InfoMessagesType } from 'js/components/meldinger/InformasjonsMeldinger';
 
@@ -15,6 +16,7 @@ class InfoMeldinger extends Component {
         <h1 className="vekk">Varsler</h1>
         <Meldekort meldekort={this.props.meldekort} />
         <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
+        <AgMeldinger />
         <NavMeldinger navMessagesCount={this.props.navMessagesCount} />
         <InformasjonsMeldinger infoMessages={this.props.infoMessages} isMeldeKortUser={this.props.isMeldeKortUser} />
         <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
