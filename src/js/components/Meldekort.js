@@ -93,7 +93,7 @@ Meldekort.propTypes = {
 Meldekort.defaultProps = {
   meldekort: null,
   getCurrentDate: () => new Date(),
-  formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
+  formatDate: date => new Date(date).toLocaleDateString('nb-NO'), // TODO will be fixed in IN-365
 };
 
 export default Meldekort;

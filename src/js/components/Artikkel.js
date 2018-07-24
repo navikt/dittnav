@@ -14,18 +14,10 @@ class Artikkel extends Component {
         <div className="container">
           <div className="col-md-8 col-standalone">
             <article>
-              <p className={`preface underline ${className.replace(/_/g, '-')}`}>
-                {preface}
-              </p>
-              <h1 className="typo-innholdstittel">
-                {heading}
-              </h1>
-              <p>
-                {lead}
-              </p>
-              <a data-ga="Dittnav/Artikkel" href={url} className="lenke">
-                Les mer om dette
-              </a>
+              <p className={`preface underline ${className.replace(/_/g, '-')}`}>{preface}</p>
+              <h1 className="typo-innholdstittel">{heading}</h1>
+              <p>{lead}</p>
+              <a data-ga="Dittnav/Artikkel" href={url} className="lenke">Les mer om dette</a>
             </article>
           </div>
         </div>

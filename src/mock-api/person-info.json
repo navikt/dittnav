@@ -5,6 +5,7 @@
     "ytelse": "ATTF",
     "isRegistered": true,
     "isInactive": false,
+    "isMeldeKortUser": true,
     "isRegisteredAtIArbeid": true
   },
   "navMessagesCount": 3,
@@ -27,9 +28,10 @@
     },
     "remainingHolidays": 12
   },
-  "infoMessages": [
-    
-  ],
+  "infoMessages": {
+    "generell.informasjonsmelding": "Test info message",
+    "meldekortbruker.informasjonsmelding": "Test meldekort message"
+  },
   "links": [
     { "url": "https://tjenester.nav.no/veiledning/veivalg", "title": "Veivalg" },
     { "url": "https://tjenester.nav.no/veiledning/interessetest", "title": "Interessetesten" },
