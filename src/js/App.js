@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import PersonInfo from './components/PersonInfo';
-import InfoMeldinger from './components/InfoMeldinger';
-import Tjenester from './components/Tjenester';
-import Lenkelister from './components/Lenkelister';
-import Artikkel from './components/Artikkel';
-import '../less/index.less';
+import PersonInfo from 'js/components/PersonInfo';
+import InfoMeldinger from 'js/components/InfoMeldinger';
+import Tjenester from 'js/components/Tjenester';
+import Lenkelister from 'js/components/Lenkelister';
+import Artikkel from 'js/components/Artikkel';
+import 'less/index.less';
+
+const getInfoMeldinger = s => ({
+  isInactive: s.info.personInfo ? s.info.personInfo.isInactive : true,
+  isMeldeKortUser: s.info.personInfo ? s.info.personInfo.isMeldeKortUser : null,
+  infoMessages: s.info.infoMessages,
+  agMessagesCount: s.info.agMessagesCount,
+  navMessagesCount: s.info.navMessagesCount,
+  pleiepenger: s.info.pleiepenger,
+  paabegynteSaker: s.paabegynteSaker.paabegynte,
+  meldekort: s.info.meldekort,
+  isRegisteredAtIArbeid: s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null,
+});
 
 class App extends Component {
   constructor(props) {
@@ -39,15 +51,13 @@ class App extends Component {
             <div className="maincontent side-innhold">
               <div className="col-md-12">
                 <PersonInfo personInfo={s.info.personInfo} />
-                <InfoMeldinger isMeldeKortUser={s.info.personInfo ? s.info.personInfo.isMeldeKortUser : null} infoMessages={s.info.infoMessages} navMessagesCount={s.info.navMessagesCount} pleiepenger={s.info.pleiepenger} paabegynteSaker={s.paabegynteSaker.paabegynte} meldekort={s.info.meldekort} isRegisteredAtIArbeid={s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null} />
+                <InfoMeldinger {...getInfoMeldinger(s)} />
                 <Tjenester services={s.info.services} />
                 <Lenkelister links={s.info.links} />
               </div>
             </div>
           </div>
-
           <Artikkel article={s.info.article} />
-
         </div>
       </main>
     );

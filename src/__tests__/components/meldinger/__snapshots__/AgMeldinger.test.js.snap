@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavMeldinger with 1 message 1`] = `
+exports[`AgMeldinger with 1 message 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/Nav-melding"
+  data-ga="Dittnav/Varsel/Arbeidsgiver"
   href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
 >
   <span
-    aria-label="default-ikon"
-    className="icon default-icon"
+    aria-label="snakkeboble-ikon"
+    className="icon ag-icon"
   />
   <div
     className="texts"
   >
     <p>
-      Du har fått en ny melding fra NAV
+      Du har fått en ny melding fra arbeidsgiver
     </p>
     <p>
       Se melding
@@ -23,21 +23,21 @@ exports[`NavMeldinger with 1 message 1`] = `
 </a>
 `;
 
-exports[`NavMeldinger with 5 messages 1`] = `
+exports[`AgMeldinger with 6 messages 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/Nav-melding"
+  data-ga="Dittnav/Varsel/Arbeidsgiver"
   href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
 >
   <span
-    aria-label="default-ikon"
-    className="icon default-icon"
+    aria-label="snakkeboble-ikon"
+    className="icon ag-icon"
   />
   <div
     className="texts"
   >
     <p>
-      Du har fått fem nye meldinger fra NAV
+      Du har fått 5 nye meldinger fra arbeidsgiver
     </p>
     <p>
       Oversikt over meldinger
@@ -46,4 +46,4 @@ exports[`NavMeldinger with 5 messages 1`] = `
 </a>
 `;
 
-exports[`NavMeldinger without messages 1`] = `null`;
+exports[`AgMeldinger without messages 1`] = `null`;

@@ -4,7 +4,7 @@ exports[`basic Meldekort test 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="undefined/sbl/nav_security_check?goto=/meldekort/"
+  href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -51,7 +51,7 @@ exports[`basic one Meldekort test 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="undefined/sbl/nav_security_check?goto=/meldekort/"
+  href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -96,7 +96,7 @@ exports[`basic one Meldekort test no risk 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="undefined/sbl/nav_security_check?goto=/meldekort/"
+  href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -141,7 +141,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="undefined/sbl/nav_security_check?goto=/meldekort/"
+  href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/meldekort/"
 >
   <span
     aria-label="alarm-ikon"

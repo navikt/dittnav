@@ -8,6 +8,7 @@
     "isMeldeKortUser": true,
     "isRegisteredAtIArbeid": true
   },
+  "agMessagesCount": 2,
   "navMessagesCount": 3,
   "pleiepenger": [
     {"child": "11223312345", "usedPerToday": "123"},
