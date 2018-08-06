@@ -26,6 +26,18 @@ class App extends Component {
 
   render() {
     const s = this.state;
+    const infoMeldinger = {
+      isInactive: s.info.personInfo ? s.info.personInfo.isInactive : true,
+      isMeldeKortUser: s.info.personInfo ? s.info.personInfo.isMeldeKortUser : null,
+      infoMessages: s.info.infoMessages,
+      agMessagesCount: s.info.agMessagesCount,
+      navMessagesCount: s.info.navMessagesCount,
+      pleiepenger: s.info.pleiepenger,
+      paabegynteSaker: s.paabegynteSaker.paabegynte,
+      meldekort: s.info.meldekort,
+      isRegisteredAtIArbeid: s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null,
+    };
+
     return (
       <main role="main">
         <section className="service-notification" style={{ display: 'block' }}>
@@ -39,15 +51,13 @@ class App extends Component {
             <div className="maincontent side-innhold">
               <div className="col-md-12">
                 <PersonInfo personInfo={s.info.personInfo} />
-                <InfoMeldinger isMeldeKortUser={s.info.personInfo ? s.info.personInfo.isMeldeKortUser : null} infoMessages={s.info.infoMessages} navMessagesCount={s.info.navMessagesCount} pleiepenger={s.info.pleiepenger} paabegynteSaker={s.paabegynteSaker.paabegynte} meldekort={s.info.meldekort} isRegisteredAtIArbeid={s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null} />
+                <InfoMeldinger {...infoMeldinger} />
                 <Tjenester services={s.info.services} />
                 <Lenkelister links={s.info.links} />
               </div>
             </div>
           </div>
-
           <Artikkel article={s.info.article} />
-
         </div>
       </main>
     );

@@ -16,7 +16,7 @@ class InfoMeldinger extends Component {
         <h1 className="vekk">Varsler</h1>
         <Meldekort meldekort={this.props.meldekort} />
         <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
-        <AgMeldinger />
+        {!this.props.isInactive ? <AgMeldinger agMessagesCount={this.props.agMessagesCount} /> : null}
         <NavMeldinger navMessagesCount={this.props.navMessagesCount} />
         <InformasjonsMeldinger infoMessages={this.props.infoMessages} isMeldeKortUser={this.props.isMeldeKortUser} />
         <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
@@ -32,8 +32,10 @@ InfoMeldinger.propTypes = {
   isRegisteredAtIArbeid: PropTypes.bool,
   meldekort: MeldekortType,
   navMessagesCount: PropTypes.number,
+  agMessagesCount: PropTypes.number,
   infoMessages: InfoMessagesType,
   isMeldeKortUser: PropTypes.bool,
+  isInactive: PropTypes.bool.isRequired,
 };
 
 InfoMeldinger.defaultProps = {
@@ -42,6 +44,7 @@ InfoMeldinger.defaultProps = {
   meldekort: null,
   pleiepenger: null,
   navMessagesCount: 0,
+  agMessagesCount: 0,
   infoMessages: null,
   isMeldeKortUser: false,
 };
