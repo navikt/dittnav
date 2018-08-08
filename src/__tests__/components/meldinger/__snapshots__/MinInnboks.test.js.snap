@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MinInnboks with one document 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/Dokument-melding"
+  href="http://localhost:35000/innloggingsinfo/type/dokument/undertype/testundertype/varselid/1"
+>
+  <span
+    aria-label="dokument-ikon"
+    className="icon document-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har ett ulest dokument i din innboks
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with one task 1`] = `
+<a
+  className="message clickable"
+  href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+>
+  <span
+    aria-label="sjekkliste-ikon"
+    className="icon registration-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har én ulest oppgave
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with one unanswered 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/ulest melding"
+  href="someurl"
+>
+  <span
+    aria-label="snakkeboble-ikon"
+    className="icon mininnboks-default-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har én ulest melding i din innboks
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with one unread task and one unread 1`] = `
+Array [
+  <a
+    className="message clickable"
+    data-ga="Dittnav/Varsel/ubesvart melding"
+    href="someurl"
+>
+    <span
+        aria-label="snakkeboble-ikon"
+        className="icon mininnboks-default-icon"
+    />
+    <div
+        className="texts"
+    >
+        <p>
+            Du har ett ubesvart spørsmål i din innboks
+        </p>
+    </div>
+</a>,
+  <a
+    className="message clickable"
+    href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+>
+    <span
+        aria-label="sjekkliste-ikon"
+        className="icon registration-icon"
+    />
+    <div
+        className="texts"
+    >
+        <p>
+            Du har én ulest oppgave
+        </p>
+    </div>
+</a>,
+]
+`;
+
+exports[`MinInnboks with two documents 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/Dokument-melding"
+  href="http://localhost:35000/innloggingsinfo/type/dokument/undertype/testundertype"
+>
+  <span
+    aria-label="dokument-ikon"
+    className="icon document-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har to uleste dokumenter i din innboks
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with two documents but different undertypes 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/Dokument-melding"
+  href="http://localhost:35000/innloggingsinfo/type/dokument"
+>
+  <span
+    aria-label="dokument-ikon"
+    className="icon document-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har to uleste dokumenter i din innboks
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with two tasks 1`] = `
+<a
+  className="message clickable"
+  href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+>
+  <span
+    aria-label="sjekkliste-ikon"
+    className="icon registration-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har én ulest oppgave
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with two tasks 2`] = `
+<a
+  className="message clickable"
+  href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+>
+  <span
+    aria-label="sjekkliste-ikon"
+    className="icon registration-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har én ulest oppgave
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with two unanswered 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/ulest melding"
+  href="http://localhost:35000/mininnboks"
+>
+  <span
+    aria-label="snakkeboble-ikon"
+    className="icon mininnboks-default-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har to uleste meldinger i din innboks
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with two unread 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/ubesvart melding"
+  href="http://localhost:35000/mininnboks"
+>
+  <span
+    aria-label="snakkeboble-ikon"
+    className="icon mininnboks-default-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har to ubesvarte spørsmål i din innboks
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks without any messages 1`] = `null`;

@@ -11,7 +11,7 @@ const i18n = {
   'mininnboks.uleste.meldinger.flere': 'Du har {0} uleste meldinger i din innboks',
   'mininnboks.ubesvarte.meldinger.en': 'Du har ett ubesvart spørsmål i din innboks',
   'mininnboks.ubesvarte.meldinger.flere': 'Du har {0} ubesvarte spørsmål i din innboks',
-};
+}; // TODO will be fixed in IN-365
 
 const numberToWord = (tall) => {
   const ord = ['to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve', 'tolv'];
@@ -51,7 +51,6 @@ const formatFlereEn = (length, i18String, locales) => locales[`${i18String}${len
 class MinInnboks extends Component {
   render() {
     const baseUrl = conf.dittNav.MIN_INNBOKS_URL.replace(/mininnboks/, 'innloggingsinfo/');
-    if (!this.props.mininnboks) return null;
     const mininnboks = splitMessages(this.props.mininnboks);
 
     return (
@@ -108,12 +107,9 @@ class MinInnboks extends Component {
 }
 
 export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, uri: PropTypes.string }));
-MinInnboks.propTypes = {
-  mininnboks: MinInnboksType,
-};
 
-MinInnboks.defaultProps = {
-  mininnboks: null,
+MinInnboks.propTypes = {
+  mininnboks: MinInnboksType.isRequired, // eslint-disable-line
 };
 
 export default MinInnboks;
