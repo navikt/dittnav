@@ -6,6 +6,7 @@ it('renders without crashing', () => {
   const mockApi = {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
     fetchPaabegynteSaker: () => new Promise((resolve, reject) => {}),
+    fetchMinInnboksData: () => new Promise((resolve, reject) => []),
   };
   const div = document.createElement('div');
 
