@@ -108,6 +108,11 @@ module.exports = function(proxy, allowedHost, decoratedIndexHtml) {
             path.resolve(`${__dirname}/../src/mock-api/paabegynte-saker.json`)
         );
       });
+      app.get('/mock-api/mininnboks.json*', (req, res) => {
+        res.sendFile(
+            path.resolve(`${__dirname}/../src/mock-api/mininnboks.json`)
+        );
+      });
       app.get(/^\/(?!.*static).*$/, (req, res) => {
         res.render('index.html', Object.assign(decoratedIndexHtml));
       });

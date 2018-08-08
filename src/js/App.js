@@ -18,21 +18,26 @@ const getInfoMeldinger = s => ({
   paabegynteSaker: s.paabegynteSaker.paabegynte,
   meldekort: s.info.meldekort,
   isRegisteredAtIArbeid: s.info.personInfo ? s.info.personInfo.isRegisteredAtIArbeid : null,
+  mininnboks: s.mininnboks,
 });
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSaker: {} };
+    this.state = { info: {}, paabegynteSaker: {}, mininnboks: [] }; // eslint-disable-line
   }
 
   componentWillMount() {
     this.props.api.fetchPersonInfoAndServices().then((r) => {
-      this.setState({ info: r, paabegynteSaker: this.state.paabegynteSaker });
+      this.setState(Object.assign(this.state, { info: r }));
     });
 
     this.props.api.fetchPaabegynteSaker().then((r) => {
-      this.setState({ info: this.state.info, paabegynteSaker: r });
+      this.setState(Object.assign(this.state, { paabegynteSaker: r }));
+    });
+
+    this.props.api.fetchMinInnboksData().then((r) => {
+      this.setState(Object.assign(this.state, { mininnboks: r }));
     });
   }
 
@@ -68,6 +73,7 @@ App.propTypes = {
   api: PropTypes.shape({
     fetchPersonInfoAndServices: PropTypes.func.isRequired,
     fetchPaabegynteSaker: PropTypes.func.isRequired,
+    fetchMinInnboksData: PropTypes.func.isRequired,
   }).isRequired,
 };
 

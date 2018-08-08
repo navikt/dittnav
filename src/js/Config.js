@@ -3,4 +3,5 @@ export default {
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',
+  MININNBOKS_UBEHANDLET_URL: '/tjenester/sporsmal/ubehandlet',
 };

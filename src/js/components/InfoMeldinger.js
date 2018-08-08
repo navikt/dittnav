@@ -7,6 +7,7 @@ import Meldekort, { MeldekortType } from 'js/components/Meldekort';
 import PleiepengerList, { Pleiepenger } from 'js/components/meldinger/PleiepengerList';
 import AgMeldinger from 'js/components/meldinger/AgMeldinger';
 import NavMeldinger from 'js/components/meldinger/NavMeldinger';
+import MinInnboks, { MinInnboksType } from 'js/components/meldinger/MinInnboks';
 import InformasjonsMeldinger, { InfoMessagesType } from 'js/components/meldinger/InformasjonsMeldinger';
 
 class InfoMeldinger extends Component {
@@ -20,6 +21,7 @@ class InfoMeldinger extends Component {
         <NavMeldinger navMessagesCount={this.props.navMessagesCount} />
         <InformasjonsMeldinger infoMessages={this.props.infoMessages} isMeldeKortUser={this.props.isMeldeKortUser} />
         <PaabegynteSoknader paabegynteSaker={this.props.paabegynteSaker} />
+        <MinInnboks mininnboks={this.props.mininnboks} />
         <PleiepengerList pleiepenger={this.props.pleiepenger} />
       </section>
     );
@@ -36,6 +38,7 @@ InfoMeldinger.propTypes = {
   infoMessages: InfoMessagesType,
   isMeldeKortUser: PropTypes.bool,
   isInactive: PropTypes.bool.isRequired,
+  mininnboks: MinInnboksType,
 };
 
 InfoMeldinger.defaultProps = {
@@ -47,6 +50,7 @@ InfoMeldinger.defaultProps = {
   agMessagesCount: 0,
   infoMessages: null,
   isMeldeKortUser: false,
+  mininnboks: [],
 };
 
 export default InfoMeldinger;
