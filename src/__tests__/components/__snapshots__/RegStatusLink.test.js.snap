@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RegStatusLink basic test 1`] = `null`;
+
+exports[`RegStatusLink basic test is not RegisteredAtIArbeid 1`] = `null`;
+
+exports[`RegStatusLink basic test isRegisteredAtIArbeid 1`] = `
+<a
+  className="clickable message"
+  data-ga="Dittnav/Varsel/Registrering"
+  href={undefined}
+>
+  <span
+    aria-label="sjekkliste-ikon"
+    className="icon registration-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      Du har startet på en registrering som arbeidssøker.
+    </p>
+    <p>
+      Fullfør registrering
+    </p>
+  </div>
+</a>
+`;
