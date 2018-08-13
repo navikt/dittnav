@@ -411,14 +411,14 @@ De er også responsive slik at:
     margin-bottom: 0.5em;
   }
   /* Start - tjenestestatus */
-  .service-notification {
+  /* .service-notification {
     display: none;
     padding: 10px 0;
   }
   .service-notification .typo-element {
     color: #c30000;
     margin: 0;
-  }
+  } */
   .infomeldinger {
     margin: 40px 0 20px;
   }
@@ -586,9 +586,9 @@ De er også responsive slik at:
   }
   
   @media (min-width: 38.75rem) {
-    .service-notification .typo-element {
+    /* .service-notification .typo-element {
       font-size: 1.1rem;
-    }
+    } */
     .infomeldinger {
       padding: 0;
       margin: 40px 70px 20px;
@@ -771,11 +771,11 @@ De er også responsive slik at:
     }
   }
   @media (min-width: 62rem) {
-    .service-notification .typo-element span + span:before {
+    /* .service-notification .typo-element span + span:before {
       content: "\2022";
       color: #988f86;
       margin: 0 0.8rem 0 0.7rem;
-    }
+    } */
   }
   /* OVERSTYRINGER */
   .menu-link-list a {

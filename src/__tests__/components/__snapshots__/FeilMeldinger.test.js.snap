@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render empty FeilMeldinger 1`] = `null`;
+
+exports[`render one error FeilMeldinger 1`] = `
+<section
+  className="service-notification"
+>
+  <h1
+    className="typo-element"
+  >
+    <span>
+      Hello, my name's Red Stripe
+    </span>
+  </h1>
+</section>
+`;
