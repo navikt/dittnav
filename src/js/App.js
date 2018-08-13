@@ -42,14 +42,14 @@ class App extends Component {
         errors.push(msg);
         this.setState(Object.assign(this.state, { errors }));
       };
-    const defaultErrorHandler = () => catchError(i18n('error.general.connection.problem'));
+    // const defaultErrorHandler = () => catchError(i18n('error.general.connection.problem'));
 
-    this.props.api.fetchPersonInfoAndServices(defaultErrorHandler)
+    this.props.api.fetchPersonInfoAndServices()
       .then((r) => {
         this.setState(Object.assign(this.state, { info: r }));
       }).catch(catchError(i18n['error.person.info']));
 
-    this.props.api.fetchPaabegynteSaker(defaultErrorHandler)
+    this.props.api.fetchPaabegynteSaker()
       .then((r) => {
         if (r.feilendeBaksystem && r.feilendeBaksystem.length > 0) {
           errors.push(i18n['error.paabegynte']);
@@ -57,7 +57,7 @@ class App extends Component {
         this.setState(Object.assign(this.state, { paabegynteSaker: r, errors }));
       }).catch(catchError(i18n['error.paabegynte']));
 
-    this.props.api.fetchMinInnboksData(defaultErrorHandler)
+    this.props.api.fetchMinInnboksData()
       .then((r) => {
         this.setState(Object.assign(this.state, { mininnboks: r }));
       }).catch(catchError(i18n['error.mininnboks']));

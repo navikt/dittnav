@@ -1,12 +1,10 @@
-import * as fetch from 'isomorphic-fetch';
 import conf from 'js/Config';
 
 const fetchJSONAndCheckForErrors = (url) => {
   const p = new Promise((res, rej) => {
-    fetch(url)
+    fetch(url) // eslint-disable-line no-undef
       .then((r) => {
         if (!r.ok) {
-          // throw new Error('Error happened on requesting a resource');
           rej(new Error('Error happened on requesting a resource'));
         }
         res(r.json());
