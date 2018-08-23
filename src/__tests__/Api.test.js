@@ -11,3 +11,16 @@ it('some default JSON', async () => {
   expect.assertions(1);
   await expect(Api.fetchPersonInfoAndServices()).resolves.toEqual(data);
 });
+
+it('handling Unauthorized', async () => {
+
+  Object.defineProperty(window.location, 'href', {
+    writable: true,
+    value: 'original_url'
+  });
+
+  fetch.mockResponseOnce(JSON.stringify({}), {status: 401});
+  expect.assertions(2);
+  await expect(Api.fetchPersonInfoAndServices()).rejects.toEqual(new Error('Unauthorized'));
+  await expect(window.location.href).toEqual('/dittnav-api/local/cookie?redirect=original_url');
+});
