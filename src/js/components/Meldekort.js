@@ -5,28 +5,27 @@ import i18n from 'translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nextSendingDate && getCurrentDate.getTime() < meldekort.nextSendingDate
-  ? (<span><F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nextSendingDate) }} /></span>)
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nextSendingDate) }} />)
   : null);
 
 const feriedager = meldekort => (meldekort.remainingHolidays && meldekort.remainingHolidays > 0
-  ? (<span><F id="meldekort.feriedager" values={{ feriedager: meldekort.remainingHolidays }} /></span>)
+  ? (<F id="meldekort.feriedager" values={{ feriedager: meldekort.remainingHolidays }} />)
   : null);
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
 const melding = (next, count, formatDate) =>
   (next ? (
-    <span>
-      <F
-        id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
-        values={{
-          count, next: next.week, from: formatDate(next.from), until: formatDate(next.until),
-        }}
-      />
-    </span>) : null);
+    <F
+      id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
+      values={{
+        count, next: next.week, from: formatDate(next.from), until: formatDate(next.until),
+      }}
+    />
+  ) : null);
 
 const trekk = (risikererTrekk, formatDate, next) =>
-  (!risikererTrekk ? (<span><F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} /></span>) : null);
+  (!risikererTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {

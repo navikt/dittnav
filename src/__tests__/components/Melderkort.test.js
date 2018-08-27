@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Meldekort from 'js/components/Meldekort';
 const ReactTestRenderer = require('react-test-renderer');
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
 
 const getCurrentDate = () => new Date(1531830078487);

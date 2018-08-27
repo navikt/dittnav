@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import RegStatusLink from 'js/components/RegStatusLink';
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('RegStatusLink basic test', () => {
   const component = ReactTestRenderer.create(wrapIntl(<RegStatusLink />));

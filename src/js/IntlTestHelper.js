@@ -5,12 +5,10 @@ import nbMessages from 'translations/nb.json';
 
 addLocaleData([...nb]);
 
-const wrapIntl = (children, props = { locale: 'nb' }) => {
-  return (
-    <IntlProvider {...props} messages={nbMessages} >
-      {children}
-    </IntlProvider>
-  );
-};
+const wrapIntl = (children, props = { locale: 'nb' }) => (
+  <IntlProvider {...props} messages={nbMessages} >
+    {children}
+  </IntlProvider>
+);
 
 export default wrapIntl;

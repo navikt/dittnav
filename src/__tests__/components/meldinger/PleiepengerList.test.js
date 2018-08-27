@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import PleiepengerList from 'js/components/meldinger/PleiepengerList';
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('empty PleiepengerList green test', () => {
   const component = ReactTestRenderer.create(wrapIntl(<PleiepengerList />));

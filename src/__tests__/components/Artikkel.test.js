@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Artikkel from 'js/components/Artikkel';
 const ReactTestRenderer = require('react-test-renderer');
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('render empty Artikkel', () => {
   const component = ReactTestRenderer.create(wrapIntl(<Artikkel />));

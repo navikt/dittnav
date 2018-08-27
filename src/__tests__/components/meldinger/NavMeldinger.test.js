@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import NavMeldinger from 'js/components/meldinger/NavMeldinger'
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('NavMeldinger without messages', () => {
   const component = ReactTestRenderer.create(wrapIntl(<NavMeldinger navMessagesCount={0} />));

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'js/App';
 const ReactTestRenderer = require('react-test-renderer');
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 const mockApi = () => {
   return {

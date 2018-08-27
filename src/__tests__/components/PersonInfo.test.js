@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PersonInfo from 'js/components/PersonInfo';
 const ReactTestRenderer = require('react-test-renderer');
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('basic green PersonInfo snaphot-test', () => {
   const personInfo = { name: "Hello", isRegistered: true, isInactive: false, fgkode: "IARBS", yrke: "DAGP" };

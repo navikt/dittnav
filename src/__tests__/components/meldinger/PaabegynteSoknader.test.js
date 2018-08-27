@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import PaabegynteSoknader from 'js/components/meldinger/PaabegynteSoknader';
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('PaabegynteSoknader green test', () => {
   const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader />));

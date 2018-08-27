@@ -13,8 +13,8 @@ class PersonInfo extends Component {
         <h1 className="person-info">{name}</h1>
         {isRegistered && !isInactive && fgkode && ytelse ? (
           <p className="arbeidssokerstatus">
-            <span><F id={`fgkode.${fgkode}`} /></span>
-            <span><F id={`ytelse.${ytelse}`} /></span>
+            <F id={`fgkode.${fgkode}`} />
+            <F id={`ytelse.${ytelse}`} />
           </p>
         ) : null}
       </div>

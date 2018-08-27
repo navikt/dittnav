@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import InformasjonsMeldinger from 'js/components/meldinger/InformasjonsMeldinger'
-import wrapIntl from 'js/Intl';
+import wrapIntl from 'js/IntlTestHelper';
 
 test('InformasjonsMeldinger without messages', () => {
   const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger />));
