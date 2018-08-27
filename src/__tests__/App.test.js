@@ -33,6 +33,30 @@ it('expect PaabegynteSoknader fetching', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   expect(expectedF).toHaveBeenCalled();
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+it('expect PersonInfo fetching', async () => {
+  const api = mockApi();
+  api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
+    resolve({
+      "personInfo": {
+        "name": "Ola Ytelssen",
+        "fgkode": "RARBS",
+        "ytelse": "ATTF",
+        "isRegistered": true,
+        "isInactive": false,
+        "isMeldeKortUser": true,
+        "isRegisteredAtIArbeid": true
+      },
+    })
+  });
+
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  await flushPromises();
+
+  expect(component.root.children[0].instance.state.errors).toEqual([]);
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 it('expect PaabegynteSoknader fetching', async () => {
@@ -44,7 +68,6 @@ it('expect PaabegynteSoknader fetching', async () => {
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   await flushPromises();
 
-  ///console.log(component.root.children[0].instance)
   expect(component.root.children[0].instance.state.errors).toEqual(['error.paabegynte']);
 });
 

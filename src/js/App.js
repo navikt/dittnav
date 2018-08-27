@@ -35,7 +35,6 @@ class App extends Component {
         errors.push(msg);
         this.setState(Object.assign(this.state, { errors }));
       };
-    // const defaultErrorHandler = () => catchError(i18n('error.general.connection.problem'));
 
     this.props.api.fetchPersonInfoAndServices()
       .then((r) => {
