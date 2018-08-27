@@ -1,19 +1,5 @@
 'use strict';
 
-if (!String.prototype.format) {
-  // TODO will be fixed in IN-365
-  // this should be removed and a proper format used instead
-  String.prototype.format = function() {
-    var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) { 
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
-    });
-  };
-}
-
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
   // inconsistent state due to an error, but it gets swallowed by a Promise,

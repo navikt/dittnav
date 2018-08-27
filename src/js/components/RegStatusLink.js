@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage as F } from 'react-intl';
 import conf from 'js/Config';
-
-const translations = {
-  'regstatus.beskrivelse': 'Du har startet på en registrering som arbeidssøker.',
-  'regstatus.lenke': 'Fullfør registrering',
-}; // TODO will be fixed in IN-365
 
 class RegStatusLink extends Component {
   render() {
@@ -15,8 +11,8 @@ class RegStatusLink extends Component {
       <a className="clickable message" data-ga="Dittnav/Varsel/Registrering" href={conf.dittNav.REG_STATUS_LINK}>
         <span className="icon registration-icon" aria-label="sjekkliste-ikon" />
         <div className="texts">
-          <p>{translations['regstatus.beskrivelse']}</p>
-          <p>{translations['regstatus.lenke']}</p>
+          <p><F id="regstatus.beskrivelse" /></p>
+          <p><F id="regstatus.lenke" /></p>
         </div>
       </a>
     );

@@ -26,9 +26,10 @@ exports[`PleiepengerList list with one element 1`] = `
     className="texts"
   >
     <p>
-      Forbrukte pleiepengedager per i dag for barn med f.nr. 
-      123321
-      : 
+      <span>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 123321:
+      </span>
+       
       <b>
         123
       </b>
@@ -49,17 +50,19 @@ exports[`PleiepengerList list with two elements 1`] = `
     className="texts"
   >
     <p>
-      Forbrukte pleiepengedager per i dag for barn med f.nr. 
-      123321
-      : 
+      <span>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 123321:
+      </span>
+       
       <b>
         123
       </b>
     </p>
     <p>
-      Forbrukte pleiepengedager per i dag for barn med f.nr. 
-      123321
-      : 
+      <span>
+        Forbrukte pleiepengedager per i dag for barn med f.nr. 123321:
+      </span>
+       
       <b>
         12
       </b>

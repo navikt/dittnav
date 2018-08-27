@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage as F } from 'react-intl';
 
 class PleiepengerList extends Component {
   render() {
@@ -10,7 +11,7 @@ class PleiepengerList extends Component {
         <span className="icon pleiepenger-icon" aria-label="pleiepenger-ikon" />
         <div className="texts">
           {this.props.pleiepenger.map(l => (
-            <p key={l.child + l.usedPerToday} >Forbrukte pleiepengedager per i dag for barn med f.nr. {l.child}: <b>{l.usedPerToday}</b></p>
+            <p key={l.child + l.usedPerToday} ><F id="pleiepenger.peridag" values={{ child: l.child }} /> <b>{l.usedPerToday}</b></p>
             ))}
         </div>
       </div>

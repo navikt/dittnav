@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import conf from 'js/Config';
-
-const translations = {
-  'saksoversikt.soknad.en': 'Du har en søknad som du ikke har sendt',
-  'saksoversikt.soknad.flere': 'Du har {0} søknader som du ikke har sendt',
-  'saksoversikt.lenke': 'Fortsett innsending',
-  'feilmelding.saksoversikt': 'Det skjedde en feil under henting av saker',
-}; // TODO will be fixed in IN-365
-
-const numberToWord = (tall) => {
-  const ord = ['to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve', 'tolv'];
-  return tall > 12 ? tall : ord[tall - 2];
-}; // TODO will be fixed in IN-365
+import i18n from 'translations/i18n';
+import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 class PaabegynteSoknader extends Component {
   render() {
@@ -20,16 +10,13 @@ class PaabegynteSoknader extends Component {
 
     if (!saker || saker.length === 0) return null;
 
-    const text = saker.length === 1 ? translations['saksoversikt.soknad.en'] :
-      translations['saksoversikt.soknad.flere'].format(numberToWord(saker.length));
-
     const url = saker.length === 1 ? saker[0].uri : conf.dittNav.SAKSOVERSIKT_URL;
     return (
       <a data-ga="Dittnav/Varsel/Paabegynt soknad" className="message clickable" href={url}>
         <span className="icon document-icon" aria-label="dokument-ikon" />
         <div className="texts">
-          <p>{text}</p>
-          <p id="paabegynte-tekst">{translations['saksoversikt.lenke']}</p>
+          <p><F id={saker.length === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere'} values={{ count: i18n[this.props.intl.locale].numberToWord(saker.length) }} /></p>
+          <p id="paabegynte-tekst"><F id="saksoversikt.lenke" /></p>
         </div>
       </a>
     );
@@ -41,6 +28,7 @@ export const PaabegynteSakType = PropTypes.shape({
 });
 
 PaabegynteSoknader.propTypes = {
+  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
   paabegynteSaker: PropTypes.arrayOf(PaabegynteSakType),
 };
 
@@ -48,4 +36,4 @@ PaabegynteSoknader.defaultProps = {
   paabegynteSaker: null,
 };
 
-export default PaabegynteSoknader;
+export default injectIntl(PaabegynteSoknader);

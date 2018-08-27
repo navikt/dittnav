@@ -1,38 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import conf from 'js/Config';
-
-const i18n = {
-  'meldekort.se.oversikt': 'Oversikt over meldekort',
-  'meldekort.trekk': '(Send inn nå, du risikerer trekk!)',
-  'meldekort.flere': 'Du har {0} meldekort klare for innsending',
-  'meldekort.melding.fremtidig': 'Neste meldekort kan sendes fra {0}',
-  'meldekort.feriedager': 'Du har gjenstående {0} feriedager ved dagpenger.',
-  'meldekort.ett': 'Du har ett meldekort for uke {0} ({1} - {2}) klart for innsending',
-  'meldekort.send': 'Send meldekort',
-  'meldekort.info.om.trekk': '(Siste innsendingsfrist før trekk: {0})',
-}; // TODO will be fixed in IN-365
+import i18n from 'translations/i18n';
+import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nextSendingDate && getCurrentDate.getTime() < meldekort.nextSendingDate
-  ? (<span>{i18n['meldekort.melding.fremtidig'].format(formatDate(meldekort.nextSendingDate))}</span>)
+  ? (<span><F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nextSendingDate) }} /></span>)
   : null);
 
 const feriedager = meldekort => (meldekort.remainingHolidays && meldekort.remainingHolidays > 0
-  ? (<span>{i18n['meldekort.feriedager'].format(meldekort.remainingHolidays)}</span>)
+  ? (<span><F id="meldekort.feriedager" values={{ feriedager: meldekort.remainingHolidays }} /></span>)
   : null);
 
-const advarsel = risikererTrekk => (risikererTrekk ? (<span>{i18n['meldekort.trekk']}</span>) : null);
+const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
 const melding = (next, count, formatDate) =>
-  (next ? (<span>{i18n[count === 1 ? 'meldekort.ett' : 'meldekort.flere'].format(next.week, formatDate(next.from), formatDate(next.until))}</span>) : null);
+  (next ? (
+    <span>
+      <F
+        id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
+        values={{
+          count, next: next.week, from: formatDate(next.from), until: formatDate(next.until),
+        }}
+      />
+    </span>) : null);
 
 const trekk = (risikererTrekk, formatDate, next) =>
-  (!risikererTrekk ? (<span>{i18n['meldekort.info.om.trekk'].format(formatDate(next.datoForTrekk))}</span>) : null);
+  (!risikererTrekk ? (<span><F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} /></span>) : null);
 
 class Meldekort extends Component {
   render() {
-    const { meldekort, formatDate, getCurrentDate } = this.props;
-
+    const { meldekort, intl, getCurrentDate } = this.props;
+    const { formatDate } = i18n[intl.locale];
     if (!meldekort) return null;
 
     const { count } = meldekort.newCards;
@@ -47,7 +46,7 @@ class Meldekort extends Component {
             <span>{melding(meldekort.newCards.nextCard, count, formatDate)} </span>
             <span>{trekk(risikererTrekk, formatDate, meldekort.newCards.nextCard)} </span>
             <span>{advarsel(risikererTrekk)} </span>
-            <p id="meldekort.lenkeTekst">{(count > 1 ? i18n['meldekort.se.oversikt'] : i18n['meldekort.send'])}</p>
+            <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
             <p>{feriedager(meldekort)}</p>
           </span>
         </a>
@@ -87,13 +86,12 @@ export const MeldekortType = PropTypes.shape({ newCards: NewCards, remainingHoli
 Meldekort.propTypes = {
   meldekort: MeldekortType,
   getCurrentDate: PropTypes.func,
-  formatDate: PropTypes.func,
+  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
 };
 
 Meldekort.defaultProps = {
   meldekort: null,
   getCurrentDate: () => new Date(),
-  formatDate: date => new Date(date).toLocaleDateString('nb-NO'), // TODO will be fixed in IN-365
 };
 
-export default Meldekort;
+export default injectIntl(Meldekort);

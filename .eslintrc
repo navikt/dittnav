@@ -1,6 +1,7 @@
 {
     "extends": "airbnb",
     "rules": {
+        "object-curly-newline": "off",
         "max-len": "off",
         "indent": 2,
         "react/jsx-indent": 2,

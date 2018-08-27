@@ -7,7 +7,9 @@ exports[`render InfoMeldinger with ag messages 1`] = `
   <h1
     className="vekk"
   >
-    Varsler
+    <span>
+      Varsler
+    </span>
   </h1>
   <a
     className="message clickable"
@@ -22,10 +24,14 @@ exports[`render InfoMeldinger with ag messages 1`] = `
       className="texts"
     >
       <p>
-        Du har fått en ny melding fra arbeidsgiver
+        <span>
+          Du har fått en ny melding fra arbeidsgiver
+        </span>
       </p>
       <p>
-        Se melding
+        <span>
+          Se melding
+        </span>
       </p>
     </div>
   </a>
@@ -39,7 +45,9 @@ exports[`render InfoMeldinger with ag messages but inactive 1`] = `
   <h1
     className="vekk"
   >
-    Varsler
+    <span>
+      Varsler
+    </span>
   </h1>
 </section>
 `;
@@ -51,7 +59,9 @@ exports[`render InfoMeldinger with empty infoMessages 1`] = `
   <h1
     className="vekk"
   >
-    Varsler
+    <span>
+      Varsler
+    </span>
   </h1>
 </section>
 `;
@@ -63,7 +73,9 @@ exports[`render empty InfoMeldinger component 1`] = `
   <h1
     className="vekk"
   >
-    Varsler
+    <span>
+      Varsler
+    </span>
   </h1>
 </section>
 `;

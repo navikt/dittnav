@@ -18,10 +18,14 @@ exports[`RegStatusLink basic test isRegisteredAtIArbeid 1`] = `
     className="texts"
   >
     <p>
-      Du har startet på en registrering som arbeidssøker.
+      <span>
+        Du har startet på en registrering som arbeidssøker.
+      </span>
     </p>
     <p>
-      Fullfør registrering
+      <span>
+        Fullfør registrering
+      </span>
     </p>
   </div>
 </a>

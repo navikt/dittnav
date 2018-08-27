@@ -18,7 +18,9 @@ exports[`basic Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        Du har week 42 meldekort klare for innsending
+        <span>
+          Du har 2 meldekort klare for innsending
+        </span>
       </span>
        
     </span>
@@ -27,18 +29,24 @@ exports[`basic Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        (Send inn nå, du risikerer trekk!)
+        <span>
+          (Send inn nå, du risikerer trekk!)
+        </span>
       </span>
        
     </span>
     <p
       id="meldekort.lenkeTekst"
     >
-      Oversikt over meldekort
+      <span>
+        Oversikt over meldekort
+      </span>
     </p>
     <p>
       <span>
-        Du har gjenstående 12 feriedager ved dagpenger.
+        <span>
+          Du har gjenstående 12 feriedager ved dagpenger.
+        </span>
       </span>
     </p>
   </span>
@@ -65,7 +73,9 @@ exports[`basic one Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        <span>
+          Du har ett meldekort for uke week 42 (2018-7-17 - 2018-7-17) klart for innsending
+        </span>
       </span>
        
     </span>
@@ -74,18 +84,24 @@ exports[`basic one Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        (Send inn nå, du risikerer trekk!)
+        <span>
+          (Send inn nå, du risikerer trekk!)
+        </span>
       </span>
        
     </span>
     <p
       id="meldekort.lenkeTekst"
     >
-      Send meldekort
+      <span>
+        Send meldekort
+      </span>
     </p>
     <p>
       <span>
-        Du har gjenstående 12 feriedager ved dagpenger.
+        <span>
+          Du har gjenstående 12 feriedager ved dagpenger.
+        </span>
       </span>
     </p>
   </span>
@@ -110,13 +126,17 @@ exports[`basic one Meldekort test no risk 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        <span>
+          Du har ett meldekort for uke week 42 (2018-7-17 - 2018-7-17) klart for innsending
+        </span>
       </span>
        
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 8/9/2018)
+        <span>
+          (Siste innsendingsfrist før trekk: 2018-8-9)
+        </span>
       </span>
        
     </span>
@@ -126,11 +146,15 @@ exports[`basic one Meldekort test no risk 1`] = `
     <p
       id="meldekort.lenkeTekst"
     >
-      Send meldekort
+      <span>
+        Send meldekort
+      </span>
     </p>
     <p>
       <span>
-        Du har gjenstående 12 feriedager ved dagpenger.
+        <span>
+          Du har gjenstående 12 feriedager ved dagpenger.
+        </span>
       </span>
     </p>
   </span>
@@ -155,13 +179,17 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        <span>
+          Du har ett meldekort for uke week 42 (2018-7-17 - 2018-7-17) klart for innsending
+        </span>
       </span>
        
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 8/9/2018)
+        <span>
+          (Siste innsendingsfrist før trekk: 2018-8-9)
+        </span>
       </span>
        
     </span>
@@ -171,7 +199,9 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     <p
       id="meldekort.lenkeTekst"
     >
-      Send meldekort
+      <span>
+        Send meldekort
+      </span>
     </p>
     <p />
   </span>
@@ -195,13 +225,17 @@ exports[`basic zero Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        (Send inn nå, du risikerer trekk!)
+        <span>
+          (Send inn nå, du risikerer trekk!)
+        </span>
       </span>
        
     </span>
     <p>
       <span>
-        Du har gjenstående 12 feriedager ved dagpenger.
+        <span>
+          Du har gjenstående 12 feriedager ved dagpenger.
+        </span>
       </span>
     </p>
   </span>
@@ -228,7 +262,9 @@ exports[`no cards no risk 1`] = `
     </span>
     <p>
       <span>
-        Du har gjenstående 12 feriedager ved dagpenger.
+        <span>
+          Du har gjenstående 12 feriedager ved dagpenger.
+        </span>
       </span>
     </p>
   </span>

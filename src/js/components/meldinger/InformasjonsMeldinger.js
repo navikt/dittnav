@@ -6,7 +6,7 @@ class InformasjonsMeldinger extends Component {
     if (!this.props.infoMessages) return null;
     const children = [];
     if (this.props.infoMessages['generell.informasjonsmelding']) {
-      children.push(// eslint-disable-line
+      children.push(// eslint-disable-line function-paren-newline
         <div className="message" key="general">
           <span className="icon default-icon" aria-label="alarm-ikon" />
           <div className="texts">

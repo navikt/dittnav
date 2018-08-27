@@ -14,10 +14,14 @@ exports[`AgMeldinger with 1 message 1`] = `
     className="texts"
   >
     <p>
-      Du har fått en ny melding fra arbeidsgiver
+      <span>
+        Du har fått en ny melding fra arbeidsgiver
+      </span>
     </p>
     <p>
-      Se melding
+      <span>
+        Se melding
+      </span>
     </p>
   </div>
 </a>
@@ -37,10 +41,14 @@ exports[`AgMeldinger with 6 messages 1`] = `
     className="texts"
   >
     <p>
-      Du har fått 5 nye meldinger fra arbeidsgiver
+      <span>
+        Du har fått 5 nye meldinger fra arbeidsgiver
+      </span>
     </p>
     <p>
-      Oversikt over meldinger
+      <span>
+        Oversikt over meldinger
+      </span>
     </p>
   </div>
 </a>

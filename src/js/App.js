@@ -22,17 +22,10 @@ const getInfoMeldinger = (info, paabegynteSaker, mininnboks) => ({
   mininnboks,
 });
 
-const i18n = {
-  'error.general.connection.problem': 'Error fetchin data',
-  'error.person.info': 'Det skjedde en feil under henting av person info',
-  'error.paabegynte': 'Det skjedde en feil under henting av saker',
-  'error.mininnboks': 'Det skjedde en feil under henting av meldinger fra din innboks',
-}; // TODO will be fixed in IN-365
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSaker: {}, mininnboks: [], errors: [] }; // eslint-disable-line
+    this.state = { info: {}, paabegynteSaker: {}, mininnboks: [], errors: [] };
   }
 
   componentWillMount() {
@@ -47,20 +40,20 @@ class App extends Component {
     this.props.api.fetchPersonInfoAndServices()
       .then((r) => {
         this.setState(Object.assign(this.state, { info: r }));
-      }).catch(catchError(i18n['error.person.info']));
+      }).catch(catchError('error.person.info'));
 
     this.props.api.fetchPaabegynteSaker()
       .then((r) => {
         if (r.feilendeBaksystem && r.feilendeBaksystem.length > 0) {
-          errors.push(i18n['error.paabegynte']);
+          errors.push('error.paabegynte');
         }
         this.setState(Object.assign(this.state, { paabegynteSaker: r, errors }));
-      }).catch(catchError(i18n['error.paabegynte']));
+      }).catch(catchError('error.paabegynte'));
 
     this.props.api.fetchMinInnboksData()
       .then((r) => {
         this.setState(Object.assign(this.state, { mininnboks: r }));
-      }).catch(catchError(i18n['error.mininnboks']));
+      }).catch(catchError('error.mininnboks'));
   }
 
   render() {

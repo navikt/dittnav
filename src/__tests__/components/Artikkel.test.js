@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Artikkel from 'js/components/Artikkel';
 const ReactTestRenderer = require('react-test-renderer');
+import wrapIntl from 'js/Intl';
 
 test('render empty Artikkel', () => {
-  const component = ReactTestRenderer.create((<Artikkel />));
+  const component = ReactTestRenderer.create(wrapIntl(<Artikkel />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -17,6 +18,6 @@ test('render non-empty Artikkel', () => {
     "className": "lyspaere"
   };
 
-  const component = ReactTestRenderer.create((<Artikkel article={article} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Artikkel article={article} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
