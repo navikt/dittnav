@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'js/App';
 const ReactTestRenderer = require('react-test-renderer');
+import wrapIntl from 'js/IntlTestHelper';
 
 const mockApi = () => {
   return {
@@ -18,7 +19,7 @@ const flushPromises = () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(<App api={mockApi()} />, div);
+  ReactDOM.render(wrapIntl(<App api={mockApi()} />), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -30,8 +31,32 @@ it('expect PaabegynteSoknader fetching', () => {
     return {};
   });
 
-  const component = ReactTestRenderer.create((<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   expect(expectedF).toHaveBeenCalled();
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+it('expect PersonInfo fetching', async () => {
+  const api = mockApi();
+  api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
+    resolve({
+      "personInfo": {
+        "name": "Ola Ytelssen",
+        "fgkode": "RARBS",
+        "ytelse": "ATTF",
+        "isRegistered": true,
+        "isInactive": false,
+        "isMeldeKortUser": true,
+        "isRegisteredAtIArbeid": true
+      },
+    })
+  });
+
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  await flushPromises();
+
+  expect(component.root.children[0].instance.state.errors).toEqual([]);
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 it('expect PaabegynteSoknader fetching', async () => {
@@ -40,10 +65,10 @@ it('expect PaabegynteSoknader fetching', async () => {
     resolve({feilendeBaksystem: ['hello']});
   });
 
-  const component = ReactTestRenderer.create((<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   await flushPromises();
 
-  expect(component.getInstance().state.errors).toEqual(['Det skjedde en feil under henting av saker']);
+  expect(component.root.children[0].instance.state.errors).toEqual(['error.paabegynte']);
 });
 
 it('expect mininnboks fail while fetching', async () => {
@@ -52,8 +77,8 @@ it('expect mininnboks fail while fetching', async () => {
     reject(new Error('some error'));
   });
 
-  const component = ReactTestRenderer.create((<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   await flushPromises();
 
-  expect(component.getInstance().state.errors).toEqual(['Det skjedde en feil under henting av meldinger fra din innboks']);
+  expect(component.root.children[0].instance.state.errors).toEqual(['error.mininnboks']);
 });

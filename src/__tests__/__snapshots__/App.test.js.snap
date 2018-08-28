@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect PaabegynteSoknader fetching 1`] = `
+<main
+  role="main"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="maincontent side-innhold"
+      >
+        <div
+          className="col-md-12"
+        >
+          <section
+            className="infomeldinger-list"
+          >
+            <h1
+              className="vekk"
+            >
+              <span>
+                Varsler
+              </span>
+            </h1>
+          </section>
+          <section
+            className="ditt-list"
+          />
+          <section
+            className="ditt-list"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`expect PersonInfo fetching 1`] = `
+<main
+  role="main"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="maincontent side-innhold"
+      >
+        <div
+          className="col-md-12"
+        >
+          <div
+            className="person-info"
+          >
+            <h1
+              className="person-info"
+            >
+              Ola Ytelssen
+            </h1>
+            <p
+              className="arbeidssokerstatus"
+            >
+              <span>
+                Du er ennå ikke ferdig med å registrere deg som arbeidssøker på nav.no. Jo raskere du registrerer deg, desto raskere kan NAV hjelpe deg.
+              </span>
+              <span>
+                 
+              </span>
+            </p>
+          </div>
+          <section
+            className="infomeldinger-list"
+          >
+            <h1
+              className="vekk"
+            >
+              <span>
+                Varsler
+              </span>
+            </h1>
+            <a
+              className="clickable message"
+              data-ga="Dittnav/Varsel/Registrering"
+              href={undefined}
+            >
+              <span
+                aria-label="sjekkliste-ikon"
+                className="icon registration-icon"
+              />
+              <div
+                className="texts"
+              >
+                <p>
+                  <span>
+                    Du har startet på en registrering som arbeidssøker.
+                  </span>
+                </p>
+                <p>
+                  <span>
+                    Fullfør registrering
+                  </span>
+                </p>
+              </div>
+            </a>
+          </section>
+          <section
+            className="ditt-list"
+          />
+          <section
+            className="ditt-list"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

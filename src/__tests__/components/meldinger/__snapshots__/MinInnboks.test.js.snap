@@ -14,7 +14,9 @@ exports[`MinInnboks with one document 1`] = `
     className="texts"
   >
     <p>
-      Du har ett ulest dokument i din innboks
+      <span>
+        Du har ett ulest dokument i din innboks
+      </span>
     </p>
   </div>
 </a>
@@ -33,7 +35,9 @@ exports[`MinInnboks with one task 1`] = `
     className="texts"
   >
     <p>
-      Du har én ulest oppgave
+      <span>
+        Du har én ulest oppgave
+      </span>
     </p>
   </div>
 </a>
@@ -53,7 +57,9 @@ exports[`MinInnboks with one unanswered 1`] = `
     className="texts"
   >
     <p>
-      Du har én ulest melding i din innboks
+      <span>
+        Du har én ulest melding i din innboks
+      </span>
     </p>
   </div>
 </a>
@@ -74,7 +80,9 @@ Array [
         className="texts"
     >
         <p>
-            Du har ett ubesvart spørsmål i din innboks
+            <span>
+                Du har ett ubesvart spørsmål i din innboks
+            </span>
         </p>
     </div>
 </a>,
@@ -90,7 +98,9 @@ Array [
         className="texts"
     >
         <p>
-            Du har én ulest oppgave
+            <span>
+                Du har én ulest oppgave
+            </span>
         </p>
     </div>
 </a>,
@@ -111,7 +121,9 @@ exports[`MinInnboks with two documents 1`] = `
     className="texts"
   >
     <p>
-      Du har to uleste dokumenter i din innboks
+      <span>
+        Du har to uleste dokumenter i din innboks
+      </span>
     </p>
   </div>
 </a>
@@ -131,7 +143,9 @@ exports[`MinInnboks with two documents but different undertypes 1`] = `
     className="texts"
   >
     <p>
-      Du har to uleste dokumenter i din innboks
+      <span>
+        Du har to uleste dokumenter i din innboks
+      </span>
     </p>
   </div>
 </a>
@@ -150,7 +164,9 @@ exports[`MinInnboks with two tasks 1`] = `
     className="texts"
   >
     <p>
-      Du har én ulest oppgave
+      <span>
+        Du har én ulest oppgave
+      </span>
     </p>
   </div>
 </a>
@@ -169,7 +185,9 @@ exports[`MinInnboks with two tasks 2`] = `
     className="texts"
   >
     <p>
-      Du har én ulest oppgave
+      <span>
+        Du har én ulest oppgave
+      </span>
     </p>
   </div>
 </a>
@@ -189,7 +207,9 @@ exports[`MinInnboks with two unanswered 1`] = `
     className="texts"
   >
     <p>
-      Du har to uleste meldinger i din innboks
+      <span>
+        Du har to uleste meldinger i din innboks
+      </span>
     </p>
   </div>
 </a>
@@ -209,7 +229,9 @@ exports[`MinInnboks with two unread 1`] = `
     className="texts"
   >
     <p>
-      Du har to ubesvarte spørsmål i din innboks
+      <span>
+        Du har to ubesvarte spørsmål i din innboks
+      </span>
     </p>
   </div>
 </a>

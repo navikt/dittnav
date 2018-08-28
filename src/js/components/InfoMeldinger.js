@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage as F } from 'react-intl';
 
 import PaabegynteSoknader, { PaabegynteSakType } from 'js/components/meldinger/PaabegynteSoknader';
 import RegStatusLink from 'js/components/RegStatusLink';
@@ -14,7 +15,7 @@ class InfoMeldinger extends Component {
   render() {
     return (
       <section className="infomeldinger-list">
-        <h1 className="vekk">Varsler</h1>
+        <h1 className="vekk"><F id="dittnav.infomeldinger.varsler" /></h1>
         <Meldekort meldekort={this.props.meldekort} />
         <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
         {!this.props.isInactive ? <AgMeldinger agMessagesCount={this.props.agMessagesCount} /> : null}

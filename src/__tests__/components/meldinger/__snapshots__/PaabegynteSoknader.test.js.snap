@@ -18,12 +18,16 @@ exports[`PaabegynteSoknader one soknad 1`] = `
     className="texts"
   >
     <p>
-      Du har en søknad som du ikke har sendt
+      <span>
+        Du har en søknad som du ikke har sendt
+      </span>
     </p>
     <p
       id="paabegynte-tekst"
     >
-      Fortsett innsending
+      <span>
+        Fortsett innsending
+      </span>
     </p>
   </div>
 </a>
@@ -43,12 +47,16 @@ exports[`PaabegynteSoknader several soknad 1`] = `
     className="texts"
   >
     <p>
-      Du har to søknader som du ikke har sendt
+      <span>
+        Du har to søknader som du ikke har sendt
+      </span>
     </p>
     <p
       id="paabegynte-tekst"
     >
-      Fortsett innsending
+      <span>
+        Fortsett innsending
+      </span>
     </p>
   </div>
 </a>

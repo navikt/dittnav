@@ -18,7 +18,7 @@ exports[`basic Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        Du har week 42 meldekort klare for innsending
+        Du har 2 meldekort klare for innsending
       </span>
        
     </span>
@@ -27,14 +27,18 @@ exports[`basic Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        (Send inn nå, du risikerer trekk!)
+        <span>
+          (Send inn nå, du risikerer trekk!)
+        </span>
       </span>
        
     </span>
     <p
       id="meldekort.lenkeTekst"
     >
-      Oversikt over meldekort
+      <span>
+        Oversikt over meldekort
+      </span>
     </p>
     <p>
       <span>
@@ -74,14 +78,18 @@ exports[`basic one Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        (Send inn nå, du risikerer trekk!)
+        <span>
+          (Send inn nå, du risikerer trekk!)
+        </span>
       </span>
        
     </span>
     <p
       id="meldekort.lenkeTekst"
     >
-      Send meldekort
+      <span>
+        Send meldekort
+      </span>
     </p>
     <p>
       <span>
@@ -126,7 +134,9 @@ exports[`basic one Meldekort test no risk 1`] = `
     <p
       id="meldekort.lenkeTekst"
     >
-      Send meldekort
+      <span>
+        Send meldekort
+      </span>
     </p>
     <p>
       <span>
@@ -171,7 +181,9 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     <p
       id="meldekort.lenkeTekst"
     >
-      Send meldekort
+      <span>
+        Send meldekort
+      </span>
     </p>
     <p />
   </span>
@@ -195,7 +207,9 @@ exports[`basic zero Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        (Send inn nå, du risikerer trekk!)
+        <span>
+          (Send inn nå, du risikerer trekk!)
+        </span>
       </span>
        
     </span>

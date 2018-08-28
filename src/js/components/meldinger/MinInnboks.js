@@ -1,22 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import i18n from 'translations/i18n';
+import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+
 import conf from 'js/Config';
-
-const i18n = {
-  'mininnboks.dokument.meldinger.en': 'Du har ett ulest dokument i din innboks',
-  'mininnboks.dokument.meldinger.flere': 'Du har {0} uleste dokumenter i din innboks',
-  'mininnboks.oppgave.meldinger.en': 'Du har én ulest oppgave',
-  'mininnboks.oppgave.meldinger.flere': 'Du har {0} uleste oppgaver',
-  'mininnboks.uleste.meldinger.en': 'Du har én ulest melding i din innboks',
-  'mininnboks.uleste.meldinger.flere': 'Du har {0} uleste meldinger i din innboks',
-  'mininnboks.ubesvarte.meldinger.en': 'Du har ett ubesvart spørsmål i din innboks',
-  'mininnboks.ubesvarte.meldinger.flere': 'Du har {0} ubesvarte spørsmål i din innboks',
-}; // TODO will be fixed in IN-365
-
-const numberToWord = (tall) => {
-  const ord = ['to', 'tre', 'fire', 'fem', 'seks', 'sju', 'åtte', 'ni', 'ti', 'elleve', 'tolv'];
-  return tall > 12 ? tall : ord[tall - 2];
-}; // TODO will be fixed in IN-365
 
 const fetchUndertype = messages => (messages.every(e => e.undertype === messages[0].undertype) ? messages[0].undertype : null);
 const buildUrlOne = message => `type/${message.type.toLowerCase().split('_')[0]}/undertype/${message.undertype.toLowerCase()}/varselid/${message.varselid}`;
@@ -46,13 +33,13 @@ const splitMessages = (messages) => {
   return r;
 };
 
-const formatFlereEn = (length, i18String, locales) => locales[`${i18String}${length === 1 ? 'en' : 'flere'}`].format(numberToWord(length));
+const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
 class MinInnboks extends Component {
   render() {
     const baseUrl = conf.dittNav.MIN_INNBOKS_URL.replace(/mininnboks/, 'innloggingsinfo/');
     const mininnboks = splitMessages(this.props.mininnboks);
-
+    const { numberToWord } = i18n[this.props.intl.locale];
     return (
       <React.Fragment>
         {mininnboks.unanswered.length > 0 &&
@@ -63,7 +50,7 @@ class MinInnboks extends Component {
         >
           <span className="icon mininnboks-default-icon" aria-label="snakkeboble-ikon" />
           <div className="texts">
-            <p>{formatFlereEn(mininnboks.unanswered.length, 'mininnboks.ubesvarte.meldinger.', i18n)}</p>
+            <p><F id={formatFlereEn(mininnboks.unanswered.length, 'mininnboks.ubesvarte.meldinger.')} values={{ count: numberToWord(mininnboks.unanswered.length) }} /></p>
           </div>
         </a>}
 
@@ -75,7 +62,7 @@ class MinInnboks extends Component {
         >
           <span className="icon mininnboks-default-icon" aria-label="snakkeboble-ikon" />
           <div className="texts">
-            <p>{formatFlereEn(mininnboks.unread.length, 'mininnboks.uleste.meldinger.', i18n)}</p>
+            <p><F id={formatFlereEn(mininnboks.unread.length, 'mininnboks.uleste.meldinger.')} values={{ count: numberToWord(mininnboks.unread.length) }} /></p>
           </div>
         </a>}
 
@@ -87,7 +74,7 @@ class MinInnboks extends Component {
         >
           <span className="icon document-icon" aria-label="dokument-ikon" />
           <div className="texts">
-            <p>{formatFlereEn(mininnboks.documents.length, 'mininnboks.dokument.meldinger.', i18n)}</p>
+            <p><F id={`${formatFlereEn(mininnboks.documents.length, 'mininnboks.dokument.meldinger.')}`} values={{ count: numberToWord(mininnboks.documents.length) }} /></p>
           </div>
         </a>}
 
@@ -98,7 +85,7 @@ class MinInnboks extends Component {
         >
           <span className="icon registration-icon" aria-label="sjekkliste-ikon" />
           <div className="texts">
-            <p>{formatFlereEn(mininnboks.tasks.length, 'mininnboks.oppgave.meldinger.', i18n)}</p>
+            <p><F id={formatFlereEn(mininnboks.tasks.length, 'mininnboks.oppgave.meldinger.')} values={{ count: numberToWord(mininnboks.tasks.length) }} /></p>
           </div>
         </a>}
       </React.Fragment>
@@ -109,7 +96,8 @@ class MinInnboks extends Component {
 export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, uri: PropTypes.string }));
 
 MinInnboks.propTypes = {
-  mininnboks: MinInnboksType.isRequired, // eslint-disable-line
+  mininnboks: MinInnboksType.isRequired, // eslint-disable-line react/no-typos
+  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
 };
 
-export default MinInnboks;
+export default injectIntl(MinInnboks);

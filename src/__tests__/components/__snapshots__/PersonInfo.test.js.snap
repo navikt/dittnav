@@ -35,14 +35,6 @@ exports[`basic green PersonInfo snaphot-test 1`] = `
   >
     Hello
   </h1>
-  <p
-    className="arbeidssokerstatus"
-  >
-    <span>
-      Du er registrert som "ikke arbeidssøker"
-    </span>
-    <span />
-  </p>
 </div>
 `;
 
@@ -55,11 +47,5 @@ exports[`basic green PersonInfo snaphot-test without fgkode/yrke 1`] = `
   >
     Hello
   </h1>
-  <p
-    className="arbeidssokerstatus"
-  >
-    <span />
-    <span />
-  </p>
 </div>
 `;

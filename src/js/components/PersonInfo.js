@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-const translations = {
-  'fgkode.IARBS': 'Du er registrert som "ikke arbeidssøker"',
-  'fgkode.INGEN_FGKODE': '',
-  'fgkode.ISERV': '',
-  'fgkode.ARBS': 'Du er registrert som arbeidssøker.',
-  'fgkode.PARBS': 'Du er ennå ikke ferdig med å registrere deg som arbeidssøker på nav.no. Jo raskere du registrerer deg, desto raskere kan NAV hjelpe deg.',
-  'fgkode.RARBS': 'Du er ennå ikke ferdig med å registrere deg som arbeidssøker på nav.no. Jo raskere du registrerer deg, desto raskere kan NAV hjelpe deg.',
-  'ytelse.IYT': '',
-  'ytelse.DAGP': 'Du er mottaker av dagpenger.',
-  'ytelse.ATTF': '',
-  'ytelse.AAP': 'Du er mottaker av arbeidsavklaringspenger.',
-  'ytelse.INDS': 'Du er mottaker av tiltakspenger.',
-  'ytelse.VENT': '',
-}; // TODO will be fixed in IN-365
+import { FormattedMessage as F } from 'react-intl';
 
 class PersonInfo extends Component {
   render() {
@@ -25,10 +11,10 @@ class PersonInfo extends Component {
     return (
       <div className="person-info">
         <h1 className="person-info">{name}</h1>
-        {isRegistered && !isInactive ? (
+        {isRegistered && !isInactive && fgkode && ytelse ? (
           <p className="arbeidssokerstatus">
-            <span>{translations[`fgkode.${fgkode}`]}</span>
-            <span>{translations[`ytelse.${ytelse}`]}</span>
+            <F id={`fgkode.${fgkode}`} />
+            <F id={`ytelse.${ytelse}`} />
           </p>
         ) : null}
       </div>

@@ -14,10 +14,14 @@ exports[`NavMeldinger with 1 message 1`] = `
     className="texts"
   >
     <p>
-      Du har fått en ny melding fra NAV
+      <span>
+        Du har fått en ny melding fra NAV
+      </span>
     </p>
     <p>
-      Se melding
+      <span>
+        Se melding
+      </span>
     </p>
   </div>
 </a>
@@ -37,10 +41,14 @@ exports[`NavMeldinger with 5 messages 1`] = `
     className="texts"
   >
     <p>
-      Du har fått fem nye meldinger fra NAV
+      <span>
+        Du har fått fem nye meldinger fra NAV
+      </span>
     </p>
     <p>
-      Oversikt over meldinger
+      <span>
+        Oversikt over meldinger
+      </span>
     </p>
   </div>
 </a>

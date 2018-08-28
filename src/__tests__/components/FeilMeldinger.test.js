@@ -1,14 +1,15 @@
 import * as React from 'react';
 import FeilMeldinger from 'js/components/FeilMeldinger';
 const ReactTestRenderer = require('react-test-renderer');
+import wrapIntl from 'js/IntlTestHelper';
 
 test('render empty FeilMeldinger', () => {
-  const component = ReactTestRenderer.create((<FeilMeldinger />));
+  const component = ReactTestRenderer.create(wrapIntl(<FeilMeldinger />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('render one error FeilMeldinger', () => {
-  const component = ReactTestRenderer.create((<FeilMeldinger errors={['Hello, my name\'s Red Stripe']} />));
+  const component = ReactTestRenderer.create(wrapIntl(<FeilMeldinger errors={['error.general.connection.problem']} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 

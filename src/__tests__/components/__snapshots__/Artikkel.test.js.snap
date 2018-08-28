@@ -31,7 +31,9 @@ exports[`render non-empty Artikkel 1`] = `
           data-ga="Dittnav/Artikkel"
           href="https://nav.no/no/Ditt+Nav/DittnavArtikler:443/Friskmelding+til+arbeidsformidling.347278.cms"
         >
-          Les mer om dette
+          <span>
+            Les mer om dette
+          </span>
         </a>
       </article>
     </div>
