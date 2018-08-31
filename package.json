@@ -27,7 +27,7 @@
     "jest-fetch-mock": "^1.6.5",
     "less-watch-compiler": "^1.11.3",
     "nav-frontend-core": "^4.0.5",
-    "nav-frontend-lenker-style": "^0.2.6",
+    "nav-frontend-lenker-style": "0.2.6",
     "react-test-renderer": "^16.4.2"
   }
 }
