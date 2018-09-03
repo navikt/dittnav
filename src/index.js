@@ -18,4 +18,4 @@ const loadMessages = () => {
   };
 };
 
-ReactDOM.render(<NavApp defaultSprak='nb' loadMessages={loadMessages}><App api={api} /></NavApp>, document.getElementById('app'));
+ReactDOM.render(<NavApp defaultSprak='nb' messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
