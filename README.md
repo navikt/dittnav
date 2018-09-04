@@ -12,18 +12,20 @@ Kildekoden til frontend-appen for ny ditt nav.
 For å kjøre opp app-en i dev:
 
 1.  `npm install`
-2.  `npm run mock-api`
-3.  `npm run server`
+3.  `npm run build`
+4.  `npm run mock-api`
+5.  `npm run frontshell-dev`
 
 For å kjøre tester:
 
 1.  `npm install`
-2.  `npm run test`
+2.  `npm run test-watch`
 
 Bygge for prod:
 
 1.  `npm install`
 2.  `npm run build`
+3.  `npm run server`
 
 Bygge/kjøre med docker:
 
