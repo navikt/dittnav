@@ -11,6 +11,6 @@ import 'css/old.css';
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
 
-const loadMessages = () =>  ({ nb: nbMessages, en: enMessages });
+const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
 ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));

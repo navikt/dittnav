@@ -12,9 +12,9 @@ Kildekoden til frontend-appen for ny ditt nav.
 For å kjøre opp app-en i dev:
 
 1. `npm install`
-3. `npm run build`
-4. `npm run mock-api`
-5. `npm run frontshell-dev`
+2. `npm run build`
+3. `npm run mock-api`
+4. `npm run frontshell-dev`
 
 For å kjøre tester:
 
