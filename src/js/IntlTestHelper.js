@@ -2,7 +2,6 @@ import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import nb from 'react-intl/locale-data/nb';
 import nbMessages from 'translations/nb.json';
-import NavApp from 'frontshell';
 
 addLocaleData([...nb]);
 
