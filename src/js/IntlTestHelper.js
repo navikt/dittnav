@@ -11,4 +11,5 @@ const wrapIntl = (children, props = { locale: 'nb' }) => (
   </IntlProvider>
 );
 
+
 export default wrapIntl;
