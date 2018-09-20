@@ -1,0 +1,28 @@
+# Generelt
+
+Appen configureres med `.env`
+`.env.development` kan brukes hvis den kjøres lokalt (krever at man har `NODE_ENV=development` path variable satt opp)
+
+# Path variables
+
+## Det som arves fra `frontshell` [se her](https://github.com/navikt/frontshell/blob/master/doc/path-variables.md)
+```
+  APPRES_CMS_URL=http://appres.nav.no
+  FRONTSHELL_SETTINGS_PATH=config/env.json
+  FRONTSHELL_SETTINGS_NAME=dittnavSettings
+```
+
+## Resten
+```
+  DITTNAV_API_URL=/dittnav-api/rest
+  SAKSOVERSIKT_API_URL=/saksoversikt/tjenester/saker/paabegynte 
+  SAKSOVERSIKT_URL=/saksoversikt
+  MIN_INNBOKS_URL=http://localhost:35000/mininnboks
+  LOGINSERVICE_URL=/dittnav-api/local/cookie
+  REG_STATUS_LINK=https://nav.no/sbl
+  SERVICES_URL=https://tjenester-t10.nav.no
+  LOGIN_URL=/dittnav-api/local/cookie
+
+  # denne brukes for utvikling
+  NODE_PATH=src/
+```
