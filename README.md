@@ -9,6 +9,8 @@ Kildekoden til frontend-appen for ny ditt nav.
 
 # Komme i gang
 
+[det må gjøres først](doc/configuration.md)
+
 For å kjøre opp app-en i dev:
 
 1. `npm install`
