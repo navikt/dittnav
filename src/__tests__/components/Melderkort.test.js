@@ -137,3 +137,15 @@ test('basic zero Meldekort test', () => {
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('Meldekort without next card test', () => {
+  const meldekort = {
+    "newCards": {
+      "antallNyeMeldekort": 0
+    },
+    "remainingHolidays": 12
+  };
+
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
