@@ -4,7 +4,7 @@ import { FormattedMessage as F } from 'react-intl';
 
 class PleiepengerList extends Component {
   render() {
-    if (!this.props.pleiepenger) return null;
+    if (!this.props.pleiepenger || this.props.pleiepenger.length === 0) return null;
 
     return (
       <div className="message">

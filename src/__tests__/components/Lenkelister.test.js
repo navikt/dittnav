@@ -14,8 +14,8 @@ test('render Lenkelister without links', () => {
 
 test('render a couple of links', () => {
   const links = [
-    { "url": "/mininnboks", "title": "Min innboks" },
-    { "url": "/saksoversikt", "title": "Innsyn og oversikt" }
+    { "url": "/mininnboks", "tittel": "Min innboks" },
+    { "url": "/saksoversikt", "tittel": "Innsyn og oversikt" }
   ];
   const component = ReactTestRenderer.create((<Lenkelister links={links} />));
   expect(component.toJSON()).toMatchSnapshot();

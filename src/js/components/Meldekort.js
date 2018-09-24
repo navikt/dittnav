@@ -33,7 +33,7 @@ class Meldekort extends Component {
     const { formatDate } = i18n[intl.locale];
     if (!meldekort) return null;
 
-    const { count } = meldekort.newCards;
+    const { antallNyeMeldekort: count } = meldekort.newCards;
     const risikererTrekk = meldekort.newCards.nextCard && meldekort.newCards.nextCard.risikererTrekk;
 
     if (count > 0) {
@@ -52,16 +52,19 @@ class Meldekort extends Component {
       );
     }
 
-    return (
-      <div data-ga="Dittnav/Varsel" className="message meldekort">
-        <span className="icon meldekort-icon" aria-label="alarm-ikon" />
-        <span className="texts">
-          <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
-          <span>{advarsel(risikererTrekk)} </span>
-          <p>{feriedager(meldekort)}</p>
-        </span>
-      </div>
-    );
+    if (meldekort.newCards.nextCard) {
+      return (
+        <div data-ga="Dittnav/Varsel" className="message meldekort">
+          <span className="icon meldekort-icon" aria-label="alarm-ikon" />
+          <span className="texts">
+            <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
+            <span>{advarsel(risikererTrekk)} </span>
+            <p>{feriedager(meldekort)}</p>
+          </span>
+        </div>
+      );
+    }
+    return null;
   }
 }
 
@@ -75,7 +78,7 @@ const NextCard = PropTypes.shape({
 });
 
 const NewCards = PropTypes.shape({
-  count: PropTypes.number,
+  antallNyeMeldekort: PropTypes.number,
   nextSendingDate: PropTypes.number,
   nextCard: NextCard,
 });

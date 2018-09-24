@@ -7,7 +7,7 @@ class Lenkelister extends Component {
       <section className="ditt-list">
         {this.props.links.map(l => (
           <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element" key={l.url}>
-            {l.title}
+            {l.tittel}
           </a>
           ))}
       </section>
@@ -18,7 +18,7 @@ class Lenkelister extends Component {
 Lenkelister.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    tittel: PropTypes.string.isRequired,
   })),
 };
 

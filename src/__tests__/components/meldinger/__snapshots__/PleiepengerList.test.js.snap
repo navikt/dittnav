@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PleiepengerList empty list 1`] = `
-<div
-  className="message"
->
-  <span
-    aria-label="pleiepenger-ikon"
-    className="icon pleiepenger-icon"
-  />
-  <div
-    className="texts"
-  />
-</div>
-`;
+exports[`PleiepengerList empty list 1`] = `null`;
 
 exports[`PleiepengerList list with one element 1`] = `
 <div

@@ -40,14 +40,14 @@ it('expect PersonInfo fetching', async () => {
   const api = mockApi();
   api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
     resolve({
-      "personInfo": {
+      "personinfo": {
         "name": "Ola Ytelssen",
         "fgkode": "RARBS",
         "ytelse": "ATTF",
-        "isRegistered": true,
-        "isInactive": false,
-        "isMeldeKortUser": true,
-        "isRegisteredAtIArbeid": true
+        "erRegistrert": true,
+        "erInaktiv": false,
+        "erMeldekortbruker": true,
+        "erUnderRegistreringIArbeid": true
       },
     })
   });

@@ -1,0 +1,122 @@
+{
+  "personinfo": {
+    "name": "ASIHA-MASK ABDIBOTAN",
+    "fgkode": "ARBS",
+    "ytelse": "IYT",
+    "erRegistrert": true,
+    "erInaktiv": false,
+    "erMeldekortbruker": true,
+    "erUnderRegistreringIArbeid": false
+  },
+
+  
+  "pleiepenger": [],
+  "agMessagesCount": 0,
+  "navMessagesCount": 0,
+  "meldekort": {
+    "newCards": {
+      "antallNyeMeldekort": 0
+    },
+    "remainingHolidays": 0
+  },
+  "viktigeTjenester": [
+    {
+      "tittel": "Meldekort",
+      "beskrivelse": "Her finner du informasjon om meldekort.",
+      "bildenavn": "registrer_arbeidssoker",
+      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto\u003d/meldekort/genereltommeldekort/"
+    },
+    {
+      "tittel": "Registrere/oppdatere CV",
+      "beskrivelse": "Her kan du registrere og endre CV-en din.",
+      "bildenavn": "rediger_cv",
+      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto\u003d/sbl/arbeid/endreCv"
+    },
+    {
+      "tittel": "Dine jobb\u0026oslash;nsker",
+      "beskrivelse": "Her kan du registrere hva du vil jobbe med og hvor du vil jobbe.",
+      "bildenavn": "sett_opp_onsker",
+      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto\u003d/sbl/arbeid/endrePreferanser"
+    },
+    {
+      "tittel": "Aktivitetsplan",
+      "beskrivelse": "Her kan du legge inn aktiviteter og ha dialog med NAV om arbeid og oppf\u0026oslash;lging.",
+      "bildenavn": "skjemaoversikt",
+      "url": "https://tjenester-t1.nav.no/aktivitetsplan/"
+    },
+    {
+      "tittel": "Ditt sykefrav\u0026aelig;r",
+      "beskrivelse": "Her kan du se sykmeldingene dine og f\u0026oslash;lge med p\u0026aring; oppgaver underveis i sykefrav\u0026aelig;ret.",
+      "bildenavn": "sett_opp_onsker",
+      "url": "/sykefravaer/"
+    },
+    {
+      "tittel": "Din dialog med NAV",
+      "beskrivelse": "Her kan du sende beskjeder til NAV og lese svar og meldinger fra oss. Du kan ogs\u0026aring; g\u0026aring; til Din Pensjon.",
+      "bildenavn": "postkasse",
+      "url": "/dittnav/postkasse"
+    }
+  ],
+  "andreTjenester": [
+    {
+      "tittel": "Dine utbetalinger",
+      "beskrivelse": "Her kan du se hvor mye du har f\u0026aring;tt utbetalt av NAV",
+      "bildenavn": "utbetalinger",
+      "url": "/utbetalingsoversikt/"
+    },
+    {
+      "tittel": "Ledige stillinger",
+      "beskrivelse": "Her f\u0026aring;r du en oversikt over ledige stillinger i hele landet.",
+      "bildenavn": "ledige_stillinger",
+      "url": "/stillinger/forside"
+    },
+    {
+      "tittel": "Din profil",
+      "beskrivelse": "Her kan du endre kontaktinformasjonen din.",
+      "bildenavn": "personopplysninger",
+      "url": "/brukerprofil/"
+    },
+    {
+      "tittel": "Dine stillingss\u0026oslash;k",
+      "beskrivelse": "Her finner du dine lagrede s\u0026oslash;k.",
+      "bildenavn": "dine_sok",
+      "url": "/stillinger/innlogget/dinesok"
+    },
+    {
+      "tittel": "Dine lagrede stillinger",
+      "beskrivelse": "Her finner du dine lagrede stillinger.",
+      "bildenavn": "dine_stillinger",
+      "url": "/stillinger/innlogget/dinestillinger"
+    },
+    {
+      "tittel": "Veiledningstjenester",
+      "beskrivelse": "Her finner du tester som kan v\u0026aelig;re nyttig n\u0026aring;r du skal velge jobb eller utdanning.",
+      "bildenavn": "akademia",
+      "url": "https://www-t1.nav.no/no/Person/Arbeid/Test+deg+for+jobb+og+utdanning/Interessetester.347253.cms"
+    },
+    {
+      "tittel": "Dine saker",
+      "beskrivelse": "Her finner du informasjon om dine saker hos NAV.",
+      "bildenavn": "dine_innsendinger",
+      "url": "/saksoversikt/"
+    },
+    {
+      "tittel": "Skjemaer",
+      "beskrivelse": "Her f\u0026aring;r du hjelp til \u0026aring; velge riktig skjema n\u0026aring;r du skal s\u0026oslash;ke om ytelser fra NAV.",
+      "bildenavn": "skjemaoversikt",
+      "url": "https://www-t1.nav.no/no/person/skjemaer-for-privatpersoner"
+    },
+    {
+      "tittel": "Din pensjon",
+      "beskrivelse": "Her kan du beregne fremtidig pensjon, s\u0026oslash;ke om pensjon og se dokumenter og utbetalinger i pensjonssaken din.",
+      "bildenavn": "din_pensjon",
+      "url": "/pselv/publisering/dinpensjon.jsf"
+    },
+    {
+      "tittel": "Din jobblogg",
+      "beskrivelse": "Her er et verkt\u0026oslash;y som holder oversikt over jobbene du har s\u0026oslash;kt p\u0026aring;.",
+      "bildenavn": "jobb_blogg",
+      "url": "/jobblogg"
+    }
+  ]
+}
