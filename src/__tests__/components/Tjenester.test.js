@@ -14,8 +14,8 @@ test('render Tjenester without services', () => {
 
 test('render a couple of services', () => {
     const services = [
-        { "url": "https://nav.no/", "title": "Din Pensjon", "description": "Short desc", "className": "din_pensjon" },
-        { "url": "https://nav.no/abc", "title": "Meldekort", "description": "Mock desc", "className": "registrer_arbeidssoker" },
+        { "url": "https://nav.no/", "tittel": "Din Pensjon", "beskrivelse": "Short desc", "bildenavn": "din_pensjon" },
+        { "url": "https://nav.no/abc", "tittel": "Meldekort", "beskrivelse": "Mock desc", "bildenavn": "registrer_arbeidssoker" },
     ];
     const component = ReactTestRenderer.create((<Tjenester services={services} />));
     expect(component.toJSON()).toMatchSnapshot();

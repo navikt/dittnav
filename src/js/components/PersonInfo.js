@@ -6,12 +6,12 @@ class PersonInfo extends Component {
   render() {
     if (!this.props.personInfo) return null;
     const {
-      name, fgkode, ytelse, isRegistered, isInactive,
+      name, fgkode, ytelse, erRegistrert, erInaktiv,
     } = this.props.personInfo;
     return (
       <div className="person-info">
         <h1 className="person-info">{name}</h1>
-        {isRegistered && !isInactive && fgkode && ytelse ? (
+        {erRegistrert && !erInaktiv && fgkode && ytelse ? (
           <p className="arbeidssokerstatus">
             <F id={`fgkode.${fgkode}`} />
             <F id={`ytelse.${ytelse}`} />
@@ -27,8 +27,8 @@ PersonInfo.propTypes = {
     name: PropTypes.string.isRequired,
     fgkode: PropTypes.oneOf(['IARBS', 'INGEN_FGKODE', 'ISERV', 'ARBS', 'PARBS', 'RARBS']),
     ytelse: PropTypes.oneOf(['IYT', 'DAGP', 'ATTF', 'AAP', 'INDS', 'VENT']),
-    isRegistered: PropTypes.bool.isRequired,
-    isInactive: PropTypes.bool.isRequired,
+    erRegistrert: PropTypes.bool.isRequired,
+    erInaktiv: PropTypes.bool.isRequired,
   }),
 };
 

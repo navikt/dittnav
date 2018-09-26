@@ -15,7 +15,7 @@ test('basic Meldekort test with no meldekort', () => {
 test('basic Meldekort test', () => {
   const meldekort = {
     "newCards": {
-      "count": 2,
+      "antallNyeMeldekort": 2,
       "nextCard": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
@@ -36,7 +36,7 @@ test('basic Meldekort test', () => {
 test('basic one Meldekort test', () => {
   const meldekort = {
     "newCards": {
-      "count": 1,
+      "antallNyeMeldekort": 1,
       "nextCard": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
@@ -57,7 +57,7 @@ test('basic one Meldekort test', () => {
 test('basic one Meldekort test no risk', () => {
   const meldekort = {
     "newCards": {
-      "count": 1,
+      "antallNyeMeldekort": 1,
       "nextCard": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
@@ -78,7 +78,7 @@ test('basic one Meldekort test no risk', () => {
 test('no cards no risk', () => {
   const meldekort = {
     "newCards": {
-      "count": 0,
+      "antallNyeMeldekort": 0,
       "nextCard": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
@@ -99,7 +99,7 @@ test('no cards no risk', () => {
 test('basic one Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
     "newCards": {
-      "count": 1,
+      "antallNyeMeldekort": 1,
       "nextCard": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
@@ -120,7 +120,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
 test('basic zero Meldekort test', () => {
   const meldekort = {
     "newCards": {
-      "count": 0,
+      "antallNyeMeldekort": 0,
       "nextCard": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
@@ -130,6 +130,18 @@ test('basic zero Meldekort test', () => {
         "from": 1531838093471
       },
       "nextSendingDate": 1541808093471
+    },
+    "remainingHolidays": 12
+  };
+
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Meldekort without next card test', () => {
+  const meldekort = {
+    "newCards": {
+      "antallNyeMeldekort": 0
     },
     "remainingHolidays": 12
   };

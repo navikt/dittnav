@@ -10,15 +10,15 @@ import FeilMeldinger from 'js/components/FeilMeldinger';
 import 'less/index.less';
 
 const getInfoMeldinger = (info, paabegynteSaker, mininnboks) => ({
-  isInactive: info.personInfo ? info.personInfo.isInactive : true,
-  isMeldeKortUser: info.personInfo ? info.personInfo.isMeldeKortUser : null,
+  isInactive: info.personinfo ? info.personinfo.erInaktiv : true,
+  isMeldeKortUser: info.personinfo ? info.personinfo.erMeldekortbruker : null,
   infoMessages: info.infoMessages,
   agMessagesCount: info.agMessagesCount,
   navMessagesCount: info.navMessagesCount,
   pleiepenger: info.pleiepenger,
   paabegynteSaker: paabegynteSaker.paabegynte,
   meldekort: info.meldekort,
-  isRegisteredAtIArbeid: info.personInfo ? info.personInfo.isRegisteredAtIArbeid : null,
+  isRegisteredAtIArbeid: info.personinfo ? info.personinfo.erUnderRegistreringIArbeid : null,
   mininnboks,
 });
 
@@ -66,10 +66,10 @@ class App extends Component {
           <div className="row">
             <div className="maincontent side-innhold">
               <div className="col-md-12">
-                <PersonInfo personInfo={info.personInfo} />
+                <PersonInfo personInfo={info.personinfo} />
                 <InfoMeldinger {...getInfoMeldinger(info, paabegynteSaker, mininnboks)} />
-                <Tjenester services={info.services} />
-                <Lenkelister links={info.links} />
+                <Tjenester services={info.viktigeTjenester} />
+                <Lenkelister links={info.andreTjenester} />
               </div>
             </div>
           </div>
