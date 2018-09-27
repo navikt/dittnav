@@ -5,7 +5,7 @@
   "author": "NAV",
   "license": "MIT",
   "dependencies": {
-    "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.1",
+    "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",
@@ -13,6 +13,11 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
+    "docker-build": "docker build . -t dittnav",
+    "docker-start": "docker run --name dittnav -p 8080:8080 -t -d dittnav",
+    "docker-kill": "npm run docker-stop && npm run docker-rm",
+    "docker-rm": "docker rm dittnav",
+    "docker-stop": "docker stop dittnav",
     "mock-api": "cp -r src/mock-api build/",
     "frontshell-dev": "NODE_ENV=development decorated",
     "server": "decorated",

@@ -1,4 +1,5 @@
-FROM node:carbon
+FROM docker.adeo.no:5000/pus/node
+#FROM node:carbon #use this when building the container locally
 
 WORKDIR /usr/src/dittnav
 
