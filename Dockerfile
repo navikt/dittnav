@@ -9,4 +9,6 @@ RUN npm install && npm run build
 
 EXPOSE 8080
 
-CMD ["npm", "run", "server"]
+#CMD ["npm", "run", "server"]
+ENV APPLICATION_NAME=dittnav
+COPY --from=builder /usr/src/dittnav /app
