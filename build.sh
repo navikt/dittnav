@@ -57,6 +57,7 @@ function publish_container() {
   fi
 }
 
+install_dependencies_and_build
 create_version_file
 build_container
 publish_container
