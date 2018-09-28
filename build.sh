@@ -37,6 +37,10 @@ case $arg in
 esac
 done
 
+function install_dependencies_and_build {
+  git config --global http.sslverify false
+  npm install && npm run build
+}
 function build_container {
   docker build \
       --tag ${TAG} \
