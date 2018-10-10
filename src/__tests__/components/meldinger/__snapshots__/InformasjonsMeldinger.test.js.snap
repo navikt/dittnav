@@ -4,34 +4,34 @@ exports[`InformasjonsMeldinger with both 1`] = `
 Array [
   <div
     className="message"
->
+  >
     <span
-        aria-label="alarm-ikon"
-        className="icon default-icon"
+      aria-label="alarm-ikon"
+      className="icon default-icon"
     />
     <div
-        className="texts"
+      className="texts"
     >
-        <p>
-            Hello
-        </p>
+      <p>
+        Hello
+      </p>
     </div>
-</div>,
+  </div>,
   <div
     className="message"
->
+  >
     <span
-        aria-label="alarm-ikon"
-        className="icon meldekort-icon"
+      aria-label="alarm-ikon"
+      className="icon meldekort-icon"
     />
     <div
-        className="texts"
+      className="texts"
     >
-        <p>
-            Melderkort message
-        </p>
+      <p>
+        Melderkort message
+      </p>
     </div>
-</div>,
+  </div>,
 ]
 `;
 

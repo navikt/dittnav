@@ -8,7 +8,7 @@ exports[`RegStatusLink basic test isRegisteredAtIArbeid 1`] = `
 <a
   className="clickable message"
   data-ga="Dittnav/Varsel/Registrering"
-  href={undefined}
+  href="reg_status"
 >
   <span
     aria-label="sjekkliste-ikon"

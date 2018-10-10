@@ -9,7 +9,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.0.0",
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
@@ -34,5 +34,11 @@
     "nav-frontend-core": "^4.0.5",
     "nav-frontend-lenker-style": "0.2.6",
     "react-test-renderer": "^16.4.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

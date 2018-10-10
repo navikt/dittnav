@@ -71,39 +71,39 @@ Array [
     className="message clickable"
     data-ga="Dittnav/Varsel/ubesvart melding"
     href="someurl"
->
+  >
     <span
-        aria-label="snakkeboble-ikon"
-        className="icon mininnboks-default-icon"
+      aria-label="snakkeboble-ikon"
+      className="icon mininnboks-default-icon"
     />
     <div
-        className="texts"
+      className="texts"
     >
-        <p>
-            <span>
-                Du har ett ubesvart spørsmål i din innboks
-            </span>
-        </p>
+      <p>
+        <span>
+          Du har ett ubesvart spørsmål i din innboks
+        </span>
+      </p>
     </div>
-</a>,
+  </a>,
   <a
     className="message clickable"
     href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
->
+  >
     <span
-        aria-label="sjekkliste-ikon"
-        className="icon registration-icon"
+      aria-label="sjekkliste-ikon"
+      className="icon registration-icon"
     />
     <div
-        className="texts"
+      className="texts"
     >
-        <p>
-            <span>
-                Du har én ulest oppgave
-            </span>
-        </p>
+      <p>
+        <span>
+          Du har én ulest oppgave
+        </span>
+      </p>
     </div>
-</a>,
+  </a>,
 ]
 `;
 
