@@ -39,7 +39,8 @@ done
 
 function install_dependencies_and_build {
   git config --global http.sslverify false
-  npm install && npm run build
+  npm i -g npm
+  npm install && npm run ci
 }
 function build_container {
   docker build \
