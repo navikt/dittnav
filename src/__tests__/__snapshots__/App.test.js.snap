@@ -88,7 +88,7 @@ exports[`expect PersonInfo fetching 1`] = `
             <a
               className="clickable message"
               data-ga="Dittnav/Varsel/Registrering"
-              href={undefined}
+              href="reg_status"
             >
               <span
                 aria-label="sjekkliste-ikon"
