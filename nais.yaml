@@ -1,6 +1,6 @@
 image: docker.adeo.no:5000/personbruker/dittnav
 team: "personbruker"
-name: dittnav
+name: dittnav-nais
 replicas:
   min: 2
   max: 4
