@@ -40,7 +40,7 @@ done
 function install_dependencies_and_build {
   git config --global http.sslverify false
   npm i -g npm
-  npm install && npm run ci
+  npm install && npm ci
 }
 function build_container {
   docker build \
