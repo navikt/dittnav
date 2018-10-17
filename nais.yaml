@@ -8,9 +8,9 @@ replicas:
 port: 8080
 healthcheck:
   liveness:
-    path: health/isAlive
+    path: /dittnav-nais/health/isAlive
   readiness:
-    path: health/isAlive
+    path: /dittnav-nais/health/isAlive
 prometheus:
   enabled: false
   path: internal/metrics
