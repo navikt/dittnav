@@ -41,12 +41,12 @@ it('expect PersonInfo fetching', async () => {
   api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
     resolve({
       "personinfo": {
-        "name": "Ola Ytelssen",
+        "navn": "Ola Ytelssen",
         "fgkode": "RARBS",
         "ytelse": "ATTF",
-        "erRegistrert": true,
-        "erInaktiv": false,
-        "erMeldekortbruker": true,
+        "registrert": true,
+        "inaktiv": false,
+        "meldekortbruker": true,
         "erUnderRegistreringIArbeid": true
       },
     })

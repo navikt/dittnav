@@ -6,12 +6,12 @@ class PersonInfo extends Component {
   render() {
     if (!this.props.personInfo) return null;
     const {
-      name, fgkode, ytelse, erRegistrert, erInaktiv,
+      navn, fgkode, ytelse, registrert, inaktiv,
     } = this.props.personInfo;
     return (
       <div className="person-info">
-        <h1 className="person-info">{name}</h1>
-        {erRegistrert && !erInaktiv && fgkode && ytelse ? (
+        <h1 className="person-info">{navn}</h1>
+        {registrert && !inaktiv && fgkode && ytelse ? (
           <p className="arbeidssokerstatus">
             <F id={`fgkode.${fgkode}`} />
             <F id={`ytelse.${ytelse}`} />
@@ -24,11 +24,11 @@ class PersonInfo extends Component {
 
 PersonInfo.propTypes = {
   personInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    navn: PropTypes.string.isRequired,
     fgkode: PropTypes.oneOf(['IARBS', 'INGEN_FGKODE', 'ISERV', 'ARBS', 'PARBS', 'RARBS']),
     ytelse: PropTypes.oneOf(['IYT', 'DAGP', 'ATTF', 'AAP', 'INDS', 'VENT']),
-    erRegistrert: PropTypes.bool.isRequired,
-    erInaktiv: PropTypes.bool.isRequired,
+    registrert: PropTypes.bool.isRequired,
+    inaktiv: PropTypes.bool.isRequired,
   }),
 };
 

@@ -10,8 +10,8 @@ import FeilMeldinger from 'js/components/FeilMeldinger';
 import 'less/index.less';
 
 const getInfoMeldinger = (info, paabegynteSaker, mininnboks) => ({
-  isInactive: info.personinfo ? info.personinfo.erInaktiv : true,
-  isMeldeKortUser: info.personinfo ? info.personinfo.erMeldekortbruker : null,
+  isInactive: info.personinfo ? info.personinfo.inaktiv : true,
+  isMeldeKortUser: info.personinfo ? info.personinfo.meldekortbruker : null,
   infoMessages: info.infoMessages,
   agMessagesCount: info.agMessagesCount,
   navMessagesCount: info.navMessagesCount,

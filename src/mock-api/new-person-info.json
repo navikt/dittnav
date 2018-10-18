@@ -1,58 +1,60 @@
 {
   "personinfo": {
-    "name": "ASIHA-MASK ABDIBOTAN",
+    "navn": "ASIHA-MASK ABDIBOTAN",
     "fgkode": "ARBS",
     "ytelse": "IYT",
-    "erRegistrert": true,
-    "erInaktiv": false,
-    "erMeldekortbruker": true,
-    "erUnderRegistreringIArbeid": false
+    "erUnderRegistreringIArbeid": false,
+    "registrert": true,
+    "inaktiv": false,
+    "meldekortbruker": true
   },
-
-  
   "pleiepenger": [],
-  "agMessagesCount": 0,
-  "navMessagesCount": 0,
+  "agMeldingerAntall": 0,
+  "navMeldingerAntall": 0,
   "meldekort": {
-    "newCards": {
-      "antallNyeMeldekort": 0
+    "nyeMeldekort": {
+      "antallNyeMeldekort": 0,
+      "nesteMeldekort": null,
+      "nesteInnsendingAvMeldekort": null
     },
-    "remainingHolidays": 0
+    "resterendeFeriedager": 0
   },
+  "infoMeldinger": null,
+  "lenker": null,
   "viktigeTjenester": [
     {
       "tittel": "Meldekort",
       "beskrivelse": "Her finner du informasjon om meldekort.",
       "bildenavn": "registrer_arbeidssoker",
-      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto\u003d/meldekort/genereltommeldekort/"
+      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto=/meldekort/genereltommeldekort/"
     },
     {
       "tittel": "Registrere/oppdatere CV",
       "beskrivelse": "Her kan du registrere og endre CV-en din.",
       "bildenavn": "rediger_cv",
-      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto\u003d/sbl/arbeid/endreCv"
+      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto=/sbl/arbeid/endreCv"
     },
     {
-      "tittel": "Dine jobb\u0026oslash;nsker",
+      "tittel": "Dine jobb&oslash;nsker",
       "beskrivelse": "Her kan du registrere hva du vil jobbe med og hvor du vil jobbe.",
       "bildenavn": "sett_opp_onsker",
-      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto\u003d/sbl/arbeid/endrePreferanser"
+      "url": "https://tjenester-t1.nav.no/sbl/nav_security_check?goto=/sbl/arbeid/endrePreferanser"
     },
     {
       "tittel": "Aktivitetsplan",
-      "beskrivelse": "Her kan du legge inn aktiviteter og ha dialog med NAV om arbeid og oppf\u0026oslash;lging.",
+      "beskrivelse": "Her kan du legge inn aktiviteter og ha dialog med NAV om arbeid og oppf&oslash;lging.",
       "bildenavn": "skjemaoversikt",
       "url": "https://tjenester-t1.nav.no/aktivitetsplan/"
     },
     {
-      "tittel": "Ditt sykefrav\u0026aelig;r",
-      "beskrivelse": "Her kan du se sykmeldingene dine og f\u0026oslash;lge med p\u0026aring; oppgaver underveis i sykefrav\u0026aelig;ret.",
+      "tittel": "Ditt sykefrav&aelig;r",
+      "beskrivelse": "Her kan du se sykmeldingene dine og f&oslash;lge med p&aring; oppgaver underveis i sykefrav&aelig;ret.",
       "bildenavn": "sett_opp_onsker",
       "url": "/sykefravaer/"
     },
     {
       "tittel": "Din dialog med NAV",
-      "beskrivelse": "Her kan du sende beskjeder til NAV og lese svar og meldinger fra oss. Du kan ogs\u0026aring; g\u0026aring; til Din Pensjon.",
+      "beskrivelse": "Her kan du sende beskjeder til NAV og lese svar og meldinger fra oss. Du kan ogs&aring; g&aring; til Din Pensjon.",
       "bildenavn": "postkasse",
       "url": "/dittnav/postkasse"
     }
@@ -60,13 +62,13 @@
   "andreTjenester": [
     {
       "tittel": "Dine utbetalinger",
-      "beskrivelse": "Her kan du se hvor mye du har f\u0026aring;tt utbetalt av NAV",
+      "beskrivelse": "Her kan du se hvor mye du har f&aring;tt utbetalt av NAV",
       "bildenavn": "utbetalinger",
       "url": "/utbetalingsoversikt/"
     },
     {
       "tittel": "Ledige stillinger",
-      "beskrivelse": "Her f\u0026aring;r du en oversikt over ledige stillinger i hele landet.",
+      "beskrivelse": "Her f&aring;r du en oversikt over ledige stillinger i hele landet.",
       "bildenavn": "ledige_stillinger",
       "url": "/stillinger/forside"
     },
@@ -77,8 +79,8 @@
       "url": "/brukerprofil/"
     },
     {
-      "tittel": "Dine stillingss\u0026oslash;k",
-      "beskrivelse": "Her finner du dine lagrede s\u0026oslash;k.",
+      "tittel": "Dine stillingss&oslash;k",
+      "beskrivelse": "Her finner du dine lagrede s&oslash;k.",
       "bildenavn": "dine_sok",
       "url": "/stillinger/innlogget/dinesok"
     },
@@ -90,7 +92,7 @@
     },
     {
       "tittel": "Veiledningstjenester",
-      "beskrivelse": "Her finner du tester som kan v\u0026aelig;re nyttig n\u0026aring;r du skal velge jobb eller utdanning.",
+      "beskrivelse": "Her finner du tester som kan v&aelig;re nyttig n&aring;r du skal velge jobb eller utdanning.",
       "bildenavn": "akademia",
       "url": "https://www-t1.nav.no/no/Person/Arbeid/Test+deg+for+jobb+og+utdanning/Interessetester.347253.cms"
     },
@@ -102,21 +104,23 @@
     },
     {
       "tittel": "Skjemaer",
-      "beskrivelse": "Her f\u0026aring;r du hjelp til \u0026aring; velge riktig skjema n\u0026aring;r du skal s\u0026oslash;ke om ytelser fra NAV.",
+      "beskrivelse": "Her f&aring;r du hjelp til &aring; velge riktig skjema n&aring;r du skal s&oslash;ke om ytelser fra NAV.",
       "bildenavn": "skjemaoversikt",
       "url": "https://www-t1.nav.no/no/person/skjemaer-for-privatpersoner"
     },
     {
       "tittel": "Din pensjon",
-      "beskrivelse": "Her kan du beregne fremtidig pensjon, s\u0026oslash;ke om pensjon og se dokumenter og utbetalinger i pensjonssaken din.",
+      "beskrivelse": "Her kan du beregne fremtidig pensjon, s&oslash;ke om pensjon og se dokumenter og utbetalinger i pensjonssaken din.",
       "bildenavn": "din_pensjon",
       "url": "/pselv/publisering/dinpensjon.jsf"
     },
     {
       "tittel": "Din jobblogg",
-      "beskrivelse": "Her er et verkt\u0026oslash;y som holder oversikt over jobbene du har s\u0026oslash;kt p\u0026aring;.",
+      "beskrivelse": "Her er et verkt&oslash;y som holder oversikt over jobbene du har s&oslash;kt p&aring;.",
       "bildenavn": "jobb_blogg",
       "url": "/jobblogg"
     }
-  ]
+  ],
+  "artikkel": null,
+  "minstEnTjenesteFeilet": false
 }
