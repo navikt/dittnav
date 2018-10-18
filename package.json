@@ -4,6 +4,7 @@
   "private": false,
   "author": "NAV",
   "license": "MIT",
+  "homepage": "/dittnav-nais",
   "dependencies": {
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#feature/context-path",
     "react": "^16.4.2",
