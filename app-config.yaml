@@ -23,5 +23,9 @@ fasitResources:
   used:
   - alias: appres.cms
     resourceType: baseUrl
+  - alias: loadbalancer:dittnav-nais
+    resourceType: loadbalancerconfig
+  - alias: loginservice
+    resourceType: restservice
   #- alias: loginservice
   #  resourceType: restservice
