@@ -27,5 +27,3 @@ fasitResources:
     resourceType: loadbalancerconfig
   - alias: loginservice
     resourceType: restservice
-  #- alias: loginservice
-  #  resourceType: restservice
