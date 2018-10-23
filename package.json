@@ -1,11 +1,12 @@
 {
-  "name": "dittnav",
+  "name": "dittnav-nais",
   "version": "0.1.0",
   "private": false,
   "author": "NAV",
   "license": "MIT",
+  "homepage": "/dittnav-nais",
   "dependencies": {
-    "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.2",
+    "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",

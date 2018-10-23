@@ -14,9 +14,9 @@ test('basic Meldekort test with no meldekort', () => {
 
 test('basic Meldekort test', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 2,
-      "nextCard": {
+      "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
         "week": "week 42",
@@ -24,9 +24,9 @@ test('basic Meldekort test', () => {
         "until": 1531808093471,
         "from": 1531838093471
       },
-      "nextSendingDate": 1541808093471
+      "nesteInnsendingAvMeldekort": 1541808093471
     },
-    "remainingHolidays": 12
+    "resterendeFeriedager": 12
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
@@ -35,9 +35,9 @@ test('basic Meldekort test', () => {
 
 test('basic one Meldekort test', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 1,
-      "nextCard": {
+      "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
         "week": "week 42",
@@ -45,9 +45,9 @@ test('basic one Meldekort test', () => {
         "until": 1531808093471,
         "from": 1531838093471
       },
-      "nextSendingDate": 1541808093471
+      "nesteInnsendingAvMeldekort": 1541808093471
     },
-    "remainingHolidays": 12
+    "resterendeFeriedager": 12
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
@@ -56,9 +56,9 @@ test('basic one Meldekort test', () => {
 
 test('basic one Meldekort test no risk', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 1,
-      "nextCard": {
+      "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
         "week": "week 42",
@@ -66,9 +66,9 @@ test('basic one Meldekort test no risk', () => {
         "until": 1531808093471,
         "from": 1531838093471
       },
-      "nextSendingDate": 1541808093471
+      "nesteInnsendingAvMeldekort": 1541808093471
     },
-    "remainingHolidays": 12
+    "resterendeFeriedager": 12
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
@@ -77,9 +77,9 @@ test('basic one Meldekort test no risk', () => {
 
 test('no cards no risk', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 0,
-      "nextCard": {
+      "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
         "week": "week 42",
@@ -87,9 +87,9 @@ test('no cards no risk', () => {
         "until": 1531808093471,
         "from": 1531838093471
       },
-      "nextSendingDate": 1541808093471
+      "nesteInnsendingAvMeldekort": 1541808093471
     },
-    "remainingHolidays": 12
+    "resterendeFeriedager": 12
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
@@ -98,9 +98,9 @@ test('no cards no risk', () => {
 
 test('basic one Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 1,
-      "nextCard": {
+      "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
         "week": "week 42",
@@ -108,9 +108,9 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
         "until": 1531808093471,
         "from": 1531838093471
       },
-      "nextSendingDate": 1541808093471
+      "nesteInnsendingAvMeldekort": 1541808093471
     },
-    "remainingHolidays": null
+    "resterendeFeriedager": null
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
@@ -119,9 +119,9 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
 
 test('basic zero Meldekort test', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 0,
-      "nextCard": {
+      "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
         "week": "week 42",
@@ -129,9 +129,9 @@ test('basic zero Meldekort test', () => {
         "until": 1531808093471,
         "from": 1531838093471
       },
-      "nextSendingDate": 1541808093471
+      "nesteInnsendingAvMeldekort": 1541808093471
     },
-    "remainingHolidays": 12
+    "resterendeFeriedager": 12
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
@@ -140,10 +140,10 @@ test('basic zero Meldekort test', () => {
 
 test('Meldekort without next card test', () => {
   const meldekort = {
-    "newCards": {
+    "nyeMeldekort": {
       "antallNyeMeldekort": 0
     },
-    "remainingHolidays": 12
+    "resterendeFeriedager": 12
   };
 
   const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));

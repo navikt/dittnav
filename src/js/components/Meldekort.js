@@ -4,12 +4,12 @@ import conf from 'js/Config';
 import i18n from 'translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
-const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nextSendingDate && getCurrentDate.getTime() < meldekort.nextSendingDate
-  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nextSendingDate) }} />)
+const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nesteInnsendingAvMeldekort && getCurrentDate.getTime() < meldekort.nesteInnsendingAvMeldekort
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nesteInnsendingAvMeldekort) }} />)
   : null);
 
-const feriedager = meldekort => (meldekort.remainingHolidays && meldekort.remainingHolidays > 0
-  ? (<F id="meldekort.feriedager" values={{ feriedager: meldekort.remainingHolidays }} />)
+const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0
+  ? (<F id="meldekort.feriedager" values={{ feriedager: meldekort.resterendeFeriedager }} />)
   : null);
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
@@ -33,8 +33,8 @@ class Meldekort extends Component {
     const { formatDate } = i18n[intl.locale];
     if (!meldekort) return null;
 
-    const { antallNyeMeldekort: count } = meldekort.newCards;
-    const risikererTrekk = meldekort.newCards.nextCard && meldekort.newCards.nextCard.risikererTrekk;
+    const { antallNyeMeldekort: count } = meldekort.nyeMeldekort;
+    const risikererTrekk = meldekort.nyeMeldekort.nesteMeldekort && meldekort.nyeMeldekort.nesteMeldekort.risikererTrekk;
 
     if (count > 0) {
       return (
@@ -42,8 +42,8 @@ class Meldekort extends Component {
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
             <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
-            <span>{melding(meldekort.newCards.nextCard, count, formatDate)} </span>
-            <span>{trekk(risikererTrekk, formatDate, meldekort.newCards.nextCard)} </span>
+            <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDate)} </span>
+            <span>{trekk(risikererTrekk, formatDate, meldekort.nyeMeldekort.nesteMeldekort)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
             <p>{feriedager(meldekort)}</p>
@@ -52,7 +52,7 @@ class Meldekort extends Component {
       );
     }
 
-    if (meldekort.newCards.nextCard) {
+    if (meldekort.nyeMeldekort.nesteMeldekort) {
       return (
         <div data-ga="Dittnav/Varsel" className="message meldekort">
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
@@ -79,11 +79,11 @@ const NextCard = PropTypes.shape({
 
 const NewCards = PropTypes.shape({
   antallNyeMeldekort: PropTypes.number,
-  nextSendingDate: PropTypes.number,
-  nextCard: NextCard,
+  nesteInnsendingAvMeldekort: PropTypes.number,
+  nesteMeldekort: NextCard,
 });
 
-export const MeldekortType = PropTypes.shape({ newCards: NewCards, remainingHolidays: PropTypes.number });
+export const MeldekortType = PropTypes.shape({ nyeMeldekort: NewCards, remainingHolidays: PropTypes.number });
 
 Meldekort.propTypes = {
   meldekort: MeldekortType,
