@@ -18,10 +18,8 @@ Appen configureres med `.env`
   SAKSOVERSIKT_API_URL=/saksoversikt/tjenester/saker/paabegynte 
   SAKSOVERSIKT_URL=/saksoversikt
   MIN_INNBOKS_URL=http://localhost:35000/mininnboks
-  LOGINSERVICE_URL=/dittnav-api/local/cookie
   REG_STATUS_LINK=https://nav.no/sbl
   SERVICES_URL=https://tjenester-t10.nav.no
-  LOGIN_URL=/dittnav-api/local/cookie
 
   # denne brukes for utvikling
   NODE_PATH=src/

@@ -21,11 +21,17 @@ resources:
     cpu: 3
 fasitResources:
   used:
+  - alias: regstatus.link
+    resourceType: baseUrl
+    propertyMap:
+      url: REG_STATUS_LINK  
   - alias: appres.cms
     resourceType: baseUrl
+    propertyMap:
+      url: APPRES_CMS_URL
   - alias: loadbalancer:dittnav-nais
     resourceType: loadbalancerconfig
   - alias: loginservice
     resourceType: restservice
-  #- alias: loginservice
-  #  resourceType: restservice
+    propertyMap:
+      url: LOGINSERVICE
