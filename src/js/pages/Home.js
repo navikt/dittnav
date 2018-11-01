@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import PersonInfo from 'js/components/PersonInfo';
 import InfoMeldinger from 'js/components/InfoMeldinger';
