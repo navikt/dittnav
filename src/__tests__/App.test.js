@@ -23,6 +23,18 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
+it('expect Login page rendering', () => {
+  const api = mockApi();
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav-nais/login' />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+it('expect Postkasse page rendering', () => {
+  const api = mockApi();
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav-nais/postkasse' />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
 it('expect PaabegynteSoknader fetching', () => {
   const expectedF = jest.fn();
   const api = mockApi();

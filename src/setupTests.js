@@ -6,6 +6,7 @@ window.dittnavSettings = {
   LOGIN_URL: '/dittnav-api/local/cookie',
   ARBEIDSGIVER_LOGIN_URL: 'sbl',
   LOGINSERVICE: '/dittnav-api/local/cookie',
+  CONTEXT_PATH: '/dittnav-nais',
 };
 
 global.fetch = require('jest-fetch-mock'); // eslint-disable-line import/no-extraneous-dependencies
