@@ -6,7 +6,7 @@ import nbMessages from 'translations/nb.json';
 addLocaleData([...nb]);
 
 const wrapIntl = (children, props = { locale: 'nb' }) => (
-  <IntlProvider {...props} messages={nbMessages} >
+  <IntlProvider {...props} messages={nbMessages}>
     {children}
   </IntlProvider>
 );

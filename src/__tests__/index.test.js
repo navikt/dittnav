@@ -24,5 +24,5 @@ jest.mock('react-dom', () => ({render: jest.fn()}))
 
 it('index renders without crashing', () => {
   require('../index');
-  expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={api} />), null);
+  expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={api} path='/' />), null);
 });

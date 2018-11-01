@@ -5,7 +5,7 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
   role="main"
 >
   <div
-    className="container"
+    className="container maincontent side-innhold"
   >
     <div
       className="row"
@@ -45,7 +45,7 @@ exports[`expect PersonInfo fetching 1`] = `
   role="main"
 >
   <div
-    className="container"
+    className="container maincontent side-innhold"
   >
     <div
       className="row"

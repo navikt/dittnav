@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 class Tjenester extends Component {
   render() {
+    const { services } = this.props;
     return (
       <section className="ditt-list">
-        {this.props.services.map(o => (
+        {services.map(o => (
           <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ditt-nav-${o.bildenavn.replace(/_/g, '-')}`} key={o.url}>
             <h2 className="underline">
               {o.tittel}
@@ -14,7 +15,7 @@ class Tjenester extends Component {
               {o.beskrivelse}
             </p>
           </a>
-          ))}
+        ))}
       </section>
     );
   }

@@ -19,7 +19,7 @@ const flushPromises = () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<App api={mockApi()} />), div);
+  ReactDOM.render(wrapIntl(<App api={mockApi()} path='/' />), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -31,7 +31,7 @@ it('expect PaabegynteSoknader fetching', () => {
     return {};
   });
 
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
   expect(expectedF).toHaveBeenCalled();
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -52,7 +52,7 @@ it('expect PersonInfo fetching', async () => {
     })
   });
 
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
   await flushPromises();
 
   expect(component.root.children[0].instance.state.errors).toEqual([]);
@@ -65,7 +65,7 @@ it('expect PaabegynteSoknader fetching', async () => {
     resolve({feilendeBaksystem: ['hello']});
   });
 
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
   await flushPromises();
 
   expect(component.root.children[0].instance.state.errors).toEqual(['error.paabegynte']);
@@ -77,7 +77,7 @@ it('expect mininnboks fail while fetching', async () => {
     reject(new Error('some error'));
   });
 
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
   await flushPromises();
 
   expect(component.root.children[0].instance.state.errors).toEqual(['error.mininnboks']);

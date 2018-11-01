@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import PersonInfo from 'js/components/PersonInfo';
-import InfoMeldinger from 'js/components/InfoMeldinger';
-import Tjenester from 'js/components/Tjenester';
-import Lenkelister from 'js/components/Lenkelister';
-import Artikkel from 'js/components/Artikkel';
+import conf from 'js/Config';
 import FeilMeldinger from 'js/components/FeilMeldinger';
+import Postkasse from 'js/pages/Postkasse';
+import Login from 'js/pages/Login';
+import Home from 'js/pages/Home';
+
 import 'less/index.less';
 
-const getInfoMeldinger = (info, paabegynteSaker, mininnboks) => ({
-  isInactive: info.personinfo ? info.personinfo.inaktiv : true,
-  isMeldeKortUser: info.personinfo ? info.personinfo.meldekortbruker : null,
-  infoMessages: info.infoMessages,
-  agMessagesCount: info.agMessagesCount,
-  navMessagesCount: info.navMessagesCount,
-  pleiepenger: info.pleiepenger,
-  paabegynteSaker: paabegynteSaker.paabegynte,
-  meldekort: info.meldekort,
-  isRegisteredAtIArbeid: info.personinfo ? info.personinfo.erUnderRegistreringIArbeid : null,
-  mininnboks,
-});
+function route(props, options) {
+  const { path } = props;
+  const { info, paabegynteSaker, mininnboks } = options;
+  switch (path) {
+    case `${conf.dittNav.CONTEXT_PATH}/postkasse`:
+      return <Postkasse {...props} info={info} />;
+    case `${conf.dittNav.CONTEXT_PATH}/login`:
+      return <Login />;
+    default:
+      return <Home info={info} paabegynteSaker={paabegynteSaker} mininnboks={mininnboks} />;
+  }
+}
 
 class App extends Component {
   constructor(props) {
@@ -30,18 +30,21 @@ class App extends Component {
 
   componentWillMount() {
     const { errors } = this.state;
-    const catchError = msg =>
-      () => {
-        errors.push(msg);
-        this.setState(Object.assign(this.state, { errors }));
-      };
+    const { api, path } = this.props;
+    if (path === `${conf.dittNav.CONTEXT_PATH}/login`) {
+      return;
+    }
+    const catchError = msg => () => {
+      errors.push(msg);
+      this.setState(Object.assign(this.state, { errors }));
+    };
 
-    this.props.api.fetchPersonInfoAndServices()
+    api.fetchPersonInfoAndServices()
       .then((r) => {
         this.setState(Object.assign(this.state, { info: r }));
       }).catch(catchError('error.person.info'));
 
-    this.props.api.fetchPaabegynteSaker()
+    api.fetchPaabegynteSaker()
       .then((r) => {
         if (r.feilendeBaksystem && r.feilendeBaksystem.length > 0) {
           errors.push('error.paabegynte');
@@ -49,7 +52,7 @@ class App extends Component {
         this.setState(Object.assign(this.state, { paabegynteSaker: r, errors }));
       }).catch(catchError('error.paabegynte'));
 
-    this.props.api.fetchMinInnboksData()
+    api.fetchMinInnboksData()
       .then((r) => {
         this.setState(Object.assign(this.state, { mininnboks: r }));
       }).catch(catchError('error.mininnboks'));
@@ -62,18 +65,8 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
-        <div className="container">
-          <div className="row">
-            <div className="maincontent side-innhold">
-              <div className="col-md-12">
-                <PersonInfo personInfo={info.personinfo} />
-                <InfoMeldinger {...getInfoMeldinger(info, paabegynteSaker, mininnboks)} />
-                <Tjenester services={info.viktigeTjenester} />
-                <Lenkelister links={info.andreTjenester} />
-              </div>
-            </div>
-          </div>
-          <Artikkel article={info.article} />
+        <div className="container maincontent side-innhold">
+          {route(this.props, { info, paabegynteSaker, mininnboks })}
         </div>
       </main>
     );
@@ -86,6 +79,7 @@ App.propTypes = {
     fetchPaabegynteSaker: PropTypes.func.isRequired,
     fetchMinInnboksData: PropTypes.func.isRequired,
   }).isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export default App;
