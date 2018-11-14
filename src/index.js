@@ -13,4 +13,12 @@ import enMessages from './translations/en.json';
 
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
-ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
+function renderApp(path) {
+  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} path={path} /></NavApp>, document.getElementById('app'));
+}
+
+window.addEventListener('popstate', () => {
+  renderApp(window.location.pathname);
+});
+
+renderApp(window.location.pathname);

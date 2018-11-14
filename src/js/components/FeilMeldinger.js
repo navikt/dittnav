@@ -6,12 +6,13 @@ class FeilMeldinger extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.errors.length > 0 &&
-        <section className="service-notification">
-          <h1 className="typo-element">
-            {this.props.errors.map(e => (<span key={e}><F id={e} /></span>))}
-          </h1>
-        </section>}
+        {this.props.errors.length > 0 && (
+          <section className="service-notification">
+            <h1 className="typo-element">
+              {this.props.errors.map(e => (<span key={e}><F id={e} /></span>))}
+            </h1>
+          </section>
+        )}
       </React.Fragment>
     );
   }

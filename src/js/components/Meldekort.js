@@ -14,18 +14,16 @@ const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.res
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
-const melding = (next, count, formatDate) =>
-  (next ? (
-    <F
-      id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
-      values={{
-        count, next: next.week, from: formatDate(next.from), until: formatDate(next.until),
-      }}
-    />
-  ) : null);
+const melding = (next, count, formatDate) => (next ? (
+  <F
+    id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
+    values={{
+      count, next: next.week, from: formatDate(next.from), until: formatDate(next.until),
+    }}
+  />
+) : null);
 
-const trekk = (risikererTrekk, formatDate, next) =>
-  (!risikererTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
+const trekk = (risikererTrekk, formatDate, next) => (!risikererTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {

@@ -9,7 +9,7 @@ class Lenkelister extends Component {
           <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element" key={l.url}>
             {l.tittel}
           </a>
-          ))}
+        ))}
       </section>
     );
   }

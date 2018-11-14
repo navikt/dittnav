@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Postkasse renders 1`] = `
+<div>
+  <h1
+    className="typo-sidetittel text-center"
+  >
+    Din dialog med NAV
+  </h1>
+  <section
+    className="ditt-list"
+  >
+    <a
+      className="lenke tjeneste-boks ditt-list-element ditt-nav-din-pensjon"
+      data-ga="Dittnav/Lenkeboks"
+      href="https://nav.no/"
+    >
+      <h2
+        className="underline"
+      >
+        Din Pensjon
+      </h2>
+      <p>
+        Short desc
+      </p>
+    </a>
+    <a
+      className="lenke tjeneste-boks ditt-list-element ditt-nav-registrer-arbeidssoker"
+      data-ga="Dittnav/Lenkeboks"
+      href="https://nav.no/abc"
+    >
+      <h2
+        className="underline"
+      >
+        Meldekort
+      </h2>
+      <p>
+        Mock desc
+      </p>
+    </a>
+  </section>
+  <section
+    className="text-center"
+  >
+    <a
+      className="lenke"
+      href="/dittnav-nais"
+      onClick={[Function]}
+    >
+      Til Ditt NAV
+    </a>
+  </section>
+</div>
+`;

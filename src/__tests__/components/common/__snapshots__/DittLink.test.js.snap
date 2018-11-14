@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DittLink renders 1`] = `
+<a
+  className=""
+  href="/dittnav-nais"
+  onClick={[Function]}
+>
+  <div>
+    hello
+  </div>
+</a>
+`;

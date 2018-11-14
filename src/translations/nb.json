@@ -52,6 +52,26 @@
   "mininnboks.ubesvarte.meldinger.en": "Du har ett ubesvart spørsmål i din innboks",
   "mininnboks.ubesvarte.meldinger.flere": "Du har {count} ubesvarte spørsmål i din innboks",
 
+  "paalogging.alternativ.brukernavnpassord.tittel": "Brukernavn og passord fra NAV",
+  "paalogging.alternativ.brukernavnpassord.beskrivelse": "Pålogging med brukernavn og passord gir deg bare tilgang til selvbetjening for arbeidssøkere.",
+  "paalogging.alternativ.brukernavnpassord.lenketekst": "Velg",
+
+  "paalogging.alternativ.endagspassord-pensjon.tittel": "Endagspassord til din pensjon",
+  "paalogging.alternativ.endagspassord-pensjon.beskrivelse": "Pålogging med endagspassord gir deg tilgang til de fleste funksjonene i Din pensjon.",
+  "paalogging.alternativ.endagspassord-pensjon.lenketekst": "Velg",
+
+  "paalogging.alternativ.endagspassord-ufore.tittel": "Endagspassord til uføretrygd",
+  "paalogging.alternativ.endagspassord-ufore.beskrivelse": "Pålogging med endagspassord gir deg tilgang til de fleste funksjonene i selvbetjeningsløsningen Uføretrygd.",
+  "paalogging.alternativ.endagspassord-ufore.lenketekst": "Velg",
+
+  "paalogging.alternativ.arbeidsgiver.tittel": "Arbeidsgiver",
+  "paalogging.alternativ.arbeidsgiver.beskrivelse": "NAV har mange selvbetjente tjenester for deg som er arbeidsgiver. Gå til arbeidsgiversiden og se hva vi kan tilby.",
+  "paalogging.alternativ.arbeidsgiver.lenketekst": "Velg",
+
+  "paalogging.alternativ.om.tittel": "Om alternativ pålogging",
+  "paalogging.alternativ.om.beskrivelse": "Med alternativ pålogging får du kun tilgang til enkelte av NAVs selvbetjeningsløsninger. Vi oppfordrer derfor våre brukere til å logge inn med ID-porten.",
+  "paalogging.alternativ.om.lenketekst": "Logg inn med ID-porten",
+
   "pleiepenger.peridag": "Forbrukte pleiepengedager per i dag for barn med f.nr. {child}:",
 
   "error.general.connection.problem": "Error fetchin data",
