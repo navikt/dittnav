@@ -42,14 +42,21 @@ function install_dependencies_and_build {
   npm i -g npm
   npm ci && npm run build
 }
+
+function run_tests {
+  npm run test
+}
+
 function build_container {
   docker build \
       --tag ${TAG} \
       .
 }
+
 function create_version_file {
   echo ${versjon} > VERSION
 }
+
 function publish_container() {
   if [ -z ${versjon+x} ]; then
       echo "versjon er ikke satt - publiserer ikke!"
@@ -59,6 +66,7 @@ function publish_container() {
 }
 
 install_dependencies_and_build
+run_tests
 create_version_file
 build_container
 publish_container
