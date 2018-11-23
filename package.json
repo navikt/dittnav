@@ -6,7 +6,7 @@
   "license": "MIT",
   "homepage": "/dittnav-nais",
   "dependencies": {
-    "frontshell": "git+https://git@github.com/navikt/frontshell.git#feature/config-options",
+    "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

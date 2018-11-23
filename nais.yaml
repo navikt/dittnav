@@ -21,10 +21,6 @@ resources:
     cpu: 3
 fasitResources:
   used:
-  - alias: regstatus.link
-    resourceType: baseUrl
-    propertyMap:
-      url: REG_STATUS_LINK  
   - alias: appres.cms
     resourceType: baseUrl
     propertyMap:
