@@ -1,9 +1,7 @@
-FROM node:carbon
+FROM docker.adeo.no:5000/pus/decorator
 
 WORKDIR /usr/src/dittnav
 
 COPY ./ ./
 
-EXPOSE 8080
-
-CMD ["npm", "run", "server"]
+# CMD ["npm", "run", "server"]
