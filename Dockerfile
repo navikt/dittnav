@@ -3,6 +3,6 @@ ENV APPLICATION_NAME=dittnav-nais
 
 # WORKDIR /usr/src/dittnav
 
-COPY ./ /app
+COPY ./build /app
 
 # CMD ["npm", "run", "server"]
