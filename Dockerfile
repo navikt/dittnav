@@ -1,7 +1,7 @@
 FROM docker.adeo.no:5000/pus/decorator
 
-WORKDIR /usr/src/dittnav
+# WORKDIR /usr/src/dittnav
 
-COPY ./ ./
+COPY ./ /app
 
 # CMD ["npm", "run", "server"]
