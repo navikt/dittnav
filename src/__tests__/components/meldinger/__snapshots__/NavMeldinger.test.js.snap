@@ -4,7 +4,7 @@ exports[`NavMeldinger with 1 message 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/Nav-melding"
-  href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
+  href="http://localhost/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
 >
   <span
     aria-label="default-ikon"
@@ -31,7 +31,7 @@ exports[`NavMeldinger with 5 messages 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/Nav-melding"
-  href="https://mytesturl.nav.no/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
+  href="http://localhost/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
 >
   <span
     aria-label="default-ikon"
