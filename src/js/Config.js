@@ -1,5 +1,16 @@
+const props = (window.dittnav || {}); // eslint-disable-line no-undef
+
+Object
+  .keys(props)
+  .forEach((key) => {
+    if (key.indexOf('PUBLIC_') >= 0) {
+      props[`${key}xxx`] = props[key];
+      delete props[key];
+    }
+  });
+
 export default {
-  dittNav: window.dittnavSettings, // eslint-disable-line no-undef
+  dittNav: props,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',
