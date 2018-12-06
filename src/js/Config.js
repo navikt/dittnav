@@ -9,6 +9,8 @@ Object
     }
   });
 
+props.SERVICES_URL = window.location.origin;
+
 export default {
   dittNav: props,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
