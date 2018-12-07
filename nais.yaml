@@ -26,8 +26,6 @@ fasitResources:
     resourceType: baseUrl
     propertyMap:
       url: APPRES_CMS_URL
-  - alias: loadbalancer:dittnav-nais
-    resourceType: loadbalancerconfig
   - alias: loginservice
     resourceType: restservice
     propertyMap:
