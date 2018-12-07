@@ -8,9 +8,11 @@ const fetchJSONAndCheckForErrors = (url) => {
           console.log(`${url} is behind the wall`); // eslint-disable-line no-console
           window.location.assign(`${conf.dittNav.LOGINSERVICE}?redirect=${window.location.href}`); // eslint-disable-line no-undef
           rej(new Error('Unauthorized'));
+          return;
         }
         if (!r.ok) {
           rej(new Error('Error happened on requesting a resource'));
+          return;
         }
         res(r.json());
       })
