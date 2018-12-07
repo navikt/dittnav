@@ -1,6 +1,6 @@
 FROM docker.adeo.no:5000/pus/decorator
 
-ENV APPLICATION_NAME=dittnav-nais
+ENV APPLICATION_NAME=dittnav
 ENV CONTEXT_PATH=dittnav-nais
 
 ENV PUBLIC_DITTNAV_API_URL=/dittnav/tjenester/person/personinfo
