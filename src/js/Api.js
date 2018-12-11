@@ -2,10 +2,9 @@ import conf from 'js/Config';
 
 const fetchJSONAndCheckForErrors = (url) => {
   const p = new Promise((res, rej) => {
-    fetch(url, { method: 'GET', mode: 'no-cors' }) // eslint-disable-line no-undef
+    fetch(url, { method: 'GET', mode: 'no-cors' })
       .then((r) => {
         if (r.status === 401) {
-          console.log(`${url} is behind the wall`); // eslint-disable-line no-console
           window.location.assign(`${conf.dittNav.LOGINSERVICE}?redirect=${window.location.href}`); // eslint-disable-line no-undef
           rej(new Error('Unauthorized'));
           return;

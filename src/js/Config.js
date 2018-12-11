@@ -1,15 +1,41 @@
-const props = (window.dittnav || {}); // eslint-disable-line no-undef
+const getServicesUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1 || host.indexOf('q0') > -1) {
+    return window.location.origin;
+  }
+  return 'https://tjenester.nav.no';
+};
 
-Object
-  .keys(props)
-  .forEach((key) => {
-    if (key.indexOf('PUBLIC_') >= 0) {
-      props[`${key}xxx`] = props[key];
-      delete props[key];
-    }
-  });
+const getLoginUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
+    return 'https://loginservice-q.nav.no/login';
+  }
+  if (host.indexOf('q0') > -1) {
+    return 'https://loginservice.nais.preprod.local/login';
+  }
+  return 'https://loginservice.nais.adeo.no/login';
+};
 
-props.SERVICES_URL = window.location.origin;
+const getDittnavApiBaseUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1 || host.indexOf('q0') > -1) {
+    return window.location.origin;
+  }
+  return 'https://person.nav.no';
+};
+
+const props = (window.dittnav || { // eslint-disable-line no-undef
+  SERVICES_URL: getServicesUrl(),
+  LOGINSERVICE: getLoginUrl(),
+  DITTNAV_API_URL: `${getDittnavApiBaseUrl()}/dittnav/tjenester/person/personinfo`,
+  SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
+  SAKSOVERSIKT_URL: '/saksoversikt',
+  MIN_INNBOKS_URL: '/mininnboks',
+  REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
+  CONTEXT_PATH: '/dittnav-nais',
+  ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
+});
 
 export default {
   dittNav: props,
