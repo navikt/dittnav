@@ -20,20 +20,18 @@ const getLoginUrl = () => {
   return 'https://loginservice.nais.adeo.no/login';
 };
 
-const props = (window.dittnav || { // eslint-disable-line no-undef
-  SERVICES_URL: getServicesUrl(),
-  LOGINSERVICE: getLoginUrl(),
-  DITTNAV_API_URL: `${window.location.hostname}/dittnav-api/tjenester/person/personinfo`,
-  SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
-  SAKSOVERSIKT_URL: '/saksoversikt',
-  MIN_INNBOKS_URL: '/mininnboks',
-  REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
-  CONTEXT_PATH: '/dittnav',
-  ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
-});
-
 export default {
-  dittNav: props,
+  dittNav: {
+    SERVICES_URL: getServicesUrl(),
+    LOGINSERVICE: getLoginUrl(),
+    DITTNAV_API_URL: `${window.location.hostname}/dittnav-api/tjenester/person/personinfo`,
+    SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
+    SAKSOVERSIKT_URL: '/saksoversikt',
+    MIN_INNBOKS_URL: '/mininnboks',
+    REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
+    CONTEXT_PATH: '/dittnav',
+    ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
+  },
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',
