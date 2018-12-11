@@ -4,7 +4,7 @@ const getServicesUrl = () => {
     return window.location.origin;
   }
   if (host.indexOf('person-q') > -1) {
-    return 'https://';
+    return 'https://tjenester-q1.nav.no';
   }
   return 'https://tjenester.nav.no';
 };
@@ -24,7 +24,7 @@ export default {
   dittNav: {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
-    DITTNAV_API_URL: `${window.location.hostname}/dittnav-api/person/personinfo`,
+    DITTNAV_API_URL: `https://${window.location.hostname}/dittnav-api/person/personinfo`,
     SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
     SAKSOVERSIKT_URL: '/saksoversikt',
     MIN_INNBOKS_URL: '/mininnboks',

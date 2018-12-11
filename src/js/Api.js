@@ -20,7 +20,7 @@ const fetchJSONAndCheckForErrors = (url) => {
   return p;
 };
 
-const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.SERVICES_URL}${conf.dittNav.DITTNAV_API_URL}`);
+const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchPaabegynteSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.SERVICES_URL}${conf.dittNav.SAKSOVERSIKT_API_URL}`);
 const fetchMinInnboksData = () => fetchJSONAndCheckForErrors(`${conf.dittNav.SERVICES_URL}${conf.dittNav.MIN_INNBOKS_URL}${conf.MININNBOKS_UBEHANDLET_URL}`);
 
