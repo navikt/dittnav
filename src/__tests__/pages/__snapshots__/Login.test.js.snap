@@ -132,7 +132,7 @@ exports[`Login renders 1`] = `
         </p>
         <a
           className="lenke"
-          href="/dittnav-nais/innlogget"
+          href="/dittnav/innlogget"
         >
           <span>
             Logg inn med ID-porten

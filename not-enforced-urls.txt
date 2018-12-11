@@ -1,2 +1,2 @@
-https://${DomainName}/dittnav-nais/health/isAlive*
-https://${DomainName}/dittnav-nais/*
+https://${DomainName}/dittnav/internal/isAlive*
+https://${DomainName}/dittnav/*

@@ -138,7 +138,7 @@ exports[`expect Login page rendering 1`] = `
             </p>
             <a
               className="lenke"
-              href="/dittnav-nais/innlogget"
+              href="/dittnav/innlogget"
             >
               <span>
                 Logg inn med ID-porten
@@ -297,7 +297,7 @@ exports[`expect Postkasse page rendering 1`] = `
       >
         <a
           className="lenke"
-          href="/dittnav-nais"
+          href="/dittnav"
           onClick={[Function]}
         >
           Til Ditt NAV

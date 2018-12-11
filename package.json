@@ -1,10 +1,10 @@
 {
-  "name": "dittnav-nais",
+  "name": "dittnav",
   "version": "0.1.0",
   "private": false,
   "author": "NAV",
   "license": "MIT",
-  "homepage": "/dittnav-nais",
+  "homepage": "/dittnav",
   "dependencies": {
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "prop-types": "^15.6.2",
