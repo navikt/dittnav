@@ -113,7 +113,7 @@ exports[`expect Login page rendering 1`] = `
             </p>
             <a
               className="knapp-hoved knapp-liten"
-              href="sbl"
+              href="https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester"
             >
               <span>
                 Velg
@@ -241,7 +241,7 @@ exports[`expect PersonInfo fetching 1`] = `
             <a
               className="clickable message"
               data-ga="Dittnav/Varsel/Registrering"
-              href="reg_status"
+              href="https://nav.no/sbl/nav_security_check"
             >
               <span
                 aria-label="sjekkliste-ikon"

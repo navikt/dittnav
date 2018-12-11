@@ -4,7 +4,7 @@ exports[`MinInnboks with one document 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/Dokument-melding"
-  href="http://localhost:35000/innloggingsinfo/type/dokument/undertype/testundertype/varselid/1"
+  href="/innloggingsinfo/type/dokument/undertype/testundertype/varselid/1"
 >
   <span
     aria-label="dokument-ikon"
@@ -25,7 +25,7 @@ exports[`MinInnboks with one document 1`] = `
 exports[`MinInnboks with one task 1`] = `
 <a
   className="message clickable"
-  href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+  href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
 >
   <span
     aria-label="sjekkliste-ikon"
@@ -88,7 +88,7 @@ Array [
   </a>,
   <a
     className="message clickable"
-    href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+    href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
   >
     <span
       aria-label="sjekkliste-ikon"
@@ -111,7 +111,7 @@ exports[`MinInnboks with two documents 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/Dokument-melding"
-  href="http://localhost:35000/innloggingsinfo/type/dokument/undertype/testundertype"
+  href="/innloggingsinfo/type/dokument/undertype/testundertype"
 >
   <span
     aria-label="dokument-ikon"
@@ -133,7 +133,7 @@ exports[`MinInnboks with two documents but different undertypes 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/Dokument-melding"
-  href="http://localhost:35000/innloggingsinfo/type/dokument"
+  href="/innloggingsinfo/type/dokument"
 >
   <span
     aria-label="dokument-ikon"
@@ -154,7 +154,7 @@ exports[`MinInnboks with two documents but different undertypes 1`] = `
 exports[`MinInnboks with two tasks 1`] = `
 <a
   className="message clickable"
-  href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+  href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
 >
   <span
     aria-label="sjekkliste-ikon"
@@ -175,7 +175,7 @@ exports[`MinInnboks with two tasks 1`] = `
 exports[`MinInnboks with two tasks 2`] = `
 <a
   className="message clickable"
-  href="http://localhost:35000/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+  href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
 >
   <span
     aria-label="sjekkliste-ikon"
@@ -197,7 +197,7 @@ exports[`MinInnboks with two unanswered 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/ulest melding"
-  href="http://localhost:35000/mininnboks"
+  href="/mininnboks"
 >
   <span
     aria-label="snakkeboble-ikon"
@@ -219,7 +219,7 @@ exports[`MinInnboks with two unread 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/ubesvart melding"
-  href="http://localhost:35000/mininnboks"
+  href="/mininnboks"
 >
   <span
     aria-label="snakkeboble-ikon"
