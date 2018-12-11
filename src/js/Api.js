@@ -4,7 +4,7 @@ const fetchJSONAndCheckForErrors = (url) => {
   const p = new Promise((res, rej) => {
     fetch(url, { method: 'GET', mode: 'no-cors', credentials: 'include' }) // eslint-disable-line no-undef
       .then((r) => {
-        if (r.status === 401 || (r.status === 0 && !r.ok)) {
+        if (r.status === 401) {
           window.location.assign(`${conf.dittNav.LOGINSERVICE}?redirect=${window.location.href}`); // eslint-disable-line no-undef
           rej(new Error('Unauthorized'));
         }
