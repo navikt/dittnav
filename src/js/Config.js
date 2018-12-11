@@ -15,16 +15,16 @@ const getLoginUrl = () => {
     return 'https://loginservice-q.nav.no/login';
   }
   if (host.indexOf('person-q') > -1) {
-    return 'https://loginservice.nais.preprod.local/login';
+    return 'https://loginservice-q.nav.no/login';
   }
-  return 'https://loginservice.nais.adeo.no/login';
+  return 'https://loginservice.nav.no/login';
 };
 
 export default {
   dittNav: {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
-    DITTNAV_API_URL: `${window.location.hostname}/dittnav-api/tjenester/person/personinfo`,
+    DITTNAV_API_URL: `${window.location.hostname}/dittnav-api/person/personinfo`,
     SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
     SAKSOVERSIKT_URL: '/saksoversikt',
     MIN_INNBOKS_URL: '/mininnboks',
