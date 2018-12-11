@@ -1,7 +1,10 @@
 const getServicesUrl = () => {
   const host = window.location.hostname;
-  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1 || host.indexOf('q0') > -1) {
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
     return window.location.origin;
+  }
+  if (host.indexOf('person-q') > -1) {
+    return 'https://tjenester-q0.nav.no';
   }
   return 'https://tjenester.nav.no';
 };
@@ -11,7 +14,7 @@ const getLoginUrl = () => {
   if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
     return 'https://loginservice-q.nav.no/login';
   }
-  if (host.indexOf('q0') > -1) {
+  if (host.indexOf('person-q') > -1) {
     return 'https://loginservice.nais.preprod.local/login';
   }
   return 'https://loginservice.nais.adeo.no/login';
