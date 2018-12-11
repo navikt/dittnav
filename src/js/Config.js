@@ -4,7 +4,7 @@ const getServicesUrl = () => {
     return window.location.origin;
   }
   if (host.indexOf('person-q') > -1) {
-    return 'https://tjenester-q0.nav.no';
+    return 'https://tjenester-q1.nav.no';
   }
   return 'https://tjenester.nav.no';
 };
