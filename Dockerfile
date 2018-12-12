@@ -1,9 +1,6 @@
-FROM node:carbon
+FROM docker.adeo.no:5000/pus/decorator
 
-WORKDIR /usr/src/dittnav
+ENV APPLICATION_NAME=dittnav
+ENV CONTEXT_PATH=dittnav
 
-COPY ./ ./
-
-EXPOSE 8080
-
-CMD ["npm", "run", "server"]
+COPY ./build /app

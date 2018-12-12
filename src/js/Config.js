@@ -1,5 +1,37 @@
+const getServicesUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
+    return window.location.origin;
+  }
+  if (host.indexOf('person-q') > -1) {
+    return 'https://tjenester-q1.nav.no';
+  }
+  return 'https://tjenester.nav.no';
+};
+
+const getLoginUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
+    return 'https://loginservice-q.nav.no/login';
+  }
+  if (host.indexOf('person-q') > -1) {
+    return 'https://loginservice-q.nav.no/login';
+  }
+  return 'https://loginservice.nav.no/login';
+};
+
 export default {
-  dittNav: window.dittnavSettings, // eslint-disable-line no-undef
+  dittNav: {
+    SERVICES_URL: getServicesUrl(),
+    LOGINSERVICE: getLoginUrl(),
+    DITTNAV_API_URL: `https://${window.location.hostname}/dittnav-api/person/personinfo`,
+    SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
+    SAKSOVERSIKT_URL: '/saksoversikt',
+    MIN_INNBOKS_URL: '/mininnboks',
+    REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
+    CONTEXT_PATH: '/dittnav',
+    ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
+  },
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',

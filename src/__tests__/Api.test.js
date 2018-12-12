@@ -19,7 +19,7 @@ it('handling Unauthorized', async () => {
   fetch.mockResponseOnce(JSON.stringify({}), {status: 401});
   expect.assertions(2);
   jest.spyOn(window.location, 'assign').mockImplementation( l => {
-    expect(l).toEqual('/dittnav-api/local/cookie?redirect=http://localhost/');
+    expect(l).toEqual('https://loginservice.nav.no/login?redirect=http://localhost/');
   })
   await expect(Api.fetchPersonInfoAndServices()).rejects.toEqual(new Error('Unauthorized'));
 });

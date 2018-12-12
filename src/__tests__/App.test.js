@@ -25,13 +25,13 @@ it('renders without crashing', () => {
 
 it('expect Login page rendering', () => {
   const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav-nais/login' />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav/login' />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 it('expect Postkasse page rendering', () => {
   const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav-nais/postkasse' />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav/postkasse' />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 

@@ -1,6 +1,7 @@
-image: docker.adeo.no:5000/personbruker/dittnav-nais
+# jeg vil ikke ha hjelp fra pus
+image: docker.adeo.no:5000/personbruker/dittnav
 team: "personbruker"
-name: dittnav-nais
+name: dittnav
 replicas:
   min: 1
   max: 1
@@ -8,12 +9,12 @@ replicas:
 port: 8080
 healthcheck:
   liveness:
-    path: dittnav-nais/health/isAlive
+    path: dittnav/internal/isAlive
   readiness:
-    path: dittnav-nais/health/isAlive
+    path: dittnav/internal/isReady
 prometheus:
   enabled: false
-  path: internal/metrics
+  path: dittnav/internal/metrics
 ingress:
   enabled: true
 resources:
@@ -25,8 +26,6 @@ fasitResources:
     resourceType: baseUrl
     propertyMap:
       url: APPRES_CMS_URL
-  - alias: loadbalancer:dittnav-nais
-    resourceType: loadbalancerconfig
   - alias: loginservice
     resourceType: restservice
     propertyMap:
