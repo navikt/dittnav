@@ -1,5 +1,16 @@
+const getDittNavBaseApiUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('localhost') > -1) {
+    return 'http://localhost:9222';
+  }
+  return `https://${window.location.hostname}`;
+};
+
 const getServicesUrl = () => {
   const host = window.location.hostname;
+  if (host.indexOf('localhost') > -1) {
+    return 'http://localhost:9222';
+  }
   if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
     return window.location.origin;
   }
@@ -11,6 +22,9 @@ const getServicesUrl = () => {
 
 const getLoginUrl = () => {
   const host = window.location.hostname;
+  if (host.indexOf('localhost') > -1) {
+    return 'http://localhost:9111/login';
+  }
   if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
     return 'https://loginservice-q.nav.no/login';
   }
@@ -24,7 +38,8 @@ export default {
   dittNav: {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
-    DITTNAV_API_URL: `https://${window.location.hostname}/dittnav-api/person/personinfo`,
+    DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/personinfo`,
+    DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/ping`,
     SAKSOVERSIKT_API_URL: '/saksoversikt/tjenester/saker/paabegynte',
     SAKSOVERSIKT_URL: '/saksoversikt',
     MIN_INNBOKS_URL: '/mininnboks',
