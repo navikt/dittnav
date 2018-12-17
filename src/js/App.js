@@ -36,12 +36,12 @@ class App extends Component {
     }
     const catchError = msg => () => {
       errors.push(msg);
-      this.setState(Object.assign(this.state, { errors }));
+      this.setState(() => ({ errors }));
     };
 
     api.fetchPersonInfoAndServices()
       .then((r) => {
-        this.setState(Object.assign(this.state, { info: r }));
+        this.setState(() => ({ info: r }));
       }).catch(catchError('error.person.info'));
 
     api.fetchPaabegynteSaker()
@@ -49,12 +49,12 @@ class App extends Component {
         if (r.feilendeBaksystem && r.feilendeBaksystem.length > 0) {
           errors.push('error.paabegynte');
         }
-        this.setState(Object.assign(this.state, { paabegynteSaker: r, errors }));
+        this.setState(() => ({ paabegynteSaker: r, errors }));
       }).catch(catchError('error.paabegynte'));
 
     api.fetchMinInnboksData()
       .then((r) => {
-        this.setState(Object.assign(this.state, { mininnboks: r }));
+        this.setState(() => ({ mininnboks: r }));
       }).catch(catchError('error.mininnboks'));
   }
 

@@ -14,7 +14,7 @@ exports[`render InfoMeldinger with ag messages 1`] = `
   <a
     className="message clickable"
     data-ga="Dittnav/Varsel/Arbeidsgiver"
-    href="https://tjenester.nav.no/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
+    href="http://localhost:9222/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
   >
     <span
       aria-label="snakkeboble-ikon"

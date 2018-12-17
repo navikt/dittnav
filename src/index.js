@@ -21,4 +21,6 @@ window.addEventListener('popstate', () => {
   renderApp(window.location.pathname);
 });
 
-renderApp(window.location.pathname);
+api.pingDittnavBackend()
+  .then(() => renderApp(window.location.pathname))
+  .catch(() => renderApp(window.location.pathname)); // add a check here, so we could render something else, when dittnavapi is unavailable?

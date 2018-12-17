@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'js/App';
-import api from 'js/Api';
+import Api from 'js/Api';
 import NavApp from 'frontshell';
 
 import nbMessages from 'translations/nb.json';
@@ -22,7 +22,15 @@ const wrapNavApp = (children, props = { defaultSprak: 'nb', messages: loadMessag
 
 jest.mock('react-dom', () => ({render: jest.fn()}))
 
-it('index renders without crashing', () => {
-  require('../index');
-  expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={api} path='/' />), null);
+it('index renders without crashing', async () => {
+  const expectedF = jest.fn();
+  Api.pingDittnavBackend = () => new Promise((resolve, reject) => {
+    expectedF();
+    resolve({});
+  });
+
+  await require('../index');
+  expect(expectedF).toHaveBeenCalled();
+
+  expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={Api} path='/' />), null);
 });
