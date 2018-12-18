@@ -16,8 +16,6 @@ const getMessagesIcon = (type) => {
   }
 };
 
-//type === 'DOKUMENT_VARSEL'  ? 'document-icon' : (type === 'OPPGAVE_VARSEL' ? 'registration-icon' : 'mininnboks-default-icon');
-
 class MinInnboks extends Component {
   render() {
     const { numberToWord } = i18n[this.props.intl.locale];
