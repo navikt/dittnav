@@ -1,9 +1,0 @@
-[
-  {"type": "DOKUMENT_VARSEL", "undertype": "testundertype", "uri": "someurl", "varselid": 1},
-  {"type": "DOKUMENT_VARSEL", "undertype": "testundertype2", "uri": "someurl", "varselid": 2},
-  {"type": "OPPGAVE_VARSEL", "undertype": "testundertype", "uri": "someurl", "varselid": 3},
-  {"type": "OPPGAVE_VARSEL", "undertype": "testundertype", "uri": "someurl", "varselid": 4},
-  {"type": "OTHER_TYPE", "undertype": "testundertype", "uri": "someurl", "varselid": 5, "statuser": ["UBESVART"]},
-  {"type": "OTHER_TYPE", "undertype": "testundertype", "uri": "someurl", "varselid": 6, "statuser": ["UBESVART"]},
-  {"type": "OTHER_TYPE", "undertype": "testundertype", "uri": "someurl", "varselid": 7, "statuser": ["ULEST"]}
-]

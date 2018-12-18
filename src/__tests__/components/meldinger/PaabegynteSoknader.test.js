@@ -9,16 +9,24 @@ test('PaabegynteSoknader green test', () => {
 });
 
 test('PaabegynteSoknader empty array', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSaker={[]} />));
+  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSoknader={null} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('PaabegynteSoknader one soknad', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSaker={[{uri: "http://nav.no"}]} />));
+  const paabegynteSoknader = {
+    "url": "http://nav.no",
+    "antallPaabegynte": 1
+  };
+  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('PaabegynteSoknader several soknad', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSaker={[{uri: "http://nav.no"}, {uri: "http://nav.no/1"}]} />));
+test('PaabegynteSoknader several soknader', () => {
+  const paabegynteSoknader = {
+    "url": "https://tjenester-t6.nav.no/",
+    "antallPaabegynte": 3
+  };
+  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />));
   expect(component.toJSON()).toMatchSnapshot();
 });

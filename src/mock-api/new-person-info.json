@@ -8,7 +8,33 @@
     "inaktiv": false,
     "meldekortbruker": true
   },
-  "pleiepenger": [],
+  "paabegynteSoknader": {
+    "url": "",
+    "antallPaabegynte": 2,
+    "feilendeBaksystem": []
+  },
+  "ubehandledeMeldinger": [
+      {
+          "type": "ULEST",
+          "url": "https://tjenester-t6.nav.no/mininnboks",
+          "antall": 2
+      },
+      {
+          "type": "UBESVART",
+          "url": "https://tjenester-t6.nav.no/mininnboks",
+          "antall": 2
+      },
+      {
+          "type": "DOKUMENT_VARSEL",
+          "url": "https://tjenester-t6.nav.no/mininnboks",
+          "antall": 2
+      },
+      {
+          "type": "OPPGAVE_VARSEL",
+          "url": "test7.url",
+          "antall": 1
+      }
+  ],
   "agMeldingerAntall": 0,
   "navMeldingerAntall": 0,
   "meldekort": {
