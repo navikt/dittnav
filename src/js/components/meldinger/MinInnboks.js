@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18n from 'translations/i18n';
+import i18n from '../../../translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;

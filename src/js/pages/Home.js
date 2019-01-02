@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import PersonInfo from 'js/components/PersonInfo';
-import InfoMeldinger from 'js/components/InfoMeldinger';
-import Tjenester from 'js/components/Tjenester';
-import Lenkelister from 'js/components/Lenkelister';
-import Artikkel from 'js/components/Artikkel';
+import PersonInfo from '../components/PersonInfo';
+import InfoMeldinger from '../components/InfoMeldinger';
+import Tjenester from '../components/Tjenester';
+import Lenkelister from '../components/Lenkelister';
+import Artikkel from '../components/Artikkel';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,

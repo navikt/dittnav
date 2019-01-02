@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import conf from 'js/Config';
-import FeilMeldinger from 'js/components/FeilMeldinger';
-import Postkasse from 'js/pages/Postkasse';
-import Login from 'js/pages/Login';
-import Home from 'js/pages/Home';
-
-import 'less/index.less';
+import conf from "./Config";
+import FeilMeldinger from "./components/FeilMeldinger";
+import Postkasse from "./pages/Postkasse";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 
 function route(props, options) {
   const { path } = props;
@@ -18,41 +16,40 @@ function route(props, options) {
     case `${conf.dittNav.CONTEXT_PATH}/login`:
       return <Login />;
     default:
-      return <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />;
+      return (
+        <Home
+          info={info}
+          paabegynteSoknader={paabegynteSoknader}
+          mininnboks={mininnboks}
+        />
+      );
   }
 }
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [] };
-  }
 
-  componentWillMount() {
-    const { errors } = this.state;
-    const { api, path } = this.props;
-    if (path === `${conf.dittNav.CONTEXT_PATH}/login`) {
-      return;
+    const r = props.data;
+    const { paabegynteSoknader } = r;
+    const errors = [];
+    if (
+      paabegynteSoknader &&
+      paabegynteSoknader.feilendeBaksystem &&
+      paabegynteSoknader.feilendeBaksystem.length > 0
+    ) {
+      errors.push("error.paabegynte");
     }
-    const catchError = msg => () => {
-      errors.push(msg);
-      this.setState(() => ({ errors }));
+    this.state = {
+      info: r,
+      mininnboks: r.ubehandledeMeldinger,
+      paabegynteSoknader,
+      errors,
     };
-
-    api.fetchPersonInfoAndServices()
-      .then((r) => {
-        const { paabegynteSoknader } = r;
-        if (paabegynteSoknader && paabegynteSoknader.feilendeBaksystem && paabegynteSoknader.feilendeBaksystem.length > 0) {
-          errors.push('error.paabegynte');
-        }
-        this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, paabegynteSoknader, errors }));
-      }).catch(catchError('error.person.info'));
   }
 
   render() {
-    const {
-      info, paabegynteSoknader, mininnboks, errors,
-    } = this.state;
+    const { info, paabegynteSoknader, mininnboks, errors } = this.state;
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
@@ -65,10 +62,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  api: PropTypes.shape({
-    fetchPersonInfoAndServices: PropTypes.func.isRequired,
-  }).isRequired,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 };
 
 export default App;

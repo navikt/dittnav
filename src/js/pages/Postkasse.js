@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import DittLink from 'js/components/common/DittLink';
-import Tjenester from 'js/components/Tjenester';
+import React, { Component } from "react";
+import DittLink from "../components/common/DittLink";
+import Tjenester from "../components/Tjenester";
 
 class Postkasse extends Component {
   render() {
@@ -10,9 +10,12 @@ class Postkasse extends Component {
         <h1 className="typo-sidetittel text-center">Din dialog med NAV</h1>
         <Tjenester services={info.viktigeTjenester} />
         <section className="text-center">
-          <DittLink url="/" className="lenke">Til Ditt NAV</DittLink>
+          <DittLink url="/" className="lenke">
+            Til Ditt NAV
+          </DittLink>
         </section>
-      </div>);
+      </div>
+    );
   }
 }
 
