@@ -43,14 +43,14 @@
   "nav.melding.flere": "Du har fått {count} nye meldinger fra NAV",
   "nav.melding.en": "Du har fått en ny melding fra NAV",
 
-  "mininnboks.dokument.meldinger.en": "Du har ett ulest dokument i din innboks",
-  "mininnboks.dokument.meldinger.flere": "Du har {count} uleste dokumenter i din innboks",
-  "mininnboks.oppgave.meldinger.en": "Du har én ulest oppgave",
-  "mininnboks.oppgave.meldinger.flere": "Du har {count} uleste oppgaver",
-  "mininnboks.uleste.meldinger.en": "Du har én ulest melding i din innboks",
-  "mininnboks.uleste.meldinger.flere": "Du har {count} uleste meldinger i din innboks",
-  "mininnboks.ubesvarte.meldinger.en": "Du har ett ubesvart spørsmål i din innboks",
-  "mininnboks.ubesvarte.meldinger.flere": "Du har {count} ubesvarte spørsmål i din innboks",
+  "mininnboks.dokument_varsel.meldinger.en": "Du har ett ulest dokument i din innboks",
+  "mininnboks.dokument_varsel.meldinger.flere": "Du har {count} uleste dokumenter i din innboks",
+  "mininnboks.oppgave_varsel.meldinger.en": "Du har én ulest oppgave",
+  "mininnboks.oppgave_varsel.meldinger.flere": "Du har {count} uleste oppgaver",
+  "mininnboks.ulest.meldinger.en": "Du har én ulest melding i din innboks",
+  "mininnboks.ulest.meldinger.flere": "Du har {count} uleste meldinger i din innboks",
+  "mininnboks.ubesvart.meldinger.en": "Du har ett ubesvart spørsmål i din innboks",
+  "mininnboks.ubesvart.meldinger.flere": "Du har {count} ubesvarte spørsmål i din innboks",
 
   "paalogging.alternativ.brukernavnpassord.tittel": "Brukernavn og passord fra NAV",
   "paalogging.alternativ.brukernavnpassord.beskrivelse": "Pålogging med brukernavn og passord gir deg bare tilgang til selvbetjening for arbeidssøkere.",
@@ -71,8 +71,6 @@
   "paalogging.alternativ.om.tittel": "Om alternativ pålogging",
   "paalogging.alternativ.om.beskrivelse": "Med alternativ pålogging får du kun tilgang til enkelte av NAVs selvbetjeningsløsninger. Vi oppfordrer derfor våre brukere til å logge inn med ID-porten.",
   "paalogging.alternativ.om.lenketekst": "Logg inn med ID-porten",
-
-  "pleiepenger.peridag": "Forbrukte pleiepengedager per i dag for barn med f.nr. {child}:",
 
   "error.general.connection.problem": "Error fetchin data",
   "error.person.info": "Det skjedde en feil under henting av person info",

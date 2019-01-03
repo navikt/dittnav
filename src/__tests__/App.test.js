@@ -7,8 +7,6 @@ import wrapIntl from 'js/IntlTestHelper';
 const mockApi = () => {
   return {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
-    fetchPaabegynteSaker: () => new Promise((resolve, reject) => {}),
-    fetchMinInnboksData: () => new Promise((resolve, reject) => []),
   }
 };
 
@@ -32,19 +30,6 @@ it('expect Login page rendering', () => {
 it('expect Postkasse page rendering', () => {
   const api = mockApi();
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/dittnav/postkasse' />));
-  expect(component.toJSON()).toMatchSnapshot();
-});
-
-it('expect PaabegynteSoknader fetching', () => {
-  const expectedF = jest.fn();
-  const api = mockApi();
-  api.fetchPaabegynteSaker = () => new Promise((resolve, reject) => {
-    expectedF();
-    return {};
-  });
-
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
-  expect(expectedF).toHaveBeenCalled();
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -73,9 +58,29 @@ it('expect PersonInfo fetching', async () => {
 
 it('expect PaabegynteSoknader fetching', async () => {
   const api = mockApi();
-  api.fetchPaabegynteSaker = () => new Promise((resolve, reject) => {
-    resolve({feilendeBaksystem: ['hello']});
+
+  api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
+    resolve({
+      "paabegynteSoknader": {
+        "url": "https://tjenester-t6.nav.no/",
+        "antallPaabegynte": 2,
+        "feilendeBaksystem": ['hello']
+      },
+      "personinfo": {
+        "navn": "Ola Ytelssen",
+        "fgkode": "RARBS",
+        "ytelse": "ATTF",
+        "registrert": true,
+        "inaktiv": false,
+        "meldekortbruker": true,
+        "erUnderRegistreringIArbeid": true
+      },
+    })
   });
+
+  // api.fetchPaabegynteSaker = () => new Promise((resolve, reject) => {
+  //   resolve({feilendeBaksystem: ['hello']});
+  // });
 
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
   await flushPromises();
@@ -83,14 +88,3 @@ it('expect PaabegynteSoknader fetching', async () => {
   expect(component.root.children[0].instance.state.errors).toEqual(['error.paabegynte']);
 });
 
-it('expect mininnboks fail while fetching', async () => {
-  const api = mockApi();
-  api.fetchMinInnboksData = () => new Promise((resolve, reject) => {
-    reject(new Error('some error'));
-  });
-
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
-  await flushPromises();
-
-  expect(component.root.children[0].instance.state.errors).toEqual(['error.mininnboks']);
-});

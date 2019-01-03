@@ -3,11 +3,11 @@
 exports[`MinInnboks with one document 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/Dokument-melding"
-  href="/innloggingsinfo/type/dokument/undertype/testundertype/varselid/1"
+  data-ga="Dittnav/Varsel/dokument_varsel melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="dokument-ikon"
+    aria-label="dokument varsel ikon"
     className="icon document-icon"
   />
   <div
@@ -25,10 +25,11 @@ exports[`MinInnboks with one document 1`] = `
 exports[`MinInnboks with one task 1`] = `
 <a
   className="message clickable"
-  href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+  data-ga="Dittnav/Varsel/oppgave_varsel melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="sjekkliste-ikon"
+    aria-label="oppgave varsel ikon"
     className="icon registration-icon"
   />
   <div
@@ -46,11 +47,11 @@ exports[`MinInnboks with one task 1`] = `
 exports[`MinInnboks with one unanswered 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/ulest melding"
-  href="someurl"
+  data-ga="Dittnav/Varsel/ubesvart melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="snakkeboble-ikon"
+    aria-label="ubesvart ikon"
     className="icon mininnboks-default-icon"
   />
   <div
@@ -58,7 +59,7 @@ exports[`MinInnboks with one unanswered 1`] = `
   >
     <p>
       <span>
-        Du har én ulest melding i din innboks
+        Du har ett ubesvart spørsmål i din innboks
       </span>
     </p>
   </div>
@@ -69,29 +70,11 @@ exports[`MinInnboks with one unread task and one unread 1`] = `
 Array [
   <a
     className="message clickable"
-    data-ga="Dittnav/Varsel/ubesvart melding"
-    href="someurl"
+    data-ga="Dittnav/Varsel/oppgave_varsel melding"
+    href="https://tjenester-t6.nav.no/mininnboks"
   >
     <span
-      aria-label="snakkeboble-ikon"
-      className="icon mininnboks-default-icon"
-    />
-    <div
-      className="texts"
-    >
-      <p>
-        <span>
-          Du har ett ubesvart spørsmål i din innboks
-        </span>
-      </p>
-    </div>
-  </a>,
-  <a
-    className="message clickable"
-    href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
-  >
-    <span
-      aria-label="sjekkliste-ikon"
+      aria-label="oppgave varsel ikon"
       className="icon registration-icon"
     />
     <div
@@ -104,17 +87,36 @@ Array [
       </p>
     </div>
   </a>,
+  <a
+    className="message clickable"
+    data-ga="Dittnav/Varsel/ulest melding"
+    href="https://tjenester-t6.nav.no/mininnboks"
+  >
+    <span
+      aria-label="ulest ikon"
+      className="icon mininnboks-default-icon"
+    />
+    <div
+      className="texts"
+    >
+      <p>
+        <span>
+          Du har én ulest melding i din innboks
+        </span>
+      </p>
+    </div>
+  </a>,
 ]
 `;
 
 exports[`MinInnboks with two documents 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/Dokument-melding"
-  href="/innloggingsinfo/type/dokument/undertype/testundertype"
+  data-ga="Dittnav/Varsel/dokument_varsel melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="dokument-ikon"
+    aria-label="dokument varsel ikon"
     className="icon document-icon"
   />
   <div
@@ -129,56 +131,57 @@ exports[`MinInnboks with two documents 1`] = `
 </a>
 `;
 
-exports[`MinInnboks with two documents but different undertypes 1`] = `
-<a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/Dokument-melding"
-  href="/innloggingsinfo/type/dokument"
->
-  <span
-    aria-label="dokument-ikon"
-    className="icon document-icon"
-  />
-  <div
-    className="texts"
+exports[`MinInnboks with two documents but different types 1`] = `
+Array [
+  <a
+    className="message clickable"
+    data-ga="Dittnav/Varsel/dokument_varsel melding"
+    href="https://tjenester-t6.nav.no/mininnboks"
   >
-    <p>
-      <span>
-        Du har to uleste dokumenter i din innboks
-      </span>
-    </p>
-  </div>
-</a>
+    <span
+      aria-label="dokument varsel ikon"
+      className="icon document-icon"
+    />
+    <div
+      className="texts"
+    >
+      <p>
+        <span>
+          Du har  uleste dokumenter i din innboks
+        </span>
+      </p>
+    </div>
+  </a>,
+  <a
+    className="message clickable"
+    data-ga="Dittnav/Varsel/ubesvart melding"
+    href="https://tjenester-t6.nav.no/someother"
+  >
+    <span
+      aria-label="ubesvart ikon"
+      className="icon mininnboks-default-icon"
+    />
+    <div
+      className="texts"
+    >
+      <p>
+        <span>
+          Du har  ubesvarte spørsmål i din innboks
+        </span>
+      </p>
+    </div>
+  </a>,
+]
 `;
 
 exports[`MinInnboks with two tasks 1`] = `
 <a
   className="message clickable"
-  href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
+  data-ga="Dittnav/Varsel/oppgave_varsel melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="sjekkliste-ikon"
-    className="icon registration-icon"
-  />
-  <div
-    className="texts"
-  >
-    <p>
-      <span>
-        Du har én ulest oppgave
-      </span>
-    </p>
-  </div>
-</a>
-`;
-
-exports[`MinInnboks with two tasks 2`] = `
-<a
-  className="message clickable"
-  href="/innloggingsinfo/type/oppgave/undertype/testundertype/varselid/1"
->
-  <span
-    aria-label="sjekkliste-ikon"
+    aria-label="oppgave varsel ikon"
     className="icon registration-icon"
   />
   <div
@@ -196,11 +199,33 @@ exports[`MinInnboks with two tasks 2`] = `
 exports[`MinInnboks with two unanswered 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/ulest melding"
-  href="/mininnboks"
+  data-ga="Dittnav/Varsel/ubesvart melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="snakkeboble-ikon"
+    aria-label="ubesvart ikon"
+    className="icon mininnboks-default-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      <span>
+        Du har to ubesvarte spørsmål i din innboks
+      </span>
+    </p>
+  </div>
+</a>
+`;
+
+exports[`MinInnboks with two unread 1`] = `
+<a
+  className="message clickable"
+  data-ga="Dittnav/Varsel/ulest melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
+>
+  <span
+    aria-label="ulest ikon"
     className="icon mininnboks-default-icon"
   />
   <div
@@ -215,22 +240,22 @@ exports[`MinInnboks with two unanswered 1`] = `
 </a>
 `;
 
-exports[`MinInnboks with two unread 1`] = `
+exports[`MinInnboks with zero tasks 1`] = `
 <a
   className="message clickable"
-  data-ga="Dittnav/Varsel/ubesvart melding"
-  href="/mininnboks"
+  data-ga="Dittnav/Varsel/oppgave_varsel melding"
+  href="https://tjenester-t6.nav.no/mininnboks"
 >
   <span
-    aria-label="snakkeboble-ikon"
-    className="icon mininnboks-default-icon"
+    aria-label="oppgave varsel ikon"
+    className="icon registration-icon"
   />
   <div
     className="texts"
   >
     <p>
       <span>
-        Du har to ubesvarte spørsmål i din innboks
+        Du har  uleste oppgaver
       </span>
     </p>
   </div>

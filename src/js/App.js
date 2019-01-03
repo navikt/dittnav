@@ -11,21 +11,21 @@ import 'less/index.less';
 
 function route(props, options) {
   const { path } = props;
-  const { info, paabegynteSaker, mininnboks } = options;
+  const { info, paabegynteSoknader, mininnboks } = options;
   switch (path) {
     case `${conf.dittNav.CONTEXT_PATH}/postkasse`:
       return <Postkasse {...props} info={info} />;
     case `${conf.dittNav.CONTEXT_PATH}/login`:
       return <Login />;
     default:
-      return <Home info={info} paabegynteSaker={paabegynteSaker} mininnboks={mininnboks} />;
+      return <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />;
   }
 }
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSaker: {}, mininnboks: [], errors: [] };
+    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [] };
   }
 
   componentWillMount() {
@@ -41,32 +41,23 @@ class App extends Component {
 
     api.fetchPersonInfoAndServices()
       .then((r) => {
-        this.setState(() => ({ info: r }));
-      }).catch(catchError('error.person.info'));
-
-    api.fetchPaabegynteSaker()
-      .then((r) => {
-        if (r.feilendeBaksystem && r.feilendeBaksystem.length > 0) {
+        const { paabegynteSoknader } = r;
+        if (paabegynteSoknader && paabegynteSoknader.feilendeBaksystem && paabegynteSoknader.feilendeBaksystem.length > 0) {
           errors.push('error.paabegynte');
         }
-        this.setState(() => ({ paabegynteSaker: r, errors }));
-      }).catch(catchError('error.paabegynte'));
-
-    api.fetchMinInnboksData()
-      .then((r) => {
-        this.setState(() => ({ mininnboks: r }));
-      }).catch(catchError('error.mininnboks'));
+        this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, paabegynteSoknader, errors }));
+      }).catch(catchError('error.person.info'));
   }
 
   render() {
     const {
-      info, paabegynteSaker, mininnboks, errors,
+      info, paabegynteSoknader, mininnboks, errors,
     } = this.state;
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
         <div className="container maincontent side-innhold">
-          {route(this.props, { info, paabegynteSaker, mininnboks })}
+          {route(this.props, { info, paabegynteSoknader, mininnboks })}
         </div>
       </main>
     );
@@ -76,8 +67,6 @@ class App extends Component {
 App.propTypes = {
   api: PropTypes.shape({
     fetchPersonInfoAndServices: PropTypes.func.isRequired,
-    fetchPaabegynteSaker: PropTypes.func.isRequired,
-    fetchMinInnboksData: PropTypes.func.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
 };

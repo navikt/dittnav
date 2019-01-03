@@ -153,46 +153,6 @@ exports[`expect Login page rendering 1`] = `
 </main>
 `;
 
-exports[`expect PaabegynteSoknader fetching 1`] = `
-<main
-  role="main"
->
-  <div
-    className="container maincontent side-innhold"
-  >
-    <div
-      className="row"
-    >
-      <div
-        className="maincontent side-innhold"
-      >
-        <div
-          className="col-md-12"
-        >
-          <section
-            className="infomeldinger-list"
-          >
-            <h1
-              className="vekk"
-            >
-              <span>
-                Varsler
-              </span>
-            </h1>
-          </section>
-          <section
-            className="ditt-list"
-          />
-          <section
-            className="ditt-list"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
-`;
-
 exports[`expect PersonInfo fetching 1`] = `
 <main
   role="main"

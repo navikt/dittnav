@@ -33,11 +33,11 @@ exports[`PaabegynteSoknader one soknad 1`] = `
 </a>
 `;
 
-exports[`PaabegynteSoknader several soknad 1`] = `
+exports[`PaabegynteSoknader several soknader 1`] = `
 <a
   className="message clickable"
   data-ga="Dittnav/Varsel/Paabegynt soknad"
-  href="/saksoversikt"
+  href="https://tjenester-t6.nav.no/"
 >
   <span
     aria-label="dokument-ikon"
@@ -48,7 +48,7 @@ exports[`PaabegynteSoknader several soknad 1`] = `
   >
     <p>
       <span>
-        Du har to søknader som du ikke har sendt
+        Du har tre søknader som du ikke har sendt
       </span>
     </p>
     <p
