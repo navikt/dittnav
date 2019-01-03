@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import NavApp from 'frontshell';
 
-import App from 'js/App';
-import api from 'js/Api';
+import App from './js/App';
+import api from './js/Api';
 
-import 'css/index.css';
-import 'css/old.css';
+import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';

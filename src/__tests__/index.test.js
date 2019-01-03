@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'js/App';
-import Api from 'js/Api';
+import App from '../js/App';
+import Api from '../js/Api';
 import NavApp from 'frontshell';
 
 import nbMessages from 'translations/nb.json';

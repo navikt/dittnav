@@ -1,4 +1,4 @@
-import conf from 'js/Config';
+import conf from './Config';
 
 const fetchJSONAndCheckForErrors = (url) => {
   const p = new Promise((res, rej) => {
