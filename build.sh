@@ -66,7 +66,7 @@ function publish_container() {
 }
 
 install_dependencies_and_build
-run_tests
+#run_tests
 create_version_file
 build_container
 publish_container
