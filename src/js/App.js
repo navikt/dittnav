@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import conf from "./Config";
-import FeilMeldinger from "./components/FeilMeldinger";
-import Postkasse from "./pages/Postkasse";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
+import conf from './Config';
+import FeilMeldinger from './components/FeilMeldinger';
+import Postkasse from './pages/Postkasse';
+import Login from './pages/Login';
+import Home from './pages/Home';
 
 function route(props, options) {
   const { path } = props;
@@ -38,7 +38,7 @@ class App extends Component {
       paabegynteSoknader.feilendeBaksystem &&
       paabegynteSoknader.feilendeBaksystem.length > 0
     ) {
-      errors.push("error.paabegynte");
+      errors.push('error.paabegynte');
     }
     this.state = {
       info: r,
