@@ -42,7 +42,7 @@ class App extends Component {
     }
     this.state = {
       info: r,
-      mininnboks: r.ubehandledeMeldinger,
+      mininnboks: r.ubehandledeMeldinger ? r.ubehandledeMeldinger : [],
       paabegynteSoknader,
       errors,
     };

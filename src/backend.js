@@ -4,12 +4,14 @@ import ReactDOMServer from 'react-dom/server';
 import NavApp from 'frontshell';
 import App from './js/App';
 
+
 const path = require('path');
 const express = require('express');
 const request = require('request');
 const https = require('https');
 const fs = require('fs');
 const dotenv = require('dotenv');
+const getDecorator = require('./decorator.js');
 dotenv.config();
 
 const css = fs.readdirSync('./dist/static/css').reduce(file => file);
@@ -26,7 +28,8 @@ function getHttpsOptions() {
 }
 
 function getPort() {
-  return process.env.DITTNAV_PORT ? process.env.DITTNAV_PORT : 8080; // 443 in dev mode
+  return process.env.DITTNAV_PORT ? process.env.DITTNAV_PORT : 443; // 443 in dev mode
+  //return process.env.DITTNAV_PORT ? process.env.DITTNAV_PORT : 8080; // 443 in dev mode
 }
 
 
@@ -40,16 +43,22 @@ function getApiUrl(host) {
 const PORT = getPort();
 const { CONTEXT_PATH } = process.env;
 
-const html = app => `
+const html = (fragments, app) => `
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="${CONTEXT_PATH}/static/css/${css}" rel="stylesheet">
+    ${fragments.NAV_SCRIPTS}
+    ${fragments.NAV_STYLES}
+    ${fragments.MEGAMENU_RESOURCES}
+    <link href="${fragments.CONTEXT_PATH}/static/css/${fragments.css}" rel="stylesheet">
   </head>
   <body>
     <div class="pagewrapper">
+    ${fragments.NAV_SKIPLINKS}
+    ${fragments.NAV_HEADING}
       <div id="app">${app}</div>
     </div>
+    ${fragments.NAV_FOOTER}
   </body>
 </html>`;
 
@@ -86,35 +95,42 @@ const getApp = (data, viewPath) => (
   </NavApp>
 );
 
-const renderer = (req, res) => {
-  const { cookie, host } = req.headers;
-  api
-    .fetchInfo(cookie, host)
-    .then((json) => {
-      res.send(html(ReactDOMServer.renderToString(getApp(json, req.path))));
-    })
-    .catch((e) => {
-      if (e.message === '401') {
-        res.redirect(
-          `https://loginservice-q.nav.no/login?redirect=https://${req.headers.host}/dittnav/`,
-        );
-      } else {
-        console.log(e);
-        res.status(401).send('Helaas pindakaas'); //  todo
-      }
+getDecorator()
+  .then((fragments) => {
+    const renderer = (req, res) => {
+      const { cookie, host } = req.headers;
+      api
+        .fetchInfo(cookie, host)
+        .then((json) => {
+          const fr = Object.assign(fragments, {
+            CONTEXT_PATH,
+            css,
+          });
+          res.send(html(fr, ReactDOMServer.renderToString(getApp(json, req.path))));
+        })
+        .catch((e) => {
+          if (e.message === '401') {
+            res.redirect(
+              `https://loginservice-q.nav.no/login?redirect=https://${req.headers.host}/dittnav/`,
+            );
+          } else {
+            console.log(e);
+            res.status(401).send('Helaas pindakaas'); //  todo
+          }
+        });
+    };
+
+    server.use(
+      `${CONTEXT_PATH}/static`,
+      express.static('dist/static', { index: false }),
+    );
+
+    server.get(CONTEXT_PATH, renderer);
+    server.get(`${CONTEXT_PATH}/`, renderer);
+    server.get(`${CONTEXT_PATH}/postkasse`, renderer);
+    server.get(`${CONTEXT_PATH}/login`, renderer);
+
+    https.createServer(getHttpsOptions(), server).listen(PORT, () => {
+      console.log(`Started on port: ${PORT}`);
     });
-};
-
-server.use(
-  `${CONTEXT_PATH}/static`,
-  express.static('dist/static', { index: false }),
-);
-
-server.get(CONTEXT_PATH, renderer);
-server.get(`${CONTEXT_PATH}/`, renderer);
-server.get(`${CONTEXT_PATH}/postkasse`, renderer);
-server.get(`${CONTEXT_PATH}/login`, renderer);
-
-https.createServer(getHttpsOptions(), server).listen(PORT, () => {
-  console.log(`Started on port: ${PORT}`);
-});
+  }, error => console.log(`Failed to render app ${error}`));
