@@ -42,8 +42,12 @@ class MinInnboks extends Component {
 export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, uri: PropTypes.string }));
 
 MinInnboks.propTypes = {
-  mininnboks: MinInnboksType.isRequired, // eslint-disable-line react/no-typos
+  mininnboks: MinInnboksType,
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos
+};
+
+MinInnboks.defaultProps = {
+  mininnboks: [],
 };
 
 export default injectIntl(MinInnboks);

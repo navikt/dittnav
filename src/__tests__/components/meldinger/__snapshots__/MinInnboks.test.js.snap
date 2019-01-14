@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MinInnboks with empty input 1`] = `null`;
+
+exports[`MinInnboks with null input 1`] = `null`;
+
 exports[`MinInnboks with one document 1`] = `
 <a
   className="message clickable"
