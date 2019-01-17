@@ -22,7 +22,7 @@ class MinInnboks extends Component {
     const messages = this.props.mininnboks;
     return (
       <React.Fragment>
-        {messages.map(message => (
+        {messages && messages.map(message => (
           <a
             key={message.type}
             data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}

@@ -84,8 +84,14 @@ test('MinInnboks with empty input', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('MinInnboks with null input', () => {
+test('MinInnboks with no input', () => {
   const mininnboks = [];
   const component = ReactTestRenderer.create(wrapIntl(<MinInnboks />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('MinInnboks with null input', () => {
+  const mininnboks = [];
+  const component = ReactTestRenderer.create(wrapIntl(<MinInnboks mininnboks={null} />));
   expect(component.toJSON()).toMatchSnapshot();
 });

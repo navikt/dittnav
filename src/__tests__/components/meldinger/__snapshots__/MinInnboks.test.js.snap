@@ -2,6 +2,8 @@
 
 exports[`MinInnboks with empty input 1`] = `null`;
 
+exports[`MinInnboks with no input 1`] = `null`;
+
 exports[`MinInnboks with null input 1`] = `null`;
 
 exports[`MinInnboks with one document 1`] = `
