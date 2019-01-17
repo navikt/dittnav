@@ -77,3 +77,15 @@ test('MinInnboks with two unanswered', () => {
   const component = ReactTestRenderer.create(wrapIntl(<MinInnboks mininnboks={mininnboks} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('MinInnboks with empty input', () => {
+  const mininnboks = [];
+  const component = ReactTestRenderer.create(wrapIntl(<MinInnboks mininnboks={mininnboks} />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('MinInnboks with null input', () => {
+  const mininnboks = [];
+  const component = ReactTestRenderer.create(wrapIntl(<MinInnboks />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
