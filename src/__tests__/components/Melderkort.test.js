@@ -19,10 +19,10 @@ test('basic Meldekort test', () => {
       "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
-        "week": "week 42",
-        "canBeSubmittedFrom": 1531808013471,
-        "until": 1531808093471,
-        "from": 1531838093471
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
     },
@@ -40,10 +40,10 @@ test('basic one Meldekort test', () => {
       "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
-        "week": "week 42",
-        "canBeSubmittedFrom": 1531808013471,
-        "until": 1531808093471,
-        "from": 1531838093471
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
     },
@@ -61,10 +61,10 @@ test('basic one Meldekort test no risk', () => {
       "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
-        "week": "week 42",
-        "canBeSubmittedFrom": 1531808013471,
-        "until": 1531808093471,
-        "from": 1531838093471
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
     },
@@ -82,10 +82,10 @@ test('no cards no risk', () => {
       "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
-        "week": "week 42",
-        "canBeSubmittedFrom": 1531808013471,
-        "until": 1531808093471,
-        "from": 1531838093471
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
     },
@@ -103,10 +103,10 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
       "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": false,
-        "week": "week 42",
-        "canBeSubmittedFrom": 1531808013471,
-        "until": 1531808093471,
-        "from": 1531838093471
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
     },
@@ -124,10 +124,10 @@ test('basic zero Meldekort test', () => {
       "nesteMeldekort": {
         "datoForTrekk": 1533814941280,
         "risikererTrekk": true,
-        "week": "week 42",
-        "canBeSubmittedFrom": 1531808013471,
-        "until": 1531808093471,
-        "from": 1531838093471
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
     },
