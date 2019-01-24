@@ -23,7 +23,7 @@ const melding = (next, count, formatDate) => (next ? (
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDate, next) => (!risikererTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
+const trekk = (risikererTrekk, formatDate, next) => (next.datoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {

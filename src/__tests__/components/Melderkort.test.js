@@ -59,8 +59,6 @@ test('basic one Meldekort test no risk', () => {
     "nyeMeldekort": {
       "antallNyeMeldekort": 1,
       "nesteMeldekort": {
-        "datoForTrekk": 1533814941280,
-        "risikererTrekk": false,
         "uke": "week 42",
         "kanSendesFra": 1531808013471,
         "til": 1531808093471,
@@ -101,8 +99,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     "nyeMeldekort": {
       "antallNyeMeldekort": 1,
       "nesteMeldekort": {
-        "datoForTrekk": 1533814941280,
-        "risikererTrekk": false,
+        "datoForTrekk": null,
         "uke": "week 42",
         "kanSendesFra": 1531808013471,
         "til": 1531808093471,
@@ -130,6 +127,25 @@ test('basic zero Meldekort test', () => {
         "fra": 1531838093471
       },
       "nesteInnsendingAvMeldekort": 1541808093471
+    },
+    "resterendeFeriedager": 12
+  };
+
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('nesteInnsendingAvMeldekort is null', () => {
+  const meldekort = {
+    "nyeMeldekort": {
+      "antallNyeMeldekort": 1,
+      "nesteMeldekort": {
+        "uke": "week 42",
+        "kanSendesFra": 1531808013471,
+        "til": 1531808093471,
+        "fra": 1531838093471
+      },
+      "nesteInnsendingAvMeldekort": null
     },
     "resterendeFeriedager": 12
   };
