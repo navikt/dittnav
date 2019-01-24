@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
-        <div className="container maincontent side-innhold">
+        <div className="container">
           {route(this.props, { info, paabegynteSoknader, mininnboks })}
         </div>
       </main>
