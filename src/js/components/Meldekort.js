@@ -18,12 +18,12 @@ const melding = (next, count, formatDate) => (next ? (
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
-      count, next: next.week, from: formatDate(next.from), until: formatDate(next.until),
+      count, next: next.uke, from: formatDate(next.fra), until: formatDate(next.til),
     }}
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDate, next) => (!risikererTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
+const trekk = (risikererTrekk, formatDate, next) => (next.datoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {
@@ -69,10 +69,10 @@ class Meldekort extends Component {
 const NextCard = PropTypes.shape({
   datoForTrekk: PropTypes.number,
   risikererTrekk: PropTypes.bool,
-  week: PropTypes.string,
-  canBeSubmittedFrom: PropTypes.number,
-  until: PropTypes.number,
-  from: PropTypes.number,
+  uke: PropTypes.string,
+  kanSendesFra: PropTypes.number,
+  til: PropTypes.number,
+  fra: PropTypes.number,
 });
 
 const NewCards = PropTypes.shape({

@@ -17,14 +17,14 @@ exports[`render a couple of links 1`] = `
   className="ditt-list"
 >
   <a
-    className="lenke ditt-list-element"
+    className="lenke ditt-list-element lenkelist"
     data-ga="Dittnav/Lenkeliste"
     href="/mininnboks"
   >
     Min innboks
   </a>
   <a
-    className="lenke ditt-list-element"
+    className="lenke ditt-list-element lenkelist"
     data-ga="Dittnav/Lenkeliste"
     href="/saksoversikt"
   >
