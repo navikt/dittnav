@@ -3,7 +3,7 @@ const getDittNavBaseApiUrl = () => {
   if (host.indexOf('localhost') > -1) {
     return 'http://localhost:9222';
   }
-  return `https://${window.location.hostname}`;
+  return `https://${window.location.hostname}/person`;
 };
 
 const getServicesUrl = () => {
@@ -14,7 +14,10 @@ const getServicesUrl = () => {
   if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
     return window.location.origin;
   }
-  if (host.indexOf('person-q') > -1) {
+  if (host.indexOf('www-q0') > -1) {
+    return 'https://tjenester-q0.nav.no';
+  }
+  if (host.indexOf('www-q1') > -1) {
     return 'https://tjenester-q1.nav.no';
   }
   return 'https://tjenester.nav.no';
@@ -28,7 +31,7 @@ const getLoginUrl = () => {
   if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
     return 'https://loginservice-q.nav.no/login';
   }
-  if (host.indexOf('person-q') > -1) {
+  if (host.indexOf('www-q') > -1) {
     return 'https://loginservice-q.nav.no/login';
   }
   return 'https://loginservice.nav.no/login';
