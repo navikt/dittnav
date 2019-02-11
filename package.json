@@ -4,7 +4,7 @@
   "private": false,
   "author": "NAV",
   "license": "MIT",
-  "homepage": "/dittnav",
+  "homepage": "/person/dittnav",
   "dependencies": {
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "prop-types": "^15.6.2",

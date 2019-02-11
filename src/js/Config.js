@@ -44,7 +44,7 @@ export default {
     DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/personinfo`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/ping`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
-    CONTEXT_PATH: '/dittnav',
+    CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
   },
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
