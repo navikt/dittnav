@@ -3,7 +3,7 @@
 exports[`DittLink renders 1`] = `
 <a
   className=""
-  href="/dittnav"
+  href="/person/dittnav"
   onClick={[Function]}
 >
   <div>

@@ -9,12 +9,12 @@ replicas:
 port: 8080
 healthcheck:
   liveness:
-    path: dittnav/internal/isAlive
+    path: person/dittnav/internal/isAlive
   readiness:
-    path: dittnav/internal/isReady
+    path: person/dittnav/internal/isReady
 prometheus:
   enabled: false
-  path: dittnav/internal/metrics
+  path: person/dittnav/internal/metrics
 ingress:
   enabled: true
 resources:

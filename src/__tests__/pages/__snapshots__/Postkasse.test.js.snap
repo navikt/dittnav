@@ -44,7 +44,7 @@ exports[`Postkasse renders 1`] = `
   >
     <a
       className="lenke"
-      href="/dittnav"
+      href="/person/dittnav"
       onClick={[Function]}
     >
       Til Ditt NAV
