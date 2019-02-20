@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`12 Meldekort test no risk no remaining holidays 1`] = `
+<a
+  className="message clickable meldekort"
+  data-ga="Dittnav/Varsel"
+  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+>
+  <span
+    aria-label="alarm-ikon"
+    className="icon meldekort-icon"
+  />
+  <span
+    className="texts"
+  >
+    <span>
+       
+    </span>
+    <span>
+      <span>
+        Du har tolv meldekort klare for innsending
+      </span>
+       
+    </span>
+    <span>
+       
+    </span>
+    <span>
+       
+    </span>
+    <p
+      id="meldekort.lenkeTekst"
+    >
+      <span>
+        Oversikt over meldekort
+      </span>
+    </p>
+    <p />
+  </span>
+</a>
+`;
+
 exports[`Meldekort without next card test 1`] = `null`;
 
 exports[`basic Meldekort test 1`] = `
@@ -20,7 +60,7 @@ exports[`basic Meldekort test 1`] = `
     </span>
     <span>
       <span>
-        Du har 2 meldekort klare for innsending
+        Du har to meldekort klare for innsending
       </span>
        
     </span>
@@ -222,6 +262,46 @@ exports[`basic zero Meldekort test 1`] = `
     </p>
   </span>
 </div>
+`;
+
+exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
+<a
+  className="message clickable meldekort"
+  data-ga="Dittnav/Varsel"
+  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+>
+  <span
+    aria-label="alarm-ikon"
+    className="icon meldekort-icon"
+  />
+  <span
+    className="texts"
+  >
+    <span>
+       
+    </span>
+    <span>
+      <span>
+        Du har 13 meldekort klare for innsending
+      </span>
+       
+    </span>
+    <span>
+       
+    </span>
+    <span>
+       
+    </span>
+    <p
+      id="meldekort.lenkeTekst"
+    >
+      <span>
+        Oversikt over meldekort
+      </span>
+    </p>
+    <p />
+  </span>
+</a>
 `;
 
 exports[`nesteInnsendingAvMeldekort is null 1`] = `

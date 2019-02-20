@@ -14,11 +14,11 @@ const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.res
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
-const melding = (next, count, formatDate) => (next ? (
+const melding = (next, count, formatDate, numberToWord) => (next ? (
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
-      count, next: next.uke, from: formatDate(next.fra), until: formatDate(next.til),
+      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til),
     }}
   />
 ) : null);
@@ -28,7 +28,7 @@ const trekk = (risikererTrekk, formatDate, next) => (next.datoForTrekk ? (<F id=
 class Meldekort extends Component {
   render() {
     const { meldekort, intl, getCurrentDate } = this.props;
-    const { formatDate } = i18n[intl.locale];
+    const { formatDate, numberToWord } = i18n[intl.locale];
     if (!meldekort) return null;
 
     const { antallNyeMeldekort: count } = meldekort.nyeMeldekort;
@@ -40,7 +40,7 @@ class Meldekort extends Component {
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
             <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
-            <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDate)} </span>
+            <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDate, numberToWord)} </span>
             <span>{trekk(risikererTrekk, formatDate, meldekort.nyeMeldekort.nesteMeldekort)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
