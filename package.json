@@ -32,6 +32,12 @@
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/src/js/Config.js"
+    ]
+  },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
     "jest-fetch-mock": "^1.6.5",
