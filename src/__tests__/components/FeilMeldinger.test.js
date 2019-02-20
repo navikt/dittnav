@@ -1,7 +1,7 @@
 import * as React from 'react';
 import FeilMeldinger from 'js/components/FeilMeldinger';
-const ReactTestRenderer = require('react-test-renderer');
 import wrapIntl from 'js/IntlTestHelper';
+const ReactTestRenderer = require('react-test-renderer');
 
 test('render empty FeilMeldinger', () => {
   const component = ReactTestRenderer.create(wrapIntl(<FeilMeldinger />));

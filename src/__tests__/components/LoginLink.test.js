@@ -1,7 +1,7 @@
 import * as React from 'react';
-const ReactTestRenderer = require('react-test-renderer');
-import LoginLink from 'js/components/LoginLink'
+import LoginLink from 'js/components/LoginLink';
 import wrapIntl from 'js/IntlTestHelper';
+const ReactTestRenderer = require('react-test-renderer');
 
 test('LoginLink renders', () => {
   const testData = {
