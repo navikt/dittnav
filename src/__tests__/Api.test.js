@@ -1,10 +1,10 @@
 import Api from 'js/Api';
 /*global global*/
-import jsdom from 'jsdom';
+import { FetchError } from 'node-fetch';
 
 it('it crashes', async () => {
   expect.assertions(1);
-  await expect(Api.fetchPersonInfoAndServices()).rejects.toEqual(new SyntaxError('Unexpected end of JSON input'));
+  await expect(Api.fetchPersonInfoAndServices()).rejects.toEqual(new FetchError('invalid json response body at undefined reason: Unexpected end of JSON input'));
 });
 
 it('some default JSON', async () => {
@@ -20,6 +20,6 @@ it('handling Unauthorized', async () => {
   expect.assertions(2);
   jest.spyOn(window.location, 'assign').mockImplementation( l => {
     expect(l).toEqual('http://localhost:9111/login?redirect=http://localhost/');
-  })
+  });
   await expect(Api.fetchPersonInfoAndServices()).rejects.toEqual(new Error('Unauthorized'));
 });

@@ -41,9 +41,9 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  info: PropTypes.any().isRequired, // eslint-disable-line react/forbid-prop-types
-  paabegynteSoknader: PropTypes.any().isRequired, // eslint-disable-line react/forbid-prop-types
-  mininnboks: PropTypes.any().isRequired, // eslint-disable-line react/forbid-prop-types
+  info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  paabegynteSoknader: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default Home;
