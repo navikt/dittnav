@@ -7,6 +7,7 @@
   "homepage": "/person/dittnav",
   "dependencies": {
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
+    "htmllint-cli": "0.0.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -15,7 +16,8 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
-    "lint": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
+    "lint-html": "htmllint public/index.html",
+    "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
     "docker-build": "docker build . -t dittnav",
     "docker-start": "docker run --name dittnav -p 8080:8080 -t -d dittnav",
     "docker-kill": "npm run docker-stop && npm run docker-rm",
