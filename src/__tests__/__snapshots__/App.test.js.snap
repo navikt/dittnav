@@ -235,35 +235,3 @@ exports[`expect PersonInfo fetching 1`] = `
   </div>
 </main>
 `;
-
-exports[`expect Postkasse page rendering 1`] = `
-<main
-  role="main"
->
-  <div
-    className="container"
-  >
-    <div>
-      <h1
-        className="typo-sidetittel text-center"
-      >
-        Din dialog med NAV
-      </h1>
-      <section
-        className="ditt-list"
-      />
-      <section
-        className="text-center"
-      >
-        <a
-          className="lenke"
-          href="/person/dittnav"
-          onClick={[Function]}
-        >
-          Til Ditt NAV
-        </a>
-      </section>
-    </div>
-  </div>
-</main>
-`;
