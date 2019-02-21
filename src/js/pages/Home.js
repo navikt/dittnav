@@ -5,6 +5,7 @@ import InfoMeldinger from 'js/components/InfoMeldinger';
 import Tjenester from 'js/components/Tjenester';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
+import PropTypes from 'prop-types';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
@@ -34,8 +35,15 @@ class Home extends Component {
           </div>
         </div>
         <Artikkel article={info.article} />
-      </React.Fragment>);
+      </React.Fragment>
+    );
   }
 }
+
+Home.propTypes = {
+  info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  paabegynteSoknader: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+};
 
 export default Home;

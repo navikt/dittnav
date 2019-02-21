@@ -12,7 +12,8 @@ class Postkasse extends Component {
         <section className="text-center">
           <DittLink url="/" className="lenke">Til Ditt NAV</DittLink>
         </section>
-      </div>);
+      </div>
+    );
   }
 }
 

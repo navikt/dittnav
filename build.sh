@@ -40,7 +40,7 @@ done
 function install_dependencies_and_build {
   git config --global http.sslverify false
   npm i -g npm
-  npm ci && npm run build
+  npm ci && npm run lint-es && npm run lint-html && npm run build
 }
 
 function run_tests {

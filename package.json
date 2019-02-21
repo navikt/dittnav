@@ -6,7 +6,11 @@
   "license": "MIT",
   "homepage": "/person/dittnav",
   "dependencies": {
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
+    "htmllint-cli": "0.0.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -15,6 +19,8 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
+    "lint-html": "htmllint public/index.html",
+    "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
     "docker-build": "docker build . -t dittnav",
     "docker-start": "docker run --name dittnav -p 8080:8080 -t -d dittnav",
     "docker-kill": "npm run docker-stop && npm run docker-rm",
@@ -28,6 +34,12 @@
     "test": "react-scripts test --env=jsdom --coverage",
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/src/js/Config.js"
+    ]
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",

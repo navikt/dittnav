@@ -1,7 +1,7 @@
 import * as React from 'react';
 import InfoMeldinger from 'js/components/InfoMeldinger';
-const ReactTestRenderer = require('react-test-renderer');
 import wrapIntl from 'js/IntlTestHelper';
+const ReactTestRenderer = require('react-test-renderer');
 
 test('render empty InfoMeldinger component', () => {
   const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger isInactive={false} />));
@@ -20,6 +20,6 @@ test('render InfoMeldinger with ag messages', () => {
 });
 
 test('render InfoMeldinger with ag messages but inactive', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger agMessagesCount={1} isInactive={true} />));
+  const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger agMessagesCount={1} isInactive />));
   expect(component.toJSON()).toMatchSnapshot();
 });
