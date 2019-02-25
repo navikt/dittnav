@@ -1,2 +1,2 @@
-https://${DomainName}/dittnav/internal/isAlive*
-https://${DomainName}/dittnav/*
+https://${DomainName}/person/dittnav/
+https://${DomainName}/person/dittnav/static/*
