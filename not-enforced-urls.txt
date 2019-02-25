@@ -1,2 +1,0 @@
-https://${DomainName}/person/dittnav/
-https://${DomainName}/person/dittnav/static/*
