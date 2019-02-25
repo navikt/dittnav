@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import conf from 'js/Config';
 import FeilMeldinger from 'js/components/FeilMeldinger';
-import Postkasse from 'js/pages/Postkasse';
 import Login from 'js/pages/Login';
 import Home from 'js/pages/Home';
 
@@ -13,8 +12,6 @@ function route(props, options) {
   const { path } = props;
   const { info, paabegynteSoknader, mininnboks } = options;
   switch (path) {
-    case `${conf.dittNav.CONTEXT_PATH}/postkasse`:
-      return <Postkasse {...props} info={info} />;
     case `${conf.dittNav.CONTEXT_PATH}/login`:
       return <Login />;
     default:

@@ -27,12 +27,6 @@ it('expect Login page rendering', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-it('expect Postkasse page rendering', () => {
-  const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/person/dittnav/postkasse' />));
-  expect(component.toJSON()).toMatchSnapshot();
-});
-
 it('expect PersonInfo fetching', async () => {
   const api = mockApi();
   api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
