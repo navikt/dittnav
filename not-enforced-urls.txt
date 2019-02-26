@@ -1,2 +1,0 @@
-https://${DomainName}/dittnav/internal/isAlive*
-https://${DomainName}/dittnav/*
