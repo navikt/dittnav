@@ -9,14 +9,16 @@ Kildekoden til frontend-appen for ny ditt nav.
 
 # Komme i gang
 
-[det må gjøres først](doc/configuration.md)
-
 For å kjøre opp app-en i dev:
 
 1. `npm install`
-2. `npm run build`
-3. `npm run mock-api`
-4. `npm run frontshell-dev`
+2. `npm run start`
+3. Last ned fake login server: `cd ../ && git clone https://github.com/navikt/ditt-fake-login-service`
+4. `cd ditt-fake-login-service`
+5. `npm install`
+6. terminal 1: `npm run start-mock-server`
+7. terminal 8: `npm run start-proxy`
+8. gå til `http://localhost:9898/`
 
 For å kjøre tester:
 
@@ -27,14 +29,7 @@ Bygge for prod:
 
 1. `npm install`
 2. `npm run build`
-3. `npm run server`
 
-Bygge/kjøre med docker:
-
-1. `npm run docker-build`
-2. `npm run docker-start`
-3. `npm run docker-stop`
-4. For å bygge på nytt: `npm run docker-rm && npm run docker-build`
 
 # Henvendelser
 
