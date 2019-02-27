@@ -22,31 +22,6 @@ exports[`Login renders 1`] = `
           className="decorated"
         >
           <span>
-            Brukernavn og passord fra NAV
-          </span>
-        </h3>
-        <p>
-          <span>
-            Pålogging med brukernavn og passord gir deg bare tilgang til selvbetjening for arbeidssøkere.
-          </span>
-        </p>
-        <a
-          className="knapp-hoved knapp-liten"
-          href="/sbl/arbeid/innlogging"
-        >
-          <span>
-            Velg
-          </span>
-        </a>
-      </div>
-      <hr />
-      <div
-        className="element hodefot"
-      >
-        <h3
-          className="decorated"
-        >
-          <span>
             Endagspassord til din pensjon
           </span>
         </h3>

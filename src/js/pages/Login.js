@@ -5,7 +5,6 @@ import conf from 'js/Config';
 const link = 'lenke';
 const button = 'knapp-hoved knapp-liten';
 const model = [
-  { id: 'brukernavnpassord', url: conf.ARBEID_LOGIN_LINK_URL, linkClassName: button },
   { id: 'endagspassord-pensjon', url: conf.PSELV_LOGIN_LINK_URL, linkClassName: button },
   { id: 'endagspassord-ufore', url: conf.PSELV_LOGIN_LINK_UT_URL, linkClassName: button },
   { id: 'arbeidsgiver', url: conf.dittNav.ARBEIDSGIVER_LOGIN_URL, linkClassName: button },
