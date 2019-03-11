@@ -13,7 +13,7 @@ For å kjøre opp app-en i dev:
 
 1. `npm install`
 2. `npm run start`
-3. Last ned fake login server: `cd ../ && git clone https://github.com/navikt/ditt-fake-login-service`
+3. Last ned fake login server: `cd ../ && git clone https://github.com/navikt/din-fake-login-service`
 4. `cd ditt-fake-login-service`
 5. `npm install`
 6. terminal 1: `npm run start-mock-server`
