@@ -7,7 +7,7 @@ exports[`PersonInfo inactive 1`] = `
   <h1
     className="person-info"
   >
-    Hello
+    hello
   </h1>
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`PersonInfo not registered 1`] = `
   <h1
     className="person-info"
   >
-    Hello
+    hello
   </h1>
 </div>
 `;
@@ -33,7 +33,7 @@ exports[`basic green PersonInfo snaphot-test 1`] = `
   <h1
     className="person-info"
   >
-    Hello
+    hello
   </h1>
 </div>
 `;
@@ -45,7 +45,7 @@ exports[`basic green PersonInfo snaphot-test without fgkode/yrke 1`] = `
   <h1
     className="person-info"
   >
-    Hello
+    hello
   </h1>
 </div>
 `;

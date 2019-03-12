@@ -10,7 +10,7 @@ class PersonInfo extends Component {
     } = this.props.personInfo;
     return (
       <div className="person-info">
-        <h1 className="person-info">{navn}</h1>
+        <h1 className="person-info">{navn.toLowerCase()}</h1>
         {registrert && !inaktiv && fgkode && ytelse ? (
           <p className="arbeidssokerstatus">
             <F id={`fgkode.${fgkode}`} />

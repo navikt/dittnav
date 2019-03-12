@@ -21,7 +21,7 @@
   "scripts": {
     "lint-html": "htmllint public/index.html",
     "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
-    "start": "PORT=7070 react-scripts start",
+    "start": "react-scripts start",
     "build": "less-watch-compiler --run-once --main-file=index.less src/less src/css && react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
     "test-watch": "react-scripts test --env=jsdom",
