@@ -14,6 +14,7 @@ import enMessages from './translations/en.json';
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
 function renderApp(path) {
+  document.body.style.display = 'block';
   ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} path={path} /></NavApp>, document.getElementById('app'));
 }
 
@@ -23,4 +24,9 @@ window.addEventListener('popstate', () => {
 
 api.pingDittnavBackend()
   .then(() => renderApp(window.location.pathname))
-  .catch(() => renderApp(window.location.pathname)); // add a check here, so we could render something else, when dittnavapi is unavailable?
+  .catch((e) => {
+    if (e && e.message && e.message === 'Unauthorized') {
+      return;
+    }
+    renderApp(window.location.pathname)
+  });
