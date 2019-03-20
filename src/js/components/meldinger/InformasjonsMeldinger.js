@@ -12,7 +12,8 @@ class InformasjonsMeldinger extends Component {
           <div className="texts">
             <p>{this.props.infoMessages['generell.informasjonsmelding']}</p>
           </div>
-        </div>);
+        </div>,
+      );
     }
     if (this.props.isMeldeKortUser && this.props.infoMessages['meldekortbruker.informasjonsmelding']) {
       children.push(// eslint-disable-line
@@ -21,7 +22,8 @@ class InformasjonsMeldinger extends Component {
           <div className="texts">
             <p>{this.props.infoMessages['meldekortbruker.informasjonsmelding']}</p>
           </div>
-        </div>);
+        </div>,
+      );
     }
     return (<React.Fragment>{children}</React.Fragment>);
   }

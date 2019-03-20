@@ -17,7 +17,7 @@ class InfoMeldinger extends Component {
       <section className="infomeldinger-list">
         <h1 className="vekk"><F id="dittnav.infomeldinger.varsler" /></h1>
         <Meldekort meldekort={this.props.meldekort} />
-        <EtterregistreringMeldekort ettereg={this.props.meldekort}/>
+        <EtterregistreringMeldekort ettereg={this.props.meldekort} />
         <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
         {!this.props.isInactive ? <AgMeldinger agMessagesCount={this.props.agMessagesCount} /> : null}
         <NavMeldinger navMessagesCount={this.props.navMessagesCount} />

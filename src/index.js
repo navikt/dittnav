@@ -28,5 +28,5 @@ api.pingDittnavBackend()
     if (e && e.message && e.message === 'Unauthorized') {
       return;
     }
-    renderApp(window.location.pathname)
+    renderApp(window.location.pathname);
   });

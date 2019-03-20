@@ -62,6 +62,7 @@ class Meldekort extends Component {
         </div>
       );
     }
+    return null;
   }
 }
 
@@ -81,9 +82,9 @@ const NewCards = PropTypes.shape({
 });
 
 export const MeldekortType = PropTypes.shape({
-    nyeMeldekort: NewCards,
-    resterendeFeriedager: PropTypes.number,
-    etterregistrerteMeldekort: PropTypes.number
+  nyeMeldekort: NewCards,
+  resterendeFeriedager: PropTypes.number,
+  etterregistrerteMeldekort: PropTypes.number,
 });
 
 Meldekort.propTypes = {
