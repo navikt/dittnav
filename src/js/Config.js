@@ -50,6 +50,7 @@ export default {
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',
+  ETTERREGISTRERT_PATH: '/meldekort/etterregistrert/',
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
 };

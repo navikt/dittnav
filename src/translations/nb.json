@@ -7,6 +7,7 @@
   "meldekort.flere": "Du har {count} meldekort klare for innsending",
   "meldekort.melding.fremtidig": "Neste meldekort kan sendes fra {dato}",
   "meldekort.feriedager": "Du har gjenstående {feriedager} feriedager ved dagpenger.",
+  "meldekort.etterregistreringer": "Du har fått vedtak for en periode du ikke har sendt meldekort. Du må sende {etterregistreringer} meldekort.",
   "meldekort.ett": "Du har ett meldekort for uke {next} ({from} - {until}) klart for innsending",
   "meldekort.send": "Send meldekort",
   "meldekort.info.om.trekk": "(Siste innsendingsfrist før trekk: {dato})",
