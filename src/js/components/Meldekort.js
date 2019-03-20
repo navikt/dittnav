@@ -22,12 +22,12 @@ const melding = (next, count, formatDate, numberToWord) => (next && next.sisteDa
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
-      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til), sisteDatoForTrekk: moment(next.sisteDatoForTrekk).format('LL'),
+      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til),
     }}
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDate, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.sisteDatoForTrekk) }} />) : null);
+const trekk = (risikererTrekk, formatDate, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: moment(next.sisteDatoForTrekk).format('LL') }} />) : null);
 
 class Meldekort extends Component {
   render() {
