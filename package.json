@@ -6,13 +6,9 @@
   "license": "MIT",
   "homepage": "/person/dittnav",
   "dependencies": {
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "htmllint-cli": "0.0.7",
     "moment": "^2.24.0",
-    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",
@@ -35,11 +31,21 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-jquery": "^1.0.1",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jquery": "^1.5.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest-fetch-mock": "^1.6.5",
     "less-watch-compiler": "^1.11.3",
     "nav-frontend-core": "^4.0.5",
     "nav-frontend-lenker-style": "0.2.6",
+    "prop-types": "^15.7.2",
     "react-test-renderer": "^16.4.2"
   },
   "browserslist": [

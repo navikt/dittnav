@@ -22,7 +22,7 @@ const melding = (next, count, formatDate, numberToWord) => (next && next.sisteDa
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
-      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til), sisteDatoForTrekk: moment(this.props.sisteDatoForTrekk).format('LL')
+      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til), sisteDatoForTrekk: moment(next.sisteDatoForTrekk).format('LL'),
     }}
   />
 ) : null);
