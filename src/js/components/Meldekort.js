@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import conf from 'js/Config';
+import * as moment from 'moment';
+import 'moment/min/locales';
 import i18n from 'translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+
+moment.locale('nb');
 
 const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nesteInnsendingAvMeldekort && getCurrentDate.getTime() < meldekort.nesteInnsendingAvMeldekort
   ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nesteInnsendingAvMeldekort) }} />)
@@ -14,16 +18,16 @@ const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.res
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
-const melding = (next, count, formatDate, numberToWord) => (next ? (
+const melding = (next, count, formatDate, numberToWord) => (next && next.sisteDatoForTrekk ? (
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
-      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til),
+      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til), sisteDatoForTrekk: moment(this.props.sisteDatoForTrekk).format('LL')
     }}
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDate, next) => (next.datoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
+const trekk = (risikererTrekk, formatDate, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.sisteDatoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {
@@ -67,7 +71,7 @@ class Meldekort extends Component {
 }
 
 const NextCard = PropTypes.shape({
-  datoForTrekk: PropTypes.number,
+  sisteDatoForTrekk: PropTypes.number,
   risikererTrekk: PropTypes.bool,
   uke: PropTypes.string,
   kanSendesFra: PropTypes.number,

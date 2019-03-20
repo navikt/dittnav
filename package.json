@@ -11,6 +11,7 @@
     "eslint-plugin-react": "^7.12.4",
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "htmllint-cli": "0.0.7",
+    "moment": "^2.24.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
