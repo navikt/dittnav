@@ -18,7 +18,7 @@ const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.res
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
-const melding = (next, count, formatDate, numberToWord) => (next && next.sisteDatoForTrekk ? (
+const melding = (next, count, formatDate, numberToWord) => (next ? (
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
