@@ -8,8 +8,8 @@ import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 moment.locale('nb');
 
-const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort
-  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
+const fremtidig = (nyeMeldekort, formatDate) => (nyeMeldekort.nesteInnsendingAvMeldekort
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
   : null);
 
 const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0
@@ -31,7 +31,7 @@ const trekk = (risikererTrekk, formatDate, next) => (next.sisteDatoForTrekk ? (<
 
 class Meldekort extends Component {
   render() {
-    const { meldekort, intl, getCurrentDate } = this.props;
+    const { meldekort, intl } = this.props;
     const { formatDate, numberToWord } = i18n[intl.locale];
     if (!meldekort) return null;
 
@@ -43,7 +43,7 @@ class Meldekort extends Component {
         <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.ARBEID_PATH}?goto=${conf.MELDEKORT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
-            <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
+            <span>{fremtidig(meldekort.nyeMeldekort, formatDate)} </span>
             <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDate, numberToWord)} </span>
             <span>{trekk(risikererTrekk, formatDate, meldekort.nyeMeldekort.nesteMeldekort)} </span>
             <span>{advarsel(risikererTrekk)} </span>
@@ -54,12 +54,12 @@ class Meldekort extends Component {
       );
     }
 
-    if (meldekort.nyeMeldekort.nesteMeldekort) {
+    if (meldekort.nyeMeldekort) {
       return (
         <div data-ga="Dittnav/Varsel" className="message meldekort">
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
-            <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
+            <span>{fremtidig(meldekort.nyeMeldekort, formatDate)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p>{feriedager(meldekort)}</p>
           </span>
