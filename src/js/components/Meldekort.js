@@ -93,13 +93,11 @@ export const MeldekortType = PropTypes.shape({
 
 Meldekort.propTypes = {
   meldekort: MeldekortType,
-  getCurrentDate: PropTypes.func,
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos
 };
 
 Meldekort.defaultProps = {
   meldekort: null,
-  getCurrentDate: () => new Date(),
 };
 
 export default injectIntl(Meldekort);
