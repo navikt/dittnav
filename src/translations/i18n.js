@@ -6,8 +6,8 @@ const i18n = {
             return tall > 12 ? tall : ord[tall - 2];
         },
         formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
-        oneMaskulin: () => 'én',
-        oneFeminin: () => 'éi',
+        oneMasculine: () => 'én',
+        oneFeminine: () => 'éi',
         oneNeuter: () => 'ett'
     },
 };
