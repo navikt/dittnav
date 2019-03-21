@@ -8,8 +8,8 @@ import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 moment.locale('nb');
 
-const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nesteInnsendingAvMeldekort && getCurrentDate.getTime() < meldekort.nesteInnsendingAvMeldekort
-  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nesteInnsendingAvMeldekort) }} />)
+const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort && getCurrentDate.getTime() < meldekort.nyeMeldekort.nesteInnsendingAvMeldekort
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
   : null);
 
 const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0
