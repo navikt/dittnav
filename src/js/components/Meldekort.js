@@ -81,7 +81,11 @@ const NewCards = PropTypes.shape({
   nesteMeldekort: NextCard,
 });
 
-export const MeldekortType = PropTypes.shape({ nyeMeldekort: NewCards, remainingHolidays: PropTypes.number });
+export const MeldekortType = PropTypes.shape({
+  nyeMeldekort: NewCards,
+  resterendeFeriedager: PropTypes.number,
+  etterregistrerteMeldekort: PropTypes.number,
+});
 
 Meldekort.propTypes = {
   meldekort: MeldekortType,

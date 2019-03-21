@@ -13,7 +13,8 @@ class DittLink extends Component {
     return (
       <a href={conf.dittNav.CONTEXT_PATH} onClick={onClick} className={className}>
         { children }
-      </a>);
+      </a>
+    );
   }
 }
 

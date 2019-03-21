@@ -33,7 +33,8 @@ class MinInnboks extends Component {
             <div className="texts">
               <p><F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} /></p>
             </div>
-          </a>))}
+          </a>
+        ))}
       </React.Fragment>
     );
   }

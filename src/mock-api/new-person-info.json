@@ -43,7 +43,8 @@
       "nesteMeldekort": null,
       "nesteInnsendingAvMeldekort": null
     },
-    "resterendeFeriedager": 0
+    "resterendeFeriedager": 0,
+    "etterRegistrerteMeldekort":0
   },
   "infoMeldinger": null,
   "lenker": null,
