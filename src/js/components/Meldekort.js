@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import conf from 'js/Config';
+import * as moment from 'moment';
+import 'moment/min/locales';
 import i18n from 'translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
-const fremtidig = (meldekort, getCurrentDate, formatDate) => (meldekort.nesteInnsendingAvMeldekort && getCurrentDate.getTime() < meldekort.nesteInnsendingAvMeldekort
-  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(meldekort.nesteInnsendingAvMeldekort) }} />)
+moment.locale('nb');
+
+const fremtidig = (nyeMeldekort, formatDate) => (nyeMeldekort.nesteInnsendingAvMeldekort
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
   : null);
 
 const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0
@@ -23,11 +27,11 @@ const melding = (next, count, formatDate, numberToWord) => (next ? (
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDate, next) => (next.datoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDate(next.datoForTrekk) }} />) : null);
+const trekk = (risikererTrekk, formatDate, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: moment(next.sisteDatoForTrekk).format('LL') }} />) : null);
 
 class Meldekort extends Component {
   render() {
-    const { meldekort, intl, getCurrentDate } = this.props;
+    const { meldekort, intl } = this.props;
     const { formatDate, numberToWord } = i18n[intl.locale];
     if (!meldekort) return null;
 
@@ -39,7 +43,7 @@ class Meldekort extends Component {
         <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.MELDEKORT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
-            <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
+            <span>{fremtidig(meldekort.nyeMeldekort, formatDate)} </span>
             <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDate, numberToWord)} </span>
             <span>{trekk(risikererTrekk, formatDate, meldekort.nyeMeldekort.nesteMeldekort)} </span>
             <span>{advarsel(risikererTrekk)} </span>
@@ -50,12 +54,12 @@ class Meldekort extends Component {
       );
     }
 
-    if (meldekort.nyeMeldekort.nesteMeldekort) {
+    if (meldekort.nyeMeldekort) {
       return (
         <div data-ga="Dittnav/Varsel" className="message meldekort">
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
-            <span>{fremtidig(meldekort, getCurrentDate, formatDate)} </span>
+            <span>{fremtidig(meldekort.nyeMeldekort, formatDate)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p>{feriedager(meldekort)}</p>
           </span>
@@ -67,7 +71,7 @@ class Meldekort extends Component {
 }
 
 const NextCard = PropTypes.shape({
-  datoForTrekk: PropTypes.number,
+  sisteDatoForTrekk: PropTypes.number,
   risikererTrekk: PropTypes.bool,
   uke: PropTypes.string,
   kanSendesFra: PropTypes.number,
@@ -89,13 +93,11 @@ export const MeldekortType = PropTypes.shape({
 
 Meldekort.propTypes = {
   meldekort: MeldekortType,
-  getCurrentDate: PropTypes.func,
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos
 };
 
 Meldekort.defaultProps = {
   meldekort: null,
-  getCurrentDate: () => new Date(),
 };
 
 export default injectIntl(Meldekort);

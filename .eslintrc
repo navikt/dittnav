@@ -4,6 +4,7 @@
   "rules": {
       "react/jsx-one-expression-per-line": "off",
       "object-curly-newline": "off",
+      "import/no-unresolved": "off",
       "max-len": "off",
       "indent": 2,
       "react/jsx-indent": 2,

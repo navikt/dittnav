@@ -14,6 +14,9 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -40,7 +43,32 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
 </a>
 `;
 
-exports[`Meldekort without next card test 1`] = `null`;
+exports[`Meldekort without next card test 1`] = `
+<div
+  className="message meldekort"
+  data-ga="Dittnav/Varsel"
+>
+  <span
+    aria-label="alarm-ikon"
+    className="icon meldekort-icon"
+  />
+  <span
+    className="texts"
+  >
+    <span>
+       
+    </span>
+    <span>
+       
+    </span>
+    <p>
+      <span>
+        Du har gjenstående 12 feriedager ved dagpenger.
+      </span>
+    </p>
+  </span>
+</div>
+`;
 
 exports[`basic Meldekort test 1`] = `
 <a
@@ -56,6 +84,9 @@ exports[`basic Meldekort test 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -65,9 +96,6 @@ exports[`basic Meldekort test 1`] = `
        
     </span>
     <span>
-      <span>
-        (Siste innsendingsfrist før trekk: 8/9/2018)
-      </span>
        
     </span>
     <span>
@@ -110,6 +138,9 @@ exports[`basic one Meldekort test 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -119,9 +150,6 @@ exports[`basic one Meldekort test 1`] = `
        
     </span>
     <span>
-      <span>
-        (Siste innsendingsfrist før trekk: 8/9/2018)
-      </span>
        
     </span>
     <span>
@@ -162,6 +190,9 @@ exports[`basic one Meldekort test no risk 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -206,6 +237,9 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -245,6 +279,9 @@ exports[`basic zero Meldekort test 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -278,6 +315,9 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
@@ -361,6 +401,9 @@ exports[`no cards no risk 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 11/10/2018
+      </span>
        
     </span>
     <span>
