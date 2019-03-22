@@ -13,7 +13,6 @@ const i18n = {
         oneMasculine: () => 'én',
         oneFeminine: () => 'éi',
         oneNeuter: () => 'ett',
-        formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
         formatDateMonth: date => moment(date).format('LL'),
         formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^]?' + moment().format('YYYY') + '.?'), ''),
     },
