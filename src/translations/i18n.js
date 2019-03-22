@@ -12,12 +12,11 @@ const i18n = {
         formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
         oneMasculine: () => 'én',
         oneFeminine: () => 'éi',
-        oneNeuter: () => 'ett'
+        oneNeuter: () => 'ett',
+        formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
+        formatDateMonth: date => moment(date).format('LL'),
+        formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^]?' + moment().format('YYYY') + '.?'), ''),
     },
-    formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
-    formatDateMonth: date => moment(date).format('LL'),
-    formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^]?' + moment().format('YYYY') + '.?'), ''),
-  }
 };
 
 export default i18n;
