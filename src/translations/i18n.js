@@ -11,7 +11,7 @@ const i18n = {
     },
     formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
     formatDateMonth: date => moment(date).format('LL'),
-    formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^\.]?' + moment().format('YYYY') + '.?'), ''),
+    formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^]?' + moment().format('YYYY') + '.?'), ''),
   },
 };
 
