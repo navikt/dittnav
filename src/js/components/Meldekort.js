@@ -28,7 +28,7 @@ const trekk = (risikererTrekk, formatDateMonth, next) => (next.sisteDatoForTrekk
 class Meldekort extends Component {
   render() {
     const { meldekort, intl } = this.props;
-    const { formatDate, formatDateMonth, formatDayAndMonth, numberToWord } = i18n[intl.locale];
+    const { formatDateMonth, formatDayAndMonth, numberToWord } = i18n[intl.locale];
     if (!meldekort) return null;
 
     const { antallNyeMeldekort: count } = meldekort.nyeMeldekort;
