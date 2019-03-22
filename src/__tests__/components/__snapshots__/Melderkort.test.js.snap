@@ -15,7 +15,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -85,7 +85,7 @@ exports[`basic Meldekort test 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -139,7 +139,7 @@ exports[`basic one Meldekort test 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -191,7 +191,7 @@ exports[`basic one Meldekort test no risk 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -238,7 +238,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -280,7 +280,7 @@ exports[`basic zero Meldekort test 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -316,7 +316,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
@@ -402,7 +402,7 @@ exports[`no cards no risk 1`] = `
   >
     <span>
       <span>
-        Neste meldekort kan sendes fra 11/10/2018
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>

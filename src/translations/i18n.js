@@ -1,3 +1,7 @@
+import moment from 'moment';
+import 'moment/min/locales';
+
+moment.locale('nb');
 
 const i18n = {
   nb: {
@@ -6,6 +10,7 @@ const i18n = {
       return tall > 12 ? tall : ord[tall - 2];
     },
     formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
+    formatDateMonth: date => moment(date).format('LL'),
   },
 };
 
