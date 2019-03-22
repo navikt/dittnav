@@ -36,7 +36,7 @@ class Meldekort extends Component {
 
     if (count > 0) {
       return (
-        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.ARBEID_PATH}?goto=${conf.MELDEKORT_PATH}`}>
+        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.MELDEKORT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
             <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>

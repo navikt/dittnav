@@ -11,7 +11,7 @@ class EtterregistreringMeldekort extends Component {
     const { ettereg, intl } = this.props;
     if (ettereg && ettereg.etterregistrerteMeldekort && ettereg.etterregistrerteMeldekort > 0) {
       return (
-        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.ARBEID_PATH}?goto=${conf.ETTERREGISTRERT_PATH}`}>
+        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.ETTERREGISTRERT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
             <span>{<F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />}</span>
