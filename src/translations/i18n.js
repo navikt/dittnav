@@ -1,3 +1,7 @@
+import moment from 'moment';
+import 'moment/min/locales';
+
+moment.locale('nb');
 
 const i18n = {
     nb: {
@@ -10,6 +14,10 @@ const i18n = {
         oneFeminine: () => 'éi',
         oneNeuter: () => 'ett'
     },
+    formatDate: date => new Date(date).toLocaleDateString('nb-NO'),
+    formatDateMonth: date => moment(date).format('LL'),
+    formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^]?' + moment().format('YYYY') + '.?'), ''),
+  }
 };
 
 export default i18n;

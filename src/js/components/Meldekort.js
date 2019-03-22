@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import conf from 'js/Config';
-import * as moment from 'moment';
-import 'moment/min/locales';
 import i18n from 'translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
-moment.locale('nb');
-
-const fremtidig = (nyeMeldekort, formatDate) => (nyeMeldekort.nesteInnsendingAvMeldekort
-  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDate(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
+const fremtidig = (nyeMeldekort, formatDateMonth) => (nyeMeldekort.nesteInnsendingAvMeldekort
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
   : null);
 
 const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0
@@ -18,21 +14,21 @@ const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.res
 
 const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
-const melding = (next, count, formatDate, numberToWord) => (next ? (
+const melding = (next, count, formatDayAndMonth, numberToWord) => (next ? (
   <F
     id={count === 1 ? 'meldekort.ett' : 'meldekort.flere'}
     values={{
-      count: numberToWord(count), next: next.uke, from: formatDate(next.fra), until: formatDate(next.til),
+      count: numberToWord(count), next: next.uke, from: formatDayAndMonth(next.fra), until: formatDayAndMonth(next.til),
     }}
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDate, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: moment(next.sisteDatoForTrekk).format('LL') }} />) : null);
+const trekk = (risikererTrekk, formatDateMonth, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {
     const { meldekort, intl } = this.props;
-    const { formatDate, numberToWord } = i18n[intl.locale];
+    const { formatDateMonth, formatDayAndMonth, numberToWord } = i18n[intl.locale];
     if (!meldekort) return null;
 
     const { antallNyeMeldekort: count } = meldekort.nyeMeldekort;
@@ -43,9 +39,9 @@ class Meldekort extends Component {
         <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.SERVICES_URL}${conf.MELDEKORT_PATH}`}>
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
-            <span>{fremtidig(meldekort.nyeMeldekort, formatDate)} </span>
-            <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDate, numberToWord)} </span>
-            <span>{trekk(risikererTrekk, formatDate, meldekort.nyeMeldekort.nesteMeldekort)} </span>
+            <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
+            <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDayAndMonth, numberToWord)} </span>
+            <span>{trekk(risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
             <p>{feriedager(meldekort)}</p>
@@ -59,7 +55,7 @@ class Meldekort extends Component {
         <div data-ga="Dittnav/Varsel" className="message meldekort">
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <span className="texts">
-            <span>{fremtidig(meldekort.nyeMeldekort, formatDate)} </span>
+            <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p>{feriedager(meldekort)}</p>
           </span>
