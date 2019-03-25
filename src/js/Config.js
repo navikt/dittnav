@@ -26,15 +26,15 @@ const getServicesUrl = () => {
 const getLoginUrl = () => {
   const host = window.location.hostname;
   if (host.indexOf('localhost') > -1) {
-    return 'http://localhost:9111/login';
+    return 'http://localhost:9111/login?level=Level3';
   }
   if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
-    return 'https://loginservice-q.nav.no/login';
+    return 'https://loginservice.nav.no/login?level=Level3';
   }
   if (host.indexOf('www-q') > -1) {
-    return 'https://loginservice-q.nav.no/login';
+    return 'https://loginservice-q.nav.no/login?level=Level3';
   }
-  return 'https://loginservice.nav.no/login';
+  return 'https://loginservice.nav.no/login?level=Level3';
 };
 
 export default {
