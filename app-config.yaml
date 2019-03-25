@@ -13,7 +13,8 @@ healthcheck:
   readiness:
     path: person/dittnav/internal/isReady
 prometheus:
-  enabled: false
+  port: https
+  enabled: true
   path: person/dittnav/internal/metrics
 ingress:
   enabled: true
