@@ -50,7 +50,7 @@ class Meldekort extends Component {
       );
     }
 
-    if (meldekort.nyeMeldekort) {
+    if (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) {
       return (
         <div data-ga="Dittnav/Varsel" className="message meldekort">
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
