@@ -76,5 +76,6 @@
   "error.general.connection.problem": "Error fetchin data",
   "error.person.info": "Det skjedde en feil under henting av person info",
   "error.paabegynte": "Det skjedde en feil under henting av saker",
-  "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks"
+  "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks",
+  "error.baksystemer": "Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon"
 }
