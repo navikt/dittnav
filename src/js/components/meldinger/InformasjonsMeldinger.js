@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 class InformasjonsMeldinger extends Component {
   render() {
-    if (!this.props.infoMessages) return null;
     const children = [];
-    if (this.props.infoMessages['generell.informasjonsmelding']) {
+    if (true /* skal være true om man vil vise informasjonsmelding*/){
       children.push(// eslint-disable-line function-paren-newline
         <div className="message" key="general">
           <span className="icon default-icon" aria-label="alarm-ikon" />
           <div className="texts">
-            <p>{this.props.infoMessages['generell.informasjonsmelding']}</p>
+            <p>{<F id="generell.informasjonsmelding"/>}</p>
           </div>
         </div>,
       );
     }
-    if (this.props.isMeldeKortUser && this.props.infoMessages['meldekortbruker.informasjonsmelding']) {
+    if (this.props.isMeldeKortUser && true /* skal være true om man vil vise informasjonsmelding for meldekortbrukere*/) {
       children.push(// eslint-disable-line
         <div className="message" key="melderkort">
           <span className="icon meldekort-icon" aria-label="alarm-ikon" />
           <div className="texts">
-            <p>{this.props.infoMessages['meldekortbruker.informasjonsmelding']}</p>
+            <p>{<F id="meldekortbruker.informasjonsmelding"/>}</p>
           </div>
         </div>,
       );
@@ -29,19 +29,13 @@ class InformasjonsMeldinger extends Component {
   }
 }
 
-export const InfoMessagesType = PropTypes.shape({
-  'generell.informasjonsmelding': PropTypes.string,
-  'meldekortbruker.informasjonsmelding': PropTypes.string,
-});
-
 InformasjonsMeldinger.propTypes = {
-  infoMessages: InfoMessagesType,
   isMeldeKortUser: PropTypes.bool,
+  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
 };
 
 InformasjonsMeldinger.defaultProps = {
-  infoMessages: null,
   isMeldeKortUser: false,
 };
 
-export default InformasjonsMeldinger;
+export default injectIntl(InformasjonsMeldinger);
