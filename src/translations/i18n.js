@@ -14,7 +14,7 @@ const i18n = {
         oneFeminine: () => 'éi',
         oneNeuter: () => 'ett',
         formatDateMonth: date => moment(date).format('LL'),
-        formatDayAndMonth: date => moment(date).format('L').replace(new RegExp('[^]?' + moment().format('YYYY') + '.?'), ''),
+        formatDayAndMonth: date => moment(date).format('L').replace(new RegExp(`[^]?${moment().format('YYYY')}.?`), ''),
     },
 };
 
