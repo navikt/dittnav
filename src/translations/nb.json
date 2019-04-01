@@ -11,7 +11,7 @@
   "meldekort.melding.fremtidig": "Neste meldekort kan sendes fra {dato}",
   "meldekort.feriedager": "Du har gjenstående {feriedager} feriedager ved dagpenger.",
   "meldekort.etterregistreringer": "Du har fått vedtak for en periode du ikke har sendt meldekort. Du må sende {etterregistreringer} meldekort.",
-  "meldekort.ett": "Du har ett meldekort for uke {next} ({from} - {until}) klart for innsending",
+  "meldekort.ett": "Du har ett meldekort for uke {next} ({from}-{until}) klart for innsending",
   "meldekort.send": "Send meldekort",
   "meldekort.info.om.trekk": "(Siste innsendingsfrist før trekk: {dato})",
 
@@ -79,5 +79,6 @@
   "error.general.connection.problem": "Error fetchin data",
   "error.person.info": "Det skjedde en feil under henting av person info",
   "error.paabegynte": "Det skjedde en feil under henting av saker",
-  "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks"
+  "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks",
+  "error.baksystemer": "Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon"
 }
