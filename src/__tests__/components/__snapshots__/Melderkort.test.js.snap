@@ -4,7 +4,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -14,6 +14,9 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>
@@ -46,7 +49,7 @@ exports[`basic Meldekort test 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -56,6 +59,9 @@ exports[`basic Meldekort test 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>
@@ -65,9 +71,6 @@ exports[`basic Meldekort test 1`] = `
        
     </span>
     <span>
-      <span>
-        (Siste innsendingsfrist før trekk: 8/9/2018)
-      </span>
        
     </span>
     <span>
@@ -100,7 +103,7 @@ exports[`basic one Meldekort test 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -110,18 +113,18 @@ exports[`basic one Meldekort test 1`] = `
     className="texts"
   >
     <span>
-       
-    </span>
-    <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        Neste meldekort kan sendes fra 10. november 2018
       </span>
        
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 8/9/2018)
+        Du har ett meldekort for uke week 42 (17.07.2018-17.07.2018) klart for innsending
       </span>
+       
+    </span>
+    <span>
        
     </span>
     <span>
@@ -152,7 +155,7 @@ exports[`basic one Meldekort test no risk 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -162,11 +165,14 @@ exports[`basic one Meldekort test no risk 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        Du har ett meldekort for uke week 42 (17.07.2018-17.07.2018) klart for innsending
       </span>
        
     </span>
@@ -196,7 +202,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -206,11 +212,14 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        Du har ett meldekort for uke week 42 (17.07.2018-17.07.2018) klart for innsending
       </span>
        
     </span>
@@ -245,6 +254,9 @@ exports[`basic zero Meldekort test 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>
@@ -268,7 +280,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -278,6 +290,9 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>
@@ -308,7 +323,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/sbl/nav_security_check?goto=/meldekort/"
+  href="http://localhost:9222/meldekort/"
 >
   <span
     aria-label="alarm-ikon"
@@ -322,7 +337,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
     </span>
     <span>
       <span>
-        Du har ett meldekort for uke week 42 (7/17/2018 - 7/17/2018) klart for innsending
+        Du har ett meldekort for uke week 42 (17.07.2018-17.07.2018) klart for innsending
       </span>
        
     </span>
@@ -361,6 +376,9 @@ exports[`no cards no risk 1`] = `
     className="texts"
   >
     <span>
+      <span>
+        Neste meldekort kan sendes fra 10. november 2018
+      </span>
        
     </span>
     <span>

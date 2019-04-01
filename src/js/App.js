@@ -38,9 +38,12 @@ class App extends Component {
 
     api.fetchPersonInfoAndServices()
       .then((r) => {
-        const { paabegynteSoknader } = r;
+        const { paabegynteSoknader, minstEnTjenesteFeilet } = r;
         if (paabegynteSoknader && paabegynteSoknader.feilendeBaksystem && paabegynteSoknader.feilendeBaksystem.length > 0) {
           errors.push('error.paabegynte');
+        }
+        if (minstEnTjenesteFeilet) {
+          errors.push('error.baksystemer');
         }
         this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, paabegynteSoknader, errors }));
       }).catch(catchError('error.person.info'));
