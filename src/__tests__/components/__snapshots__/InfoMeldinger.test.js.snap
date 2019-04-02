@@ -1,81 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render InfoMeldinger with ag messages 1`] = `
-<section
-  className="infomeldinger-list"
->
-  <h1
-    className="vekk"
-  >
-    <span>
-      Varsler
-    </span>
-  </h1>
-  <a
-    className="message clickable"
-    data-ga="Dittnav/Varsel/Arbeidsgiver"
-    href="http://localhost:9222/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
-  >
-    <span
-      aria-label="snakkeboble-ikon"
-      className="icon ag-icon"
-    />
-    <div
-      className="texts"
-    >
-      <p>
-        <span>
-          Du har fått en ny melding fra arbeidsgiver
-        </span>
-      </p>
-      <p>
-        <span>
-          Se melding
-        </span>
-      </p>
-    </div>
-  </a>
-</section>
+<InfoMeldinger
+  agMessagesCount={1}
+  isInactive={false}
+  isMeldeKortUser={false}
+  isRegisteredAtIArbeid={null}
+  meldekort={null}
+  mininnboks={Array []}
+  navMessagesCount={0}
+  paabegynteSoknader={null}
+/>
 `;
 
 exports[`render InfoMeldinger with ag messages but inactive 1`] = `
-<section
-  className="infomeldinger-list"
->
-  <h1
-    className="vekk"
-  >
-    <span>
-      Varsler
-    </span>
-  </h1>
-</section>
+<InfoMeldinger
+  agMessagesCount={1}
+  isInactive={true}
+  isMeldeKortUser={false}
+  isRegisteredAtIArbeid={null}
+  meldekort={null}
+  mininnboks={Array []}
+  navMessagesCount={0}
+  paabegynteSoknader={null}
+/>
 `;
 
 exports[`render InfoMeldinger with empty infoMessages 1`] = `
-<section
-  className="infomeldinger-list"
->
-  <h1
-    className="vekk"
-  >
-    <span>
-      Varsler
-    </span>
-  </h1>
-</section>
+<InfoMeldinger
+  agMessagesCount={0}
+  infoMessages={Object {}}
+  isInactive={false}
+  isMeldeKortUser={false}
+  isRegisteredAtIArbeid={null}
+  meldekort={null}
+  mininnboks={Array []}
+  navMessagesCount={0}
+  paabegynteSoknader={null}
+/>
 `;
 
 exports[`render empty InfoMeldinger component 1`] = `
-<section
-  className="infomeldinger-list"
->
-  <h1
-    className="vekk"
-  >
-    <span>
-      Varsler
-    </span>
-  </h1>
-</section>
+<InfoMeldinger
+  agMessagesCount={0}
+  isInactive={false}
+  isMeldeKortUser={false}
+  isRegisteredAtIArbeid={null}
+  meldekort={null}
+  mininnboks={Array []}
+  navMessagesCount={0}
+  paabegynteSoknader={null}
+/>
 `;

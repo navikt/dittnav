@@ -16,9 +16,7 @@ class InfoMeldinger extends Component {
     return (
       <section className="infomeldinger-list">
         <h1 className="vekk"><F id="dittnav.infomeldinger.varsler" /></h1>
-        <InformasjonsMeldinger isMeldeKortUser={this.props.isMeldeKortUser}
-                               visGenerellInfo={this.props.visGenerellInfobeskjed}
-                               visMeldekortbrukerInfo={this.props.visMeldekortbrukerInfobeskjed}/>
+        <InformasjonsMeldinger isMeldeKortUser={this.props.isMeldeKortUser}/>
         <Meldekort meldekort={this.props.meldekort} />
         <EtterregistreringMeldekort ettereg={this.props.meldekort} />
         <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
@@ -38,8 +36,6 @@ InfoMeldinger.propTypes = {
   navMessagesCount: PropTypes.number,
   agMessagesCount: PropTypes.number,
   isMeldeKortUser: PropTypes.bool,
-  visGenerellInfobeskjed: PropTypes.bool,
-  visMeldekortbrukerInfobeskjed: PropTypes.bool,
   isInactive: PropTypes.bool.isRequired,
   mininnboks: MinInnboksType,
 
@@ -52,8 +48,6 @@ InfoMeldinger.defaultProps = {
   navMessagesCount: 0,
   agMessagesCount: 0,
   isMeldeKortUser: false,
-  visGenerellInfobeskjed: true,
-  visMeldekortbrukerInfobeskjed: true,
   mininnboks: [],
 };
 

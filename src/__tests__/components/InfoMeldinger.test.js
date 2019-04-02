@@ -2,35 +2,34 @@ import * as React from 'react';
 import InfoMeldinger from 'js/components/InfoMeldinger';
 import wrapIntl from 'js/IntlTestHelper';
 const ReactTestRenderer = require('react-test-renderer');
+import ShallowRenderer from 'react-test-renderer/shallow';
+
 
 test('render empty InfoMeldinger component', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger isInactive={false}
-                                                                     visGenerellInfobeskjed={false}
-                                                                     visMeldekortbrukerInfobeskjed={false} />));
-  expect(component.toJSON()).toMatchSnapshot();
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<InfoMeldinger isInactive={false}/>))
+  const component = renderer.getRenderOutput();
+  expect(component).toMatchSnapshot();
 });
 
 test('render InfoMeldinger with empty infoMessages', () => {
-  const infoMessages = {};
-  const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger infoMessages={infoMessages}
-                                                                     isInactive={false}
-                                                                     visGenerellInfobeskjed={false}
-                                                                     visMeldekortbrukerInfobeskjed={false}/>));
-  expect(component.toJSON()).toMatchSnapshot();
+    const infoMessages = {};
+    const renderer = new ShallowRenderer();
+    renderer.render(wrapIntl(<InfoMeldinger infoMessages={infoMessages} isInactive={false}/>))
+    const component = renderer.getRenderOutput();
+    expect(component).toMatchSnapshot();
 });
 
 test('render InfoMeldinger with ag messages', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger agMessagesCount={1}
-                                                                     isInactive={false}
-                                                                     visGenerellInfobeskjed={false}
-                                                                     visMeldekortbrukerInfobeskjed={false}/>));
-  expect(component.toJSON()).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    renderer.render(wrapIntl(<InfoMeldinger agMessagesCount={1} isInactive={false}/>))
+    const component = renderer.getRenderOutput();
+    expect(component).toMatchSnapshot();
 });
 
 test('render InfoMeldinger with ag messages but inactive', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<InfoMeldinger agMessagesCount={1}
-                                                                     isInactive
-                                                                     visGenerellInfobeskjed={false}
-                                                                     visMeldekortbrukerInfobeskjed={false}/>));
-  expect(component.toJSON()).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    renderer.render(wrapIntl(<InfoMeldinger agMessagesCount={1} isInactive={true}/>))
+    const component = renderer.getRenderOutput();
+    expect(component).toMatchSnapshot();
 });

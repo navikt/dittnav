@@ -54,23 +54,78 @@ exports[`InformasjonsMeldinger with general 1`] = `
 `;
 
 exports[`InformasjonsMeldinger with meldekort 1`] = `
+Array [
+  <div
+    className="message"
+  >
+    <span
+      aria-label="alarm-ikon"
+      className="icon default-icon"
+    />
+    <div
+      className="texts"
+    >
+      <p>
+        <span>
+          Her vises informasjon til alle som logger seg på til Ditt NAV
+        </span>
+      </p>
+    </div>
+  </div>,
+  <div
+    className="message"
+  >
+    <span
+      aria-label="alarm-ikon"
+      className="icon meldekort-icon"
+    />
+    <div
+      className="texts"
+    >
+      <p>
+        Melderkort message
+      </p>
+    </div>
+  </div>,
+]
+`;
+
+exports[`InformasjonsMeldinger with meldekort but not user 1`] = `
 <div
   className="message"
 >
   <span
     aria-label="alarm-ikon"
-    className="icon meldekort-icon"
+    className="icon default-icon"
   />
   <div
     className="texts"
   >
     <p>
-      Melderkort message
+      <span>
+        Her vises informasjon til alle som logger seg på til Ditt NAV
+      </span>
     </p>
   </div>
 </div>
 `;
 
-exports[`InformasjonsMeldinger with meldekort but not user 1`] = `null`;
-
-exports[`InformasjonsMeldinger without messages 1`] = `null`;
+exports[`InformasjonsMeldinger without messages 1`] = `
+<div
+  className="message"
+>
+  <span
+    aria-label="alarm-ikon"
+    className="icon default-icon"
+  />
+  <div
+    className="texts"
+  >
+    <p>
+      <span>
+        Her vises informasjon til alle som logger seg på til Ditt NAV
+      </span>
+    </p>
+  </div>
+</div>
+`;
