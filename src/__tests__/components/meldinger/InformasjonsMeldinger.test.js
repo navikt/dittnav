@@ -9,25 +9,34 @@ test('InformasjonsMeldinger without messages', () => {
 });
 
 test('InformasjonsMeldinger with general', () => {
-  const infoMessages = {'generell.informasjonsmelding': 'Hello'};
-  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger infoMessages={infoMessages} />));
+  const message =  'Hello';
+  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger generellInfo={message}
+                                                                             visGenerellInfo={true} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InformasjonsMeldinger with meldekort', () => {
-  const infoMessages = {'meldekortbruker.informasjonsmelding': 'Melderkort message'};
-  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger infoMessages={infoMessages} isMeldeKortUser={true} />));
+  const melderkortMessage =  'Melderkort message';
+  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger meldekortbrukerInfo={melderkortMessage}
+                                                                             isMeldeKortUser={true}
+                                                                             visMeldekortbrukerInfo={true}  />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InformasjonsMeldinger with meldekort but not user', () => {
-  const infoMessages = {'meldekortbruker.informasjonsmelding': 'Melderkort message'};
-  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger infoMessages={infoMessages} isMeldeKortUser={false} />));
+  const melderkortMessage =  'Melderkort message';
+  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger meldekortbrukerInfo={melderkortMessage}
+                                                                             isMeldeKortUser={false} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InformasjonsMeldinger with both', () => {
-  const infoMessages = {'meldekortbruker.informasjonsmelding': 'Melderkort message', 'generell.informasjonsmelding': 'Hello'};
-  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger infoMessages={infoMessages} isMeldeKortUser={true} />));
+  const message =  'Hello';
+  const melderkortMessage =  'Melderkort message';
+  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger generellInfo={message}
+                                                                             visGenerellInfo={true}
+                                                                             meldekortbrukerInfo={melderkortMessage}
+                                                                             visMeldekortbrukerInfo={true}
+                                                                             isMeldeKortUser={true} />));
   expect(component.toJSON()).toMatchSnapshot();
 });

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render InfoMeldinger with ag messages 1`] = `
+<section
+  className="infomeldinger-list"
+>
+  <h1
+    className="vekk"
+  >
+    <span>
+      Varsler
+    </span>
+  </h1>
+  <a
+    className="message clickable"
+    data-ga="Dittnav/Varsel/Arbeidsgiver"
+    href="http://localhost:9222/sbl/nav_security_check?goto=/sbl/as/minside/meldinger/meldingerNAV.do"
+  >
+    <span
+      aria-label="snakkeboble-ikon"
+      className="icon ag-icon"
+    />
+    <div
+      className="texts"
+    >
+      <p>
+        <span>
+          Du har fått en ny melding fra arbeidsgiver
+        </span>
+      </p>
+      <p>
+        <span>
+          Se melding
+        </span>
+      </p>
+    </div>
+  </a>
+</section>
+`;
+
+exports[`render InfoMeldinger with ag messages but inactive 1`] = `
+<section
+  className="infomeldinger-list"
+>
+  <h1
+    className="vekk"
+  >
+    <span>
+      Varsler
+    </span>
+  </h1>
+</section>
+`;
+
+exports[`render InfoMeldinger with empty infoMessages 1`] = `
+<section
+  className="infomeldinger-list"
+>
+  <h1
+    className="vekk"
+  >
+    <span>
+      Varsler
+    </span>
+  </h1>
+</section>
+`;
+
+exports[`render empty InfoMeldinger component 1`] = `
+<section
+  className="infomeldinger-list"
+>
+  <h1
+    className="vekk"
+  >
+    <span>
+      Varsler
+    </span>
+  </h1>
+</section>
+`;
