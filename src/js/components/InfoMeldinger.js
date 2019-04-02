@@ -9,14 +9,14 @@ import EtterregistreringMeldekort from 'js/components/EtterregistreringMeldekort
 import AgMeldinger from 'js/components/meldinger/AgMeldinger';
 import NavMeldinger from 'js/components/meldinger/NavMeldinger';
 import MinInnboks, { MinInnboksType } from 'js/components/meldinger/MinInnboks';
-import InformasjonsMeldinger, { InfoMessagesType } from 'js/components/meldinger/InformasjonsMeldinger';
+import InformasjonsMeldinger from 'js/components/meldinger/InformasjonsMeldinger';
 
 class InfoMeldinger extends Component {
   render() {
     return (
       <section className="infomeldinger-list">
         <h1 className="vekk"><F id="dittnav.infomeldinger.varsler" /></h1>
-        <InformasjonsMeldinger isMeldeKortUser={this.props.isMeldeKortUser}/>
+        <InformasjonsMeldinger isMeldeKortUser={this.props.isMeldeKortUser} />
         <Meldekort meldekort={this.props.meldekort} />
         <EtterregistreringMeldekort ettereg={this.props.meldekort} />
         <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />

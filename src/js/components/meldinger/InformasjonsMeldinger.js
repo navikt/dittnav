@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import Meldekort from "../Meldekort";
 
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
-    if (this.props.visGenerellInfo){
+    if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
         <div className="message" key="general">
           <span className="icon default-icon" aria-label="alarm-ikon" />
@@ -36,15 +35,15 @@ InformasjonsMeldinger.propTypes = {
   generellInfo: PropTypes.node,
   visMeldekortbrukerInfo: PropTypes.bool,
   meldekortbrukerInfo: PropTypes.node,
-  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
+  intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 InformasjonsMeldinger.defaultProps = {
   isMeldeKortUser: false,
   visGenerellInfo: true,
-  generellInfo: <F id="generell.informasjonsmelding"/>,
+  generellInfo: <F id="generell.informasjonsmelding" />,
   visMeldekortbrukerInfo: true,
-  meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding"/>
+  meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
 };
 
 export default injectIntl(InformasjonsMeldinger);
