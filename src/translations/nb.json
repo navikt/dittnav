@@ -2,6 +2,9 @@
   "dittnav.artikkel.lesmer": "Les mer om dette",
   "dittnav.infomeldinger.varsler": "Varsler",
 
+  "generell.informasjonsmelding": "Her vises informasjon til alle som logger seg på til Ditt NAV",
+  "meldekortbruker.informasjonsmelding": "Her vises informasjon til meldekortbrukere",
+
   "meldekort.se.oversikt": "Oversikt over meldekort",
   "meldekort.trekk": "(Send inn nå, du risikerer trekk!)",
   "meldekort.flere": "Du har {count} meldekort klare for innsending",

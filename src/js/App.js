@@ -9,7 +9,7 @@ import Home from 'js/pages/Home';
 import 'less/index.less';
 
 function route(props, options) {
-  const { path } = props;
+  const { path } = props; // eslint-disable-line react/prop-types
   const { info, paabegynteSoknader, mininnboks } = options;
   switch (path) {
     case `${conf.dittNav.CONTEXT_PATH}/login`:

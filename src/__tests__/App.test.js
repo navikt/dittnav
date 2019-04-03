@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'js/App';
 const ReactTestRenderer = require('react-test-renderer');
+import ShallowRenderer from 'react-test-renderer/shallow';
 import wrapIntl from 'js/IntlTestHelper';
 
 const mockApi = () => {
@@ -42,12 +43,12 @@ it('expect PersonInfo fetching', async () => {
       },
     })
   });
-
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<App api={api} path='/' />));
+  const component = renderer.getRenderOutput();
   await flushPromises();
 
-  expect(component.root.children[0].instance.state.errors).toEqual([]);
-  expect(component.toJSON()).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
 
 it('expect PaabegynteSoknader fetching', async () => {
