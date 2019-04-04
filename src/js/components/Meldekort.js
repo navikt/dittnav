@@ -23,7 +23,7 @@ const melding = (next, count, formatDayAndMonth, numberToWord) => (next ? (
   />
 ) : null);
 
-const trekk = (risikererTrekk, formatDateMonth, next) => (next.sisteDatoForTrekk ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }} />) : null);
+const trekk = (skalViseTrekkdato, formatDateMonth, next) => (skalViseTrekkdato ? (<F id="meldekort.info.om.trekk" values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {
@@ -41,7 +41,7 @@ class Meldekort extends Component {
           <span className="texts">
             <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
             <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDayAndMonth, numberToWord)} </span>
-            <span>{trekk(risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
+            <span>{trekk(!risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
             <span>{advarsel(risikererTrekk)} </span>
             <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
             <p>{feriedager(meldekort)}</p>
