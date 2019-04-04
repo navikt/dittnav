@@ -15,7 +15,6 @@
     "htmllint-cli": "0.0.7",
     "moment": "^2.24.0",
     "nav-frontend-ikoner-assets": "^1.0.1",
-    "nav-frontend-spinner": "^1.0.18",
     "nav-frontend-spinner-style": "^0.2.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
