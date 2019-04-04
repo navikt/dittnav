@@ -59,6 +59,7 @@ test('basic one Meldekort test no risk', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
+        datoForTrekk: 1533814941280,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -99,7 +100,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        datoForTrekk: null,
+        datoForTrekk: 1531808093471,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -119,7 +120,7 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 13,
       nesteMeldekort: {
-        datoForTrekk: null,
+        datoForTrekk: 1531808093471,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -139,7 +140,7 @@ test('12 Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 12,
       nesteMeldekort: {
-        datoForTrekk: null,
+        datoForTrekk: 1531808093471,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -180,6 +181,7 @@ test('nesteInnsendingAvMeldekort is null', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
+        datoForTrekk: 1533814941280,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
