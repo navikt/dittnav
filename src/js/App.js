@@ -5,6 +5,7 @@ import conf from 'js/Config';
 import FeilMeldinger from 'js/components/FeilMeldinger';
 import Login from 'js/pages/Login';
 import Home from 'js/pages/Home';
+import NavFrontendSpinner from 'nav-frontend-spinner';
 
 import 'less/index.less';
 
@@ -22,7 +23,7 @@ function route(props, options) {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [] };
+    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], fetching: true };
   }
 
   componentWillMount() {
@@ -33,7 +34,7 @@ class App extends Component {
     }
     const catchError = msg => () => {
       errors.push(msg);
-      this.setState(() => ({ errors }));
+      this.setState(() => ({ errors, fetching: false }));
     };
 
     api.fetchPersonInfoAndServices()
@@ -45,7 +46,7 @@ class App extends Component {
         if (minstEnTjenesteFeilet) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, paabegynteSoknader, errors }));
+        this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, paabegynteSoknader, errors, fetching: false }));
       }).catch(catchError('error.person.info'));
   }
 
@@ -56,6 +57,7 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
+        {this.state.fetching ? <NavFrontendSpinner/>}
         <div className="container">
           {route(this.props, { info, paabegynteSoknader, mininnboks })}
         </div>
