@@ -30,3 +30,16 @@ api.pingDittnavBackend()
     }
     renderApp(window.location.pathname);
   });
+
+window.addEventListener('message', function(e) {
+  var foFrame = document.getElementById('fo');
+  var foContainer = document.getElementById('fo-container');
+  var eventName = e.data[0];
+  var data = e.data[1];
+  switch(eventName) {
+    case 'setHeight':
+      foFrame.style.height = data;
+      foContainer.style.height = data;
+      break;
+  }
+}, false);
