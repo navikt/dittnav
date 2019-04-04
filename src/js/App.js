@@ -5,6 +5,7 @@ import conf from 'js/Config';
 import FeilMeldinger from 'js/components/FeilMeldinger';
 import Login from 'js/pages/Login';
 import Home from 'js/pages/Home';
+import NavFrontendSpinner from 'nav-frontend-spinner';
 
 import 'less/index.less';
 
@@ -56,7 +57,7 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
-        {this.state.fetching ? <div className="spinner-wrapper"><div className="lds-ring"><div></div></div></div> : null}
+        {this.state.fetching ? <NavFrontendSpinner className="header-spinner" /> : null}
         <div className="container">
           {route(this.props, { info, paabegynteSoknader, mininnboks })}
         </div>
