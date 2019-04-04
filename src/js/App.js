@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={errors} />
-        {this.state.fetching ? <NavFrontendSpinner/>}
+        {this.state.fetching ? <NavFrontendSpinner/> : null}
         <div className="container">
           {route(this.props, { info, paabegynteSoknader, mininnboks })}
         </div>
