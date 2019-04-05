@@ -149,5 +149,5 @@
     }
   ],
   "artikkel": null,
-  "minstEnTjenesteFeilet": false
+  "feilendeTjenester": []
 }
