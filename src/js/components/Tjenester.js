@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { VTA } from '../../spa';
 
 class Tjenester extends Component {
   render() {
-    const { services } = this.props;
     return (
-      <section className="ditt-list">
-        {services.map(o => (
-          <a href={o.url} data-ga="Dittnav/Lenkeboks" className={`lenke tjeneste-boks ditt-list-element ditt-nav-${o.bildenavn.replace(/_/g, '-')}`} key={o.url}>
-            <h2 className="underline">
-              {o.tittel}
-            </h2>
-            <p>
-              {o.beskrivelse}
-            </p>
-          </a>
-        ))}
-      </section>
+      <VTA />
     );
   }
 }
