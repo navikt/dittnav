@@ -4,7 +4,6 @@ import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
 const ReactTestRenderer = require('react-test-renderer');
 
-const getCurrentDate = () => new Date(1531830078487);
 i18n.nb.formatDate = date => new Date(date).toLocaleDateString('en-US');
 
 test('basic Meldekort test with no meldekort', () => {
@@ -17,7 +16,7 @@ test('basic Meldekort test', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 2,
       nesteMeldekort: {
-        datoForTrekk: 1533814941280,
+        sisteDatoForTrekk: 1533814941280,
         risikererTrekk: true,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
@@ -29,7 +28,7 @@ test('basic Meldekort test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -38,7 +37,7 @@ test('basic one Meldekort test', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        datoForTrekk: 1533814941280,
+        sisteDatoForTrekk: 1533814941280,
         risikererTrekk: true,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
@@ -50,7 +49,7 @@ test('basic one Meldekort test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -59,7 +58,7 @@ test('basic one Meldekort test no risk', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        datoForTrekk: 1533814941280,
+        sisteDatoForTrekk: 1533814941280,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -70,7 +69,7 @@ test('basic one Meldekort test no risk', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -79,7 +78,7 @@ test('no cards no risk', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
-        datoForTrekk: 1533814941280,
+        sisteDatoForTrekk: 1533814941280,
         risikererTrekk: false,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
@@ -91,7 +90,7 @@ test('no cards no risk', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -100,7 +99,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        datoForTrekk: 1531808093471,
+        sisteDatoForTrekk: 1531808093471,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -111,7 +110,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     resterendeFeriedager: null,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -120,7 +119,7 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 13,
       nesteMeldekort: {
-        datoForTrekk: 1531808093471,
+        sisteDatoForTrekk: 1531808093471,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -131,7 +130,7 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
     resterendeFeriedager: null,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -140,7 +139,7 @@ test('12 Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 12,
       nesteMeldekort: {
-        datoForTrekk: 1531808093471,
+        sisteDatoForTrekk: 1531808093471,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -151,7 +150,7 @@ test('12 Meldekort test no risk no remaining holidays', () => {
     resterendeFeriedager: null,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -160,7 +159,7 @@ test('basic zero Meldekort test', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
-        datoForTrekk: 1533814941280,
+        sisteDatoForTrekk: 1533814941280,
         risikererTrekk: true,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
@@ -172,7 +171,7 @@ test('basic zero Meldekort test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -181,7 +180,7 @@ test('nesteInnsendingAvMeldekort is null', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        datoForTrekk: 1533814941280,
+        sisteDatoForTrekk: 1533814941280,
         uke: 'week 42',
         kanSendesFra: 1531808013471,
         til: 1531808093471,
@@ -192,7 +191,7 @@ test('nesteInnsendingAvMeldekort is null', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -204,6 +203,6 @@ test('Meldekort without next card test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} getCurrentDate={getCurrentDate} />));
+  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
