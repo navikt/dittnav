@@ -41,5 +41,8 @@ window.addEventListener('message', function(e) {
       foFrame.style.height = data;
       foContainer.style.height = data;
       break;
+    default:
+      console.log(`Can not handle event ${eventName}`);
+      break;
   }
 }, false);
