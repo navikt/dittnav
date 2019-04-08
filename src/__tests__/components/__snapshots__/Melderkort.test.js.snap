@@ -27,7 +27,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 5. april 2019)
+        (Siste innsendingsfrist før trekk: 17. juli 2018)
       </span>
        
     </span>
@@ -181,7 +181,7 @@ exports[`basic one Meldekort test no risk 1`] = `
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 5. april 2019)
+        (Siste innsendingsfrist før trekk: 9. august 2018)
       </span>
        
     </span>
@@ -231,7 +231,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 5. april 2019)
+        (Siste innsendingsfrist før trekk: 17. juli 2018)
       </span>
        
     </span>
@@ -312,7 +312,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 5. april 2019)
+        (Siste innsendingsfrist før trekk: 17. juli 2018)
       </span>
        
     </span>
@@ -355,7 +355,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
     </span>
     <span>
       <span>
-        (Siste innsendingsfrist før trekk: 5. april 2019)
+        (Siste innsendingsfrist før trekk: 9. august 2018)
       </span>
        
     </span>
