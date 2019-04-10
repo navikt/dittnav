@@ -1,7 +1,7 @@
 const getDittNavBaseApiUrl = () => {
   const host = window.location.hostname;
   if (host.indexOf('localhost') > -1) {
-    return 'http://localhost:9222';
+    return process.env.REACT_APP_DITT_NAV_BASE_API_URL;
   }
   return `https://${window.location.hostname}/person`;
 };
@@ -42,7 +42,7 @@ export default {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/personinfo`,
-    DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/ping`,
+    DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/ping`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
