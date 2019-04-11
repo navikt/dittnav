@@ -20,6 +20,11 @@ For å kjøre opp app-en i dev:
 7. terminal 8: `npm run start-proxy`
 8. gå til `http://localhost:9898/`
 
+For å gå mot lokalt kjørende backend:
+
+1. Kommenter ut URL-en til fake login server, og inn URL-en til backend, i `.env.development`
+2. `npm run start` 
+
 For å kjøre tester:
 
 1. `npm install`

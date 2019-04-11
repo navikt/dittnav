@@ -70,6 +70,7 @@ it('expect PaabegynteSoknader fetching', async () => {
         "meldekortbruker": true,
         "erUnderRegistreringIArbeid": true
       },
+      "feilendeTjenester":[]
     })
   });
 
