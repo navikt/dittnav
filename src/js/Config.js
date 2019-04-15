@@ -37,6 +37,10 @@ const getLoginUrl = () => {
   return 'https://loginservice.nav.no/login?level=Level3';
 };
 
+const getVtaPath = () => {
+  return window.location.hostname.indexOf('localhost') > -1 ? 'http://127.0.0.1:3002': '/veientilarbeid';
+};
+
 export default {
   dittNav: {
     SERVICES_URL: getServicesUrl(),
@@ -47,6 +51,7 @@ export default {
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
   },
+  VTA_PATH: getVtaPath(),
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',
