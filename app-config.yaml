@@ -38,5 +38,3 @@ fasitResources:
     resourceType: applicationproperties
 alertProfiles:
   - common-java-modules
-
-webproxy: true

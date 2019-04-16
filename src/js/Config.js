@@ -38,7 +38,7 @@ const getLoginUrl = () => {
 };
 
 const getVtaPath = () => {
-  return window.location.hostname.indexOf('localhost') > -1 ? 'http://127.0.0.1:3002': `${getServicesUrl()}/veientilarbeid`;
+  return window.location.hostname.indexOf('localhost') > -1 ? 'http://127.0.0.1:3002': '/veientilarbeid';
 };
 
 export default {
