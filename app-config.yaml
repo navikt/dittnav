@@ -39,3 +39,4 @@ fasitResources:
 alertProfiles:
   - common-java-modules
 
+webproxy: true
