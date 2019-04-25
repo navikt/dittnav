@@ -1,0 +1,3 @@
+proxy:
+  - contextPath: /person/veientilarbeid
+    baseUrl: https://veientilarbeid
