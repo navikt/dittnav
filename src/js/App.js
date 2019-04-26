@@ -30,6 +30,7 @@ class App extends Component {
     const { errors } = this.state;
     const { api, path } = this.props;
     if (path === `${conf.dittNav.CONTEXT_PATH}/login`) {
+      this.setState(() => ({ fetching: false }));
       return;
     }
     const catchError = msg => () => {
