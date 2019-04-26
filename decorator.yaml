@@ -1,3 +1,4 @@
 proxy:
   - contextPath: /person/dittnav/veientilarbeid
     baseUrl: http://veientilarbeid
+    requestRewrite: REMOVE_CONTEXT_PATH
