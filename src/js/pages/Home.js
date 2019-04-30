@@ -23,7 +23,7 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks } = this.props;
-    const tjeneserEllerVta = info.isFoBruker ? <Vta /> : <Tjenester services={info.viktigeTjenester} />;
+    const tjeneserEllerVta = info.personinfo.underOppfolging  ? <Vta /> : <Tjenester services={info.viktigeTjenester} />;
     return (
       <React.Fragment>
         <div className="row">
