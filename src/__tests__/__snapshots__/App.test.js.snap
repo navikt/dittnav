@@ -113,7 +113,7 @@ exports[`expect Login page rendering 1`] = `
             </p>
             <a
               className="lenke"
-              href="/person/dittnav/innlogget"
+              href="/person/dittnav"
             >
               <span>
                 Logg inn med ID-porten
