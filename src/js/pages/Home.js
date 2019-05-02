@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Vta from 'js/components/VTA';
 import PersonInfo from 'js/components/PersonInfo';
 import InfoMeldinger from 'js/components/InfoMeldinger';
-import Tjenester from 'js/components/Tjenester';
+// import Tjenester from 'js/components/Tjenester';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
 import PropTypes from 'prop-types';
@@ -23,7 +23,7 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks } = this.props;
-    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <Tjenester services={info.viktigeTjenester} />;
+    // const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <Tjenester services={info.viktigeTjenester} />;
     return (
       <React.Fragment>
         <div className="row">
@@ -31,7 +31,7 @@ class Home extends Component {
             <div className="col-md-12">
               <PersonInfo personInfo={info.personinfo} />
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              { tjeneserEllerVta }
+              <Vta />
               <Lenkelister links={info.andreTjenester} />
             </div>
           </div>
