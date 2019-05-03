@@ -38,7 +38,7 @@ exports[`expect Login page rendering 1`] = `
             </p>
             <a
               className="knapp-hoved knapp-liten"
-              href="/pselv/tilleggsfunksjonalitet/innlogging.jsf"
+              href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf"
             >
               <span>
                 Velg
@@ -63,7 +63,7 @@ exports[`expect Login page rendering 1`] = `
             </p>
             <a
               className="knapp-hoved knapp-liten"
-              href="/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
+              href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
             >
               <span>
                 Velg
