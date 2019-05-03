@@ -7,5 +7,4 @@ proxy:
   - contextPath: /veientilarbeid
     baseUrl: http://veientilarbeid
     validateOidcToken: false
-    requestRewrite: REMOVE_CONTEXT_PATH
     minSecurityLevel: 3
