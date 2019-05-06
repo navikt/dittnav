@@ -1,4 +1,5 @@
 import conf from 'js/Config';
+import Promise from 'promise-polyfill';
 
 const fetchJSONAndCheckForErrors = (url) => {
   const p = new Promise((res, rej) => {
