@@ -23,7 +23,9 @@ const fetchJSONAndCheckForErrors = (url) => {
 };
 
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
+const fetchPaabegynteSoknader = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_PAABEGYNTE_SOKNADER_URL}`);
 
 export default {
   fetchPersonInfoAndServices,
+  fetchPaabegynteSoknader
 };

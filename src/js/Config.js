@@ -42,6 +42,7 @@ export default {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/personinfo`,
+    DITTNAV_PAABEGYNTE_SOKNADER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/paabegynte`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/ping`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',

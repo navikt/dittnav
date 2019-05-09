@@ -8,6 +8,7 @@ import wrapIntl from 'js/IntlTestHelper';
 const mockApi = () => {
   return {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
+    fetchPaabegynteSoknader: () => new Promise((resolve, reject) => {}),
   }
 };
 
