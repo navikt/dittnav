@@ -18,7 +18,7 @@ function renderApp(path) {
 }
 
 api.checkAuth()
-  .then((r) => renderApp(window.location.pathname))
+  .then(() => renderApp(window.location.pathname))
   .catch((e) => {
     if (e && e.message && e.message === 'Unauthorized') {
       return;

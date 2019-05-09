@@ -33,11 +33,11 @@ const checkAuth = () => {
           redirectToLogin();
           return;
         }
-        res(r.json())
+        res(r.json());
       })
       .catch((e) => {
         rej(e);
-      })
+      });
   });
 };
 
