@@ -9,6 +9,7 @@ const mockApi = () => {
   return {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
     fetchPaabegynteSoknader: () => new Promise((resolve, reject) => {}),
+    fetchUbehandledeMeldinger: () => new Promise((resolve, reject) => {}),
   }
 };
 

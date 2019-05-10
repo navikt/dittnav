@@ -49,13 +49,17 @@ class App extends Component {
         if (feilendeTjenester.length > 0) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, errors, fetching: false }));
+        this.setState(() => ({ info: r, errors, fetching: false }));
       }).catch(catchError('error.person.info'));
 
     await api.fetchPaabegynteSoknader()
       .then((r) => {
-        console.log('response');
         this.setState(() => ({ paabegynteSoknader: r }));
+      }).catch(catchError('error.person.info'));
+
+    await api.fetchUbehandledeMeldinger()
+      .then((r) => {
+        this.setState(() => ({ mininnboks: r }));
       }).catch(catchError('error.person.info'));
   }
 
@@ -79,6 +83,7 @@ App.propTypes = {
   api: PropTypes.shape({
     fetchPersonInfoAndServices: PropTypes.func.isRequired,
     fetchPaabegynteSoknader: PropTypes.func.isRequired,
+    fetchUbehandledeMeldinger: PropTypes.func.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
 };

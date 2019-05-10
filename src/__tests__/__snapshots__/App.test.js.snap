@@ -134,6 +134,7 @@ exports[`expect PersonInfo fetching 1`] = `
     Object {
       "fetchPaabegynteSoknader": [Function],
       "fetchPersonInfoAndServices": [Function],
+      "fetchUbehandledeMeldinger": [Function],
     }
   }
   path="/"
