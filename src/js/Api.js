@@ -43,9 +43,11 @@ const checkAuth = () => {
 
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchPaabegynteSoknader = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_PAABEGYNTE_SOKNADER_URL}`);
+const fetchUbehandledeMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_UBETHANDLEDE_URL}`);
 
 export default {
   checkAuth,
   fetchPersonInfoAndServices,
-  fetchPaabegynteSoknader
+  fetchPaabegynteSoknader,
+  fetchUbehandledeMeldinger
 };
