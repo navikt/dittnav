@@ -40,7 +40,7 @@ class App extends Component {
       this.setState(() => ({ errors, fetching: false }));
     };
 
-    await api.fetchPersonInfoAndServices()
+    api.fetchPersonInfoAndServices()
       .then((r) => {
         const { paabegynteSoknader, feilendeTjenester } = r;
         if (paabegynteSoknader && paabegynteSoknader.feilendeBaksystem && paabegynteSoknader.feilendeBaksystem.length > 0) {
@@ -52,12 +52,12 @@ class App extends Component {
         this.setState(() => ({ info: r, errors, fetching: false }));
       }).catch(catchError('error.person.info'));
 
-    await api.fetchPaabegynteSoknader()
+    api.fetchPaabegynteSoknader()
       .then((r) => {
         this.setState(() => ({ paabegynteSoknader: r }));
       }).catch(catchError('error.person.info'));
 
-    await api.fetchUbehandledeMeldinger()
+    api.fetchUbehandledeMeldinger()
       .then((r) => {
         this.setState(() => ({ mininnboks: r }));
       }).catch(catchError('error.person.info'));
