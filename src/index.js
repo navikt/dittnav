@@ -14,15 +14,10 @@ import enMessages from './translations/en.json';
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
 function renderApp(path) {
-  document.body.style.display = 'block';
   ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} path={path} /></NavApp>, document.getElementById('app'));
 }
 
-window.addEventListener('popstate', () => {
-  renderApp(window.location.pathname);
-});
-
-api.pingDittnavBackend()
+api.checkAuth()
   .then(() => renderApp(window.location.pathname))
   .catch((e) => {
     if (e && e.message && e.message === 'Unauthorized') {

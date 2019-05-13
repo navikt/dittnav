@@ -42,6 +42,7 @@ const getVtaPath = () => {
 };
 
 export default {
+  UNLEASH_TIMEOUT: 1000,
   dittNav: {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
@@ -52,6 +53,7 @@ export default {
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
   },
   VTA_PATH: getVtaPath(),
+  INNLOGGINGSLINJE_AUTH: `${getServicesUrl()}/innloggingslinje-api/auth`,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',

@@ -8,6 +8,7 @@ import Home from 'js/pages/Home';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 
 import 'less/index.less';
+import 'js/polyfill.js';
 
 function route(props, options) {
   const { path } = props; // eslint-disable-line react/prop-types

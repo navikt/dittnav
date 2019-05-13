@@ -24,7 +24,7 @@ jest.mock('react-dom', () => ({render: jest.fn()}))
 
 it('index renders without crashing', async () => {
   const expectedF = jest.fn();
-  Api.pingDittnavBackend = () => new Promise((resolve, reject) => {
+  Api.checkAuth = () => new Promise((resolve, reject) => {
     expectedF();
     resolve({});
   });
