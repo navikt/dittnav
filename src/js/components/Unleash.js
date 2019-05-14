@@ -4,23 +4,23 @@ import Api from 'js/Api';
 
 class Unleash extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { hidden: true };
   }
 
   componentDidMount() {
     Api.fetchUnleashFeatures([this.props.feature])
       .then((f) => {
-        if (!!f[this.props.feature]) {
-          this.setState({ hidden: false })
+        if (f[this.props.feature]) {
+          this.setState({ hidden: false });
         }
       })
-      .catch((e) => {console.info(e)})
+      .catch((e) => { console.info(e); }); // eslint-disable-line no-console
   }
 
   render() {
     const { children } = this.props;
-    return this.state.hidden ? null : ( <React.Fragment>{children}</React.Fragment>);
+    return this.state.hidden ? null : <React.Fragment>{children}</React.Fragment>;
   }
 }
 

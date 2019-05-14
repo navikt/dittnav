@@ -32,7 +32,7 @@ class Home extends Component {
             <div className="col-md-12">
               <PersonInfo personInfo={info.personinfo} />
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <Unleash feature='dittnav.fo'>
+              <Unleash feature="dittnav.fo">
                 <Vta />
               </Unleash>
               <Lenkelister links={info.andreTjenester} />
