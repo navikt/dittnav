@@ -56,7 +56,7 @@ class App extends Component {
           errors.push('error.baksystemer');
         }
         this.setState(() => ({ paabegynteSoknader: r }));
-    }).catch(catchError('error.baksystemer'));
+      }).catch(catchError('error.baksystemer'));
 
     api.fetchMeldinger()
       .then((r) => {
@@ -69,7 +69,7 @@ class App extends Component {
       info, paabegynteSoknader, mininnboks, errors,
     } = this.state;
 
-    const uniqueErrors = errors.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
+    const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
 
     return (
       <main role="main">

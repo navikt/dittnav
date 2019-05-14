@@ -49,5 +49,5 @@ export default {
   checkAuth,
   fetchPersonInfoAndServices,
   fetchSaker,
-  fetchMeldinger
+  fetchMeldinger,
 };
