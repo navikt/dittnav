@@ -27,13 +27,14 @@ class App extends Component {
     this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], fetching: true };
   }
 
-  componentWillMount() {
+  async componentWillMount() {
     const { errors } = this.state;
     const { api, path } = this.props;
     if (path === `${conf.dittNav.CONTEXT_PATH}/login`) {
       this.setState(() => ({ fetching: false }));
       return;
     }
+
     const catchError = msg => () => {
       errors.push(msg);
       this.setState(() => ({ errors, fetching: false }));
@@ -41,24 +42,38 @@ class App extends Component {
 
     api.fetchPersonInfoAndServices()
       .then((r) => {
-        const { paabegynteSoknader, feilendeTjenester } = r;
-        if (paabegynteSoknader && paabegynteSoknader.feilendeBaksystem && paabegynteSoknader.feilendeBaksystem.length > 0) {
-          errors.push('error.paabegynte');
-        }
+        const { feilendeTjenester } = r;
         if (feilendeTjenester.length > 0) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ info: r, mininnboks: r.ubehandledeMeldinger, paabegynteSoknader, errors, fetching: false }));
-      }).catch(catchError('error.person.info'));
+        this.setState(() => ({ info: r, errors, fetching: false }));
+      }).catch(catchError('error.baksystemer'));
+
+    api.fetchSaker()
+      .then((r) => {
+        const { feilendeBaksystem } = r;
+        if (feilendeBaksystem.length > 0) {
+          errors.push('error.baksystemer');
+        }
+        this.setState(() => ({ paabegynteSoknader: r }));
+      }).catch(catchError('error.baksystemer'));
+
+    api.fetchMeldinger()
+      .then((r) => {
+        this.setState(() => ({ mininnboks: r }));
+      }).catch(catchError('error.baksystemer'));
   }
 
   render() {
     const {
       info, paabegynteSoknader, mininnboks, errors,
     } = this.state;
+
+    const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
+
     return (
       <main role="main">
-        <FeilMeldinger errors={errors} />
+        <FeilMeldinger errors={uniqueErrors} />
         {this.state.fetching ? <NavFrontendSpinner className="header-spinner" /> : null}
         <div className="container">
           {route(this.props, { info, paabegynteSoknader, mininnboks })}
@@ -71,6 +86,8 @@ class App extends Component {
 App.propTypes = {
   api: PropTypes.shape({
     fetchPersonInfoAndServices: PropTypes.func.isRequired,
+    fetchSaker: PropTypes.func.isRequired,
+    fetchMeldinger: PropTypes.func.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
 };

@@ -8,6 +8,8 @@ import wrapIntl from 'js/IntlTestHelper';
 const mockApi = () => {
   return {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
+    fetchSaker: () => new Promise((resolve, reject) => {}),
+    fetchMeldinger: () => new Promise((resolve, reject) => {}),
   }
 };
 
@@ -70,7 +72,7 @@ it('expect PaabegynteSoknader fetching', async () => {
         "meldekortbruker": true,
         "erUnderRegistreringIArbeid": true
       },
-      "feilendeTjenester":[]
+      "feilendeTjenester":['error.baksystemer']
     })
   });
 
@@ -81,6 +83,6 @@ it('expect PaabegynteSoknader fetching', async () => {
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
   await flushPromises();
 
-  expect(component.root.children[0].instance.state.errors).toEqual(['error.paabegynte']);
+  expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
 });
 
