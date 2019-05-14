@@ -5,6 +5,24 @@ const redirectToLogin = () => {
   window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
 };
 
+//const URL = `http://localhost:9222/api/feature`;
+const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
+
+const fetchUnleashFeatures = (features) => {
+  const fString = features.map(f => `feature=${f}`);
+  return Promise.race([
+    fetch(`${URL}?${fString}`, { method: 'GET' }) // eslint-disable-line no-undef
+      .then((r) => {
+        return r.json();
+      }),
+    new Promise((_, reject) =>
+      setTimeout(() => {
+        const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
+        return reject(new Error(message))
+      }, conf.UNLEASH_TIMEOUT)
+    )]);
+};
+
 const fetchJSONAndCheckForErrors = (url) => {
   return new Promise((res, rej) => {
     fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
@@ -44,6 +62,7 @@ const checkAuth = () => {
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 
 export default {
+  fetchUnleashFeatures,
   checkAuth,
   fetchPersonInfoAndServices,
 };
