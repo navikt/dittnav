@@ -55,12 +55,12 @@ class App extends Component {
     api.fetchPaabegynteSoknader()
       .then((r) => {
         this.setState(() => ({ paabegynteSoknader: r }));
-      }).catch(catchError('error.person.info'));
+      }).catch(catchError('error.paabegynte'));
 
     api.fetchUbehandledeMeldinger()
       .then((r) => {
         this.setState(() => ({ mininnboks: r }));
-      }).catch(catchError('error.person.info'));
+      }).catch(catchError('error.mininnboks'));
   }
 
   render() {
