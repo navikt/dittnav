@@ -132,9 +132,9 @@ exports[`expect PersonInfo fetching 1`] = `
 <App
   api={
     Object {
-      "fetchPaabegynteSoknader": [Function],
+      "fetchMeldinger": [Function],
       "fetchPersonInfoAndServices": [Function],
-      "fetchUbehandledeMeldinger": [Function],
+      "fetchSaker": [Function],
     }
   }
   path="/"

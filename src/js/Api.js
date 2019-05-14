@@ -42,12 +42,12 @@ const checkAuth = () => {
 };
 
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
-const fetchPaabegynteSoknader = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_PAABEGYNTE_SOKNADER_URL}`);
-const fetchUbehandledeMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_UBETHANDLEDE_URL}`);
+const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
 
 export default {
   checkAuth,
   fetchPersonInfoAndServices,
-  fetchPaabegynteSoknader,
-  fetchUbehandledeMeldinger
+  fetchSaker,
+  fetchMeldinger
 };
