@@ -6,6 +6,7 @@ import InfoMeldinger from 'js/components/InfoMeldinger';
 // import Tjenester from 'js/components/Tjenester';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
+import Unleash from 'js/components/Unleash';
 import PropTypes from 'prop-types';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
@@ -31,7 +32,9 @@ class Home extends Component {
             <div className="col-md-12">
               <PersonInfo personInfo={info.personinfo} />
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <Vta />
+              <Unleash feature="dittnav.fo">
+                <Vta />
+              </Unleash>
               <Lenkelister links={info.andreTjenester} />
             </div>
           </div>

@@ -42,7 +42,7 @@ const getVtaPath = () => {
 };
 
 export default {
-  UNLEASH_TIMEOUT: 1000,
+  UNLEASH_TIMEOUT: 3000,
   dittNav: {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
