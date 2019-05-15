@@ -5,7 +5,6 @@ import conf from 'js/Config';
 import FeilMeldinger from 'js/components/FeilMeldinger';
 import Login from 'js/pages/Login';
 import Home from 'js/pages/Home';
-import NavFrontendSpinner from 'nav-frontend-spinner';
 
 import 'less/index.less';
 import 'js/polyfill.js';
@@ -17,7 +16,7 @@ function route(props, options) {
     case `${conf.dittNav.CONTEXT_PATH}/login`:
       return <Login />;
     default:
-      return <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />;
+      return <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />;
   }
 }
 
@@ -66,7 +65,7 @@ class App extends Component {
 
   render() {
     const {
-      info, paabegynteSoknader, mininnboks, errors,
+      info, paabegynteSoknader, mininnboks, errors, fetching
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -74,9 +73,8 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
-        {this.state.fetching < 3 ? <NavFrontendSpinner className="header-spinner" /> : null}
         <div className="container">
-          {route(this.props, { info, paabegynteSoknader, mininnboks })}
+          {route(this.props, { info, paabegynteSoknader, mininnboks, fetching })}
         </div>
       </main>
     );
