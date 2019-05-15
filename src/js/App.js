@@ -24,20 +24,20 @@ function route(props, options) {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], fetching: true };
+    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], fetching: 0 };
   }
 
   async componentWillMount() {
     const { errors } = this.state;
     const { api, path } = this.props;
     if (path === `${conf.dittNav.CONTEXT_PATH}/login`) {
-      this.setState(() => ({ fetching: false }));
+      this.setState(() => ({ fetching: 3 }));
       return;
     }
 
     const catchError = msg => () => {
       errors.push(msg);
-      this.setState(() => ({ errors, fetching: false }));
+      this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
     };
 
     api.fetchPersonInfoAndServices()
@@ -46,7 +46,7 @@ class App extends Component {
         if (feilendeTjenester.length > 0) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ info: r, errors, fetching: false }));
+        this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
 
     api.fetchSaker()
@@ -55,12 +55,12 @@ class App extends Component {
         if (feilendeBaksystem.length > 0) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ paabegynteSoknader: r }));
+        this.setState(() => ({ paabegynteSoknader: r, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
 
     api.fetchMeldinger()
       .then((r) => {
-        this.setState(() => ({ mininnboks: r }));
+        this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
   }
 
@@ -74,7 +74,7 @@ class App extends Component {
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
-        {this.state.fetching ? <NavFrontendSpinner className="header-spinner" /> : null}
+        {this.state.fetching < 3 ? <NavFrontendSpinner className="header-spinner" /> : null}
         <div className="container">
           {route(this.props, { info, paabegynteSoknader, mininnboks })}
         </div>
