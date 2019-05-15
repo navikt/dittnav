@@ -10,8 +10,8 @@ class DelayedSpinner extends Component {
 
   componentDidMount() {
     this.timer = setTimeout(
-      () => this.setState({showSpinner: true}),
-      this.props.delay
+      () => this.setState({ showSpinner: true }),
+      this.props.delay,
     );
   }
 
@@ -30,7 +30,7 @@ DelayedSpinner.propTypes = {
 };
 
 DelayedSpinner.defaultProps = {
-  spinnerClass: "",
+  spinnerClass: '',
 };
 
 export default DelayedSpinner;
