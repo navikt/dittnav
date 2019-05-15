@@ -27,6 +27,10 @@ const fetchJSONAndCheckForErrors = (url) => {
 
 const checkAuth = () => {
   return new Promise((res, rej) => {
+    if (window.location.pathname.endsWith(`${conf.dittNav.CONTEXT_PATH}/login`)) {
+      res({ok: 'ok'});
+      return;
+    }
     fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
       .then((r) => {
         if (!r.authenticated) {
