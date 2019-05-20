@@ -10,120 +10,33 @@ exports[`expect Login page rendering 1`] = `
     <div
       className="row"
     >
-      <h1
-        className="typo-sidetittel"
-      >
-        Alternativ pålogging
-      </h1>
       <div
-        className="col-md-12 col-sm-12"
+        className="maincontent side-innhold"
       >
         <div
-          className="primary col-md-8 col-md-offset-2 sentrert alternativ-paalogging"
+          className="col-md-12"
         >
-          <div
-            className="element hodefot"
+          <section
+            className="infomeldinger-list"
           >
-            <h3
-              className="decorated"
+            <h1
+              className="vekk"
             >
               <span>
-                Endagspassord til din pensjon
+                Varsler
               </span>
-            </h3>
-            <p>
-              <span>
-                Pålogging med endagspassord gir deg tilgang til de fleste funksjonene i Din pensjon.
-              </span>
-            </p>
-            <a
-              className="knapp-hoved knapp-liten"
-              href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf"
-            >
-              <span>
-                Velg
-              </span>
-            </a>
-          </div>
-          <hr />
-          <div
-            className="element hodefot"
-          >
-            <h3
-              className="decorated"
-            >
-              <span>
-                Endagspassord til uføretrygd
-              </span>
-            </h3>
-            <p>
-              <span>
-                Pålogging med endagspassord gir deg tilgang til de fleste funksjonene i selvbetjeningsløsningen Uføretrygd.
-              </span>
-            </p>
-            <a
-              className="knapp-hoved knapp-liten"
-              href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
-            >
-              <span>
-                Velg
-              </span>
-            </a>
-          </div>
-          <hr />
-          <div
-            className="element hodefot"
-          >
-            <h3
-              className="decorated"
-            >
-              <span>
-                Arbeidsgiver
-              </span>
-            </h3>
-            <p>
-              <span>
-                NAV har mange selvbetjente tjenester for deg som er arbeidsgiver. Gå til arbeidsgiversiden og se hva vi kan tilby.
-              </span>
-            </p>
-            <a
-              className="knapp-hoved knapp-liten"
-              href="https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester"
-            >
-              <span>
-                Velg
-              </span>
-            </a>
-          </div>
-          <hr />
-          <div
-            className="element hodefot"
-          >
-            <h3
-              className="decorated"
-            >
-              <span>
-                Om alternativ pålogging
-              </span>
-            </h3>
-            <p>
-              <span>
-                Med alternativ pålogging får du kun tilgang til enkelte av NAVs selvbetjeningsløsninger. Vi oppfordrer derfor våre brukere til å logge inn med ID-porten.
-              </span>
-            </p>
-            <a
-              className="lenke"
-              href="/person/dittnav"
-            >
-              <span>
-                Logg inn med ID-porten
-              </span>
-            </a>
-          </div>
-          <hr />
+            </h1>
+          </section>
+          <section
+            className="ditt-list"
+          />
+          <section
+            className="ditt-list"
+          />
         </div>
       </div>
     </div>
+    ;
   </div>
 </main>
 `;
