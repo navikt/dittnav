@@ -34,5 +34,5 @@ it('index renders without crashing', async () => {
   await require('../index');
   expect(expectedF).toHaveBeenCalled();
 
-  expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={Api} path='/' />), null);
+  expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={Api} />), null);
 });

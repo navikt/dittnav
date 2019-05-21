@@ -17,7 +17,7 @@ const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 const loginPath = `${conf.dittNav.CONTEXT_PATH}/login`;
 
 function renderApp(path) {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}>{path === loginPath ? <LoginWrapper /> : <App api={api} path={path} />}</NavApp>, document.getElementById('app'));
+  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}>{path === loginPath ? <LoginWrapper /> : <App api={api} />}</NavApp>, document.getElementById('app'));
 }
 
 api.checkAuth()

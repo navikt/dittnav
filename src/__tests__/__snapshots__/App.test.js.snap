@@ -50,6 +50,5 @@ exports[`expect PersonInfo fetching 1`] = `
       "fetchSaker": [Function],
     }
   }
-  path="/"
 />
 `;
