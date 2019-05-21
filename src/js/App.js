@@ -1,24 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import conf from 'js/Config';
 import FeilMeldinger from 'js/components/FeilMeldinger';
-import Login from 'js/pages/Login';
 import Home from 'js/pages/Home';
 
 import 'less/index.less';
 import 'js/polyfill.js';
-
-function route(props, options) {
-  const { path } = props; // eslint-disable-line react/prop-types
-  const { info, paabegynteSoknader, mininnboks, fetching } = options;
-  switch (path) {
-    case `${conf.dittNav.CONTEXT_PATH}/login`:
-      return <Login />;
-    default:
-      return <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />;
-  }
-}
 
 class App extends Component {
   constructor(props) {
@@ -28,11 +15,7 @@ class App extends Component {
 
   async componentWillMount() {
     const { errors } = this.state;
-    const { api, path } = this.props;
-    if (path === `${conf.dittNav.CONTEXT_PATH}/login`) {
-      this.setState(() => ({ fetching: 3 }));
-      return;
-    }
+    const { api } = this.props;
 
     const catchError = msg => () => {
       errors.push(msg);
@@ -74,7 +57,7 @@ class App extends Component {
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          {route(this.props, { info, paabegynteSoknader, mininnboks, fetching })}
+          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />;
         </div>
       </main>
     );
@@ -87,7 +70,6 @@ App.propTypes = {
     fetchSaker: PropTypes.func.isRequired,
     fetchMeldinger: PropTypes.func.isRequired,
   }).isRequired,
-  path: PropTypes.string.isRequired,
 };
 
 export default App;
