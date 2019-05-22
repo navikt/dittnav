@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`error while fetching Unleash snaphot-test 1`] = `null`;
+
 exports[`feature is disabled Unleash snaphot-test 1`] = `
 <div>
   Not hello, the feature is disabled
