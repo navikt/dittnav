@@ -1,5 +1,6 @@
 import React from 'react';
 import NAVSPA from '../../NAVSPA';
+import Config from '../Config';
 
 const VTA = NAVSPA.importer('vta');
 
@@ -8,7 +9,7 @@ class Vta extends React.Component {
     super();
     this.state = { render: false };
     const script = document.createElement('script');
-    script.src = '/person/dittnav/veientilarbeid/micro/static/js/main.js';
+    script.src = `${Config.VTA_PATH}/micro/static/js/main.js`;
     script.type = 'text/javascript';
     script.addEventListener('load', () => {
       this.setState({ render: true });
@@ -19,7 +20,7 @@ class Vta extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <link type="text/css" rel="stylesheet" href="/person/dittnav/veientilarbeid/micro/static/css/main.css" />
+        <link type="text/css" rel="stylesheet" href={`${Config.VTA_PATH}/micro/static/css/main.css`} />
         { this.state.render ? <VTA /> : null }
       </React.Fragment>
     );
