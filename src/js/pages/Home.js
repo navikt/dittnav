@@ -26,8 +26,9 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const C = <React.Fragment>{props => (props.isFeatureEnabled ? <Vta /> : <Tjenester services={info.viktigeTjenester} />)}</React.Fragment>;
-    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <Tjenester services={info.viktigeTjenester} />;
+    const C = props => (props.isFeatureEnabled ? <Vta /> : <Tjenester services={info.viktigeTjenester} />);
+    // const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <Tjenester services={info.viktigeTjenester} />;
+    const tjeneserEllerVta = <Unleash api={Api} feature="dittnav.fo"><C /></Unleash>;
     return (
       <React.Fragment>
         <div className="row">
