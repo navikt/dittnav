@@ -12,15 +12,11 @@ const fetchUnleashFeatures = (features) => {
   const fString = features.map(f => `feature=${f}`);
   return Promise.race([
     fetch(`${URL}?${fString}`, { method: 'GET' }) // eslint-disable-line no-undef
-      .then((r) => {
-        return r.json();
-      }),
-    new Promise((_, reject) =>
-      setTimeout(() => {
-        const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
-        return reject(new Error(message))
-      }, conf.UNLEASH_TIMEOUT)
-    )]);
+      .then(r => r.json()),
+    new Promise((_, reject) => setTimeout(() => {
+      const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
+      return reject(new Error(message));
+    }, conf.UNLEASH_TIMEOUT))]);
 };
 
 const fetchJSONAndCheckForErrors = (url) => {
@@ -45,6 +41,10 @@ const fetchJSONAndCheckForErrors = (url) => {
 
 const checkAuth = () => {
   return new Promise((res, rej) => {
+    if (window.location.pathname.endsWith(`${conf.dittNav.CONTEXT_PATH}/login`)) {
+      res({ok: 'ok'});
+      return;
+    }
     fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
       .then((r) => {
         if (!r.authenticated) {
@@ -60,9 +60,13 @@ const checkAuth = () => {
 };
 
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
+const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
 
 export default {
   fetchUnleashFeatures,
   checkAuth,
   fetchPersonInfoAndServices,
+  fetchSaker,
+  fetchMeldinger,
 };

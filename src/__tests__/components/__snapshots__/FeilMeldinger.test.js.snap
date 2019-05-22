@@ -11,7 +11,7 @@ exports[`render one error FeilMeldinger 1`] = `
   >
     <span>
       <span>
-        Error fetchin data
+        Error fetching data
       </span>
     </span>
   </h1>

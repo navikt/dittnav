@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Api from 'js/Api';
 
 class Unleash extends Component {
   constructor(props) {
     super(props);
-    this.state = { hidden: true };
+    this.state = { isFeatureEnabled: null };
   }
 
   componentDidMount() {
-    Api.fetchUnleashFeatures([this.props.feature])
+    this.props.api.fetchUnleashFeatures([this.props.feature])
       .then((f) => {
         if (f[this.props.feature]) {
-          this.setState({ hidden: false });
+          this.setState({ isFeatureEnabled: true });
+        } else {
+          this.setState({ isFeatureEnabled: false });
         }
       })
-      .catch((e) => { console.info(e); }); // eslint-disable-line no-console
+      .catch((e) => {
+        console.info(`Problem fetch unleash feature ${this.props.feature}: ${e}`); // eslint-disable-line no-console
+      });
   }
 
   render() {
-    const { children } = this.props;
-    return this.state.hidden ? null : <React.Fragment>{children}</React.Fragment>;
+    const { isFeatureEnabled } = this.state;
+    return <React.Fragment>{isFeatureEnabled === null ? null : React.cloneElement(this.props.children, { isFeatureEnabled })}</React.Fragment>;
   }
 }
 
 Unleash.propTypes = {
   feature: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  api: PropTypes.shape({
+    fetchUnleashFeatures: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default Unleash;
