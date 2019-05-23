@@ -30,6 +30,9 @@ exports[`expect Login page rendering 1`] = `
           <section
             className="ditt-list"
           />
+          <section
+            className="ditt-list"
+          />
         </div>
       </div>
     </div>
