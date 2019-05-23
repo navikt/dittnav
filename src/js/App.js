@@ -57,7 +57,7 @@ class App extends Component {
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />;
+          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />
         </div>
       </main>
     );
