@@ -27,8 +27,7 @@ class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
     const C = props => (props.isFeatureEnabled ? <Vta /> : <Tjenester services={info.viktigeTjenester} />);
-    // const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <Tjenester services={info.viktigeTjenester} />;
-    const tjeneserEllerVta = <Unleash api={Api} feature="dittnav.fo"><C /></Unleash>;
+    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <Tjenester services={info.viktigeTjenester} />;
     return (
       <React.Fragment>
         <div className="row">
