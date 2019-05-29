@@ -5,7 +5,6 @@ const redirectToLogin = () => {
   window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
 };
 
-//const URL = `http://localhost:9222/api/feature`;
 const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
 
 const fetchUnleashFeatures = (features) => {
