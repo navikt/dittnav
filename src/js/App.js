@@ -5,7 +5,7 @@ import FeilMeldinger from 'js/components/FeilMeldinger';
 import Home from 'js/pages/Home';
 
 import 'less/index.less';
-import 'js/polyfill.js';
+import 'js/polyfill';
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class App extends Component {
 
   render() {
     const {
-      info, paabegynteSoknader, mininnboks, errors, fetching
+      info, paabegynteSoknader, mininnboks, errors, fetching,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -57,7 +57,7 @@ class App extends Component {
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />;
+          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />
         </div>
       </main>
     );

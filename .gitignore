@@ -27,3 +27,5 @@ src/css/index.css
 VERSION
 deploy.sh
 dittnav.iml
+.devcontainer/Dockerfile
+.devcontainer/devcontainer.json
