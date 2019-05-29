@@ -21,7 +21,7 @@ export default class NAVSPA {
           if (this.el) {
             NAVSPA.scope[name](this.el, this.props);
           }
-        } catch {
+        } catch (error) {
           this.setState({ hasError: true });
         }
       }
