@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Vta from 'js/components/VTA';
 import PersonInfo from 'js/components/PersonInfo';
 import InfoMeldinger from 'js/components/InfoMeldinger';
-import Tjenester from 'js/components/Tjenester';
+
+import DittnavFliser from 'js/components/DittnavFliser';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
 import Unleash from 'js/components/Unleash';
@@ -26,8 +27,8 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const C = props => (props.isFeatureEnabled ? <Vta /> : <Tjenester services={info.viktigeTjenester} />);
-    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <Tjenester services={info.viktigeTjenester} />;
+    const C = props => (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
+    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <DittnavFliser />;
     return (
       <React.Fragment>
         <div className="row">
