@@ -27,9 +27,259 @@ exports[`expect Login page rendering 1`] = `
               </span>
             </h1>
           </section>
-          <section
-            className="ditt-list"
-          />
+          <div
+            className="dittnav-lenke-container"
+          >
+            <a
+              className="lenkepanel first lenkepanel--border"
+              href="http://localhost:9222/utbetalingsoversikt/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine utbetalinger
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel lenkepanel--border"
+              href="http://localhost:9222/saksoversikt/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine saker
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel last lenkepanel--border"
+              href="http://localhost:9222/mininnboks/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Innboks
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+          </div>
+          <div
+            className="dittnav-lenkeikon-container"
+          >
+            <a
+              className="lenkepanel first lenkepanel--border"
+              href="http://localhost:9222/sykefravaer/"
+            >
+              <div
+                className="lenkepanel__innhold"
+              >
+                <div
+                  className="lenkepanel__ikon"
+                >
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      stroke="#000"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
+                    >
+                      <circle
+                        cx="8.5"
+                        cy="8.5"
+                        r="8"
+                      />
+                      <path
+                        d="M14.156 14.156l9.344 9.344"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2
+                    className="typo-undertittel"
+                  >
+                    <span>
+                      Ditt sykefravær
+                    </span>
+                  </h2>
+                  
+                </div>
+              </div>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel lenkepanel--border"
+              href="http://localhost:9222/veiledearbeidssoker/"
+            >
+              <div
+                className="lenkepanel__innhold"
+              >
+                <div
+                  className="lenkepanel__ikon"
+                >
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      stroke="#000"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
+                    >
+                      <circle
+                        cx="8.5"
+                        cy="8.5"
+                        r="8"
+                      />
+                      <path
+                        d="M14.156 14.156l9.344 9.344"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2
+                    className="typo-undertittel"
+                  >
+                    <span>
+                      Mistet jobben
+                    </span>
+                  </h2>
+                  
+                </div>
+              </div>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+          </div>
+          <div
+            className="dittnav-lenkeikon-container"
+          >
+            <a
+              className="lenkepanel first lenkepanel--border"
+              href="/no/person/skjemaer-for-privatpersoner"
+            >
+              <div
+                className="lenkepanel__innhold"
+              >
+                <div
+                  className="lenkepanel__ikon"
+                >
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      stroke="#000"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
+                    >
+                      <circle
+                        cx="8.5"
+                        cy="8.5"
+                        r="8"
+                      />
+                      <path
+                        d="M14.156 14.156l9.344 9.344"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2
+                    className="typo-undertittel"
+                  >
+                    <span>
+                      Skjemaer
+                    </span>
+                  </h2>
+                  
+                </div>
+              </div>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel lenkepanel--border"
+              href="http://localhost:9222/pselv/publisering/dinpensjon.jsf"
+            >
+              <div
+                className="lenkepanel__innhold"
+              >
+                <div
+                  className="lenkepanel__ikon"
+                >
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      stroke="#000"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
+                    >
+                      <circle
+                        cx="8.5"
+                        cy="8.5"
+                        r="8"
+                      />
+                      <path
+                        d="M14.156 14.156l9.344 9.344"
+                        strokeLinecap="round"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2
+                    className="typo-undertittel"
+                  >
+                    <span>
+                      Din pensjon
+                    </span>
+                  </h2>
+                  
+                </div>
+              </div>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+          </div>
           <section
             className="ditt-list"
           />
