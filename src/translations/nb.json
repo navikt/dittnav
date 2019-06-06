@@ -18,6 +18,14 @@
   "saksoversikt.soknad.en": "Du har en søknad som du ikke har sendt",
   "saksoversikt.soknad.flere": "Du har {count} søknader som du ikke har sendt",
   "saksoversikt.lenke": "Fortsett innsending",
+  
+  "fliser.dine.saker": "Dine saker",
+  "fliser.dine.utbetalinger": "Dine utbetalinger",
+  "fliser.innboks": "Innboks",
+  "fliser.ditt.sykevravaer": "Ditt sykefravær",
+  "fliser.mistet.jobben": "Mistet jobben",
+  "fliser.skjemaer": "Skjemaer",
+  "fliser.din.pensjon": "Din pensjon",
 
   "fgkode.IARBS": "Du er registrert som 'ikke arbeidssøker'",
   "fgkode.INGEN_FGKODE": " ",
