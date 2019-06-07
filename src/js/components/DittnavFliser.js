@@ -3,7 +3,7 @@ import React from 'react';
 import Lenkepanel from 'nav-frontend-lenkepanel';
 import { FormattedMessage } from 'react-intl';
 import Config from '../Config';
-import { LenkepanelMedIkon, Icon } from './LenkepanelMedIkon';
+import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './LenkepanelMedIkon';
 
 class DittnavFliser extends React.Component {
   render() {
@@ -24,34 +24,38 @@ class DittnavFliser extends React.Component {
           <LenkepanelMedIkon
             alt="Ditt sykefravær"
             overskrift="fliser.ditt.sykevravaer"
+            ingress="fliser.ditt.sykevravaer.ingress"
             className="first"
             href={`${Config.dittNav.SERVICES_URL}/sykefravaer/`}
           >
-            <Icon />
+            <IkonPille />
           </LenkepanelMedIkon>
           <LenkepanelMedIkon
             alt="Mistet jobben"
             overskrift="fliser.mistet.jobben"
+            ingress="fliser.mistet.jobben.ingress"
             href={`${Config.dittNav.SERVICES_URL}/veiledearbeidssoker/`}
           >
-            <Icon />
+            <IkonSkilt />
           </LenkepanelMedIkon>
         </div>
         <div className="dittnav-lenkeikon-container">
           <LenkepanelMedIkon
             alt="Skjemaer"
             overskrift="fliser.skjemaer"
+            ingress="fliser.skjemaer.ingress"
             className="first"
             href="/no/person/skjemaer-for-privatpersoner"
           >
-            <Icon />
+            <IkonBlyant />
           </LenkepanelMedIkon>
           <LenkepanelMedIkon
             alt="Din pensjon"
             overskrift="fliser.din.pensjon"
+            ingress="fliser.din.pensjon.ingress"
             href={`${Config.dittNav.SERVICES_URL}/pselv/publisering/dinpensjon.jsf`}
           >
-            <Icon />
+            <IkonKane />
           </LenkepanelMedIkon>
         </div>
       </React.Fragment>
