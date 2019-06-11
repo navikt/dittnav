@@ -5,6 +5,7 @@ import PersonInfo from 'js/components/PersonInfo';
 import InfoMeldinger from 'js/components/InfoMeldinger';
 
 import DittnavFliser from 'js/components/DittnavFliser';
+import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
 import Unleash from 'js/components/Unleash';
@@ -37,6 +38,7 @@ class Home extends Component {
               <PersonInfo personInfo={info.personinfo} />
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
+              <DittnavLenkePanel />
               { tjeneserEllerVta }
               <Lenkelister links={info.andreTjenester} />
             </div>
