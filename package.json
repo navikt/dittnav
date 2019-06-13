@@ -13,6 +13,7 @@
     "eslint-plugin-react": "^7.12.4",
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "htmllint-cli": "0.0.7",
+    "intl": "^1.2.5",
     "moment": "^2.24.0",
     "nav-frontend-ikoner-assets": "^1.0.1",
     "nav-frontend-spinner": "^1.0.18",
