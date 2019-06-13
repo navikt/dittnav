@@ -18,6 +18,19 @@
   "saksoversikt.soknad.en": "Du har en søknad som du ikke har sendt",
   "saksoversikt.soknad.flere": "Du har {count} søknader som du ikke har sendt",
   "saksoversikt.lenke": "Fortsett innsending",
+  
+  "fliser.dine.saker": "Dine saker",
+  "fliser.dine.utbetalinger": "Dine utbetalinger",
+  "fliser.innboks": "Innboks",
+
+  "fliser.ditt.sykevravaer": "Ditt sykefravær",
+  "fliser.ditt.sykevravaer.ingress": "Sykemeldingine og oppgaver i sykefraværet",
+  "fliser.mistet.jobben": "Mistet jobben",
+  "fliser.mistet.jobben.ingress": "Jobbsøking, Dagpenger og hjelp fra NAV",
+  "fliser.skjemaer": "Skjemaer",
+  "fliser.skjemaer.ingress": "Skjemaer av ytelser fra NAV",
+  "fliser.din.pensjon": "Din pensjon",
+  "fliser.din.pensjon.ingress": "Pensjonskalkulator, søke om pensjon og utbetalinger av pensjon",
 
   "fgkode.IARBS": "Du er registrert som 'ikke arbeidssøker'",
   "fgkode.INGEN_FGKODE": " ",
