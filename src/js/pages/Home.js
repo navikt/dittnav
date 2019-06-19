@@ -25,10 +25,35 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   mininnboks,
 });
 
+const hjSafetyStub = () => {
+  if (typeof hj == 'undefined') {
+    hj = () => {
+      (hj.q=hj.q||[]).push(arguments);
+    }
+  }
+}
+
+const hjTrigger = (name) => {
+  setTimeout(() => {
+    hj('trigger', name);
+  }, 500)
+}
+
+const C = props => {
+  if (props.isFeatureEnabled) {
+    hjTrigger('dittnav-vta-')
+  }
+  return (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
+}
+
 class Home extends Component {
+
+  componentDidMount() {
+    hjSafetyStub()
+  }
+
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const C = props => (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
     const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <DittnavFliser />;
     return (
       <React.Fragment>
