@@ -26,40 +26,55 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 });
 
 const hjSafetyStub = () => {
-  if (typeof hj == 'undefined') {
-    hj = () => {
-      (hj.q=hj.q||[]).push(arguments);
-    }
-  }
+  window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)}; // eslint-disable-line
 }
 
 const hjTrigger = (name) => {
-  setTimeout(() => {
-    hj('trigger', name);
-  }, 500)
+  return hj('trigger', name); // eslint-disable-line
 }
 
-const C = props => {
-  if (props.isFeatureEnabled) {
-    hjTrigger('dittnav-vta-')
-  }
-  return (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
-}
 
 class Home extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = { }
+  }
+
   componentDidMount() {
-    hjSafetyStub()
+    hjSafetyStub();
+  }
+
+  componentDidUpdate() {
+    if (this.props.fetching >= 3) {
+      try {
+        const n = document.getElementById('dittnav-main-container').children.length;
+        if (this.state.isFeatureEnabled) {
+          hjTrigger(`dittnav-vta-${n}`);
+        } else {
+          hjTrigger(`dittnav-gen-${n}`);
+        }
+      } catch (e) {
+        console.error(e);
+        console.error('Failed callig hotjar');
+      }
+    }
   }
 
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
+    const that = this;
+    const C = props => {
+      that.setState({ isFeatureEnabled: props.isFeatureEnabled})
+      return (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
+    }
+
     const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <DittnavFliser />;
     return (
       <React.Fragment>
         <div className="row">
           <div className="maincontent side-innhold">
-            <div className="col-md-12">
+            <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
