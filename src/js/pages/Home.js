@@ -29,13 +29,9 @@ const hjSafetyStub = () => {
   window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)}; // eslint-disable-line
 };
 
-const hjTrigger = name => {
-  return hj('trigger', name); // eslint-disable-line
-};
-
+const hjTrigger = name => hj('trigger', name); // eslint-disable-line
 
 class Home extends Component {
-
   constructor(props) {
     super(props);
     this.state = { };
@@ -64,7 +60,7 @@ class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
     const that = this;
-    const C = props => {
+    const C = (props) => {
       that.setState({ isFeatureEnabled: props.isFeatureEnabled });
       return (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
     };
