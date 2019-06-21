@@ -27,18 +27,18 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 
 const hjSafetyStub = () => {
   window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)}; // eslint-disable-line
-}
+};
 
-const hjTrigger = (name) => {
+const hjTrigger = name => {
   return hj('trigger', name); // eslint-disable-line
-}
+};
 
 
 class Home extends Component {
 
   constructor(props) {
-    super(props)
-    this.state = { }
+    super(props);
+    this.state = { };
   }
 
   componentDidMount() {
@@ -65,9 +65,9 @@ class Home extends Component {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
     const that = this;
     const C = props => {
-      that.setState({ isFeatureEnabled: props.isFeatureEnabled})
+      that.setState({ isFeatureEnabled: props.isFeatureEnabled });
       return (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
-    }
+    };
 
     const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <DittnavFliser />;
     return (
