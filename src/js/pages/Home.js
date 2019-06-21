@@ -30,6 +30,7 @@ const hjSafetyStub = () => {
 };
 
 const hjTrigger = name => hj('trigger', name); // eslint-disable-line
+const gaTrigger = (gruppe, variant) => dataLayer.push({ 'event':'dittnav-segment', 'gruppe' : gruppe, 'variant': variant } ); // eslint-disable-line
 
 class Home extends Component {
   constructor(props) {
@@ -46,8 +47,10 @@ class Home extends Component {
       try {
         const n = document.getElementById('dittnav-main-container').children.length;
         if (this.state.isFeatureEnabled) {
+          gaTrigger('vta', n);
           hjTrigger(`dittnav-vta-${n}`);
         } else {
+          gaTrigger('gen', n);
           hjTrigger(`dittnav-gen-${n}`);
         }
       } catch (e) {
