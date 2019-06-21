@@ -40,6 +40,7 @@
     "start": "react-scripts start",
     "build": "lessc --npm-import=\"prefix=~\"  src/less/index.less src/css/index.css && react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
+    "test-fix": "react-scripts test --env=jsdom --coverage -u",
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

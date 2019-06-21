@@ -127,7 +127,7 @@ exports[`expect Login page rendering 1`] = `
                     className="typo-normal"
                   >
                     <span>
-                      Sykemeldingine og oppgaver i sykefraværet
+                      Dine sykmeldinger og oppgaver
                     </span>
                   </p>
                 </div>
@@ -180,7 +180,7 @@ exports[`expect Login page rendering 1`] = `
                     className="typo-normal"
                   >
                     <span>
-                      Jobbsøking, Dagpenger og hjelp fra NAV
+                      Jobbsøkertips, økonomi og hjelp fra NAV
                     </span>
                   </p>
                 </div>
@@ -257,7 +257,7 @@ exports[`expect Login page rendering 1`] = `
                     className="typo-normal"
                   >
                     <span>
-                      Skjemaer av ytelser fra NAV
+                      Alle skjemaer og søknader i NAV
                     </span>
                   </p>
                 </div>
@@ -308,7 +308,7 @@ exports[`expect Login page rendering 1`] = `
                     className="typo-normal"
                   >
                     <span>
-                      Pensjonskalkulator, søke om pensjon og utbetalinger av pensjon
+                      Kalkulator, søknad og utbetalinger
                     </span>
                   </p>
                 </div>
