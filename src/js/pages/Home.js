@@ -8,10 +8,8 @@ import DittnavFliser from 'js/components/DittnavFliser';
 import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
-import Unleash from 'js/components/Unleash';
 import PropTypes from 'prop-types';
 import DelayedSpinner from 'js/components/DelayedSpinner';
-import Api from 'js/Api';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
@@ -28,8 +26,7 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const C = props => (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
-    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <DittnavFliser />;
+    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta />  : <DittnavFliser />;
     return (
       <React.Fragment>
         <div className="row">
