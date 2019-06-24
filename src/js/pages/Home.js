@@ -8,10 +8,8 @@ import DittnavFliser from 'js/components/DittnavFliser';
 import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 import Lenkelister from 'js/components/Lenkelister';
 import Artikkel from 'js/components/Artikkel';
-import Unleash from 'js/components/Unleash';
 import PropTypes from 'prop-types';
 import DelayedSpinner from 'js/components/DelayedSpinner';
-import Api from 'js/Api';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
@@ -29,24 +27,25 @@ const hjSafetyStub = () => {
   window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)}; // eslint-disable-line
 };
 
+const gaSafetyStub = () => {
+  window.dataLayer=window.dataLayer||{ push: function(o){console.error(o)} }; // eslint-disable-line
+};
+
 const hjTrigger = name => hj('trigger', name); // eslint-disable-line
 const gaTrigger = (gruppe, variant) => dataLayer.push({ 'event':'dittnav-segment', 'gruppe' : gruppe, 'variant': variant } ); // eslint-disable-line
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
-
   componentDidMount() {
     hjSafetyStub();
+    gaSafetyStub();
   }
 
   componentDidUpdate() {
-    if (this.props.fetching >= 3) {
+    const { info, fetching } = this.props;
+    if (fetching >= 3) {
       try {
         const n = document.getElementById('dittnav-main-container').children.length;
-        if (this.state.isFeatureEnabled) {
+        if (info.personinfo && info.personinfo.underOppfolging) {
           gaTrigger('vta', n);
           hjTrigger(`dittnav-vta-${n}`);
         } else {
@@ -62,13 +61,7 @@ class Home extends Component {
 
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const that = this;
-    const C = (props) => {
-      that.setState({ isFeatureEnabled: props.isFeatureEnabled });
-      return (props.isFeatureEnabled ? <Vta /> : <DittnavFliser />);
-    };
-
-    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Unleash api={Api} feature="dittnav.fo"><C /></Unleash> : <DittnavFliser />;
+    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
     return (
       <React.Fragment>
         <div className="row">
