@@ -36,5 +36,11 @@ fasitResources:
       url: LOGINSERVICE
   - alias: appdynamics
     resourceType: applicationproperties
+  - alias: aad_b2c_clientid
+    resourceType: credential
+  - alias: aad_b2c_discovery
+    resourceType: baseurl
+  - alias: veilarbstepup_oidc
+    resourceType: baseurl
 alertProfiles:
   - common-java-modules

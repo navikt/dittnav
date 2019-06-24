@@ -1,6 +1,11 @@
+auth:
+  enforce: true
+  loginUrl: {{ VEILARBSTEPUP_OIDC_URL }}
+  minSecurityLevel: 3
+
 proxy:
   - contextPath: /person/dittnav/veientilarbeid
     baseUrl: http://veientilarbeid
-    validateOidcToken: false
+    validateOidcToken: true
     requestRewrite: REMOVE_CONTEXT_PATH
     minSecurityLevel: 3
