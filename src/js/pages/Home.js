@@ -51,6 +51,7 @@ class Home extends Component {
         } else {
           gaTrigger('gen', n);
           hjTrigger(`dittnav-gen-${n}`);
+          hjTrigger('dittnav-generellbruker');
         }
       } catch (e) {
         console.error(e);
