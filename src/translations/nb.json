@@ -23,14 +23,15 @@
   "fliser.dine.utbetalinger": "Dine utbetalinger",
   "fliser.innboks": "Innboks",
 
+
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
-  "fliser.ditt.sykevravaer.ingress": "Sykemeldingine og oppgaver i sykefraværet",
+  "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
   "fliser.mistet.jobben": "Mistet jobben",
-  "fliser.mistet.jobben.ingress": "Jobbsøking, Dagpenger og hjelp fra NAV",
+  "fliser.mistet.jobben.ingress": "Jobbsøkertips, økonomi og hjelp fra NAV",
   "fliser.skjemaer": "Skjemaer",
-  "fliser.skjemaer.ingress": "Skjemaer av ytelser fra NAV",
+  "fliser.skjemaer.ingress": "Alle skjemaer og søknader i NAV",
   "fliser.din.pensjon": "Din pensjon",
-  "fliser.din.pensjon.ingress": "Pensjonskalkulator, søke om pensjon og utbetalinger av pensjon",
+  "fliser.din.pensjon.ingress": "Kalkulator, søknad og utbetalinger",
 
   "fgkode.IARBS": "Du er registrert som 'ikke arbeidssøker'",
   "fgkode.INGEN_FGKODE": " ",

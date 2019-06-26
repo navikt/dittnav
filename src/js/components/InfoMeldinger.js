@@ -38,7 +38,6 @@ InfoMeldinger.propTypes = {
   isMeldeKortUser: PropTypes.bool,
   isInactive: PropTypes.bool.isRequired,
   mininnboks: MinInnboksType,
-
 };
 
 InfoMeldinger.defaultProps = {

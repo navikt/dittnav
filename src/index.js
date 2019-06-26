@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'intl';
 import NavApp from 'frontshell';
 import LoginWrapper from 'js/components/LoginWrapper';
 import conf from 'js/Config';

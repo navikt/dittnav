@@ -13,6 +13,7 @@
     "eslint-plugin-react": "^7.12.4",
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
     "htmllint-cli": "0.0.7",
+    "intl": "^1.2.5",
     "less-plugin-npm-import": "^2.1.0",
     "moment": "^2.24.0",
     "nav-frontend-chevron-style": "^0.3.4",
@@ -39,6 +40,7 @@
     "start": "react-scripts start",
     "build": "lessc --npm-import=\"prefix=~\"  src/less/index.less src/css/index.css && react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
+    "test-fix": "react-scripts test --env=jsdom --coverage -u",
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

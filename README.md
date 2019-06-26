@@ -38,7 +38,7 @@ Bygge for prod:
 
 # Henvendelser
 
-Spørsmål knyttet til koden eller prosjektet kan rettes mot https://github.com/orgs/navikt/teams/team-personbruker
+Spørsmål knyttet til koden eller prosjektet kan rettes mot https://github.com/orgs/navikt/teams/personbruker
 
 ## For NAV-ansatte
 
