@@ -4,7 +4,7 @@ window['adrum-start-time'] = new Date().getTime();
   if (window.location.href.indexOf("www-") > -1) {
     appKey = 'EUM-AAB-AWT';
   } else {
-    appKey = 'EUM-AAB-AWT';
+    appKey = 'EUM-AAB-AWU';
   }
   config.appKey = appKey;
   config.adrumExtUrlHttps = 'https://jsagent.adeo.no';
