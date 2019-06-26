@@ -15,6 +15,7 @@ exports[`expect Login page rendering 1`] = `
       >
         <div
           className="col-md-12"
+          id="dittnav-main-container"
         >
           <section
             className="infomeldinger-list"

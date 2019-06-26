@@ -23,7 +23,43 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   mininnboks,
 });
 
+const hjSafetyStub = () => {
+  window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)}; // eslint-disable-line
+};
+
+const gaSafetyStub = () => {
+  window.dataLayer=window.dataLayer||{ push: function(o){console.error(o)} }; // eslint-disable-line
+};
+
+const hjTrigger = name => hj('trigger', name); // eslint-disable-line
+const gaTrigger = (gruppe, variant) => dataLayer.push({ 'event':'dittnav-segment', 'gruppe' : gruppe, 'variant': variant } ); // eslint-disable-line
+
 class Home extends Component {
+  componentDidMount() {
+    hjSafetyStub();
+    gaSafetyStub();
+  }
+
+  componentDidUpdate() {
+    const { info, fetching } = this.props;
+    if (fetching >= 3) {
+      try {
+        const n = document.getElementById('dittnav-main-container').children.length;
+        if (info.personinfo && info.personinfo.underOppfolging) {
+          gaTrigger('vta', n);
+          hjTrigger(`dittnav-vta-${n}`);
+        } else {
+          gaTrigger('gen', n);
+          hjTrigger(`dittnav-gen-${n}`);
+          hjTrigger('dittnav-generellbruker');
+        }
+      } catch (e) {
+        console.error(e);
+        console.error('Failed callig hotjar');
+      }
+    }
+  }
+
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
     const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
@@ -31,7 +67,7 @@ class Home extends Component {
       <React.Fragment>
         <div className="row">
           <div className="maincontent side-innhold">
-            <div className="col-md-12">
+            <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
