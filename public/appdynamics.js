@@ -1,13 +1,14 @@
 window['adrum-start-time'] = new Date().getTime();
 (function (config) {
   var appKey = "";
-  if (window.location.href.indexOf("www-") > -1) {
-    appKey = 'EUM-AAB-AWT';
+  if ((window.location.href.indexOf("//nav.no") > -1) || (window.location.href.indexOf("//www.nav.no") > -1)) {
+    config.adrumExtUrlHttps = 'https://jsagent.nav.no';
+    config.beaconUrlHttps = 'https://eumgw.nav.no';
+    config.appKey = 'EUM-AAB-AWU';
   } else {
-    appKey = 'EUM-AAB-AWU';
+    config.adrumExtUrlHttps = 'https://jsagent.adeo.no';
+    config.beaconUrlHttps = 'https://eumgw.adeo.no';
+    config.appKey = 'EUM-AAB-AWT';
   }
-  config.appKey = appKey;
-  config.adrumExtUrlHttps = 'https://jsagent.adeo.no';
-  config.beaconUrlHttps = 'https://eumgw.adeo.no';
   config.xd = {enable: false};
 })(window['adrum-config'] || (window['adrum-config'] = {}));
