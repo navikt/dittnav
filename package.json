@@ -12,7 +12,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "frontshell": "git+https://git@github.com/navikt/frontshell.git#1.2.3",
-    "htmllint-cli": "0.0.7",
     "intl": "^1.2.5",
     "less-plugin-npm-import": "^2.1.0",
     "moment": "^2.24.0",
@@ -34,7 +33,6 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
-    "lint-html": "htmllint public/index.html",
     "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
