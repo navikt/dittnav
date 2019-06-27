@@ -62,7 +62,7 @@ class Home extends Component {
 
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
+    const tjeneserEllerVta = !info || !info.personinfo ? null : (info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />);
     return (
       <React.Fragment>
         <div className="row">
