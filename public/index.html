@@ -5,25 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script charset='UTF-8'>
-        (function (config, eumgw, jsag) {
         window['adrum-start-time'] = new Date().getTime();
-        if (window.location.href.indexOf("www-") > -1) {
-          config.appKey = 'EUM-AAB-AWT';
-        } else {
+        (function (config) {
+        var appKey = "";
+        if ((window.location.href.indexOf("//nav.no") > -1) || (window.location.href.indexOf("//www.nav.no") > -1)) {
+          config.adrumExtUrlHttps = 'https://jsagent.nav.no';
+          config.beaconUrlHttps = 'https://eumgw.nav.no';
           config.appKey = 'EUM-AAB-AWU';
+        } else {
+          config.adrumExtUrlHttps = 'https://jsagent.adeo.no';
+          config.beaconUrlHttps = 'https://eumgw.adeo.no';
+          config.appKey = 'EUM-AAB-AWT';
         }
-        config.beaconUrlHttp = `https://${eumgw}`;
-        config.beaconUrlHttps = `https://${eumgw}`;
-        config.adrumExtUrlHttp = `https://${jsag}`;
-        config.adrumExtUrlHttps = `https://${jsag}`;
-        config.xd = { enable: false };
-        config.spa = { spa2: true };
-        const jsagent = document.createElement('script');
-        jsagent.src = `https://${jsag}/adrum/adrum.js`;
-        jsagent.type = 'text/javascript';
-        jsagent.async = true;
-        document.head.appendChild(jsagent);
-        }(window['adrum-config'] || (window['adrum-config'] = {}), 'eumgw.adeo.no', 'jsagent.adeo.no'));
+        config.xd = {enable: false};
+        })(window['adrum-config'] || (window['adrum-config'] = {}));
     </script>
     <script src='https://jsagent.nav.no/adrum/adrum.js'></script>
 
