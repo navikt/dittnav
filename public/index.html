@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script charset='UTF-8'>
-      window['adrum-start-time'] = new Date().getTime();
-      (function (config) {
+        window['adrum-start-time'] = new Date().getTime();
+        (function (config) {
         var appKey = "";
         if (window.location.href.indexOf("www-") > -1) {
           appKey = 'EUM-AAB-AWT';
@@ -17,7 +17,7 @@
         config.adrumExtUrlHttps = 'https://jsagent.adeo.no';
         config.beaconUrlHttps = 'https://eumgw.adeo.no';
         config.xd = {enable: false};
-      })(window['adrum-config'] || (window['adrum-config'] = {}));
+        })(window['adrum-config'] || (window['adrum-config'] = {}));
     </script>
     <script src='https://jsagent.nav.no/adrum/adrum.js'></script>
 
