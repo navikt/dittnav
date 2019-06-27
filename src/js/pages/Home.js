@@ -62,7 +62,7 @@ class Home extends Component {
 
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const tjeneserEllerVta = !info || !info.personinfo ? null : (info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />);
+    const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
     return (
       <React.Fragment>
         <div className="row">
@@ -72,7 +72,7 @@ class Home extends Component {
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel />
-              { tjeneserEllerVta }
+              { !info || !info.personinfo ? null : tjeneserEllerVta }
               <Lenkelister links={info.andreTjenester} />
             </div>
           </div>
