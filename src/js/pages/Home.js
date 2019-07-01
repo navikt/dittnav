@@ -72,7 +72,7 @@ class Home extends Component {
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel />
-              { tjeneserEllerVta }
+              { !info || !info.personinfo ? null : tjeneserEllerVta }
               <Lenkelister links={info.andreTjenester} />
             </div>
           </div>
