@@ -1,0 +1,13 @@
+{
+    "personinfo": {
+      "navn": "MISTER IKSSEN-IKSS",
+      "fgkode": "ARBS",
+      "ytelse": "IYT",
+      "erUnderRegistreringIArbeid": false,
+      "registrert": true,
+      "inaktiv": false,
+      "meldekortbruker": true
+    },
+    "isFoBruker": false,
+    "feilendeTjenester": []
+}

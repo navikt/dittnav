@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import conf from 'js/Config';
-import i18n from 'translations/i18n';
+import conf from '../Config';
+import i18n from '../../translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));

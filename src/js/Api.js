@@ -1,4 +1,4 @@
-import conf from 'js/Config';
+import conf from './Config';
 import Promise from 'promise-polyfill';
 
 const redirectToLogin = () => {

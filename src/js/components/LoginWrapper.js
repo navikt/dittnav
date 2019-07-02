@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from 'js/pages/Login';
+import Login from '../pages/Login';
 
 class LoginWrapper extends Component {
   render() {

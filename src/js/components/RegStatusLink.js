@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
-import conf from 'js/Config';
+import conf from '../Config';
 
 class RegStatusLink extends Component {
   render() {
