@@ -14,7 +14,7 @@ For å kjøre opp app-en i dev:
 1. `npm install`
 2. `npm run build`
 3. `npm run local`
-4. gå til `http://localhost:1234/`
+4. gå til `http://localhost:9000/`
 
 For å kjøre tester:
 
