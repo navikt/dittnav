@@ -56,7 +56,9 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!<rootDir>/src/js/Config.js"
+      "!<rootDir>/src/js/Config.js",
+      "!<rootDir>/local.js",
+      "!<rootDir>/decorator.js"
     ]
   },
   "devDependencies": {
