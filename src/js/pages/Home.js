@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
 import Vta from '../components/VTA';
 import PersonInfo from '../components/PersonInfo';
 import InfoMeldinger from '../components/InfoMeldinger';
@@ -8,7 +9,6 @@ import DittnavFliser from '../components/DittnavFliser';
 import DittnavLenkePanel from '../components/DittnavLenkePanel';
 import Lenkelister from '../components/Lenkelister';
 import Artikkel from '../components/Artikkel';
-import PropTypes from 'prop-types';
 import DelayedSpinner from '../components/DelayedSpinner';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import conf from '../Config';
 import i18n from '../../translations/i18n';
-import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
 const fremtidig = (nyeMeldekort, formatDateMonth) => (nyeMeldekort.nesteInnsendingAvMeldekort
   ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
