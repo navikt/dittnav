@@ -77,9 +77,13 @@ exports[`expect Login page rendering 1`] = `
               />
             </a>
           </div>
-          <section
-            className="ditt-list"
-          />
+          <div
+            className="relatert-informasjon"
+          >
+            <nav
+              className="relatert-informasjon__links"
+            />
+          </div>
         </div>
       </div>
     </div>
