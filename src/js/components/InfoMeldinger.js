@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 
-import PaabegynteSoknader, { PaabegynteSoknaderType } from 'js/components/meldinger/PaabegynteSoknader';
-import RegStatusLink from 'js/components/RegStatusLink';
-import Meldekort, { MeldekortType } from 'js/components/Meldekort';
-import EtterregistreringMeldekort from 'js/components/EtterregistreringMeldekort';
-import AgMeldinger from 'js/components/meldinger/AgMeldinger';
-import NavMeldinger from 'js/components/meldinger/NavMeldinger';
-import MinInnboks, { MinInnboksType } from 'js/components/meldinger/MinInnboks';
-import InformasjonsMeldinger from 'js/components/meldinger/InformasjonsMeldinger';
+import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
+import RegStatusLink from './RegStatusLink';
+import Meldekort, { MeldekortType } from './Meldekort';
+import EtterregistreringMeldekort from './EtterregistreringMeldekort';
+import AgMeldinger from './meldinger/AgMeldinger';
+import NavMeldinger from './meldinger/NavMeldinger';
+import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
+import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 
 class InfoMeldinger extends Component {
   render() {

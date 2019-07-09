@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import FeilMeldinger from 'js/components/FeilMeldinger';
-import Home from 'js/pages/Home';
+import FeilMeldinger from './components/FeilMeldinger';
+import Home from './pages/Home';
 
-import 'less/index.less';
-import 'js/polyfill';
+import '../less/index.less';
+import './polyfill';
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +29,8 @@ class App extends Component {
           errors.push('error.baksystemer');
         }
         this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+      })
+      .catch(catchError('error.baksystemer'));
 
     api.fetchSaker()
       .then((r) => {

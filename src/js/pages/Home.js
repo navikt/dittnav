@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import Vta from 'js/components/VTA';
-import PersonInfo from 'js/components/PersonInfo';
-import InfoMeldinger from 'js/components/InfoMeldinger';
-
-import DittnavFliser from 'js/components/DittnavFliser';
-import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
-import Lenkelister from 'js/components/Lenkelister';
-import Artikkel from 'js/components/Artikkel';
 import PropTypes from 'prop-types';
-import DelayedSpinner from 'js/components/DelayedSpinner';
+import Vta from '../components/VTA';
+import PersonInfo from '../components/PersonInfo';
+import InfoMeldinger from '../components/InfoMeldinger';
+
+import DittnavFliser from '../components/DittnavFliser';
+import DittnavLenkePanel from '../components/DittnavLenkePanel';
+import Lenkelister from '../components/Lenkelister';
+import Artikkel from '../components/Artikkel';
+import DelayedSpinner from '../components/DelayedSpinner';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,

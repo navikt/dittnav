@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LoginLink from 'js/components/LoginLink';
-import conf from 'js/Config';
+import LoginLink from '../components/LoginLink';
+import conf from '../Config';
 
 const link = 'lenke';
 const button = 'knapp-hoved knapp-liten';

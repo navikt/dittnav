@@ -1,0 +1,75 @@
+{
+    "personinfo": {
+      "navn": "MISTER IKSSEN-IKSS",
+      "fgkode": "ARBS",
+      "ytelse": "IYT",
+      "erUnderRegistreringIArbeid": false,
+      "registrert": true,
+      "inaktiv": false,
+      "meldekortbruker": true
+    },
+    "isFoBruker": false,
+    "andreTjenester": [
+      {
+        "tittel": "Dine utbetalinger",
+        "beskrivelse": "Her kan du se hvor mye du har f&aring;tt utbetalt av NAV",
+        "bildenavn": "utbetalinger",
+        "url": "/utbetalingsoversikt/"
+      },
+      {
+        "tittel": "Ledige stillinger",
+        "beskrivelse": "Her f&aring;r du en oversikt over ledige stillinger i hele landet.",
+        "bildenavn": "ledige_stillinger",
+        "url": "/stillinger/forside"
+      },
+      {
+        "tittel": "Din profil",
+        "beskrivelse": "Her kan du endre kontaktinformasjonen din.",
+        "bildenavn": "personopplysninger",
+        "url": "/brukerprofil/"
+      },
+      {
+        "tittel": "Dine stillingss&oslash;k",
+        "beskrivelse": "Her finner du dine lagrede s&oslash;k.",
+        "bildenavn": "dine_sok",
+        "url": "/stillinger/innlogget/dinesok"
+      },
+      {
+        "tittel": "Dine lagrede stillinger",
+        "beskrivelse": "Her finner du dine lagrede stillinger.",
+        "bildenavn": "dine_stillinger",
+        "url": "/stillinger/innlogget/dinestillinger"
+      },
+      {
+        "tittel": "Veiledningstjenester",
+        "beskrivelse": "Her finner du tester som kan v&aelig;re nyttig n&aring;r du skal velge jobb eller utdanning.",
+        "bildenavn": "akademia",
+        "url": "https://www-t1.nav.no/no/Person/Arbeid/Test+deg+for+jobb+og+utdanning/Interessetester.347253.cms"
+      },
+      {
+        "tittel": "Dine saker",
+        "beskrivelse": "Her finner du informasjon om dine saker hos NAV.",
+        "bildenavn": "dine_innsendinger",
+        "url": "/saksoversikt/"
+      },
+      {
+        "tittel": "Skjemaer",
+        "beskrivelse": "Her f&aring;r du hjelp til &aring; velge riktig skjema n&aring;r du skal s&oslash;ke om ytelser fra NAV.",
+        "bildenavn": "skjemaoversikt",
+        "url": "https://www-t1.nav.no/no/person/skjemaer-for-privatpersoner"
+      },
+      {
+        "tittel": "Din pensjon",
+        "beskrivelse": "Her kan du beregne fremtidig pensjon, s&oslash;ke om pensjon og se dokumenter og utbetalinger i pensjonssaken din.",
+        "bildenavn": "din_pensjon",
+        "url": "/pselv/publisering/dinpensjon.jsf"
+      },
+      {
+        "tittel": "Din jobblogg",
+        "beskrivelse": "Her er et verkt&oslash;y som holder oversikt over jobbene du har s&oslash;kt p&aring;.",
+        "bildenavn": "jobb_blogg",
+        "url": "/jobblogg"
+      }
+    ],  
+    "feilendeTjenester": []
+}

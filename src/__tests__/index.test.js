@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'js/App';
-import Api from 'js/Api';
-import NavApp from 'frontshell';
-import LoginWrapper from 'js/components/LoginWrapper';
-import conf from 'js/Config';
+import App from '../js/App';
+import Api from '../js/Api';
+import NavApp from '../js/NavApp';
 
 import nbMessages from 'translations/nb.json';
 import enMessages from 'translations/en.json';
