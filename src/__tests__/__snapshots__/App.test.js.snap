@@ -77,6 +77,13 @@ exports[`expect Login page rendering 1`] = `
               />
             </a>
           </div>
+          <h2
+            className="typo-undertittel relatert-informasjon__subheader"
+          >
+            <span>
+              Relatert informasjon
+            </span>
+          </h2>
           <div
             className="relatert-informasjon"
           >
