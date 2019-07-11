@@ -78,7 +78,7 @@ class Home extends Component {
               { !info || !info.personinfo ? null : tjeneserEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
-            </Undertittel>
+              </Undertittel>
               <Lenkelister links={info.andreTjenester} />
             </div>
           </div>
