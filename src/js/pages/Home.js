@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
+
+import { Undertittel } from 'nav-frontend-typografi';
+import { FormattedMessage as F } from 'react-intl';
+
 import Vta from '../components/VTA';
 import PersonInfo from '../components/PersonInfo';
 import InfoMeldinger from '../components/InfoMeldinger';
@@ -73,6 +76,9 @@ class Home extends Component {
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel />
               { !info || !info.personinfo ? null : tjeneserEllerVta }
+              <Undertittel className="relatert-informasjon__subheader">
+                <F id="relatertInformasjon.header" />
+              </Undertittel>
               <Lenkelister links={info.andreTjenester} />
             </div>
           </div>

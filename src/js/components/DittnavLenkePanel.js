@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import Config from '../Config';
 
 const DittnavLenkePanel = () => (
-  <div className="dittnav-lenke-container">
+  <div className="dittnav-lenke-container blokk-xl">
     <Lenkepanel border className="first" href={`${Config.dittNav.SERVICES_URL}/utbetalingsoversikt/`}>
       <FormattedMessage id="fliser.dine.utbetalinger" />
     </Lenkepanel>

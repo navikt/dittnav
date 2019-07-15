@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
+import { Ingress } from 'nav-frontend-typografi';
 
 class PersonInfo extends Component {
   render() {
@@ -12,10 +13,12 @@ class PersonInfo extends Component {
       <div className="person-info">
         <h1 className="person-info">{navn ? navn.toLowerCase() : ''}</h1>
         {registrert && !inaktiv && fgkode && ytelse ? (
-          <p className="arbeidssokerstatus">
-            <F id={`fgkode.${fgkode}`} />
-            <F id={`ytelse.${ytelse}`} />
-          </p>
+          <div className="arbeidssokerstatus">
+            <Ingress>
+              <F id={`fgkode.${fgkode}`} />
+              <F id={`ytelse.${ytelse}`} />
+            </Ingress>
+          </div>
         ) : null}
       </div>
     );

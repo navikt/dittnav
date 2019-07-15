@@ -29,7 +29,7 @@ exports[`expect Login page rendering 1`] = `
             </h1>
           </section>
           <div
-            className="dittnav-lenke-container"
+            className="dittnav-lenke-container blokk-xl"
           >
             <a
               className="lenkepanel first lenkepanel--border"
@@ -77,9 +77,20 @@ exports[`expect Login page rendering 1`] = `
               />
             </a>
           </div>
-          <section
-            className="ditt-list"
-          />
+          <h2
+            className="typo-undertittel relatert-informasjon__subheader"
+          >
+            <span>
+              Relatert informasjon
+            </span>
+          </h2>
+          <div
+            className="relatert-informasjon"
+          >
+            <nav
+              className="relatert-informasjon__links"
+            />
+          </div>
         </div>
       </div>
     </div>

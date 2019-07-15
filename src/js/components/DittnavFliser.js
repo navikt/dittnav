@@ -24,7 +24,7 @@ const DittnavFliser = () => (
         <IkonSkilt />
       </LenkepanelMedIkon>
     </div>
-    <div className="dittnav-lenkeikon-container">
+    <div className="dittnav-lenkeikon-container blokk-xxl">
       <LenkepanelMedIkon
         alt="Skjemaer"
         overskrift="fliser.skjemaer"

@@ -9,7 +9,6 @@ import App from './js/App';
 import api from './js/Api';
 
 import './css/index.css';
-import './css/old.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';

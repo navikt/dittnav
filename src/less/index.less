@@ -6,6 +6,27 @@
 @import '../../node_modules/nav-frontend-lenker-style/src/lenker-style.less';
 @import '../../node_modules/nav-frontend-paneler-style/src/index.less';
 @import '../../node_modules/nav-frontend-typografi-style/src/index.less';
+
+@main-content-max-width: 640px;
+@mobile-breakpoint: 576px;
+@tablet-breakpoint: @screen-tablet;
+
+.blokk-xxl() {
+  margin-bottom: 4rem;
+}
+
+.blokk-xxl {
+  .blokk-xxl();
+}
+
+.blokk-xl() {
+  margin-bottom: 2.5rem;
+}
+
+.blokk-xl {
+  .blokk-xl();
+}
+
 @import './components/Lenkelister.less';
 @import './components/Artikkel.less';
 @import './components/PersonInfo.less';
