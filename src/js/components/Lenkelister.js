@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 class Lenkelister extends Component {
   render() {
     return (
-      <section className="ditt-list">
-        {this.props.links.map(l => (
-          <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke ditt-list-element lenkelist" key={l.url}>
-            {l.tittel}
-          </a>
-        ))}
-      </section>
+      <div className="relatert-informasjon">
+        <nav className="relatert-informasjon__links">
+          {this.props.links.map(l => (
+            <div className="relatert-informasjon__link-container" key={l.url}>
+              <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke relatert-informasjon__link">
+                {l.tittel}
+              </a>
+            </div>
+          ))}
+        </nav>
+      </div>
     );
   }
 }

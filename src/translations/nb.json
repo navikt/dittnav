@@ -2,7 +2,7 @@
   "dittnav.artikkel.lesmer": "Les mer om dette",
   "dittnav.infomeldinger.varsler": "Varsler",
 
-  "generell.informasjonsmelding": "Her vises informasjon til alle som logger seg på til Ditt NAV",
+  "generell.informasjonsmelding": "På grunn av teknisk vedlikehold kan Ditt NAV i korte perioder være ustabilt. Dersom du opplever at tjenestene er trege eller ikke tilgjengelige som vanlig, vennligst prøv igjen senere. Vi beklager ulempene dette medfører.",
   "meldekortbruker.informasjonsmelding": "Her vises informasjon til meldekortbrukere",
 
   "meldekort.se.oversikt": "Oversikt over meldekort",
@@ -18,8 +18,22 @@
   "saksoversikt.soknad.en": "Du har en søknad som du ikke har sendt",
   "saksoversikt.soknad.flere": "Du har {count} søknader som du ikke har sendt",
   "saksoversikt.lenke": "Fortsett innsending",
-  "feilmelding.saksoversikt": "Det skjedde en feil under henting av saker",
+  
+  "fliser.dine.saker": "Dine saker",
+  "fliser.dine.utbetalinger": "Dine utbetalinger",
+  "fliser.innboks": "Innboks",
 
+
+  "fliser.ditt.sykevravaer": "Ditt sykefravær",
+  "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
+  "fliser.mistet.jobben": "Mistet jobben",
+  "fliser.mistet.jobben.ingress": "Jobbsøkertips, økonomi og hjelp fra NAV",
+  "fliser.skjemaer": "Skjemaer",
+  "fliser.skjemaer.ingress": "Alle skjemaer og søknader i NAV",
+  "fliser.din.pensjon": "Din pensjon",
+  "fliser.din.pensjon.ingress": "Kalkulator, søknad og utbetalinger",
+
+  "relatertInformasjon.header": "Relatert informasjon",
 
   "fgkode.IARBS": "Du er registrert som 'ikke arbeidssøker'",
   "fgkode.INGEN_FGKODE": " ",
@@ -76,9 +90,10 @@
   "paalogging.alternativ.om.beskrivelse": "Med alternativ pålogging får du kun tilgang til enkelte av NAVs selvbetjeningsløsninger. Vi oppfordrer derfor våre brukere til å logge inn med ID-porten.",
   "paalogging.alternativ.om.lenketekst": "Logg inn med ID-porten",
 
-  "error.general.connection.problem": "Error fetchin data",
-  "error.person.info": "Det skjedde en feil under henting av person info",
+  "error.general.connection.problem": "Error fetching data",
+  "error.person.info": "Det skjedde en feil under henting av personinfo",
   "error.paabegynte": "Det skjedde en feil under henting av saker",
   "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks",
   "error.baksystemer": "Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon"
+
 }

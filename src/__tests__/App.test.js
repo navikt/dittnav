@@ -8,6 +8,8 @@ import wrapIntl from 'js/IntlTestHelper';
 const mockApi = () => {
   return {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
+    fetchSaker: () => new Promise((resolve, reject) => {}),
+    fetchMeldinger: () => new Promise((resolve, reject) => {}),
   }
 };
 
@@ -18,13 +20,13 @@ const flushPromises = () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<App api={mockApi()} path='/' />), div);
+  ReactDOM.render(wrapIntl(<App api={mockApi()} />), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('expect Login page rendering', () => {
   const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/person/dittnav/login' />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -44,7 +46,7 @@ it('expect PersonInfo fetching', async () => {
     })
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api} path='/' />));
+  renderer.render(wrapIntl(<App api={api} />));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -70,7 +72,7 @@ it('expect PaabegynteSoknader fetching', async () => {
         "meldekortbruker": true,
         "erUnderRegistreringIArbeid": true
       },
-      "feilendeTjenester":[]
+      "feilendeTjenester":['error.baksystemer']
     })
   });
 
@@ -78,9 +80,9 @@ it('expect PaabegynteSoknader fetching', async () => {
   //   resolve({feilendeBaksystem: ['hello']});
   // });
 
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} path='/' />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
   await flushPromises();
 
-  expect(component.root.children[0].instance.state.errors).toEqual(['error.paabegynte']);
+  expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
 });
 

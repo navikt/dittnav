@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import LoginLink from 'js/components/LoginLink';
-import conf from 'js/Config';
+import LoginLink from '../components/LoginLink';
+import conf from '../Config';
 
 const link = 'lenke';
 const button = 'knapp-hoved knapp-liten';
 const model = [
-  { id: 'endagspassord-pensjon', url: conf.PSELV_LOGIN_LINK_URL, linkClassName: button },
-  { id: 'endagspassord-ufore', url: conf.PSELV_LOGIN_LINK_UT_URL, linkClassName: button },
+  { id: 'endagspassord-pensjon', url: `${conf.dittNav.SERVICES_URL}${conf.PSELV_LOGIN_LINK_URL}`, linkClassName: button },
+  { id: 'endagspassord-ufore', url: `${conf.dittNav.SERVICES_URL}${conf.PSELV_LOGIN_LINK_UT_URL}`, linkClassName: button },
   { id: 'arbeidsgiver', url: conf.dittNav.ARBEIDSGIVER_LOGIN_URL, linkClassName: button },
-  { id: 'om', url: `${conf.dittNav.CONTEXT_PATH}/innlogget`, linkClassName: link },
+  { id: 'om', url: `${conf.dittNav.CONTEXT_PATH}`, linkClassName: link },
 ];
 
 class Login extends Component {

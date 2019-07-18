@@ -32,7 +32,7 @@ exports[`Login renders 1`] = `
         </p>
         <a
           className="knapp-hoved knapp-liten"
-          href="/pselv/tilleggsfunksjonalitet/innlogging.jsf"
+          href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf"
         >
           <span>
             Velg
@@ -57,7 +57,7 @@ exports[`Login renders 1`] = `
         </p>
         <a
           className="knapp-hoved knapp-liten"
-          href="/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
+          href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
         >
           <span>
             Velg
@@ -107,7 +107,7 @@ exports[`Login renders 1`] = `
         </p>
         <a
           className="lenke"
-          href="/person/dittnav/innlogget"
+          href="/person/dittnav"
         >
           <span>
             Logg inn med ID-porten

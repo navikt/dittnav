@@ -1,12 +1,29 @@
-import conf from 'js/Config';
+import conf from './Config';
+import Promise from 'promise-polyfill';
+
+const redirectToLogin = () => {
+  window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
+};
+
+const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
+
+const fetchUnleashFeatures = (features) => {
+  const fString = features.map(f => `feature=${f}`);
+  return Promise.race([
+    fetch(`${URL}?${fString}`, { method: 'GET' }) // eslint-disable-line no-undef
+      .then(r => r.json()),
+    new Promise((_, reject) => setTimeout(() => {
+      const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
+      return reject(new Error(message));
+    }, conf.UNLEASH_TIMEOUT))]);
+};
 
 const fetchJSONAndCheckForErrors = (url) => {
-  const p = new Promise((res, rej) => {
+  return new Promise((res, rej) => {
     fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
       .then((r) => {
         if (r.status === 401 || (r.status === 0 && !r.ok)) {
-          window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
-          rej(new Error('Unauthorized'));
+          redirectToLogin();
           return;
         }
         if (!r.ok) {
@@ -19,13 +36,36 @@ const fetchJSONAndCheckForErrors = (url) => {
         rej(e);
       });
   });
-  return p;
 };
 
-const pingDittnavBackend = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_PING_URL}`);
+const checkAuth = () => {
+  return new Promise((res, rej) => {
+    if (window.location.pathname.endsWith(`${conf.dittNav.CONTEXT_PATH}/login`)) {
+      res({ok: 'ok'});
+      return;
+    }
+    fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
+      .then((r) => {
+        if (!r.authenticated) {
+          redirectToLogin();
+          return;
+        }
+        res(r.json());
+      })
+      .catch((e) => {
+        rej(e);
+      });
+  });
+};
+
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
+const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
 
 export default {
-  pingDittnavBackend,
+  fetchUnleashFeatures,
+  checkAuth,
   fetchPersonInfoAndServices,
+  fetchSaker,
+  fetchMeldinger,
 };

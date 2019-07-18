@@ -37,16 +37,25 @@ const getLoginUrl = () => {
   return 'https://loginservice.nav.no/login?level=Level3';
 };
 
+const getVtaPath = () => {
+  return window.location.hostname.indexOf('localhost') > -1 ? 'http://127.0.0.1:3002' : `https://${window.location.hostname}/person/dittnav/veientilarbeid`;
+};
+
 export default {
+  UNLEASH_TIMEOUT: 3000,
   dittNav: {
     SERVICES_URL: getServicesUrl(),
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/personinfo`,
+    DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/saker/paabegynte`,
+    DITNTAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/ping`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
   },
+  VTA_PATH: getVtaPath(),
+  INNLOGGINGSLINJE_AUTH: `${getServicesUrl()}/innloggingslinje-api/auth`,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',

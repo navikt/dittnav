@@ -4,156 +4,93 @@ exports[`expect Login page rendering 1`] = `
 <main
   role="main"
 >
-  <svg
-    aria-label="Laster innhold"
-    className="spinner header-spinner spinner--m"
-    focusable="false"
-    height={32}
-    kind="spinner"
-    preserveAspectRatio="xMidYMid"
-    viewBox="0 0 50 50"
-    width={32}
-  >
-    <title>
-      Venter...
-    </title>
-    <circle
-      cx="25"
-      cy="25"
-      fill="none"
-      r="20"
-      stroke="#bdbab7"
-      strokeWidth="5"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    <circle
-      cx="25"
-      cy="25"
-      fill="none"
-      r="20"
-      stroke="#7f756c"
-      strokeDasharray="50 155"
-      strokeLinecap="round"
-      strokeWidth="5"
-    />
-  </svg>
   <div
     className="container"
   >
     <div
       className="row"
     >
-      <h1
-        className="typo-sidetittel"
-      >
-        Alternativ pålogging
-      </h1>
       <div
-        className="col-md-12 col-sm-12"
+        className="maincontent side-innhold"
       >
         <div
-          className="primary col-md-8 col-md-offset-2 sentrert alternativ-paalogging"
+          className="col-md-12"
+          id="dittnav-main-container"
         >
-          <div
-            className="element hodefot"
+          <section
+            className="infomeldinger-list"
           >
-            <h3
-              className="decorated"
+            <h1
+              className="vekk"
             >
               <span>
-                Endagspassord til din pensjon
+                Varsler
               </span>
-            </h3>
-            <p>
-              <span>
-                Pålogging med endagspassord gir deg tilgang til de fleste funksjonene i Din pensjon.
-              </span>
-            </p>
+            </h1>
+          </section>
+          <div
+            className="dittnav-lenke-container blokk-xl"
+          >
             <a
-              className="knapp-hoved knapp-liten"
-              href="/pselv/tilleggsfunksjonalitet/innlogging.jsf"
+              className="lenkepanel first lenkepanel--border"
+              href="http://localhost:9222/utbetalingsoversikt/"
             >
-              <span>
-                Velg
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine utbetalinger
+                </span>
               </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel lenkepanel--border"
+              href="http://localhost:9222/saksoversikt/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine saker
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel last lenkepanel--border"
+              href="http://localhost:9222/mininnboks/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Innboks
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
             </a>
           </div>
-          <hr />
-          <div
-            className="element hodefot"
+          <h2
+            className="typo-undertittel relatert-informasjon__subheader"
           >
-            <h3
-              className="decorated"
-            >
-              <span>
-                Endagspassord til uføretrygd
-              </span>
-            </h3>
-            <p>
-              <span>
-                Pålogging med endagspassord gir deg tilgang til de fleste funksjonene i selvbetjeningsløsningen Uføretrygd.
-              </span>
-            </p>
-            <a
-              className="knapp-hoved knapp-liten"
-              href="/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
-            >
-              <span>
-                Velg
-              </span>
-            </a>
-          </div>
-          <hr />
+            <span>
+              Relatert informasjon
+            </span>
+          </h2>
           <div
-            className="element hodefot"
+            className="relatert-informasjon"
           >
-            <h3
-              className="decorated"
-            >
-              <span>
-                Arbeidsgiver
-              </span>
-            </h3>
-            <p>
-              <span>
-                NAV har mange selvbetjente tjenester for deg som er arbeidsgiver. Gå til arbeidsgiversiden og se hva vi kan tilby.
-              </span>
-            </p>
-            <a
-              className="knapp-hoved knapp-liten"
-              href="https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester"
-            >
-              <span>
-                Velg
-              </span>
-            </a>
+            <nav
+              className="relatert-informasjon__links"
+            />
           </div>
-          <hr />
-          <div
-            className="element hodefot"
-          >
-            <h3
-              className="decorated"
-            >
-              <span>
-                Om alternativ pålogging
-              </span>
-            </h3>
-            <p>
-              <span>
-                Med alternativ pålogging får du kun tilgang til enkelte av NAVs selvbetjeningsløsninger. Vi oppfordrer derfor våre brukere til å logge inn med ID-porten.
-              </span>
-            </p>
-            <a
-              className="lenke"
-              href="/person/dittnav/innlogget"
-            >
-              <span>
-                Logg inn med ID-porten
-              </span>
-            </a>
-          </div>
-          <hr />
         </div>
       </div>
     </div>
@@ -165,9 +102,10 @@ exports[`expect PersonInfo fetching 1`] = `
 <App
   api={
     Object {
+      "fetchMeldinger": [Function],
       "fetchPersonInfoAndServices": [Function],
+      "fetchSaker": [Function],
     }
   }
-  path="/"
 />
 `;
