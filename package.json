@@ -48,8 +48,8 @@
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
     "build": "lessc --npm-import=\"prefix=~\"  src/less/index.less src/css/index.css && react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage",
-    "test-fix": "react-scripts test --env=jsdom --coverage -u",
+    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
+    "test-fix": "react-scripts test --env=jsdom -u",
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
