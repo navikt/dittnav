@@ -37,7 +37,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",
-    "react-scripts": "2.1.3",
+    "react-scripts": "3.0.0",
     "request": "^2.88.0",
     "translations": "^2.2.1",
     "whatwg-fetch": "^2.0.4"
@@ -48,8 +48,8 @@
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
     "build": "lessc --npm-import=\"prefix=~\"  src/less/index.less src/css/index.css && react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage",
-    "test-fix": "react-scripts test --env=jsdom --coverage -u",
+    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
+    "test-fix": "react-scripts test --env=jsdom -u",
     "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
