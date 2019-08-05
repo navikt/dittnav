@@ -6,7 +6,8 @@
       "erUnderRegistreringIArbeid": false,
       "registrert": true,
       "inaktiv": false,
-      "meldekortbruker": true
+      "meldekortbruker": true,
+      "underOppfolging": false
     },
     "isFoBruker": false,
     "andreTjenester": [
@@ -70,6 +71,6 @@
         "bildenavn": "jobb_blogg",
         "url": "/jobblogg"
       }
-    ],  
+    ],
     "feilendeTjenester": []
 }
