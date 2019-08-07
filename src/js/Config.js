@@ -66,26 +66,28 @@ const lenker = {
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
   dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
   registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
+  dittSykefravaer: { tittel: "Ditt sykefravær", url: `${getServicesUrl()}/sykefravaer/` },
 };
 
 const generelleLenker = [
-  lenker.ledigeStillinger,
-  lenker.uforetrygd,
-  lenker.dineForeldrepenger,
-  lenker.aktivitetsplan,
-  lenker.dinProfil,
-  lenker.registrerDegSomArbeidssoker,
-  lenker.dineStillingssok,
-  lenker.personopplysninger,
+    lenker.ledigeStillinger,
+    lenker.uforetrygd,
+    lenker.dineForeldrepenger,
+    lenker.aktivitetsplan,
+    lenker.dinProfil,
+    lenker.registrerDegSomArbeidssoker,
+    lenker.dineStillingssok,
+    lenker.personopplysninger,
 ];
 
 const oppfolgingsLenker = [
-  lenker.skjemaer,
-  lenker.dineForeldrepenger,
-  lenker.dinPensjon,
-  lenker.uforetrygd,
-  lenker.dinProfil,
-  lenker.personopplysninger,
+    lenker.dittSykefravaer,
+    lenker.skjemaer,
+    lenker.dineForeldrepenger,
+    lenker.dinPensjon,
+    lenker.uforetrygd,
+    lenker.dinProfil,
+    lenker.personopplysninger,
 ];
 
 export default {
