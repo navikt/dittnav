@@ -18,7 +18,7 @@
   "saksoversikt.soknad.en": "Du har en søknad som du ikke har sendt",
   "saksoversikt.soknad.flere": "Du har {count} søknader som du ikke har sendt",
   "saksoversikt.lenke": "Fortsett innsending",
-  
+
   "fliser.dine.saker": "Dine saker",
   "fliser.dine.utbetalinger": "Dine utbetalinger",
   "fliser.innboks": "Innboks",
@@ -26,7 +26,7 @@
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
-  "fliser.mistet.jobben": "Mistet jobben",
+  "fliser.mistet.jobben": "Mistet jobben?",
   "fliser.mistet.jobben.ingress": "Jobbsøkertips, økonomi og hjelp fra NAV",
   "fliser.skjemaer": "Skjemaer",
   "fliser.skjemaer.ingress": "Alle skjemaer og søknader i NAV",
