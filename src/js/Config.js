@@ -23,6 +23,23 @@ const getServicesUrl = () => {
   return 'https://tjenester.nav.no';
 };
 
+const getNavUrl = () => {
+    const host = window.location.hostname;
+    if (host.indexOf('localhost') > -1) {
+        return 'http://localhost:9222';
+    }
+    if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
+        return window.location.origin;
+    }
+    if (host.indexOf('www-q0') > -1) {
+        return 'https://www-q0.nav.no';
+    }
+    if (host.indexOf('www-q1') > -1) {
+        return 'https://www-q1.nav.no';
+    }
+    return 'https://www.nav.no';
+};
+
 const getLoginUrl = () => {
   const host = window.location.hostname;
   if (host.indexOf('localhost') > -1) {
@@ -45,6 +62,7 @@ export default {
   UNLEASH_TIMEOUT: 3000,
   dittNav: {
     SERVICES_URL: getServicesUrl(),
+    NAV_URL: getNavUrl(),
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-api/person/personinfo`,
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/saker/paabegynte`,
@@ -59,7 +77,7 @@ export default {
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort/',
-  ETTERREGISTRERT_PATH: '/meldekort/etterregistrert',
+  ETTERREGISTRERT_PATH: '/meldekort/etterregistrer-meldekort/',
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
 };
