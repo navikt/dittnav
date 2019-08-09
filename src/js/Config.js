@@ -24,20 +24,20 @@ const getServicesUrl = () => {
 };
 
 const getNavUrl = () => {
-    const host = window.location.hostname;
-    if (host.indexOf('localhost') > -1) {
-        return 'http://localhost:9222';
-    }
-    if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
-        return window.location.origin;
-    }
-    if (host.indexOf('www-q0') > -1) {
-        return 'https://www-q0.nav.no';
-    }
-    if (host.indexOf('www-q1') > -1) {
-        return 'https://www-q1.nav.no';
-    }
-    return 'https://www.nav.no';
+  const host = window.location.hostname;
+  if (host.indexOf('localhost') > -1) {
+    return 'http://localhost:9222';
+  }
+  if (host.indexOf('t6') > -1 || host.indexOf('t1') > -1) {
+    return window.location.origin;
+  }
+  if (host.indexOf('www-q0') > -1) {
+    return 'https://www-q0.nav.no';
+  }
+  if (host.indexOf('www-q1') > -1) {
+    return 'https://www-q1.nav.no';
+  }
+  return 'https://www.nav.no';
 };
 
 const getLoginUrl = () => {
