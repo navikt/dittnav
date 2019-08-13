@@ -12,9 +12,9 @@
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "css": "^2.2.4",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react": "^7.14.3",
     "express": "^4.17.1",
     "express-http-proxy": "^1.5.1",
     "intl": "^1.2.5",
@@ -24,7 +24,7 @@
     "moment": "^2.24.0",
     "nav-frontend-chevron-style": "^0.3.4",
     "nav-frontend-ikoner-assets": "^1.0.1",
-    "nav-frontend-lenkepanel": "^1.0.29",
+    "nav-frontend-lenkepanel": "^1.0.30",
     "nav-frontend-lenkepanel-style": "^0.3.25",
     "nav-frontend-paneler-style": "^0.3.15",
     "nav-frontend-spinner": "^1.0.18",
@@ -34,10 +34,10 @@
     "parcel-bundler": "^1.12.3",
     "promise-polyfill": "8.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.4.2",
-    "react-intl": "^2.4.0",
-    "react-scripts": "3.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-intl": "^3.1.7",
+    "react-scripts": "^3.1.0",
     "request": "^2.88.0",
     "translations": "^2.2.1",
     "whatwg-fetch": "^2.0.4"
@@ -64,12 +64,12 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb": "^18.0.0",
     "jest-fetch-mock": "^1.6.5",
     "less-watch-compiler": "^1.11.3",
     "nav-frontend-core": "^4.0.9",
-    "nav-frontend-lenker-style": "0.2.6",
-    "react-test-renderer": "^16.4.2"
+    "nav-frontend-lenker-style": "^0.2.20",
+    "react-test-renderer": "^16.9.0"
   },
   "babel": {
     "presets": [
