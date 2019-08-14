@@ -67,7 +67,7 @@ class Home extends Component {
     const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
     const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
     return (
-      <React.Fragment>
+      <>
         <div className="row">
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
@@ -84,7 +84,7 @@ class Home extends Component {
           </div>
         </div>
         <Artikkel article={info.article} />
-      </React.Fragment>
+      </>
     );
   }
 }

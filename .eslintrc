@@ -3,9 +3,11 @@
   "parser": "babel-eslint",
   "rules": {
       "react/jsx-one-expression-per-line": "off",
+      "react/jsx-props-no-spreading": "off",
       "object-curly-newline": "off",
       "import/no-unresolved": "off",
       "max-len": "off",
+      "arrow-parens": "off",
       "indent": 2,
       "react/jsx-indent": 2,
       "react/prefer-stateless-function": 0,

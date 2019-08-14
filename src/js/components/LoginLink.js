@@ -9,7 +9,7 @@ class LoginLink extends Component {
       <div className="element hodefot">
         <h3 className="decorated"><F id={title} /></h3>
         <p><F id={description} /></p>
-        <a href={url} className={linkClassName}><F id={linkText} /></a>
+        <a href={url} className={linkClassName} aria-labelledby={linkText}><F id={linkText} /></a>
       </div>
     );
   }
