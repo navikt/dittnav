@@ -17,6 +17,7 @@ exports[`LoginLink renders 1`] = `
     </span>
   </p>
   <a
+    aria-labelledby="paalogging.alternativ.brukernavnpassord.lenketekst"
     className="customStyle"
     href="url"
   >

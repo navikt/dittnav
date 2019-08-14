@@ -31,6 +31,7 @@ exports[`Login renders 1`] = `
           </span>
         </p>
         <a
+          aria-labelledby="paalogging.alternativ.endagspassord-pensjon.lenketekst"
           className="knapp-hoved knapp-liten"
           href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf"
         >
@@ -56,6 +57,7 @@ exports[`Login renders 1`] = `
           </span>
         </p>
         <a
+          aria-labelledby="paalogging.alternativ.endagspassord-ufore.lenketekst"
           className="knapp-hoved knapp-liten"
           href="http://localhost:9222/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut"
         >
@@ -81,6 +83,7 @@ exports[`Login renders 1`] = `
           </span>
         </p>
         <a
+          aria-labelledby="paalogging.alternativ.arbeidsgiver.lenketekst"
           className="knapp-hoved knapp-liten"
           href="https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester"
         >
@@ -106,6 +109,7 @@ exports[`Login renders 1`] = `
           </span>
         </p>
         <a
+          aria-labelledby="paalogging.alternativ.om.lenketekst"
           className="lenke"
           href="/person/dittnav"
         >
