@@ -173,7 +173,7 @@ exports[`expect Login page rendering 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="https://www-t1.nav.no/person/personopplysninger"
+                  href="http://localhost:9222/person/personopplysninger"
                 >
                   Personopplysninger
                 </a>

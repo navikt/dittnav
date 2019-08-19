@@ -6,20 +6,6 @@ const getDittNavBaseApiUrl = () => {
   return `https://${window.location.hostname}/person`;
 };
 
-const getUrl = () => {
-  const host = window.location.hostname;
-  if (host.indexOf('localhost') > -1) {
-    return 'https://www-t1.nav.no';
-  }
-  if (host.indexOf('www-q0') > -1) {
-    return 'https://www-q0.nav.no';
-  }
-  if (host.indexOf('www-q1') > -1) {
-    return 'https://www-q1.nav.no';
-  }
-  return 'https://www.nav.no';
-};
-
 const getServicesUrl = () => {
   const host = window.location.hostname;
   if (host.indexOf('localhost') > -1) {
@@ -78,8 +64,8 @@ const lenker = {
   dineForeldrepenger: { tittel: 'Dine foreldrepenger', url: 'https://foreldrepenger.nav.no' },
   aktivitetsplan: { tittel: 'Aktivitetsplan', url: `${getServicesUrl()}/aktivitetsplan/` },
   dinProfil: { tittel: 'Din profil', url: `${getServicesUrl()}/brukerprofil/` },
-  personopplysninger: { tittel: 'Personopplysninger', url: `${getUrl()}/person/personopplysninger` },
-  skjemaer: { tittel: 'Skjemaer', url: `${getUrl()}/no/person/skjemaer-for-privatpersoner` },
+  personopplysninger: { tittel: 'Personopplysninger', url: `${getNavUrl()}/person/personopplysninger` },
+  skjemaer: { tittel: 'Skjemaer', url: `${getNavUrl()}/no/person/skjemaer-for-privatpersoner` },
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
   dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
   registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
