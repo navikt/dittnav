@@ -18,9 +18,9 @@ const bundler = new Bundler(file, options);
 // Let express use the bundler middleware, this will let Parcel handle every request over your express server
 
 app.use(cors({origin: 'http://localhost:9000', credentials: true}));
-app.get('/dittnav-api/person/personinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-info.json')));
-app.get('/dittnav-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
-app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
+app.get('/dittnav-legacy-api/person/personinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-info.json')));
+app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
+app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
 app.use(bundler.middleware());
 
 // Listen on port 1234
