@@ -58,6 +58,41 @@ const getVtaPath = () => {
   return window.location.hostname.indexOf('localhost') > -1 ? 'http://127.0.0.1:3002' : `https://${window.location.hostname}/person/dittnav/veientilarbeid`;
 };
 
+const lenker = {
+  ledigeStillinger: { tittel: 'Ledige stillinger', url: 'https://arbeidsplassen.nav.no/stillinger' },
+  uforetrygd: { tittel: 'Uføretrygd', url: `${getServicesUrl()}/pselv/publisering/uforetrygd.jsf?context=ut` },
+  dineForeldrepenger: { tittel: 'Dine foreldrepenger', url: 'https://foreldrepenger.nav.no' },
+  aktivitetsplan: { tittel: 'Aktivitetsplan', url: `${getServicesUrl()}/aktivitetsplan/` },
+  dinProfil: { tittel: 'Din profil', url: `${getServicesUrl()}/brukerprofil/` },
+  personopplysninger: { tittel: 'Personopplysninger', url: `${getNavUrl()}/person/personopplysninger` },
+  skjemaer: { tittel: 'Skjemaer', url: `${getNavUrl()}/no/person/skjemaer-for-privatpersoner` },
+  dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
+  dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
+  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
+  dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
+};
+
+const generelleLenker = [
+  lenker.ledigeStillinger,
+  lenker.uforetrygd,
+  lenker.dineForeldrepenger,
+  lenker.aktivitetsplan,
+  lenker.dinProfil,
+  lenker.registrerDegSomArbeidssoker,
+  lenker.dineStillingssok,
+  lenker.personopplysninger,
+];
+
+const oppfolgingsLenker = [
+  lenker.dittSykefravaer,
+  lenker.skjemaer,
+  lenker.dineForeldrepenger,
+  lenker.dinPensjon,
+  lenker.uforetrygd,
+  lenker.dinProfil,
+  lenker.personopplysninger,
+];
+
 export default {
   UNLEASH_TIMEOUT: 3000,
   dittNav: {
@@ -71,6 +106,8 @@ export default {
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
+    GENERELLE_LENKER: generelleLenker,
+    OPPFOLGINGS_LENKER: oppfolgingsLenker,
   },
   VTA_PATH: getVtaPath(),
   INNLOGGINGSLINJE_AUTH: `${getServicesUrl()}/innloggingslinje-api/auth`,

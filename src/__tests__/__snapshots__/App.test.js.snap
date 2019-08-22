@@ -89,7 +89,96 @@ exports[`expect Login page rendering 1`] = `
           >
             <nav
               className="relatert-informasjon__links"
-            />
+            >
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://arbeidsplassen.nav.no/stillinger"
+                >
+                  Ledige stillinger
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
+                >
+                  Uføretrygd
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://foreldrepenger.nav.no"
+                >
+                  Dine foreldrepenger
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/aktivitetsplan/"
+                >
+                  Aktivitetsplan
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/brukerprofil/"
+                >
+                  Din profil
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                >
+                  Registrer deg som arbeidssøker
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
+                >
+                  Dine stillingssøk
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/person/personopplysninger"
+                >
+                  Personopplysninger
+                </a>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
