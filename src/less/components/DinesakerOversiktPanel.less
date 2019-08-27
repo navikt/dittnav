@@ -1,0 +1,61 @@
+@import '../../../node_modules/nav-frontend-core/less/_variabler';
+
+// TODO:  - merge dette inn i LenkePanelMedIkon kanskje?
+//        - rydde opp litt, muligens noe redundans her
+//        - gjør responsivt
+
+
+.dittnav-lenkepanel-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //align-items: stretch;
+
+  .first {
+    margin-right: 1em;
+  }
+
+  margin-bottom: 2em;
+}
+
+.dittnav-lenkepanel-top-row {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 50%;
+}
+
+.dinesaker-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  border-color: #78706A;
+  border-radius: 4px;
+}
+
+.dinesaker-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ikon-og-overskrift {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.saks-container {
+  display: grid;
+
+  .sak-row-left {
+    grid-column: 1;
+  }
+
+  .sak-row-right {
+    grid-column: 2;
+  }
+}

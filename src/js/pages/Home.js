@@ -10,6 +10,7 @@ import InfoMeldinger from '../components/InfoMeldinger';
 
 import DittnavFliser from '../components/DittnavFliser';
 import DittnavLenkePanel from '../components/DittnavLenkePanel';
+import DittnavLenkePanelNy from '../components/DittnavLenkePanelNy';
 import Lenkelister from '../components/Lenkelister';
 import Artikkel from '../components/Artikkel';
 import DelayedSpinner from '../components/DelayedSpinner';
@@ -74,7 +75,8 @@ class Home extends Component {
               <PersonInfo personInfo={info.personinfo} />
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <DittnavLenkePanel />
+              {/*<DittnavLenkePanel />*/}
+              <DittnavLenkePanelNy />
               { !info || !info.personinfo ? null : tjeneserEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
