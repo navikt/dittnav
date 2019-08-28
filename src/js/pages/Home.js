@@ -72,7 +72,7 @@ class Home extends Component {
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
     const generelleLenker = Config.dittNav.GENERELLE_LENKER;
     return (
-      <React.Fragment>
+      <>
         <div className="row">
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
@@ -89,7 +89,7 @@ class Home extends Component {
           </div>
         </div>
         <Artikkel article={info.article} />
-      </React.Fragment>
+      </>
     );
   }
 }

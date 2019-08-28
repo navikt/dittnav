@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Unleash extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isFeatureEnabled: null };
-  }
+  state = { isFeatureEnabled: null };
 
   componentDidMount() {
     this.props.api.fetchUnleashFeatures([this.props.feature])
@@ -23,7 +20,7 @@ class Unleash extends Component {
 
   render() {
     const { isFeatureEnabled } = this.state;
-    return <React.Fragment>{isFeatureEnabled === null ? null : React.cloneElement(this.props.children, { isFeatureEnabled })}</React.Fragment>;
+    return <>{isFeatureEnabled === null ? null : React.cloneElement(this.props.children, { isFeatureEnabled })}</>;
   }
 }
 
