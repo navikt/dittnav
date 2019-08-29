@@ -103,6 +103,7 @@ export default {
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/paabegynte`,
     DITNTAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
+    DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/events`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
