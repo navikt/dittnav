@@ -65,7 +65,7 @@ class Home extends Component {
   }
 
   render() {
-    const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
+    const { info, paabegynteSoknader, mininnboks, fetching, sakstema } = this.props;
     const tjeneserEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
     return (
       <React.Fragment>
@@ -76,7 +76,7 @@ class Home extends Component {
               {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               {/*<DittnavLenkePanel />*/}
-              <DittnavLenkePanelNy />
+              <DittnavLenkePanelNy sakstema={sakstema}/>
               { !info || !info.personinfo ? null : tjeneserEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
@@ -95,6 +95,7 @@ Home.propTypes = {
   info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  sakstema: PropTypes.any.isRequired,
   fetching: PropTypes.number.isRequired,
 };
 

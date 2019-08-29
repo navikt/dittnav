@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Normaltekst, Undertittel} from 'nav-frontend-typografi'
+import { Normaltekst, Undertittel } from 'nav-frontend-typografi'
 
 import Lenke from "nav-frontend-lenker";
 import HoyreChevron from "nav-frontend-chevron";
@@ -13,17 +13,18 @@ import DinesakerSakStatus from "./DinesakerSakStatus";
 // TODO:    -kikk på designsystem docs, finn passende komponenter for å bygge dette panelet
 //          -fetch data fra API (evt. bruk dummy-data siden API ikke er ferdig?)
 //          -sett inn riktig ikon-grafikk
-//          -rydd opp litt i kode, mulig overflødige klasser?
-//
+//          -mulig refaktorering: fjerne overflødige klasser?
+//          -bør denne komponenten håndtere eget innhold eller få via parametre/props? (href + overskrift)
+//          -hr i egne div, god løsning? (for å fikse width!)
 
 class DinesakerOversiktPanel extends React.Component {
     render() {
-        const { href, onClick, className, overskrift, ingress, children } = this.props;
+        const { href, onClick, overskrift, sakstema, children } = this.props;
 
-        const linkCreator = props => <a onClick={onClick} {...props} />;
+        const linkCreator = props => <a onClick={onClick} {...props} />;    // hva er dette?!
 
         return(
-            <PanelBase border className="dinesaker-panel">
+            <PanelBase border className="dinesxaker-panel">
                 <div className="dinesaker-header">
                     <div className="ikon-og-overskrift">
                         <div className="dinesaker-ikon">
@@ -39,8 +40,8 @@ class DinesakerOversiktPanel extends React.Component {
                         <Normaltekst>
                             <Lenke href={href}>
                                 Se flere dine saker
-                                <HoyreChevron/>
                             </Lenke>
+                            <a href={href}><HoyreChevron/></a>
                         </Normaltekst>
                     </div>
                 </div>
@@ -49,6 +50,8 @@ class DinesakerOversiktPanel extends React.Component {
                     {/*Opp til n saker vises her.
                      Dersom #saker <= n, vis "Du har ingen flere saker" tekst
                      Hvis flere enn n saker, vis link til full oversikt?*/}
+
+
                     <DinesakerSakStatus
                         dato={new Date(Date.UTC(2019, 7,1))}
                         saksStatus={"under-behandling"}

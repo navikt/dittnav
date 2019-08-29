@@ -57,12 +57,13 @@ const checkAuth = () => {
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
-//const fetchSaksoversikt () => fetchJSONAndCheckForErrors(`${conf.dittNav.DI}`);
+const fetchSakstema = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKSTEMA_URL}`);
 
 export default {
-  fetchUnleashFeatures,
-  checkAuth,
-  fetchPersonInfoAndServices,
-  fetchSaker,
-  fetchMeldinger,
+    fetchUnleashFeatures,
+    checkAuth,
+    fetchPersonInfoAndServices,
+    fetchSaker,
+    fetchMeldinger,
+    fetchSakstema,
 };

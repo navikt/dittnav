@@ -10,7 +10,7 @@ import './polyfill';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], fetching: 0 };
+    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], sakstema: [], errors: [], fetching: 0 };
   }
 
   async componentWillMount() {
@@ -45,11 +45,17 @@ class App extends Component {
       .then((r) => {
         this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
+
+
+    api.fetchSakstema()
+      .then((r) => {
+          this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
+      }).catch(catchError('error.baksystemer'));
   }
 
   render() {
     const {
-      info, paabegynteSoknader, mininnboks, errors, fetching,
+      info, paabegynteSoknader, mininnboks, errors, fetching, sakstema
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -58,7 +64,7 @@ class App extends Component {
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />
+          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema}/>
         </div>
       </main>
     );
@@ -70,6 +76,7 @@ App.propTypes = {
     fetchPersonInfoAndServices: PropTypes.func.isRequired,
     fetchSaker: PropTypes.func.isRequired,
     fetchMeldinger: PropTypes.func.isRequired,
+    fetchSakstema: PropTypes.func.isRequired,
   }).isRequired,
 };
 
