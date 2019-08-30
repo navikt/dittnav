@@ -1,4 +1,6 @@
-[
+{
+  "antallSaker": 5,
+  "saker": [
     {
       "temanavn": "Tilleggsstønad arbeidssøkere",
       "status": "FERDIG_BEHANDLET",
@@ -7,8 +9,9 @@
     },
     {
       "temanavn": "Tiltakspenger",
-      "status": "FERDIG_BEHANDLET",
+      "status": "UNDER_BEHANDLING",
       "sistOppdatert": "2019-07-22",
       "lenke": "https://tjenester-q1.nav.no/saksoversikt/tema/IND"
     }
-]
+  ]
+}

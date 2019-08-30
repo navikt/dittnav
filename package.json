@@ -49,11 +49,12 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
-    "local": "lessc --npm-import=\"prefix=~\"  src/less/index.less src/css/index.css && node local.js",
+    "local": "set PORT=9000 && lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css && node local.js",
     "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
     "build": "lessc --npm-import=\"prefix=~\"  src/less/index.less src/css/index.css && react-scripts build",
+    "buildless": "lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css",
     "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
     "test-fix": "react-scripts test --env=jsdom -u",
     "test-watch": "react-scripts test --env=jsdom",

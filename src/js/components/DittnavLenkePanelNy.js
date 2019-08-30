@@ -18,9 +18,7 @@ class DittnavLenkePanelNy extends React.Component{
                         overskrift="fliser.dine.saker"
                         sakstema={this.props.sakstema}
                         href={`${Config.dittNav.SERVICES_URL}/saksoversikt/`}
-                    >
-                        <IkonSkilt/>
-                    </DineSakerOversiktPanel>
+                    />
                 </div>
                 <div className="dittnav-lenkepanel-top-row">
                     <LenkepanelMedIkon

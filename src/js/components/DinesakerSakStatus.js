@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Normaltekst } from 'nav-frontend-typografi'
+import { Normaltekst, Element, Undertekst } from 'nav-frontend-typografi'
 
 import PropTypes from 'prop-types'
 
@@ -8,6 +8,21 @@ import { FormattedMessage, FormattedDate } from "react-intl";
 
 import Lenke from "nav-frontend-lenker";
 import EtikettBase from "nav-frontend-etiketter";
+import HoyreChevron from "nav-frontend-chevron";
+
+// TODO:    -lokaliser tekst
+
+const statusTilEtikettType = {
+    "FERDIG_BEHANDLET": "suksess",
+    "UNDER_BEHANDLING": "fokus",
+    "UKJENT": "info",
+};
+
+const statusTilEtikettTekst = {
+    "FERDIG_BEHANDLET": "Ferdig behandlet",
+    "UNDER_BEHANDLING": "Under behandling",
+    "UKJENT": "Ukjent status",
+}
 
 class DinesakerSakStatus extends React.Component {
 
@@ -17,33 +32,26 @@ class DinesakerSakStatus extends React.Component {
         return(
             <div className="saks-container">
                 <div className="sak-row-left">
-                    <Normaltekst>
-                        <FormattedDate value={dato} />
-                    </Normaltekst>
-
-                    {/*Sett etikett type avhenging av saksStatus*/}
-                    <EtikettBase type="fokus">
-                        Under behandling
+                    <EtikettBase type={statusTilEtikettType[status]} className="saks-etikett">
+                        <Undertekst>{statusTilEtikettTekst[status]}</Undertekst>
                     </EtikettBase>
+                    <Undertekst>{dato}</Undertekst>
                 </div>
                 <div className="sak-row-right">
-                    <Normaltekst>
-                        {temanavn}
-                    </Normaltekst>
-                    <Lenke href={href}>
-                        {/*Sett tekst avhenging av saksStatus*/}
-                        En søknad er under behandling
-                    </Lenke>
+                    <Element>
+                        <Lenke href={href}>{temanavn}</Lenke>
+                    </Element>
                 </div>
+                <HoyreChevron className="sak-chevron"/>
             </div>
         );
     }
 }
 
 DinesakerSakStatus.propTypes = {
-    dato: PropTypes.instanceOf(Date),
-    saksStatus: PropTypes.string,       // Kanskje bruk en enum?
-    temanavn: PropTypes.string,         // Eller finnes det allerede definerte datatyper for saker?
+    dato: PropTypes.string,            //.instanceOf(Date),
+    status: PropTypes.string,
+    temanavn: PropTypes.string,
     href: PropTypes.string,
 }
 

@@ -1,15 +1,14 @@
-@import '../../../node_modules/nav-frontend-core/less/_variabler';
-
-// TODO:  - merge dette inn i LenkePanelMedIkon kanskje?
-//        - rydde opp litt, muligens noe redundans her
+// TODO:  - rydde opp litt, muligens noe redundans her
 //        - gjør responsivt
 
+@import (reference) '~nav-frontend-core/less/_variabler';
+@import (reference) '~nav-frontend-chevron-style/src/mixins';
+@import (reference) '~nav-frontend-paneler-style/src/mixins';
 
 .dittnav-lenkepanel-top-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  //align-items: stretch;
 
   .first {
     margin-right: 1em;
@@ -48,14 +47,46 @@
   align-items: center;
 }
 
+.dinesaker-saker {
+  display: flex;
+  flex-direction: column;
+}
+
 .saks-container {
-  display: grid;
+  //.panel-mixin();
+  //.panel-focushover-mixin();
+  //.panel-border-mixin();
+  //.panel-interaktiv-mixin();
+
+  &:hover {
+    .sak-chevron {
+      left: 6px;
+      background-color: white;
+    }
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.25em 0em;
 
   .sak-row-left {
-    grid-column: 1;
+    width: 130px;
+
+    .saks-etikett {
+      padding: 2px 8px;
+      width: 100%;
+    }
   }
 
   .sak-row-right {
-    grid-column: 2;
+    flex-grow: 1;
+    margin: 0em 0.5em;
+  }
+
+  .sak-chevron {
+    align-self: center;
+    left: 0;
+    transition: left 250ms;
   }
 }
