@@ -7,7 +7,6 @@ import { FormattedMessage as F } from 'react-intl';
 import Vta from '../components/VTA';
 import PersonInfo from '../components/PersonInfo';
 import InfoMeldinger from '../components/InfoMeldinger';
-import Hendelser from '../components/Hendelser';
 
 import DittnavFliser from '../components/DittnavFliser';
 import DittnavLenkePanel from '../components/DittnavLenkePanel';
@@ -16,7 +15,6 @@ import Artikkel from '../components/Artikkel';
 import DelayedSpinner from '../components/DelayedSpinner';
 
 import Config from '../Config';
-import Environments from '../Environment';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
@@ -73,7 +71,6 @@ class Home extends Component {
     const erUnderOppfolging = info && info.personinfo && info.personinfo.underOppfolging;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
     const generelleLenker = Config.dittNav.GENERELLE_LENKER;
-    const erIkkeIProd = Environments() === 'LOCAL' || Environments() === 'DEV';
     return (
       <>
         <div className="row">
@@ -81,7 +78,6 @@ class Home extends Component {
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
               { fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
-              { erIkkeIProd ? <Hendelser /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
