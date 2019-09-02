@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
-import Hendelser from './components/hendelser';
+import Hendelser from './components/Hendelser';
 
 import '../less/index.less';
 import './polyfill';
