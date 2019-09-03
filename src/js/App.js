@@ -56,13 +56,13 @@ class App extends Component {
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
-    const erIkkeIProd = Environments() === 'LOCAL' || Environments() === 'DEV';
+    const erIDev = Environments() === 'DEV';
 
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          { erIkkeIProd ? <Hendelser /> : null }
+          { erIDev ? <Hendelser /> : null }
           <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />
         </div>
       </main>

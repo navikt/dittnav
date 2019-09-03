@@ -3,7 +3,7 @@ const Environments = () => {
   const host = window.location.hostname;
 
   if (host.indexOf('localhost') > -1) {
-    return 'LOCAL';
+    return 'DEV';
   }
 
   if (host.indexOf('www-q0') > -1) {
