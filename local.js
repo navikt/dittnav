@@ -21,6 +21,7 @@ app.use(cors({origin: 'http://localhost:9000', credentials: true}));
 app.get('/dittnav-legacy-api/person/personinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-info.json')));
 app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
 app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
+app.get('/dittnav-legacy-api/events', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
 app.use(bundler.middleware());
 
 // Listen on port 1234
@@ -29,7 +30,7 @@ const PORT = 1234;
 const shimproxy = () => {
     getDecorator()
     .then((fragments) => {
-  
+
       proxy.use('/', eproxy(`http://localhost:${PORT}`, {
         userResDecorator: function(proxyRes, proxyResData, userReq, userRes) {
           return Promise.resolve()
@@ -40,7 +41,7 @@ const shimproxy = () => {
                 document.head.appendChild(fragments.scripts);
                 document.head.appendChild(fragments.styles);
                 document.head.appendChild(fragments.megamenu);
-  
+
                 document.body.insertBefore(fragments.skiplinks, document.body.firstChild);
                 document.body.insertBefore(fragments.header, document.body.firstChild);
                 document.body.appendChild(fragments.footer);
@@ -50,15 +51,14 @@ const shimproxy = () => {
             });
         }
       }));
-      
+
       proxy.listen(process.env.PORT, () => {
         console.log(`Proxying on port: ${process.env.PORT}`);
       });
-      
-      
+
+
     }, error => console.log(`Failed to render app ${error}`));
   };
-  
+
   shimproxy();
   app.listen(1234);
-  

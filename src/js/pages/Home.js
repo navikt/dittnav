@@ -77,7 +77,7 @@ class Home extends Component {
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
-              {fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
+              { fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
