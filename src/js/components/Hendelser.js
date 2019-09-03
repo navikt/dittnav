@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormattedMessage as F } from 'react-intl';
 import { Knapp } from 'nav-frontend-knapper';
 import Informasjon from './hendelser/Informasjon';
 import Config from '../Config';
@@ -15,7 +16,7 @@ const Hendelser = () => {
 
   return (
     <div className="Hendelser">
-      <Knapp onClick={() => (getInformasjonHendelser())}>Hent hendelser</Knapp>
+      <Knapp onClick={() => (getInformasjonHendelser())}><F id="hendelser.hent" /></Knapp>
       {hendelser.map(h => (
         <Informasjon hendelse={h} />
       ))}
