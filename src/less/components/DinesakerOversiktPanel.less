@@ -1,17 +1,16 @@
-// TODO:  - rydde opp litt, muligens noe redundans her
-//        - gjør responsivt
-
 @import (reference) '~nav-frontend-core/less/_variabler';
 @import (reference) '~nav-frontend-chevron-style/src/mixins';
 @import (reference) '~nav-frontend-paneler-style/src/mixins';
 
+// TODO:  - gjør responsivt
+
 .dittnav-lenkepanel-top-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 
   .first {
     margin-right: 1em;
+    flex-grow: 1;
   }
 
   margin-bottom: 2em;
@@ -20,51 +19,13 @@
 .dittnav-lenkepanel-top-row {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  width: 50%;
-}
 
-.dinesaker-panel {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-
-  border-color: #78706A;
-  border-radius: 4px;
-}
-
-.dinesaker-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.ikon-og-overskrift {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.dinesaker-saker {
-  display: flex;
-  flex-direction: column;
-}
-
-.saks-container {
-  //.panel-mixin();
-  //.panel-focushover-mixin();
-  //.panel-border-mixin();
-  //.panel-interaktiv-mixin();
-
-  &:hover {
-    .sak-chevron {
-      left: 6px;
-      background-color: white;
-    }
+  .last {
+      margin-bottom: 0;
   }
+}
 
+.sak-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -73,20 +34,38 @@
   .sak-row-left {
     width: 130px;
 
-    .saks-etikett {
+    .sak-etikett {
       padding: 2px 8px;
       width: 100%;
     }
   }
 
   .sak-row-right {
-    flex-grow: 1;
-    margin: 0em 0.5em;
-  }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-  .sak-chevron {
-    align-self: center;
-    left: 0;
-    transition: left 250ms;
+    flex-grow: 1;
+    margin-left: 0.5em;
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      //color: inherit;
+    }
+
+    &:hover {
+      .sak-chevron {
+        left: 6px;
+      }
+    }
+
+    .sak-chevron {
+      align-self: center;
+
+      left: 0;
+      transition: left 250ms;
+    }
   }
 }

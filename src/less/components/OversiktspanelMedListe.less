@@ -1,0 +1,52 @@
+@import (reference) '~nav-frontend-core/less/_variabler';
+@import (reference) '~nav-frontend-chevron-style/src/mixins';
+@import (reference) '~nav-frontend-paneler-style/src/mixins';
+
+// TODO:  - Bør denne ha samme border som de andre panelene?
+//        (default ser ut til å være lysere farge på "ikke-interaktive" paneler)
+
+.oversiktspanel {
+  .panel-mixin();
+  //.panel-focushover-mixin();
+  //.panel-focus-mixin();
+  //.panel-border-mixin();
+  //.panel-interaktiv-mixin();
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  //border-color: red;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__overskrift {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__header-lenke {
+    &:hover {
+      .oversiktspanel__chevron {
+        left: 6px;
+      }
+    }
+  }
+
+  &__chevron {
+    left: 0;
+    transition: left 250ms;
+  }
+
+  &__liste {
+    display: flex;
+    flex-direction: column;
+  }
+}

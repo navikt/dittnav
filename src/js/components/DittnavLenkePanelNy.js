@@ -2,7 +2,8 @@ import React from 'react';
 
 import Config from '../Config';
 import { LenkepanelMedIkon, IkonKane, IkonPille, IkonSkilt } from './LenkepanelMedIkon';
-import DineSakerOversiktPanel from './DinesakerOversiktPanel';
+import OversiktspanelMedListe from "./OversiktspanelMedListe";
+import DinesakerSakstema from "./DinesakerSakstema";
 
 // TODO:    - finpusse layout etter skisse
 //          - finn svg data for ikoner
@@ -10,14 +11,27 @@ import DineSakerOversiktPanel from './DinesakerOversiktPanel';
 
 class DittnavLenkePanelNy extends React.Component{
     render() {
+        const saker = this.props.sakstema.saker ? this.props.sakstema.saker.map((tema, index) => (
+            <DinesakerSakstema
+                key={index}
+                dato={tema.sistOppdatert}
+                status={tema.status}
+                temanavn={tema.temanavn}
+                href={tema.lenke}
+            />
+        )) : [];
+
         return (
             <div className="dittnav-lenkepanel-top-container">
                 <div className="dittnav-lenkepanel-top-row first">
-                    <DineSakerOversiktPanel
+                    <OversiktspanelMedListe
                         alt="Dine saker"
                         overskrift="fliser.dine.saker"
-                        sakstema={this.props.sakstema}
-                        href={`${Config.dittNav.SERVICES_URL}/saksoversikt/`}
+                        ikon={<IkonSkilt/>}
+                        headerLenkeTekst={"Se full saksoversikt ("+this.props.sakstema.antallSaker+")"}
+                        headerLenkeHref={`${Config.dittNav.SERVICES_URL}/saksoversikt/`}
+                        listeElementer={saker}
+                        hasBorder={false}
                     />
                 </div>
                 <div className="dittnav-lenkepanel-top-row">
@@ -33,6 +47,7 @@ class DittnavLenkePanelNy extends React.Component{
                         alt="Innboks"
                         overskrift="fliser.innboks"
                         ingress=""
+                        className="last"
                         href={`${Config.dittNav.SERVICES_URL}/mininnboks/`}
                     >
                         <IkonKane/>
