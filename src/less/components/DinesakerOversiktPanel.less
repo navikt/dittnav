@@ -7,65 +7,99 @@
 .dittnav-lenkepanel-top-container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1em;
 
-  .first {
-    margin-right: 1em;
-    flex-grow: 1;
+  .dittnav-lenkepanel-top-row {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    align-content: space-between;
+    align-items: stretch;
+
+    &.stor {
+      flex-grow: 2;
+    }
+
+    .oversiktspanel {
+      a, .lenke {
+        //border-bottom: none;
+        //color: inherit;
+
+        &:not(:hover) {
+          //color: inherit;
+        }
+      }
+    }
   }
 
-  margin-bottom: 2em;
+  .dittnav-lenkepanel-top-col {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    justify-content: space-between;
+  }
 }
 
-.dittnav-lenkepanel-top-row {
-  display: flex;
-  flex-direction: column;
+.dittnav-lenkepanel-top-item {
+  flex: 1 1 0;
 
-  .last {
-      margin-bottom: 0;
+  margin-bottom: 1em;
+  margin-right: 1em;
+
+  &.last {
+    margin-right: 0;
   }
 }
 
 .sak-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0.25em 0em;
+  flex-direction: column;
 
-  .sak-row-left {
-    width: 130px;
+  flex-grow: 1;
+  margin: 0.25em 0;
 
-    .sak-etikett {
-      padding: 2px 8px;
-      width: 100%;
+  .sak-lenke {
+    border-bottom: none;
+    //color: inherit;
+    &:not(:hover) {
+      color: inherit;
     }
-  }
-
-  .sak-row-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    flex-grow: 1;
-    margin-left: 0.5em;
-
-    a {
-      display: block;
-      height: 100%;
-      width: 100%;
-      //color: inherit;
-    }
-
     &:hover {
       .sak-chevron {
         left: 6px;
       }
     }
-
-    .sak-chevron {
-      align-self: center;
-
-      left: 0;
-      transition: left 250ms;
+    &#dekorator-bottomborder-overstyring {
+      border-bottom: none;
     }
+  }
+
+  .sak-innhold {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-grow: 1;
+
+    .sak-etikett-div {
+      justify-self: flex-start;
+      flex-grow: 1;
+    }
+
+    .sak-chevron-div {
+      justify-self: flex-end;
+      align-self: center;
+    }
+  }
+
+  .sak-etikett {
+    //float: right;
+    padding: 1px 6px;
+    margin: 0 0.5em;
+  }
+
+  .sak-chevron {
+    left: 0;
+    transition: left 250ms;
   }
 }

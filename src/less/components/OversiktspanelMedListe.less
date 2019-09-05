@@ -2,21 +2,14 @@
 @import (reference) '~nav-frontend-chevron-style/src/mixins';
 @import (reference) '~nav-frontend-paneler-style/src/mixins';
 
-// TODO:  - Bør denne ha samme border som de andre panelene?
-//        (default ser ut til å være lysere farge på "ikke-interaktive" paneler)
-
 .oversiktspanel {
   .panel-mixin();
-  //.panel-focushover-mixin();
-  //.panel-focus-mixin();
-  //.panel-border-mixin();
-  //.panel-interaktiv-mixin();
 
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 
-  //border-color: red;
+  border-color: @navGra60;
 
   &__header {
     display: flex;

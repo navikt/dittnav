@@ -1,8 +1,6 @@
 import React from 'react';
 
-import LenkepanelBase from "nav-frontend-lenkepanel";
-import { Element, Undertekst } from 'nav-frontend-typografi'
-import Lenke from "nav-frontend-lenker";
+import { Undertekst, Undertittel} from 'nav-frontend-typografi'
 import EtikettBase from "nav-frontend-etiketter";
 import HoyreChevron from "nav-frontend-chevron";
 
@@ -11,18 +9,23 @@ import PropTypes from 'prop-types'
 import { FormattedMessage, FormattedDate } from "react-intl";
 
 // TODO:    -lokaliser tekst
-//          -fiks lenke? Hvordan overstyre lenke css
 
 const statusTilEtikettType = {
-    "FERDIG_BEHANDLET": "suksess",
     "UNDER_BEHANDLING": "fokus",
-    "UKJENT": "info",
+    "FERDIG_BEHANDLET": "suksess",
+    "AVBRUTT": "advarsel",
+    "UKJENT": "advarsel",
+    "ELDRE_ENN_28DAGER": "info",
+    "EMPTY": "advarsel",
 };
 
 const statusTilEtikettTekst = {
-    "FERDIG_BEHANDLET": "Ferdig behandlet",
     "UNDER_BEHANDLING": "Under behandling",
+    "FERDIG_BEHANDLET": "Ferdig behandlet",
+    "AVBRUTT": "Avbrutt",
     "UKJENT": "Ukjent status",
+    "ELDRE_ENN_28DAGER": "Eldre enn 28 dager",
+    "EMPTY": "Tom",
 }
 
 class DinesakerSakstema extends React.Component {
@@ -31,24 +34,35 @@ class DinesakerSakstema extends React.Component {
 
         return(
             <div className="sak-container">
-                <div className="sak-row-left">
-                    <EtikettBase type={statusTilEtikettType[status]} className="sak-etikett">
-                        <Undertekst>{statusTilEtikettTekst[status]}</Undertekst>
-                    </EtikettBase>
-                    <Undertekst>
-                        {<FormattedDate
+                <a href={href} className="sak-lenke" id="dekorator-bottomborder-overstyring">
+                    <div className="sak-innhold">
+                        <Undertittel>
+                                {temanavn}
+                        </Undertittel>
+
+                        <div className="sak-etikett-div">
+                            <EtikettBase type={statusTilEtikettType[status]} className="sak-etikett">
+                                <Undertekst>
+                                    {statusTilEtikettTekst[status]}
+                                </Undertekst>
+                            </EtikettBase>
+                        </div>
+
+                        <div className="sak-chevron-div">
+                            <HoyreChevron className="sak-chevron"/>
+                        </div>
+                    </div>
+
+                    <Undertekst className="sak-dato">
+                        {"Sist oppdatert "}
+                        <FormattedDate
                             value={new Date(dato)}
                             year="numeric"
-                            month="short"
+                            month="long"
                             day="numeric"
-                        />}
+                        />
                     </Undertekst>
-                </div>
-
-                <div className="sak-row-right">
-                    <Lenke href={href}>{temanavn}</Lenke>
-                    <HoyreChevron className="sak-chevron"/>
-                </div>
+                </a>
             </div>
         );
     }

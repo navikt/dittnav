@@ -1,4 +1,6 @@
 const getDittNavBaseApiUrl = () => {
+  //return `https://www-q1.nav.no/person`;
+
   const host = window.location.hostname;
   if (host.indexOf('localhost') > -1) {
     return process.env.REACT_APP_DITT_NAV_BASE_API_URL;
