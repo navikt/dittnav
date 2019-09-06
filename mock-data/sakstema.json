@@ -1,17 +1,17 @@
 {
-  "antallSaker": 5,
-  "saker": [
+  "antallSakstema": 5,
+  "sakstemaList": [
     {
       "temanavn": "Tilleggsstønad arbeidssøkere",
-      "status": "FERDIG_BEHANDLET",
-      "sistOppdatert": "2019-07-22",
-      "lenke": "https://tjenester-q1.nav.no/saksoversikt/tema/TSR"
+      "sisteBehandlingStatus": "FERDIG_BEHANDLET",
+      "sisteOppdatering": "2019-07-22",
+      "url": "https://tjenester-q1.nav.no/saksoversikt/tema/TSR"
     },
     {
       "temanavn": "Tiltakspenger",
-      "status": "UNDER_BEHANDLING",
-      "sistOppdatert": "2019-07-22",
-      "lenke": "https://tjenester-q1.nav.no/saksoversikt/tema/IND"
+      "sisteBehandlingStatus": "UNDER_BEHANDLING",
+      "sisteOppdatering": "2019-07-22",
+      "url": "https://tjenester-q1.nav.no/saksoversikt/tema/IND"
     }
   ]
 }

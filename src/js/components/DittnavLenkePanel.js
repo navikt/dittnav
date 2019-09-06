@@ -26,11 +26,11 @@ function makeFooterTekst(numRemainingSaker) {
 
 class DittnavLenkePanel extends React.Component {
   render() {
-    const { antallSaker, saker } = this.props.sakstema;
+    const { antallSakstema, sakstemaList } = this.props.sakstema;
 
-    const sakerValid = saker || [];
-    const visStorSaksoversikt = sakerValid && antallSaker > 0;
-    const numRemainingSaker = antallSaker - sakerValid.length;
+    const sakerValid = sakstemaList || [];
+    const visStorSaksoversikt = sakerValid && antallSakstema > 0;
+    const numRemainingSaker = antallSakstema - sakerValid.length;
     const footer = (
       <div key="footer">
         <hr />
@@ -50,19 +50,19 @@ class DittnavLenkePanel extends React.Component {
                 alt="Dine saker"
                 overskrift={<FormattedMessage id="fliser.dine.saker" />}
                 ikon={<IkonSkilt />}
-                headerLenkeTekst={`Se alle dine saker (${antallSaker})`}
+                headerLenkeTekst={`Se alle dine saker (${antallSakstema})`}
                 headerLenkeHref={saksoversiktUrl}
                 liste={
-                                    sakerValid.map((tema) => (
-                                      <DinesakerSakstema
-                                        key={tema.temanavn}
-                                        dato={tema.sistOppdatert}
-                                        status={tema.status}
-                                        temanavn={tema.temanavn}
-                                        href={tema.lenke}
-                                      />
-                                    )).concat([footer])
-                                }
+                  sakerValid.map((tema) => (
+                    <DinesakerSakstema
+                      key={tema.temanavn}
+                      dato={tema.sisteOppdatering}
+                      status={tema.sisteBehandlingStatus}
+                      temanavn={tema.temanavn}
+                      href={tema.url}
+                    />
+                  )).concat([footer])
+                  }
                 border
               />
             </div>
@@ -106,20 +106,16 @@ class DittnavLenkePanel extends React.Component {
   }
 }
 
-// const IkonListe = () => (
-//   true
-// );
-//
-// const IkonLommebok = () => (
-//   true
-// );
-//
-// const IkonInnboks = () => (
-//   true
-// );
-
 DittnavLenkePanel.propTypes = {
-  sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  sakstema: PropTypes.shape({
+      antallSakstema: PropTypes.number.isRequired,
+      sakstemaList: PropTypes.arrayOf(PropTypes.shape({
+        temanavn: PropTypes.string.isRequired,
+        sisteBehandlingStatus: PropTypes.string.isRequired,
+        sisteOppdatering: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+      })).isRequired,
+}).isRequired,
 };
 
 export default DittnavLenkePanel;
