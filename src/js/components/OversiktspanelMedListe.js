@@ -24,7 +24,7 @@ class OversiktspanelMedListe extends React.Component {
           <Normaltekst className="oversiktspanel__header-lenketekst">
             <a href={headerLenkeHref} className="oversiktspanel__header-lenke" id="dekorator-bottomborder-overstyring">
               {headerLenkeTekst}
-              <HoyreChevron className="oversiktspanel__chevron" />
+              <HoyreChevron id="oversiktspanel__chevron" />
             </a>
           </Normaltekst>
         </div>
