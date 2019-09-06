@@ -108,13 +108,13 @@ class DittnavLenkePanel extends React.Component {
 
 DittnavLenkePanel.propTypes = {
   sakstema: PropTypes.shape({
-      antallSakstema: PropTypes.number.isRequired,
-      sakstemaList: PropTypes.arrayOf(PropTypes.shape({
-        temanavn: PropTypes.string.isRequired,
-        sisteBehandlingStatus: PropTypes.string.isRequired,
-        sisteOppdatering: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      })).isRequired,
+    antallSakstema: PropTypes.number.isRequired,
+    sakstemaList: PropTypes.arrayOf(PropTypes.shape({
+      temanavn: PropTypes.string.isRequired,
+      sisteBehandlingStatus: PropTypes.string.isRequired,
+      sisteOppdatering: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })).isRequired,
 }).isRequired,
 };
 
