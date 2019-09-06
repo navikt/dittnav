@@ -115,7 +115,7 @@ DittnavLenkePanel.propTypes = {
       sisteOppdatering: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
     })).isRequired,
-}).isRequired,
+  }).isRequired,
 };
 
 export default DittnavLenkePanel;
