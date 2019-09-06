@@ -5,7 +5,7 @@ import { FormattedMessage as F } from 'react-intl';
 class FeilMeldinger extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         {this.props.errors.length > 0 && (
           <section className="service-notification">
             <h1 className="typo-element">
@@ -13,7 +13,7 @@ class FeilMeldinger extends Component {
             </h1>
           </section>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

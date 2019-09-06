@@ -16,7 +16,7 @@ const DittnavFliser = () => (
         <IkonPille />
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
-        alt="Mistet jobben"
+        alt="Mistet jobben?"
         overskrift="fliser.mistet.jobben"
         ingress="fliser.mistet.jobben.ingress"
         href={`${Config.dittNav.SERVICES_URL}/veiledearbeidssoker/`}

@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
+import Hendelser from './components/Hendelser';
 
 import '../less/index.less';
 import './polyfill';
+
+import Environments from './Environment';
 
 class App extends Component {
   constructor(props) {
@@ -59,11 +62,13 @@ class App extends Component {
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
+    const erIDev = Environments() === 'DEV';
 
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
+          { erIDev ? <Hendelser /> : null }
           <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema}/>
         </div>
       </main>
