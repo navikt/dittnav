@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi'
 
-import Lenke from "nav-frontend-lenker";
 import HoyreChevron from "nav-frontend-chevron";
 import PanelBase from "nav-frontend-paneler";
 
@@ -22,11 +21,11 @@ class OversiktspanelMedListe extends React.Component {
                             {overskrift}
                         </Undertittel>
                     </div>
-                    <Normaltekst className="oversiktspanel__header-lenke">
-                        <Lenke href={headerLenkeHref}>
+                    <Normaltekst className="oversiktspanel__header-lenketekst">
+                        <a href={headerLenkeHref} className="oversiktspanel__header-lenke" id="dekorator-bottomborder-overstyring">
                             {headerLenkeTekst}
-                        </Lenke>
-                        <HoyreChevron className="oversiktspanel__chevron"/>
+                            <HoyreChevron className="oversiktspanel__chevron"/>
+                        </a>
                     </Normaltekst>
                 </div>
                 { liste && liste.length > 0 ?
@@ -38,7 +37,6 @@ class OversiktspanelMedListe extends React.Component {
                     </>
                     : null
                 }
-
             </PanelBase>
         );
     }
