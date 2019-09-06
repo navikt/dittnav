@@ -54,6 +54,22 @@ const checkAuth = () => {
   });
 };
 
+const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      tekst,
+      link: 'https://localhost/100',
+    }),
+  })
+    .then((r) => r.status)
+    .catch((e) => console.log(`ERROR: ${e}`));
+};
+
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
@@ -66,4 +82,5 @@ export default {
   fetchSaker,
   fetchMeldinger,
   fetchHendelser,
+  sendHendelser: sendJSONAndCheckForErrors,
 };
