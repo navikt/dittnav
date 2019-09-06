@@ -79,7 +79,7 @@ class Home extends Component {
               <PersonInfo personInfo={info.personinfo} />
               { fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <DittnavLenkePanel sakstema={sakstema}/>
+              <DittnavLenkePanel sakstema={sakstema} />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />

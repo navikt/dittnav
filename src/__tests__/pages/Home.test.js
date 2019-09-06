@@ -14,13 +14,13 @@ it('render Home page without props', () => {
 
   const mininnboks = [];
   const sakstema = {
-    antallSaker: 0
+    antallSaker: 0,
   };
 
   const fetching = 4;
 
   const component = ReactTestRenderer
-    .create(wrapIntl(<Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema}/>));
+    .create(wrapIntl(<Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />));
 
   expect(component.toJSON()).toMatchSnapshot();
 });
