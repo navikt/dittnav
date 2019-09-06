@@ -3,7 +3,7 @@
   "sakstemaList": [
     {
       "temanavn": "Tilleggsstønad arbeidssøkere",
-      "sisteBehandlingStatus": "FERDIG_BEHANDLET",
+      "sisteBehandlingStatus": "ELDRE_ENN_28DAGER",
       "sisteOppdatering": "2019-07-22",
       "url": "https://tjenester-q1.nav.no/saksoversikt/tema/TSR"
     },
