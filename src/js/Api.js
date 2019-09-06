@@ -55,8 +55,6 @@ const checkAuth = () => {
 };
 
 const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
-  /* TODO: remove console logging */
-  console.log(`Sending: ${tekst} to ${url}`)
   fetch(url, {
     method: 'POST',
     headers: {
