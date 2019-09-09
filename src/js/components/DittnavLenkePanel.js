@@ -46,7 +46,7 @@ class DittnavLenkePanel extends React.Component {
                 alt="Dine saker"
                 overskrift={<FormattedMessage id="fliser.dine.saker" />}
                 ikon={<IkonSkilt />}
-                headerLenkeTekst={ <FormattedMessage id="saksoversikt.alle.saker" values={{count: antallSakstema}} /> }
+                headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
                 headerLenkeHref={saksoversiktUrl}
                 liste={
                   sakstemaListValid.map((tema) => (
