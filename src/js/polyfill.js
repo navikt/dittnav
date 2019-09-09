@@ -27,20 +27,14 @@ if (typeof Object.assign != 'function') {
   });
 }
 
-if (typeof Object.entries !== 'function') {
-  // Must be writable: true, enumerable: false, configurable: true
-  Object.defineProperty(Object, 'entries', {
-    value: function entries(obj) { // .length of function is 2
-      var ownProps = Object.keys( obj ),
-        i = ownProps.length,
-        resArray = new Array(i); // preallocate the Array
+if (!Object.entries) {
+  Object.entries = function( obj ){
+    var ownProps = Object.keys( obj ),
+      i = ownProps.length,
+      resArray = new Array(i); // preallocate the Array
+    while (i--)
+      resArray[i] = [ownProps[i], obj[ownProps[i]]];
 
-      while (i--) {
-        resArray[i] = [ownProps[i], obj[ownProps[i]]];
-      }
-      return resArray;
-    },
-    writable: true,
-    configurable: true,
-  });
+    return resArray;
+  };
 }
