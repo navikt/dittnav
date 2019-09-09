@@ -31,13 +31,12 @@ if (typeof Object.entries !== 'function') {
   // Must be writable: true, enumerable: false, configurable: true
   Object.defineProperty(Object, 'entries', {
     value: function entries(obj) { // .length of function is 2
-      const ownProps = Object.keys(obj);
-      let i = ownProps.length;
-      const resArray = new Array(i); // preallocate the Array
+      var ownProps = Object.keys( obj ),
+        i = ownProps.length,
+        resArray = new Array(i); // preallocate the Array
 
-      while (i > 0) {
+      while (i--) {
         resArray[i] = [ownProps[i], obj[ownProps[i]]];
-        i -= 1;
       }
       return resArray;
     },
