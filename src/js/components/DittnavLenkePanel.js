@@ -28,9 +28,9 @@ function makeFooterTekst(numRemainingSaker) {
 
 class DittnavLenkePanel extends React.Component {
   render() {
-    const { antallSakstema, sakstemaListe } = this.props.sakstema;
+    const { antallSakstema, sakstemaList } = this.props.sakstema;
 
-    const sakstemaListeValid = sakstemaListe ? sakstemaListe.slice(0, MAX_SAKER) : [];
+    const sakstemaListeValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER) : [];
     const visStorSaksoversikt = antallSakstema > 0;
     const numRemainingSaker = antallSakstema - sakstemaListeValid.length;
 
