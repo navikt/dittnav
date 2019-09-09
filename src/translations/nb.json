@@ -23,7 +23,9 @@
   "fliser.dine.utbetalinger": "Dine utbetalinger",
   "fliser.innboks": "Innboks",
 
+  "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
+  "hendelser.send": "Send hendelse",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",

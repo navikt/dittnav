@@ -13,7 +13,14 @@ import Environments from './Environment';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], sakstema: [], errors: [], fetching: 0 };
+    this.state = {
+      info: {},
+      paabegynteSoknader: null,
+      mininnboks: [],
+      sakstema: { antallSakstema: 0, sakstemaList: [] },
+      errors: [],
+      fetching: 0
+    };
   }
 
   async componentWillMount() {

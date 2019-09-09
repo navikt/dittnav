@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { AlertStripeInfo } from 'nav-frontend-alertstriper';
+import AlertStripe from 'nav-frontend-alertstriper';
+
 import PropTypes from 'prop-types';
+import '../../../less/components/Informasjon.less';
 
 class Informasjon extends Component {
   render() {
     return (
       <div className="Informasjon">
-        <AlertStripeInfo key={this.props.hendelse.id}>{this.props.hendelse.tekst}</AlertStripeInfo>
+        <AlertStripe className="InformasjonStripe" type="info">{this.props.hendelse.tekst}</AlertStripe>
       </div>
     );
   }
@@ -14,7 +16,6 @@ class Informasjon extends Component {
 
 Informasjon.propTypes = {
   hendelse: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     tekst: PropTypes.string.isRequired,
   }),
 };
