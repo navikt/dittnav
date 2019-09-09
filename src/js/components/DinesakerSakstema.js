@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import EtikettBase from 'nav-frontend-etiketter';
 import HoyreChevron from 'nav-frontend-chevron';
 
