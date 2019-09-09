@@ -44,23 +44,18 @@ class DinesakerSakstema extends React.Component {
             </div>
           </div>
 
-
           <div className="sak-dato">
             <Undertekst>
-              {/*<div className="sak-etikett-div">*/}
-              <EtikettBase type={statusTilEtikettType[status]} className="sak-etikett">
-                <Undertekst>
-                  {statusTilEtikettTekst[status]}
-                </Undertekst>
+              <EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">
+                {statusTilEtikettTekst[status]}
               </EtikettBase>
-              {/*</div>*/}
-              {'Sist oppdatert '}
-              <FormattedDate
-                value={new Date(dato)}
-                year="numeric"
-                month="long"
-                day="numeric"
-              />
+                {'Sist oppdatert '}
+                <FormattedDate
+                  value={new Date(dato)}
+                  year="numeric"
+                  month="long"
+                  day="numeric"
+                />
             </Undertekst>
           </div>
         </a>
