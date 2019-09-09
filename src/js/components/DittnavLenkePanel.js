@@ -8,25 +8,24 @@ import { LenkepanelMedIkon, IkonKane, IkonPille, IkonSkilt } from './LenkepanelM
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
-// TODO:    - finpusse layout
-//          - finn svg data for ikoner
+// TODO:    - finn svg data for ikoner
 //          - gjør layout-tilpasning litt mer elegant?
 
 const saksoversiktUrl = `${Config.dittNav.SERVICES_URL}/saksoversikt/`;
 const utbetalingsoversiktUrl = `${Config.dittNav.SERVICES_URL}/utbetalingsoversikt/`;
 const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
 
-const MAX_SAKER = 2;
+const MAX_SAKER_SOM_VISES = 2;
 
 class DittnavLenkePanel extends React.Component {
   render() {
     const { antallSakstema, sakstemaList } = this.props.sakstema;
 
-    const sakstemaListValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER) : [];
+    const sakstemaListValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER_SOM_VISES) : [];
     const visStorSaksoversikt = antallSakstema > 0;
     const numRemainingSaker = antallSakstema - sakstemaListValid.length;
 
-    const footer = (numRemainingSaker <= 0 && sakstemaListValid.length < MAX_SAKER) ? (
+    const footer = (numRemainingSaker <= 0 && sakstemaListValid.length < MAX_SAKER_SOM_VISES) ? (
       <div key="footer">
         <hr />
         <Undertekst>

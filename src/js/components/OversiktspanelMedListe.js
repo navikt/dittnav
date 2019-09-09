@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
-
 import HoyreChevron from 'nav-frontend-chevron';
 import PanelBase from 'nav-frontend-paneler';
 
