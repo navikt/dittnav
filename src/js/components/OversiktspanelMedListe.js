@@ -48,7 +48,7 @@ OversiktspanelMedListe.propTypes = {
   border: PropTypes.bool,
   overskrift: PropTypes.node.isRequired,
   ikon: PropTypes.node.isRequired,
-  headerLenkeTekst: PropTypes.string,
+  headerLenkeTekst: PropTypes.node,
   headerLenkeHref: PropTypes.string,
   liste: PropTypes.arrayOf(PropTypes.node),
 };
