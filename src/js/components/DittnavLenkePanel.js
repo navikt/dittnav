@@ -31,22 +31,22 @@ class DittnavLenkePanel extends React.Component {
       <div key="footer">
         <hr />
         <Undertekst>
-          {'Du har ingen flere saker.'}
+          <FormattedMessage id="saksoversikt.ingen.flere.saker" />
         </Undertekst>
       </div>
     ) : null;
 
     return (
       <div className="dittnav-lenkepanel-top-container">
-        { visStorSaksoversikt
-          ? (
+        { visStorSaksoversikt ?
+          (
             <div className="dittnav-lenkepanel-top-row stor">
               <OversiktspanelMedListe
                 className="dittnav-lenkepanel-top-item"
                 alt="Dine saker"
                 overskrift={<FormattedMessage id="fliser.dine.saker" />}
                 ikon={<IkonSkilt />}
-                headerLenkeTekst={`Se alle dine saker (${antallSakstema})`}
+                headerLenkeTekst=<FormattedMessage id="saksoversikt.alle.saker" values={{count: antallSakstema}} />
                 headerLenkeHref={saksoversiktUrl}
                 liste={
                   sakstemaListValid.map((tema) => (

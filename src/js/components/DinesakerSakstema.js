@@ -5,9 +5,7 @@ import HoyreChevron from 'nav-frontend-chevron';
 
 import PropTypes from 'prop-types';
 
-import { FormattedDate } from 'react-intl';
-
-// TODO:    -lokaliser tekst
+import { FormattedDate, FormattedMessage } from 'react-intl';
 
 const statusTilEtikettType = {
   UNDER_BEHANDLING: 'fokus',
@@ -19,12 +17,12 @@ const statusTilEtikettType = {
 };
 
 const statusTilEtikettTekst = {
-  UNDER_BEHANDLING: 'Under behandling',
-  FERDIG_BEHANDLET: 'Ferdig behandlet',
-  AVBRUTT: 'Avbrutt',
-  UKJENT: 'Ukjent status',
-  ELDRE_ENN_28DAGER: 'Eldre enn 28 dager',
-  EMPTY: 'Tom',
+  UNDER_BEHANDLING: 'sakstema.under.behandling',
+  FERDIG_BEHANDLET: 'sakstema.ferdig.behandlet',
+  AVBRUTT: 'sakstema.avbrutt',
+  UKJENT: 'sakstema.ukjent',
+  ELDRE_ENN_28DAGER: 'sakstema.eldreenn28',
+  EMPTY: 'sakstema.empty',
 };
 
 class DinesakerSakstema extends React.Component {
@@ -45,10 +43,11 @@ class DinesakerSakstema extends React.Component {
 
           <div>
             <EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">
-              {statusTilEtikettTekst[status]}
+              <FormattedMessage id={statusTilEtikettTekst[status]} />
             </EtikettBase>
             <span className="typo-undertekst">
-              {'Sist oppdatert '}
+              <FormattedMessage id='sakstema.sist.oppdatert' />
+              {' '}
               <FormattedDate
                 value={new Date(dato)}
                 year="numeric"

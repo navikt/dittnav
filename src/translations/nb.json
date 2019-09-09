@@ -95,6 +95,16 @@
   "error.person.info": "Det skjedde en feil under henting av personinfo",
   "error.paabegynte": "Det skjedde en feil under henting av saker",
   "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks",
-  "error.baksystemer": "Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon"
+  "error.baksystemer": "Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon",
 
+  "sakstema.sist.oppdatert": "Sist oppdatert",
+  "sakstema.under.behandling": "Under behandling",
+  "sakstema.ferdig.behandlet": "Ferdig behandlet",
+  "sakstema.avbrutt": "Avbrutt",
+  "sakstema.ukjent": "Ukjent status",
+  "sakstema.eldreenn28": "Eldre enn 28 dager",
+  "sakstema.empty": "Tom",
+
+  "saksoversikt.ingen.flere.saker": "Du har ingen flere saker.",
+  "saksoversikt.alle.saker": "Se alle dine saker ({count})"
 }
