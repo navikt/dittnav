@@ -11,7 +11,6 @@ import DinesakerSakstema from './DinesakerSakstema';
 // TODO:    - finpusse layout
 //          - finn svg data for ikoner
 //          - gjør layout-tilpasning litt mer elegant?
-//          - lokaliser tekst
 
 const saksoversiktUrl = `${Config.dittNav.SERVICES_URL}/saksoversikt/`;
 const utbetalingsoversiktUrl = `${Config.dittNav.SERVICES_URL}/utbetalingsoversikt/`;

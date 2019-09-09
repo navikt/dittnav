@@ -41,7 +41,7 @@ class DinesakerSakstema extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="sak-dato">
             <EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">
               <FormattedMessage id={statusTilEtikettTekst[status]} />
             </EtikettBase>
