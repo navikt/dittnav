@@ -19,29 +19,22 @@ const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
 
 const MAX_SAKER = 2;
 
-function makeFooterTekst(numRemainingSaker) {
-  if (numRemainingSaker <= 0) {
-    return 'Du har ingen flere aktive saker';
-  }
-  return <a href={`${saksoversiktUrl}#saksoversikt`}>{`Du har ${numRemainingSaker} flere aktive saker`}</a>;
-}
-
 class DittnavLenkePanel extends React.Component {
   render() {
     const { antallSakstema, sakstemaList } = this.props.sakstema;
 
-    const sakstemaListeValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER) : [];
+    const sakstemaListValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER) : [];
     const visStorSaksoversikt = antallSakstema > 0;
-    const numRemainingSaker = antallSakstema - sakstemaListeValid.length;
+    const numRemainingSaker = antallSakstema - sakstemaListValid.length;
 
-    const footer = (
+    const footer = (numRemainingSaker <= 0 && sakstemaListValid.length < MAX_SAKER) ? (
       <div key="footer">
         <hr />
         <Undertekst>
-          {makeFooterTekst(numRemainingSaker)}
+          {'Du har ingen flere saker.'}
         </Undertekst>
       </div>
-    );
+    ) : null;
 
     return (
       <div className="dittnav-lenkepanel-top-container">
@@ -56,7 +49,7 @@ class DittnavLenkePanel extends React.Component {
                 headerLenkeTekst={`Se alle dine saker (${antallSakstema})`}
                 headerLenkeHref={saksoversiktUrl}
                 liste={
-                  sakstemaListeValid.map((tema) => (
+                  sakstemaListValid.map((tema) => (
                     <DinesakerSakstema
                       key={tema.temanavn}
                       dato={tema.sisteOppdatering}
