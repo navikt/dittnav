@@ -49,13 +49,13 @@ class DinesakerSakstema extends React.Component {
               {statusTilEtikettTekst[status]}
             </EtikettBase>
             <span className="typo-undertekst">
-                {'Sist oppdatert '}
-                <FormattedDate
-                  value={new Date(dato)}
-                  year="numeric"
-                  month="long"
-                  day="numeric"
-                />
+              {'Sist oppdatert '}
+              <FormattedDate
+                value={new Date(dato)}
+                year="numeric"
+                month="long"
+                day="numeric"
+              />
             </span>
           </div>
         </a>
