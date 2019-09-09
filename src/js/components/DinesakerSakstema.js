@@ -36,19 +36,19 @@ class DinesakerSakstema extends React.Component {
       <div className="sak-container">
         <a href={href} className="sak-lenke" id="dekorator-bottomborder-overstyring">
           <div className="sak-innhold">
-            <Undertittel>
+            <span className="typo-undertittel">
               {temanavn}
-            </Undertittel>
+            </span>
             <div className="sak-chevron-div">
               <HoyreChevron className="sak-chevron" />
             </div>
           </div>
 
-          <div className="sak-dato">
-            <Undertekst>
-              <EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">
-                {statusTilEtikettTekst[status]}
-              </EtikettBase>
+          <div>
+            <EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">
+              {statusTilEtikettTekst[status]}
+            </EtikettBase>
+            <span className="typo-undertekst">
                 {'Sist oppdatert '}
                 <FormattedDate
                   value={new Date(dato)}
@@ -56,7 +56,7 @@ class DinesakerSakstema extends React.Component {
                   month="long"
                   day="numeric"
                 />
-            </Undertekst>
+            </span>
           </div>
         </a>
       </div>
