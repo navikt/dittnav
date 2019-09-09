@@ -3,13 +3,12 @@
 
 .oversiktspanel {
   .panel-mixin();
-  .panel-border-mixin();
 
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 
-  border-color: @navGra60;
+  border-color: @navGra60 !important;
 
   &__header {
     display: flex;
@@ -27,7 +26,9 @@
 
   &__header-lenke {
     &:hover {
+      text-decoration: underline;
       #oversiktspanel__chevron {
+        color: initial;
         left: 6px;
       }
     }
