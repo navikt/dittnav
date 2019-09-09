@@ -46,7 +46,7 @@ class DinesakerSakstema extends React.Component {
               <FormattedMessage id={statusTilEtikettTekst[status]} />
             </EtikettBase>
             <span className="typo-undertekst">
-              <FormattedMessage id='sakstema.sist.oppdatert' />
+              <FormattedMessage id="sakstema.sist.oppdatert" />
               {' '}
               <FormattedDate
                 value={new Date(dato)}

@@ -38,15 +38,15 @@ class DittnavLenkePanel extends React.Component {
 
     return (
       <div className="dittnav-lenkepanel-top-container">
-        { visStorSaksoversikt ?
-          (
+        { visStorSaksoversikt
+          ? (
             <div className="dittnav-lenkepanel-top-row stor">
               <OversiktspanelMedListe
                 className="dittnav-lenkepanel-top-item"
                 alt="Dine saker"
                 overskrift={<FormattedMessage id="fliser.dine.saker" />}
                 ikon={<IkonSkilt />}
-                headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{count: antallSakstema}} />}
+                headerLenkeTekst={ <FormattedMessage id="saksoversikt.alle.saker" values={{count: antallSakstema}} /> }
                 headerLenkeHref={saksoversiktUrl}
                 liste={
                   sakstemaListValid.map((tema) => (
