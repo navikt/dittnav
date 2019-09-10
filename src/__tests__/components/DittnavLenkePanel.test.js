@@ -1,6 +1,6 @@
 import * as React from 'react';
-import wrapIntl from "js/IntlTestHelper";
-import DittnavLenkePanel from "js/components/DittnavLenkePanel";
+import wrapIntl from 'js/IntlTestHelper';
+import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -8,16 +8,16 @@ const sakstemaMedSaker = {
   antallSakstema: 5,
   sakstemaList: [
     {
-      temanavn: "Tema 1",
-      sisteBehandlingStatus: "FERDIG_BEHANDLET",
-      sisteOppdatering: "2019-07-22",
-      url: "#"
+      temanavn: 'Tema 1',
+      sisteBehandlingStatus: 'FERDIG_BEHANDLET',
+      sisteOppdatering: '2019-07-22',
+      url: '#',
     },
     {
-      temanavn: "Tema 2",
-      sisteBehandlingStatus: "UNDER_BEHANDLING",
-      sisteOppdatering: "2019-07-23",
-      url: "#"
+      temanavn: 'Tema 2',
+      sisteBehandlingStatus: 'UNDER_BEHANDLING',
+      sisteOppdatering: '2019-07-23',
+      url: '#',
     },
   ],
 };

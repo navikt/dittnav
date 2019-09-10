@@ -81,20 +81,16 @@ exports[`Snapshot test med saker 1`] = `
             id="dekorator-bottomborder-overstyring"
           >
             <div
-              className="sak-innhold"
+              className="sak-temanavn"
             >
               <span
                 className="typo-undertittel"
               >
                 Tema 1
               </span>
-              <div
-                className="sak-chevron-div"
-              >
-                <i
-                  className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
-                />
-              </div>
+              <i
+                className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
+              />
             </div>
             <div
               className="sak-dato"
@@ -133,20 +129,16 @@ exports[`Snapshot test med saker 1`] = `
             id="dekorator-bottomborder-overstyring"
           >
             <div
-              className="sak-innhold"
+              className="sak-temanavn"
             >
               <span
                 className="typo-undertittel"
               >
                 Tema 2
               </span>
-              <div
-                className="sak-chevron-div"
-              >
-                <i
-                  className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
-                />
-              </div>
+              <i
+                className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
+              />
             </div>
             <div
               className="sak-dato"

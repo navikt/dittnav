@@ -32,13 +32,11 @@ class DinesakerSakstema extends React.Component {
     return (
       <div className="sak-container">
         <a href={href} className="sak-lenke" id="dekorator-bottomborder-overstyring">
-          <div className="sak-innhold">
+          <div className="sak-temanavn">
             <span className="typo-undertittel">
               {temanavn}
             </span>
-            <div className="sak-chevron-div">
-              <HoyreChevron className="sak-chevron" />
-            </div>
+            <HoyreChevron className="sak-chevron" />
           </div>
 
           <div className="sak-dato">

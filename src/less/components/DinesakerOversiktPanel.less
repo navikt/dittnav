@@ -1,7 +1,5 @@
 @import (reference) '~nav-frontend-core/less/_variabler';
 
-// TODO:  - gjør responsivt
-
 .dittnav-lenkepanel-top-container {
   display: flex;
   flex-direction: row;
@@ -12,7 +10,6 @@
     flex-direction: column;
     flex: 1 1 0;
     align-content: space-between;
-    align-items: stretch;
 
     &.stor {
       flex-grow: 2;
@@ -37,7 +34,6 @@
 
 .dittnav-lenkepanel-top-item {
   flex: 1 1 0;
-
   margin-bottom: 1em;
   margin-right: 1em;
 
@@ -57,13 +53,12 @@
 .sak-container {
   display: flex;
   flex-direction: column;
-
   flex-grow: 1;
   margin: 0.4em 0;
 
   .sak-lenke {
     &:hover {
-      .sak-innhold {
+      .sak-temanavn {
         text-decoration: underline;
       }
       .sak-dato {
@@ -82,31 +77,20 @@
     }
   }
 
-  .sak-innhold {
+  .sak-temanavn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     flex-grow: 1;
-
-    .sak-etikett-div {
-      justify-self: flex-start;
-      flex-grow: 1;
-    }
-
-    .sak-chevron-div {
-      justify-self: flex-end;
-      align-self: center;
-    }
   }
 
   .sak-etikett {
-    //float: right;
     padding: 1px 6px;
-    margin-right: 0.3em;
+    margin-right: 0.25em;
   }
 
   .sak-chevron {
+    align-self: center;
     left: 0;
     transition: left 250ms;
   }
