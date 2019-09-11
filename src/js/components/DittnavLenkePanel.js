@@ -18,14 +18,14 @@ const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
 
 class DittnavLenkePanel extends React.Component {
 
-  makeSaksoversiktPanel(sakstemalist) {
+  makeSaksoversiktPanel(sakstemaList) {
     const alt = "Dine saker";
     const overskrift = "fliser.dine.saker";
 
-    if (sakstemalist) {
+    if (sakstemaList) {
       const { antallSakstema } = this.props.sakstema;
-      const numRemainingSaker = antallSakstema - sakstemalist.length;
-      const showFooter = numRemainingSaker <= 0 && sakstemalist.length < MAX_SAKER_SOM_VISES;
+      const numRemainingSaker = antallSakstema - sakstemaList.length;
+      const showFooter = numRemainingSaker <= 0 && sakstemaList.length < MAX_SAKER_SOM_VISES;
 
       const footer = showFooter ?
         <div key="footer">
@@ -35,7 +35,7 @@ class DittnavLenkePanel extends React.Component {
           </Undertekst>
         </div> : null;
 
-      const liste = sakstemalist.map((tema) => (
+      const liste = sakstemaList.map((tema) => (
         <DinesakerSakstema
           key={tema.temanavn}
           dato={tema.sisteOppdatering}
@@ -75,7 +75,8 @@ class DittnavLenkePanel extends React.Component {
 
   render() {
     const { sakstemaList } = this.props.sakstema;
-    const sakstemaListPruned = sakstemaList ? sakstemaList.slice(0, MAX_SAKER_SOM_VISES) : null;
+    const sakstemaListPruned = sakstemaList && sakstemaList.length > 0
+      ? sakstemaList.slice(0, MAX_SAKER_SOM_VISES) : null;
     const saksoversiktPanel = this.makeSaksoversiktPanel(sakstemaListPruned);
 
     return (

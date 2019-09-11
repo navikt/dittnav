@@ -5,177 +5,174 @@ exports[`Snapshot test med saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="dittnav-lenkepanel-top-row stor"
+    className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
   >
     <div
-      className="panel oversiktspanel dittnav-lenkepanel-top-item panel--border"
+      className="oversiktspanel__header"
     >
       <div
-        className="oversiktspanel__header"
+        className="oversiktspanel__overskrift"
       >
         <div
-          className="oversiktspanel__overskrift"
+          className="lenkepanel__ikon"
+        >
+          <svg
+            fill="none"
+            height="48"
+            viewBox="0 0 177 177"
+            width="48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93 164H85V17C85.5 16 87 14 89 14C91 14 92.6667 16 93 17V164Z"
+              fill="#6D655F"
+            />
+            <path
+              d="M144 130V85H31L15 107.5L31 130H144Z"
+              fill="#90C9A7"
+            />
+            <path
+              d="M34 74V29H147L163 51.5L147 74H34Z"
+              fill="#FFB45B"
+            />
+          </svg>
+        </div>
+        <h2
+          className="typo-undertittel"
+        >
+          <span>
+            Dine saker
+          </span>
+        </h2>
+      </div>
+      <p
+        className="typo-normal oversiktspanel__header-lenketekst"
+      >
+        <a
+          className="oversiktspanel__header-lenke"
+          href="http://localhost:9222/saksoversikt/"
+          id="dekorator-bottomborder-overstyring"
+        >
+          <span>
+            Se alle dine saker (5)
+          </span>
+          <i
+            className="nav-frontend-chevron chevronboks chevron--hoyre"
+            id="oversiktspanel__chevron"
+          />
+        </a>
+      </p>
+    </div>
+    <div>
+      <hr />
+    </div>
+    <div
+      className="oversiktspanel__liste"
+    >
+      <div
+        className="sak-container"
+      >
+        <a
+          className="sak-lenke"
+          href="#"
+          id="dekorator-bottomborder-overstyring"
         >
           <div
-            className="lenkepanel__ikon"
+            className="sak-temanavn"
           >
-            <svg
-              fill="none"
-              height="48"
-              viewBox="0 0 177 177"
-              width="48"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              className="typo-undertittel"
             >
-              <path
-                d="M93 164H85V17C85.5 16 87 14 89 14C91 14 92.6667 16 93 17V164Z"
-                fill="#6D655F"
-              />
-              <path
-                d="M144 130V85H31L15 107.5L31 130H144Z"
-                fill="#90C9A7"
-              />
-              <path
-                d="M34 74V29H147L163 51.5L147 74H34Z"
-                fill="#FFB45B"
-              />
-            </svg>
-          </div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Dine saker
-            </span>
-          </h2>
-        </div>
-        <p
-          className="typo-normal oversiktspanel__header-lenketekst"
-        >
-          <a
-            className="oversiktspanel__header-lenke"
-            href="http://localhost:9222/saksoversikt/"
-            id="dekorator-bottomborder-overstyring"
-          >
-            <span>
-              Se alle dine saker (5)
+              Tema 1
             </span>
             <i
-              className="nav-frontend-chevron chevronboks chevron--hoyre"
-              id="oversiktspanel__chevron"
+              className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
-          </a>
-        </p>
-      </div>
-      <div>
-        <hr />
+          </div>
+          <div
+            className="sak-dato"
+          >
+            <div
+              className="etikett sak-etikett etikett--suksess"
+            >
+              <span
+                className="typo-undertekst"
+              >
+                <span>
+                  Ferdig behandlet
+                </span>
+              </span>
+            </div>
+            <span
+              className="typo-undertekst"
+            >
+              <span>
+                Sist oppdatert
+              </span>
+               
+              <span>
+                2019 M07 22
+              </span>
+            </span>
+          </div>
+        </a>
       </div>
       <div
-        className="oversiktspanel__liste"
+        className="sak-container"
       >
-        <div
-          className="sak-container"
+        <a
+          className="sak-lenke"
+          href="#"
+          id="dekorator-bottomborder-overstyring"
         >
-          <a
-            className="sak-lenke"
-            href="#"
-            id="dekorator-bottomborder-overstyring"
+          <div
+            className="sak-temanavn"
+          >
+            <span
+              className="typo-undertittel"
+            >
+              Tema 2
+            </span>
+            <i
+              className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
+            />
+          </div>
+          <div
+            className="sak-dato"
           >
             <div
-              className="sak-temanavn"
+              className="etikett sak-etikett etikett--fokus"
             >
-              <span
-                className="typo-undertittel"
-              >
-                Tema 1
-              </span>
-              <i
-                className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
-              />
-            </div>
-            <div
-              className="sak-dato"
-            >
-              <div
-                className="etikett sak-etikett etikett--suksess"
-              >
-                <span
-                  className="typo-undertekst"
-                >
-                  <span>
-                    Ferdig behandlet
-                  </span>
-                </span>
-              </div>
               <span
                 className="typo-undertekst"
               >
                 <span>
-                  Sist oppdatert
-                </span>
-                 
-                <span>
-                  2019 M07 22
+                  Under behandling
                 </span>
               </span>
             </div>
-          </a>
-        </div>
-        <div
-          className="sak-container"
-        >
-          <a
-            className="sak-lenke"
-            href="#"
-            id="dekorator-bottomborder-overstyring"
-          >
-            <div
-              className="sak-temanavn"
+            <span
+              className="typo-undertekst"
             >
-              <span
-                className="typo-undertittel"
-              >
-                Tema 2
+              <span>
+                Sist oppdatert
               </span>
-              <i
-                className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
-              />
-            </div>
-            <div
-              className="sak-dato"
-            >
-              <div
-                className="etikett sak-etikett etikett--fokus"
-              >
-                <span
-                  className="typo-undertekst"
-                >
-                  <span>
-                    Under behandling
-                  </span>
-                </span>
-              </div>
-              <span
-                className="typo-undertekst"
-              >
-                <span>
-                  Sist oppdatert
-                </span>
-                 
-                <span>
-                  2019 M07 23
-                </span>
+               
+              <span>
+                2019 M07 23
               </span>
-            </div>
-          </a>
-        </div>
+            </span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
   <div
-    className="dittnav-lenkepanel-top-row"
+    className="dittnav-lenkepanel-smaa"
+    id="cols-layout"
   >
     <a
-      className="lenkepanel dittnav-lenkepanel-top-item last lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
       onClick={null}
     >
@@ -226,7 +223,7 @@ exports[`Snapshot test med saker 1`] = `
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-top-item last lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-smaa-item last lenkepanel--border"
       href="http://localhost:9222/mininnboks/"
       onClick={null}
     >
@@ -279,15 +276,13 @@ exports[`Snapshot test uten saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="dittnav-lenkepanel-top-col"
+    className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
   >
-    <a
-      className="lenkepanel dittnav-lenkepanel-top-item lenkepanel--border"
-      href="http://localhost:9222/saksoversikt/"
-      onClick={null}
+    <div
+      className="oversiktspanel__header"
     >
       <div
-        className="lenkepanel__innhold lenkepanel__heading"
+        className="oversiktspanel__overskrift"
       >
         <div
           className="lenkepanel__ikon"
@@ -313,23 +308,56 @@ exports[`Snapshot test uten saker 1`] = `
             />
           </svg>
         </div>
-        <div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Dine saker
-            </span>
-          </h2>
-          
-        </div>
+        <h2
+          className="typo-undertittel"
+        >
+          <span>
+            Dine saker
+          </span>
+        </h2>
       </div>
-      <span
-        className="lenkepanel__indikator"
-      />
-    </a>
+      <p
+        className="typo-normal oversiktspanel__header-lenketekst"
+      >
+        <a
+          className="oversiktspanel__header-lenke"
+          href="http://localhost:9222/saksoversikt/"
+          id="dekorator-bottomborder-overstyring"
+        >
+          <span>
+            Se alle dine saker (0)
+          </span>
+          <i
+            className="nav-frontend-chevron chevronboks chevron--hoyre"
+            id="oversiktspanel__chevron"
+          />
+        </a>
+      </p>
+    </div>
+    <div>
+      <hr />
+    </div>
+    <div
+      className="oversiktspanel__liste"
+    >
+      <div>
+        <hr />
+        <p
+          className="typo-undertekst"
+        >
+          <span>
+            Du har ingen flere saker.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="dittnav-lenkepanel-smaa"
+    id="cols-layout"
+  >
     <a
-      className="lenkepanel dittnav-lenkepanel-top-item lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
       onClick={null}
     >
@@ -380,7 +408,7 @@ exports[`Snapshot test uten saker 1`] = `
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-top-item last lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-smaa-item last lenkepanel--border"
       href="http://localhost:9222/mininnboks/"
       onClick={null}
     >

@@ -52,10 +52,11 @@ exports[`render Home page without props 1`] = `
         className="dittnav-lenkepanel-top-container"
       >
         <div
-          className="dittnav-lenkepanel-top-col"
+          className="dittnav-lenkepanel-smaa"
+          id={null}
         >
           <a
-            className="lenkepanel dittnav-lenkepanel-top-item lenkepanel--border"
+            className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
             href="http://localhost:9222/saksoversikt/"
             onClick={null}
           >
@@ -102,7 +103,7 @@ exports[`render Home page without props 1`] = `
             />
           </a>
           <a
-            className="lenkepanel dittnav-lenkepanel-top-item lenkepanel--border"
+            className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
             href="http://localhost:9222/utbetalingsoversikt/"
             onClick={null}
           >
@@ -153,7 +154,7 @@ exports[`render Home page without props 1`] = `
             />
           </a>
           <a
-            className="lenkepanel dittnav-lenkepanel-top-item last lenkepanel--border"
+            className="lenkepanel dittnav-lenkepanel-smaa-item last lenkepanel--border"
             href="http://localhost:9222/mininnboks/"
             onClick={null}
           >
