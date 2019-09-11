@@ -9,78 +9,85 @@ import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
 // TODO:    - finn svg data for ikoner
-//          - gjør layout-tilpasning litt mer elegant?
+
+const MAX_SAKER_SOM_VISES = 2;
 
 const saksoversiktUrl = `${Config.dittNav.SERVICES_URL}/saksoversikt/`;
 const utbetalingsoversiktUrl = `${Config.dittNav.SERVICES_URL}/utbetalingsoversikt/`;
 const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
 
-const MAX_SAKER_SOM_VISES = 2;
-
 class DittnavLenkePanel extends React.Component {
+
+  makeSaksoversiktPanel(sakstemalist) {
+    const alt = "Dine saker";
+    const overskrift = "fliser.dine.saker";
+
+    if (sakstemalist) {
+      const { antallSakstema } = this.props.sakstema;
+      const numRemainingSaker = antallSakstema - sakstemalist.length;
+      const showFooter = numRemainingSaker <= 0 && sakstemalist.length < MAX_SAKER_SOM_VISES;
+
+      const footer = showFooter ?
+        <div key="footer">
+          <hr />
+          <Undertekst>
+            <FormattedMessage id="saksoversikt.ingen.flere.saker" />
+          </Undertekst>
+        </div> : null;
+
+      const liste = sakstemalist.map((tema) => (
+        <DinesakerSakstema
+          key={tema.temanavn}
+          dato={tema.sisteOppdatering}
+          status={tema.sisteBehandlingStatus}
+          temanavn={tema.temanavn}
+          href={tema.url}
+        />
+      )).concat(footer);
+
+      return (
+        <OversiktspanelMedListe
+          className="dittnav-lenkepanel-stor"
+          alt={alt}
+          overskrift={<FormattedMessage id={overskrift} />}
+          ikon={<IkonSkilt />}
+          headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
+          headerLenkeHref={saksoversiktUrl}
+          border
+          liste={liste}
+        />
+        );
+    }
+    else {
+      return (
+        <LenkepanelMedIkon
+          className="dittnav-lenkepanel-smaa-item"
+          alt={alt}
+          overskrift={overskrift}
+          ingress=""
+          href={saksoversiktUrl}
+        >
+          <IkonSkilt />
+        </LenkepanelMedIkon>
+      );
+    }
+  }
+
   render() {
-    const { antallSakstema, sakstemaList } = this.props.sakstema;
-
-    const sakstemaListValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER_SOM_VISES) : [];
-    const visStorSaksoversikt = antallSakstema > 0;
-    const numRemainingSaker = antallSakstema - sakstemaListValid.length;
-
-    const footer = (numRemainingSaker <= 0 && sakstemaListValid.length < MAX_SAKER_SOM_VISES) ? (
-      <div key="footer">
-        <hr />
-        <Undertekst>
-          <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-        </Undertekst>
-      </div>
-    ) : null;
+    const { sakstemaList } = this.props.sakstema;
+    const sakstemaListValid = sakstemaList ? sakstemaList.slice(0, MAX_SAKER_SOM_VISES) : null;
+    const saksoversiktPanel = this.makeSaksoversiktPanel(sakstemaListValid);
 
     return (
       <div className="dittnav-lenkepanel-top-container">
-        { visStorSaksoversikt
-          ? (
-            <div className="dittnav-lenkepanel-top-row stor">
-              <OversiktspanelMedListe
-                className="dittnav-lenkepanel-top-item"
-                alt="Dine saker"
-                overskrift={<FormattedMessage id="fliser.dine.saker" />}
-                ikon={<IkonSkilt />}
-                headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
-                headerLenkeHref={saksoversiktUrl}
-                liste={
-                  sakstemaListValid.map((tema) => (
-                    <DinesakerSakstema
-                      key={tema.temanavn}
-                      dato={tema.sisteOppdatering}
-                      status={tema.sisteBehandlingStatus}
-                      temanavn={tema.temanavn}
-                      href={tema.url}
-                    />
-                  )).concat([footer])
-                  }
-                border
-              />
-            </div>
-          )
-          : null }
-        <div className={visStorSaksoversikt ? 'dittnav-lenkepanel-top-row' : 'dittnav-lenkepanel-top-col'}>
-          { !visStorSaksoversikt
-            ? (
-              <LenkepanelMedIkon
-                alt="Dine saker"
-                overskrift="fliser.dine.saker"
-                ingress=""
-                className="dittnav-lenkepanel-top-item"
-                href={saksoversiktUrl}
-              >
-                <IkonSkilt />
-              </LenkepanelMedIkon>
-            )
-            : null }
+        { sakstemaListValid ? saksoversiktPanel : null }
+        <div className="dittnav-lenkepanel-smaa" id={ sakstemaListValid ? "cols-layout" : null }>
+          { !sakstemaListValid ? saksoversiktPanel : null }
           <LenkepanelMedIkon
             alt="Utbetalinger"
             overskrift="fliser.dine.utbetalinger"
             ingress=""
-            className={`dittnav-lenkepanel-top-item${visStorSaksoversikt ? ' last' : ''}`}
+            className={`dittnav-lenkepanel-smaa-item ${sakstemaListValid ? 'last' : ''}`}
             href={utbetalingsoversiktUrl}
           >
             <IkonPille />
@@ -89,7 +96,7 @@ class DittnavLenkePanel extends React.Component {
             alt="Innboks"
             overskrift="fliser.innboks"
             ingress=""
-            className="dittnav-lenkepanel-top-item last"
+            className="dittnav-lenkepanel-smaa-item last"
             href={innboksUrl}
           >
             <IkonKane />
