@@ -17,23 +17,24 @@ const utbetalingsoversiktUrl = `${Config.dittNav.SERVICES_URL}/utbetalingsoversi
 const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
 
 class DittnavLenkePanel extends React.Component {
-
   makeSaksoversiktPanel(sakstemaList) {
-    const alt = "Dine saker";
-    const overskrift = "fliser.dine.saker";
+    const alt = 'Dine saker';
+    const overskrift = 'fliser.dine.saker';
 
     if (sakstemaList) {
       const { antallSakstema } = this.props.sakstema;
       const numRemainingSaker = antallSakstema - sakstemaList.length;
       const showFooter = numRemainingSaker <= 0 && sakstemaList.length < MAX_SAKER_SOM_VISES;
 
-      const footer = showFooter ?
-        <div key="footer">
-          <hr />
-          <Undertekst>
-            <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-          </Undertekst>
-        </div> : null;
+      const footer = showFooter
+        ? (
+          <div key="footer">
+            <hr />
+            <Undertekst>
+              <FormattedMessage id="saksoversikt.ingen.flere.saker" />
+            </Undertekst>
+          </div>)
+        : null;
 
       const liste = sakstemaList.map((tema) => (
         <DinesakerSakstema
@@ -56,21 +57,19 @@ class DittnavLenkePanel extends React.Component {
           border
           liste={liste}
         />
-        );
-    }
-    else {
-      return (
-        <LenkepanelMedIkon
-          className="dittnav-lenkepanel-smaa-item"
-          alt={alt}
-          overskrift={overskrift}
-          ingress=""
-          href={saksoversiktUrl}
-        >
-          <IkonSkilt />
-        </LenkepanelMedIkon>
       );
     }
+    return (
+      <LenkepanelMedIkon
+        className="dittnav-lenkepanel-smaa-item"
+        alt={alt}
+        overskrift={overskrift}
+        ingress=""
+        href={saksoversiktUrl}
+      >
+        <IkonSkilt />
+      </LenkepanelMedIkon>
+    );
   }
 
   render() {
@@ -82,7 +81,7 @@ class DittnavLenkePanel extends React.Component {
     return (
       <div className="dittnav-lenkepanel-top-container">
         { sakstemaListPruned ? saksoversiktPanel : null }
-        <div className="dittnav-lenkepanel-smaa" id={ sakstemaListPruned ? "cols-layout" : null }>
+        <div className="dittnav-lenkepanel-smaa" id={sakstemaListPruned ? 'cols-layout' : null}>
           { !sakstemaListPruned ? saksoversiktPanel : null }
           <LenkepanelMedIkon
             alt="Utbetalinger"

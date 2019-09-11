@@ -276,13 +276,16 @@ exports[`Snapshot test uten saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
+    className="dittnav-lenkepanel-smaa"
+    id={null}
   >
-    <div
-      className="oversiktspanel__header"
+    <a
+      className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
+      href="http://localhost:9222/saksoversikt/"
+      onClick={null}
     >
       <div
-        className="oversiktspanel__overskrift"
+        className="lenkepanel__innhold lenkepanel__heading"
       >
         <div
           className="lenkepanel__ikon"
@@ -308,54 +311,21 @@ exports[`Snapshot test uten saker 1`] = `
             />
           </svg>
         </div>
-        <h2
-          className="typo-undertittel"
-        >
-          <span>
-            Dine saker
-          </span>
-        </h2>
+        <div>
+          <h2
+            className="typo-undertittel"
+          >
+            <span>
+              Dine saker
+            </span>
+          </h2>
+          
+        </div>
       </div>
-      <p
-        className="typo-normal oversiktspanel__header-lenketekst"
-      >
-        <a
-          className="oversiktspanel__header-lenke"
-          href="http://localhost:9222/saksoversikt/"
-          id="dekorator-bottomborder-overstyring"
-        >
-          <span>
-            Se alle dine saker (0)
-          </span>
-          <i
-            className="nav-frontend-chevron chevronboks chevron--hoyre"
-            id="oversiktspanel__chevron"
-          />
-        </a>
-      </p>
-    </div>
-    <div>
-      <hr />
-    </div>
-    <div
-      className="oversiktspanel__liste"
-    >
-      <div>
-        <hr />
-        <p
-          className="typo-undertekst"
-        >
-          <span>
-            Du har ingen flere saker.
-          </span>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    className="dittnav-lenkepanel-smaa"
-    id="cols-layout"
-  >
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
     <a
       className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
