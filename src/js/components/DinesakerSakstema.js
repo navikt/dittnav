@@ -1,11 +1,8 @@
 import React from 'react';
-
-import EtikettBase from 'nav-frontend-etiketter';
-import HoyreChevron from 'nav-frontend-chevron';
-
+import { FormattedDate, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import { FormattedDate, FormattedMessage } from 'react-intl';
+import HoyreChevron from 'nav-frontend-chevron';
 
 // const statusTilEtikettType = {
 //   UNDER_BEHANDLING: 'fokus',
@@ -40,9 +37,6 @@ class DinesakerSakstema extends React.Component {
           </div>
 
           <div className="sak-dato">
-            {/*<EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">*/}
-            {/*  <FormattedMessage id={statusTilEtikettTekst[status]} />*/}
-            {/*</EtikettBase>*/}
             <span className="typo-undertekst">
               <FormattedMessage id="sakstema.sist.oppdatert" />
               {' '}

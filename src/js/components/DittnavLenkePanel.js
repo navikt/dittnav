@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Undertekst } from 'nav-frontend-typografi';
 import Config from '../Config';
-import { LenkepanelMedIkon, IkonKane, IkonPille, IkonSkilt } from './LenkepanelMedIkon';
+import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
@@ -64,9 +64,7 @@ class DittnavLenkePanel extends React.Component {
         overskrift="fliser.dine.saker"
         ingress=""
         href={saksoversiktUrl}
-      >
-        {/*<IkonSkilt />*/}
-      </LenkepanelMedIkon>
+      />
     );
   }
 
@@ -91,18 +89,14 @@ class DittnavLenkePanel extends React.Component {
             ingress=""
             className="dittnav-lenkepanel-smaa-item"
             href={utbetalingsoversiktUrl}
-          >
-            {/*<IkonPille />*/}
-          </LenkepanelMedIkon>
+          />
           <LenkepanelMedIkon
             alt="Innboks"
             overskrift="fliser.innboks"
             ingress=""
             className="dittnav-lenkepanel-smaa-item last"
             href={innboksUrl}
-          >
-            {/*<IkonKane />*/}
-          </LenkepanelMedIkon>
+          />
         </div>
       </div>
     );
