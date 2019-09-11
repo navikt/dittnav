@@ -19,8 +19,7 @@ class OversiktspanelMedListe extends React.Component {
                   {ikon}
                 </div>
               )
-              : null
-            }
+              : null}
             <Systemtittel>
               {overskrift}
             </Systemtittel>

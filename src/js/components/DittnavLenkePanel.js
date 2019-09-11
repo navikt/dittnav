@@ -68,9 +68,9 @@ class DittnavLenkePanel extends React.Component {
     );
   }
 
-  makeFooter() {
-
-  }
+  // makeFooter() {
+  //
+  // }
 
   render() {
     const { sakstemaList } = this.props.sakstema;
