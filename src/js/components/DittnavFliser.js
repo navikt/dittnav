@@ -30,7 +30,7 @@ const DittnavFliser = () => (
         overskrift="fliser.skjemaer"
         ingress="fliser.skjemaer.ingress"
         className="first"
-        href="/no/person/skjemaer-for-privatpersoner"
+        href={`${Config.dittNav.NAV_URL}/no/person/skjemaer-for-privatpersoner`}
       >
         <IkonBlyant />
       </LenkepanelMedIkon>

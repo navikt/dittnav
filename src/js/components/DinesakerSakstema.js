@@ -7,14 +7,14 @@ import PropTypes from 'prop-types';
 
 import { FormattedDate, FormattedMessage } from 'react-intl';
 
-const statusTilEtikettType = {
-  UNDER_BEHANDLING: 'fokus',
-  FERDIG_BEHANDLET: 'suksess',
-  AVBRUTT: 'advarsel',
-  UKJENT: 'advarsel',
-  ELDRE_ENN_28DAGER: 'info',
-  EMPTY: 'advarsel',
-};
+// const statusTilEtikettType = {
+//   UNDER_BEHANDLING: 'fokus',
+//   FERDIG_BEHANDLET: 'suksess',
+//   AVBRUTT: 'advarsel',
+//   UKJENT: 'advarsel',
+//   ELDRE_ENN_28DAGER: 'info',
+//   EMPTY: 'advarsel',
+// };
 
 const statusTilEtikettTekst = {
   UNDER_BEHANDLING: 'sakstema.under.behandling',
@@ -40,9 +40,9 @@ class DinesakerSakstema extends React.Component {
           </div>
 
           <div className="sak-dato">
-            <EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">
-              <FormattedMessage id={statusTilEtikettTekst[status]} />
-            </EtikettBase>
+            {/*<EtikettBase type={statusTilEtikettType[status]} typo="undertekst" className="sak-etikett">*/}
+            {/*  <FormattedMessage id={statusTilEtikettTekst[status]} />*/}
+            {/*</EtikettBase>*/}
             <span className="typo-undertekst">
               <FormattedMessage id="sakstema.sist.oppdatert" />
               {' '}
@@ -52,6 +52,8 @@ class DinesakerSakstema extends React.Component {
                 month="long"
                 day="numeric"
               />
+              {' - '}
+              <FormattedMessage id={statusTilEtikettTekst[status]} />
             </span>
           </div>
         </a>
@@ -69,7 +71,7 @@ DinesakerSakstema.propTypes = {
 
 DinesakerSakstema.defaultProps = {
   dato: '01-01-1980',
-  status: 'UKJENT',
+  status: 'EMPTY',
 };
 
 export default DinesakerSakstema;

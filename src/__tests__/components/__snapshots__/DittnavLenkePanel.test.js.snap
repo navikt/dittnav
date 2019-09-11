@@ -41,7 +41,7 @@ exports[`Snapshot test med saker 1`] = `
           className="typo-undertittel"
         >
           <span>
-            Dine saker
+            Dine siste saker
           </span>
         </h2>
       </div>
@@ -92,17 +92,6 @@ exports[`Snapshot test med saker 1`] = `
           <div
             className="sak-dato"
           >
-            <div
-              className="etikett sak-etikett etikett--suksess"
-            >
-              <span
-                className="typo-undertekst"
-              >
-                <span>
-                  Ferdig behandlet
-                </span>
-              </span>
-            </div>
             <span
               className="typo-undertekst"
             >
@@ -112,6 +101,10 @@ exports[`Snapshot test med saker 1`] = `
                
               <span>
                 2019 M07 22
+              </span>
+               - 
+              <span>
+                Ferdig behandlet
               </span>
             </span>
           </div>
@@ -140,17 +133,6 @@ exports[`Snapshot test med saker 1`] = `
           <div
             className="sak-dato"
           >
-            <div
-              className="etikett sak-etikett etikett--fokus"
-            >
-              <span
-                className="typo-undertekst"
-              >
-                <span>
-                  Under behandling
-                </span>
-              </span>
-            </div>
             <span
               className="typo-undertekst"
             >
@@ -160,6 +142,10 @@ exports[`Snapshot test med saker 1`] = `
                
               <span>
                 2019 M07 23
+              </span>
+               - 
+              <span>
+                Under behandling
               </span>
             </span>
           </div>

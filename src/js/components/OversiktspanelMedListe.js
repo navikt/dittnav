@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
+import {Normaltekst, Systemtittel, Undertittel} from 'nav-frontend-typografi';
 import HoyreChevron from 'nav-frontend-chevron';
 import PanelBase from 'nav-frontend-paneler';
 
@@ -13,12 +13,16 @@ class OversiktspanelMedListe extends React.Component {
       <PanelBase border={border} className={`oversiktspanel ${className}`}>
         <div className="oversiktspanel__header">
           <div className="oversiktspanel__overskrift">
-            <div className="lenkepanel__ikon">
-              {ikon}
-            </div>
-            <Undertittel>
+            {
+              ikon ?
+                <div className="lenkepanel__ikon">
+                  {ikon}
+                </div>
+              : null
+            }
+            <Systemtittel>
               {overskrift}
-            </Undertittel>
+            </Systemtittel>
           </div>
           <Normaltekst className="oversiktspanel__header-lenketekst">
             <a href={headerLenkeHref} className="oversiktspanel__header-lenke" id="dekorator-bottomborder-overstyring">
@@ -46,7 +50,7 @@ OversiktspanelMedListe.propTypes = {
   className: PropTypes.string,
   border: PropTypes.bool,
   overskrift: PropTypes.node.isRequired,
-  ikon: PropTypes.node.isRequired,
+  ikon: PropTypes.node,
   headerLenkeTekst: PropTypes.node,
   headerLenkeHref: PropTypes.string,
   liste: PropTypes.arrayOf(PropTypes.node),
@@ -54,6 +58,7 @@ OversiktspanelMedListe.propTypes = {
 
 OversiktspanelMedListe.defaultProps = {
   className: '',
+  ikon: null,
   headerLenkeTekst: '',
   headerLenkeHref: '',
   liste: [],

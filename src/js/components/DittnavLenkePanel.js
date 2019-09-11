@@ -8,7 +8,7 @@ import { LenkepanelMedIkon, IkonKane, IkonPille, IkonSkilt } from './LenkepanelM
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
-// TODO:    - finn svg data for ikoner
+// TODO:  - Oppdater layout jamfør siste diskusjoner (avventer hva jeg får fra backend til slutt!)
 
 const MAX_SAKER_SOM_VISES = 2;
 
@@ -18,9 +18,6 @@ const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
 
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
-    const alt = 'Dine saker';
-    const overskrift = 'fliser.dine.saker';
-
     if (sakstemaList) {
       const { antallSakstema } = this.props.sakstema;
       const numRemainingSaker = antallSakstema - sakstemaList.length;
@@ -50,9 +47,9 @@ class DittnavLenkePanel extends React.Component {
       return (
         <OversiktspanelMedListe
           className="dittnav-lenkepanel-stor"
-          alt={alt}
-          overskrift={<FormattedMessage id={overskrift} />}
-          ikon={<IkonSkilt />}
+          alt="Dine siste saker"
+          overskrift={<FormattedMessage id="saksoversikt.overskrift" />}
+          // ikon={<IkonSkilt />}
           headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
           headerLenkeHref={saksoversiktUrl}
           border
@@ -63,14 +60,18 @@ class DittnavLenkePanel extends React.Component {
     return (
       <LenkepanelMedIkon
         className="dittnav-lenkepanel-smaa-item"
-        alt={alt}
-        overskrift={overskrift}
+        alt="Dine saker"
+        overskrift="fliser.dine.saker"
         ingress=""
         href={saksoversiktUrl}
       >
-        <IkonSkilt />
+        {/*<IkonSkilt />*/}
       </LenkepanelMedIkon>
     );
+  }
+
+  makeFooter() {
+
   }
 
   render() {
@@ -91,7 +92,7 @@ class DittnavLenkePanel extends React.Component {
             className="dittnav-lenkepanel-smaa-item"
             href={utbetalingsoversiktUrl}
           >
-            <IkonPille />
+            {/*<IkonPille />*/}
           </LenkepanelMedIkon>
           <LenkepanelMedIkon
             alt="Innboks"
@@ -100,7 +101,7 @@ class DittnavLenkePanel extends React.Component {
             className="dittnav-lenkepanel-smaa-item last"
             href={innboksUrl}
           >
-            <IkonKane />
+            {/*<IkonKane />*/}
           </LenkepanelMedIkon>
         </div>
       </div>
