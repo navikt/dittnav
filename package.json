@@ -52,6 +52,7 @@
   },
   "scripts": {
     "local": "PORT=9000 node local.js",
+    "local-win": "set PORT=9000 && lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css && node local.js",
     "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
