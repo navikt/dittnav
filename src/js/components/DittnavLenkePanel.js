@@ -33,7 +33,8 @@ class DittnavLenkePanel extends React.Component {
             <Undertekst>
               <FormattedMessage id="saksoversikt.ingen.flere.saker" />
             </Undertekst>
-          </div>)
+          </div>
+        )
         : null;
 
       const liste = sakstemaList.map((tema) => (
