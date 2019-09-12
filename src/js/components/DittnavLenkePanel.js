@@ -12,10 +12,6 @@ import DinesakerSakstema from './DinesakerSakstema';
 
 const MAX_SAKER_SOM_VISES = 2;
 
-const saksoversiktUrl = `${Config.dittNav.SERVICES_URL}/saksoversikt/`;
-const utbetalingsoversiktUrl = `${Config.dittNav.SERVICES_URL}/utbetalingsoversikt/`;
-const innboksUrl = `${Config.dittNav.SERVICES_URL}/mininnboks/`;
-
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
     if (sakstemaList) {
@@ -51,7 +47,7 @@ class DittnavLenkePanel extends React.Component {
           overskrift={<FormattedMessage id="saksoversikt.overskrift" />}
           // ikon={<IkonSkilt />}
           headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
-          headerLenkeHref={saksoversiktUrl}
+          headerLenkeHref={Config.LENKER.utbetalingsoversikt.url}
           border
           liste={liste}
         />
@@ -63,7 +59,7 @@ class DittnavLenkePanel extends React.Component {
         alt="Dine saker"
         overskrift="fliser.dine.saker"
         ingress=""
-        href={saksoversiktUrl}
+        href={Config.LENKER.utbetalingsoversikt.url}
       />
     );
   }
@@ -88,14 +84,14 @@ class DittnavLenkePanel extends React.Component {
             overskrift="fliser.dine.utbetalinger"
             ingress=""
             className="dittnav-lenkepanel-smaa-item"
-            href={utbetalingsoversiktUrl}
+            href={Config.LENKER.utbetalingsoversikt.url}
           />
           <LenkepanelMedIkon
             alt="Innboks"
             overskrift="fliser.innboks"
             ingress=""
             className="dittnav-lenkepanel-smaa-item last"
-            href={innboksUrl}
+            href={Config.LENKER.innboks.url}
           />
         </div>
       </div>
