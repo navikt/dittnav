@@ -11,7 +11,7 @@ const DittnavFliser = () => (
         overskrift="fliser.ditt.sykevravaer"
         ingress="fliser.ditt.sykevravaer.ingress"
         className="first"
-        href={`${Config.dittNav.SERVICES_URL}/sykefravaer/`}
+        href={Config.LENKER.dittSykefravaer.url}
       >
         <IkonPille />
       </LenkepanelMedIkon>
@@ -19,7 +19,7 @@ const DittnavFliser = () => (
         alt="Mistet jobben?"
         overskrift="fliser.mistet.jobben"
         ingress="fliser.mistet.jobben.ingress"
-        href={`${Config.dittNav.SERVICES_URL}/veiledearbeidssoker/`}
+        href={Config.LENKER.veilederArbeidssoker.url}
       >
         <IkonSkilt />
       </LenkepanelMedIkon>
@@ -30,7 +30,7 @@ const DittnavFliser = () => (
         overskrift="fliser.skjemaer"
         ingress="fliser.skjemaer.ingress"
         className="first"
-        href="/no/person/skjemaer-for-privatpersoner"
+        href={Config.LENKER.skjemaer.url}
       >
         <IkonBlyant />
       </LenkepanelMedIkon>
@@ -38,7 +38,7 @@ const DittnavFliser = () => (
         alt="Din pensjon"
         overskrift="fliser.din.pensjon"
         ingress="fliser.din.pensjon.ingress"
-        href={`${Config.dittNav.SERVICES_URL}/pselv/publisering/dinpensjon.jsf`}
+        href={Config.LENKER.dinPensjon.url}
       >
         <IkonKane />
       </LenkepanelMedIkon>

@@ -65,11 +65,15 @@ const lenker = {
   aktivitetsplan: { tittel: 'Aktivitetsplan', url: `${getServicesUrl()}/aktivitetsplan/` },
   dinProfil: { tittel: 'Din profil', url: `${getServicesUrl()}/brukerprofil/` },
   personopplysninger: { tittel: 'Personopplysninger', url: `${getNavUrl()}/person/personopplysninger` },
-  skjemaer: { tittel: 'Skjemaer', url: `${getNavUrl()}/no/person/skjemaer-for-privatpersoner` },
+  skjemaer: { tittel: 'Skjemaer', url: `${getNavUrl()}/soknader` },
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
   dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
+  veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/` },
   registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
   dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
+  utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/`},
+  saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/`},
+  innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks/`},
 };
 
 const generelleLenker = [
@@ -118,4 +122,5 @@ export default {
   ETTERREGISTRERT_PATH: '/meldekort/etterregistrer-meldekort/',
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
+  LENKER: lenker,
 };

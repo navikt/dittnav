@@ -6,13 +6,13 @@ import Config from '../Config';
 
 const DittnavLenkePanel = () => (
   <div className="dittnav-lenke-container blokk-xl">
-    <Lenkepanel border className="first" href={`${Config.dittNav.SERVICES_URL}/utbetalingsoversikt/`}>
+    <Lenkepanel border className="first" href={Config.LENKER.utbetalingsoversikt.url}>
       <FormattedMessage id="fliser.dine.utbetalinger" />
     </Lenkepanel>
-    <Lenkepanel border href={`${Config.dittNav.SERVICES_URL}/saksoversikt/`}>
+    <Lenkepanel border href={Config.LENKER.saksoversikt.url}>
       <FormattedMessage id="fliser.dine.saker" />
     </Lenkepanel>
-    <Lenkepanel border className="last" href={`${Config.dittNav.SERVICES_URL}/mininnboks/`}>
+    <Lenkepanel border className="last" href={Config.LENKER.innboks.url}>
       <FormattedMessage id="fliser.innboks" />
     </Lenkepanel>
   </div>
