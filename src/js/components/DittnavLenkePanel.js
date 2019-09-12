@@ -14,12 +14,12 @@ const MAX_SAKER_SOM_VISES = 2;
 
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
-    if (sakstemaList) {
       const { antallSakstema } = this.props.sakstema;
-      const numRemainingSaker = antallSakstema - sakstemaList.length;
-      const showFooter = numRemainingSaker <= 0 && sakstemaList.length < MAX_SAKER_SOM_VISES;
+      const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
+      const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
+      const visFooter = numRemainingSaker <= 0 && sakstemaListPruned.length < MAX_SAKER_SOM_VISES;
 
-      const footer = showFooter
+      const footer = visFooter
         ? (
           <div key="footer">
             <hr />
@@ -30,7 +30,7 @@ class DittnavLenkePanel extends React.Component {
         )
         : null;
 
-      const liste = sakstemaList.map((tema) => (
+      const liste = sakstemaListPruned.map((tema) => (
         <DinesakerSakstema
           key={tema.temanavn}
           dato={tema.sisteOppdatering}
@@ -45,40 +45,36 @@ class DittnavLenkePanel extends React.Component {
           className="dittnav-lenkepanel-stor"
           alt="Dine siste saker"
           overskrift={<FormattedMessage id="saksoversikt.overskrift" />}
-          // ikon={<IkonSkilt />}
           headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
-          headerLenkeHref={Config.LENKER.utbetalingsoversikt.url}
+          headerLenkeHref={Config.LENKER.saksoversikt.url}
           border
           liste={liste}
         />
       );
-    }
-    return (
-      <LenkepanelMedIkon
-        className="dittnav-lenkepanel-smaa-item"
-        alt="Dine saker"
-        overskrift="fliser.dine.saker"
-        ingress=""
-        href={Config.LENKER.utbetalingsoversikt.url}
-      />
-    );
   }
-
-  // makeFooter() {
-  //
-  // }
 
   render() {
     const { sakstemaList } = this.props.sakstema;
-    const sakstemaListPruned = sakstemaList && sakstemaList.length > 0
-      ? sakstemaList.slice(0, MAX_SAKER_SOM_VISES) : null;
-    const saksoversiktPanel = this.makeSaksoversiktPanel(sakstemaListPruned);
+    const harSaker = sakstemaList && sakstemaList.length > 0;
+
+    const dinesakerPanel = harSaker
+      ? this.makeSaksoversiktPanel(sakstemaList)
+      :
+      (
+        <LenkepanelMedIkon
+          className="dittnav-lenkepanel-smaa-item"
+          alt="Dine saker"
+          overskrift="fliser.dine.saker"
+          ingress=""
+          href={Config.LENKER.saksoversikt.url}
+        />
+      );
 
     return (
       <div className="dittnav-lenkepanel-top-container">
-        { sakstemaListPruned ? saksoversiktPanel : null }
-        <div className="dittnav-lenkepanel-smaa" id={sakstemaListPruned ? 'cols-layout' : null}>
-          { !sakstemaListPruned ? saksoversiktPanel : null }
+        { harSaker ? dinesakerPanel : null }
+        <div className="dittnav-lenkepanel-smaa" id={harSaker ? 'cols-layout' : null}>
+          { !harSaker ? dinesakerPanel : null }
           <LenkepanelMedIkon
             alt="Utbetalinger"
             overskrift="fliser.dine.utbetalinger"
