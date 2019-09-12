@@ -14,43 +14,43 @@ const MAX_SAKER_SOM_VISES = 2;
 
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
-      const { antallSakstema } = this.props.sakstema;
-      const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
-      const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
-      const visFooter = numRemainingSaker <= 0 && sakstemaListPruned.length < MAX_SAKER_SOM_VISES;
+    const { antallSakstema } = this.props.sakstema;
+    const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
+    const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
+    const visFooter = numRemainingSaker <= 0 && sakstemaListPruned.length < MAX_SAKER_SOM_VISES;
 
-      const footer = visFooter
-        ? (
-          <div key="footer">
-            <hr />
-            <Undertekst>
-              <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-            </Undertekst>
-          </div>
-        )
-        : null;
+    const footer = visFooter
+      ? (
+        <div key="footer">
+          <hr />
+          <Undertekst>
+            <FormattedMessage id="saksoversikt.ingen.flere.saker" />
+          </Undertekst>
+        </div>
+      )
+      : null;
 
-      const liste = sakstemaListPruned.map((tema) => (
-        <DinesakerSakstema
-          key={tema.temanavn}
-          dato={tema.sisteOppdatering}
-          status={tema.sisteBehandlingStatus}
-          temanavn={tema.temanavn}
-          href={tema.url}
-        />
-      )).concat(footer);
+    const liste = sakstemaListPruned.map((tema) => (
+      <DinesakerSakstema
+        key={tema.temanavn}
+        dato={tema.sisteOppdatering}
+        status={tema.sisteBehandlingStatus}
+        temanavn={tema.temanavn}
+        href={tema.url}
+      />
+    )).concat(footer);
 
-      return (
-        <OversiktspanelMedListe
-          className="dittnav-lenkepanel-stor"
-          alt="Dine siste saker"
-          overskrift={<FormattedMessage id="saksoversikt.overskrift" />}
-          headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
-          headerLenkeHref={Config.LENKER.saksoversikt.url}
-          border
-          liste={liste}
-        />
-      );
+    return (
+      <OversiktspanelMedListe
+        className="dittnav-lenkepanel-stor"
+        alt="Dine siste saker"
+        overskrift={<FormattedMessage id="saksoversikt.overskrift" />}
+        headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />}
+        headerLenkeHref={Config.LENKER.saksoversikt.url}
+        border
+        liste={liste}
+      />
+    );
   }
 
   render() {
@@ -59,8 +59,7 @@ class DittnavLenkePanel extends React.Component {
 
     const dinesakerPanel = harSaker
       ? this.makeSaksoversiktPanel(sakstemaList)
-      :
-      (
+      : (
         <LenkepanelMedIkon
           className="dittnav-lenkepanel-smaa-item"
           alt="Dine saker"
