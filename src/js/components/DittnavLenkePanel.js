@@ -35,8 +35,8 @@ class DittnavLenkePanel extends React.Component {
         );
 
       return (
-        <div className="saksoversikt-footer typo-undertekst" key="footer">
-          <i>{melding}</i>
+        <div className="saksoversikt-footer" key="footer">
+          <span className="typo-undertekst">{melding}</span>
         </div>
       );
     };

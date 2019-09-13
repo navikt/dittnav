@@ -102,9 +102,11 @@ exports[`Snapshot test med saker 1`] = `
         </a>
       </div>
       <div
-        className="saksoversikt-footer typo-undertekst"
+        className="saksoversikt-footer"
       >
-        <i>
+        <span
+          className="typo-undertekst"
+        >
           <a
             className="footer-lenke"
             href="http://localhost:9222/saksoversikt/"
@@ -114,7 +116,7 @@ exports[`Snapshot test med saker 1`] = `
               Du har 3 flere saker.
             </span>
           </a>
-        </i>
+        </span>
       </div>
     </div>
   </div>
