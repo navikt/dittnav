@@ -77,7 +77,7 @@ class DittnavLenkePanel extends React.Component {
           overskrift="fliser.dine.saker"
           ingress=""
           href={Config.LENKER.saksoversikt.url}
-        >{""}
+        >{''}
         </LenkepanelMedIkon>
       );
 
@@ -92,7 +92,7 @@ class DittnavLenkePanel extends React.Component {
             ingress=""
             className="dittnav-lenkepanel-liten-item"
             href={Config.LENKER.utbetalingsoversikt.url}
-          >{""}
+          >{''}
           </LenkepanelMedIkon>
           <LenkepanelMedIkon
             alt="Innboks"
@@ -100,7 +100,7 @@ class DittnavLenkePanel extends React.Component {
             ingress=""
             className="dittnav-lenkepanel-liten-item last"
             href={Config.LENKER.innboks.url}
-          >{""}
+          >{''}
           </LenkepanelMedIkon>
         </div>
       </div>

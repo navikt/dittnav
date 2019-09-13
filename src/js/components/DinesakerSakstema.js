@@ -24,9 +24,9 @@ import HoyreChevron from 'nav-frontend-chevron';
 
 class DinesakerSakstema extends React.Component {
   render() {
-    const { dato, temanavn, antallUnderBehandling } = this.props;
+    const { dato, temakode, temanavn, antallUnderBehandling } = this.props;
 
-    const href = '#';
+    const href = {temakode};
 
     return (
       <div className="sak-container">
