@@ -65,6 +65,9 @@ exports[`Snapshot test med saker 1`] = `
             className="sak-status typo-undertekst"
           >
             <span>
+              Du har  søknader under behandling. 
+            </span>
+            <span>
               Sist oppdatert: 
             </span>
             <span>
@@ -92,6 +95,9 @@ exports[`Snapshot test med saker 1`] = `
           <div
             className="sak-status typo-undertekst"
           >
+            <span>
+              Du har  søknader under behandling. 
+            </span>
             <span>
               Sist oppdatert: 
             </span>

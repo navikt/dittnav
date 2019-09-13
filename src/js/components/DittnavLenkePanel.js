@@ -2,11 +2,12 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import i18n from "../../translations/i18n";
 import Config from '../Config';
 import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
+
+import i18n from '../../translations/i18n';
 
 // TODO:  - Oppdater layout jamfør siste diskusjoner (avventer hva jeg får fra backend til slutt!)
 
