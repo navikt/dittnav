@@ -14,7 +14,8 @@ class DinesakerSakstema extends React.Component {
     const statusMessage = (() => {
       if (antallUnderBehandling <= 0) {
         return null;
-      } else if (antallUnderBehandling === 1) {
+      }
+      if (antallUnderBehandling === 1) {
         return <FormattedMessage id="sakstema.antall.under.behandling.en" />;
       }
       return <FormattedMessage id="sakstema.antall.under.behandling.flere" values={{ count: numberToWord(antallUnderBehandling) }} />;
