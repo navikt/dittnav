@@ -2,16 +2,16 @@
   "antallSakstema": 5,
   "sakstemaList": [
     {
-      "temanavn": "Tilleggsstønad arbeidssøkere",
-      "sisteBehandlingStatus": "ELDRE_ENN_28DAGER",
-      "sisteOppdatering": "2019-07-22",
-      "url": "https://tjenester-q1.nav.no/saksoversikt/tema/TSR"
+      "temakode": "SYK_SYM",
+      "temanavn": "Sykmelding, sykepenger og oppfølging",
+      "sisteOppdatering": "2019-09-13T11:09:06.413+02:00",
+      "antallStatusUnderBehandling": 0
     },
     {
-      "temanavn": "Tiltakspenger",
-      "sisteBehandlingStatus": "UNDER_BEHANDLING",
-      "sisteOppdatering": "2019-07-22",
-      "url": "https://tjenester-q1.nav.no/saksoversikt/tema/IND"
+      "temakode": "KODE2",
+      "temanavn": "Et annet tema",
+      "sisteOppdatering": "2019-09-13T11:09:06.413+02:00",
+      "antallStatusUnderBehandling": 3
     }
   ]
 }

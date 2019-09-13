@@ -1,8 +1,7 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import { FormattedMessage } from 'react-intl';
-import { Undertekst } from 'nav-frontend-typografi';
 import Config from '../Config';
 import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
@@ -16,29 +15,41 @@ class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
     const { antallSakstema } = this.props.sakstema;
     const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
-    const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
-    const visFooter = numRemainingSaker <= 0 && sakstemaListPruned.length < MAX_SAKER_SOM_VISES;
 
-    const footer = visFooter
-      ? (
-        <div key="footer">
-          <hr />
-          <Undertekst>
+    const makeFooter = () => {
+      const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
+
+      const melding = numRemainingSaker <= 0
+        ? (
+          <>
             <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-          </Undertekst>
+            <a href="#" className="footer-lenke" id="dekorator-bottomborder-overstyring">
+              <FormattedMessage id="saksoversikt.ingen.flere.saker.lenke" />
+            </a>
+          </>
+        )
+        : (
+          <a href={Config.LENKER.saksoversikt.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
+            <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numRemainingSaker }} />
+          </a>
+        );
+
+      return (
+        <div className="saksoversikt-footer typo-undertekst" key="footer">
+          <i>{melding}</i>
         </div>
-      )
-      : null;
+      );
+    };
 
     const liste = sakstemaListPruned.map((tema) => (
       <DinesakerSakstema
-        key={tema.temanavn}
-        dato={tema.sisteOppdatering}
-        status={tema.sisteBehandlingStatus}
+        key={tema.temakode}
+        temakode={tema.temakode}
         temanavn={tema.temanavn}
-        href={tema.url}
+        dato={tema.sisteOppdatering}
+        antallUnderBehandling={tema.antallStatusUnderBehandling}
       />
-    )).concat(footer);
+    )).concat(makeFooter());
 
     return (
       <OversiktspanelMedListe
@@ -61,32 +72,35 @@ class DittnavLenkePanel extends React.Component {
       ? this.makeSaksoversiktPanel(sakstemaList)
       : (
         <LenkepanelMedIkon
-          className="dittnav-lenkepanel-smaa-item"
+          className="dittnav-lenkepanel-liten-item"
           alt="Dine saker"
           overskrift="fliser.dine.saker"
           ingress=""
           href={Config.LENKER.saksoversikt.url}
+          children=""
         />
       );
 
     return (
       <div className="dittnav-lenkepanel-top-container">
         { harSaker ? dinesakerPanel : null }
-        <div className="dittnav-lenkepanel-smaa" id={harSaker ? 'cols-layout' : null}>
+        <div className="dittnav-lenkepanel-liten" id={harSaker ? 'cols-layout' : null}>
           { !harSaker ? dinesakerPanel : null }
           <LenkepanelMedIkon
             alt="Utbetalinger"
             overskrift="fliser.dine.utbetalinger"
             ingress=""
-            className="dittnav-lenkepanel-smaa-item"
+            className="dittnav-lenkepanel-liten-item"
             href={Config.LENKER.utbetalingsoversikt.url}
+            children=""
           />
           <LenkepanelMedIkon
             alt="Innboks"
             overskrift="fliser.innboks"
             ingress=""
-            className="dittnav-lenkepanel-smaa-item last"
+            className="dittnav-lenkepanel-liten-item last"
             href={Config.LENKER.innboks.url}
+            children=""
           />
         </div>
       </div>
@@ -98,10 +112,10 @@ DittnavLenkePanel.propTypes = {
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({
+      temakode: PropTypes.string.isRequired,
       temanavn: PropTypes.string.isRequired,
-      sisteBehandlingStatus: PropTypes.string.isRequired,
       sisteOppdatering: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
+      antallStatusUnderBehandling: PropTypes.number.isRequired,
     })).isRequired,
   }).isRequired,
 };

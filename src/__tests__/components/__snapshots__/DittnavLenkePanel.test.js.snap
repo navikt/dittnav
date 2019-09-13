@@ -54,34 +54,21 @@ exports[`Snapshot test med saker 1`] = `
           id="dekorator-bottomborder-overstyring"
         >
           <div
-            className="sak-temanavn"
+            className="sak-temanavn typo-undertittel"
           >
-            <span
-              className="typo-undertittel"
-            >
-              Tema 1
-            </span>
+            Tema 1
             <i
               className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
           </div>
           <div
-            className="sak-dato"
+            className="sak-status typo-undertekst"
           >
-            <span
-              className="typo-undertekst"
-            >
-              <span>
-                Sist oppdatert
-              </span>
-               
-              <span>
-                2019 M07 22
-              </span>
-               - 
-              <span>
-                Ferdig behandlet
-              </span>
+            <span>
+              Sist oppdatert: 
+            </span>
+            <span>
+              2019 M07 22
             </span>
           </div>
         </a>
@@ -95,46 +82,48 @@ exports[`Snapshot test med saker 1`] = `
           id="dekorator-bottomborder-overstyring"
         >
           <div
-            className="sak-temanavn"
+            className="sak-temanavn typo-undertittel"
           >
-            <span
-              className="typo-undertittel"
-            >
-              Tema 2
-            </span>
+            Tema 2
             <i
               className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
           </div>
           <div
-            className="sak-dato"
+            className="sak-status typo-undertekst"
           >
-            <span
-              className="typo-undertekst"
-            >
-              <span>
-                Sist oppdatert
-              </span>
-               
-              <span>
-                2019 M07 23
-              </span>
-               - 
-              <span>
-                Under behandling
-              </span>
+            <span>
+              Sist oppdatert: 
+            </span>
+            <span>
+              2019 M07 23
             </span>
           </div>
         </a>
       </div>
+      <div
+        className="saksoversikt-footer typo-undertekst"
+      >
+        <i>
+          <a
+            className="footer-lenke"
+            href="http://localhost:9222/saksoversikt/"
+            id="dekorator-bottomborder-overstyring"
+          >
+            <span>
+              Du har 3 flere saker.
+            </span>
+          </a>
+        </i>
+      </div>
     </div>
   </div>
   <div
-    className="dittnav-lenkepanel-smaa"
+    className="dittnav-lenkepanel-liten"
     id="cols-layout"
   >
     <a
-      className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
       onClick={null}
     >
@@ -143,7 +132,9 @@ exports[`Snapshot test med saker 1`] = `
       >
         <div
           className="lenkepanel__ikon"
-        />
+        >
+          
+        </div>
         <div>
           <h2
             className="typo-undertittel"
@@ -160,7 +151,7 @@ exports[`Snapshot test med saker 1`] = `
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-smaa-item last lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
       href="http://localhost:9222/mininnboks/"
       onClick={null}
     >
@@ -169,7 +160,9 @@ exports[`Snapshot test med saker 1`] = `
       >
         <div
           className="lenkepanel__ikon"
-        />
+        >
+          
+        </div>
         <div>
           <h2
             className="typo-undertittel"
@@ -194,11 +187,11 @@ exports[`Snapshot test uten saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="dittnav-lenkepanel-smaa"
+    className="dittnav-lenkepanel-liten"
     id={null}
   >
     <a
-      className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/saksoversikt/"
       onClick={null}
     >
@@ -207,7 +200,9 @@ exports[`Snapshot test uten saker 1`] = `
       >
         <div
           className="lenkepanel__ikon"
-        />
+        >
+          
+        </div>
         <div>
           <h2
             className="typo-undertittel"
@@ -224,7 +219,7 @@ exports[`Snapshot test uten saker 1`] = `
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-smaa-item lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
       onClick={null}
     >
@@ -233,7 +228,9 @@ exports[`Snapshot test uten saker 1`] = `
       >
         <div
           className="lenkepanel__ikon"
-        />
+        >
+          
+        </div>
         <div>
           <h2
             className="typo-undertittel"
@@ -250,7 +247,7 @@ exports[`Snapshot test uten saker 1`] = `
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-smaa-item last lenkepanel--border"
+      className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
       href="http://localhost:9222/mininnboks/"
       onClick={null}
     >
@@ -259,7 +256,9 @@ exports[`Snapshot test uten saker 1`] = `
       >
         <div
           className="lenkepanel__ikon"
-        />
+        >
+          
+        </div>
         <div>
           <h2
             className="typo-undertittel"

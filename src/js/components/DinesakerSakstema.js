@@ -13,42 +13,42 @@ import HoyreChevron from 'nav-frontend-chevron';
 //   EMPTY: 'advarsel',
 // };
 
-const statusTilEtikettTekst = {
-  UNDER_BEHANDLING: 'sakstema.under.behandling',
-  FERDIG_BEHANDLET: 'sakstema.ferdig.behandlet',
-  AVBRUTT: 'sakstema.avbrutt',
-  UKJENT: 'sakstema.ukjent',
-  ELDRE_ENN_28DAGER: 'sakstema.eldreenn28',
-  EMPTY: 'sakstema.empty',
-};
+// const statusTilEtikettTekst = {
+//   UNDER_BEHANDLING: 'sakstema.under.behandling',
+//   FERDIG_BEHANDLET: 'sakstema.ferdig.behandlet',
+//   AVBRUTT: 'sakstema.avbrutt',
+//   UKJENT: 'sakstema.ukjent',
+//   ELDRE_ENN_28DAGER: 'sakstema.eldreenn28',
+//   EMPTY: 'sakstema.empty',
+// };
 
 class DinesakerSakstema extends React.Component {
   render() {
-    const { dato, status, temanavn, href } = this.props;
+    const { dato, temakode, temanavn, antallUnderBehandling } = this.props;
+
+    const href = "#";
 
     return (
       <div className="sak-container">
         <a href={href} className="sak-lenke" id="dekorator-bottomborder-overstyring">
-          <div className="sak-temanavn">
-            <span className="typo-undertittel">
-              {temanavn}
-            </span>
+          <div className="sak-temanavn typo-undertittel">
+            {temanavn}
             <HoyreChevron className="sak-chevron" />
           </div>
 
-          <div className="sak-dato">
-            <span className="typo-undertekst">
-              <FormattedMessage id="sakstema.sist.oppdatert" />
-              {' '}
-              <FormattedDate
-                value={new Date(dato)}
-                year="numeric"
-                month="long"
-                day="numeric"
-              />
-              {' - '}
-              <FormattedMessage id={statusTilEtikettTekst[status]} />
-            </span>
+          <div className="sak-status typo-undertekst">
+            {
+              antallUnderBehandling > 0
+              ? <FormattedMessage id="sakstema.antall.under.behandling" values={{ count: antallUnderBehandling }} />
+              : null
+            }
+            <FormattedMessage id="sakstema.sist.oppdatert" />
+            <FormattedDate
+              value={new Date(dato)}
+              year="numeric"
+              month="short"
+              day="numeric"
+            />
           </div>
         </a>
       </div>
@@ -57,15 +57,13 @@ class DinesakerSakstema extends React.Component {
 }
 
 DinesakerSakstema.propTypes = {
-  dato: PropTypes.string,
-  status: PropTypes.string,
+  temakode: PropTypes.string.isRequired,
   temanavn: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  dato: PropTypes.string.isRequired,
+  antallUnderBehandling: PropTypes.number.isRequired,
 };
 
 DinesakerSakstema.defaultProps = {
-  dato: '01-01-1980',
-  status: 'EMPTY',
 };
 
 export default DinesakerSakstema;

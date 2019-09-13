@@ -12,13 +12,13 @@
     margin-bottom: 1em;
   }
 
-  .dittnav-lenkepanel-smaa {
+  .dittnav-lenkepanel-liten {
     display: flex;
     flex-direction: row;
     align-content: space-between;
     flex: 1 1 auto;
 
-    .dittnav-lenkepanel-smaa-item {
+    .dittnav-lenkepanel-liten-item {
       flex: 1 1 auto;
       box-sizing: border-box;
       margin-right: 1em;
@@ -41,7 +41,7 @@
     .dittnav-lenkepanel-stor {
       margin-right: 0;
     }
-    .dittnav-lenkepanel-smaa {
+    .dittnav-lenkepanel-liten {
       flex-direction: column;
     }
   }
@@ -59,7 +59,7 @@
       .sak-temanavn {
         text-decoration: underline;
       }
-      .sak-dato {
+      .sak-status {
         color: initial;
       }
       .sak-chevron {
@@ -69,9 +69,6 @@
     }
     &:not(:hover) {
       color: inherit;
-    }
-    &#dekorator-bottomborder-overstyring {
-      border-bottom: none;
     }
   }
 
@@ -92,4 +89,17 @@
     left: 0;
     transition: left 250ms;
   }
+}
+
+.saksoversikt-footer {
+  margin-top: 0.8em;
+  .footer-lenke {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#dekorator-bottomborder-overstyring {
+  border-bottom: none;
 }
