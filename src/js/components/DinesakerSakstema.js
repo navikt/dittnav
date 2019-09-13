@@ -24,9 +24,7 @@ import HoyreChevron from 'nav-frontend-chevron';
 
 class DinesakerSakstema extends React.Component {
   render() {
-    const { dato, temakode, temanavn, antallUnderBehandling } = this.props;
-
-    const href = {temakode};
+    const { dato, href, temanavn, antallUnderBehandling } = this.props;
 
     return (
       <div className="sak-container">
@@ -57,7 +55,7 @@ class DinesakerSakstema extends React.Component {
 }
 
 DinesakerSakstema.propTypes = {
-  temakode: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   temanavn: PropTypes.string.isRequired,
   dato: PropTypes.string.isRequired,
   antallUnderBehandling: PropTypes.number.isRequired,

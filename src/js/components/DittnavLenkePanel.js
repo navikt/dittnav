@@ -43,8 +43,8 @@ class DittnavLenkePanel extends React.Component {
 
     const liste = sakstemaListPruned.map((tema) => (
       <DinesakerSakstema
-        key={tema.temakode}
-        temakode={tema.temakode}
+        key={tema.temanavn}
+        href={tema.url}
         temanavn={tema.temanavn}
         dato={tema.sisteOppdatering}
         antallUnderBehandling={tema.antallStatusUnderBehandling}
@@ -112,7 +112,7 @@ DittnavLenkePanel.propTypes = {
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({
-      temakode: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
       temanavn: PropTypes.string.isRequired,
       sisteOppdatering: PropTypes.string.isRequired,
       antallStatusUnderBehandling: PropTypes.number.isRequired,
