@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
+import i18n from "../../translations/i18n";
 import Config from '../Config';
 import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
@@ -14,24 +15,29 @@ const MAX_SAKER_SOM_VISES = 2;
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
     const { antallSakstema } = this.props.sakstema;
+    const { numberToWord } = i18n.nb;
     const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
 
     const makeFooter = () => {
       const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
 
-      const melding = numRemainingSaker <= 0
+      const melding = numRemainingSaker > 0
         ? (
+          <a href={Config.LENKER.saksoversikt.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
+            {
+              numRemainingSaker === 1
+                ? <FormattedMessage id="saksoversikt.har.entil.sak" />
+                : <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numberToWord(numRemainingSaker) }} />
+            }
+          </a>
+        )
+        : (
           <>
             <FormattedMessage id="saksoversikt.ingen.flere.saker" />
             <a href={Config.LENKER.saksoversiktHjelp.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
               <FormattedMessage id="saksoversikt.ingen.flere.saker.lenke" />
             </a>
           </>
-        )
-        : (
-          <a href={Config.LENKER.saksoversikt.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
-            <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numRemainingSaker }} />
-          </a>
         );
 
       return (

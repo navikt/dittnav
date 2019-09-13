@@ -99,7 +99,8 @@
   "error.mininnboks": "Det skjedde en feil under henting av meldinger fra din innboks",
   "error.baksystemer": "Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon",
 
-  "sakstema.antall.under.behandling": "Du har {count} søknader under behandling. ",
+  "sakstema.antall.under.behandling.en": "Du har én søknad under behandling. ",
+  "sakstema.antall.under.behandling.flere": "Du har {count} søknader under behandling. ",
   "sakstema.sist.oppdatert": "Sist oppdatert: ",
 
   "sakstema.under.behandling": "Under behandling",
@@ -112,6 +113,7 @@
   "saksoversikt.overskrift": "Dine siste saker",
   "saksoversikt.ingen.flere.saker": "Du har ingen flere saker. ",
   "saksoversikt.ingen.flere.saker.lenke": "Finner du ikke saken din?",
+  "saksoversikt.har.entil.sak": "Du har én sak til.",
   "saksoversikt.har.flere.saker": "Du har {count} flere saker.",
   "saksoversikt.alle.saker": "Se alle dine saker ({count})"
 }

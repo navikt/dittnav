@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
+import i18n from "../../translations/i18n";
 import HoyreChevron from 'nav-frontend-chevron';
 
 // const statusTilEtikettType = {
@@ -25,6 +26,7 @@ import HoyreChevron from 'nav-frontend-chevron';
 class DinesakerSakstema extends React.Component {
   render() {
     const { dato, href, temanavn, antallUnderBehandling } = this.props;
+    const { numberToWord } = i18n.nb;
 
     return (
       <div className="sak-container">
@@ -37,7 +39,11 @@ class DinesakerSakstema extends React.Component {
           <div className="sak-status typo-undertekst">
             {
               antallUnderBehandling > 0
-                ? <FormattedMessage id="sakstema.antall.under.behandling" values={{ count: antallUnderBehandling }} />
+                ? (
+                    antallUnderBehandling === 1
+                    ? <FormattedMessage id="sakstema.antall.under.behandling.en" />
+                    : <FormattedMessage id="sakstema.antall.under.behandling.flere" values={{ count: numberToWord(antallUnderBehandling) }} />
+                  )
                 : null
             }
             <FormattedMessage id="sakstema.sist.oppdatert" />
