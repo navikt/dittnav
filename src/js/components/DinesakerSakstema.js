@@ -24,9 +24,9 @@ import HoyreChevron from 'nav-frontend-chevron';
 
 class DinesakerSakstema extends React.Component {
   render() {
-    const { dato, temakode, temanavn, antallUnderBehandling } = this.props;
+    const { dato, temanavn, antallUnderBehandling } = this.props;
 
-    const href = "#";
+    const href = '#';
 
     return (
       <div className="sak-container">
@@ -39,8 +39,8 @@ class DinesakerSakstema extends React.Component {
           <div className="sak-status typo-undertekst">
             {
               antallUnderBehandling > 0
-              ? <FormattedMessage id="sakstema.antall.under.behandling" values={{ count: antallUnderBehandling }} />
-              : null
+                ? <FormattedMessage id="sakstema.antall.under.behandling" values={{ count: antallUnderBehandling }} />
+                : null
             }
             <FormattedMessage id="sakstema.sist.oppdatert" />
             <FormattedDate

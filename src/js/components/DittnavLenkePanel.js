@@ -23,7 +23,7 @@ class DittnavLenkePanel extends React.Component {
         ? (
           <>
             <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-            <a href="#" className="footer-lenke" id="dekorator-bottomborder-overstyring">
+            <a href={Config.LENKER.saksoversiktHjelp.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
               <FormattedMessage id="saksoversikt.ingen.flere.saker.lenke" />
             </a>
           </>
@@ -77,8 +77,8 @@ class DittnavLenkePanel extends React.Component {
           overskrift="fliser.dine.saker"
           ingress=""
           href={Config.LENKER.saksoversikt.url}
-          children=""
-        />
+        >{""}
+        </LenkepanelMedIkon>
       );
 
     return (
@@ -92,16 +92,16 @@ class DittnavLenkePanel extends React.Component {
             ingress=""
             className="dittnav-lenkepanel-liten-item"
             href={Config.LENKER.utbetalingsoversikt.url}
-            children=""
-          />
+          >{""}
+          </LenkepanelMedIkon>
           <LenkepanelMedIkon
             alt="Innboks"
             overskrift="fliser.innboks"
             ingress=""
             className="dittnav-lenkepanel-liten-item last"
             href={Config.LENKER.innboks.url}
-            children=""
-          />
+          >{""}
+          </LenkepanelMedIkon>
         </div>
       </div>
     );
