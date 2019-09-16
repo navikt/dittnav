@@ -1,5 +1,4 @@
 import conf from './Config';
-import Promise from 'promise-polyfill';
 
 const redirectToLogin = () => {
   window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
