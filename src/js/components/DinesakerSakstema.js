@@ -15,10 +15,10 @@ const sakstemaUrlOverride = {
 };
 
 class DinesakerSakstema extends React.Component {
-  getTemaUrl(temanavn) {
-    const temanavnLowerCase = temanavn.toLowerCase();
+  getTemaUrl() {
+    const temanavnLowerCase = this.props.temanavn.toLowerCase();
 
-    if (temanavnLowerCase.includes("oppfølging")) {
+    if (temanavnLowerCase.includes('oppfølging')) {
       const temaKey = temanavnLowerCase.split(/[\s,]/)[0];
       return sakstemaUrlOverride[temaKey];
     }
@@ -26,8 +26,9 @@ class DinesakerSakstema extends React.Component {
     return sakstemaUrlOverride[temanavnLowerCase];
   }
 
-  getStatusMessage(antallUnderBehandling) {
+  getStatusMessage() {
     const { numberToWord } = i18n.nb;
+    const { antallUnderBehandling } = this.props;
 
     if (antallUnderBehandling <= 0) {
       return null;
