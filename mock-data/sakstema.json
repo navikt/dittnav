@@ -1,14 +1,14 @@
 {
-  "antallSakstema": 4,
+  "antallSakstema": 2,
   "sakstemaList": [
     {
-      "temanavn":"Barnetrygd",
+      "temanavn":"Barnetrygd og oppfølging",
       "antallStatusUnderBehandling":0,
-      "sisteOppdatering":"2019-08-16T12:00:00+02:00",
+      "sisteOppdatering": null,
       "url":"https://tjenester-q0.nav.no/saksoversikt/tema/BAR"
     },
     {
-      "temanavn":"Bil",
+      "temanavn":"Sykepenger og oppfølging",
       "antallStatusUnderBehandling":10,
       "sisteOppdatering":"2019-08-14T12:00:00+02:00",
       "url":"https://tjenester-q0.nav.no/saksoversikt/tema/BIL"

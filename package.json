@@ -30,6 +30,8 @@
     "nav-frontend-chevron-style": "^0.3.5",
     "nav-frontend-etiketter": "^1.0.24",
     "nav-frontend-etiketter-style": "^0.3.18",
+    "nav-frontend-hjelpetekst": "^1.0.40",
+    "nav-frontend-hjelpetekst-style": "^0.3.30",
     "nav-frontend-ikoner-assets": "^1.0.2",
     "nav-frontend-js-utils": "^1.0.7",
     "nav-frontend-knapper": "^1.0.33",
@@ -37,6 +39,8 @@
     "nav-frontend-lenkepanel": "^1.0.30",
     "nav-frontend-lenkepanel-style": "^0.3.25",
     "nav-frontend-lenker": "^1.0.27",
+    "nav-frontend-lukknapp": "^1.0.22",
+    "nav-frontend-lukknapp-style": "^0.2.20",
     "nav-frontend-paneler": "^1.0.17",
     "nav-frontend-paneler-style": "^0.3.16",
     "nav-frontend-skjema": "^1.0.70",
@@ -84,7 +88,7 @@
     "jest-fetch-mock": "^2.1.2",
     "less-watch-compiler": "^1.11.3",
     "nav-frontend-core": "^4.0.10",
-    "nav-frontend-lenker-style": "^0.2.20",
+    "nav-frontend-lenker-style": "^0.2.21",
     "react-test-renderer": "^16.9.0"
   },
   "babel": {

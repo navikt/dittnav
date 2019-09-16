@@ -73,7 +73,7 @@ const lenker = {
   dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
   utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/`},
   saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/`},
-  saksoversiktHjelp: { tittel: 'Dine saker hjelp', url: `${getServicesUrl()}/saksoversikt/`},
+  saksoversiktHjelp: { tittel: 'Dine saker hjelp', url: `#`},
   innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks/`},
 };
 

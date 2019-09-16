@@ -14,36 +14,46 @@ const MAX_SAKER_SOM_VISES = 2;
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel(sakstemaList) {
     const { antallSakstema } = this.props.sakstema;
-    // const { numberToWord } = i18n.nb;
     const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
+    const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
 
-    const makeFooter = () => {
-      const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
+    // const makeFooter = () => {
+    //   const { numberToWord } = i18n.nb;
+    //   const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
+    //
+    //   if (numRemainingSaker > 0) {
+    //     return (
+    //       <div className="saksoversikt-footer typo-undertekst" key="footer">
+    //         <a href={Config.LENKER.saksoversikt.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
+    //           {
+    //             numRemainingSaker === 1
+    //               ? <FormattedMessage id="saksoversikt.har.entil.sak" />
+    //               : <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numberToWord(numRemainingSaker) }} />
+    //           }
+    //         </a>
+    //       </div>
+    //     );
+    //   }
+    //
+    //   return (
+    //     <div className="saksoversikt-footer typo-undertekst" key="footer">
+    //       <FormattedMessage id="saksoversikt.ingen.flere.saker" />
+    //       <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+    //         <FormattedMessage id="saksoversikt.hjelp" />
+    //       </a>
+    //     </div>
+    //   );
+    // };
 
-      if (numRemainingSaker > 0) {
-        // return (
-        //   <div className="saksoversikt-footer typo-undertekst" key="footer">
-        //     <a href={Config.LENKER.saksoversikt.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
-        //       {
-        //         numRemainingSaker === 1
-        //           ? <FormattedMessage id="saksoversikt.har.entil.sak" />
-        //           : <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numberToWord(numRemainingSaker) }} />
-        //       }
-        //     </a>
-        //   </div>
-        // );
-        return null;
-      }
-
-      return (
+    const footer = numRemainingSaker <= 0
+      ? (
         <div className="saksoversikt-footer typo-undertekst" key="footer">
           <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-          <a href={Config.LENKER.saksoversiktHjelp.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
-            <FormattedMessage id="saksoversikt.ingen.flere.saker.lenke" />
+          <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+            <FormattedMessage id="saksoversikt.hjelp" />
           </a>
         </div>
-      );
-    };
+      ) : null;
 
     const liste = sakstemaListPruned.map((tema) => (
       <DinesakerSakstema
@@ -53,7 +63,7 @@ class DittnavLenkePanel extends React.Component {
         dato={tema.sisteOppdatering}
         antallUnderBehandling={tema.antallStatusUnderBehandling}
       />
-    )).concat(makeFooter());
+    )).concat(footer);
 
     return (
       <OversiktspanelMedListe
