@@ -10,6 +10,7 @@
     "@babel/runtime-corejs2": "^7.4.5",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
+    "core-js": "^3.2.1",
     "cors": "^2.8.5",
     "css": "^2.2.4",
     "eslint-plugin-import": "^2.18.2",
@@ -46,6 +47,7 @@
     "react-dom": "^16.9.0",
     "react-intl": "^2.9.0",
     "react-scripts": "^3.1.0",
+    "regenerator-runtime": "^0.13.3",
     "request": "^2.88.0",
     "translations": "^2.2.1",
     "whatwg-fetch": "^3.0.0"
@@ -82,7 +84,14 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-react"
+      "@babel/preset-react",
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": 2
+        }
+      ]
     ],
     "plugins": [
       "transform-class-properties",
