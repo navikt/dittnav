@@ -107,23 +107,6 @@ exports[`Snapshot test med saker 1`] = `
           </div>
         </a>
       </div>
-      <div
-        className="saksoversikt-footer"
-      >
-        <span
-          className="typo-undertekst"
-        >
-          <a
-            className="footer-lenke"
-            href="http://localhost:9222/saksoversikt/"
-            id="dekorator-bottomborder-overstyring"
-          >
-            <span>
-              Du har tre flere saker.
-            </span>
-          </a>
-        </span>
-      </div>
     </div>
   </div>
   <div
