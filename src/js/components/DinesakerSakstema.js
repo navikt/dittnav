@@ -2,15 +2,16 @@ import React from 'react';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import Config from '../Config';
 import HoyreChevron from 'nav-frontend-chevron';
 
 import i18n from '../../translations/i18n';
 
+import Config from '../Config';
+
 const sakstemaUrlOverride = {
-  "foreldrepenger": Config.LENKER.dineForeldrepenger.url,
-  "sykepenger": Config.LENKER.dittSykefravaer.url,
-  "sykmelding": Config.LENKER.dittSykefravaer.url,
+  foreldrepenger: Config.LENKER.dineForeldrepenger.url,
+  sykepenger: Config.LENKER.dittSykefravaer.url,
+  sykmelding: Config.LENKER.dittSykefravaer.url,
 };
 
 class DinesakerSakstema extends React.Component {
@@ -43,8 +44,10 @@ class DinesakerSakstema extends React.Component {
     return (
       <div className="sak-container">
         <a
-          href={ this.getTemaUrl(temanavn) || href }
-          className="sak-lenke" id="dekorator-bottomborder-overstyring">
+          href={this.getTemaUrl(temanavn) || href}
+          className="sak-lenke"
+          id="dekorator-bottomborder-overstyring"
+        >
           <div className="sak-temanavn typo-undertittel">
             { temanavn }
             <HoyreChevron className="sak-chevron" />
@@ -54,15 +57,15 @@ class DinesakerSakstema extends React.Component {
             { this.getStatusMessage(antallUnderBehandling) }
             <FormattedMessage id="sakstema.sist.oppdatert" />
             {
-              dato && dato !== ""
-              ? (
-                <FormattedDate
-                  value={new Date(dato)}
-                  year="numeric"
-                  month="short"
-                  day="numeric"
-                />
-              ) : "ukjent"
+              dato && dato !== ''
+                ? (
+                  <FormattedDate
+                    value={new Date(dato)}
+                    year="numeric"
+                    month="short"
+                    day="numeric"
+                  />
+                ) : 'ukjent'
             }
           </div>
         </a>
@@ -79,7 +82,7 @@ DinesakerSakstema.propTypes = {
 };
 
 DinesakerSakstema.defaultProps = {
-  dato: "",
+  dato: '',
 };
 
 export default DinesakerSakstema;
