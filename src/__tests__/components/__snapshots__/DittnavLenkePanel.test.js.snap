@@ -13,16 +13,16 @@ exports[`Snapshot test med saker 1`] = `
       <div
         className="oversiktspanel__overskrift"
       >
-        <h2
+        <div
           className="typo-systemtittel"
         >
           <span>
             Dine siste saker
           </span>
-        </h2>
+        </div>
       </div>
-      <p
-        className="typo-normal oversiktspanel__header-lenketekst"
+      <div
+        className="oversiktspanel__header-lenketekst typo-normaltekst"
       >
         <a
           className="oversiktspanel__header-lenke"
@@ -37,7 +37,7 @@ exports[`Snapshot test med saker 1`] = `
             id="oversiktspanel__chevron"
           />
         </a>
-      </p>
+      </div>
     </div>
     <div>
       <hr />
