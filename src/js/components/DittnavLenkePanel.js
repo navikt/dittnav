@@ -88,7 +88,7 @@ class DittnavLenkePanel extends React.Component {
                 </a>
               </>
             )}
-       </span>
+        </span>
       </div>
     );
 
