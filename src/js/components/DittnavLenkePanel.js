@@ -113,14 +113,11 @@ class DittnavLenkePanel extends React.Component {
 
   render() {
     const { sakstemaList } = this.props.sakstema;
-    const harSaker = sakstemaList && sakstemaList.length > 0;
-    const dinesakerPanel = this.makeSaksoversiktPanel(sakstemaList);
 
     return (
       <div className="dittnav-lenkepanel-top-container">
-        { harSaker ? dinesakerPanel : null }
-        <div className="dittnav-lenkepanel-liten" id={harSaker ? 'cols-layout' : null}>
-          { !harSaker ? dinesakerPanel : null }
+        { this.makeSaksoversiktPanel(sakstemaList) }
+        <div className="dittnav-lenkepanel-liten" id="cols-layout">
           <LenkepanelMedIkon
             alt="Utbetalinger"
             overskrift="fliser.dine.utbetalinger"
