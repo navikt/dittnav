@@ -108,17 +108,21 @@ exports[`Snapshot test med saker 1`] = `
         </a>
       </div>
       <div
-        className="saksoversikt-footer typo-undertekst"
+        className="saksoversikt-footer"
       >
-        <a
-          className="footer-lenke"
-          href="http://localhost:9222/saksoversikt/"
-          id="dekorator-bottomborder-overstyring"
+        <span
+          className="typo-undertekst"
         >
-          <span>
-            Du har tre flere saker.
-          </span>
-        </a>
+          <a
+            className="saksoversikt-footer__lenke"
+            href="http://localhost:9222/saksoversikt/"
+            id="dekorator-bottomborder-overstyring"
+          >
+            <span>
+              Du har tre flere saker.
+            </span>
+          </a>
+        </span>
       </div>
     </div>
   </div>
@@ -236,16 +240,20 @@ exports[`Snapshot test uten saker 1`] = `
         <div
           className="saksoversikt-footer typo-undertekst"
         >
-          Du har ingen saker. 
-          <a
-            className="saksoversikt-footer__lenke"
-            href="#"
-            id="dekorator-bottomborder-overstyring"
+          <span
+            className="typo-undertekst"
           >
-            <span>
-              Finner du ikke saken din?
-            </span>
-          </a>
+            Du har ingen saker. 
+            <a
+              className="saksoversikt-footer__lenke"
+              href="#"
+              id="dekorator-bottomborder-overstyring"
+            >
+              <span>
+                Finner du ikke saken din?
+              </span>
+            </a>
+          </span>
         </div>
       </div>
     </div>

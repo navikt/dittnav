@@ -50,10 +50,12 @@ class DittnavLenkePanel extends React.Component {
           border
           liste={[
             <div className="saksoversikt-footer typo-undertekst" key="footer">
-              {'Du har ingen saker. '}
-              <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
-                <FormattedMessage id="saksoversikt.hjelp" />
-              </a>
+              <span className="typo-undertekst">
+                {'Du har ingen saker. '}
+                <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+                  <FormattedMessage id="saksoversikt.hjelp" />
+                </a>
+              </span>
             </div>,
           ]}
         />
@@ -66,25 +68,27 @@ class DittnavLenkePanel extends React.Component {
     const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
 
     const footer = (
-      <div className="saksoversikt-footer typo-undertekst" key="footer">
-        { numRemainingSaker > 0
-          ? (
-            <a href={Config.LENKER.saksoversikt.url} className="footer-lenke" id="dekorator-bottomborder-overstyring">
-              {
-                numRemainingSaker === 1
-                  ? <FormattedMessage id="saksoversikt.har.entil.sak" />
-                  : <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numberToWord(numRemainingSaker) }} />
-              }
-            </a>
-          )
-          : (
-            <>
-              <FormattedMessage id="saksoversikt.ingen.flere.saker" />
-              <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
-                <FormattedMessage id="saksoversikt.hjelp" />
+      <div className="saksoversikt-footer" key="footer">
+        <span className="typo-undertekst">
+          { numRemainingSaker > 0
+            ? (
+              <a href={Config.LENKER.saksoversikt.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+                {
+                  numRemainingSaker === 1
+                    ? <FormattedMessage id="saksoversikt.har.entil.sak" />
+                    : <FormattedMessage id="saksoversikt.har.flere.saker" values={{ count: numberToWord(numRemainingSaker) }} />
+                }
               </a>
-            </>
-          )}
+            )
+            : (
+              <>
+                <FormattedMessage id="saksoversikt.ingen.flere.saker" />
+                <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+                  <FormattedMessage id="saksoversikt.hjelp" />
+                </a>
+              </>
+            )}
+       </span>
       </div>
     );
 

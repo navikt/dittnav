@@ -97,16 +97,20 @@ exports[`render Home page without props 1`] = `
               <div
                 className="saksoversikt-footer typo-undertekst"
               >
-                Du har ingen saker. 
-                <a
-                  className="saksoversikt-footer__lenke"
-                  href="#"
-                  id="dekorator-bottomborder-overstyring"
+                <span
+                  className="typo-undertekst"
                 >
-                  <span>
-                    Finner du ikke saken din?
-                  </span>
-                </a>
+                  Du har ingen saker. 
+                  <a
+                    className="saksoversikt-footer__lenke"
+                    href="#"
+                    id="dekorator-bottomborder-overstyring"
+                  >
+                    <span>
+                      Finner du ikke saken din?
+                    </span>
+                  </a>
+                </span>
               </div>
             </div>
           </div>
