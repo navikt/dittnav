@@ -27,23 +27,25 @@ class DinesakerSakstema extends React.Component {
     //   return sakstemaUrlOverride[sakstemaKey];
     // }
 
-    return sakstemaUrlOverride[temakode] || temaBaseUrl+temakode;
+    return sakstemaUrlOverride[temakode] || temaBaseUrl + temakode;
   }
 
   getStatusMelding() {
     const { numberToWord } = i18n.nb;
-    const { antallUnderBehandling } = this.props.tema;
+    const { antallStatusUnderBehandling } = this.props.tema;
 
-    if (antallUnderBehandling <= 0) {
+    if (antallStatusUnderBehandling <= 0) {
       return null;
     }
-    if (antallUnderBehandling === 1) {
+    if (antallStatusUnderBehandling === 1) {
       return <FormattedMessage id="sakstema.antall.under.behandling.en" />;
     }
-    return <FormattedMessage
-      id="sakstema.antall.under.behandling.flere"
-      values={{ count: numberToWord(antallUnderBehandling) }}
-    />;
+    return (
+      <FormattedMessage
+        id="sakstema.antall.under.behandling.flere"
+        values={{ count: numberToWord(antallStatusUnderBehandling) }}
+      />
+    );
   }
 
   render() {
