@@ -50,7 +50,7 @@ exports[`Snapshot test med saker 1`] = `
       >
         <a
           className="sak-lenke"
-          href="#"
+          href="http://localhost:9222/saksoversikt/tema/undefined"
           id="dekorator-bottomborder-overstyring"
         >
           <div
@@ -81,7 +81,7 @@ exports[`Snapshot test med saker 1`] = `
       >
         <a
           className="sak-lenke"
-          href="#"
+          href="http://localhost:9222/saksoversikt/tema/undefined"
           id="dekorator-bottomborder-overstyring"
         >
           <div
@@ -105,6 +105,19 @@ exports[`Snapshot test med saker 1`] = `
               2019 M07 23
             </span>
           </div>
+        </a>
+      </div>
+      <div
+        className="saksoversikt-footer typo-undertekst"
+      >
+        <a
+          className="footer-lenke"
+          href="http://localhost:9222/saksoversikt/"
+          id="dekorator-bottomborder-overstyring"
+        >
+          <span>
+            Du har tre flere saker.
+          </span>
         </a>
       </div>
     </div>
@@ -181,34 +194,61 @@ exports[`Snapshot test uten saker 1`] = `
     className="dittnav-lenkepanel-liten"
     id={null}
   >
-    <a
-      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/saksoversikt/"
-      onClick={null}
+    <div
+      className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
     >
       <div
-        className="lenkepanel__innhold lenkepanel__heading"
+        className="oversiktspanel__header"
       >
         <div
-          className="lenkepanel__ikon"
+          className="oversiktspanel__overskrift"
         >
-          
-        </div>
-        <div>
-          <h2
-            className="typo-undertittel"
+          <div
+            className="typo-systemtittel"
           >
             <span>
-              Dine saker
+              Dine siste saker
             </span>
-          </h2>
-          
+          </div>
+        </div>
+        <div
+          className="oversiktspanel__header-lenketekst typo-normaltekst"
+        >
+          <a
+            className="oversiktspanel__header-lenke"
+            href="http://localhost:9222/saksoversikt/"
+            id="dekorator-bottomborder-overstyring"
+          >
+            Din saksoversikt
+            <i
+              className="nav-frontend-chevron chevronboks chevron--hoyre"
+              id="oversiktspanel__chevron"
+            />
+          </a>
         </div>
       </div>
-      <span
-        className="lenkepanel__indikator"
-      />
-    </a>
+      <div>
+        <hr />
+      </div>
+      <div
+        className="oversiktspanel__liste"
+      >
+        <div
+          className="saksoversikt-footer typo-undertekst"
+        >
+          Du har ingen saker. 
+          <a
+            className="saksoversikt-footer__lenke"
+            href="#"
+            id="dekorator-bottomborder-overstyring"
+          >
+            <span>
+              Finner du ikke saken din?
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
     <a
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"

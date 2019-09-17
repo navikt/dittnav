@@ -9,26 +9,30 @@ import i18n from '../../translations/i18n';
 import Config from '../Config';
 
 const sakstemaUrlOverride = {
-  foreldrepenger: Config.LENKER.dineForeldrepenger.url,
-  sykepenger: Config.LENKER.dittSykefravaer.url,
-  sykmelding: Config.LENKER.dittSykefravaer.url,
+  FOR: Config.LENKER.dineForeldrepenger.url,
+  SYK: Config.LENKER.dittSykefravaer.url,
+  SYM: Config.LENKER.dittSykefravaer.url,
+  SYK_SYM: Config.LENKER.dittSykefravaer.url,
+  SYM_SYK: Config.LENKER.dittSykefravaer.url,
 };
+
+const temaBaseUrl = Config.LENKER.saksoversiktTema.url;
 
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {
-    const temanavnLowerCase = this.props.temanavn.toLowerCase();
+    const { temakode } = this.props.tema;
 
-    if (temanavnLowerCase.includes('oppfølging')) {
-      const temaKey = temanavnLowerCase.split(/[\s,]/)[0];
-      return sakstemaUrlOverride[temaKey];
-    }
+    // if (temanavnLowerCase.includes('oppfølging')) {
+    //   const sakstemaKey = temanavnLowerCase.split(/[\s,]/)[0];
+    //   return sakstemaUrlOverride[sakstemaKey];
+    // }
 
-    return sakstemaUrlOverride[temanavnLowerCase];
+    return sakstemaUrlOverride[temakode] || temaBaseUrl+temakode;
   }
 
-  getStatusMessage() {
+  getStatusMelding() {
     const { numberToWord } = i18n.nb;
-    const { antallUnderBehandling } = this.props;
+    const { antallUnderBehandling } = this.props.tema;
 
     if (antallUnderBehandling <= 0) {
       return null;
@@ -36,16 +40,19 @@ class DinesakerSakstema extends React.Component {
     if (antallUnderBehandling === 1) {
       return <FormattedMessage id="sakstema.antall.under.behandling.en" />;
     }
-    return <FormattedMessage id="sakstema.antall.under.behandling.flere" values={{ count: numberToWord(antallUnderBehandling) }} />;
+    return <FormattedMessage
+      id="sakstema.antall.under.behandling.flere"
+      values={{ count: numberToWord(antallUnderBehandling) }}
+    />;
   }
 
   render() {
-    const { dato, temanavn, antallUnderBehandling, href } = this.props;
+    const { sisteOppdatering, temanavn } = this.props.tema;
 
     return (
       <div className="sak-container">
         <a
-          href={this.getTemaUrl(temanavn) || href}
+          href={this.getTemaUrl()}
           className="sak-lenke"
           id="dekorator-bottomborder-overstyring"
         >
@@ -55,13 +62,13 @@ class DinesakerSakstema extends React.Component {
           </div>
 
           <div className="sak-status typo-undertekst">
-            { this.getStatusMessage(antallUnderBehandling) }
+            { this.getStatusMelding() }
             <FormattedMessage id="sakstema.sist.oppdatert" />
             {
-              dato && dato !== ''
+              sisteOppdatering && sisteOppdatering !== ''
                 ? (
                   <FormattedDate
-                    value={new Date(dato)}
+                    value={new Date(sisteOppdatering)}
                     year="numeric"
                     month="short"
                     day="numeric"
@@ -76,14 +83,12 @@ class DinesakerSakstema extends React.Component {
 }
 
 DinesakerSakstema.propTypes = {
-  href: PropTypes.string.isRequired,
-  temanavn: PropTypes.string.isRequired,
-  dato: PropTypes.string,
-  antallUnderBehandling: PropTypes.number.isRequired,
-};
-
-DinesakerSakstema.defaultProps = {
-  dato: '',
+  tema: PropTypes.shape({
+    temakode: PropTypes.string.isRequired,
+    temanavn: PropTypes.string.isRequired,
+    sisteOppdatering: PropTypes.string.isRequired,
+    antallStatusUnderBehandling: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default DinesakerSakstema;
