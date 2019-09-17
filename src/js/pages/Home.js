@@ -30,45 +30,9 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   mininnboks,
 });
 
-const hjSafetyStub = () => {
-  window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)}; // eslint-disable-line
-};
-
-const gaSafetyStub = () => {
-  window.dataLayer=window.dataLayer||{ push: function(o){console.error(o)} }; // eslint-disable-line
-};
-
-const hjTrigger = name => hj('trigger', name); // eslint-disable-line
-const gaTrigger = (gruppe, variant) => dataLayer.push({ 'event':'dittnav-segment', 'gruppe' : gruppe, 'variant': variant } ); // eslint-disable-line
-
 const NUM_ENDPOINTS = 4;
 
 class Home extends Component {
-  componentDidMount() {
-    hjSafetyStub();
-    gaSafetyStub();
-  }
-
-  componentDidUpdate() {
-    const { info, fetching } = this.props;
-    if (fetching >= NUM_ENDPOINTS) {
-      try {
-        const n = document.getElementById('dittnav-main-container').children.length;
-        if (info.personinfo && info.personinfo.underOppfolging) {
-          gaTrigger('vta', n);
-          hjTrigger(`dittnav-vta-${n}`);
-        } else {
-          gaTrigger('gen', n);
-          hjTrigger(`dittnav-gen-${n}`);
-          hjTrigger('dittnav-generellbruker');
-        }
-      } catch (e) {
-        console.error(e);
-        console.error('Failed callig hotjar');
-      }
-    }
-  }
-
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching, sakstema } = this.props;
     const tjenesterEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
