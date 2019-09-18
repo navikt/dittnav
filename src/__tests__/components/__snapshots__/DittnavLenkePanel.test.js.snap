@@ -19,6 +19,60 @@ exports[`Snapshot test med saker 1`] = `
           <span>
             Dine siste saker
           </span>
+          <div
+            className="hjelpetekst"
+          >
+            <button
+              aria-label=""
+              aria-pressed={false}
+              className="hjelpetekst__apneknapp"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              title=""
+              type="button"
+            >
+              <span
+                className="sr-only"
+              >
+                
+              </span>
+              <svg
+                className="hjelpetekst__anchor"
+                focusable="false"
+                height={32}
+                kind="help-circle"
+                viewBox="0 0 18.22 18.22"
+                width={32}
+              >
+                <title>
+                  Hjelp
+                </title>
+                <path
+                  d="M9.11 1a8.11 8.11 0 1 0 8.11 8.11A8.12 8.12 0 0 0 9.11 1zm0 13.7a.89.89 0 1 1 .89-.9.89.89 0 0 1-.89.9zm.5-5.7v1.89a.5.5 0 0 1-1 0V8.5a.5.5 0 0 1 .5-.5 1.85 1.85 0 1 0-1.85-1.85.5.5 0 0 1-1 0A2.85 2.85 0 1 1 9.61 9z"
+                  fill="none"
+                />
+                <path
+                  d="M9.11 0a9.11 9.11 0 1 0 9.11 9.11A9.12 9.12 0 0 0 9.11 0zm0 17.22a8.11 8.11 0 1 1 8.11-8.11 8.12 8.12 0 0 1-8.11 8.11z"
+                  fill="#2968b2"
+                />
+                <path
+                  d="M9.11 3.3a2.85 2.85 0 0 0-2.85 2.85.5.5 0 0 0 1 0A1.85 1.85 0 1 1 9.11 8a.5.5 0 0 0-.5.5v2.35a.5.5 0 0 0 1 0V9a2.85 2.85 0 0 0-.5-5.65z"
+                  fill="#2968b2"
+                />
+                <circle
+                  cx="9.11"
+                  cy="13.8"
+                  fill="#2968b2"
+                  r=".89"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -192,6 +246,60 @@ exports[`Snapshot test uten saker 1`] = `
           <span>
             Dine siste saker
           </span>
+          <div
+            className="hjelpetekst"
+          >
+            <button
+              aria-label=""
+              aria-pressed={false}
+              className="hjelpetekst__apneknapp"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              title=""
+              type="button"
+            >
+              <span
+                className="sr-only"
+              >
+                
+              </span>
+              <svg
+                className="hjelpetekst__anchor"
+                focusable="false"
+                height={32}
+                kind="help-circle"
+                viewBox="0 0 18.22 18.22"
+                width={32}
+              >
+                <title>
+                  Hjelp
+                </title>
+                <path
+                  d="M9.11 1a8.11 8.11 0 1 0 8.11 8.11A8.12 8.12 0 0 0 9.11 1zm0 13.7a.89.89 0 1 1 .89-.9.89.89 0 0 1-.89.9zm.5-5.7v1.89a.5.5 0 0 1-1 0V8.5a.5.5 0 0 1 .5-.5 1.85 1.85 0 1 0-1.85-1.85.5.5 0 0 1-1 0A2.85 2.85 0 1 1 9.61 9z"
+                  fill="none"
+                />
+                <path
+                  d="M9.11 0a9.11 9.11 0 1 0 9.11 9.11A9.12 9.12 0 0 0 9.11 0zm0 17.22a8.11 8.11 0 1 1 8.11-8.11 8.12 8.12 0 0 1-8.11 8.11z"
+                  fill="#2968b2"
+                />
+                <path
+                  d="M9.11 3.3a2.85 2.85 0 0 0-2.85 2.85.5.5 0 0 0 1 0A1.85 1.85 0 1 1 9.11 8a.5.5 0 0 0-.5.5v2.35a.5.5 0 0 0 1 0V9a2.85 2.85 0 0 0-.5-5.65z"
+                  fill="#2968b2"
+                />
+                <circle
+                  cx="9.11"
+                  cy="13.8"
+                  fill="#2968b2"
+                  r=".89"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -202,7 +310,9 @@ exports[`Snapshot test uten saker 1`] = `
           href="http://localhost:9222/saksoversikt/"
           id="dekorator-bottomborder-overstyring"
         >
-          Din saksoversikt
+          <span>
+            Se alle dine saker (0)
+          </span>
           <i
             className="nav-frontend-chevron chevronboks chevron--hoyre"
             id="oversiktspanel__chevron"
@@ -222,16 +332,9 @@ exports[`Snapshot test uten saker 1`] = `
         <span
           className="typo-undertekst"
         >
-          Du har ingen saker. 
-          <a
-            className="saksoversikt-footer__lenke"
-            href="#"
-            id="dekorator-bottomborder-overstyring"
-          >
-            <span>
-              Finner du ikke saken din?
-            </span>
-          </a>
+          <span>
+            Du har ingen saker. 
+          </span>
         </span>
       </div>
     </div>

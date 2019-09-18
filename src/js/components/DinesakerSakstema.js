@@ -9,11 +9,11 @@ import i18n from '../../translations/i18n';
 import Config from '../Config';
 
 const sakstemaUrlOverride = {
-  FOR: Config.LENKER.dineForeldrepenger.url,
-  SYK: Config.LENKER.dittSykefravaer.url,
-  SYM: Config.LENKER.dittSykefravaer.url,
-  SYK_SYM: Config.LENKER.dittSykefravaer.url,
-  SYM_SYK: Config.LENKER.dittSykefravaer.url,
+  // FOR: Config.LENKER.dineForeldrepenger.url,
+  // SYK: Config.LENKER.dittSykefravaer.url,
+  // SYM: Config.LENKER.dittSykefravaer.url,
+  // SYK_SYM: Config.LENKER.dittSykefravaer.url,
+  // SYM_SYK: Config.LENKER.dittSykefravaer.url,
 };
 
 const temaBaseUrl = Config.LENKER.saksoversiktTema.url;
@@ -21,12 +21,6 @@ const temaBaseUrl = Config.LENKER.saksoversiktTema.url;
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {
     const { temakode } = this.props.tema;
-
-    // if (temanavnLowerCase.includes('oppfølging')) {
-    //   const sakstemaKey = temanavnLowerCase.split(/[\s,]/)[0];
-    //   return sakstemaUrlOverride[sakstemaKey];
-    // }
-
     return sakstemaUrlOverride[temakode] || temaBaseUrl + temakode;
   }
 
