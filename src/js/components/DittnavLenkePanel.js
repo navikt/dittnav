@@ -2,7 +2,6 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import { HjelpetekstAuto } from 'nav-frontend-hjelpetekst';
 import Config from '../Config';
 import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
@@ -13,22 +12,16 @@ const MAX_SAKER_SOM_VISES = 2;
 class DittnavLenkePanel extends React.Component {
   makeSaksoversiktPanel() {
     const { antallSakstema, sakstemaList } = this.props.sakstema;
-
-    const overskrift = (
-      <>
-        <FormattedMessage id="saksoversikt.overskrift" />
-        <HjelpetekstAuto tittel="">
-          <FormattedMessage id="saksoversikt.hjelp" />
-        </HjelpetekstAuto>
-      </>
-    );
-
+    const overskrift = <FormattedMessage id="saksoversikt.overskrift" />;
     const headerLenkeTekst = <FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />;
 
     const makeFooter = (footerTekst) => (
       <div className="saksoversikt-footer typo-undertekst" key="footer">
         <span className="typo-undertekst">
           <FormattedMessage id={footerTekst} />
+          <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+            <FormattedMessage id="saksoversikt.hjelp.lenketekst" />
+          </a>
         </span>
       </div>
     );
@@ -48,7 +41,6 @@ class DittnavLenkePanel extends React.Component {
 
     const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
     const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
-
     const footer = (
       numRemainingSaker > 0
         ? null

@@ -112,7 +112,7 @@
 
   "saksoversikt.overskrift": "Dine siste saker",
   "saksoversikt.ingen.flere.saker": "Du har ingen flere saker. ",
-  "saksoversikt.hjelp": "Finner du ikke saken din? Det er kanskje pga. [...]",
+  "saksoversikt.hjelp.lenketekst": "Finner du ikke saken din?",
   "saksoversikt.har.ingen.saker": "Du har ingen saker. ",
   "saksoversikt.har.entil.sak": "Du har én sak til.",
   "saksoversikt.har.flere.saker": "Du har {count} flere saker.",
