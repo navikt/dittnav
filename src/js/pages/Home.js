@@ -39,6 +39,8 @@ const gaSafetyStub = () => {
 const hjTrigger = name => hj('trigger', name); // eslint-disable-line
 const gaTrigger = (gruppe, variant) => dataLayer.push({ 'event':'dittnav-segment', 'gruppe' : gruppe, 'variant': variant } ); // eslint-disable-line
 
+const NUM_ENDPOINTS = 4;
+
 class Home extends Component {
   componentDidMount() {
     hjSafetyStub();
@@ -47,7 +49,7 @@ class Home extends Component {
 
   componentDidUpdate() {
     const { info, fetching } = this.props;
-    if (fetching >= 3) {
+    if (fetching >= NUM_ENDPOINTS) {
       try {
         const n = document.getElementById('dittnav-main-container').children.length;
         if (info.personinfo && info.personinfo.underOppfolging) {
@@ -77,7 +79,7 @@ class Home extends Component {
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
-              { fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
+              { fetching < NUM_ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel sakstema={sakstema} />
               { !info || !info.personinfo ? null : tjenesterEllerVta }

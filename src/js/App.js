@@ -57,14 +57,14 @@ class App extends Component {
       }).catch(catchError('error.baksystemer'));
 
     api.fetchSakstema()
-        .then((r) => {
-            this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
+      .then((r) => {
+        this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
   }
 
   render() {
     const {
-      info, paabegynteSoknader, mininnboks, errors, fetching, sakstema
+      info, paabegynteSoknader, mininnboks, errors, fetching, sakstema,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -75,7 +75,7 @@ class App extends Component {
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
           { erIDev ? <Hendelser /> : null }
-          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema}/>
+          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />
         </div>
       </main>
     );
