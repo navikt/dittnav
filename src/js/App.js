@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import FeilMeldinger from './components/FeilMeldinger';
@@ -21,7 +21,6 @@ const App = ({ api }) => {
   React.useEffect(() => {
     const catchError = msg => () => {
       errors.push(msg);
-      ///this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
       setErrors(errors);
       setFetching(fetching + 1);
     };
@@ -32,7 +31,6 @@ const App = ({ api }) => {
         if (feilendeTjenester.length > 0) {
           errors.push('error.baksystemer');
         }
-        // this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
         setInfo(r);
         setErrors(errors);
         setFetching(fetching + 1);
@@ -45,18 +43,16 @@ const App = ({ api }) => {
         if (feilendeBaksystem.length > 0) {
           errors.push('error.baksystemer');
         }
-        // this.setState(() => ({ paabegynteSoknader: r, fetching: this.state.fetching + 1 }));
         setPaabegynteSoknader(r);
         setFetching(fetching + 1);
       }).catch(catchError('error.baksystemer'));
 
     api.fetchMeldinger()
       .then((r) => {
-        //this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
         setMininnboks(r)
         setFetching(fetching + 1)
       }).catch(catchError('error.baksystemer'));
-  }, []);
+  }, [errors, api, fetching]);
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
     const erIDev = Environments() === 'DEV';
