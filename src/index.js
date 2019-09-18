@@ -14,15 +14,4 @@ import enMessages from './translations/en.json';
 
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
-function renderApp() {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
-}
-
-api.checkAuth()
-  .then(() => renderApp())
-  .catch((e) => {
-    if (e && e.message && e.message === 'Unauthorized') {
-      return;
-    }
-    renderApp();
-  });
+ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));

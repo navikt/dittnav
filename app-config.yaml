@@ -7,6 +7,7 @@ replicas:
   max: 4
   cpuThresholdPercentage: 50
 port: 8080
+webproxy: true
 healthcheck:
   liveness:
     path: person/dittnav/internal/isAlive
@@ -36,5 +37,11 @@ fasitResources:
       url: LOGINSERVICE
   - alias: appdynamics
     resourceType: applicationproperties
+  - alias: aad_b2c_clientid
+    resourceType: credential
+  - alias: aad_b2c_discovery
+    resourceType: baseurl
+  - alias: veilarbstepup_oidc
+    resourceType: baseurl
 alertProfiles:
   - common-java-modules

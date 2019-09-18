@@ -10,19 +10,20 @@ import './polyfill';
 
 import Environments from './Environment';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], fetching: 0 };
-  }
+const App = ({ api }) => {
 
-  async componentWillMount() {
-    const { errors } = this.state;
-    const { api } = this.props;
+  const [info, setInfo] = React.useState({});
+  const [paabegynteSoknader, setPaabegynteSoknader] = React.useState(null);
+  const [mininnboks, setMininnboks] = React.useState([]);
+  const [errors, setErrors] = React.useState([]);
+  const [fetching, setFetching] = React.useState(0);
 
+  React.useEffect(() => {
     const catchError = msg => () => {
       errors.push(msg);
-      this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
+      ///this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
+      setErrors(errors);
+      setFetching(fetching + 1);
     };
 
     api.fetchPersonInfoAndServices()
@@ -31,7 +32,10 @@ class App extends Component {
         if (feilendeTjenester.length > 0) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
+        // this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
+        setInfo(r);
+        setErrors(errors);
+        setFetching(fetching + 1);
       })
       .catch(catchError('error.baksystemer'));
 
@@ -41,19 +45,18 @@ class App extends Component {
         if (feilendeBaksystem.length > 0) {
           errors.push('error.baksystemer');
         }
-        this.setState(() => ({ paabegynteSoknader: r, fetching: this.state.fetching + 1 }));
+        // this.setState(() => ({ paabegynteSoknader: r, fetching: this.state.fetching + 1 }));
+        setPaabegynteSoknader(r);
+        setFetching(fetching + 1);
       }).catch(catchError('error.baksystemer'));
 
     api.fetchMeldinger()
       .then((r) => {
-        this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
+        //this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
+        setMininnboks(r)
+        setFetching(fetching + 1)
       }).catch(catchError('error.baksystemer'));
-  }
-
-  render() {
-    const {
-      info, paabegynteSoknader, mininnboks, errors, fetching,
-    } = this.state;
+  }, []);
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
     const erIDev = Environments() === 'DEV';
@@ -67,7 +70,6 @@ class App extends Component {
         </div>
       </main>
     );
-  }
 }
 
 App.propTypes = {

@@ -38,22 +38,6 @@ const fetchJSONAndCheckForErrors = (url) => {
   });
 };
 
-const checkAuth = () => {
-  return new Promise((res, rej) => {
-    fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
-      .then((r) => {
-        if (!r.authenticated) {
-          redirectToLogin();
-          return;
-        }
-        res(r.json());
-      })
-      .catch((e) => {
-        rej(e);
-      });
-  });
-};
-
 const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
   fetch(url, {
     method: 'POST',
@@ -77,7 +61,6 @@ const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_
 
 export default {
   fetchUnleashFeatures,
-  checkAuth,
   fetchPersonInfoAndServices,
   fetchSaker,
   fetchMeldinger,
