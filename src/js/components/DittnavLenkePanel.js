@@ -6,6 +6,8 @@ import Config from '../Config';
 import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
+import Unleash from './Unleash';
+import api from '../Api';
 
 const MAX_SAKER_SOM_VISES = 2;
 
@@ -16,7 +18,7 @@ class DittnavLenkePanel extends React.Component {
     const headerLenkeTekst = <FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />;
 
     const makeFooter = (footerTekst) => (
-      <div className="saksoversikt-footer typo-undertekst" key="footer">
+      <div className="saksoversikt-footer" key="footer">
         <span className="typo-undertekst">
           <FormattedMessage id={footerTekst} />
           <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
@@ -69,6 +71,9 @@ class DittnavLenkePanel extends React.Component {
   render() {
     return (
       <div className="dittnav-lenkepanel-top-container">
+        <Unleash feature="dittnav-test" api={api}>
+          {'Test feature er aktiv!'}
+        </Unleash>
         { this.makeSaksoversiktPanel() }
         <div className="dittnav-lenkepanel-liten" id="cols-layout">
           <LenkepanelMedIkon

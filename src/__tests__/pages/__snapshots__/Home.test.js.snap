@@ -93,7 +93,7 @@ exports[`render Home page without props 1`] = `
             className="oversiktspanel__liste"
           >
             <div
-              className="saksoversikt-footer typo-undertekst"
+              className="saksoversikt-footer"
             >
               <span
                 className="typo-undertekst"
