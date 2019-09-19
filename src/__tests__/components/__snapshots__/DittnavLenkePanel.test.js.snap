@@ -178,72 +178,37 @@ exports[`Snapshot test uten saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
+    className="dittnav-lenkepanel-liten"
+    id={null}
   >
-    <div
-      className="oversiktspanel__header"
+    <a
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      href="http://localhost:9222/saksoversikt/"
+      onClick={null}
     >
       <div
-        className="oversiktspanel__overskrift"
+        className="lenkepanel__innhold lenkepanel__heading"
       >
         <div
-          className="typo-systemtittel"
+          className="lenkepanel__ikon"
         >
-          <span>
-            Dine siste saker
-          </span>
+          
         </div>
-      </div>
-      <div
-        className="oversiktspanel__header-lenketekst typo-normaltekst"
-      >
-        <a
-          className="oversiktspanel__header-lenke"
-          href="http://localhost:9222/saksoversikt/"
-          id="dekorator-bottomborder-overstyring"
-        >
-          <span>
-            Se alle dine saker (0)
-          </span>
-          <i
-            className="nav-frontend-chevron chevronboks chevron--hoyre"
-            id="oversiktspanel__chevron"
-          />
-        </a>
-      </div>
-    </div>
-    <div>
-      <hr />
-    </div>
-    <div
-      className="oversiktspanel__liste"
-    >
-      <div
-        className="saksoversikt-footer"
-      >
-        <span
-          className="typo-undertekst"
-        >
-          <span>
-            Du har ingen saker. 
-          </span>
-          <a
-            className="saksoversikt-footer__lenke"
-            href="#"
-            id="dekorator-bottomborder-overstyring"
+        <div>
+          <h2
+            className="typo-undertittel"
           >
             <span>
-              Finner du ikke saken din?
+              Dine saker
             </span>
-          </a>
-        </span>
+          </h2>
+          
+        </div>
       </div>
-    </div>
-  </div>
-  <div
-    className="dittnav-lenkepanel-liten"
-    id="cols-layout"
-  >
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
     <a
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"

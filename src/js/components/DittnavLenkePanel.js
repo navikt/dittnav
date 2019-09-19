@@ -15,16 +15,17 @@ class DittnavLenkePanel extends React.Component {
     const overskrift = <FormattedMessage id="saksoversikt.overskrift" />;
     const headerLenkeTekst = <FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />;
 
-    const makeFooter = (footerTekst) => (
-      <div className="saksoversikt-footer" key="footer">
-        <span className="typo-undertekst">
-          <FormattedMessage id={footerTekst} />
-          <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
-            <FormattedMessage id="saksoversikt.hjelp.lenketekst" />
-          </a>
-        </span>
-      </div>
-    );
+    const makeFooter = () => null;
+    // const makeFooter = (footerTekst) => (
+    //   <div className="saksoversikt-footer" key="footer">
+    //     <span className="typo-undertekst">
+    //       <FormattedMessage id={footerTekst} />
+    //       <a href={Config.LENKER.saksoversiktHjelp.url} className="saksoversikt-footer__lenke" id="dekorator-bottomborder-overstyring">
+    //         <FormattedMessage id="saksoversikt.hjelp.lenketekst" />
+    //       </a>
+    //     </span>
+    //   </div>
+    // );
 
     if (!sakstemaList || sakstemaList.length === 0) {
       return (
@@ -67,13 +68,14 @@ class DittnavLenkePanel extends React.Component {
   }
 
   render() {
-    const { isFeatureEnabled } = this.props;
+    const { isFeatureEnabled, sakstema } = this.props;
+    const visStortSakspanel = isFeatureEnabled && sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
 
     return (
       <div className="dittnav-lenkepanel-top-container">
-        { isFeatureEnabled ? this.makeSaksoversiktPanel() : null }
-        <div className="dittnav-lenkepanel-liten" id={isFeatureEnabled ? 'cols-layout' : null}>
-          { !isFeatureEnabled
+        { visStortSakspanel ? this.makeSaksoversiktPanel() : null }
+        <div className="dittnav-lenkepanel-liten" id={visStortSakspanel ? 'cols-layout' : null}>
+          { !visStortSakspanel
             ? (
               <LenkepanelMedIkon
                 alt="Utbetalinger"
