@@ -6,8 +6,6 @@ import Config from '../Config';
 import { LenkepanelMedIkon } from './LenkepanelMedIkon';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
-import Unleash from './Unleash';
-import api from '../Api';
 
 const MAX_SAKER_SOM_VISES = 2;
 
@@ -69,13 +67,23 @@ class DittnavLenkePanel extends React.Component {
   }
 
   render() {
+    const { isFeatureEnabled } = this.props;
+
     return (
       <div className="dittnav-lenkepanel-top-container">
-        <Unleash feature="dittnav-test" api={api}>
-          {'Test feature er aktiv!'}
-        </Unleash>
-        { this.makeSaksoversiktPanel() }
-        <div className="dittnav-lenkepanel-liten" id="cols-layout">
+        { isFeatureEnabled ? this.makeSaksoversiktPanel() : null }
+        <div className="dittnav-lenkepanel-liten" id={isFeatureEnabled ? 'cols-layout' : null}>
+          { !isFeatureEnabled
+            ? (
+              <LenkepanelMedIkon
+                alt="Utbetalinger"
+                overskrift="fliser.dine.saker"
+                ingress=""
+                className="dittnav-lenkepanel-liten-item"
+                href={Config.LENKER.saksoversikt.url}
+              >{''}
+              </LenkepanelMedIkon>
+            ) : null}
           <LenkepanelMedIkon
             alt="Utbetalinger"
             overskrift="fliser.dine.utbetalinger"
@@ -99,6 +107,7 @@ class DittnavLenkePanel extends React.Component {
 }
 
 DittnavLenkePanel.propTypes = {
+  isFeatureEnabled: PropTypes.bool,
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({
@@ -108,6 +117,10 @@ DittnavLenkePanel.propTypes = {
       antallStatusUnderBehandling: PropTypes.number.isRequired,
     })).isRequired,
   }).isRequired,
+};
+
+DittnavLenkePanel.defaultProps = {
+  isFeatureEnabled: true,
 };
 
 export default DittnavLenkePanel;
