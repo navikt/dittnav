@@ -71,11 +71,11 @@ const lenker = {
   veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/` },
   registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
   dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
-  utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/`},
-  saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/`},
-  saksoversiktTema: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/tema/`},
-  saksoversiktHjelp: { tittel: 'Dine saker hjelp', url: `#`},
-  innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks/`},
+  utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/` },
+  saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/` },
+  saksoversiktTema: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/tema/` },
+  saksoversiktHjelp: { tittel: 'Dine saker hjelp', url: '#' },
+  innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks/` },
 };
 
 const generelleLenker = [

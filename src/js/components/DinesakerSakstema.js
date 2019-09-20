@@ -16,12 +16,10 @@ const sakstemaUrlOverride = {
   // SYM_SYK: Config.LENKER.dittSykefravaer.url,
 };
 
-const temaBaseUrl = Config.LENKER.saksoversiktTema.url;
-
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {
     const { temakode } = this.props.tema;
-    return sakstemaUrlOverride[temakode] || temaBaseUrl + temakode;
+    return sakstemaUrlOverride[temakode] || Config.LENKER.saksoversiktTema.url + temakode;
   }
 
   getStatusMelding() {

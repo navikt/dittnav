@@ -18,7 +18,7 @@ class App extends Component {
       mininnboks: [],
       sakstema: { antallSakstema: 0, sakstemaList: [] },
       errors: [],
-      fetching: 0
+      fetching: 0,
     };
   }
 

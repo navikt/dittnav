@@ -15,7 +15,6 @@ class DittnavLenkePanel extends React.Component {
     const overskrift = <FormattedMessage id="saksoversikt.overskrift" />;
     const headerLenkeTekst = <FormattedMessage id="saksoversikt.alle.saker" values={{ count: antallSakstema }} />;
 
-    const makeFooter = () => null;
     // const makeFooter = (footerTekst) => (
     //   <div className="saksoversikt-footer" key="footer">
     //     <span className="typo-undertekst">
@@ -34,19 +33,10 @@ class DittnavLenkePanel extends React.Component {
           overskrift={overskrift}
           headerLenkeTekst={headerLenkeTekst}
           headerLenkeHref={Config.LENKER.saksoversikt.url}
-          liste={[makeFooter('saksoversikt.har.ingen.saker')]}
           border
         />
       );
     }
-
-    const sakstemaListPruned = sakstemaList.slice(0, MAX_SAKER_SOM_VISES);
-    const numRemainingSaker = antallSakstema - sakstemaListPruned.length;
-    const footer = (
-      numRemainingSaker > 0
-        ? null
-        : makeFooter('saksoversikt.ingen.flere.saker')
-    );
 
     return (
       <OversiktspanelMedListe
@@ -55,12 +45,14 @@ class DittnavLenkePanel extends React.Component {
         headerLenkeTekst={headerLenkeTekst}
         headerLenkeHref={Config.LENKER.saksoversikt.url}
         liste={
-          sakstemaListPruned.map((tema) => (
-            <DinesakerSakstema
-              key={tema.temakode}
-              tema={tema}
-            />
-          )).concat(footer)
+          sakstemaList
+            .slice(0, MAX_SAKER_SOM_VISES)
+            .map((tema) => (
+              <DinesakerSakstema
+                key={tema.temakode}
+                tema={tema}
+              />
+            ))
         }
         border
       />
@@ -78,7 +70,7 @@ class DittnavLenkePanel extends React.Component {
           { !visStortSakspanel
             ? (
               <LenkepanelMedIkon
-                alt="Utbetalinger"
+                alt="Dine saker"
                 overskrift="fliser.dine.saker"
                 ingress=""
                 className="dittnav-lenkepanel-liten-item"
