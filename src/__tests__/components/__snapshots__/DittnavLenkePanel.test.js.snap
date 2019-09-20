@@ -30,7 +30,7 @@ exports[`Snapshot test med saker 1`] = `
           id="dekorator-bottomborder-overstyring"
         >
           <span>
-            Se alle dine saker (5)
+            Se alle dine saker (6)
           </span>
           <i
             className="nav-frontend-chevron chevronboks chevron--hoyre"
@@ -50,13 +50,13 @@ exports[`Snapshot test med saker 1`] = `
       >
         <a
           className="sak-lenke"
-          href="http://localhost:9222/saksoversikt/tema/undefined"
+          href="http://localhost:9222/saksoversikt/tema/BAR"
           id="dekorator-bottomborder-overstyring"
         >
           <div
             className="sak-temanavn typo-undertittel"
           >
-            Tema 1
+            Barnetrygd
             <i
               className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
@@ -65,13 +65,10 @@ exports[`Snapshot test med saker 1`] = `
             className="sak-status typo-undertekst"
           >
             <span>
-              Du har  søknader under behandling. 
-            </span>
-            <span>
               Sist oppdatert: 
             </span>
             <span>
-              2019 M07 22
+              2019 M08 15
             </span>
           </div>
         </a>
@@ -81,13 +78,13 @@ exports[`Snapshot test med saker 1`] = `
       >
         <a
           className="sak-lenke"
-          href="http://localhost:9222/saksoversikt/tema/undefined"
+          href="http://localhost:9222/saksoversikt/tema/SYK"
           id="dekorator-bottomborder-overstyring"
         >
           <div
             className="sak-temanavn typo-undertittel"
           >
-            Tema 2
+            Sykepenger og oppfølging
             <i
               className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
@@ -96,13 +93,13 @@ exports[`Snapshot test med saker 1`] = `
             className="sak-status typo-undertekst"
           >
             <span>
-              Du har  søknader under behandling. 
+              Du har ti søknader under behandling. 
             </span>
             <span>
               Sist oppdatert: 
             </span>
             <span>
-              2019 M07 23
+              2019 M08 14
             </span>
           </div>
         </a>

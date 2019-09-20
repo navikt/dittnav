@@ -5,21 +5,21 @@ import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 const ReactTestRenderer = require('react-test-renderer');
 
 const sakstemaMedSaker = {
-  antallSakstema: 5,
+  antallSakstema: 6,
   sakstemaList: [
     {
-      temanavn: 'Tema 1',
-      sisteBehandlingStatus: 'FERDIG_BEHANDLET',
-      sisteOppdatering: '2019-07-22',
-      url: '#',
+      temanavn:"Barnetrygd",
+      temakode:"BAR",
+      antallStatusUnderBehandling:0,
+      sisteOppdatering:"2019-08-15T12:00:00+02:00"
     },
     {
-      temanavn: 'Tema 2',
-      sisteBehandlingStatus: 'UNDER_BEHANDLING',
-      sisteOppdatering: '2019-07-23',
-      url: '#',
-    },
-  ],
+      temanavn:"Sykepenger og oppfølging",
+      temakode:"SYK",
+      antallStatusUnderBehandling:10,
+      sisteOppdatering:"2019-08-14T12:00:00+02:00"
+    }
+  ]
 };
 
 const sakstemaUtenSaker = {
