@@ -8,18 +8,18 @@ const sakstemaMedSaker = {
   antallSakstema: 6,
   sakstemaList: [
     {
-      temanavn:"Barnetrygd",
-      temakode:"BAR",
-      antallStatusUnderBehandling:0,
-      sisteOppdatering:"2019-08-15T12:00:00+02:00"
+      temanavn: 'Barnetrygd',
+      temakode: 'BAR',
+      antallStatusUnderBehandling: 0,
+      sisteOppdatering: '2019-08-15T12:00:00+02:00',
     },
     {
-      temanavn:"Sykepenger og oppfølging",
-      temakode:"SYK",
-      antallStatusUnderBehandling:10,
-      sisteOppdatering:"2019-08-14T12:00:00+02:00"
-    }
-  ]
+      temanavn: 'Sykepenger og oppfølging',
+      temakode: 'SYK',
+      antallStatusUnderBehandling: 10,
+      sisteOppdatering: '2019-08-14T12:00:00+02:00',
+    },
+  ],
 };
 
 const sakstemaUtenSaker = {

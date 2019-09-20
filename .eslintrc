@@ -15,7 +15,10 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/destructuring-assignment": 0,
       "linebreak-style": "off",
-      "no-trailing-spaces": "off"
+      "no-trailing-spaces": "off",
+      "quotes": "error",
+      "key-spacing": "error",
+      "comma-dangle": "error"
   },
   "env": { "browser": true, "jest": true },
   "plugins": ["jsx-a11y"],
