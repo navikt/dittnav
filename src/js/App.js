@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Hendelser from './components/Hendelser';
 
 import '../less/index.less';
-import './polyfill';
 
 import Environments from './Environment';
 
