@@ -9,8 +9,10 @@ port: 8080
 healthcheck:
   liveness:
     path: person/dittnav/internal/isAlive
+    initialDelay: 10
   readiness:
     path: person/dittnav/internal/isReady
+    initialDelay: 10
 prometheus:
   port: https
   enabled: true
