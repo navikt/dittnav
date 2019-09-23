@@ -6,7 +6,7 @@
 
   flex-grow: 1;
   padding: 24px;
-  border-color: @navGra60 !important;
+  border-color: @navGra60;
 
   &__header {
     display: flex;
@@ -23,17 +23,17 @@
     align-items: center;
   }
 
-  &__header-lenketekst {
-    white-space: nowrap;
-  }
-
   &__header-lenke {
+    white-space: nowrap;
     &:hover {
       text-decoration: underline;
       #oversiktspanel__chevron {
         color: initial;
         left: 6px;
       }
+    }
+    &:not(:hover) {
+      text-decoration: none;
     }
   }
 

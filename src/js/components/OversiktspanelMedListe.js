@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import HoyreChevron from 'nav-frontend-chevron';
 import PanelBase from 'nav-frontend-paneler';
+import Lenke from 'nav-frontend-lenker';
+import { Normaltekst, Systemtittel } from 'nav-frontend-typografi';
 
 class OversiktspanelMedListe extends React.Component {
   render() {
@@ -19,15 +21,17 @@ class OversiktspanelMedListe extends React.Component {
                 </div>
               )
               : null}
-            <div className="typo-systemtittel">
+            <Systemtittel>
               {overskrift}
-            </div>
+            </Systemtittel>
           </div>
-          <div className="oversiktspanel__header-lenketekst typo-normaltekst">
-            <a href={headerLenkeHref} className="oversiktspanel__header-lenke" id="dekorator-bottomborder-overstyring">
-              {headerLenkeTekst}
-              <HoyreChevron id="oversiktspanel__chevron" />
-            </a>
+          <div>
+            <Lenke href={headerLenkeHref} className="oversiktspanel__header-lenke" id="dekorator-bottomborder-overstyring">
+              <Normaltekst>
+                {headerLenkeTekst}
+                <HoyreChevron id="oversiktspanel__chevron" />
+              </Normaltekst>
+            </Lenke>
           </div>
         </div>
         { liste && liste.length > 0

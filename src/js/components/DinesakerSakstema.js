@@ -1,7 +1,9 @@
 import React from 'react';
-import { FormattedDate, FormattedMessage } from 'react-intl';
+import { FormattedDate, FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 
+import { Undertekst, Undertittel } from 'nav-frontend-typografi';
+import Lenke from 'nav-frontend-lenker';
 import HoyreChevron from 'nav-frontend-chevron';
 
 import i18n from '../../translations/i18n';
@@ -23,7 +25,7 @@ class DinesakerSakstema extends React.Component {
   }
 
   getStatusMelding() {
-    const { numberToWord } = i18n.nb;
+    const { numberToWord } = i18n[this.props.intl.locale] || i18n.nb;
     const { antallStatusUnderBehandling } = this.props.tema;
 
     if (antallStatusUnderBehandling <= 0) {
@@ -45,32 +47,36 @@ class DinesakerSakstema extends React.Component {
 
     return (
       <div className="sak-container">
-        <a
+        <Lenke
           href={this.getTemaUrl()}
           className="sak-lenke"
           id="dekorator-bottomborder-overstyring"
         >
-          <div className="sak-temanavn typo-undertittel">
-            { temanavn }
+          <div className="sak-temanavn">
+            <Undertittel>
+              { temanavn }
+            </Undertittel>
             <HoyreChevron className="sak-chevron" />
           </div>
 
-          <div className="sak-status typo-undertekst">
-            { this.getStatusMelding() }
-            <FormattedMessage id="sakstema.sist.oppdatert" />
-            {
-              sisteOppdatering && sisteOppdatering !== ''
-                ? (
-                  <FormattedDate
-                    value={new Date(sisteOppdatering)}
-                    year="numeric"
-                    month="short"
-                    day="numeric"
-                  />
-                ) : 'ukjent'
-            }
+          <div className="sak-status">
+            <Undertekst>
+              { this.getStatusMelding() }
+              <FormattedMessage id="sakstema.sist.oppdatert" />
+              {
+                sisteOppdatering && sisteOppdatering !== ''
+                  ? (
+                    <FormattedDate
+                      value={new Date(sisteOppdatering)}
+                      year="numeric"
+                      month="short"
+                      day="numeric"
+                    />
+                  ) : <FormattedMessage id="sakstema.dato.ukjent" />
+              }
+            </Undertekst>
           </div>
-        </a>
+        </Lenke>
       </div>
     );
   }
@@ -83,6 +89,7 @@ DinesakerSakstema.propTypes = {
     sisteOppdatering: PropTypes.string.isRequired,
     antallStatusUnderBehandling: PropTypes.number.isRequired,
   }).isRequired,
+  intl: intlShape.isRequired,
 };
 
-export default DinesakerSakstema;
+export default injectIntl(DinesakerSakstema);

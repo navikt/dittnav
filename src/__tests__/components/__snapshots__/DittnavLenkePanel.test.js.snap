@@ -13,29 +13,31 @@ exports[`Snapshot test med saker 1`] = `
       <div
         className="oversiktspanel__overskrift"
       >
-        <div
+        <h2
           className="typo-systemtittel"
         >
           <span>
             Dine siste saker
           </span>
-        </div>
+        </h2>
       </div>
-      <div
-        className="oversiktspanel__header-lenketekst typo-normaltekst"
-      >
+      <div>
         <a
-          className="oversiktspanel__header-lenke"
+          className="lenke oversiktspanel__header-lenke"
           href="http://localhost:9222/saksoversikt/"
           id="dekorator-bottomborder-overstyring"
         >
-          <span>
-            Se alle dine saker (6)
-          </span>
-          <i
-            className="nav-frontend-chevron chevronboks chevron--hoyre"
-            id="oversiktspanel__chevron"
-          />
+          <p
+            className="typo-normal"
+          >
+            <span>
+              Se alle dine saker (6)
+            </span>
+            <i
+              className="nav-frontend-chevron chevronboks chevron--hoyre"
+              id="oversiktspanel__chevron"
+            />
+          </p>
         </a>
       </div>
     </div>
@@ -49,27 +51,35 @@ exports[`Snapshot test med saker 1`] = `
         className="sak-container"
       >
         <a
-          className="sak-lenke"
+          className="lenke sak-lenke"
           href="http://localhost:9222/saksoversikt/tema/BAR"
           id="dekorator-bottomborder-overstyring"
         >
           <div
-            className="sak-temanavn typo-undertittel"
+            className="sak-temanavn"
           >
-            Barnetrygd
+            <h2
+              className="typo-undertittel"
+            >
+              Barnetrygd
+            </h2>
             <i
               className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
           </div>
           <div
-            className="sak-status typo-undertekst"
+            className="sak-status"
           >
-            <span>
-              Sist oppdatert: 
-            </span>
-            <span>
-              2019 M08 15
-            </span>
+            <p
+              className="typo-undertekst"
+            >
+              <span>
+                Sist oppdatert: 
+              </span>
+              <span>
+                2019 M08 15
+              </span>
+            </p>
           </div>
         </a>
       </div>
@@ -77,30 +87,38 @@ exports[`Snapshot test med saker 1`] = `
         className="sak-container"
       >
         <a
-          className="sak-lenke"
+          className="lenke sak-lenke"
           href="http://localhost:9222/saksoversikt/tema/SYK"
           id="dekorator-bottomborder-overstyring"
         >
           <div
-            className="sak-temanavn typo-undertittel"
+            className="sak-temanavn"
           >
-            Sykepenger og oppfølging
+            <h2
+              className="typo-undertittel"
+            >
+              Sykepenger og oppfølging
+            </h2>
             <i
               className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
             />
           </div>
           <div
-            className="sak-status typo-undertekst"
+            className="sak-status"
           >
-            <span>
-              Du har ti søknader under behandling. 
-            </span>
-            <span>
-              Sist oppdatert: 
-            </span>
-            <span>
-              2019 M08 14
-            </span>
+            <p
+              className="typo-undertekst"
+            >
+              <span>
+                Du har ti søknader under behandling. 
+              </span>
+              <span>
+                Sist oppdatert: 
+              </span>
+              <span>
+                2019 M08 14
+              </span>
+            </p>
           </div>
         </a>
       </div>
@@ -111,57 +129,33 @@ exports[`Snapshot test med saker 1`] = `
     id="cols-layout"
   >
     <a
+      alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
-      onClick={null}
     >
-      <div
-        className="lenkepanel__innhold lenkepanel__heading"
+      <span
+        className="typo-undertittel lenkepanel__heading"
       >
-        <div
-          className="lenkepanel__ikon"
-        >
-          
-        </div>
-        <div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Dine utbetalinger
-            </span>
-          </h2>
-          
-        </div>
-      </div>
+        <span>
+          Dine utbetalinger
+        </span>
+      </span>
       <span
         className="lenkepanel__indikator"
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+      alt="Innboks"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/mininnboks/"
-      onClick={null}
     >
-      <div
-        className="lenkepanel__innhold lenkepanel__heading"
+      <span
+        className="typo-undertittel lenkepanel__heading"
       >
-        <div
-          className="lenkepanel__ikon"
-        >
-          
-        </div>
-        <div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Innboks
-            </span>
-          </h2>
-          
-        </div>
-      </div>
+        <span>
+          Innboks
+        </span>
+      </span>
       <span
         className="lenkepanel__indikator"
       />
@@ -179,85 +173,49 @@ exports[`Snapshot test uten saker 1`] = `
     id={null}
   >
     <a
+      alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/saksoversikt/"
-      onClick={null}
     >
-      <div
-        className="lenkepanel__innhold lenkepanel__heading"
+      <span
+        className="typo-undertittel lenkepanel__heading"
       >
-        <div
-          className="lenkepanel__ikon"
-        >
-          
-        </div>
-        <div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Dine saker
-            </span>
-          </h2>
-          
-        </div>
-      </div>
+        <span>
+          Dine saker
+        </span>
+      </span>
       <span
         className="lenkepanel__indikator"
       />
     </a>
     <a
+      alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt/"
-      onClick={null}
     >
-      <div
-        className="lenkepanel__innhold lenkepanel__heading"
+      <span
+        className="typo-undertittel lenkepanel__heading"
       >
-        <div
-          className="lenkepanel__ikon"
-        >
-          
-        </div>
-        <div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Dine utbetalinger
-            </span>
-          </h2>
-          
-        </div>
-      </div>
+        <span>
+          Dine utbetalinger
+        </span>
+      </span>
       <span
         className="lenkepanel__indikator"
       />
     </a>
     <a
-      className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+      alt="Innboks"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/mininnboks/"
-      onClick={null}
     >
-      <div
-        className="lenkepanel__innhold lenkepanel__heading"
+      <span
+        className="typo-undertittel lenkepanel__heading"
       >
-        <div
-          className="lenkepanel__ikon"
-        >
-          
-        </div>
-        <div>
-          <h2
-            className="typo-undertittel"
-          >
-            <span>
-              Innboks
-            </span>
-          </h2>
-          
-        </div>
-      </div>
+        <span>
+          Innboks
+        </span>
+      </span>
       <span
         className="lenkepanel__indikator"
       />

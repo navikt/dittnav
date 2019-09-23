@@ -102,13 +102,7 @@
   "sakstema.antall.under.behandling.en": "Du har én søknad under behandling. ",
   "sakstema.antall.under.behandling.flere": "Du har {count} søknader under behandling. ",
   "sakstema.sist.oppdatert": "Sist oppdatert: ",
-
-  "sakstema.under.behandling": "Under behandling",
-  "sakstema.ferdig.behandlet": "Ferdig behandlet",
-  "sakstema.avbrutt": "Avbrutt",
-  "sakstema.ukjent": "Ukjent status",
-  "sakstema.eldreenn28": "Eldre enn 28 dager",
-  "sakstema.empty": "Tom",
+  "sakstema.dato.ukjent": "ukjent",
 
   "saksoversikt.overskrift": "Dine siste saker",
   "saksoversikt.ingen.flere.saker": "Du har ingen flere saker. ",
