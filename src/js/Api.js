@@ -4,10 +4,9 @@ const redirectToLogin = () => {
   window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
 };
 
-const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
-
 const fetchUnleashFeatures = (features) => {
   const fString = features.map(f => `feature=${f}`);
+  const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
   return Promise.race([
     fetch(`${URL}?${fString}`, { method: 'GET' }) // eslint-disable-line no-undef
       .then(r => r.json()),

@@ -10,8 +10,8 @@ import DinesakerSakstema from './DinesakerSakstema';
 
 class DittnavLenkePanel extends React.Component {
   render() {
-    const { isFeatureEnabled, sakstema } = this.props;
-    const visStortSakspanel = isFeatureEnabled && sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
+    const { sakstema } = this.props;
+    const visStortSakspanel = sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
 
     return (
       <div className="dittnav-lenkepanel-top-container">
@@ -69,7 +69,6 @@ class DittnavLenkePanel extends React.Component {
 }
 
 DittnavLenkePanel.propTypes = {
-  isFeatureEnabled: PropTypes.bool,
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({
@@ -79,10 +78,6 @@ DittnavLenkePanel.propTypes = {
       antallStatusUnderBehandling: PropTypes.number.isRequired,
     })).isRequired,
   }).isRequired,
-};
-
-DittnavLenkePanel.defaultProps = {
-  isFeatureEnabled: true,
 };
 
 export default DittnavLenkePanel;
