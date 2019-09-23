@@ -27,18 +27,14 @@
     white-space: nowrap;
     &:hover {
       text-decoration: underline;
-      #oversiktspanel__chevron {
-        color: initial;
+      .oversiktspanel__chevron {
         left: 6px;
       }
     }
-    &:not(:hover) {
-      text-decoration: none;
-    }
   }
 
-  #oversiktspanel__chevron {
-    color: initial;
+  &__chevron {
+    color: @navMorkGra;
     margin-left: 0.5em;
     left: 0;
     transition: left 250ms;

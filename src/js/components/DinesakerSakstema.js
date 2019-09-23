@@ -50,7 +50,7 @@ class DinesakerSakstema extends React.Component {
         <Lenke
           href={this.getTemaUrl()}
           className="sak-lenke"
-          id="dekorator-bottomborder-overstyring"
+          id="sak-lenke-id"
         >
           <div className="sak-temanavn">
             <Undertittel>

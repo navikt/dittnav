@@ -21,29 +21,24 @@ exports[`Snapshot test med saker 1`] = `
           </span>
         </h2>
       </div>
-      <div>
-        <a
-          className="lenke oversiktspanel__header-lenke"
-          href="http://localhost:9222/saksoversikt/"
-          id="dekorator-bottomborder-overstyring"
+      <a
+        className="lenke oversiktspanel__header-lenke"
+        href="http://localhost:9222/saksoversikt/"
+        id="oversiktspanel__header-lenke-id"
+      >
+        <p
+          className="typo-normal"
         >
-          <p
-            className="typo-normal"
-          >
-            <span>
-              Se alle dine saker (6)
-            </span>
-            <i
-              className="nav-frontend-chevron chevronboks chevron--hoyre"
-              id="oversiktspanel__chevron"
-            />
-          </p>
-        </a>
-      </div>
+          <span>
+            Se alle dine saker (6)
+          </span>
+          <i
+            className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
+          />
+        </p>
+      </a>
     </div>
-    <div>
-      <hr />
-    </div>
+    <hr />
     <div
       className="oversiktspanel__liste"
     >
@@ -53,7 +48,7 @@ exports[`Snapshot test med saker 1`] = `
         <a
           className="lenke sak-lenke"
           href="http://localhost:9222/saksoversikt/tema/BAR"
-          id="dekorator-bottomborder-overstyring"
+          id="sak-lenke-id"
         >
           <div
             className="sak-temanavn"
@@ -89,7 +84,7 @@ exports[`Snapshot test med saker 1`] = `
         <a
           className="lenke sak-lenke"
           href="http://localhost:9222/saksoversikt/tema/SYK"
-          id="dekorator-bottomborder-overstyring"
+          id="sak-lenke-id"
         >
           <div
             className="sak-temanavn"
