@@ -56,7 +56,7 @@ class DittnavLenkePanel extends React.Component {
           </Lenkepanel>
           <Lenkepanel
             alt="Innboks"
-            className="dittnav-lenkepanel-liten-item"
+            className="dittnav-lenkepanel-liten-item last"
             href={Config.LENKER.innboks.url}
             border
           >
