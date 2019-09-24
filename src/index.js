@@ -14,17 +14,18 @@ import './css/index.css';
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
 
+import Environments from './js/Environment';
+
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
-function renderApp(securityLevel) {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} securityLevel={securityLevel} /></NavApp>, document.getElementById('app'));
+function renderApp() {
+  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
 }
 
 api.checkAuth()
-  .then((r) => renderApp(r.securityLevel))
-  .catch((e) => {
-    if (e && e.message && e.message === 'Unauthorized') {
-      return;
+  .then(() => renderApp())
+  .catch(() => {
+    if (Environments() === 'LOCAL') {
+      renderApp();
     }
-    renderApp(0);
   });
