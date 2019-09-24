@@ -9,6 +9,20 @@
       "meldekortbruker": true,
       "underOppfolging": false
     },
+    "meldekort": {
+      "nyeMeldekort": {
+        "antallNyeMeldekort":3,
+        "nesteMeldekort": {
+          "uke":"33-34",
+          "kanSendesFra":"2019-08-24",
+          "fra":"2019-08-12",
+          "til":"2019-08-25",
+          "sisteDatoForTrekk":"2019-09-02",
+          "risikererTrekk":true
+        },
+        "nesteInnsendingAvMeldekort":null
+      },
+      "resterendeFeriedager":0,"etterregistrerteMeldekort":0},
     "isFoBruker": false,
     "feilendeTjenester": []
 }

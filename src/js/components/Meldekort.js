@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import conf from '../Config';
 import i18n from '../../translations/i18n';
+import { IkonPille, LenkepanelMedIkon } from './LenkepanelMedIkon';
 
 const fremtidig = (nyeMeldekort, formatDateMonth) => (nyeMeldekort.nesteInnsendingAvMeldekort
   ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
@@ -30,39 +31,49 @@ class Meldekort extends Component {
     const { meldekort, intl } = this.props;
     const { formatDateMonth, formatDayAndMonth, numberToWord } = i18n[intl.locale];
     if (!meldekort) return null;
-
     const { antallNyeMeldekort: count } = meldekort.nyeMeldekort;
     const risikererTrekk = meldekort.nyeMeldekort.nesteMeldekort && meldekort.nyeMeldekort.nesteMeldekort.risikererTrekk;
-
-    if (count > 0) {
-      return (
-        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}>
-          <span className="icon meldekort-icon" aria-label="alarm-ikon" />
-          <span className="texts">
-            <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
+    const ingressTekst = (
+      <>
+        {!meldekort.nyeMeldekort.nesteInnsendingAvMeldekort && (count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}
+        {feriedager(meldekort)}
+      </>
+    );
+    const visMeldingOgTrekk = (
+      <>
+        {count > 0 && (
+          <>
             <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDayAndMonth, numberToWord)} </span>
             <span>{trekk(!risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
-            <span>{advarsel(risikererTrekk)} </span>
-            <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
-            <p>{feriedager(meldekort)}</p>
-          </span>
-        </a>
-      );
-    }
+          </>
+        )}
+      </>
+    );
+    const overskrift = (
+      <>
+        <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
+        {visMeldingOgTrekk}
+        {advarsel(risikererTrekk)}
+      </>
+    );
 
-    if (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) {
-      return (
-        <div data-ga="Dittnav/Varsel" className="message meldekort">
-          <span className="icon meldekort-icon" aria-label="alarm-ikon" />
-          <span className="texts">
-            <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
-            <span>{advarsel(risikererTrekk)} </span>
-            <p>{feriedager(meldekort)}</p>
-          </span>
-        </div>
-      );
-    }
-    return null;
+    return (
+      <>
+        {(count > 0 || meldekort.nyeMeldekort.nesteInnsendingAvMeldekort)
+        && (
+        <LenkepanelMedIkon
+          className="infoMeldinger"
+          data-ga="Dittnav/Varsel"
+          alt="fliser.ditt.sykevravaer"
+          overskrift={overskrift}
+          ingress={ingressTekst}
+          href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
+        >
+          <IkonPille />
+        </LenkepanelMedIkon>
+        )}
+      </>
+    );
   }
 }
 
