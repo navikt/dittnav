@@ -44,7 +44,7 @@ const checkAuth = () => {
           redirectToLogin();
           return;
         }
-        res(r.json());
+        res(r);
       })
       .catch((e) => {
         rej(e);

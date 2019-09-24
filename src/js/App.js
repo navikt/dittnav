@@ -55,12 +55,13 @@ class App extends Component {
         this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
 
-    if (securityLevel >= 4) {
+    if (securityLevel >= 4 || Environments() === 'LOCAL') {
       api.fetchSakstema()
         .then((r) => {
           this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
         }).catch(catchError('error.baksystemer'));
     } else {
+      console.log('Sikkerhetsnivå under 4!');
       this.setState(() => ({ fetching: this.state.fetching + 1 }));
     }
   }
@@ -71,7 +72,7 @@ class App extends Component {
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
-    const erIDev = Environments() === 'DEV';
+    const erIDev = Environments() !== 'PROD';
 
     return (
       <main role="main">
