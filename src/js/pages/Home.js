@@ -15,6 +15,8 @@ import Artikkel from '../components/Artikkel';
 import DelayedSpinner from '../components/DelayedSpinner';
 
 import Config from '../Config';
+import Unleash from '../components/Unleash';
+import api from '../Api';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
@@ -45,7 +47,9 @@ class Home extends Component {
               <PersonInfo personInfo={info.personinfo} />
               { fetching < NUM_ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <DittnavLenkePanel sakstema={sakstema} />
+              <Unleash feature="dittnav.nytt-dinesakerpanel" api={api}>
+                <DittnavLenkePanel sakstema={sakstema} />
+              </Unleash>
               { !info || !info.personinfo ? null : tjenesterEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
