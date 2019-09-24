@@ -1,5 +1,4 @@
 const jsdom = require('jsdom');
-const getDecorator = require('./decorator.js');
 const path = require('path');
 const { JSDOM } = jsdom;
 const eproxy = require('express-http-proxy');
@@ -9,6 +8,7 @@ const app = require('express')();
 const proxy = require('express')();
 const cors = require('cors');
 
+const getDecorator = require('./decorator.js');
 const file = 'public/index.html'; // Pass an absolute path to the entrypoint here
 const options = {}; // See options section of api docs, for the possibilities
 
@@ -31,9 +31,8 @@ app.use(bundler.middleware());
 const PORT = 1234;
 
 const shimproxy = () => {
-    getDecorator()
+  getDecorator()
     .then((fragments) => {
-
       proxy.use('/', eproxy(`http://localhost:${PORT}`, {
         userResDecorator: function(proxyRes, proxyResData, userReq, userRes) {
           return Promise.resolve()
@@ -58,10 +57,8 @@ const shimproxy = () => {
       proxy.listen(process.env.PORT, () => {
         console.log(`Proxying on port: ${process.env.PORT}`);
       });
-
-
     }, error => console.log(`Failed to render app ${error}`));
-  };
+};
 
-  shimproxy();
-  app.listen(1234);
+shimproxy();
+app.listen(1234);

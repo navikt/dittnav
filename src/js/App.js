@@ -24,7 +24,7 @@ class App extends Component {
 
   async componentWillMount() {
     const { errors } = this.state;
-    const { api } = this.props;
+    const { api, securityLevel } = this.props;
 
     const catchError = msg => () => {
       errors.push(msg);
@@ -55,10 +55,14 @@ class App extends Component {
         this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
       }).catch(catchError('error.baksystemer'));
 
-    api.fetchSakstema()
-      .then((r) => {
-        this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+    if (securityLevel >= 4) {
+      api.fetchSakstema()
+        .then((r) => {
+          this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
+        }).catch(catchError('error.baksystemer'));
+    } else {
+      this.setState(() => ({ fetching: this.state.fetching + 1 }));
+    }
   }
 
   render() {
@@ -88,6 +92,11 @@ App.propTypes = {
     fetchMeldinger: PropTypes.func.isRequired,
     fetchSakstema: PropTypes.func.isRequired,
   }).isRequired,
+  securityLevel: PropTypes.number,
+};
+
+App.defaultProps = {
+  securityLevel: 0,
 };
 
 export default App;

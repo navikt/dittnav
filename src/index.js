@@ -16,15 +16,15 @@ import enMessages from './translations/en.json';
 
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
-function renderApp() {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
+function renderApp(securityLevel) {
+  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} securityLevel={securityLevel} /></NavApp>, document.getElementById('app'));
 }
 
 api.checkAuth()
-  .then(() => renderApp())
+  .then((r) => renderApp(r.securityLevel))
   .catch((e) => {
     if (e && e.message && e.message === 'Unauthorized') {
       return;
     }
-    renderApp();
+    renderApp(0);
   });
