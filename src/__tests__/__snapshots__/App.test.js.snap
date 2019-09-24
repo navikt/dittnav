@@ -10,5 +10,6 @@ exports[`expect PersonInfo fetching 1`] = `
       "fetchSakstema": [Function],
     }
   }
+  securityLevel={0}
 />
 `;
