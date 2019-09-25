@@ -10,6 +10,9 @@ const mockApi = () => {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
+    fetchEverythingForHome: () => {
+      return [{ info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], isLoaded: true}]
+    }
   }
 };
 
@@ -33,7 +36,7 @@ it('expect Login page rendering', () => {
 });
  */
 
-it('expect PersonInfo fetching', async () => {
+it('expect PersonInfo fetching', () => {
   const api = mockApi();
   api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
     resolve({
@@ -51,41 +54,57 @@ it('expect PersonInfo fetching', async () => {
   const renderer = new ShallowRenderer();
   renderer.render(wrapIntl(<App api={api} />));
   const component = renderer.getRenderOutput();
-  await flushPromises();
+  //await flushPromises();
 
   expect(component).toMatchSnapshot();
 });
 
-it('expect PaabegynteSoknader fetching', async () => {
+it('expect PaabegynteSoknader fetching', () => {
   const api = mockApi();
 
-  api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
-    resolve({
-      "paabegynteSoknader": {
-        "url": "https://tjenester-t6.nav.no/",
-        "antallPaabegynte": 2,
-        "feilendeBaksystem": ['hello']
-      },
-      "personinfo": {
-        "navn": "Ola Ytelssen",
-        "fgkode": "RARBS",
-        "ytelse": "ATTF",
-        "registrert": true,
-        "inaktiv": false,
-        "meldekortbruker": true,
-        "erUnderRegistreringIArbeid": true
-      },
-      "feilendeTjenester":['error.baksystemer']
-    })
-  });
+  api.fetchEverythingForHome = () => {
+    return [{ info: {
+      "navn": "Ola Ytelssen",
+      "fgkode": "RARBS",
+      "ytelse": "ATTF",
+      "registrert": true,
+      "inaktiv": false,
+      "meldekortbruker": true,
+      "erUnderRegistreringIArbeid": true
+    }, paabegynteSoknader: {
+      "url": "https://tjenester-t6.nav.no/",
+      "antallPaabegynte": 2,
+    }, mininnboks: [], errors: ['error.baksystemer', 'error.baksystemer'], isLoaded: true}]
+  }
+
+  // api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
+  //   resolve({
+  //     "paabegynteSoknader": {
+  //       "url": "https://tjenester-t6.nav.no/",
+  //       "antallPaabegynte": 2,
+  //       "feilendeBaksystem": ['hello']
+  //     },
+  //     "personinfo": {
+  //       "navn": "Ola Ytelssen",
+  //       "fgkode": "RARBS",
+  //       "ytelse": "ATTF",
+  //       "registrert": true,
+  //       "inaktiv": false,
+  //       "meldekortbruker": true,
+  //       "erUnderRegistreringIArbeid": true
+  //     },
+  //     "feilendeTjenester":['error.baksystemer']
+  //   })
+  // });
 
   // api.fetchPaabegynteSaker = () => new Promise((resolve, reject) => {
   //   resolve({feilendeBaksystem: ['hello']});
   // });
 
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
-  await flushPromises();
+  // await flushPromises();
 
-  expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
+  expect(component).toMatchSnapshot();
+  //expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
 });
 

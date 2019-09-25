@@ -1,5 +1,10 @@
 // PB-162 : brukes til å feature-toggle for visning av hendelser
 const Environments = () => {
+  
+  try {
+    if (process.env.NODE_ENV === 'test') return 'TEST'
+  } catch (e) {}
+
   const host = window.location.hostname;
 
   if (host.indexOf('localhost') > -1) {

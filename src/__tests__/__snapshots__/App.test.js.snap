@@ -1,9 +1,236 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`expect PaabegynteSoknader fetching 1`] = `
+<main
+  role="main"
+>
+  <section
+    className="service-notification"
+  >
+    <h1
+      className="typo-element"
+    >
+      <span>
+        <span>
+          Vi beklager. Det er ikke kontakt med alle baksystemene, og det kan hende du ikke får opp all tilgjengelig informasjon
+        </span>
+      </span>
+    </h1>
+  </section>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="maincontent side-innhold"
+      >
+        <div
+          className="col-md-12"
+          id="dittnav-main-container"
+        >
+          <section
+            className="infomeldinger-list"
+          >
+            <h1
+              className="vekk"
+            >
+              <span>
+                Varsler
+              </span>
+            </h1>
+            <a
+              className="message clickable"
+              data-ga="Dittnav/Varsel/Paabegynt soknad"
+              href="https://tjenester-t6.nav.no/"
+            >
+              <span
+                aria-label="dokument-ikon"
+                className="icon document-icon"
+              />
+              <div
+                className="texts"
+              >
+                <p>
+                  <span>
+                    Du har to søknader som du ikke har sendt
+                  </span>
+                </p>
+                <p
+                  id="paabegynte-tekst"
+                >
+                  <span>
+                    Fortsett innsending
+                  </span>
+                </p>
+              </div>
+            </a>
+          </section>
+          <div
+            className="dittnav-lenke-container blokk-xl"
+          >
+            <a
+              className="lenkepanel first lenkepanel--border"
+              href="http://localhost:9222/utbetalingsoversikt/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine utbetalinger
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel lenkepanel--border"
+              href="http://localhost:9222/saksoversikt/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine saker
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+            <a
+              className="lenkepanel last lenkepanel--border"
+              href="http://localhost:9222/mininnboks/"
+            >
+              <span
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Innboks
+                </span>
+              </span>
+              <span
+                className="lenkepanel__indikator"
+              />
+            </a>
+          </div>
+          <h2
+            className="typo-undertittel relatert-informasjon__subheader"
+          >
+            <span>
+              Relatert informasjon
+            </span>
+          </h2>
+          <div
+            className="relatert-informasjon"
+          >
+            <nav
+              className="relatert-informasjon__links"
+            >
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://arbeidsplassen.nav.no/stillinger"
+                >
+                  Ledige stillinger
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
+                >
+                  Uføretrygd
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://foreldrepenger.nav.no"
+                >
+                  Dine foreldrepenger
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/aktivitetsplan/"
+                >
+                  Aktivitetsplan
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/brukerprofil/"
+                >
+                  Din profil
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                >
+                  Registrer deg som arbeidssøker
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
+                >
+                  Dine stillingssøk
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/person/personopplysninger"
+                >
+                  Personopplysninger
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
 exports[`expect PersonInfo fetching 1`] = `
 <App
   api={
     Object {
+      "fetchEverythingForHome": [Function],
       "fetchMeldinger": [Function],
       "fetchPersonInfoAndServices": [Function],
       "fetchSaker": [Function],

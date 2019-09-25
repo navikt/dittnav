@@ -1,3 +1,4 @@
+import React from 'react';
 import conf from './Config';
 
 const redirectToLogin = () => {
@@ -74,6 +75,63 @@ const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKE
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
 const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
 
+const fetchEverythingForHome = () => {
+  const [info, setInfo] = React.useState({});
+  const [paabegynteSoknader, setPaabegynteSoknader] = React.useState(null);
+  const [mininnboks, setMininnboks] = React.useState([]);
+  const [errors, setErrors] = React.useState([]);
+  const [isLoaded, setLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    let fetching = 0, setFetching = (f) => fetching = f;
+    function fetch() {
+      const catchError = msg => () => {
+        errors.push(msg);
+        setErrors(errors);
+        setFetching(fetching + 1);
+      };
+
+      const updateLoading = () => {
+        setFetching(fetching + 1);
+        if ((fetching) >= 3) {
+          setLoaded(true)
+        }
+      }
+      fetchPersonInfoAndServices()
+        .then((r) => {
+          const { feilendeTjenester } = r;
+          if (feilendeTjenester.length > 0) {
+            errors.push('error.baksystemer');
+          }
+          setInfo(r);
+          setErrors(errors);
+          updateLoading();
+        })
+        .catch(catchError('error.baksystemer'));
+
+      fetchSaker()
+        .then((r) => {
+          const { feilendeBaksystem } = r;
+          if (feilendeBaksystem.length > 0) {
+            errors.push('error.baksystemer');
+          }
+          setPaabegynteSoknader(r);
+          updateLoading();
+        }).catch(catchError('error.baksystemer'));
+
+      fetchMeldinger()
+        .then((r) => {
+          setMininnboks(r)
+          updateLoading();
+        }).catch(catchError('error.baksystemer'));
+    }
+    fetch();
+
+  }, []);
+
+  return [{ info, paabegynteSoknader, mininnboks, errors, isLoaded }];
+}
+
 export default {
   fetchUnleashFeatures,
   checkAuth,
@@ -82,4 +140,5 @@ export default {
   fetchMeldinger,
   fetchHendelser,
   sendHendelser: sendJSONAndCheckForErrors,
+  fetchEverythingForHome: fetchEverythingForHome,
 };

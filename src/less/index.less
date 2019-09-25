@@ -74,4 +74,25 @@ body {
 .header-spinner {
   width: 100%;
   margin-top: 1em;
+  animation: 500ms;
+  -moz-animation-name: showEffect;
+  -webkit-animation-name: hideEffect;
+  animation-name: hideEffect;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+@-moz-keyframes hideEffect {
+  99% { visibility: hidden; }
+  100% {visibility: visible; }
+
+}
+@-webkit-keyframes hideEffect {
+  99% { visibility: hidden; }
+  100% { visibility: visible; }
+
+}
+@keyframes hideEffect {
+  99% { visibility: hidden; }
+  100% { visibility: visible; }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Undertittel } from 'nav-frontend-typografi';
+import NavFrontendSpinner from 'nav-frontend-spinner';
 import { FormattedMessage as F } from 'react-intl';
 
 import Vta from '../components/VTA';
@@ -12,7 +13,6 @@ import DittnavFliser from '../components/DittnavFliser';
 import DittnavLenkePanel from '../components/DittnavLenkePanel';
 import Lenkelister from '../components/Lenkelister';
 import Artikkel from '../components/Artikkel';
-import DelayedSpinner from '../components/DelayedSpinner';
 
 import Config from '../Config';
 
@@ -30,7 +30,7 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 
 class Home extends Component {
   render() {
-    const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
+    const { info, paabegynteSoknader, mininnboks, isLoaded } = this.props;
     const tjenesterEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
     const erUnderOppfolging = info && info.personinfo && info.personinfo.underOppfolging;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -41,7 +41,7 @@ class Home extends Component {
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
-              { fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
+              { !isLoaded ? <NavFrontendSpinner className="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
               <DittnavLenkePanel />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
@@ -62,7 +62,7 @@ Home.propTypes = {
   info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
-  fetching: PropTypes.number.isRequired,
+  isLoaded: PropTypes.bool.isRequired,
 };
 
 Home.defaultProps = {
