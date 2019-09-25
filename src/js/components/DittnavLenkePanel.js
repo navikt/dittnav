@@ -4,50 +4,54 @@ import PropTypes from 'prop-types';
 
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../Config';
-import api from '../Api';
+import UnleashABTestgruppeVelger from '../UnleashABTestgruppeVelger';
 
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
-const unleashFeatureEnabledDefault = false;
+const stortSakspanelEnabledDefault = false;
 
 class DittnavLenkePanel extends React.Component {
-  state = { isUnleashFeatureEnabled: null };
+  state = { stortSakspanelEnabled: null, testGruppe: null };
 
   constructor(props) {
     super(props);
-    this.checkUnleashFeatureEnabled();
+    UnleashABTestgruppeVelger(
+      'dittnav.nytt-dinesakerpanel-testpool',
+      'dittnav.nytt-dinesakerpanel-ab',
+      this.unleashCallback.bind(this),
+    );
   }
 
-  checkUnleashFeatureEnabled() {
-    const unleashFeatureTestPool = 'dittnav.nytt-dinesakerpanel-testpool';
-    const unleashFeatureABSplit = 'dittnav.nytt-dinesakerpanel-ab';
+  unleashCallback(testGruppe, error) {
+    if (error) {
+      // eslint-disable-next-line no-console
+      console.log(`Unleash error: ${error}`);
+    }
 
-    api.fetchUnleashFeatures([unleashFeatureTestPool, unleashFeatureABSplit])
-      .then((features) => {
-        if (features[unleashFeatureTestPool] && features[unleashFeatureABSplit]) {
-          this.setState({ isUnleashFeatureEnabled: true });
-        } else {
-          this.setState({ isUnleashFeatureEnabled: false });
-        }
-      })
-      .catch((e) => {
-        // eslint-disable-next-line no-console
-        console.log(`Unleash error: ${e}`);
-        this.setState({ isUnleashFeatureEnabled: unleashFeatureEnabledDefault });
-      });
+    if (testGruppe) {
+      this.setState({ stortSakspanelEnabled: testGruppe === 'A' });
+    } else {
+      this.setState({ stortSakspanelEnabled: stortSakspanelEnabledDefault });
+    }
+    this.setState({ testGruppe });
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  // Kode for analyse kan settes inn her. Skal denne kalles ved hver render, eller kun ved innlasting?
   handleAnalytics() {
-    // Google analytics ting settes inn her!
+    const { testGruppe } = this.state;
+
+    if (!testGruppe) {
+      return;
+    }
+
+    // etc
   }
 
   render() {
     const { sakstema } = this.props;
-    const visStortSakspanel = this.state.isUnleashFeatureEnabled
+    const visStortSakspanel = this.state.stortSakspanelEnabled
       && sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
-    this.handleAnalytics();
 
     return (
       <div className="dittnav-lenkepanel-top-container">
