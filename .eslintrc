@@ -18,7 +18,8 @@
       "no-trailing-spaces": "off",
       "quotes": "error",
       "key-spacing": "error",
-      "comma-dangle": "error"
+      "comma-dangle": "error",
+      "eol-last": "error"
   },
   "env": { "browser": true, "jest": true },
   "plugins": ["jsx-a11y"],
