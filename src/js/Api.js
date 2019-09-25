@@ -127,7 +127,7 @@ const useFetchEverythingForHome = () => {
     }
     fetch();
 
-  }, []);
+  }, [errors]);
 
   return [{ info, paabegynteSoknader, mininnboks, errors, isLoaded }];
 }
