@@ -10,17 +10,14 @@ import '../less/index.less';
 import Environments from './Environment';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      info: {},
-      paabegynteSoknader: null,
-      mininnboks: [],
-      sakstema: { waiting: true, antallSakstema: 0, sakstemaList: [] },
-      errors: [],
-      fetching: 0,
-    };
-  }
+  state = {
+    info: {},
+    paabegynteSoknader: null,
+    mininnboks: [],
+    sakstema: { waiting: true, antallSakstema: 0, sakstemaList: [] },
+    errors: [],
+    fetching: 0,
+  };
 
   async componentWillMount() {
     const { errors } = this.state;

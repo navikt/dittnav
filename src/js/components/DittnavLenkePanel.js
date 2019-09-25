@@ -10,7 +10,7 @@ import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
 const unleashFeatureName = 'dittnav.nytt-dinesakerpanel';
-const unleashFeatureEnabledDefault = true;
+const unleashFeatureEnabledDefault = false;
 
 class DittnavLenkePanel extends React.Component {
   state = { isUnleashFeatureEnabled: null };
