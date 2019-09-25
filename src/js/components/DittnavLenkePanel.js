@@ -9,7 +9,6 @@ import api from '../Api';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
-const unleashFeatureName = 'dittnav.nytt-dinesakerpanel';
 const unleashFeatureEnabledDefault = false;
 
 class DittnavLenkePanel extends React.Component {
@@ -21,9 +20,12 @@ class DittnavLenkePanel extends React.Component {
   }
 
   checkUnleashFeatureEnabled() {
-    api.fetchUnleashFeatures([unleashFeatureName])
+    const unleashFeatureTestPool = 'dittnav.nytt-dinesakerpanel-testpool';
+    const unleashFeatureABSplit = 'dittnav.nytt-dinesakerpanel-ab';
+
+    api.fetchUnleashFeatures([unleashFeatureTestPool, unleashFeatureABSplit])
       .then((features) => {
-        if (features[unleashFeatureName]) {
+        if (features[unleashFeatureTestPool] && features[unleashFeatureABSplit]) {
           this.setState({ isUnleashFeatureEnabled: true });
         } else {
           this.setState({ isUnleashFeatureEnabled: false });

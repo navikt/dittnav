@@ -1,7 +1,7 @@
 {
   "verbose": true,
-  "watch": ["src", "mock-data", "public"],
-  "ext": "js,less,html",
+  "watch": ["src"],
+  "ext": "js,less",
   "exec": "npm run local-win",
   "events": {
     "crash": "npm run local-win"
