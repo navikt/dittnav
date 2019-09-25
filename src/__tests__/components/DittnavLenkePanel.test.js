@@ -36,9 +36,3 @@ test('Snapshot test uten saker', () => {
   const component = ReactTestRenderer.create(wrapIntl(<DittnavLenkePanel sakstema={sakstemaUtenSaker} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
-
-test('Sammenligner med og uten saker (skal ikke være like)', () => {
-  const componentMedSaker = ReactTestRenderer.create(wrapIntl(<DittnavLenkePanel sakstema={sakstemaMedSaker} />));
-  const componentUtenSaker = ReactTestRenderer.create(wrapIntl(<DittnavLenkePanel sakstema={sakstemaUtenSaker} />));
-  expect(componentMedSaker.toJSON()).not.toEqual(componentUtenSaker.toJSON());
-});

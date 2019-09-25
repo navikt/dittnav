@@ -4,14 +4,48 @@ import PropTypes from 'prop-types';
 
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../Config';
+import api from '../Api';
 
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
+const unleashFeatureName = 'dittnav.nytt-dinesakerpanel';
+const unleashFeatureEnabledDefault = true;
+
 class DittnavLenkePanel extends React.Component {
+  state = { isUnleashFeatureEnabled: null };
+
+  constructor(props) {
+    super(props);
+    this.checkUnleashFeatureEnabled();
+  }
+
+  checkUnleashFeatureEnabled() {
+    api.fetchUnleashFeatures([unleashFeatureName])
+      .then((features) => {
+        if (features[unleashFeatureName]) {
+          this.setState({ isUnleashFeatureEnabled: true });
+        } else {
+          this.setState({ isUnleashFeatureEnabled: false });
+        }
+      })
+      .catch((e) => {
+        // eslint-disable-next-line no-console
+        console.log(`Unleash error: ${e}`);
+        this.setState({ isUnleashFeatureEnabled: unleashFeatureEnabledDefault });
+      });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  handleAnalytics() {
+    // Google analytics ting settes inn her!
+  }
+
   render() {
-    const { isFeatureEnabled, sakstema } = this.props;
-    const visStortSakspanel = isFeatureEnabled && sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
+    const { sakstema } = this.props;
+    const visStortSakspanel = this.state.isUnleashFeatureEnabled
+      && sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
+    this.handleAnalytics();
 
     return (
       <div className="dittnav-lenkepanel-top-container">
@@ -69,7 +103,6 @@ class DittnavLenkePanel extends React.Component {
 }
 
 DittnavLenkePanel.propTypes = {
-  isFeatureEnabled: PropTypes.bool,
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({
@@ -79,10 +112,6 @@ DittnavLenkePanel.propTypes = {
       antallStatusUnderBehandling: PropTypes.number.isRequired,
     })).isRequired,
   }).isRequired,
-};
-
-DittnavLenkePanel.defaultProps = {
-  isFeatureEnabled: true,
 };
 
 export default DittnavLenkePanel;

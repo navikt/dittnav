@@ -16,7 +16,7 @@ class App extends Component {
       info: {},
       paabegynteSoknader: null,
       mininnboks: [],
-      sakstema: { antallSakstema: 0, sakstemaList: [] },
+      sakstema: { waiting: true, antallSakstema: 0, sakstemaList: [] },
       errors: [],
       fetching: 0,
     };

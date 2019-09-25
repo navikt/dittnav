@@ -48,6 +48,63 @@ exports[`render Home page without props 1`] = `
           </div>
         </a>
       </section>
+      <div
+        className="dittnav-lenkepanel-top-container"
+      >
+        <div
+          className="dittnav-lenkepanel-liten"
+          id={null}
+        >
+          <a
+            alt="Dine saker"
+            className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+            href="http://localhost:9222/saksoversikt/"
+          >
+            <span
+              className="typo-undertittel lenkepanel__heading"
+            >
+              <span>
+                Dine saker
+              </span>
+            </span>
+            <span
+              className="lenkepanel__indikator"
+            />
+          </a>
+          <a
+            alt="Utbetalinger"
+            className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+            href="http://localhost:9222/utbetalingsoversikt/"
+          >
+            <span
+              className="typo-undertittel lenkepanel__heading"
+            >
+              <span>
+                Dine utbetalinger
+              </span>
+            </span>
+            <span
+              className="lenkepanel__indikator"
+            />
+          </a>
+          <a
+            alt="Innboks"
+            className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+            href="http://localhost:9222/mininnboks/"
+          >
+            <span
+              className="typo-undertittel lenkepanel__heading"
+            >
+              <span>
+                Innboks
+              </span>
+            </span>
+            <span
+              className="lenkepanel__indikator"
+            />
+          </a>
+        </div>
+      </div>
       <h2
         className="typo-undertittel relatert-informasjon__subheader"
       >
