@@ -10,7 +10,7 @@ import '../less/index.less';
 import Environments from './Environment';
 
 const App = ({ api }) => {
-    const [{info, paabegynteSoknader, mininnboks, errors, isLoaded}] = api.fetchEverythingForHome();
+    const [{info, paabegynteSoknader, mininnboks, errors, isLoaded}] = api.useFetchEverythingForHome();
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
     const erIDev = Environments() === 'DEV';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import conf from './Config';
 
 const redirectToLogin = () => {
@@ -75,14 +75,14 @@ const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKE
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
 const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
 
-const fetchEverythingForHome = () => {
-  const [info, setInfo] = React.useState({});
-  const [paabegynteSoknader, setPaabegynteSoknader] = React.useState(null);
-  const [mininnboks, setMininnboks] = React.useState([]);
-  const [errors, setErrors] = React.useState([]);
-  const [isLoaded, setLoaded] = React.useState(false);
+const useFetchEverythingForHome = () => {
+  const [info, setInfo] = useState({});
+  const [paabegynteSoknader, setPaabegynteSoknader] = useState(null);
+  const [mininnboks, setMininnboks] = useState([]);
+  const [errors, setErrors] = useState([]);
+  const [isLoaded, setLoaded] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let fetching = 0, setFetching = (f) => fetching = f;
     function fetch() {
       const catchError = msg => () => {
@@ -140,5 +140,5 @@ export default {
   fetchMeldinger,
   fetchHendelser,
   sendHendelser: sendJSONAndCheckForErrors,
-  fetchEverythingForHome: fetchEverythingForHome,
+  useFetchEverythingForHome,
 };

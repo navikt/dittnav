@@ -230,10 +230,10 @@ exports[`expect PersonInfo fetching 1`] = `
 <App
   api={
     Object {
-      "fetchEverythingForHome": [Function],
       "fetchMeldinger": [Function],
       "fetchPersonInfoAndServices": [Function],
       "fetchSaker": [Function],
+      "useFetchEverythingForHome": [Function],
     }
   }
 />

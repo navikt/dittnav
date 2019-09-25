@@ -10,14 +10,10 @@ const mockApi = () => {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
-    fetchEverythingForHome: () => {
+    useFetchEverythingForHome: () => {
       return [{ info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], isLoaded: true}]
     }
   }
-};
-
-const flushPromises = () => {
-  return new Promise(resolve => setImmediate(resolve));
 };
 
 it('renders without crashing', () => {
@@ -26,15 +22,6 @@ it('renders without crashing', () => {
   ReactDOM.render(wrapIntl(<App api={mockApi()} />), div);
   ReactDOM.unmountComponentAtNode(div);
 });
-
-// Temp while testing events, see PB-162
-/*
-it('expect Login page rendering', () => {
-  const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
-  expect(component.toJSON()).toMatchSnapshot();
-});
- */
 
 it('expect PersonInfo fetching', () => {
   const api = mockApi();
@@ -54,7 +41,6 @@ it('expect PersonInfo fetching', () => {
   const renderer = new ShallowRenderer();
   renderer.render(wrapIntl(<App api={api} />));
   const component = renderer.getRenderOutput();
-  //await flushPromises();
 
   expect(component).toMatchSnapshot();
 });
@@ -62,7 +48,7 @@ it('expect PersonInfo fetching', () => {
 it('expect PaabegynteSoknader fetching', () => {
   const api = mockApi();
 
-  api.fetchEverythingForHome = () => {
+  api.useFetchEverythingForHome = () => {
     return [{ info: {
       "navn": "Ola Ytelssen",
       "fgkode": "RARBS",
@@ -77,34 +63,8 @@ it('expect PaabegynteSoknader fetching', () => {
     }, mininnboks: [], errors: ['error.baksystemer', 'error.baksystemer'], isLoaded: true}]
   }
 
-  // api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
-  //   resolve({
-  //     "paabegynteSoknader": {
-  //       "url": "https://tjenester-t6.nav.no/",
-  //       "antallPaabegynte": 2,
-  //       "feilendeBaksystem": ['hello']
-  //     },
-  //     "personinfo": {
-  //       "navn": "Ola Ytelssen",
-  //       "fgkode": "RARBS",
-  //       "ytelse": "ATTF",
-  //       "registrert": true,
-  //       "inaktiv": false,
-  //       "meldekortbruker": true,
-  //       "erUnderRegistreringIArbeid": true
-  //     },
-  //     "feilendeTjenester":['error.baksystemer']
-  //   })
-  // });
-
-  // api.fetchPaabegynteSaker = () => new Promise((resolve, reject) => {
-  //   resolve({feilendeBaksystem: ['hello']});
-  // });
-
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
-  // await flushPromises();
 
   expect(component).toMatchSnapshot();
-  //expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
 });
 
