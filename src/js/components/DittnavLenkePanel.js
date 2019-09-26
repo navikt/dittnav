@@ -30,11 +30,10 @@ class DittnavLenkePanel extends React.Component {
     }
 
     if (testGruppe) {
-      this.setState({ stortSakspanelEnabled: testGruppe === 'A' });
+      this.setState({ testGruppe, stortSakspanelEnabled: testGruppe === 'A' });
     } else {
-      this.setState({ stortSakspanelEnabled: stortSakspanelEnabledDefault });
+      this.setState({ testGruppe, stortSakspanelEnabled: stortSakspanelEnabledDefault });
     }
-    this.setState({ testGruppe });
   }
 
   // Kode for analyse kan settes inn her. Skal denne kalles ved hver render, eller kun ved innlasting?

@@ -8,7 +8,7 @@ const fetchUnleashFeatures = (features) => {
   const fString = features.map(f => `feature=${f}`);
   const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
   return Promise.race([
-    fetch(`${URL}?${fString}`, { method: 'GET' }) // eslint-disable-line no-undef
+    fetch(`${URL}?${fString.join('&')}`, { method: 'GET' }) // eslint-disable-line no-undef
       .then(r => r.json()),
     new Promise((_, reject) => setTimeout(() => {
       const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
