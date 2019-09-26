@@ -34,6 +34,8 @@ class DittnavLenkePanel extends React.Component {
     } else {
       this.setState({ stortSakspanelEnabled: stortSakspanelEnabledDefault });
     }
+
+    this.handleAnalytics();
   }
 
   // Kode for analyse kan settes inn her. Skal denne kalles ved hver render, eller kun ved innlasting?
