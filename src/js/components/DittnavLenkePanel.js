@@ -32,7 +32,7 @@ class DittnavLenkePanel extends React.Component {
     if (testGruppe) {
       this.setState({ testGruppe, stortSakspanelEnabled: testGruppe === 'A' });
     } else {
-      this.setState({ testGruppe, stortSakspanelEnabled: stortSakspanelEnabledDefault });
+      this.setState({ stortSakspanelEnabled: stortSakspanelEnabledDefault });
     }
   }
 

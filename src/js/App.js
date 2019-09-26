@@ -14,7 +14,7 @@ class App extends Component {
     info: {},
     paabegynteSoknader: null,
     mininnboks: [],
-    sakstema: { waiting: true, antallSakstema: 0, sakstemaList: [] },
+    sakstema: { antallSakstema: 0, sakstemaList: [] },
     errors: [],
     fetching: 0,
   };
@@ -55,7 +55,10 @@ class App extends Component {
     api.fetchSakstema()
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+      }).catch((e) => {
+        console.log(e);
+        catchError('error.baksystemer');
+      });
   }
 
   render() {
