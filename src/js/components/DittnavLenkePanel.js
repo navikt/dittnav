@@ -39,12 +39,7 @@ class DittnavLenkePanel extends React.Component {
   // Kode for analyse kan settes inn her. Skal denne kalles ved hver render, eller kun ved innlasting?
   handleAnalytics() {
     const { testGruppe } = this.state;
-
-    if (!testGruppe) {
-      return;
-    }
-
-    // etc
+    return testGruppe;
   }
 
   render() {
