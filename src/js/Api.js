@@ -16,41 +16,51 @@ const fetchUnleashFeatures = (features) => {
     }, conf.UNLEASH_TIMEOUT))]);
 };
 
-const fetchJSONAndCheckForErrors = (url) => {
-  return new Promise((res, rej) => {
-    fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
-      .then((r) => {
-        if (r.status === 401 || (r.status === 0 && !r.ok)) {
-          redirectToLogin();
-          return;
-        }
-        if (!r.ok) {
-          rej(new Error('Error happened on requesting a resource'));
-          return;
-        }
-        res(r.json());
-      })
-      .catch((e) => {
-        rej(e);
-      });
-  });
-};
+const fetchJSONAndCheckForErrors = (url) => new Promise((res, rej) => {
+  fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
+    .then((r) => {
+      if (r.status === 401 || (r.status === 0 && !r.ok)) {
+        redirectToLogin();
+        return;
+      }
+      if (!r.ok) {
+        rej(new Error('Error happened on requesting a resource'));
+        return;
+      }
+      res(r.json());
+    })
+    .catch((e) => {
+      rej(e);
+    });
+});
 
-const checkAuth = () => {
-  return new Promise((res, rej) => {
-    fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
-      .then((r) => {
-        if (!r.authenticated) {
-          redirectToLogin();
-          return;
-        }
-        res(r);
-      })
-      .catch((e) => {
-        rej(e);
-      });
-  });
-};
+const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
+  fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
+    .then((r) => {
+      if (r.ok) {
+        res(r.json());
+      } else {
+        rej(r.json());
+      }
+    })
+    .catch((e) => {
+      rej(e);
+    });
+});
+
+const checkAuth = () => new Promise((res, rej) => {
+  fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
+    .then((r) => {
+      if (!r.authenticated) {
+        redirectToLogin();
+        return;
+      }
+      res(r);
+    })
+    .catch((e) => {
+      rej(e);
+    });
+});
 
 const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
   fetch(url, {
@@ -71,7 +81,7 @@ const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSE
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
-const fetchSakstema = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKSTEMA_URL}`);
+const fetchSakstema = () => fetchJSONAndReturnErrors(`${conf.dittNav.DITTNAV_SAKSTEMA_URL}`);
 const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
