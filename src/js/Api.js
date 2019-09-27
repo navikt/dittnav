@@ -16,24 +16,6 @@ const fetchUnleashFeatures = (features) => {
     }, Config.UNLEASH_TIMEOUT))]);
 };
 
-const fetchJSONAndCheckForErrors = (url) => new Promise((res, rej) => {
-  fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
-    .then((r) => {
-      if (r.status === 401 || (r.status === 0 && !r.ok)) {
-        redirectToLogin();
-        return;
-      }
-      if (!r.ok) {
-        rej(new Error('Error happened on requesting a resource'));
-        return;
-      }
-      res(r.json());
-    })
-    .catch((e) => {
-      rej(e);
-    });
-});
-
 const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' })
     .then(r => (r.ok
@@ -43,17 +25,15 @@ const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
 });
 
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSONAndCheckForErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSONAndReturnErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
     .then((r) => {
-      if (!r.authenticated) {
+      if (r.authenticated) {
+        res(r);
+      } else {
         redirectToLogin();
-        return;
       }
-      res(r);
     })
-    .catch((e) => {
-      rej(e);
-    });
+    .catch(rej);
 });
 
 const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDELSER_URL}`) => {
@@ -73,11 +53,11 @@ const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDEL
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
-const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_API_URL}`);
-const fetchSaker = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_SAKER_URL}`);
-const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
+const fetchPersonInfoAndServices = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_API_URL}`);
+const fetchSaker = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSONAndReturnErrors(Config.dittNav.DITTNAV_SAKSTEMA_URL);
-const fetchHendelser = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchHendelser = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,

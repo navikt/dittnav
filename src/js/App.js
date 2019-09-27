@@ -36,7 +36,7 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    // Bruker "feilendeTjenester" feltet fortsatt? Virker redundant...
+    // Brukes "feilendeTjenester" feltet fortsatt? Virker redundant...
     api.fetchPersonInfoAndServices()
       .then((r) => {
         const { feilendeTjenester } = r;
