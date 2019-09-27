@@ -56,7 +56,12 @@ class App extends Component {
     api.fetchSakstema()
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch((e) => catchError('error.baksystemer', e));
+      }).catch((e) => {
+        console.log(`Error:${e}`);
+        console.log(`This:${this}`);
+        console.log(`catchError:${catchError}`);
+        catchError('error.baksystemer', e);
+      });
   }
 
   render() {
