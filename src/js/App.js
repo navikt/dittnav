@@ -23,8 +23,12 @@ class App extends Component {
     const { errors } = this.state;
     const { api } = this.props;
 
-    const catchError = msg => () => {
-      errors.push(msg);
+    const handleError = error => () => {
+      if (error === 401) {
+        return;
+      }
+
+      errors.push('error.baksystemer');
       this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
     };
 
@@ -37,7 +41,7 @@ class App extends Component {
         }
         this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
       })
-      .catch(catchError('error.baksystemer'));
+      .catch(handleError);
 
     // Ditto
     api.fetchSaker()
@@ -47,17 +51,17 @@ class App extends Component {
           errors.push('error.baksystemer');
         }
         this.setState(() => ({ paabegynteSoknader: r, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+      }).catch(handleError);
 
     api.fetchMeldinger()
       .then((r) => {
         this.setState(() => ({ mininnboks: r, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+      }).catch(handleError);
 
     api.fetchSakstema()
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+      }).catch(handleError);
   }
 
   render() {
