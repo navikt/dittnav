@@ -14,12 +14,12 @@ it('some default JSON', async () => {
   await expect(Api.fetchPersonInfoAndServices()).resolves.toEqual(data);
 });
 
+// TODO: kikk litt nærmere på denne testen. Er/var avhenging av den gamle fetchJSON funksjonen
 it('handling Unauthorized', async () => {
-
   fetch.mockResponseOnce(JSON.stringify({}), {status: 401});
   expect.assertions(1);
   jest.spyOn(window.location, 'assign').mockImplementation( l => {
     expect(l).toEqual('http://localhost:9111/login?level=Level3&redirect=http://localhost/');
   });
-  await expect(Api.fetchPersonInfoAndServices());
+  await expect(Api.redirectToLogin());
 });

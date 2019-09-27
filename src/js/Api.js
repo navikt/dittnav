@@ -1,14 +1,14 @@
 import Config from './Config';
 
 const redirectToLogin = () => {
-  window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
+  window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`);
 };
 
 const fetchUnleashFeatures = (features) => {
   const fString = features.map(f => `feature=${f}`);
   const URL = `${Config.dittNav.CONTEXT_PATH}/api/feature`;
   return Promise.race([
-    fetch(`${URL}?${fString.join('&')}`, { method: 'GET' }) // eslint-disable-line no-undef
+    fetch(`${URL}?${fString.join('&')}`, { method: 'GET' })
       .then(r => r.json()),
     new Promise((_, reject) => setTimeout(() => {
       const message = `Couldnt wait for unleash longer than ${Config.UNLEASH_TIMEOUT} msec`;
@@ -68,4 +68,5 @@ export default {
   fetchHendelser,
   fetchSakstema,
   sendHendelser: sendJSONAndCheckForErrors,
+  redirectToLogin,
 };
