@@ -56,7 +56,9 @@ class App extends Component {
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
       }).catch((e) => {
-        console.log(e);
+        if (e !== 401) {
+          catchError('error.baksystemer');
+        }
       });
   }
 

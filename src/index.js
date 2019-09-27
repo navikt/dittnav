@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import 'intl';
 import NavApp from './js/NavApp';
 
+import Config from './js/Config';
 import App from './js/App';
 import api from './js/Api';
 
@@ -13,8 +14,6 @@ import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
-
-import Environments from './js/Environment';
 
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
@@ -25,7 +24,7 @@ function renderApp() {
 api.checkAuth()
   .then(() => renderApp())
   .catch(() => {
-    if (Environments() === 'LOCAL') {
+    if (Config.ENVIRONMENT === 'local') {
       renderApp();
     }
   });
