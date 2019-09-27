@@ -40,11 +40,11 @@ const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
       if (r.ok) {
         res(r.json());
       } else {
-        rej(new Error(r.json()));
+        rej(new Error(r.status.toString()));
       }
     })
     .catch((e) => {
-      rej(new Error(e));
+      rej(e);
     });
 });
 
