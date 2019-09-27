@@ -23,7 +23,8 @@ class App extends Component {
     const { errors } = this.state;
     const { api } = this.props;
 
-    const handleError = error => () => {
+    const handleError = (error) => {
+      console.log(error);
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
 
