@@ -24,12 +24,15 @@ class App extends Component {
     const { api } = this.props;
 
     const handleError = error => () => {
+      const { fetching } = this.state;
+      this.setState({ fetching: fetching + 1 });
+
       if (error === 401) {
         return;
       }
 
       errors.push('error.baksystemer');
-      this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
+      this.setState({ errors });
     };
 
     // Bruker "feilendeTjenester" feltet fortsatt? Virker redundant...
