@@ -22,11 +22,12 @@ class App extends Component {
   async componentWillMount() {
     const { errors } = this.state;
     const { api } = this.props;
+    const thisRef = this;
 
     const catchError = msg => () => {
       console.log(msg);
       errors.push(msg);
-      this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
+      thisRef.setState(() => ({ errors, fetching: thisRef.state.fetching + 1 }));
     };
 
     api.fetchPersonInfoAndServices()
@@ -58,7 +59,8 @@ class App extends Component {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
       }).catch((e) => {
         console.log(`Error:${e}`);
-        console.log(`This:${this}`);
+        console.log(`This:${this.state}`);
+        console.log(`ThisRef:${thisRef.state}`);
         console.log(`catchError:${catchError}`);
         catchError('error.baksystemer', e);
       });
