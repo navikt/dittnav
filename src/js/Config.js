@@ -114,7 +114,7 @@ export default {
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/person/personinfo`,
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/paabegynte`,
-    DITNTAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
+    DITTNAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
     DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/events`,
     DITTNAV_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/sakstema`,

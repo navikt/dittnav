@@ -1,19 +1,19 @@
-import conf from './Config';
+import Config from './Config';
 
 const redirectToLogin = () => {
-  window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
+  window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
 };
 
 const fetchUnleashFeatures = (features) => {
   const fString = features.map(f => `feature=${f}`);
-  const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
+  const URL = `${Config.dittNav.CONTEXT_PATH}/api/feature`;
   return Promise.race([
     fetch(`${URL}?${fString.join('&')}`, { method: 'GET' }) // eslint-disable-line no-undef
       .then(r => r.json()),
     new Promise((_, reject) => setTimeout(() => {
-      const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
+      const message = `Couldnt wait for unleash longer than ${Config.UNLEASH_TIMEOUT} msec`;
       return reject(new Error(message));
-    }, conf.UNLEASH_TIMEOUT))]);
+    }, Config.UNLEASH_TIMEOUT))]);
 };
 
 const fetchJSONAndCheckForErrors = (url) => new Promise((res, rej) => {
@@ -35,21 +35,15 @@ const fetchJSONAndCheckForErrors = (url) => new Promise((res, rej) => {
 });
 
 const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
-  fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
-    .then((r) => {
-      if (r.ok) {
-        res(r.json());
-      } else {
-        rej(new Error(r.status.toString()));
-      }
-    })
-    .catch((e) => {
-      rej(e);
-    });
+  fetch(url, { method: 'GET', credentials: 'include' })
+    .then(r => (r.ok
+      ? res(r.json())
+      : rej(new Error(r.status.toString()))))
+    .catch(rej);
 });
 
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSONAndCheckForErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
     .then((r) => {
       if (!r.authenticated) {
         redirectToLogin();
@@ -62,7 +56,7 @@ const checkAuth = () => new Promise((res, rej) => {
     });
 });
 
-const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
+const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDELSER_URL}`) => {
   fetch(url, {
     method: 'POST',
     headers: {
@@ -79,11 +73,11 @@ const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSE
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
-const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
-const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
-const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
-const fetchSakstema = () => fetchJSONAndReturnErrors(`${conf.dittNav.DITTNAV_SAKSTEMA_URL}`);
-const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_API_URL}`);
+const fetchSaker = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
+const fetchSakstema = () => fetchJSONAndReturnErrors(Config.dittNav.DITTNAV_SAKSTEMA_URL);
+const fetchHendelser = () => fetchJSONAndCheckForErrors(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,

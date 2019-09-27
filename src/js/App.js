@@ -22,14 +22,13 @@ class App extends Component {
   async componentWillMount() {
     const { errors } = this.state;
     const { api } = this.props;
-    const thisRef = this;
 
     const catchError = msg => () => {
-      console.log(msg);
       errors.push(msg);
-      thisRef.setState(() => ({ errors, fetching: thisRef.state.fetching + 1 }));
+      this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
     };
 
+    // Bruker "feilendeTjenester" feltet fortsatt? Virker redundant...
     api.fetchPersonInfoAndServices()
       .then((r) => {
         const { feilendeTjenester } = r;
@@ -40,6 +39,7 @@ class App extends Component {
       })
       .catch(catchError('error.baksystemer'));
 
+    // Ditto
     api.fetchSaker()
       .then((r) => {
         const { feilendeBaksystem } = r;
@@ -57,13 +57,7 @@ class App extends Component {
     api.fetchSakstema()
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch((e) => {
-        console.log(`Error:${e}`);
-        console.log(`This:${this.state}`);
-        console.log(`ThisRef:${thisRef.state}`);
-        console.log(`catchError:${catchError}`);
-        catchError('error.baksystemer', e);
-      });
+      }).catch(catchError('error.baksystemer'));
   }
 
   render() {
