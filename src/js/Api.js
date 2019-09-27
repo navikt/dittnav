@@ -37,10 +37,14 @@ const fetchJSONAndCheckForErrors = (url) => new Promise((res, rej) => {
 const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
     .then((r) => {
-      res(r.json());
+      if (r.ok) {
+        res(r.json());
+      } else {
+        rej(new Error(r.json()));
+      }
     })
     .catch((e) => {
-      rej(e);
+      rej(new Error(e));
     });
 });
 
