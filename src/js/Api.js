@@ -75,6 +75,7 @@ const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSE
     }),
   })
     .then((r) => r.status)
+    // eslint-disable-next-line no-console
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
