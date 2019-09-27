@@ -24,6 +24,7 @@ class App extends Component {
     const { api } = this.props;
 
     const catchError = msg => () => {
+      console.log(msg);
       errors.push(msg);
       this.setState(() => ({ errors, fetching: this.state.fetching + 1 }));
     };
@@ -55,7 +56,7 @@ class App extends Component {
     api.fetchSakstema()
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch(catchError('error.baksystemer'));
+      }).catch((e) => catchError('error.baksystemer', e));
   }
 
   render() {
