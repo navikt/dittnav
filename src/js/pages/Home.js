@@ -20,11 +20,8 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
   isMeldeKortUser: info.personinfo ? info.personinfo.meldekortbruker : null,
   infoMessages: info.infoMessages,
-  agMessagesCount: info.agMessagesCount,
-  navMessagesCount: info.navMessagesCount,
   paabegynteSoknader,
   meldekort: info.meldekort,
-  isRegisteredAtIArbeid: info.personinfo ? info.personinfo.erUnderRegistreringIArbeid : null,
   mininnboks,
 });
 
