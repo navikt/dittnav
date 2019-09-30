@@ -28,7 +28,7 @@ class App extends Component {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
 
-      if (error === 401) {
+      if (error.message === '401') {
         return;
       }
 
