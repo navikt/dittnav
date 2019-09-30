@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18n from '../../../translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import i18n from '../../../translations/i18n';
+import { IkonSkilt, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 class PaabegynteSoknader extends Component {
   render() {
     const { paabegynteSoknader } = this.props;
-
     if (!paabegynteSoknader || paabegynteSoknader.antallPaabegynte === 0) return null;
 
+    const enSoknad = <F id="saksoversikt.soknad.en" values={{ count: i18n[this.props.intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />;
+    const flereSoknader = <F id="saksoversikt.soknad.flere" values={{ count: i18n[this.props.intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />;
+    const overskrift = (
+      <>
+        {paabegynteSoknader.antallPaabegynte === 1 ? enSoknad : flereSoknader}
+      </>
+    );
+    const ingress = <F id="saksoversikt.lenke" />;
+
     return (
-      <a data-ga="Dittnav/Varsel/Paabegynt soknad" className="message clickable" href={paabegynteSoknader.url}>
-        <span className="icon document-icon" aria-label="dokument-ikon" />
-        <div className="texts">
-          <p><F id={paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere'} values={{ count: i18n[this.props.intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} /></p>
-          <p id="paabegynte-tekst"><F id="saksoversikt.lenke" /></p>
-        </div>
-      </a>
+      <LenkepanelMedIkon
+        className="infoMeldinger"
+        data-ga="Dittnav/Varsel/Paabegynt soknad"
+        alt="fliser.ditt.sykevravaer"
+        overskrift={overskrift}
+        ingress={ingress}
+        href={paabegynteSoknader.url}
+      >
+        <IkonSkilt />
+      </LenkepanelMedIkon>
     );
   }
 }

@@ -3,11 +3,12 @@ import { FormattedMessage as F } from 'react-intl';
 import { Knapp } from 'nav-frontend-knapper';
 import { Input } from 'nav-frontend-skjema';
 import { Innholdstittel } from 'nav-frontend-typografi';
-import Informasjon from './hendelser/Informasjon';
+import InformasjonTestGui from './hendelser/InformasjonTestGui';
 import Api from '../Api';
 import '../../less/components/Hendelser.less';
 
-const Hendelser = () => {
+// Used in the GUI-test component for sending and showing events.
+const HendelserTestGui = () => {
   const [hendelser, setHendelser] = useState([]);
   const [tekst, setTekst] = useState('');
 
@@ -35,11 +36,11 @@ const Hendelser = () => {
       </form>
       <div className="InformasjonHendelser">
         {hendelser.map(h => (
-          <Informasjon key={h.id} hendelse={h} />
+          <InformasjonTestGui key={h.id} hendelse={h} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Hendelser;
+export default HendelserTestGui;

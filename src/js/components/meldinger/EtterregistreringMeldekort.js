@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import conf from '../Config';
-import i18n from '../../translations/i18n';
+import conf from '../../Config';
+import i18n from '../../../translations/i18n';
+import { IkonPille, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
+const overskrift = (ettereg, intl) => (
+  <F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />
+);
 
 class EtterregistreringMeldekort extends Component {
   render() {
     const { ettereg, intl } = this.props;
     if (ettereg && ettereg.etterregistrerteMeldekort && ettereg.etterregistrerteMeldekort > 0) {
       return (
-        <a data-ga="Dittnav/Varsel" className="message clickable meldekort" href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}>
-          <span className="icon meldekort-icon" aria-label="alarm-ikon" />
-          <span className="texts">
-            <span>{<F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />}</span>
-          </span>
-        </a>
+        <LenkepanelMedIkon
+          className="infoMeldinger"
+          data-ga="Dittnav/Varsel"
+          alt="fliser.ditt.sykevravaer"
+          overskrift={overskrift(ettereg, intl)}
+          href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}
+        >
+          <IkonPille />
+        </LenkepanelMedIkon>
       );
     }
     return null;

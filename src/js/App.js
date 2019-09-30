@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
-import Hendelser from './components/Hendelser';
+import HendelserTestGui from './components/HendelserTestGui';
 
 import '../less/index.less';
 
@@ -61,7 +61,7 @@ class App extends Component {
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          { erIDev ? <Hendelser /> : null }
+          { erIDev ? <HendelserTestGui /> : null }
           <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} />
         </div>
       </main>

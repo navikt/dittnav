@@ -4,7 +4,8 @@ import AlertStripe from 'nav-frontend-alertstriper';
 import PropTypes from 'prop-types';
 import '../../../less/components/Informasjon.less';
 
-class Informasjon extends Component {
+// Used in the GUI-test component for sending and showing events.
+class InformasjonTestGui extends Component {
   render() {
     return (
       <div className="Informasjon">
@@ -14,14 +15,14 @@ class Informasjon extends Component {
   }
 }
 
-Informasjon.propTypes = {
+InformasjonTestGui.propTypes = {
   hendelse: PropTypes.shape({
     tekst: PropTypes.string.isRequired,
   }),
 };
 
-Informasjon.defaultProps = {
+InformasjonTestGui.defaultProps = {
   hendelse: {},
 };
 
-export default Informasjon;
+export default InformasjonTestGui;

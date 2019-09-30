@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18n from '../../../translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import i18n from '../../../translations/i18n';
+import { IkonBlyant, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
+// TODO : switche mellom ikoner
 const getMessagesIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
@@ -16,26 +18,30 @@ const getMessagesIcon = (type) => {
   }
 };
 
+const overskrift = (message, numberToWord) => (
+  <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />
+);
+
 class MinInnboks extends Component {
   render() {
     const { numberToWord } = i18n[this.props.intl.locale];
     const messages = this.props.mininnboks;
     return (
-      <React.Fragment>
+      <>
         {messages && messages.map(message => (
-          <a
-            key={message.type}
+          <LenkepanelMedIkon
+            className="infoMeldinger"
             data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
-            className="message clickable"
+            alt="fliser.ditt.sykevravaer"
+            overskrift={overskrift(message, numberToWord)}
             href={message.url}
           >
-            <span className={`icon ${getMessagesIcon(message.type)}`} aria-label={`${message.type.toLowerCase().replace(/_/g, ' ')} ikon`} />
-            <div className="texts">
-              <p><F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} /></p>
-            </div>
-          </a>
+            <IkonBlyant />
+          </LenkepanelMedIkon>
+          // TODO : switche mellom ikoner
+          // <span className={`icon ${getMessagesIcon(message.type)}`} aria-label={`${message.type.toLowerCase().replace(/_/g, ' ')} ikon`} />
         ))}
-      </React.Fragment>
+      </>
     );
   }
 }
