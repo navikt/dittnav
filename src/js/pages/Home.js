@@ -33,10 +33,11 @@ const NUM_ENDPOINTS = 4;
 class Home extends Component {
   render() {
     const { info, paabegynteSoknader, mininnboks, fetching, sakstema } = this.props;
-    const tjenesterEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
     const erUnderOppfolging = info && info.personinfo && info.personinfo.underOppfolging;
+    const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
     const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+
     return (
       <>
         <div className="row">

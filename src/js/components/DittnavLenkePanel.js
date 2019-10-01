@@ -12,10 +12,9 @@ import DinesakerSakstema from './DinesakerSakstema';
 const stortSakspanelEnabledDefault = false;
 
 class DittnavLenkePanel extends React.Component {
-  state = { stortSakspanelEnabled: null, testGruppe: null };
+  state = { stortSakspanelEnabled: null };
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     UnleashABTestgruppeVelger(
       'dittnav.nytt-dinesakerpanel-testpool',
       'dittnav.nytt-dinesakerpanel-ab',
@@ -30,18 +29,21 @@ class DittnavLenkePanel extends React.Component {
     }
 
     if (testGruppe) {
-      this.setState({ testGruppe, stortSakspanelEnabled: testGruppe === 'A' });
+      this.setState({ stortSakspanelEnabled: testGruppe === 'A' });
+      this.handleAnalytics();
     } else {
       this.setState({ stortSakspanelEnabled: stortSakspanelEnabledDefault });
     }
-
-    this.handleAnalytics();
   }
 
-  // Kode for analyse kan settes inn her. Skal denne kalles ved hver render, eller kun ved innlasting?
   handleAnalytics() {
-    const { testGruppe } = this.state;
-    return testGruppe;
+    const { stortSakspanelEnabled } = this.state;
+
+    window.dataLayer.push({
+      event: 'unleash',
+      feature: 'dinesaker-panel',
+      variant: stortSakspanelEnabled ? 'nytt' : 'gammelt',
+    });
   }
 
   render() {
