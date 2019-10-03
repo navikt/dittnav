@@ -4,7 +4,7 @@
 .oversiktspanel {
   flex-grow: 1;
   padding: 24px;
-  border-color: @navGra60; // denne overstyres i testmiljø (og antar i prod)
+  border-color: @navGra60;
 
   &__header {
     display: flex;
@@ -26,18 +26,16 @@
     &:hover {
       text-decoration: underline;
       .oversiktspanel__chevron {
-        left: 6px;
+        transform: translateX(6px) rotate(-90deg);
       }
     }
   }
 
   &__chevron {
-    .chevron-mixin();
-    .chevron-orientasjon-mixin(hoyre);
     color: @navMorkGra;
     margin-left: 0.5em;
-    left: 0;
-    transition: left 250ms;  // denne overstyres i testmiljø (og antar i prod)
+    transform: rotate(-90deg);
+    transition: transform 250ms;
   }
 
   &__liste {
