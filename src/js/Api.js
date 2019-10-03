@@ -18,22 +18,33 @@ const fetchUnleashFeatures = (features) => {
 
 const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' })
-    .then(r => (r.ok
-      ? res(r.json())
-      : rej(new Error(r.status.toString()))))
-    .catch(rej);
+    .then((r) => {
+      if (!r.ok) {
+        rej(new Error('Error happened on requesting a resource'));
+        return;
+      }
+      res(r.json());
+    })
+    // (r.ok
+    //   ? res(r.json())
+    //   : rej(new Error(r.status.toString()))))
+    .catch((e) => {
+      rej(e);
+    });
 });
 
 const checkAuth = () => new Promise((res, rej) => {
   fetchJSONAndReturnErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
     .then((r) => {
-      if (r.authenticated) {
-        res(r);
-      } else {
+      if (!r.authenticated) {
         redirectToLogin();
+        return;
       }
+      res(r.json());
     })
-    .catch(rej);
+    .catch((e) => {
+      rej(e);
+    });
 });
 
 const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDELSER_URL}`) => {
