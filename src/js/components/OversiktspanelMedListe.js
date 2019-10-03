@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import HoyreChevron from 'nav-frontend-chevron';
+import NavFrontendChevron from 'nav-frontend-chevron';
 import PanelBase from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
 import { Normaltekst, Systemtittel } from 'nav-frontend-typografi';
@@ -28,7 +28,7 @@ class OversiktspanelMedListe extends React.Component {
           <Lenke href={headerLenkeHref} className="oversiktspanel__header-lenke" id="oversiktspanel__header-lenke-id">
             <Normaltekst>
               {headerLenkeTekst}
-              <HoyreChevron className="oversiktspanel__chevron" />
+              <NavFrontendChevron className="oversiktspanel__chevron" />
             </Normaltekst>
           </Lenke>
         </div>
