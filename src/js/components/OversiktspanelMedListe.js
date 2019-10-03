@@ -25,12 +25,14 @@ class OversiktspanelMedListe extends React.Component {
               {overskrift}
             </Systemtittel>
           </div>
-          <Lenke href={headerLenkeHref} className="oversiktspanel__header-lenke" id="oversiktspanel__header-lenke-id">
-            <Normaltekst>
-              {headerLenkeTekst}
-              <HoyreChevron className="oversiktspanel__chevron" />
-            </Normaltekst>
-          </Lenke>
+          <div className="oversiktspanel__header-lenke">
+            <Lenke href={headerLenkeHref} id="oversiktspanel__header-lenke-id">
+              <Normaltekst>
+                {headerLenkeTekst}
+                <HoyreChevron className="oversiktspanel__chevron" />
+              </Normaltekst>
+            </Lenke>
+          </div>
         </div>
         { liste && liste.length > 0
           ? (
