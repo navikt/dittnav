@@ -23,10 +23,11 @@ function renderApp() {
 
 api.checkAuth()
   .then(() => renderApp())
-  .catch(() => {
+  .catch((e) => {
     if (Config.ENVIRONMENT === 'local') {
       renderApp();
     } else {
-      api.redirectToLogin();
+      //api.redirectToLogin();
+      console.log(e);
     }
   });

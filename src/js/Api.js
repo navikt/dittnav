@@ -16,6 +16,16 @@ const fetchUnleashFeatures = (features) => {
     }, Config.UNLEASH_TIMEOUT))]);
 };
 
+const fetchJSON = (url) => new Promise((res, rej) => {
+  fetch(url, { method: 'GET', credentials: 'include' })
+    .then(r => r.json())
+    .then(r => res(r))
+    .catch(e => {
+      console.log(e);
+      rej(e);
+    });
+});
+
 const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' })
     .then(r => (r.ok
@@ -30,7 +40,6 @@ const fetchJSONAndCheckForErrors = (url) => {
       .then((r) => {
         if (r.status === 401 || (r.status === 0 && !r.ok)) {
           // redirectToLogin();
-          console.log(r.status);
           return;
         }
         if (!r.ok) {
@@ -46,12 +55,12 @@ const fetchJSONAndCheckForErrors = (url) => {
 };
 
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSONAndCheckForErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
     .then((r) => {
       if (!r.authenticated) {
-        rej(r.json());
+        rej(r);
       } else {
-        res(r.json());
+        res(r);
       }
     })
     .catch((e) => {
