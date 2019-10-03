@@ -18,23 +18,35 @@ const fetchUnleashFeatures = (features) => {
 
 const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' })
-    .then((r) => {
-      if (!r.ok) {
-        rej(new Error('Error happened on requesting a resource'));
-        return;
-      }
-      res(r.json());
-    })
-    // (r.ok
-    //   ? res(r.json())
-    //   : rej(new Error(r.status.toString()))))
-    .catch((e) => {
-      rej(e);
-    });
+    .then(r => (r.ok
+      ? res(r.json())
+      : rej(new Error(r.status.toString()))))
+    .catch(rej);
 });
 
+const fetchJSONAndCheckForErrors = (url) => {
+  return new Promise((res, rej) => {
+    fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
+      .then((r) => {
+        if (r.status === 401 || (r.status === 0 && !r.ok)) {
+          // redirectToLogin();
+          console.log(r.status);
+          return;
+        }
+        if (!r.ok) {
+          rej(new Error('Error happened on requesting a resource'));
+          return;
+        }
+        res(r.json());
+      })
+      .catch((e) => {
+        rej(e);
+      });
+  });
+};
+
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSONAndReturnErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSONAndCheckForErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
     .then((r) => {
       if (!r.authenticated) {
         redirectToLogin();
