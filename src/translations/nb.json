@@ -51,19 +51,6 @@
   "ytelse.INDS": "Du er mottaker av tiltakspenger.",
   "ytelse.VENT": " ",
 
-  "regstatus.beskrivelse": "Du har startet på en registrering som arbeidssøker.",
-  "regstatus.lenke": "Fullfør registrering",
-
-  "ag.se": "Se melding",
-  "ag.se.oversikt": "Oversikt over meldinger",
-  "ag.melding.flere": "Du har fått {count} nye meldinger fra arbeidsgiver",
-  "ag.melding.en": "Du har fått en ny melding fra arbeidsgiver",
-
-  "melding.se": "Se melding",
-  "melding.se.oversikt": "Oversikt over meldinger",
-  "nav.melding.flere": "Du har fått {count} nye meldinger fra NAV",
-  "nav.melding.en": "Du har fått en ny melding fra NAV",
-
   "mininnboks.dokument_varsel.meldinger.en": "Du har ett ulest dokument i din innboks",
   "mininnboks.dokument_varsel.meldinger.flere": "Du har {count} uleste dokumenter i din innboks",
   "mininnboks.oppgave_varsel.meldinger.en": "Du har én ulest oppgave",

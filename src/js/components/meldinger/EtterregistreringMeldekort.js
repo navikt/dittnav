@@ -18,7 +18,7 @@ class EtterregistreringMeldekort extends Component {
         <LenkepanelMedIkon
           className="infoMeldinger"
           data-ga="Dittnav/Varsel"
-          alt="fliser.ditt.sykevravaer"
+          alt="Melding om etterregistrerte meldekort"
           overskrift={overskrift(ettereg, intl)}
           href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}
         >

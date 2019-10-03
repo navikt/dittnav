@@ -10,7 +10,7 @@
     "produsent": "DittNAV",
     "sikkerhetsnivaa": 4,
     "sistOppdatert": "1562938540.722000000",
-    "tekst": "Ny tekst..."
+    "tekst": "Du har fått informasjon om [Familie]"
   },
   {
     "aktiv": true,
@@ -23,7 +23,7 @@
     "produsent": "DittNAV",
     "sikkerhetsnivaa": 4,
     "sistOppdatert": "1562938560.254000000",
-    "tekst": "Default tekst"
+    "tekst": "Du har fått informasjon om [Familie]"
   },
   {
     "aktiv": true,
@@ -36,7 +36,7 @@
     "produsent": "DittNAV",
     "sikkerhetsnivaa": 4,
     "sistOppdatert": "1562938666.440000000",
-    "tekst": "Default tekst"
+    "tekst": "Du har fått informasjon om [Helse]"
   },
   {
     "aktiv": true,
@@ -49,7 +49,7 @@
     "produsent": "DittNAV",
     "sikkerhetsnivaa": 4,
     "sistOppdatert": "1562938674.449000000",
-    "tekst": "Ny tekst..."
+    "tekst": "Du har fått en oppgave om [Helse]"
   },
   {
     "aktiv": true,
@@ -62,123 +62,6 @@
     "produsent": "DittNAV",
     "sikkerhetsnivaa": 4,
     "sistOppdatert": "1562939455.124000000",
-    "tekst": "Ny tekst..."
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001562939467170",
-    "eventId": "1562939467170",
-    "eventTidspunkt": "1562939467.170000000",
-    "id": "26",
-    "link": "https://default.link",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562939467.525000000",
-    "tekst": "Default tekst"
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001562939478532",
-    "eventId": "1562939478532",
-    "eventTidspunkt": "1562939478.532000000",
-    "id": "27",
-    "link": "https://enNyLenke",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562939478.912000000",
-    "tekst": "Ny tekst..."
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001562939507899",
-    "eventId": "1562939507899",
-    "eventTidspunkt": "1562939507.899000000",
-    "id": "28",
-    "link": "https://endaEnNyLenke/",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562939508.219000000",
-    "tekst": "Dette er det tekstlige innholder i eventet..."
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001565953192322",
-    "eventId": "1565953192322",
-    "eventTidspunkt": "1565953192.322000000",
-    "id": "30",
-    "link": "https://en.url",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1565953192.561000000",
-    "tekst": "teksten"
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001566485480569",
-    "eventId": "1566485480569",
-    "eventTidspunkt": "1566485480.569000000",
-    "id": "35",
-    "link": "https://localhost/1000",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1566485482.232000000",
-    "tekst": "Opprettet direkte mot event handler-en med nytt namespace 1"
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001566485494555",
-    "eventId": "1566485494555",
-    "eventTidspunkt": "1566485494.555000000",
-    "id": "36",
-    "link": "https://localhost/1000",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1566485495.100000000",
-    "tekst": "Opprettet direkte mot event handler-en med nytt namespace 1"
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001566485590314",
-    "eventId": "1566485590314",
-    "eventTidspunkt": "1566485590.314000000",
-    "id": "37",
-    "link": "https://localhost/1000",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1566485590.695000000",
-    "tekst": "Opprettet direkte mot event handler-en med nytt namespace 1"
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001566485595407",
-    "eventId": "1566485595407",
-    "eventTidspunkt": "1566485595.407000000",
-    "id": "38",
-    "link": "https://localhost/1000",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1566485595.680000000",
-    "tekst": "Opprettet direkte mot event handler-en med nytt namespace 1"
-  },
-  {
-    "aktiv": true,
-    "aktorId": "123",
-    "dokumentId": "1001566485638862",
-    "eventId": "1566485638862",
-    "eventTidspunkt": "1566485638.862000000",
-    "id": "39",
-    "link": "https://localhost/legacy/new/namespace",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1566485639.387000000",
-    "tekst": "Jippi dette virker fra dittnav-legacy-api, med nytt namespace"
+    "tekst": "Du har fått en oppgave om [Familie]"
   }
 ]

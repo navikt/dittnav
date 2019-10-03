@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 
-// Currently not in use. Can be activated through the default props.
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];

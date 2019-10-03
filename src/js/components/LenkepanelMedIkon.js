@@ -3,7 +3,6 @@ import React from 'react';
 import { LenkepanelBase } from 'nav-frontend-lenkepanel';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 
 class LenkepanelMedIkon extends React.Component {
   render() {
@@ -24,12 +23,12 @@ class LenkepanelMedIkon extends React.Component {
           </div>
           <div>
             <Undertittel>
-              <FormattedMessage id={overskrift} />
+              {overskrift}
             </Undertittel>
             {(ingress)
               ? (
                 <Normaltekst>
-                  <FormattedMessage id={ingress} />
+                  {ingress}
                 </Normaltekst>
               )
               : ''}
@@ -44,15 +43,15 @@ LenkepanelMedIkon.propTypes = {
   href: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  overskrift: PropTypes.string.isRequired,
-  ingress: PropTypes.string,
+  overskrift: PropTypes.shape({ root: PropTypes.any }).isRequired,
+  ingress: PropTypes.shape({ root: PropTypes.any }),
   children: PropTypes.node.isRequired,
 };
 
 LenkepanelMedIkon.defaultProps = {
   onClick: null,
   className: '',
-  ingress: '',
+  ingress: null,
 };
 
 // Temporary icon for Oppgave events.

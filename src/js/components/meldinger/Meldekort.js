@@ -8,14 +8,14 @@ import i18n from '../../../translations/i18n';
 import { IkonPille, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const fremtidig = (nyeMeldekort, formatDateMonth) => (nyeMeldekort.nesteInnsendingAvMeldekort
-  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }}/>)
+  ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
   : null);
 
 const feriedager = meldekort => (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0
-  ? (<F id="meldekort.feriedager" values={{ feriedager: meldekort.resterendeFeriedager }}/>)
+  ? (<F id="meldekort.feriedager" values={{ feriedager: meldekort.resterendeFeriedager }} />)
   : null);
 
-const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk"/></span>) : null);
+const advarsel = risikererTrekk => (risikererTrekk ? (<span><F id="meldekort.trekk" /></span>) : null);
 
 const melding = (next, count, formatDayAndMonth, numberToWord) => (next ? (
   <F
@@ -30,7 +30,7 @@ const melding = (next, count, formatDayAndMonth, numberToWord) => (next ? (
 ) : null);
 
 const trekk = (skalViseTrekkdato, formatDateMonth, next) => (skalViseTrekkdato ? (
-  <F id="meldekort.info.om.trekk" values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }}/>) : null);
+  <F id="meldekort.info.om.trekk" values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }} />) : null);
 
 class Meldekort extends Component {
   render() {
@@ -52,15 +52,15 @@ class Meldekort extends Component {
 
       const ingress = (
         <>
-          <p id="meldekort.lenkeTekst">{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}</p>
-          <p>{feriedager(meldekort)}</p>
+          <span>{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}. <br /></span>
+          {feriedager(meldekort)}
         </>
       );
       return (
         <LenkepanelMedIkon
           className="infoMeldinger"
           data-ga="Dittnav/Varsel"
-          alt="fliser.ditt.sykevravaer"
+          alt="Melding om meldekort"
           overskrift={overskrift}
           ingress={ingress}
           href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
@@ -72,20 +72,18 @@ class Meldekort extends Component {
 
     if (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) {
       return (
-        <Panel className="infoMeldinger-panel" data-ga="Dittnav/Varsel" border>
-          <div className="wrapper">
-            <div className="panel-ikon">
-              <IkonPille />
-            </div>
-            <div className="panel-tekst">
-              <Undertittel>
-                <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
-                <span>{advarsel(risikererTrekk)} </span>
-              </Undertittel>
-              <Normaltekst>
-                {feriedager(meldekort)}
-              </Normaltekst>
-            </div>
+        <Panel className="meldekortpanel" data-ga="Dittnav/Varsel" border alt="Melding om meldekort">
+          <div className="meldekortpanel-ikon">
+            <IkonPille />
+          </div>
+          <div className="meldekortpanel-tekst">
+            <Undertittel>
+              <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
+              <span>{advarsel(risikererTrekk)} </span>
+            </Undertittel>
+            <Normaltekst>
+              {feriedager(meldekort)}
+            </Normaltekst>
           </div>
         </Panel>
       );
@@ -95,17 +93,17 @@ class Meldekort extends Component {
 }
 
 const NextCard = PropTypes.shape({
-  sisteDatoForTrekk: PropTypes.number,
+  sisteDatoForTrekk: PropTypes.string,
   risikererTrekk: PropTypes.bool,
   uke: PropTypes.string,
-  kanSendesFra: PropTypes.number,
-  til: PropTypes.number,
-  fra: PropTypes.number,
+  kanSendesFra: PropTypes.string,
+  til: PropTypes.string,
+  fra: PropTypes.string,
 });
 
 const NewCards = PropTypes.shape({
   antallNyeMeldekort: PropTypes.number,
-  nesteInnsendingAvMeldekort: PropTypes.number,
+  nesteInnsendingAvMeldekort: PropTypes.string,
   nesteMeldekort: NextCard,
 });
 

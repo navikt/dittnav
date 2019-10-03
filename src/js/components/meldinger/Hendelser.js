@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
-import { Informasjon, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonSkilt, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const getInformasjonHendelser = (setHendelser) => Api
   .fetchHendelser()
@@ -25,7 +25,7 @@ const Hendelser = () => {
           overskrift={h.tekst}
           href={h.link}
         >
-          <Informasjon />
+          <IkonSkilt />
         </LenkepanelMedIkon>
       ))}
     </>

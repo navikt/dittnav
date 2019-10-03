@@ -30,9 +30,10 @@ class MinInnboks extends Component {
       <>
         {messages && messages.map(message => (
           <LenkepanelMedIkon
+            key={message.type}
             className="infoMeldinger"
             data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
-            alt="fliser.ditt.sykevravaer"
+            alt="Melding fra mininnboks"
             overskrift={overskrift(message, numberToWord)}
             href={message.url}
           >

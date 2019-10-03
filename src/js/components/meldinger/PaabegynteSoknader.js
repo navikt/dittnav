@@ -9,20 +9,16 @@ class PaabegynteSoknader extends Component {
     const { paabegynteSoknader } = this.props;
     if (!paabegynteSoknader || paabegynteSoknader.antallPaabegynte === 0) return null;
 
-    const enSoknad = <F id="saksoversikt.soknad.en" values={{ count: i18n[this.props.intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />;
+    const enSoknad = <F id="saksoversikt.soknad.en" />;
     const flereSoknader = <F id="saksoversikt.soknad.flere" values={{ count: i18n[this.props.intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />;
-    const overskrift = (
-      <>
-        {paabegynteSoknader.antallPaabegynte === 1 ? enSoknad : flereSoknader}
-      </>
-    );
+    const overskrift = paabegynteSoknader.antallPaabegynte === 1 ? enSoknad : flereSoknader;
     const ingress = <F id="saksoversikt.lenke" />;
 
     return (
       <LenkepanelMedIkon
         className="infoMeldinger"
         data-ga="Dittnav/Varsel/Paabegynt soknad"
-        alt="fliser.ditt.sykevravaer"
+        alt="Melding om Søknader"
         overskrift={overskrift}
         ingress={ingress}
         href={paabegynteSoknader.url}
