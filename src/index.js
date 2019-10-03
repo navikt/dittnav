@@ -27,7 +27,6 @@ api.checkAuth()
     if (Config.ENVIRONMENT === 'local') {
       renderApp();
     } else {
-      //api.redirectToLogin();
-      console.log(e);
+      api.redirectToLogin();
     }
   });
