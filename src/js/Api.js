@@ -37,7 +37,7 @@ const fetchJSONAndCheckForErrors = (url) => {
           rej(new Error('Error happened on requesting a resource'));
           return;
         }
-        res(r.json());
+        res(r);
       })
       .catch((e) => {
         rej(e);
