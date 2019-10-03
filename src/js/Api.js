@@ -49,10 +49,10 @@ const checkAuth = () => new Promise((res, rej) => {
   fetchJSONAndCheckForErrors(`${Config.INNLOGGINGSLINJE_AUTH}`)
     .then((r) => {
       if (!r.authenticated) {
-        redirectToLogin();
-        return;
+        rej(r.json());
+      } else {
+        res(r.json());
       }
-      res(r.json());
     })
     .catch((e) => {
       rej(e);

@@ -23,10 +23,10 @@ function renderApp() {
 
 api.checkAuth()
   .then(() => renderApp())
-  .catch((e) => {
-    console.log(e.message);
-    if (e && e.message && e.message === 'Unauthorized') {
-      return;
+  .catch(() => {
+    if (Config.ENVIRONMENT === 'local') {
+      renderApp();
+    } else {
+      api.redirectToLogin();
     }
-    renderApp();
   });
