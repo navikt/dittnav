@@ -24,7 +24,6 @@ class App extends Component {
     const { api } = this.props;
 
     const handleError = (error) => {
-      console.log(error);
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
 
@@ -36,7 +35,6 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    // Brukes "feilendeTjenester" feltet fortsatt? Virker redundant...
     api.fetchPersonInfoAndServices()
       .then((r) => {
         const { feilendeTjenester } = r;
@@ -47,7 +45,6 @@ class App extends Component {
       })
       .catch(handleError);
 
-    // Ditto
     api.fetchSaker()
       .then((r) => {
         const { feilendeBaksystem } = r;
@@ -65,7 +62,7 @@ class App extends Component {
     api.fetchSakstema()
       .then((r) => {
         this.setState(() => ({ sakstema: r, fetching: this.state.fetching + 1 }));
-      }).catch((e) => handleError(e));
+      }).catch(handleError);
   }
 
   render() {

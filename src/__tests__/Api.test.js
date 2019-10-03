@@ -14,7 +14,6 @@ it('some default JSON', async () => {
   await expect(Api.fetchPersonInfoAndServices()).resolves.toEqual(data);
 });
 
-// TODO: kikk litt nærmere på denne testen. Er/var avhenging av den gamle fetchJSON funksjonen
 it('handling Unauthorized', async () => {
   fetch.mockResponseOnce(JSON.stringify({}), {status: 401});
   expect.assertions(1);

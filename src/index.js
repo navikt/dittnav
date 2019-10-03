@@ -23,8 +23,9 @@ function renderApp() {
 
 api.checkAuth()
   .then(() => renderApp())
-  .catch(() => {
-    if (Config.ENVIRONMENT === 'local') {
-      renderApp();
+  .catch((e) => {
+    if (Config.ENVIRONMENT !== 'local' && e.message && e.message === 'Unauthorized') {
+      return;
     }
+    renderApp();
   });

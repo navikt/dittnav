@@ -14,12 +14,13 @@ const getEnvironment = () => {
   return envLabelsToEnvs[envLabel] ? envLabelsToEnvs[envLabel] : 'prod';
 };
 
-const getDittNavBaseApiUrl = () => (getEnvironment() === 'local'
+const ENV = getEnvironment();
+
+const getDittNavBaseApiUrl = () => (ENV === 'local'
   ? process.env.REACT_APP_DITT_NAV_BASE_API_URL
   : `https://${window.location.hostname}/person`);
 
 const getServicesUrl = () => {
-  const ENV = getEnvironment();
   if (ENV === 'prod') {
     return 'https://tjenester.nav.no';
   }
@@ -33,7 +34,6 @@ const getServicesUrl = () => {
 };
 
 const getNavUrl = () => {
-  const ENV = getEnvironment();
   if (ENV === 'prod') {
     return 'https://www.nav.no';
   }
@@ -47,7 +47,6 @@ const getNavUrl = () => {
 };
 
 const getLoginUrl = () => {
-  const ENV = getEnvironment();
   if (ENV === 'prod') {
     return 'https://loginservice.nav.no/login?level=Level3';
   }
@@ -60,7 +59,7 @@ const getLoginUrl = () => {
   return 'https://loginservice-q.nav.no/login?level=Level3';
 };
 
-const getVtaPath = () => (getEnvironment() === 'local'
+const getVtaPath = () => (ENV === 'local'
   ? 'http://127.0.0.1:3002'
   : `https://${window.location.hostname}/person/dittnav/veientilarbeid`);
 
@@ -106,7 +105,7 @@ const oppfolgingsLenker = [
 ];
 
 export default {
-  ENVIRONMENT: getEnvironment(),
+  ENVIRONMENT: ENV,
   UNLEASH_TIMEOUT: 3000,
   dittNav: {
     SERVICES_URL: getServicesUrl(),
