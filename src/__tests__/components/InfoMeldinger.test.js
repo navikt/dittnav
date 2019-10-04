@@ -6,7 +6,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 
 test('render empty InfoMeldinger component', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<InfoMeldinger isInactive={false} />));
+  renderer.render(wrapIntl(<InfoMeldinger />));
   const component = renderer.getRenderOutput();
   expect(component).toMatchSnapshot();
 });
@@ -14,21 +14,21 @@ test('render empty InfoMeldinger component', () => {
 test('render InfoMeldinger with empty infoMessages', () => {
   const infoMessages = {};
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<InfoMeldinger infoMessages={infoMessages} isInactive={false} />));
+  renderer.render(wrapIntl(<InfoMeldinger infoMessages={infoMessages} />));
   const component = renderer.getRenderOutput();
   expect(component).toMatchSnapshot();
 });
 
 test('render InfoMeldinger with ag messages', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<InfoMeldinger agMessagesCount={1} isInactive={false} />));
+  renderer.render(wrapIntl(<InfoMeldinger />));
   const component = renderer.getRenderOutput();
   expect(component).toMatchSnapshot();
 });
 
 test('render InfoMeldinger with ag messages but inactive', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<InfoMeldinger agMessagesCount={1} isInactive />));
+  renderer.render(wrapIntl(<InfoMeldinger />));
   const component = renderer.getRenderOutput();
   expect(component).toMatchSnapshot();
 });

@@ -6,58 +6,112 @@ exports[`PaabegynteSoknader green test 1`] = `null`;
 
 exports[`PaabegynteSoknader one soknad 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/Paabegynt soknad"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="http://nav.no"
+  onClick={null}
 >
-  <span
-    aria-label="dokument-ikon"
-    className="icon document-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har en søknad som du ikke har sendt
-      </span>
-    </p>
-    <p
-      id="paabegynte-tekst"
+    <div
+      className="lenkepanel__ikon"
     >
-      <span>
-        Fortsett innsending
-      </span>
-    </p>
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M93 164H85V17C85.5 16 87 14 89 14C91 14 92.6667 16 93 17V164Z"
+          fill="#6D655F"
+        />
+        <path
+          d="M144 130V85H31L15 107.5L31 130H144Z"
+          fill="#90C9A7"
+        />
+        <path
+          d="M34 74V29H147L163 51.5L147 74H34Z"
+          fill="#FFB45B"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har en søknad som du ikke har sendt
+        </span>
+      </h2>
+      <p
+        className="typo-normal"
+      >
+        <span>
+          Fortsett innsending
+        </span>
+      </p>
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`PaabegynteSoknader several soknader 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/Paabegynt soknad"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/"
+  onClick={null}
 >
-  <span
-    aria-label="dokument-ikon"
-    className="icon document-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har tre søknader som du ikke har sendt
-      </span>
-    </p>
-    <p
-      id="paabegynte-tekst"
+    <div
+      className="lenkepanel__ikon"
     >
-      <span>
-        Fortsett innsending
-      </span>
-    </p>
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M93 164H85V17C85.5 16 87 14 89 14C91 14 92.6667 16 93 17V164Z"
+          fill="#6D655F"
+        />
+        <path
+          d="M144 130V85H31L15 107.5L31 130H144Z"
+          fill="#90C9A7"
+        />
+        <path
+          d="M34 74V29H147L163 51.5L147 74H34Z"
+          fill="#FFB45B"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har tre søknader som du ikke har sendt
+        </span>
+      </h2>
+      <p
+        className="typo-normal"
+      >
+        <span>
+          Fortsett innsending
+        </span>
+      </p>
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;

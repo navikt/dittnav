@@ -7,6 +7,7 @@ import Meldekort, { MeldekortType } from './meldinger/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
+// import Hendelser from './meldinger/Hendelser';
 
 class InfoMeldinger extends Component {
   render() {

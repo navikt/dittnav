@@ -8,263 +8,839 @@ exports[`MinInnboks with null input 1`] = `null`;
 
 exports[`MinInnboks with one document 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/dokument_varsel melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="dokument varsel ikon"
-    className="icon document-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har ett ulest dokument i din innboks
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har ett ulest dokument i din innboks
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with one task 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/oppgave_varsel melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="oppgave varsel ikon"
-    className="icon registration-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har én ulest oppgave
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har én ulest oppgave
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with one unanswered 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/ubesvart melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="ubesvart ikon"
-    className="icon mininnboks-default-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har ett ubesvart spørsmål i din innboks
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har ett ubesvart spørsmål i din innboks
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with one unread task and one unread 1`] = `
 Array [
   <a
-    className="message clickable"
-    data-ga="Dittnav/Varsel/oppgave_varsel melding"
+    className="lenkepanel infoMeldinger lenkepanel--border"
     href="https://tjenester-t6.nav.no/mininnboks"
+    onClick={null}
   >
-    <span
-      aria-label="oppgave varsel ikon"
-      className="icon registration-icon"
-    />
     <div
-      className="texts"
+      className="lenkepanel__innhold"
     >
-      <p>
-        <span>
-          Du har én ulest oppgave
-        </span>
-      </p>
+      <div
+        className="lenkepanel__ikon"
+      >
+        <svg
+          fill="none"
+          height="48"
+          viewBox="0 0 177 177"
+          width="48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#C5D9E2"
+            height="63"
+            rx="5"
+            width="141"
+            x="18"
+            y="89.3427"
+          />
+          <path
+            d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+            fill="black"
+          />
+          <path
+            d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+            fill="#E0A9A0"
+          />
+          <rect
+            fill="#E0A9A0"
+            height="15.226"
+            transform="rotate(45 138.262 25)"
+            width="30.7384"
+            x="138.262"
+            y="25"
+          />
+          <rect
+            fill="#C15647"
+            height="77.2956"
+            transform="rotate(45 127.5 35.7648)"
+            width="30.7367"
+            x="127.5"
+            y="35.7648"
+          />
+        </svg>
+      </div>
+      <div>
+        <h2
+          className="typo-undertittel"
+        >
+          <span>
+            Du har én ulest oppgave
+          </span>
+        </h2>
+        
+      </div>
     </div>
+    <span
+      className="lenkepanel__indikator"
+    />
   </a>,
   <a
-    className="message clickable"
-    data-ga="Dittnav/Varsel/ulest melding"
+    className="lenkepanel infoMeldinger lenkepanel--border"
     href="https://tjenester-t6.nav.no/mininnboks"
+    onClick={null}
   >
-    <span
-      aria-label="ulest ikon"
-      className="icon mininnboks-default-icon"
-    />
     <div
-      className="texts"
+      className="lenkepanel__innhold"
     >
-      <p>
-        <span>
-          Du har én ulest melding i din innboks
-        </span>
-      </p>
+      <div
+        className="lenkepanel__ikon"
+      >
+        <svg
+          fill="none"
+          height="48"
+          viewBox="0 0 177 177"
+          width="48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#C5D9E2"
+            height="63"
+            rx="5"
+            width="141"
+            x="18"
+            y="89.3427"
+          />
+          <path
+            d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+            fill="black"
+          />
+          <path
+            d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+            fill="#E0A9A0"
+          />
+          <rect
+            fill="#E0A9A0"
+            height="15.226"
+            transform="rotate(45 138.262 25)"
+            width="30.7384"
+            x="138.262"
+            y="25"
+          />
+          <rect
+            fill="#C15647"
+            height="77.2956"
+            transform="rotate(45 127.5 35.7648)"
+            width="30.7367"
+            x="127.5"
+            y="35.7648"
+          />
+        </svg>
+      </div>
+      <div>
+        <h2
+          className="typo-undertittel"
+        >
+          <span>
+            Du har én ulest melding i din innboks
+          </span>
+        </h2>
+        
+      </div>
     </div>
+    <span
+      className="lenkepanel__indikator"
+    />
   </a>,
 ]
 `;
 
 exports[`MinInnboks with two documents 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/dokument_varsel melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="dokument varsel ikon"
-    className="icon document-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har to uleste dokumenter i din innboks
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har to uleste dokumenter i din innboks
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with two documents but different types 1`] = `
 Array [
   <a
-    className="message clickable"
-    data-ga="Dittnav/Varsel/dokument_varsel melding"
+    className="lenkepanel infoMeldinger lenkepanel--border"
     href="https://tjenester-t6.nav.no/mininnboks"
+    onClick={null}
   >
-    <span
-      aria-label="dokument varsel ikon"
-      className="icon document-icon"
-    />
     <div
-      className="texts"
+      className="lenkepanel__innhold"
     >
-      <p>
-        <span>
-          Du har  uleste dokumenter i din innboks
-        </span>
-      </p>
+      <div
+        className="lenkepanel__ikon"
+      >
+        <svg
+          fill="none"
+          height="48"
+          viewBox="0 0 177 177"
+          width="48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#C5D9E2"
+            height="63"
+            rx="5"
+            width="141"
+            x="18"
+            y="89.3427"
+          />
+          <path
+            d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+            fill="black"
+          />
+          <path
+            d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+            fill="#E0A9A0"
+          />
+          <rect
+            fill="#E0A9A0"
+            height="15.226"
+            transform="rotate(45 138.262 25)"
+            width="30.7384"
+            x="138.262"
+            y="25"
+          />
+          <rect
+            fill="#C15647"
+            height="77.2956"
+            transform="rotate(45 127.5 35.7648)"
+            width="30.7367"
+            x="127.5"
+            y="35.7648"
+          />
+        </svg>
+      </div>
+      <div>
+        <h2
+          className="typo-undertittel"
+        >
+          <span>
+            Du har  uleste dokumenter i din innboks
+          </span>
+        </h2>
+        
+      </div>
     </div>
+    <span
+      className="lenkepanel__indikator"
+    />
   </a>,
   <a
-    className="message clickable"
-    data-ga="Dittnav/Varsel/ubesvart melding"
+    className="lenkepanel infoMeldinger lenkepanel--border"
     href="https://tjenester-t6.nav.no/someother"
+    onClick={null}
   >
-    <span
-      aria-label="ubesvart ikon"
-      className="icon mininnboks-default-icon"
-    />
     <div
-      className="texts"
+      className="lenkepanel__innhold"
     >
-      <p>
-        <span>
-          Du har  ubesvarte spørsmål i din innboks
-        </span>
-      </p>
+      <div
+        className="lenkepanel__ikon"
+      >
+        <svg
+          fill="none"
+          height="48"
+          viewBox="0 0 177 177"
+          width="48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#C5D9E2"
+            height="63"
+            rx="5"
+            width="141"
+            x="18"
+            y="89.3427"
+          />
+          <path
+            d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+            fill="black"
+          />
+          <path
+            d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+            fill="#E0A9A0"
+          />
+          <rect
+            fill="#E0A9A0"
+            height="15.226"
+            transform="rotate(45 138.262 25)"
+            width="30.7384"
+            x="138.262"
+            y="25"
+          />
+          <rect
+            fill="#C15647"
+            height="77.2956"
+            transform="rotate(45 127.5 35.7648)"
+            width="30.7367"
+            x="127.5"
+            y="35.7648"
+          />
+        </svg>
+      </div>
+      <div>
+        <h2
+          className="typo-undertittel"
+        >
+          <span>
+            Du har  ubesvarte spørsmål i din innboks
+          </span>
+        </h2>
+        
+      </div>
     </div>
+    <span
+      className="lenkepanel__indikator"
+    />
   </a>,
 ]
 `;
 
 exports[`MinInnboks with two tasks 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/oppgave_varsel melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="oppgave varsel ikon"
-    className="icon registration-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har én ulest oppgave
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har én ulest oppgave
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with two unanswered 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/ubesvart melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="ubesvart ikon"
-    className="icon mininnboks-default-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har to ubesvarte spørsmål i din innboks
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har to ubesvarte spørsmål i din innboks
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with two unread 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/ulest melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="ulest ikon"
-    className="icon mininnboks-default-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har to uleste meldinger i din innboks
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har to uleste meldinger i din innboks
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
 exports[`MinInnboks with zero tasks 1`] = `
 <a
-  className="message clickable"
-  data-ga="Dittnav/Varsel/oppgave_varsel melding"
+  className="lenkepanel infoMeldinger lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={null}
 >
-  <span
-    aria-label="oppgave varsel ikon"
-    className="icon registration-icon"
-  />
   <div
-    className="texts"
+    className="lenkepanel__innhold"
   >
-    <p>
-      <span>
-        Du har  uleste oppgaver
-      </span>
-    </p>
+    <div
+      className="lenkepanel__ikon"
+    >
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 177 177"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#C5D9E2"
+          height="63"
+          rx="5"
+          width="141"
+          x="18"
+          y="89.3427"
+        />
+        <path
+          d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+          fill="black"
+        />
+        <path
+          d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+          fill="#E0A9A0"
+        />
+        <rect
+          fill="#E0A9A0"
+          height="15.226"
+          transform="rotate(45 138.262 25)"
+          width="30.7384"
+          x="138.262"
+          y="25"
+        />
+        <rect
+          fill="#C15647"
+          height="77.2956"
+          transform="rotate(45 127.5 35.7648)"
+          width="30.7367"
+          x="127.5"
+          y="35.7648"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2
+        className="typo-undertittel"
+      >
+        <span>
+          Du har  uleste oppgaver
+        </span>
+      </h2>
+      
+    </div>
   </div>
+  <span
+    className="lenkepanel__indikator"
+  />
 </a>
 `;
 
