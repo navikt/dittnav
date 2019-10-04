@@ -27,7 +27,7 @@ const fetchJSON = (url) => new Promise((res, rej) => {
     })
     .then(r => res(r))
     .catch(e => {
-      console.log(`JSON fetch feilet:${e}`);
+      console.log(`Error: Could not fetch resource. ${e}`);
       rej(e);
     });
 });
@@ -45,7 +45,7 @@ const fetchJSONAndCheckForErrors = (url) => {
     fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
       .then((r) => {
         if (r.status === 401 || (r.status === 0 && !r.ok)) {
-          // redirectToLogin();
+          redirectToLogin();
           return;
         }
         if (!r.ok) {

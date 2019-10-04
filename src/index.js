@@ -32,6 +32,6 @@ api.checkAuth()
     if (e.message === 'not authenticated') {
       api.redirectToLogin();
     } else {
-      console.log(`Error: Authentication could not be verified ${e}`);
+      console.log(`Error: Authentication could not be verified. ${e}`);
     }
   });
