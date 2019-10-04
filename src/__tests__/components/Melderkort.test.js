@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Meldekort from 'js/components/Meldekort';
+import Meldekort from 'js/components/meldinger/Meldekort';
 import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
 const ReactTestRenderer = require('react-test-renderer');
@@ -16,14 +16,14 @@ test('basic Meldekort test', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 2,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1533814941280,
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        fra: '2018-07-17',
+        til: '2018-07-17',
+        sisteDatoForTrekk: '2018-08-09',
         risikererTrekk: true,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: 12,
   };
@@ -37,14 +37,14 @@ test('basic one Meldekort test', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1533814941280,
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        fra: '2018-07-17',
+        til: '2018-07-17',
+        sisteDatoForTrekk: '2018-08-09',
         risikererTrekk: true,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: 12,
   };
@@ -58,13 +58,13 @@ test('basic one Meldekort test no risk', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1533814941280,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        sisteDatoForTrekk: '2018-08-09',
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: 12,
   };
@@ -78,14 +78,14 @@ test('no cards no risk', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1533814941280,
+        sisteDatoForTrekk: '2018-08-09',
         risikererTrekk: false,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: 12,
   };
@@ -99,13 +99,13 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1531808093471,
+        sisteDatoForTrekk: '2018-07-17',
         uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: null,
   };
@@ -119,13 +119,13 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 13,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1531808093471,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        sisteDatoForTrekk: '2018-07-17',
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: null,
   };
@@ -139,13 +139,13 @@ test('12 Meldekort test no risk no remaining holidays', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 12,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1531808093471,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        sisteDatoForTrekk: '2018-07-17',
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: null,
   };
@@ -159,14 +159,14 @@ test('basic zero Meldekort test', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1533814941280,
+        sisteDatoForTrekk: '2018-08-09',
         risikererTrekk: true,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
-      nesteInnsendingAvMeldekort: 1541808093471,
+      nesteInnsendingAvMeldekort: '2018-11-10',
     },
     resterendeFeriedager: 12,
   };
@@ -180,11 +180,11 @@ test('nesteInnsendingAvMeldekort is null', () => {
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
-        sisteDatoForTrekk: 1533814941280,
-        uke: 'week 42',
-        kanSendesFra: 1531808013471,
-        til: 1531808093471,
-        fra: 1531838093471,
+        sisteDatoForTrekk: '2018-08-09',
+        uke: '42-43',
+        kanSendesFra: '2018-07-17',
+        til: '2018-07-17',
+        fra: '2018-07-17',
       },
       nesteInnsendingAvMeldekort: null,
     },
