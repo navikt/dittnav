@@ -26,7 +26,12 @@ api.checkAuth()
   .catch((e) => {
     if (Config.ENVIRONMENT === 'local') {
       renderApp();
-    } else {
+      return;
+    }
+
+    if (e.message === 'not authenticated') {
       api.redirectToLogin();
+    } else {
+      console.log(`Error: Authentication could not be verified ${e}`);
     }
   });

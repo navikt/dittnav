@@ -18,10 +18,16 @@ const fetchUnleashFeatures = (features) => {
 
 const fetchJSON = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' })
-    .then(r => r.json())
+    .then(r => {
+      if (r.ok) {
+        return r.json();
+      }
+      rej(r);
+      return null;
+    })
     .then(r => res(r))
     .catch(e => {
-      console.log(e);
+      console.log(`JSON fetch feilet:${e}`);
       rej(e);
     });
 });
@@ -56,11 +62,11 @@ const fetchJSONAndCheckForErrors = (url) => {
 
 const checkAuth = () => new Promise((res, rej) => {
   fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
-    .then((r) => {
-      if (!r.authenticated) {
-        rej(r);
-      } else {
+    .then(r => {
+      if (r.authenticated) {
         res(r);
+      } else {
+        rej(new Error('not authenticated'));
       }
     })
     .catch((e) => {
