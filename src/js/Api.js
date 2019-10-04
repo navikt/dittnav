@@ -91,11 +91,11 @@ const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDEL
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
-const fetchPersonInfoAndServices = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_API_URL}`);
-const fetchSaker = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_SAKER_URL}`);
-const fetchMeldinger = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
-const fetchSakstema = () => fetchJSONAndReturnErrors(Config.dittNav.DITTNAV_SAKSTEMA_URL);
-const fetchHendelser = () => fetchJSONAndReturnErrors(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchPersonInfoAndServices = () => fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`);
+const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
+const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
+const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,

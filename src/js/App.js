@@ -23,11 +23,11 @@ class App extends Component {
     const { errors } = this.state;
     const { api } = this.props;
 
-    const handleError = (error) => {
+    const handleError = (e) => {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
 
-      if (error.message === '401') {
+      if (e.status === 401) {
         return;
       }
 

@@ -33,5 +33,6 @@ api.checkAuth()
       api.redirectToLogin();
     } else {
       console.log(`Error: Authentication could not be verified. ${e}`);
+      // TODO: Hva bør gjøres her?!
     }
   });
