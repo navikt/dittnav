@@ -26,11 +26,7 @@ const fetchJSON = (url) => new Promise((res, rej) => {
       return null;
     })
     .then(r => res(r))
-    .catch(e => {
-      // eslint-disable-next-line no-console
-      console.log(`Error: Could not fetch resource. ${e}`);
-      rej(e);
-    });
+    .catch(e => rej(e));
 });
 
 const checkAuth = () => new Promise((res, rej) => {
@@ -42,9 +38,13 @@ const checkAuth = () => new Promise((res, rej) => {
         rej(new Error('not authenticated'));
       }
     })
-    .catch((e) => {
-      rej(e);
-    });
+    .catch(e => rej(e));
+});
+
+const checkApiStatus = () => new Promise((res, rej) => {
+  fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`)
+    .then(r => res(r))
+    .catch(e => rej(e));
 });
 
 const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDELSER_URL}`) => {
@@ -73,6 +73,7 @@ const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`
 export default {
   fetchUnleashFeatures,
   checkAuth,
+  checkApiStatus,
   fetchPersonInfoAndServices,
   fetchSaker,
   fetchMeldinger,

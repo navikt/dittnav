@@ -21,6 +21,26 @@ function renderApp() {
   ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
 }
 
+function handleAuthError(e) {
+  if (e.message === 'not authenticated') {
+    api.redirectToLogin();
+    return;
+  }
+  // eslint-disable-next-line no-console
+  console.log(`Error: Authentication could not be verified. ${e}`);
+
+  api.checkApiStatus()
+    .then(() => renderApp())
+    .catch(e2 => {
+      if (e2.status === 401) {
+        api.redirectToLogin();
+      } else {
+        // eslint-disable-next-line no-console
+        console.log(`Error: Could not retrieve API data. ${e2}`);
+      }
+    });
+}
+
 api.checkAuth()
   .then(() => renderApp())
   .catch((e) => {
@@ -29,11 +49,5 @@ api.checkAuth()
       return;
     }
 
-    if (e.message === 'not authenticated') {
-      api.redirectToLogin();
-    } else {
-      // eslint-disable-next-line no-console
-      console.log(`Error: Authentication could not be verified. ${e}`);
-      // TODO: Hva bør gjøres her, dersom innloggingslinje feiler?!
-    }
+    handleAuthError(e);
   });
