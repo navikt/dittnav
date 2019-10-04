@@ -32,7 +32,8 @@ api.checkAuth()
     if (e.message === 'not authenticated') {
       api.redirectToLogin();
     } else {
+      // eslint-disable-next-line no-console
       console.log(`Error: Authentication could not be verified. ${e}`);
-      // TODO: Hva bør gjøres her?!
+      // TODO: Hva bør gjøres her, dersom innloggingslinje feiler?!
     }
   });

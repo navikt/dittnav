@@ -27,38 +27,11 @@ const fetchJSON = (url) => new Promise((res, rej) => {
     })
     .then(r => res(r))
     .catch(e => {
+      // eslint-disable-next-line no-console
       console.log(`Error: Could not fetch resource. ${e}`);
       rej(e);
     });
 });
-
-const fetchJSONAndReturnErrors = (url) => new Promise((res, rej) => {
-  fetch(url, { method: 'GET', credentials: 'include' })
-    .then(r => (r.ok
-      ? res(r.json())
-      : rej(new Error(r.status.toString()))))
-    .catch(rej);
-});
-
-const fetchJSONAndCheckForErrors = (url) => {
-  return new Promise((res, rej) => {
-    fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
-      .then((r) => {
-        if (r.status === 401 || (r.status === 0 && !r.ok)) {
-          redirectToLogin();
-          return;
-        }
-        if (!r.ok) {
-          rej(new Error('Error happened on requesting a resource'));
-          return;
-        }
-        res(r);
-      })
-      .catch((e) => {
-        rej(e);
-      });
-  });
-};
 
 const checkAuth = () => new Promise((res, rej) => {
   fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)

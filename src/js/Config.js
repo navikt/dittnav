@@ -105,7 +105,7 @@ const oppfolgingsLenker = [
 ];
 
 export default {
-  ENVIRONMENT: ENV,
+  ENVIRONMENT: getEnvironment(),
   UNLEASH_TIMEOUT: 3000,
   dittNav: {
     SERVICES_URL: getServicesUrl(),
