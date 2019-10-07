@@ -22,7 +22,7 @@ class LenkepanelMedIkon extends React.Component {
             {children}
           </div>
           <div>
-            <Undertittel>
+            <Undertittel className="lenkepanel__heading">
               {overskrift}
             </Undertittel>
             {(ingress)

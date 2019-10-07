@@ -39,7 +39,7 @@ exports[`PaabegynteSoknader one soknad 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           Du har en søknad som du ikke har sendt
@@ -95,7 +95,7 @@ exports[`PaabegynteSoknader several soknader 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           Du har tre søknader som du ikke har sendt

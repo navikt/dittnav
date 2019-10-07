@@ -39,7 +39,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           <span>
@@ -123,7 +123,7 @@ exports[`basic Meldekort test 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           <span>
@@ -212,7 +212,7 @@ exports[`basic one Meldekort test 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           <span>
@@ -299,7 +299,7 @@ exports[`basic one Meldekort test no risk 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           <span>
@@ -384,7 +384,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           <span>
@@ -532,7 +532,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
           <span>
@@ -614,7 +614,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
     </div>
     <div>
       <h2
-        className="typo-undertittel"
+        className="typo-undertittel lenkepanel__heading"
       >
         <span>
            

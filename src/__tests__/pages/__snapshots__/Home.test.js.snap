@@ -55,7 +55,7 @@ exports[`render Home page without props 1`] = `
             </div>
             <div>
               <h2
-                className="typo-undertittel"
+                className="typo-undertittel lenkepanel__heading"
               >
                 <span>
                   Du har to søknader som du ikke har sendt
