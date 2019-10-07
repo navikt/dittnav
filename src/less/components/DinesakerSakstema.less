@@ -1,0 +1,50 @@
+@import (reference) '~nav-frontend-core/less/_variabler';
+
+.sak-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  margin-top: 0.5em;
+
+  .sak-lenke {
+    &:hover {
+      .sak-temanavn {
+        text-decoration: underline;
+      }
+
+      .sak-chevron {
+        left: 6px;
+      }
+    }
+    &:not(:hover) {
+      color: inherit;
+    }
+  }
+
+  .sak-temanavn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .sak-chevron {
+    align-self: center;
+    color: @navMorkGra;
+    left: 0;
+    transition: left 250ms;
+  }
+
+  .sak-status {
+    text-decoration: none;
+    color: @navMorkGra;
+  }
+}
+
+#sak-lenke-id {
+  border-bottom: 0;
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}

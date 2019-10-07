@@ -36,7 +36,7 @@ function handleAuthError(e) {
         api.redirectToLogin();
       } else {
         // eslint-disable-next-line no-console
-        console.log(`Error: Could not retrieve API data. ${e2}`);
+        console.log(`Error: Could not retrieve API data. App will not render. ${e2}`);
       }
     });
 }
