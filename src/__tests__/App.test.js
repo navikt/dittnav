@@ -10,6 +10,7 @@ const mockApi = () => {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
+    fetchSakstema: () => new Promise((resolve, reject) => {}),
   }
 };
 

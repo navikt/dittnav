@@ -15,11 +15,10 @@ it('some default JSON', async () => {
 });
 
 it('handling Unauthorized', async () => {
-
   fetch.mockResponseOnce(JSON.stringify({}), {status: 401});
   expect.assertions(1);
   jest.spyOn(window.location, 'assign').mockImplementation( l => {
     expect(l).toEqual('http://localhost:9111/login?level=Level3&redirect=http://localhost/');
   });
-  await expect(Api.fetchPersonInfoAndServices());
+  await expect(Api.redirectToLogin());
 });

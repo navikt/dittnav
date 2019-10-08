@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import 'intl';
 import NavApp from './js/NavApp';
 
+import Config from './js/Config';
 import App from './js/App';
 import api from './js/Api';
 
@@ -20,11 +21,33 @@ function renderApp() {
   ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
 }
 
+function handleAuthError(e) {
+  if (e.message === 'not authenticated') {
+    api.redirectToLogin();
+    return;
+  }
+  // eslint-disable-next-line no-console
+  console.log(`Error: Authentication could not be verified. ${e}`);
+
+  api.checkApiStatus()
+    .then(() => renderApp())
+    .catch(e2 => {
+      if (e2.status === 401) {
+        api.redirectToLogin();
+      } else {
+        // eslint-disable-next-line no-console
+        console.log(`Error: Could not retrieve API data. App will not render. ${e2}`);
+      }
+    });
+}
+
 api.checkAuth()
   .then(() => renderApp())
   .catch((e) => {
-    if (e && e.message && e.message === 'Unauthorized') {
+    if (Config.ENVIRONMENT === 'local') {
+      renderApp();
       return;
     }
-    renderApp();
+
+    handleAuthError(e);
   });

@@ -1,59 +1,53 @@
-import conf from './Config';
+import Config from './Config';
 
 const redirectToLogin = () => {
-  window.location.assign(`${conf.dittNav.LOGINSERVICE}&redirect=${window.location.href}`); // eslint-disable-line no-undef
+  window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`);
 };
-
-const URL = `${conf.dittNav.CONTEXT_PATH}/api/feature`;
 
 const fetchUnleashFeatures = (features) => {
   const fString = features.map(f => `feature=${f}`);
+  const URL = `${Config.dittNav.CONTEXT_PATH}/api/feature`;
   return Promise.race([
-    fetch(`${URL}?${fString}`, { method: 'GET' }) // eslint-disable-line no-undef
+    fetch(`${URL}?${fString.join('&')}`, { method: 'GET' })
       .then(r => r.json()),
     new Promise((_, reject) => setTimeout(() => {
-      const message = `Couldnt wait for unleash longer than ${conf.UNLEASH_TIMEOUT} msec`;
+      const message = `Couldnt wait for unleash longer than ${Config.UNLEASH_TIMEOUT} msec`;
       return reject(new Error(message));
-    }, conf.UNLEASH_TIMEOUT))]);
+    }, Config.UNLEASH_TIMEOUT))]);
 };
 
-const fetchJSONAndCheckForErrors = (url) => {
-  return new Promise((res, rej) => {
-    fetch(url, { method: 'GET', credentials: 'include' }) // eslint-disable-line no-undef
-      .then((r) => {
-        if (r.status === 401 || (r.status === 0 && !r.ok)) {
-          redirectToLogin();
-          return;
-        }
-        if (!r.ok) {
-          rej(new Error('Error happened on requesting a resource'));
-          return;
-        }
-        res(r.json());
-      })
-      .catch((e) => {
-        rej(e);
-      });
-  });
-};
+const fetchJSON = (url) => new Promise((res, rej) => {
+  fetch(url, { method: 'GET', credentials: 'include' })
+    .then(r => {
+      if (r.ok) {
+        return r.json();
+      }
+      rej(r);
+      return null;
+    })
+    .then(r => res(r))
+    .catch(e => rej(e));
+});
 
-const checkAuth = () => {
-  return new Promise((res, rej) => {
-    fetchJSONAndCheckForErrors(`${conf.INNLOGGINGSLINJE_AUTH}`)
-      .then((r) => {
-        if (!r.authenticated) {
-          redirectToLogin();
-          return;
-        }
-        res(r.json());
-      })
-      .catch((e) => {
-        rej(e);
-      });
-  });
-};
+const checkAuth = () => new Promise((res, rej) => {
+  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
+    .then(r => {
+      if (r.authenticated) {
+        res(r);
+      } else {
+        rej(new Error('not authenticated'));
+      }
+    })
+    .catch(e => rej(e));
+});
 
-const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
+const checkApiStatus = () => new Promise((res, rej) => {
+  fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`)
+    .then(r => res(r))
+    .catch(e => rej(e));
+});
+
+const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDELSER_URL}`) => {
   fetch(url, {
     method: 'POST',
     headers: {
@@ -66,20 +60,25 @@ const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSE
     }),
   })
     .then((r) => r.status)
+    // eslint-disable-next-line no-console
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
-const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
-const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
-const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
-const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchPersonInfoAndServices = () => fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`);
+const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
+const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
+const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
+const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,
   checkAuth,
+  checkApiStatus,
   fetchPersonInfoAndServices,
   fetchSaker,
   fetchMeldinger,
   fetchHendelser,
+  fetchSakstema,
   sendHendelser: sendJSONAndCheckForErrors,
+  redirectToLogin,
 };

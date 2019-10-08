@@ -1,19 +1,5 @@
 @import '../../../node_modules/nav-frontend-core/less/_variabler';
 
-.dittnav-lenke-container {
-    display: flex;
-    flex-flow: column;
-    .lenkepanel {
-        flex: 1;
-    }
-    .first {
-        margin-right: 0em;
-    }
-    .last {
-        margin-left: 0em;
-    }
-}
-
 .dittnav-lenkeikon-container {
     display: flex;
     flex-flow: row;
@@ -21,9 +7,6 @@
     justify-content: space-between;
     .lenkepanel {
         width: 100%;
-    }
-    .first {
-        margin-right: 0em;
     }
 }
 
@@ -39,7 +22,6 @@
 }
 
 @media (min-width: @screen-sm-min) {
-
     .dittnav-lenkeikon-container {
         .lenkepanel {
             flex: 1;
@@ -48,25 +30,10 @@
             margin-right: 1em;
         }
     }
-    .dittnav-lenke-container {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        .lenkepanel {
-            flex: 1;
-        }
-        .first {
-            margin-right: 1em;
-        }
-        .last {
-            margin-left: 1em;
-        }
-    }
 
     .lenkepanel__innhold {
         padding: 0.5rem 1rem 0.5rem 0.5rem;
     }
-
     .lenkepanel__ikon {
         margin-right: 1rem;
     }
