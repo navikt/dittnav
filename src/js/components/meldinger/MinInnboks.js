@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonDokument, IkonSjekkliste, IkonChat, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
 const getMessagesIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return <IkonDokument />;
+      return <IkonMelding />;
     case 'OPPGAVE_VARSEL':
-      return <IkonSjekkliste />;
+      return <IkonOppgave />;
     default:
-      return <IkonChat />;
+      return <IkonMelding />;
   }
 };
 

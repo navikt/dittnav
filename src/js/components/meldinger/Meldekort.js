@@ -5,7 +5,7 @@ import { Panel } from 'nav-frontend-paneler';
 import { Undertittel, Normaltekst } from 'nav-frontend-typografi';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
-import { IkonAlarm, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const fremtidig = (nyeMeldekort, formatDateMonth) => (nyeMeldekort.nesteInnsendingAvMeldekort
   ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
@@ -65,7 +65,7 @@ class Meldekort extends Component {
           ingress={ingress}
           href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
         >
-          <IkonAlarm />
+          <IkonOppgave />
         </LenkepanelMedIkon>
       );
     }
@@ -74,7 +74,7 @@ class Meldekort extends Component {
       return (
         <Panel className="meldekortpanel" data-ga="Dittnav/Varsel" border alt="Melding om meldekort">
           <div className="meldekortpanel__ikon">
-            <IkonAlarm />
+            <IkonOppgave />
           </div>
           <div className="meldekortpanel__tekst">
             <Undertittel>
