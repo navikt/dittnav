@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonBlyant, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonDokument, IkonSjekkliste, IkonChat, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
-// TODO : switche mellom ikoner
 const getMessagesIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return 'document-icon';
+      return <IkonDokument />;
     case 'OPPGAVE_VARSEL':
-      return 'registration-icon';
+      return <IkonSjekkliste />;
     default:
-      return 'mininnboks-default-icon';
+      return <IkonChat />;
   }
 };
 
@@ -31,16 +30,14 @@ class MinInnboks extends Component {
         {messages && messages.map(message => (
           <LenkepanelMedIkon
             key={message.type}
-            className="infoMeldinger"
+            className="infoMelding"
             data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
             alt="Melding fra mininnboks"
             overskrift={overskrift(message, numberToWord)}
             href={message.url}
           >
-            <IkonBlyant />
+            {getMessagesIcon(message.type)}
           </LenkepanelMedIkon>
-          // TODO : switche mellom ikoner
-          // <span className={`icon ${getMessagesIcon(message.type)}`} aria-label={`${message.type.toLowerCase().replace(/_/g, ' ')} ikon`} />
         ))}
       </>
     );

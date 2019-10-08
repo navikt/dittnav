@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonSkilt, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonDokument, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 class PaabegynteSoknader extends Component {
   render() {
@@ -16,14 +16,14 @@ class PaabegynteSoknader extends Component {
 
     return (
       <LenkepanelMedIkon
-        className="infoMeldinger"
+        className="infoMelding"
         data-ga="Dittnav/Varsel/Paabegynt soknad"
         alt="Melding om Søknader"
         overskrift={overskrift}
         ingress={ingress}
         href={paabegynteSoknader.url}
       >
-        <IkonSkilt />
+        <IkonDokument />
       </LenkepanelMedIkon>
     );
   }

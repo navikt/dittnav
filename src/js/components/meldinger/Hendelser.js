@@ -19,7 +19,7 @@ const Hendelser = () => {
     <>
       {hendelser.map(h => (
         <LenkepanelMedIkon
-          className="infoMeldinger"
+          className="infoMelding"
           data-ga="Dittnav/Varsel"
           alt="fliser.ditt.sykevravaer"
           overskrift={h.tekst}

@@ -16,7 +16,7 @@ class EtterregistreringMeldekort extends Component {
     if (ettereg && ettereg.etterregistrerteMeldekort && ettereg.etterregistrerteMeldekort > 0) {
       return (
         <LenkepanelMedIkon
-          className="infoMeldinger"
+          className="infoMelding"
           data-ga="Dittnav/Varsel"
           alt="Melding om etterregistrerte meldekort"
           overskrift={overskrift(ettereg, intl)}
