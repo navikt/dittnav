@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
 import { IkonInformasjon, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { Element } from 'nav-frontend-typografi';
 
 const overskrift = (paabegynteSoknader, intl) => (
-  <F
-    id={paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere'}
-    values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }}
-  />
+  <Element className="lenkepanel__heading">
+    <F
+      id={paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere'}
+      values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }}
+    />
+  </Element>
 );
 
 const ingress = <F id="saksoversikt.lenke" />;

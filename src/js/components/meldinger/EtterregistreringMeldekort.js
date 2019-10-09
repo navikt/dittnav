@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { Element } from 'nav-frontend-typografi';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
 import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
@@ -8,7 +9,9 @@ import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
 const overskrift = (ettereg, intl) => (
-  <F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />
+  <Element className="lenkepanel__heading">
+    <F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />
+  </Element>
 );
 
 const EtterregistreringMeldekort = ({ ettereg, intl }) => {

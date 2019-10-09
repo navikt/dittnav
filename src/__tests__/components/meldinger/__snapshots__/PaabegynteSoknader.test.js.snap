@@ -27,9 +27,6 @@ exports[`PaabegynteSoknader one soknad 1`] = `
         <title>
           Group 5
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -63,13 +60,13 @@ exports[`PaabegynteSoknader one soknad 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har en søknad som du ikke har sendt
         </span>
-      </h2>
+      </p>
       <p
         className="typo-normal"
       >
@@ -108,9 +105,6 @@ exports[`PaabegynteSoknader several soknader 1`] = `
         <title>
           Group 5
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -144,13 +138,13 @@ exports[`PaabegynteSoknader several soknader 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har tre søknader som du ikke har sendt
         </span>
-      </h2>
+      </p>
       <p
         className="typo-normal"
       >

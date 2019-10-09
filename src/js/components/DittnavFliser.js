@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { FormattedMessage as F } from 'react-intl';
+import { Undertittel } from 'nav-frontend-typografi';
 import Config from '../Config';
 import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './LenkepanelMedIkon';
 
@@ -9,7 +10,7 @@ const DittnavFliser = () => (
     <div className="dittnav-lenkeikon-container">
       <LenkepanelMedIkon
         alt="Ditt sykefravær"
-        overskrift={<F id="fliser.ditt.sykevravaer" />}
+        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.ditt.sykevravaer" /></Undertittel>}
         ingress={<F id="fliser.ditt.sykevravaer.ingress" />}
         className="first"
         href={Config.LENKER.dittSykefravaer.url}
@@ -18,7 +19,7 @@ const DittnavFliser = () => (
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Mistet jobben?"
-        overskrift={<F id="fliser.mistet.jobben" />}
+        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.mistet.jobben" /></Undertittel>}
         ingress={<F id="fliser.mistet.jobben.ingress" />}
         href={Config.LENKER.veilederArbeidssoker.url}
       >
@@ -28,7 +29,7 @@ const DittnavFliser = () => (
     <div className="dittnav-lenkeikon-container blokk-xxl">
       <LenkepanelMedIkon
         alt="Skjemaer"
-        overskrift={<F id="fliser.skjemaer" />}
+        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.skjemaer" /></Undertittel>}
         ingress={<F id="fliser.skjemaer.ingress" />}
         className="first"
         href={Config.LENKER.skjemaer.url}
@@ -37,7 +38,7 @@ const DittnavFliser = () => (
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Din pensjon"
-        overskrift={<F id="fliser.din.pensjon" />}
+        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.din.pensjon" /></Undertittel>}
         ingress={<F id="fliser.din.pensjon.ingress" />}
         href={Config.LENKER.dinPensjon.url}
       >

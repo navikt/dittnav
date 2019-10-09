@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { Element } from 'nav-frontend-typografi';
 import i18n from '../../../translations/i18n';
 import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
@@ -18,7 +19,9 @@ const getMinInnboksIcon = (type) => {
 const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
 const overskrift = (message, numberToWord) => (
-  <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />
+  <Element className="lenkepanel__heading">
+    <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />
+  </Element>
 );
 
 const MinInnboks = ({ mininnboks, intl }) => {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import { Panel } from 'nav-frontend-paneler';
-import { Undertittel, Normaltekst } from 'nav-frontend-typografi';
+import { Undertittel, Normaltekst, Element } from 'nav-frontend-typografi';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
 import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
@@ -42,12 +42,12 @@ class Meldekort extends Component {
     const risikererTrekk = meldekort.nyeMeldekort.nesteMeldekort && meldekort.nyeMeldekort.nesteMeldekort.risikererTrekk;
     if (count > 0) {
       const overskrift = (
-        <>
+        <Element className="lenkepanel__heading">
           <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
           <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDayAndMonth, numberToWord)} </span>
           <span>{trekk(!risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
           <span>{advarsel(risikererTrekk)} </span>
-        </>
+        </Element>
       );
 
       const ingress = (

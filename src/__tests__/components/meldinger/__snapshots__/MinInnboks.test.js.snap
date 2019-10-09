@@ -29,9 +29,6 @@ exports[`MinInnboks with one document 1`] = `
         <title>
           Group 3
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -65,13 +62,13 @@ exports[`MinInnboks with one document 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har ett ulest dokument i din innboks
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -104,9 +101,6 @@ exports[`MinInnboks with one task 1`] = `
         <title>
           Group 4
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -140,13 +134,13 @@ exports[`MinInnboks with one task 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har én ulest oppgave
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -179,9 +173,6 @@ exports[`MinInnboks with one unanswered 1`] = `
         <title>
           Group 3
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -215,13 +206,13 @@ exports[`MinInnboks with one unanswered 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har ett ubesvart spørsmål i din innboks
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -255,9 +246,6 @@ Array [
           <title>
             Group 4
           </title>
-          <desc>
-            Created with Sketch.
-          </desc>
           <g
             fill="none"
             fillRule="evenodd"
@@ -291,13 +279,13 @@ Array [
         </svg>
       </div>
       <div>
-        <h2
-          className="typo-undertittel lenkepanel__heading"
+        <p
+          className="typo-element lenkepanel__heading"
         >
           <span>
             Du har én ulest oppgave
           </span>
-        </h2>
+        </p>
         
       </div>
     </div>
@@ -327,9 +315,6 @@ Array [
           <title>
             Group 3
           </title>
-          <desc>
-            Created with Sketch.
-          </desc>
           <g
             fill="none"
             fillRule="evenodd"
@@ -363,13 +348,13 @@ Array [
         </svg>
       </div>
       <div>
-        <h2
-          className="typo-undertittel lenkepanel__heading"
+        <p
+          className="typo-element lenkepanel__heading"
         >
           <span>
             Du har én ulest melding i din innboks
           </span>
-        </h2>
+        </p>
         
       </div>
     </div>
@@ -403,9 +388,6 @@ exports[`MinInnboks with two documents 1`] = `
         <title>
           Group 3
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -439,13 +421,13 @@ exports[`MinInnboks with two documents 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har to uleste dokumenter i din innboks
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -479,9 +461,6 @@ Array [
           <title>
             Group 3
           </title>
-          <desc>
-            Created with Sketch.
-          </desc>
           <g
             fill="none"
             fillRule="evenodd"
@@ -515,13 +494,13 @@ Array [
         </svg>
       </div>
       <div>
-        <h2
-          className="typo-undertittel lenkepanel__heading"
+        <p
+          className="typo-element lenkepanel__heading"
         >
           <span>
             Du har  uleste dokumenter i din innboks
           </span>
-        </h2>
+        </p>
         
       </div>
     </div>
@@ -551,9 +530,6 @@ Array [
           <title>
             Group 3
           </title>
-          <desc>
-            Created with Sketch.
-          </desc>
           <g
             fill="none"
             fillRule="evenodd"
@@ -587,13 +563,13 @@ Array [
         </svg>
       </div>
       <div>
-        <h2
-          className="typo-undertittel lenkepanel__heading"
+        <p
+          className="typo-element lenkepanel__heading"
         >
           <span>
             Du har  ubesvarte spørsmål i din innboks
           </span>
-        </h2>
+        </p>
         
       </div>
     </div>
@@ -627,9 +603,6 @@ exports[`MinInnboks with two tasks 1`] = `
         <title>
           Group 4
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -663,13 +636,13 @@ exports[`MinInnboks with two tasks 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har én ulest oppgave
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -702,9 +675,6 @@ exports[`MinInnboks with two unanswered 1`] = `
         <title>
           Group 3
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -738,13 +708,13 @@ exports[`MinInnboks with two unanswered 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har to ubesvarte spørsmål i din innboks
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -777,9 +747,6 @@ exports[`MinInnboks with two unread 1`] = `
         <title>
           Group 3
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -813,13 +780,13 @@ exports[`MinInnboks with two unread 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har to uleste meldinger i din innboks
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>
@@ -852,9 +819,6 @@ exports[`MinInnboks with zero tasks 1`] = `
         <title>
           Group 4
         </title>
-        <desc>
-          Created with Sketch.
-        </desc>
         <g
           fill="none"
           fillRule="evenodd"
@@ -888,13 +852,13 @@ exports[`MinInnboks with zero tasks 1`] = `
       </svg>
     </div>
     <div>
-      <h2
-        className="typo-undertittel lenkepanel__heading"
+      <p
+        className="typo-element lenkepanel__heading"
       >
         <span>
           Du har  uleste oppgaver
         </span>
-      </h2>
+      </p>
       
     </div>
   </div>

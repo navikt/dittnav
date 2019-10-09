@@ -1,6 +1,6 @@
 import React from 'react';
 import { LenkepanelBase } from 'nav-frontend-lenkepanel';
-import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
+import { Normaltekst } from 'nav-frontend-typografi';
 import PropTypes from 'prop-types';
 
 class LenkepanelMedIkon extends React.Component {
@@ -21,9 +21,7 @@ class LenkepanelMedIkon extends React.Component {
             {children}
           </div>
           <div>
-            <Undertittel className="lenkepanel__heading">
-              {overskrift}
-            </Undertittel>
+            {overskrift}
             {(ingress)
               ? (
                 <Normaltekst>

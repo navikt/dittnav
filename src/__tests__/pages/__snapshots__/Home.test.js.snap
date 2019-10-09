@@ -43,9 +43,6 @@ exports[`render Home page without props 1`] = `
                 <title>
                   Group 5
                 </title>
-                <desc>
-                  Created with Sketch.
-                </desc>
                 <g
                   fill="none"
                   fillRule="evenodd"
@@ -79,13 +76,13 @@ exports[`render Home page without props 1`] = `
               </svg>
             </div>
             <div>
-              <h2
-                className="typo-undertittel lenkepanel__heading"
+              <p
+                className="typo-element lenkepanel__heading"
               >
                 <span>
                   Du har to søknader som du ikke har sendt
                 </span>
-              </h2>
+              </p>
               <p
                 className="typo-normal"
               >
@@ -110,9 +107,13 @@ exports[`render Home page without props 1`] = `
           <span
             className="typo-undertittel lenkepanel__heading"
           >
-            <span>
-              Dine utbetalinger
-            </span>
+            <h2
+              className="typo-undertittel lenkepanel__heading"
+            >
+              <span>
+                Dine utbetalinger
+              </span>
+            </h2>
           </span>
           <span
             className="lenkepanel__indikator"
@@ -125,9 +126,13 @@ exports[`render Home page without props 1`] = `
           <span
             className="typo-undertittel lenkepanel__heading"
           >
-            <span>
-              Dine saker
-            </span>
+            <h2
+              className="typo-undertittel lenkepanel__heading"
+            >
+              <span>
+                Dine saker
+              </span>
+            </h2>
           </span>
           <span
             className="lenkepanel__indikator"
@@ -140,9 +145,13 @@ exports[`render Home page without props 1`] = `
           <span
             className="typo-undertittel lenkepanel__heading"
           >
-            <span>
-              Innboks
-            </span>
+            <h2
+              className="typo-undertittel lenkepanel__heading"
+            >
+              <span>
+                Innboks
+              </span>
+            </h2>
           </span>
           <span
             className="lenkepanel__indikator"
