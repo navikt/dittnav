@@ -56,7 +56,6 @@ LenkepanelMedIkon.defaultProps = {
 const IkonOppgave = () => (
   <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <title>Group 4</title>
-    <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="Desktop-HD" transform="translate(-382.000000, -429.000000)">
         <g id="Group-4" transform="translate(382.000000, 429.000000)">
@@ -71,7 +70,6 @@ const IkonOppgave = () => (
 const IkonInformasjon = () => (
   <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <title>Group 5</title>
-    <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="Desktop-HD" transform="translate(-382.000000, -303.000000)">
         <g id="Group-5" transform="translate(382.000000, 303.000000)">
@@ -86,7 +84,6 @@ const IkonInformasjon = () => (
 const IkonMelding = () => (
   <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <title>Group 3</title>
-    <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="Desktop-HD" transform="translate(-382.000000, -366.000000)">
         <g id="Group-3" transform="translate(382.000000, 366.000000)">

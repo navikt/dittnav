@@ -1,33 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
 import { IkonInformasjon, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
-class PaabegynteSoknader extends Component {
-  render() {
-    const { paabegynteSoknader } = this.props;
-    if (!paabegynteSoknader || paabegynteSoknader.antallPaabegynte === 0) return null;
+const overskrift = (paabegynteSoknader, intl) => (
+  <F
+    id={paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere'}
+    values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }}
+  />
+);
 
-    const enSoknad = <F id="saksoversikt.soknad.en" />;
-    const flereSoknader = <F id="saksoversikt.soknad.flere" values={{ count: i18n[this.props.intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />;
-    const overskrift = paabegynteSoknader.antallPaabegynte === 1 ? enSoknad : flereSoknader;
-    const ingress = <F id="saksoversikt.lenke" />;
+const ingress = <F id="saksoversikt.lenke" />;
 
-    return (
-      <LenkepanelMedIkon
-        className="infoMelding"
-        data-ga="Dittnav/Varsel/Paabegynt soknad"
-        alt="Melding om Søknader"
-        overskrift={overskrift}
-        ingress={ingress}
-        href={paabegynteSoknader.url}
-      >
-        <IkonInformasjon />
-      </LenkepanelMedIkon>
-    );
+const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
+  if (!paabegynteSoknader || paabegynteSoknader.antallPaabegynte === 0) {
+    return null;
   }
-}
+  return (
+    <LenkepanelMedIkon
+      className="infoMelding"
+      data-ga="Dittnav/Varsel/Paabegynt soknad"
+      alt="Melding om Søknader"
+      overskrift={overskrift(paabegynteSoknader, intl)}
+      ingress={ingress}
+      href={paabegynteSoknader.url}
+    >
+      <IkonInformasjon />
+    </LenkepanelMedIkon>
+  );
+};
 
 export const PaabegynteSoknaderType = PropTypes.shape({
   url: PropTypes.string.isRequired,

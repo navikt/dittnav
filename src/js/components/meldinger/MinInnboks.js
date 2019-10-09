@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
 import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
-const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
-
-const getMessagesIcon = (type) => {
+const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
       return <IkonMelding />;
@@ -17,34 +15,34 @@ const getMessagesIcon = (type) => {
   }
 };
 
+const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
+
 const overskrift = (message, numberToWord) => (
   <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />
 );
 
-class MinInnboks extends Component {
-  render() {
-    const { numberToWord } = i18n[this.props.intl.locale];
-    const messages = this.props.mininnboks;
-    return (
-      <>
-        {messages && messages.map(message => (
-          <LenkepanelMedIkon
-            key={message.type}
-            className="infoMelding"
-            data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
-            alt="Melding fra mininnboks"
-            overskrift={overskrift(message, numberToWord)}
-            href={message.url}
-          >
-            {getMessagesIcon(message.type)}
-          </LenkepanelMedIkon>
-        ))}
-      </>
-    );
-  }
-}
+const MinInnboks = ({ mininnboks, intl }) => {
+  const { numberToWord } = i18n[intl.locale];
 
-export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, uri: PropTypes.string }));
+  return (
+    <>
+      {mininnboks && mininnboks.map(message => (
+        <LenkepanelMedIkon
+          key={message.type}
+          className="infoMelding"
+          data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
+          alt="Melding fra mininnboks"
+          overskrift={overskrift(message, numberToWord)}
+          href={message.url}
+        >
+          {getMinInnboksIcon(message.type)}
+        </LenkepanelMedIkon>
+      ))}
+    </>
+  );
+};
+
+export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, url: PropTypes.string }));
 
 MinInnboks.propTypes = {
   mininnboks: MinInnboksType,
