@@ -17,8 +17,16 @@
         left: 6px;
       }
     }
+
     &:not(:hover) {
       color: inherit;
+    }
+
+    &:focus,
+    &--focus {
+      color: @navBla;
+      background-color: @white;
+      outline: @fokusFarge;
     }
   }
 
@@ -39,12 +47,5 @@
   .sak-status {
     text-decoration: none;
     color: @navMorkGra;
-  }
-}
-
-#sak-lenke-id {
-  border-bottom: 0;
-  &:not(:hover) {
-    text-decoration: none;
   }
 }
