@@ -22,7 +22,7 @@ const DittnavLenkePanel = ({ sakstema } )  => {
         variant: stortSakspanelEnabled ? 'nytt' : 'gammelt',
       });
     };
-    
+
     UnleashABTestgruppeVelger(
       'dittnav.nytt-dinesakerpanel-testpool',
       'dittnav.nytt-dinesakerpanel-ab'
@@ -37,7 +37,7 @@ const DittnavLenkePanel = ({ sakstema } )  => {
       // eslint-disable-next-line no-console
       console.log(`Unleash error: ${error}`);
     });
-  }, []);
+  }, [stortSakspanelEnabled]);
 
 
   const visStortSakspanel = stortSakspanelEnabled
