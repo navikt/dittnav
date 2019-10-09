@@ -128,7 +128,7 @@ const useFetchEverythingForHome = () => {
         .then((r) => {
           setSakstema(r);
           updateLoading();
-        }).catch(handleError);
+        }).catch(catchError('error.baksystemer'));
     
     }
     fetch();
