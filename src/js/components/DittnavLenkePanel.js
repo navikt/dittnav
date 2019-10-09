@@ -14,15 +14,15 @@ const STORT_SAKSPANEL_ENABLED_DEFAULT = false;
 const DittnavLenkePanel = ({ sakstema } )  => {
   const [stortSakspanelEnabled, setStortSakspanelEnabled] = React.useState(null);
 
-  const handleAnalytics = () => {
-    window.dataLayer.push({
-      event: 'unleash',
-      feature: 'dinesaker-panel',
-      variant: stortSakspanelEnabled ? 'nytt' : 'gammelt',
-    });
-  };
-
   React.useEffect(() => {
+    const handleAnalytics = () => {
+      window.dataLayer.push({
+        event: 'unleash',
+        feature: 'dinesaker-panel',
+        variant: stortSakspanelEnabled ? 'nytt' : 'gammelt',
+      });
+    };
+    
     UnleashABTestgruppeVelger(
       'dittnav.nytt-dinesakerpanel-testpool',
       'dittnav.nytt-dinesakerpanel-ab'
