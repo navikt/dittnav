@@ -1,0 +1,45 @@
+@import (reference) '~nav-frontend-core/less/_variabler';
+@import (reference) '~nav-frontend-chevron-style/src/mixins';
+
+.oversiktspanel {
+  flex-grow: 1;
+  padding: 24px;
+  border-color: @navGra60;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75em;
+  }
+
+  &__overskrift {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__header-lenke {
+    white-space: nowrap;
+    &:hover {
+      text-decoration: underline;
+      .oversiktspanel__chevron {
+        transform: translateX(6px) rotate(-90deg);
+      }
+    }
+  }
+
+  &__chevron {
+    color: @navMorkGra;
+    margin-left: 0.5em;
+    transform: rotate(-90deg);
+    transition: transform 250ms;
+  }
+
+  &__liste {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test med saker 1`] = `
+<div
+  className="dittnav-lenkepanel-top-container"
+>
+  <div
+    className="dittnav-lenkepanel-liten"
+    id={null}
+  >
+    <a
+      alt="Dine saker"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      href="https://tjenester-test.nav.no/saksoversikt/"
+    >
+      <span
+        className="typo-undertittel lenkepanel__heading"
+      >
+        <span>
+          Dine saker
+        </span>
+      </span>
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
+    <a
+      alt="Utbetalinger"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      href="https://tjenester-test.nav.no/utbetalingsoversikt/"
+    >
+      <span
+        className="typo-undertittel lenkepanel__heading"
+      >
+        <span>
+          Dine utbetalinger
+        </span>
+      </span>
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
+    <a
+      alt="Innboks"
+      className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+      href="https://tjenester-test.nav.no/mininnboks/"
+    >
+      <span
+        className="typo-undertittel lenkepanel__heading"
+      >
+        <span>
+          Innboks
+        </span>
+      </span>
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Snapshot test uten saker 1`] = `
+<div
+  className="dittnav-lenkepanel-top-container"
+>
+  <div
+    className="dittnav-lenkepanel-liten"
+    id={null}
+  >
+    <a
+      alt="Dine saker"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      href="https://tjenester-test.nav.no/saksoversikt/"
+    >
+      <span
+        className="typo-undertittel lenkepanel__heading"
+      >
+        <span>
+          Dine saker
+        </span>
+      </span>
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
+    <a
+      alt="Utbetalinger"
+      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      href="https://tjenester-test.nav.no/utbetalingsoversikt/"
+    >
+      <span
+        className="typo-undertittel lenkepanel__heading"
+      >
+        <span>
+          Dine utbetalinger
+        </span>
+      </span>
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
+    <a
+      alt="Innboks"
+      className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+      href="https://tjenester-test.nav.no/mininnboks/"
+    >
+      <span
+        className="typo-undertittel lenkepanel__heading"
+      >
+        <span>
+          Innboks
+        </span>
+      </span>
+      <span
+        className="lenkepanel__indikator"
+      />
+    </a>
+  </div>
+</div>
+`;

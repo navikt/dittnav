@@ -68,53 +68,61 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
             </a>
           </section>
           <div
-            className="dittnav-lenke-container blokk-xl"
+            className="dittnav-lenkepanel-top-container"
           >
-            <a
-              className="lenkepanel first lenkepanel--border"
-              href="http://localhost:9222/utbetalingsoversikt/"
+            <div
+              className="dittnav-lenkepanel-liten"
+              id={null}
             >
-              <span
-                className="typo-undertittel lenkepanel__heading"
+              <a
+                alt="Dine saker"
+                className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+                href="https://tjenester-test.nav.no/saksoversikt/"
               >
-                <span>
-                  Dine utbetalinger
+                <span
+                  className="typo-undertittel lenkepanel__heading"
+                >
+                  <span>
+                    Dine saker
+                  </span>
                 </span>
-              </span>
-              <span
-                className="lenkepanel__indikator"
-              />
-            </a>
-            <a
-              className="lenkepanel lenkepanel--border"
-              href="http://localhost:9222/saksoversikt/"
-            >
-              <span
-                className="typo-undertittel lenkepanel__heading"
+                <span
+                  className="lenkepanel__indikator"
+                />
+              </a>
+              <a
+                alt="Utbetalinger"
+                className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+                href="https://tjenester-test.nav.no/utbetalingsoversikt/"
               >
-                <span>
-                  Dine saker
+                <span
+                  className="typo-undertittel lenkepanel__heading"
+                >
+                  <span>
+                    Dine utbetalinger
+                  </span>
                 </span>
-              </span>
-              <span
-                className="lenkepanel__indikator"
-              />
-            </a>
-            <a
-              className="lenkepanel last lenkepanel--border"
-              href="http://localhost:9222/mininnboks/"
-            >
-              <span
-                className="typo-undertittel lenkepanel__heading"
+                <span
+                  className="lenkepanel__indikator"
+                />
+              </a>
+              <a
+                alt="Innboks"
+                className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+                href="https://tjenester-test.nav.no/mininnboks/"
               >
-                <span>
-                  Innboks
+                <span
+                  className="typo-undertittel lenkepanel__heading"
+                >
+                  <span>
+                    Innboks
+                  </span>
                 </span>
-              </span>
-              <span
-                className="lenkepanel__indikator"
-              />
-            </a>
+                <span
+                  className="lenkepanel__indikator"
+                />
+              </a>
+            </div>
           </div>
           <h2
             className="typo-undertittel relatert-informasjon__subheader"
@@ -146,7 +154,7 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
+                  href="https://tjenester-test.nav.no/pselv/publisering/uforetrygd.jsf?context=ut"
                 >
                   Uføretrygd
                 </a>
@@ -168,7 +176,7 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/aktivitetsplan/"
+                  href="https://tjenester-test.nav.no/aktivitetsplan/"
                 >
                   Aktivitetsplan
                 </a>
@@ -179,7 +187,7 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/brukerprofil/"
+                  href="https://tjenester-test.nav.no/brukerprofil/"
                 >
                   Din profil
                 </a>
@@ -190,7 +198,7 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                  href="https://tjenester-test.nav.no/veiledearbeidssoker/mistet-jobben/registrering"
                 >
                   Registrer deg som arbeidssøker
                 </a>
@@ -212,7 +220,7 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/person/personopplysninger"
+                  href="https://www-test.nav.no/person/personopplysninger"
                 >
                   Personopplysninger
                 </a>
@@ -233,6 +241,7 @@ exports[`expect PersonInfo fetching 1`] = `
       "fetchMeldinger": [Function],
       "fetchPersonInfoAndServices": [Function],
       "fetchSaker": [Function],
+      "fetchSakstema": [Function],
       "useFetchEverythingForHome": [Function],
     }
   }

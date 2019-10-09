@@ -30,11 +30,12 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 
 class Home extends Component {
   render() {
-    const { info, paabegynteSoknader, mininnboks, isLoaded } = this.props;
-    const tjenesterEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
+    const { info, paabegynteSoknader, mininnboks, sakstema, isLoaded } = this.props;
     const erUnderOppfolging = info && info.personinfo && info.personinfo.underOppfolging;
+    const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
     const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+
     return (
       <>
         <div className="row">
@@ -43,7 +44,7 @@ class Home extends Component {
               <PersonInfo personInfo={info.personinfo} />
               { !isLoaded ? <NavFrontendSpinner className="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <DittnavLenkePanel />
+              <DittnavLenkePanel sakstema={sakstema} />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
@@ -63,6 +64,7 @@ Home.propTypes = {
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   isLoaded: PropTypes.bool.isRequired,
+  sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 Home.defaultProps = {

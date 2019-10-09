@@ -10,8 +10,9 @@ const mockApi = () => {
     fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
+    fetchSakstema: () => new Promise((resolve, reject) => {}),
     useFetchEverythingForHome: () => {
-      return [{ info: {}, paabegynteSoknader: null, mininnboks: [], errors: [], isLoaded: true}]
+      return [{ info: {}, paabegynteSoknader: null, sakstema: { antallSakstema: 0, sakstemaList: [] }, mininnboks: [], errors: [], isLoaded: true}]
     }
   }
 };
@@ -60,7 +61,7 @@ it('expect PaabegynteSoknader fetching', () => {
     }, paabegynteSoknader: {
       "url": "https://tjenester-t6.nav.no/",
       "antallPaabegynte": 2,
-    }, mininnboks: [], errors: ['error.baksystemer', 'error.baksystemer'], isLoaded: true}]
+    }, sakstema: { antallSakstema: 0, sakstemaList: [] }, mininnboks: [], errors: ['error.baksystemer', 'error.baksystemer'], isLoaded: true}]
   }
 
   const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
