@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
 import { IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { Element } from 'nav-frontend-typografi';
 
 const getInformasjonHendelser = (setHendelser) => Api
   .fetchHendelser()
@@ -11,11 +12,11 @@ const getInformasjonHendelser = (setHendelser) => Api
 
 const getHendelseIkon = (type) => {
   switch (type) {
-    case 'INFORMASJON':
+    case 'informasjon':
       return <IkonInformasjon />;
-    case 'OPPGAVE':
+    case 'oppgave':
       return <IkonOppgave />;
-    case 'MELDING':
+    case 'melding':
       return <IkonMelding />;
     default:
       return <IkonInformasjon />;
@@ -23,9 +24,9 @@ const getHendelseIkon = (type) => {
 };
 
 const overskrift = (hendelse) => (
-  <>
+  <Element className="lenkepanel__heading">
     {hendelse.tekst}
-  </>
+  </Element>
 );
 
 const Hendelser = () => {
