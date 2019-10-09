@@ -6,6 +6,7 @@ import i18n from '../../../translations/i18n';
 import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
+
 const overskrift = (ettereg, intl) => (
   <F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />
 );

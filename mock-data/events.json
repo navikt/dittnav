@@ -1,6 +1,7 @@
 [
   {
     "aktiv": true,
+    "type": "INFORMASJON",
     "aktorId": "123",
     "dokumentId": "1001562938538102",
     "eventId": "1562938538102",
@@ -14,6 +15,7 @@
   },
   {
     "aktiv": true,
+    "type": "INFORMASJON",
     "aktorId": "123",
     "dokumentId": "1001562938558528",
     "eventId": "1562938558528",
@@ -27,6 +29,7 @@
   },
   {
     "aktiv": true,
+    "type": "INFORMASJON",
     "aktorId": "123",
     "dokumentId": "1001562938665917",
     "eventId": "1562938665917",
@@ -40,6 +43,7 @@
   },
   {
     "aktiv": true,
+    "type": "OPPGAVE",
     "aktorId": "123",
     "dokumentId": "1001562938674068",
     "eventId": "1562938674068",
@@ -53,6 +57,7 @@
   },
   {
     "aktiv": true,
+    "type": "OPPGAVE",
     "aktorId": "123",
     "dokumentId": "1001562939454499",
     "eventId": "1562939454499",
