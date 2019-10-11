@@ -11,7 +11,7 @@ import DinesakerSakstema from './DinesakerSakstema';
 
 const STORT_SAKSPANEL_ENABLED_DEFAULT = false;
 
-const DittnavLenkePanel = ({ sakstema } )  => {
+const DittnavLenkePanel = ({ sakstema }) => {
   const [stortSakspanelEnabled, setStortSakspanelEnabled] = React.useState(null);
 
   React.useEffect(() => {
@@ -25,7 +25,7 @@ const DittnavLenkePanel = ({ sakstema } )  => {
 
     UnleashABTestgruppeVelger(
       'dittnav.nytt-dinesakerpanel-testpool',
-      'dittnav.nytt-dinesakerpanel-ab'
+      'dittnav.nytt-dinesakerpanel-ab',
     ).then((testGruppe) => {
       if (testGruppe) {
         setStortSakspanelEnabled(testGruppe === 'A');
@@ -95,7 +95,7 @@ const DittnavLenkePanel = ({ sakstema } )  => {
       </div>
     </div>
   );
-}
+};
 
 DittnavLenkePanel.propTypes = {
   sakstema: PropTypes.shape({
