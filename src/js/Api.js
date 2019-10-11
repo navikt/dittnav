@@ -72,7 +72,8 @@ const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSE
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
-const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_TEMP_HENDELSER_URL}`);
+const fetchLegacyHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,
@@ -80,6 +81,7 @@ export default {
   fetchPersonInfoAndServices,
   fetchSaker,
   fetchMeldinger,
+  fetchLegacyHendelser,
   fetchHendelser,
   sendHendelser: sendJSONAndCheckForErrors,
 };

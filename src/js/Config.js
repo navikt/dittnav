@@ -23,6 +23,14 @@ const getServicesUrl = () => {
   return 'https://tjenester.nav.no';
 };
 
+const getCrossSwitchUrl = () => {
+  const host = window.location.hostname;
+  if (host.indexOf('localhost') > -1) {
+    return 'http://localhost:9000';
+  }
+  return 'https://www-q0.nav.no/person';
+};
+
 const getNavUrl = () => {
   const host = window.location.hostname;
   if (host.indexOf('localhost') > -1) {
@@ -108,6 +116,7 @@ export default {
     DITNTAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
     DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/events`,
+    DITTNAV_TEMP_HENDELSER_URL: `${getCrossSwitchUrl()}/dittnav-api/meldinger`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',

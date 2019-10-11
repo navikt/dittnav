@@ -23,6 +23,7 @@ app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.
 app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
 app.get('/dittnav-legacy-api/events', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
 app.post('/dittnav-legacy-api/events', (req, res) => res.send('Event ble opprettet'));
+app.get('/dittnav-api/meldinger', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
 
 app.use(bundler.middleware());
 

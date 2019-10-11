@@ -13,7 +13,7 @@ const HendelserTestGui = () => {
   const [tekst, setTekst] = useState('');
 
   const getInformasjonHendelser = () => Api
-    .fetchHendelser()
+    .fetchLegacyHendelser()
     .then((r) => {
       setHendelser(r);
     });
