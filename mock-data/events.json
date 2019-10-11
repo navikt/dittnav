@@ -68,5 +68,20 @@
     "sikkerhetsnivaa": 4,
     "sistOppdatert": "1562939455.124000000",
     "tekst": "Du har fått en oppgave om [Familie]"
+  },
+
+  {
+    "aktiv": true,
+    "type": "MELDING",
+    "aktorId": "123",
+    "dokumentId": "1001562939454499",
+    "eventId": "1562939454499",
+    "eventTidspunkt": "1562939454.499000000",
+    "id": "26",
+    "link": "https://enNyLenke",
+    "produsent": "DittNAV",
+    "sikkerhetsnivaa": 4,
+    "sistOppdatert": "1562939455.124000000",
+    "tekst": "Du har fått en melding om [Familie]"
   }
 ]

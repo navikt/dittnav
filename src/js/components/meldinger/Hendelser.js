@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Element } from 'nav-frontend-typografi';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
 import { IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
-import { Element } from 'nav-frontend-typografi';
 
 const getInformasjonHendelser = (setHendelser) => Api
   .fetchHendelser()
@@ -12,11 +12,11 @@ const getInformasjonHendelser = (setHendelser) => Api
 
 const getHendelseIkon = (type) => {
   switch (type) {
-    case 'informasjon':
+    case 'INFORMASJON':
       return <IkonInformasjon />;
-    case 'oppgave':
+    case 'OPPGAVE':
       return <IkonOppgave />;
-    case 'melding':
+    case 'MELDING':
       return <IkonMelding />;
     default:
       return <IkonInformasjon />;
