@@ -572,8 +572,8 @@ exports[`basic zero Meldekort test 1`] = `
   <div
     className="meldekortpanel__tekst"
   >
-    <h2
-      className="typo-undertittel"
+    <p
+      className="typo-element"
     >
       <span>
         <span>
@@ -589,7 +589,7 @@ exports[`basic zero Meldekort test 1`] = `
         </span>
          
       </span>
-    </h2>
+    </p>
     <p
       className="typo-normal"
     >
@@ -856,8 +856,8 @@ exports[`no cards no risk 1`] = `
   <div
     className="meldekortpanel__tekst"
   >
-    <h2
-      className="typo-undertittel"
+    <p
+      className="typo-element"
     >
       <span>
         <span>
@@ -868,7 +868,7 @@ exports[`no cards no risk 1`] = `
       <span>
          
       </span>
-    </h2>
+    </p>
     <p
       className="typo-normal"
     >
