@@ -25,22 +25,25 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   mininnboks,
 });
 
+const NUM_ENDPOINTS = 4;
+
 class Home extends Component {
   render() {
-    const { info, paabegynteSoknader, mininnboks, fetching } = this.props;
-    const tjenesterEllerVta = info.personinfo && info.personinfo.underOppfolging ? <Vta /> : <DittnavFliser />;
+    const { info, paabegynteSoknader, mininnboks, fetching, sakstema } = this.props;
     const erUnderOppfolging = info && info.personinfo && info.personinfo.underOppfolging;
+    const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
     const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+
     return (
       <>
         <div className="row">
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo personInfo={info.personinfo} />
-              { fetching < 3 ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
+              { fetching < NUM_ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <DittnavLenkePanel />
+              <DittnavLenkePanel sakstema={sakstema} />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
@@ -59,6 +62,7 @@ Home.propTypes = {
   info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   fetching: PropTypes.number.isRequired,
 };
 

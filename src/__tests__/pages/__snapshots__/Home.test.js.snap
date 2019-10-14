@@ -27,7 +27,7 @@ exports[`render Home page without props 1`] = `
           onClick={null}
         >
           <div
-            className="lenkepanel__innhold"
+            className="lenkepanel__innhold lenkepanel__heading"
           >
             <div
               className="lenkepanel__ikon"
@@ -98,65 +98,73 @@ exports[`render Home page without props 1`] = `
         </a>
       </section>
       <div
-        className="dittnav-lenke-container blokk-xl"
+        className="dittnav-lenkepanel-top-container"
       >
-        <a
-          className="lenkepanel first lenkepanel--border"
-          href="http://localhost:9222/utbetalingsoversikt/"
+        <div
+          className="dittnav-lenkepanel-liten"
+          id={null}
         >
-          <span
-            className="typo-undertittel lenkepanel__heading"
+          <a
+            alt="Dine saker"
+            className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+            href="http://localhost:9222/saksoversikt/"
           >
-            <h2
+            <span
               className="typo-undertittel lenkepanel__heading"
             >
-              <span>
-                Dine utbetalinger
-              </span>
-            </h2>
-          </span>
-          <span
-            className="lenkepanel__indikator"
-          />
-        </a>
-        <a
-          className="lenkepanel lenkepanel--border"
-          href="http://localhost:9222/saksoversikt/"
-        >
-          <span
-            className="typo-undertittel lenkepanel__heading"
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine saker
+                </span>
+              </h2>
+            </span>
+            <span
+              className="lenkepanel__indikator"
+            />
+          </a>
+          <a
+            alt="Utbetalinger"
+            className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+            href="http://localhost:9222/utbetalingsoversikt/"
           >
-            <h2
+            <span
               className="typo-undertittel lenkepanel__heading"
             >
-              <span>
-                Dine saker
-              </span>
-            </h2>
-          </span>
-          <span
-            className="lenkepanel__indikator"
-          />
-        </a>
-        <a
-          className="lenkepanel last lenkepanel--border"
-          href="http://localhost:9222/mininnboks/"
-        >
-          <span
-            className="typo-undertittel lenkepanel__heading"
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Dine utbetalinger
+                </span>
+              </h2>
+            </span>
+            <span
+              className="lenkepanel__indikator"
+            />
+          </a>
+          <a
+            alt="Innboks"
+            className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+            href="http://localhost:9222/mininnboks/"
           >
-            <h2
+            <span
               className="typo-undertittel lenkepanel__heading"
             >
-              <span>
-                Innboks
-              </span>
-            </h2>
-          </span>
-          <span
-            className="lenkepanel__indikator"
-          />
-        </a>
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Innboks
+                </span>
+              </h2>
+            </span>
+            <span
+              className="lenkepanel__indikator"
+            />
+          </a>
+        </div>
       </div>
       <h2
         className="typo-undertittel relatert-informasjon__subheader"

@@ -1,5 +1,4 @@
 const jsdom = require('jsdom');
-const getDecorator = require('./decorator.js');
 const path = require('path');
 const { JSDOM } = jsdom;
 const eproxy = require('express-http-proxy');
@@ -9,6 +8,7 @@ const app = require('express')();
 const proxy = require('express')();
 const cors = require('cors');
 
+const getDecorator = require('./decorator.js');
 const file = 'public/index.html'; // Pass an absolute path to the entrypoint here
 const options = {}; // See options section of api docs, for the possibilities
 
@@ -22,6 +22,8 @@ app.get('/dittnav-legacy-api/person/personinfo', (req, res) => res.sendFile(path
 app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
 app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
 app.get('/dittnav-legacy-api/events', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
+app.get('/dittnav-legacy-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/sakstema.json')));
+app.get('/person/dittnav/api/feature', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/unleash.json')));
 app.post('/dittnav-legacy-api/events', (req, res) => res.send('Event ble opprettet'));
 app.get('/dittnav-api/meldinger', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
 app.post('/dittnav-event-handler/produce/done/all', (req, res) => res.send('Done-eventer er produsert for alle identen: {ident} sine brukernotifikasjoner.'));
@@ -32,9 +34,8 @@ app.use(bundler.middleware());
 const PORT = 1234;
 
 const shimproxy = () => {
-    getDecorator()
+  getDecorator()
     .then((fragments) => {
-
       proxy.use('/', eproxy(`http://localhost:${PORT}`, {
         userResDecorator: function(proxyRes, proxyResData, userReq, userRes) {
           return Promise.resolve()
@@ -59,10 +60,8 @@ const shimproxy = () => {
       proxy.listen(process.env.PORT, () => {
         console.log(`Proxying on port: ${process.env.PORT}`);
       });
-
-
     }, error => console.log(`Failed to render app ${error}`));
-  };
+};
 
-  shimproxy();
-  app.listen(1234);
+shimproxy();
+app.listen(1234);
