@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import { Panel } from 'nav-frontend-paneler';
-import { Undertittel, Normaltekst, Element } from 'nav-frontend-typografi';
+import { Normaltekst, Element } from 'nav-frontend-typografi';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
 import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
@@ -77,10 +77,10 @@ class Meldekort extends Component {
             <IkonOppgave />
           </div>
           <div className="meldekortpanel__tekst">
-            <Undertittel>
+            <Element>
               <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
               <span>{advarsel(risikererTrekk)} </span>
-            </Undertittel>
+            </Element>
             <Normaltekst>
               {feriedager(meldekort)}
             </Normaltekst>
