@@ -82,7 +82,7 @@ class DittnavLenkePanel extends React.Component {
                 border
               >
                 {
-                  <Undertittel className="lenkepanel__heading">
+                  <Undertittel>
                     <F id="fliser.dine.saker" />
                   </Undertittel>
                 }
@@ -95,7 +95,7 @@ class DittnavLenkePanel extends React.Component {
             border
           >
             {
-              <Undertittel className="lenkepanel__heading">
+              <Undertittel>
                 <F id="fliser.dine.utbetalinger" />
               </Undertittel>
             }
@@ -107,7 +107,7 @@ class DittnavLenkePanel extends React.Component {
             border
           >
             {
-              <Undertittel className="lenkepanel__heading">
+              <Undertittel>
                 <F id="fliser.innboks" />
               </Undertittel>
             }

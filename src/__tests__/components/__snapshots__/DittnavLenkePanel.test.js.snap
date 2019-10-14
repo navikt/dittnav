@@ -17,7 +17,7 @@ exports[`Snapshot test med saker 1`] = `
         className="typo-undertittel lenkepanel__heading"
       >
         <h2
-          className="typo-undertittel lenkepanel__heading"
+          className="typo-undertittel"
         >
           <span>
             Dine saker
@@ -37,7 +37,7 @@ exports[`Snapshot test med saker 1`] = `
         className="typo-undertittel lenkepanel__heading"
       >
         <h2
-          className="typo-undertittel lenkepanel__heading"
+          className="typo-undertittel"
         >
           <span>
             Dine utbetalinger
@@ -57,7 +57,7 @@ exports[`Snapshot test med saker 1`] = `
         className="typo-undertittel lenkepanel__heading"
       >
         <h2
-          className="typo-undertittel lenkepanel__heading"
+          className="typo-undertittel"
         >
           <span>
             Innboks
@@ -89,7 +89,7 @@ exports[`Snapshot test uten saker 1`] = `
         className="typo-undertittel lenkepanel__heading"
       >
         <h2
-          className="typo-undertittel lenkepanel__heading"
+          className="typo-undertittel"
         >
           <span>
             Dine saker
@@ -109,7 +109,7 @@ exports[`Snapshot test uten saker 1`] = `
         className="typo-undertittel lenkepanel__heading"
       >
         <h2
-          className="typo-undertittel lenkepanel__heading"
+          className="typo-undertittel"
         >
           <span>
             Dine utbetalinger
@@ -129,7 +129,7 @@ exports[`Snapshot test uten saker 1`] = `
         className="typo-undertittel lenkepanel__heading"
       >
         <h2
-          className="typo-undertittel lenkepanel__heading"
+          className="typo-undertittel"
         >
           <span>
             Innboks

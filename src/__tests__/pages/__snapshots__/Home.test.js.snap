@@ -113,7 +113,7 @@ exports[`render Home page without props 1`] = `
               className="typo-undertittel lenkepanel__heading"
             >
               <h2
-                className="typo-undertittel lenkepanel__heading"
+                className="typo-undertittel"
               >
                 <span>
                   Dine saker
@@ -133,7 +133,7 @@ exports[`render Home page without props 1`] = `
               className="typo-undertittel lenkepanel__heading"
             >
               <h2
-                className="typo-undertittel lenkepanel__heading"
+                className="typo-undertittel"
               >
                 <span>
                   Dine utbetalinger
@@ -153,7 +153,7 @@ exports[`render Home page without props 1`] = `
               className="typo-undertittel lenkepanel__heading"
             >
               <h2
-                className="typo-undertittel lenkepanel__heading"
+                className="typo-undertittel"
               >
                 <span>
                   Innboks
