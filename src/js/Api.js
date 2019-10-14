@@ -53,17 +53,14 @@ const checkAuth = () => {
   });
 };
 
-const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSER_URL}`) => {
+const postJSONAndCheckForErrors = (url, content) => {
   fetch(url, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      tekst,
-      link: 'https://localhost/100',
-    }),
+    body: JSON.stringify(content),
   })
     .then((r) => r.status)
     .catch((e) => console.log(`ERROR: ${e}`));
@@ -72,8 +69,8 @@ const sendJSONAndCheckForErrors = (tekst, url = `${conf.dittNav.DITTNAV_HENDELSE
 const fetchPersonInfoAndServices = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_API_URL}`);
 const fetchSaker = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITNTAV_MELDINGER_URL}`);
-const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_TEMP_HENDELSER_URL}`);
-const fetchLegacyHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_HENDELSER_URL}`);
+const fetchLegacyHendelser = () => fetchJSONAndCheckForErrors(`${conf.dittNav.DITTNAV_LEGACY_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,
@@ -83,5 +80,5 @@ export default {
   fetchMeldinger,
   fetchLegacyHendelser,
   fetchHendelser,
-  sendHendelser: sendJSONAndCheckForErrors,
+  postHendelser: postJSONAndCheckForErrors,
 };

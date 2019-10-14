@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { Element } from 'nav-frontend-typografi';
 import i18n from '../../../translations/i18n';
 import { IkonInformasjon, LenkepanelMedIkon } from '../LenkepanelMedIkon';
-import { Element } from 'nav-frontend-typografi';
 
 const overskrift = (paabegynteSoknader, intl) => (
   <Element className="lenkepanel__heading">

@@ -8,7 +8,28 @@
   border-radius: 15px;
 }
 
-.Knapper {
-  padding: 2rem;
+.knapper {
+  padding: 0rem;
   display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  &__send {
+    margin-right: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &__hent {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .knapper__hent {
+    margin-top: 20px;
+  }
 }

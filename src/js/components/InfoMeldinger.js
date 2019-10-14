@@ -28,10 +28,6 @@ class InfoMeldinger extends Component {
   }
 }
 
-/*
-
- */
-
 InfoMeldinger.propTypes = {
   paabegynteSoknader: PaabegynteSoknaderType,
   meldekort: MeldekortType,

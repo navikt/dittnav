@@ -3,12 +3,21 @@ import { Element } from 'nav-frontend-typografi';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
 import { IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import Config from '../../Config';
 
 const getInformasjonHendelser = (setHendelser) => Api
   .fetchHendelser()
   .then((r) => {
     setHendelser(r);
   });
+
+// TODO : implement in component
+const removeHendelser = () => {
+  Api.postHendelser(
+    Config.dittNav.DITTNAV_HENDELSER_URL,
+    null,
+  );
+};
 
 const getHendelseIkon = (type) => {
   switch (type) {
