@@ -13,7 +13,7 @@ exports[`MinInnboks with one document 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -85,7 +85,7 @@ exports[`MinInnboks with one task 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -157,7 +157,7 @@ exports[`MinInnboks with one unanswered 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -230,7 +230,7 @@ Array [
     onClick={null}
   >
     <div
-      className="lenkepanel__innhold"
+      className="lenkepanel__innhold lenkepanel__heading"
     >
       <div
         className="lenkepanel__ikon"
@@ -299,7 +299,7 @@ Array [
     onClick={null}
   >
     <div
-      className="lenkepanel__innhold"
+      className="lenkepanel__innhold lenkepanel__heading"
     >
       <div
         className="lenkepanel__ikon"
@@ -372,7 +372,7 @@ exports[`MinInnboks with two documents 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -445,7 +445,7 @@ Array [
     onClick={null}
   >
     <div
-      className="lenkepanel__innhold"
+      className="lenkepanel__innhold lenkepanel__heading"
     >
       <div
         className="lenkepanel__ikon"
@@ -514,7 +514,7 @@ Array [
     onClick={null}
   >
     <div
-      className="lenkepanel__innhold"
+      className="lenkepanel__innhold lenkepanel__heading"
     >
       <div
         className="lenkepanel__ikon"
@@ -587,7 +587,7 @@ exports[`MinInnboks with two tasks 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -659,7 +659,7 @@ exports[`MinInnboks with two unanswered 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -731,7 +731,7 @@ exports[`MinInnboks with two unread 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -803,7 +803,7 @@ exports[`MinInnboks with zero tasks 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"

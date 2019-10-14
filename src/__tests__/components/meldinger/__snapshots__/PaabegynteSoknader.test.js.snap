@@ -11,7 +11,7 @@ exports[`PaabegynteSoknader one soknad 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
@@ -89,7 +89,7 @@ exports[`PaabegynteSoknader several soknader 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold"
+    className="lenkepanel__innhold lenkepanel__heading"
   >
     <div
       className="lenkepanel__ikon"
