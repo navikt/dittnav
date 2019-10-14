@@ -16,9 +16,13 @@ exports[`Snapshot test med saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine saker
-        </span>
+        <h2
+          className="typo-undertittel lenkepanel__heading"
+        >
+          <span>
+            Dine saker
+          </span>
+        </h2>
       </span>
       <span
         className="lenkepanel__indikator"
@@ -32,9 +36,13 @@ exports[`Snapshot test med saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine utbetalinger
-        </span>
+        <h2
+          className="typo-undertittel lenkepanel__heading"
+        >
+          <span>
+            Dine utbetalinger
+          </span>
+        </h2>
       </span>
       <span
         className="lenkepanel__indikator"
@@ -48,9 +56,13 @@ exports[`Snapshot test med saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Innboks
-        </span>
+        <h2
+          className="typo-undertittel lenkepanel__heading"
+        >
+          <span>
+            Innboks
+          </span>
+        </h2>
       </span>
       <span
         className="lenkepanel__indikator"
@@ -76,9 +88,13 @@ exports[`Snapshot test uten saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine saker
-        </span>
+        <h2
+          className="typo-undertittel lenkepanel__heading"
+        >
+          <span>
+            Dine saker
+          </span>
+        </h2>
       </span>
       <span
         className="lenkepanel__indikator"
@@ -92,9 +108,13 @@ exports[`Snapshot test uten saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine utbetalinger
-        </span>
+        <h2
+          className="typo-undertittel lenkepanel__heading"
+        >
+          <span>
+            Dine utbetalinger
+          </span>
+        </h2>
       </span>
       <span
         className="lenkepanel__indikator"
@@ -108,9 +128,13 @@ exports[`Snapshot test uten saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Innboks
-        </span>
+        <h2
+          className="typo-undertittel lenkepanel__heading"
+        >
+          <span>
+            Innboks
+          </span>
+        </h2>
       </span>
       <span
         className="lenkepanel__indikator"
