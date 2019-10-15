@@ -7,7 +7,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"
@@ -109,7 +109,7 @@ exports[`basic Meldekort test 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"
@@ -216,7 +216,7 @@ exports[`basic one Meldekort test 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"
@@ -321,7 +321,7 @@ exports[`basic one Meldekort test no risk 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"
@@ -424,7 +424,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"
@@ -608,7 +608,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"
@@ -708,7 +708,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
   onClick={null}
 >
   <div
-    className="lenkepanel__innhold lenkepanel__heading"
+    className="lenkepanel__innhold"
   >
     <div
       className="lenkepanel__ikon"

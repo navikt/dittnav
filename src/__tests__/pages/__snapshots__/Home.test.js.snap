@@ -27,7 +27,7 @@ exports[`render Home page without props 1`] = `
           onClick={null}
         >
           <div
-            className="lenkepanel__innhold lenkepanel__heading"
+            className="lenkepanel__innhold"
           >
             <div
               className="lenkepanel__ikon"
@@ -112,13 +112,9 @@ exports[`render Home page without props 1`] = `
             <span
               className="typo-undertittel lenkepanel__heading"
             >
-              <h2
-                className="typo-undertittel"
-              >
-                <span>
-                  Dine saker
-                </span>
-              </h2>
+              <span>
+                Dine saker
+              </span>
             </span>
             <span
               className="lenkepanel__indikator"
@@ -132,13 +128,9 @@ exports[`render Home page without props 1`] = `
             <span
               className="typo-undertittel lenkepanel__heading"
             >
-              <h2
-                className="typo-undertittel"
-              >
-                <span>
-                  Dine utbetalinger
-                </span>
-              </h2>
+              <span>
+                Dine utbetalinger
+              </span>
             </span>
             <span
               className="lenkepanel__indikator"
@@ -152,13 +144,9 @@ exports[`render Home page without props 1`] = `
             <span
               className="typo-undertittel lenkepanel__heading"
             >
-              <h2
-                className="typo-undertittel"
-              >
-                <span>
-                  Innboks
-                </span>
-              </h2>
+              <span>
+                Innboks
+              </span>
             </span>
             <span
               className="lenkepanel__indikator"

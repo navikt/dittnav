@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Element } from 'nav-frontend-typografi';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
-import { IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { createOverskrift, IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
 import Config from '../../Config';
 
 const getInformasjonHendelser = (setHendelser) => Api
@@ -32,10 +31,9 @@ const getHendelseIkon = (type) => {
   }
 };
 
-const overskrift = (hendelse) => (
-  <Element className="lenkepanel__heading">
-    {hendelse.tekst}
-  </Element>
+const overskrift = (hendelse) => createOverskrift(
+  hendelse.tekst,
+  'Element',
 );
 
 const Hendelser = () => {

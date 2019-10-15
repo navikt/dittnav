@@ -5,7 +5,7 @@ import { Panel } from 'nav-frontend-paneler';
 import { Normaltekst, Element } from 'nav-frontend-typografi';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
-import { IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonOppgave, LenkepanelMedIkon, createOverskrift } from '../LenkepanelMedIkon';
 
 const fremtidig = (nyeMeldekort, formatDateMonth) => (nyeMeldekort.nesteInnsendingAvMeldekort
   ? (<F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />)
@@ -41,13 +41,14 @@ class Meldekort extends Component {
     const { antallNyeMeldekort: count } = meldekort.nyeMeldekort;
     const risikererTrekk = meldekort.nyeMeldekort.nesteMeldekort && meldekort.nyeMeldekort.nesteMeldekort.risikererTrekk;
     if (count > 0) {
-      const overskrift = (
-        <Element className="lenkepanel__heading">
+      const overskrift = createOverskrift(
+        <>
           <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
           <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, count, formatDayAndMonth, numberToWord)} </span>
           <span>{trekk(!risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
           <span>{advarsel(risikererTrekk)} </span>
-        </Element>
+        </>,
+        'Element',
       );
 
       const ingress = (

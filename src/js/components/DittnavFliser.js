@@ -3,14 +3,14 @@ import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import Config from '../Config';
-import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './LenkepanelMedIkon';
+import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt, createOverskrift } from './LenkepanelMedIkon';
 
 const DittnavFliser = () => (
   <>
     <div className="dittnav-lenkeikon-container">
       <LenkepanelMedIkon
         alt="Ditt sykefravær"
-        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.ditt.sykevravaer" /></Undertittel>}
+        overskrift={createOverskrift(<F id="fliser.ditt.sykevravaer" />, 'Undertittel')}
         ingress={<F id="fliser.ditt.sykevravaer.ingress" />}
         className="first"
         href={Config.LENKER.dittSykefravaer.url}
@@ -19,7 +19,7 @@ const DittnavFliser = () => (
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Mistet jobben?"
-        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.mistet.jobben" /></Undertittel>}
+        overskrift={createOverskrift(<F id="fliser.mistet.jobben" />, 'Undertittel')}
         ingress={<F id="fliser.mistet.jobben.ingress" />}
         href={Config.LENKER.veilederArbeidssoker.url}
       >
@@ -29,7 +29,7 @@ const DittnavFliser = () => (
     <div className="dittnav-lenkeikon-container blokk-xxl">
       <LenkepanelMedIkon
         alt="Skjemaer"
-        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.skjemaer" /></Undertittel>}
+        overskrift={createOverskrift(<F id="fliser.skjemaer" />, 'Undertittel')}
         ingress={<F id="fliser.skjemaer.ingress" />}
         className="first"
         href={Config.LENKER.skjemaer.url}
@@ -38,7 +38,7 @@ const DittnavFliser = () => (
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Din pensjon"
-        overskrift={<Undertittel className="lenkepanel__heading"><F id="fliser.din.pensjon" /></Undertittel>}
+        overskrift={createOverskrift(<F id="fliser.din.pensjon" />, 'Undertittel')}
         ingress={<F id="fliser.din.pensjon.ingress" />}
         href={Config.LENKER.dinPensjon.url}
       >

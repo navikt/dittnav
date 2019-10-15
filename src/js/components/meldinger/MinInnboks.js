@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import { Element } from 'nav-frontend-typografi';
 import i18n from '../../../translations/i18n';
-import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonMelding, IkonOppgave, LenkepanelMedIkon, createOverskrift } from '../LenkepanelMedIkon';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
@@ -18,10 +17,9 @@ const getMinInnboksIcon = (type) => {
 
 const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
-const overskrift = (message, numberToWord) => (
-  <Element className="lenkepanel__heading">
-    <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />
-  </Element>
+const overskrift = (message, numberToWord) => createOverskrift(
+  <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />,
+  'Element',
 );
 
 const MinInnboks = ({ mininnboks, intl }) => {
@@ -45,7 +43,10 @@ const MinInnboks = ({ mininnboks, intl }) => {
   );
 };
 
-export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, url: PropTypes.string }));
+export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({
+  type: PropTypes.string.isRequired,
+  url: PropTypes.string,
+}));
 
 MinInnboks.propTypes = {
   mininnboks: MinInnboksType,

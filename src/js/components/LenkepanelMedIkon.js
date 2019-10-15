@@ -1,7 +1,25 @@
 import React from 'react';
 import { LenkepanelBase } from 'nav-frontend-lenkepanel';
-import { Normaltekst } from 'nav-frontend-typografi';
+import { Normaltekst, Undertittel, Element } from 'nav-frontend-typografi';
 import PropTypes from 'prop-types';
+
+const createOverskrift = (overskrift, overskriftType) => {
+  if (overskriftType === 'Undertittel') {
+    return (
+      <Undertittel className="lenkepanel__heading">
+        {overskrift}
+      </Undertittel>
+    );
+  }
+  if (overskriftType === 'Element') {
+    return (
+      <Element className="lenkepanel__heading">
+        {overskrift}
+      </Element>
+    );
+  }
+  return overskrift;
+};
 
 class LenkepanelMedIkon extends React.Component {
   render() {
@@ -16,7 +34,7 @@ class LenkepanelMedIkon extends React.Component {
         linkCreator={linkCreator}
         border
       >
-        <div className="lenkepanel__innhold lenkepanel__heading">
+        <div className="lenkepanel__innhold">
           <div className="lenkepanel__ikon">
             {children}
           </div>
@@ -127,5 +145,5 @@ const IkonBlyant = () => (
 );
 
 export {
-  LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt, IkonOppgave, IkonInformasjon, IkonMelding,
+  LenkepanelMedIkon, createOverskrift, IkonBlyant, IkonKane, IkonPille, IkonSkilt, IkonOppgave, IkonInformasjon, IkonMelding,
 };
