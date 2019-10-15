@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
-import { Undertittel } from 'nav-frontend-typografi';
 import PropTypes from 'prop-types';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../Config';

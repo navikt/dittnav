@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { FormattedMessage as F } from 'react-intl';
-import { Undertittel } from 'nav-frontend-typografi';
 import Config from '../Config';
 import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt, createOverskrift } from './LenkepanelMedIkon';
 
