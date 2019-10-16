@@ -49,11 +49,15 @@
       flex-direction: column;
     }
   }
-}
 
-#oversiktspanel__header-lenke-id {
-  border-bottom: 0;
-  &:not(:hover) {
-    text-decoration: none;
+  .lenke-overstyring() {
+    border-bottom: 0;
+    &:not(:hover) {
+      text-decoration: none;
+    }
+  }
+
+  #oversiktspanel__header-lenke-id, #sak-lenke-id {
+    .lenke-overstyring();
   }
 }
