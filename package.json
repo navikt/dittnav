@@ -69,6 +69,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
+      "!<rootDir>/src/NAVSPA.js",
+      "!<rootDir>/src/spa.js",
       "!<rootDir>/src/js/Config.js",
       "!<rootDir>/local.js",
       "!<rootDir>/decorator.js"
