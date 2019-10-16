@@ -40,7 +40,7 @@ const DittnavLenkePanel = ({ sakstema, api }) => {
       // eslint-disable-next-line no-console
       console.log(`Unleash error: ${error}`);
     });
-  }, [stortSakspanelEnabled]);
+  }, [api, stortSakspanelEnabled]);
 
 
   const visStortSakspanel = stortSakspanelEnabled
