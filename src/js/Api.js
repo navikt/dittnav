@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Config from './Config';
+import PropTypes from 'prop-types';
 
 const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`);
@@ -138,6 +139,15 @@ const useFetchEverythingForHome = () => {
   return [{ info, paabegynteSoknader, mininnboks, sakstema, errors, isLoaded }];
 }
 
+const ApiType = () => {
+  return PropTypes.shape({
+    fetchPersonInfoAndServices: PropTypes.func.isRequired,
+    fetchSaker: PropTypes.func.isRequired,
+    fetchMeldinger: PropTypes.func.isRequired,
+    fetchSakstema: PropTypes.func.isRequired,
+  }).isRequired;
+}
+
 export default {
   fetchUnleashFeatures,
   checkAuth,
@@ -150,4 +160,5 @@ export default {
   sendHendelser: sendJSONAndCheckForErrors,
   useFetchEverythingForHome,
   redirectToLogin,
+  ApiType,
 };

@@ -3,6 +3,18 @@ import wrapIntl from 'js/IntlTestHelper';
 import Home from '../../js/pages/Home';
 const ReactTestRenderer = require('react-test-renderer');
 
+const mockApi = () => {
+  return {
+    fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
+    fetchSaker: () => new Promise((resolve, reject) => {}),
+    fetchMeldinger: () => new Promise((resolve, reject) => {}),
+    fetchSakstema: () => new Promise((resolve, reject) => {}),
+    useFetchEverythingForHome: () => {
+      return [{ info: {}, paabegynteSoknader: null, sakstema: { antallSakstema: 0, sakstemaList: [] }, mininnboks: [], errors: [], isLoaded: true}]
+    }
+  }
+};
+
 it('render Home page without props', () => {
   const info = {};
 
@@ -18,7 +30,7 @@ it('render Home page without props', () => {
   const isLoaded = true;
 
   const component = ReactTestRenderer
-    .create(wrapIntl(<Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} isLoaded={isLoaded} sakstema={sakstema} />));
+    .create(wrapIntl(<Home api={mockApi()} info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} isLoaded={isLoaded} sakstema={sakstema} />));
 
   expect(component.toJSON()).toMatchSnapshot();
 });

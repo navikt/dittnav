@@ -1,6 +1,4 @@
-import api from './Api';
-
-const unleashABTestgruppeVelger = (featureTestPool, featureABSplit) => {
+const unleashABTestgruppeVelger = (api, featureTestPool, featureABSplit) => {
   return new Promise((res, rej) => {
     api.fetchUnleashFeatures([featureTestPool, featureABSplit])
     .then((features) => {

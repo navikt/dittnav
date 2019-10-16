@@ -13,6 +13,7 @@ import DittnavFliser from '../components/DittnavFliser';
 import DittnavLenkePanel from '../components/DittnavLenkePanel';
 import Lenkelister from '../components/Lenkelister';
 import Artikkel from '../components/Artikkel';
+import Api from '../Api';
 
 import Config from '../Config';
 
@@ -30,7 +31,7 @@ const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
 
 class Home extends Component {
   render() {
-    const { info, paabegynteSoknader, mininnboks, sakstema, isLoaded } = this.props;
+    const { info, paabegynteSoknader, mininnboks, sakstema, isLoaded, api } = this.props;
     const erUnderOppfolging = info && info.personinfo && info.personinfo.underOppfolging;
     const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -44,7 +45,7 @@ class Home extends Component {
               <PersonInfo personInfo={info.personinfo} />
               { !isLoaded ? <NavFrontendSpinner className="header-spinner" /> : null }
               <InfoMeldinger {...getInfoMeldinger(info, paabegynteSoknader, mininnboks)} />
-              <DittnavLenkePanel sakstema={sakstema} />
+              <DittnavLenkePanel sakstema={sakstema} api={api} />
               { !info || !info.personinfo ? null : tjenesterEllerVta }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
@@ -60,6 +61,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
+  api: Api.ApiType(),
   info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types

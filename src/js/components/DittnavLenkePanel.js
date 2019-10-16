@@ -9,9 +9,11 @@ import UnleashABTestgruppeVelger from '../UnleashABTestgruppeVelger';
 import OversiktspanelMedListe from './OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
+import Api from '../Api';
+
 const STORT_SAKSPANEL_ENABLED_DEFAULT = false;
 
-const DittnavLenkePanel = ({ sakstema }) => {
+const DittnavLenkePanel = ({ sakstema, api }) => {
   const [stortSakspanelEnabled, setStortSakspanelEnabled] = React.useState(null);
 
   React.useEffect(() => {
@@ -24,6 +26,7 @@ const DittnavLenkePanel = ({ sakstema }) => {
     };
 
     UnleashABTestgruppeVelger(
+      api,
       'dittnav.nytt-dinesakerpanel-testpool',
       'dittnav.nytt-dinesakerpanel-ab',
     ).then((testGruppe) => {
@@ -98,6 +101,7 @@ const DittnavLenkePanel = ({ sakstema }) => {
 };
 
 DittnavLenkePanel.propTypes = {
+  api: Api.ApiType(),
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({

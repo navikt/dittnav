@@ -242,6 +242,7 @@ exports[`expect PersonInfo fetching 1`] = `
       "fetchPersonInfoAndServices": [Function],
       "fetchSaker": [Function],
       "fetchSakstema": [Function],
+      "fetchUnleashFeatures": [Function],
       "useFetchEverythingForHome": [Function],
     }
   }
