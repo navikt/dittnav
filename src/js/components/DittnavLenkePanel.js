@@ -101,7 +101,7 @@ const DittnavLenkePanel = ({ sakstema, api }) => {
 };
 
 DittnavLenkePanel.propTypes = {
-  api: Api.ApiType(),
+  api: Api.ApiType(), // eslint-disable-line react/require-default-props
   sakstema: PropTypes.shape({
     antallSakstema: PropTypes.number.isRequired,
     sakstemaList: PropTypes.arrayOf(PropTypes.shape({

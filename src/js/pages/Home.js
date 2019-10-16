@@ -61,7 +61,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  api: Api.ApiType(),
+  api: Api.ApiType(), // eslint-disable-line react/require-default-props
   info: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types

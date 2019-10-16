@@ -3,17 +3,13 @@ import wrapIntl from 'js/IntlTestHelper';
 import Home from '../../js/pages/Home';
 const ReactTestRenderer = require('react-test-renderer');
 
-const mockApi = () => {
-  return {
-    fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
-    fetchSaker: () => new Promise((resolve, reject) => {}),
-    fetchMeldinger: () => new Promise((resolve, reject) => {}),
-    fetchSakstema: () => new Promise((resolve, reject) => {}),
-    useFetchEverythingForHome: () => {
-      return [{ info: {}, paabegynteSoknader: null, sakstema: { antallSakstema: 0, sakstemaList: [] }, mininnboks: [], errors: [], isLoaded: true}]
-    }
-  }
-};
+const mockApi = () => ({
+  fetchPersonInfoAndServices: () => new Promise(() => {}),
+  fetchSaker: () => new Promise(() => {}),
+  fetchMeldinger: () => new Promise(() => {}),
+  fetchSakstema: () => new Promise(() => {}),
+  useFetchEverythingForHome: () => [{ info: {}, paabegynteSoknader: null, sakstema: { antallSakstema: 0, sakstemaList: [] }, mininnboks: [], errors: [], isLoaded: true }],
+});
 
 it('render Home page without props', () => {
   const info = {};

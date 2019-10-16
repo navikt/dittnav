@@ -3,21 +3,19 @@ import wrapIntl from 'js/IntlTestHelper';
 import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 
 const ReactTestRenderer = require('react-test-renderer');
-const {act} = ReactTestRenderer;
+const { act } = ReactTestRenderer;
 
-const flushPromises = () => {
-  return new Promise(resolve => setImmediate(resolve));
-};
+const flushPromises = () => new Promise(resolve => setImmediate(resolve));
 
 const mockApi = (pool, group) => {
-  const r = {}
+  const r = {};
   if (pool && group) {
     r[pool] = true;
     r[group] = true;
   }
   return {
-    fetchUnleashFeatures: () => new Promise((resolve, reject) => pool && group ? resolve(r) : reject('this is expected')),
-  }
+    fetchUnleashFeatures: () => new Promise((resolve, reject) => (pool && group ? resolve(r) : reject(new Error('this is expected')))),
+  };
 };
 
 const sakstemaMedSaker = {
@@ -61,7 +59,7 @@ test('Snapshot test med unleash', async () => {
 
   await act(() => {
     flushPromises();
-  })
+  });
 
   expect(component.toJSON()).toMatchSnapshot();
 });
