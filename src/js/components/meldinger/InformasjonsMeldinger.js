@@ -42,7 +42,7 @@ InformasjonsMeldinger.defaultProps = {
   isMeldeKortUser: false,
   visGenerellInfo: false,
   generellInfo: <F id="generell.informasjonsmelding" />,
-  visMeldekortbrukerInfo: true,
+  visMeldekortbrukerInfo: false,
   meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
 };
 
