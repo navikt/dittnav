@@ -18,7 +18,7 @@ import Config from '../Config';
 
 const getInfoMeldinger = (info, paabegynteSoknader, mininnboks) => ({
   isInactive: info.personinfo ? info.personinfo.inaktiv : true,
-  isMeldeKortUser: info.personinfo ? info.personinfo.meldekortbruker : null,
+  isMeldeKortUser: info.meldekort ? info.meldekort.meldekortbruker : false,
   infoMessages: info.infoMessages,
   paabegynteSoknader,
   meldekort: info.meldekort,

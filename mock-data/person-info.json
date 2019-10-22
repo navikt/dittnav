@@ -1,28 +1,23 @@
 {
   "personinfo": {
     "navn": "MISTER IKSSEN-IKSS",
-    "fgkode": "ARBS",
-    "ytelse": "IYT",
-    "erUnderRegistreringIArbeid": false,
-    "registrert": true,
-    "inaktiv": false,
-    "meldekortbruker": true,
     "underOppfolging": false
   },
-  "meldekort": {
+  "meldekort":{
+    "etterregistrerteMeldekort": 0,
+    "meldekortbruker": true,
     "nyeMeldekort": {
-      "antallNyeMeldekort":3,
+      "antallNyeMeldekort": 2,
+      "nesteInnsendingAvMeldekort": null,
       "nesteMeldekort": {
-        "uke":"33-34",
-        "kanSendesFra":"2019-08-24",
-        "fra":"2019-08-12",
-        "til":"2019-08-25",
-        "sisteDatoForTrekk":"2019-09-02",
-        "risikererTrekk":true
-      },
-      "nesteInnsendingAvMeldekort":null
-    },
-    "resterendeFeriedager":2,
-    "etterregistrerteMeldekort":0},
+        "fra": "2019-09-02",
+        "kanSendesFra": "2019-09-14",
+        "risikererTrekk": true,
+        "sisteDatoForTrekk": "2019-09-23",
+        "til": "2019-09-15",
+        "uke": "36-37"
+      }
+    }
+  },
   "feilendeTjenester": []
 }
