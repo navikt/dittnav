@@ -5,7 +5,7 @@ import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../Config';
 import UnleashABTestgruppeVelger from '../UnleashABTestgruppeVelger';
 
-import OversiktspanelMedListe from './OversiktspanelMedListe';
+import OversiktspanelMedListe from './paneler/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
 const stortSakspanelEnabledDefault = false;

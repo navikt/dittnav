@@ -3,14 +3,21 @@ import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
-import { createOverskrift, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonOppgave, LenkepanelMedIkon } from '../paneler/LenkepanelMedIkon';
+import PanelOverskrift from '../paneler/PanelOverskrift';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
-const overskrift = (ettereg, intl) => createOverskrift(
-  <F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />,
-  'Element',
-);
+const getOverskrift = (ettereg, intl) => {
+  const overskrift = (
+    <F
+      id="meldekort.etterregistreringer"
+      values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }}
+    />
+  );
+
+  return <PanelOverskrift overskrift={overskrift} type="Element" />;
+};
 
 const EtterregistreringMeldekort = ({ ettereg, intl }) => {
   if (ettereg && ettereg.etterregistrerteMeldekort && ettereg.etterregistrerteMeldekort > 0) {
@@ -19,7 +26,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         className="infoMelding"
         data-ga="Dittnav/Varsel"
         alt="Melding om etterregistrerte meldekort"
-        overskrift={overskrift(ettereg, intl)}
+        overskrift={getOverskrift(ettereg, intl)}
         href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}
       >
         <IkonOppgave />

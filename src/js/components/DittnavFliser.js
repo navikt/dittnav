@@ -1,14 +1,15 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import Config from '../Config';
-import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt, createOverskrift } from './LenkepanelMedIkon';
+import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './paneler/LenkepanelMedIkon';
+import PanelOverskrift from './paneler/PanelOverskrift';
 
 const DittnavFliser = () => (
   <>
     <div className="dittnav-lenkeikon-container">
       <LenkepanelMedIkon
         alt="Ditt sykefravær"
-        overskrift={createOverskrift(<F id="fliser.ditt.sykevravaer" />, 'Undertittel')}
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.ditt.sykevravaer" />} type="Undertittel" />}
         ingress={<F id="fliser.ditt.sykevravaer.ingress" />}
         className="first"
         href={Config.LENKER.dittSykefravaer.url}
@@ -17,7 +18,7 @@ const DittnavFliser = () => (
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Mistet jobben?"
-        overskrift={createOverskrift(<F id="fliser.mistet.jobben" />, 'Undertittel')}
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.mistet.jobben" />} type="Undertittel" />}
         ingress={<F id="fliser.mistet.jobben.ingress" />}
         href={Config.LENKER.veilederArbeidssoker.url}
       >
@@ -27,7 +28,7 @@ const DittnavFliser = () => (
     <div className="dittnav-lenkeikon-container blokk-xxl">
       <LenkepanelMedIkon
         alt="Skjemaer"
-        overskrift={createOverskrift(<F id="fliser.skjemaer" />, 'Undertittel')}
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.skjemaer" />} type="Undertittel" />}
         ingress={<F id="fliser.skjemaer.ingress" />}
         className="first"
         href={Config.LENKER.skjemaer.url}
@@ -36,7 +37,7 @@ const DittnavFliser = () => (
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Din pensjon"
-        overskrift={createOverskrift(<F id="fliser.din.pensjon" />, 'Undertittel')}
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.din.pensjon" />} type="Undertittel" />}
         ingress={<F id="fliser.din.pensjon.ingress" />}
         href={Config.LENKER.dinPensjon.url}
       >

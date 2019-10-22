@@ -2,29 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonInformasjon, LenkepanelMedIkon, createOverskrift } from '../LenkepanelMedIkon';
+import { IkonInformasjon, LenkepanelMedIkon } from '../paneler/LenkepanelMedIkon';
+import PanelOverskrift from '../paneler/PanelOverskrift';
 
-const overskrift = (paabegynteSoknader, intl) => createOverskrift(
-  <F
-    id={paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere'}
-    values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }}
-  />,
-  'Element',
+const getOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
+  <PanelOverskrift
+    overskrift={<F id={soknadstekst} values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />}
+    type="Element"
+  />
 );
-
-const ingress = <F id="saksoversikt.lenke" />;
 
 const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
   if (!paabegynteSoknader || paabegynteSoknader.antallPaabegynte === 0) {
     return null;
   }
+  const soknadstekst = paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere';
+
   return (
     <LenkepanelMedIkon
       className="infoMelding"
       data-ga="Dittnav/Varsel/Paabegynt soknad"
       alt="Melding om Søknader"
-      overskrift={overskrift(paabegynteSoknader, intl)}
-      ingress={ingress}
+      overskrift={getOverskrift(paabegynteSoknader, soknadstekst, intl)}
+      ingress={<F id="saksoversikt.lenke" />}
       href={paabegynteSoknader.url}
     >
       <IkonInformasjon />
