@@ -168,17 +168,6 @@ exports[`render Home page without props 1`] = `
             <a
               className="lenke relatert-informasjon__link"
               data-ga="Dittnav/Lenkeliste"
-              href="http://localhost:9222/brukerprofil/"
-            >
-              Din profil
-            </a>
-          </div>
-          <div
-            className="relatert-informasjon__link-container"
-          >
-            <a
-              className="lenke relatert-informasjon__link"
-              data-ga="Dittnav/Lenkeliste"
               href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
             >
               Registrer deg som arbeidssøker
