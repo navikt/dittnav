@@ -1,22 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
-import { createOverskrift, IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../LenkepanelMedIkon';
+import { IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../paneler/LenkepanelMedIkon';
 import Config from '../../Config';
-
-const getInformasjonHendelser = (setHendelser) => Api
-  .fetchHendelser()
-  .then((r) => {
-    setHendelser(r);
-  });
-
-// TODO : implement in component
-const removeHendelser = () => {
-  Api.postHendelser(
-    Config.dittNav.DITTNAV_HENDELSER_URL,
-    null,
-  );
-};
+import PanelMedIkon from '../paneler/PanelMedIkon';
+import PanelOverskrift from '../paneler/PanelOverskrift';
 
 const getHendelseIkon = (type) => {
   switch (type) {
@@ -27,34 +15,62 @@ const getHendelseIkon = (type) => {
     case 'MELDING':
       return <IkonMelding />;
     default:
-      return <IkonInformasjon />;
+      return null;
   }
 };
 
-const overskrift = (hendelse) => createOverskrift(
-  hendelse.tekst,
-  'Element',
+const getHendelser = (setHendelser) => Api
+  .fetchHendelser()
+  .then((r) => {
+    setHendelser(r);
+  });
+
+const removeHendelser = (hendelseId) => {
+  console.log(`Marked all events as done for (id): ${hendelseId}`);
+  Api.postHendelser(
+    `${Config.dittNav.DITTNAV_EVENT_HANDLER_URL}/produce/done/all`,
+    {
+      id: hendelseId,
+    },
+  );
+};
+
+const getOverskrift = (hendelse) => (
+  <PanelOverskrift overskrift={hendelse.tekst} type="Element" />
 );
 
 const Hendelser = () => {
   const [hendelser, setHendelser] = useState([]);
+  const erInformasjon = (hendelse) => (hendelse.type === 'INFORMASJON');
+
   useEffect(() => {
-    getInformasjonHendelser(setHendelser);
+    getHendelser(setHendelser);
   }, []);
 
   return (
     <>
       {hendelser.map(h => (
-        <LenkepanelMedIkon
-          className="infoMelding"
-          data-ga="Dittnav/Varsel"
-          alt="Hendelse"
-          overskrift={overskrift(h)}
-          href={h.link}
-          key={h.id}
-        >
-          {getHendelseIkon(h.type)}
-        </LenkepanelMedIkon>
+        erInformasjon(h) ? (
+          <PanelMedIkon
+            data-ga="Dittnav/Varsel"
+            alt="Hendelse"
+            overskrift={getOverskrift(h)}
+            ikon={<IkonInformasjon />}
+            onClick={() => removeHendelser(h.id)}
+            key={h.id}
+          />
+        ) : (
+          <LenkepanelMedIkon
+            className="infoMelding"
+            data-ga="Dittnav/Varsel"
+            alt="Hendelse"
+            overskrift={getOverskrift(h)}
+            href={h.link}
+            key={h.id}
+          >
+            {getHendelseIkon(h.type)}
+          </LenkepanelMedIkon>
+        )
       ))}
     </>
   );
