@@ -519,12 +519,11 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 
 exports[`basic zero Meldekort test 1`] = `
 <div
-  alt="Melding om meldekort"
-  className="panel meldekortpanel panel--border"
-  data-ga="Dittnav/Varsel"
+  className="panel panel-med-ikon panel--border"
+  onClick={null}
 >
   <div
-    className="meldekortpanel__ikon"
+    className="panel-med-ikon__ikon"
   >
     <svg
       height="48px"
@@ -570,10 +569,10 @@ exports[`basic zero Meldekort test 1`] = `
     </svg>
   </div>
   <div
-    className="meldekortpanel__tekst"
+    className="panel-med-ikon__tekst"
   >
     <p
-      className="typo-element"
+      className="typo-element lenkepanel__heading"
     >
       <span>
         <span>
@@ -803,12 +802,11 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
 
 exports[`no cards no risk 1`] = `
 <div
-  alt="Melding om meldekort"
-  className="panel meldekortpanel panel--border"
-  data-ga="Dittnav/Varsel"
+  className="panel panel-med-ikon panel--border"
+  onClick={null}
 >
   <div
-    className="meldekortpanel__ikon"
+    className="panel-med-ikon__ikon"
   >
     <svg
       height="48px"
@@ -854,10 +852,10 @@ exports[`no cards no risk 1`] = `
     </svg>
   </div>
   <div
-    className="meldekortpanel__tekst"
+    className="panel-med-ikon__tekst"
   >
     <p
-      className="typo-element"
+      className="typo-element lenkepanel__heading"
     >
       <span>
         <span>
