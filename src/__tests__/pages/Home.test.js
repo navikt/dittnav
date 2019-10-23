@@ -14,7 +14,8 @@ it('render Home page without props', () => {
 
   const mininnboks = [];
   const sakstema = {
-    antallSaker: 0,
+    sakstemaList: [],
+    antallSakstema: 0,
   };
 
   const fetching = 4;
