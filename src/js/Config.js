@@ -68,6 +68,7 @@ const lenker = {
   uforetrygd: { tittel: 'Uføretrygd', url: `${getServicesUrl()}/pselv/publisering/uforetrygd.jsf?context=ut` },
   dineForeldrepenger: { tittel: 'Dine foreldrepenger', url: 'https://foreldrepenger.nav.no' },
   aktivitetsplan: { tittel: 'Aktivitetsplan', url: `${getServicesUrl()}/aktivitetsplan/` },
+  meldekort: { tittel: 'Meldekort', url: `${getNavUrl()}/meldekort/om-meldekort` },
   personopplysninger: { tittel: 'Personopplysninger', url: `${getNavUrl()}/person/personopplysninger` },
   skjemaer: { tittel: 'Skjemaer', url: `${getNavUrl()}/soknader` },
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
@@ -87,6 +88,7 @@ const generelleLenker = [
   lenker.uforetrygd,
   lenker.dineForeldrepenger,
   lenker.aktivitetsplan,
+  lenker.meldekort,
   lenker.registrerDegSomArbeidssoker,
   lenker.dineStillingssok,
   lenker.personopplysninger,
@@ -98,6 +100,7 @@ const oppfolgingsLenker = [
   lenker.dineForeldrepenger,
   lenker.dinPensjon,
   lenker.uforetrygd,
+  lenker.meldekort,
   lenker.personopplysninger,
 ];
 
