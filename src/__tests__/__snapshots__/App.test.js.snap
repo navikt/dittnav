@@ -1,13 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`expect PersonInfo fetching 1`] = `
+exports[`expect MeldekortInfo fetching 1`] = `
 <App
   api={
     Object {
+      "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
-      "fetchPersonInfoAndServices": [Function],
+      "fetchOppfolging": [Function],
       "fetchSaker": [Function],
       "fetchSakstema": [Function],
+      "fetchTps": [Function],
+    }
+  }
+/>
+`;
+
+exports[`expect Oppfolging fetching 1`] = `
+<App
+  api={
+    Object {
+      "fetchMeldekort": [Function],
+      "fetchMeldinger": [Function],
+      "fetchOppfolging": [Function],
+      "fetchSaker": [Function],
+      "fetchSakstema": [Function],
+      "fetchTps": [Function],
+    }
+  }
+/>
+`;
+
+exports[`expect Tps fetching 1`] = `
+<App
+  api={
+    Object {
+      "fetchMeldekort": [Function],
+      "fetchMeldinger": [Function],
+      "fetchOppfolging": [Function],
+      "fetchSaker": [Function],
+      "fetchSakstema": [Function],
+      "fetchTps": [Function],
     }
   }
 />
