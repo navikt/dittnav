@@ -64,7 +64,9 @@ const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDEL
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
-const fetchPersonInfoAndServices = () => fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`);
+const fetchOppfolging = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`);
+const fetchMeldekort = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDEKORT_URL}`);
+const fetchTps = () => fetchJSON(`${Config.dittNav.DITTNAV_TPS_URL}`);
 const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
@@ -74,7 +76,9 @@ export default {
   fetchUnleashFeatures,
   checkAuth,
   checkApiStatus,
-  fetchPersonInfoAndServices,
+  fetchOppfolging,
+  fetchMeldekort,
+  fetchTps,
   fetchSaker,
   fetchMeldinger,
   fetchHendelser,

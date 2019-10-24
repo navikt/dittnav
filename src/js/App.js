@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import Config from './Config';
-
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
 import Hendelser from './components/Hendelser';
-
 import '../less/index.less';
 
 class App extends Component {
   state = {
-    info: {},
+    oppfolging: null,
+    meldekort: null,
+    tps: null,
     paabegynteSoknader: null,
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
@@ -26,7 +25,6 @@ class App extends Component {
     const handleError = (e) => {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
-
       if (e.status === 401) {
         return;
       }
@@ -35,15 +33,20 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    api.fetchPersonInfoAndServices()
+    api.fetchOppfolging()
       .then((r) => {
-        const { feilendeTjenester } = r;
-        if (feilendeTjenester.length > 0) {
-          errors.push('error.baksystemer');
-        }
-        this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
-      })
-      .catch(handleError);
+        this.setState(() => ({ oppfolging: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
+
+    api.fetchMeldekort()
+      .then((r) => {
+        this.setState(() => ({ meldekort: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
+
+    api.fetchTps()
+      .then((r) => {
+        this.setState(() => ({ tps: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
 
     api.fetchSaker()
       .then((r) => {
@@ -67,7 +70,7 @@ class App extends Component {
 
   render() {
     const {
-      info, paabegynteSoknader, mininnboks, errors, fetching, sakstema,
+      oppfolging, meldekort, tps, paabegynteSoknader, sakstema, mininnboks, errors, fetching,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -78,7 +81,15 @@ class App extends Component {
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
           { erIDev ? <Hendelser /> : null }
-          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />
+          <Home
+            oppfolging={oppfolging}
+            meldekort={meldekort}
+            tps={tps}
+            paabegynteSoknader={paabegynteSoknader}
+            mininnboks={mininnboks}
+            fetching={fetching}
+            sakstema={sakstema}
+          />
         </div>
       </main>
     );
@@ -87,7 +98,9 @@ class App extends Component {
 
 App.propTypes = {
   api: PropTypes.shape({
-    fetchPersonInfoAndServices: PropTypes.func.isRequired,
+    fetchOppfolging: PropTypes.func.isRequired,
+    fetchTps: PropTypes.func.isRequired,
+    fetchMeldekort: PropTypes.func.isRequired,
     fetchSaker: PropTypes.func.isRequired,
     fetchMeldinger: PropTypes.func.isRequired,
     fetchSakstema: PropTypes.func.isRequired,
