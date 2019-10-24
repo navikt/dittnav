@@ -74,13 +74,14 @@ class App extends Component {
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
-    const erIDev = Config.ENVIRONMENT !== 'prod';
+    
+    // const erIDev = Config.ENVIRONMENT !== 'prod';
+    // { erIDev ? <Hendelser /> : null }
 
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          { erIDev ? <Hendelser /> : null }
           <Home
             oppfolging={oppfolging}
             meldekort={meldekort}
