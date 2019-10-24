@@ -72,12 +72,13 @@ class App extends Component {
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
     const erIDev = Config.ENVIRONMENT !== 'prod';
+    // Disabled TestGui (container). Consider implementing it with a router.
+    // { erIDev ? <HendelserTestGui /> : null }
 
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          { erIDev ? <HendelserTestGui /> : null }
           <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />
         </div>
       </main>
