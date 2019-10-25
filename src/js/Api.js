@@ -16,8 +16,8 @@ const fetchUnleashFeatures = (features) => {
     }, Config.UNLEASH_TIMEOUT))]);
 };
 
-const fetchJSON = (url) => new Promise((res, rej) => {
-  fetch(url, { method: 'GET', credentials: 'include' })
+const fetchJSON = (url, headers) => new Promise((res, rej) => {
+  fetch(url, { method: 'GET', credentials: 'include', headers })
     .then(r => {
       if (r.ok) {
         return r.json();
@@ -30,7 +30,12 @@ const fetchJSON = (url) => new Promise((res, rej) => {
 });
 
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  const noCacheHeaders = {
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0',
+  };
+  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`, noCacheHeaders)
     .then(r => {
       if (r.authenticated) {
         res(r);
