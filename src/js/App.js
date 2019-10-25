@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Config from './Config';
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
-import Hendelser from './components/Hendelser';
 import '../less/index.less';
 
 class App extends Component {
@@ -74,7 +72,7 @@ class App extends Component {
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
-    
+
     // const erIDev = Config.ENVIRONMENT !== 'prod';
     // { erIDev ? <Hendelser /> : null }
 
