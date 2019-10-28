@@ -21,33 +21,18 @@ function renderApp() {
   ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
 }
 
-function handleAuthError(e) {
-  if (e.message === 'not authenticated') {
-    api.redirectToLogin();
-    return;
-  }
-  // eslint-disable-next-line no-console
-  console.log(`Error: Authentication could not be verified. ${e}`);
-
-  api.checkApiStatus()
-    .then(() => renderApp())
-    .catch(e2 => {
-      if (e2.status === 401) {
-        api.redirectToLogin();
-      } else {
-        // eslint-disable-next-line no-console
-        console.log(`Error: Could not retrieve API data. App will not render. ${e2}`);
-      }
-    });
-}
-
-api.checkAuth()
+api.checkApiStatus()
   .then(() => renderApp())
-  .catch((e) => {
+  .catch(e => {
     if (Config.ENVIRONMENT === 'local') {
       renderApp();
       return;
     }
-
-    handleAuthError(e);
+    if (e.status === 401) {
+      api.redirectToLogin();
+    } else {
+      // eslint-disable-next-line no-console
+      console.log(`Error: Could not retrieve API data. App may not render correctly. ${e}`);
+      renderApp();
+    }
   });
