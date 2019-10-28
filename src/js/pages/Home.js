@@ -11,11 +11,11 @@ import Lenkelister from '../components/Lenkelister';
 import DelayedSpinner from '../components/DelayedSpinner';
 import Config from '../Config';
 
-const endpoints = 6;
+const endpoints = 7;
 
 class Home extends Component {
   render() {
-    const { oppfolging, meldekort, tps, paabegynteSoknader, mininnboks, sakstema, fetching } = this.props;
+    const { oppfolging, meldekort, person, ident, paabegynteSoknader, mininnboks, sakstema, fetching } = this.props;
     const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
     const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -26,7 +26,7 @@ class Home extends Component {
         <div className="row">
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
-              <PersonInfo personInfo={tps} />
+              <PersonInfo person={person} ident={ident} />
               { fetching < endpoints ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />
               <DittnavLenkePanel sakstema={sakstema} />
@@ -46,7 +46,8 @@ class Home extends Component {
 Home.propTypes = {
   oppfolging: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   meldekort: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  tps: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  person: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  ident: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -56,7 +57,8 @@ Home.propTypes = {
 Home.defaultProps = {
   oppfolging: null,
   meldekort: null,
-  tps: null,
+  person: null,
+  ident: null,
   paabegynteSoknader: null,
 };
 

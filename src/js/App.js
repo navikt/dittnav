@@ -8,7 +8,8 @@ class App extends Component {
   state = {
     oppfolging: null,
     meldekort: null,
-    tps: null,
+    person: null,
+    ident: null,
     paabegynteSoknader: null,
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
@@ -41,9 +42,14 @@ class App extends Component {
         this.setState(() => ({ meldekort: r, errors, fetching: this.state.fetching + 1 }));
       }).catch(handleError);
 
-    api.fetchTps()
+    api.fetchPersonNavn()
       .then((r) => {
-        this.setState(() => ({ tps: r, errors, fetching: this.state.fetching + 1 }));
+        this.setState(() => ({ person: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
+
+    api.fetchPersonIdent()
+      .then((r) => {
+        this.setState(() => ({ ident: r, errors, fetching: this.state.fetching + 1 }));
       }).catch(handleError);
 
     api.fetchSaker()
@@ -68,7 +74,7 @@ class App extends Component {
 
   render() {
     const {
-      oppfolging, meldekort, tps, paabegynteSoknader, sakstema, mininnboks, errors, fetching,
+      oppfolging, meldekort, person, ident, paabegynteSoknader, sakstema, mininnboks, errors, fetching,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -83,7 +89,8 @@ class App extends Component {
           <Home
             oppfolging={oppfolging}
             meldekort={meldekort}
-            tps={tps}
+            person={person}
+            ident={ident}
             paabegynteSoknader={paabegynteSoknader}
             mininnboks={mininnboks}
             fetching={fetching}
@@ -98,7 +105,8 @@ class App extends Component {
 App.propTypes = {
   api: PropTypes.shape({
     fetchOppfolging: PropTypes.func.isRequired,
-    fetchTps: PropTypes.func.isRequired,
+    fetchPersonNavn: PropTypes.func.isRequired,
+    fetchPersonIdent: PropTypes.func.isRequired,
     fetchMeldekort: PropTypes.func.isRequired,
     fetchSaker: PropTypes.func.isRequired,
     fetchMeldinger: PropTypes.func.isRequired,
