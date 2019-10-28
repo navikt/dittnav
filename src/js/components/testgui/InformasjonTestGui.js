@@ -4,7 +4,6 @@ import AlertStripe from 'nav-frontend-alertstriper';
 import PropTypes from 'prop-types';
 import '../../../less/components/Informasjon.less';
 
-// Used in the GUI-test component for sending and showing events.
 class InformasjonTestGui extends Component {
   render() {
     return (
