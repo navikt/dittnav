@@ -7,9 +7,10 @@ exports[`expect MeldekortInfo fetching 1`] = `
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchPersonIdent": [Function],
+      "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
       "fetchSakstema": [Function],
-      "fetchTps": [Function],
     }
   }
 />
@@ -22,24 +23,42 @@ exports[`expect Oppfolging fetching 1`] = `
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchPersonIdent": [Function],
+      "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
       "fetchSakstema": [Function],
-      "fetchTps": [Function],
     }
   }
 />
 `;
 
-exports[`expect Tps fetching 1`] = `
+exports[`expect Personalia ident fetching 1`] = `
 <App
   api={
     Object {
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchPersonIdent": [Function],
+      "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
       "fetchSakstema": [Function],
-      "fetchTps": [Function],
+    }
+  }
+/>
+`;
+
+exports[`expect Personalia navn fetching 1`] = `
+<App
+  api={
+    Object {
+      "fetchMeldekort": [Function],
+      "fetchMeldinger": [Function],
+      "fetchOppfolging": [Function],
+      "fetchPersonIdent": [Function],
+      "fetchPersonNavn": [Function],
+      "fetchSaker": [Function],
+      "fetchSakstema": [Function],
     }
   }
 />

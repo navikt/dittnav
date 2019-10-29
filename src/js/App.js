@@ -9,7 +9,7 @@ class App extends Component {
     oppfolging: null,
     meldekort: null,
     person: null,
-    ident: null,
+    identifikator: null,
     paabegynteSoknader: null,
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
@@ -49,7 +49,7 @@ class App extends Component {
 
     api.fetchPersonIdent()
       .then((r) => {
-        this.setState(() => ({ ident: r, errors, fetching: this.state.fetching + 1 }));
+        this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
       }).catch(handleError);
 
     api.fetchSaker()
@@ -74,7 +74,7 @@ class App extends Component {
 
   render() {
     const {
-      oppfolging, meldekort, person, ident, paabegynteSoknader, sakstema, mininnboks, errors, fetching,
+      oppfolging, meldekort, person, identifikator, paabegynteSoknader, sakstema, mininnboks, errors, fetching,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -90,7 +90,7 @@ class App extends Component {
             oppfolging={oppfolging}
             meldekort={meldekort}
             person={person}
-            ident={ident}
+            identifikator={identifikator}
             paabegynteSoknader={paabegynteSoknader}
             mininnboks={mininnboks}
             fetching={fetching}

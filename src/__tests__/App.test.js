@@ -10,7 +10,8 @@ const mockApi = () => {
   return {
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
-    fetchTps: () => new Promise((resolve, reject) => {}),
+    fetchPersonNavn: () => new Promise((resolve, reject) => {}),
+    fetchPersonIdent: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
     fetchSakstema: () => new Promise((resolve, reject) => {}),
@@ -85,12 +86,29 @@ it('expect MeldekortInfo fetching', async () => {
   expect(component).toMatchSnapshot();
 });
 
-it('expect Tps fetching', async () => {
+it('expect Personalia navn fetching', async () => {
   const api = mockApi();
-  api.fetchTps = () => new Promise((resolve, reject) => {
+  api.fetchPersonNavn = () => new Promise((resolve, reject) => {
     resolve(
       {
         'navn': 'VINAYAGUM-MASK AMIZIC'
+      },
+    );
+  });
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<App api={api}/>));
+  const component = renderer.getRenderOutput();
+  await flushPromises();
+
+  expect(component).toMatchSnapshot();
+});
+
+it('expect Personalia ident fetching', async () => {
+  const api = mockApi();
+  api.fetchPersonIdent = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'ident': 123
       },
     );
   });

@@ -15,7 +15,7 @@ const endpoints = 7;
 
 class Home extends Component {
   render() {
-    const { oppfolging, meldekort, person, ident, paabegynteSoknader, mininnboks, sakstema, fetching } = this.props;
+    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, fetching } = this.props;
     const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
     const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -26,7 +26,7 @@ class Home extends Component {
         <div className="row">
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
-              <PersonInfo person={person} ident={ident} />
+              <PersonInfo person={person} identifikator={identifikator} />
               { fetching < endpoints ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />
               <DittnavLenkePanel sakstema={sakstema} />
@@ -47,7 +47,7 @@ Home.propTypes = {
   oppfolging: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   meldekort: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   person: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  ident: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  identifikator: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -58,7 +58,7 @@ Home.defaultProps = {
   oppfolging: null,
   meldekort: null,
   person: null,
-  ident: null,
+  identifikator: null,
   paabegynteSoknader: null,
 };
 

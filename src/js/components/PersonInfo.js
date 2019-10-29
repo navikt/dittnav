@@ -1,35 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class PersonInfo extends Component {
-  render() {
-    if (!this.props.ident) return null;
+const PersonInfo = ({ person, identifikator }) => {
+  if (!identifikator) return null;
 
-    const { navn } = this.props.person ? this.props.person : null;
-    const { ident } = this.props.ident;
-
-    return (
-      <div className="person-info">
-        <h1 className="person-info">
-          {navn ? navn.toLowerCase() : ident}
-        </h1>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="person-info">
+      <h1 className="person-info">
+        {person && person.navn ? person.navn.toLowerCase() : identifikator.ident}
+      </h1>
+    </div>
+  );
+};
 
 PersonInfo.propTypes = {
   person: PropTypes.shape({
     navn: PropTypes.string.isRequired,
   }),
-  ident: PropTypes.shape({
+  identifikator: PropTypes.shape({
     ident: PropTypes.number.isRequired,
   }),
 };
 
 PersonInfo.defaultProps = {
   person: null,
-  ident: null,
+  identifikator: null,
 };
 
 export default PersonInfo;
