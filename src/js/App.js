@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Api from './Api';
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
 import '../less/index.less';
@@ -25,6 +26,10 @@ class App extends Component {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
       if (e.status === 401) {
+        Api.redirectToLogin();
+        return;
+      }
+      if (e.status === 403) {
         return;
       }
 
