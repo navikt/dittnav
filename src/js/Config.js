@@ -74,7 +74,7 @@ const lenker = {
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
   dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
   veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/` },
-  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
+  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: 'https://arbeidssokerregistrering.nav.no' },
   dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
   utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/` },
   saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/` },
