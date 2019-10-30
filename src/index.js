@@ -26,16 +26,24 @@ function renderApp() {
 }
 
 const checkAuthThenRenderApp = () => {
+  console.log('Checking auth service status...');
   api.checkAuth()
-    .then(api.checkApiStatus)
-    .then(renderApp())
+    .then(() => {
+      console.log('Checking backend api access...');
+      return api.checkApiStatus();
+    })
+    .then(() => {
+      console.log('All auth checks passed, rendering app!');
+      renderApp();
+    })
     .catch((e) => {
       if (Config.ENVIRONMENT === 'local') {
+        console.log('Errors caught, rendering anyway in local environment');
         renderApp();
         return;
       }
       if (e.message === 'not authenticated') {
-        console.log('Not logged inn, redirecting to login service');
+        console.log('Not logged in, redirecting to login service');
         api.redirectToLogin();
         return;
       }
