@@ -26,11 +26,12 @@ it('index renders without crashing', async () => {
   const expectedF = jest.fn();
   Api.checkAuth = () => new Promise((resolve, reject) => {
     expectedF();
-    resolve({});
+    resolve(true);
   });
+  const flushPromises = () => new Promise(setImmediate);
 
   await require('../index');
+  await flushPromises();
   expect(expectedF).toHaveBeenCalled();
-
   expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={Api} />), null);
 });

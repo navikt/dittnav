@@ -29,11 +29,11 @@ const checkAuthThenRenderApp = () => {
   console.log('Checking auth service status...');
   api.checkAuth()
     .then(() => {
-      console.log('Checking backend api access...');
+      console.log('Checking backend access...');
       return api.checkApiStatus();
     })
     .then(() => {
-      console.log('All auth checks passed, rendering app!');
+      console.log('All auth checks passed, rendering app');
       renderApp();
     })
     .catch((e) => {
