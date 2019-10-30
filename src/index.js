@@ -18,13 +18,17 @@ import enMessages from './translations/en.json';
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
 function renderApp() {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
+  ReactDOM.render(
+    <NavApp defaultSprak="nb" messages={loadMessages()}>
+      <App api={api} />
+    </NavApp>, document.getElementById('app'),
+  );
 }
 
 const checkAuthThenRenderApp = () => {
   api.checkAuth()
-    .then(() => api.checkApiStatus())
-    .then(() => renderApp())
+    .then(api.checkApiStatus)
+    .then(renderApp())
     .catch((e) => {
       if (Config.ENVIRONMENT === 'local') {
         renderApp();
