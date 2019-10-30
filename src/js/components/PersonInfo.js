@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PersonInfo = ({ person, identifikator }) => {
-  if (!identifikator) return null;
+  if (!person && !identifikator) return null;
   const info = person && person.navn ? person.navn.toLowerCase() : identifikator.ident;
 
   return (

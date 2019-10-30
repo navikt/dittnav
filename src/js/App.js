@@ -37,6 +37,14 @@ class App extends Component {
       this.setState({ errors });
     };
 
+    const handlePersonIdentError = (e) => {
+      const { fetching } = this.state;
+      this.setState({ fetching: fetching + 1 });
+      if (e.status === 401) {
+        Api.redirectToLogin();
+      }
+    };
+
     api.fetchOppfolging()
       .then((r) => {
         this.setState(() => ({ oppfolging: r, errors, fetching: this.state.fetching + 1 }));
@@ -50,12 +58,12 @@ class App extends Component {
     api.fetchPersonNavn()
       .then((r) => {
         this.setState(() => ({ person: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handleError);
+      }).catch();
 
     api.fetchPersonIdent()
       .then((r) => {
         this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handleError);
+      }).catch(handlePersonIdentError);
 
     api.fetchSaker()
       .then((r) => {
@@ -79,7 +87,15 @@ class App extends Component {
 
   render() {
     const {
-      oppfolging, meldekort, person, identifikator, paabegynteSoknader, sakstema, mininnboks, errors, fetching,
+      oppfolging,
+      meldekort,
+      person,
+      identifikator,
+      paabegynteSoknader,
+      sakstema,
+      mininnboks,
+      errors,
+      fetching,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
