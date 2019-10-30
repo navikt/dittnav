@@ -30,7 +30,7 @@ class Home extends Component {
               { fetching < endpoints ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />
               <DittnavLenkePanel sakstema={sakstema} />
-              { !oppfolging ? null : tjenesterEllerVta }
+              { !oppfolging ? <DittnavFliser /> : tjenesterEllerVta}
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
               </Undertittel>
