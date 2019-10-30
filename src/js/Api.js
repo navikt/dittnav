@@ -30,7 +30,7 @@ const fetchJSON = (url) => new Promise((res, rej) => {
 });
 
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}?ts=${Date.now()}`)
     .then(r => {
       if (r.authenticated) {
         res(r);
