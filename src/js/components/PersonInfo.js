@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 const PersonInfo = ({ person, identifikator }) => {
   if (!identifikator) return null;
+  const info = person && person.navn ? person.navn.toLowerCase() : identifikator.ident;
 
   return (
     <div className="person-info">
       <h1 className="person-info">
-        {person && person.navn ? person.navn.toLowerCase() : identifikator.ident}
+        {info}
       </h1>
     </div>
   );
