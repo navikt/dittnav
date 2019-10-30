@@ -21,18 +21,29 @@ function renderApp() {
   ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
 }
 
-api.checkApiStatus()
-  .then(() => renderApp())
-  .catch(e => {
-    if (Config.ENVIRONMENT === 'local') {
+const checkAuthThenRenderApp = () => {
+  api.checkAuth()
+    .then(() => api.checkApiStatus())
+    .then(() => renderApp())
+    .catch((e) => {
+      if (Config.ENVIRONMENT === 'local') {
+        renderApp();
+        return;
+      }
+      if (e.message === 'not authenticated') {
+        console.log('Not logged inn, redirecting to login service');
+        api.redirectToLogin();
+        return;
+      }
+      if (e.status === 401) {
+        console.log('Backend auth error, redirecting to login service');
+        api.redirectToLogin();
+        return;
+      }
+
+      console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
-      return;
-    }
-    if (e.status === 401) {
-      api.redirectToLogin();
-    } else {
-      // eslint-disable-next-line no-console
-      console.log(`Error: Could not retrieve API data. App may not render correctly. ${e}`);
-      renderApp();
-    }
-  });
+    });
+};
+
+checkAuthThenRenderApp();
