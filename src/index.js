@@ -18,36 +18,34 @@ import enMessages from './translations/en.json';
 const loadMessages = () => ({ nb: nbMessages, en: enMessages });
 
 function renderApp() {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
+  ReactDOM.render(
+    <NavApp defaultSprak="nb" messages={loadMessages()}>
+      <App api={api} />
+    </NavApp>, document.getElementById('app'),
+  );
 }
 
-function handleAuthError(e) {
-  if (e.message === 'not authenticated') {
-    api.redirectToLogin();
-    return;
-  }
-  // eslint-disable-next-line no-console
-  console.log(`Error: Authentication could not be verified. ${e}`);
-
-  api.checkApiStatus()
+const checkAuthThenRenderApp = () => {
+  api.checkAuth()
+    .then(() => api.checkApiStatus())
     .then(() => renderApp())
-    .catch(e2 => {
-      if (e2.status === 401) {
-        api.redirectToLogin();
-      } else {
-        // eslint-disable-next-line no-console
-        console.log(`Error: Could not retrieve API data. App will not render. ${e2}`);
+    .catch((e) => {
+      if (Config.ENVIRONMENT === 'local') {
+        renderApp();
+        return;
       }
-    });
-}
+      if (e.message === 'not authenticated') {
+        api.redirectToLogin();
+        return;
+      }
+      if (e.status === 401) {
+        api.redirectToLogin();
+        return;
+      }
 
-api.checkAuth()
-  .then(() => renderApp())
-  .catch((e) => {
-    if (Config.ENVIRONMENT === 'local') {
+      console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
-      return;
-    }
+    });
+};
 
-    handleAuthError(e);
-  });
+checkAuthThenRenderApp();
