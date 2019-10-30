@@ -81,23 +81,23 @@ body {
   margin-top: 1em;
   animation: 500ms;
   -moz-animation-name: showEffect;
-  -webkit-animation-name: hideEffect;
-  animation-name: hideEffect;
+  -webkit-animation-name: showEffect;
+  animation-name: showEffect;
   animation-fill-mode: forwards;
   visibility: hidden;
 }
 
-@-moz-keyframes hideEffect {
+@-moz-keyframes showEffect {
   99% { visibility: hidden; }
   100% {visibility: visible; }
 
 }
-@-webkit-keyframes hideEffect {
+@-webkit-keyframes showEffect {
   99% { visibility: hidden; }
   100% { visibility: visible; }
 
 }
-@keyframes hideEffect {
+@keyframes showEffect {
   99% { visibility: hidden; }
   100% { visibility: visible; }
 }
