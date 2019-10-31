@@ -11,7 +11,7 @@ import Lenkelister from '../components/Lenkelister';
 import DelayedSpinner from '../components/DelayedSpinner';
 import Config from '../Config';
 
-const endpoints = 7;
+const NUM_ENDPOINTS = 7;
 
 class Home extends Component {
   render() {
@@ -27,7 +27,7 @@ class Home extends Component {
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo person={person} identifikator={identifikator} />
-              { fetching < endpoints ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
+              { fetching < NUM_ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />
               <DittnavLenkePanel sakstema={sakstema} />
               {tjenesterEllerVta}
