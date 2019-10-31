@@ -21,7 +21,7 @@ class MinInnboks extends Component {
     const { numberToWord } = i18n[this.props.intl.locale];
     const messages = this.props.mininnboks;
     return (
-      <React.Fragment>
+      <>
         {messages && messages.map(message => (
           <a
             key={message.type}
@@ -35,7 +35,7 @@ class MinInnboks extends Component {
             </div>
           </a>
         ))}
-      </React.Fragment>
+      </>
     );
   }
 }

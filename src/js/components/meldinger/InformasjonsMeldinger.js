@@ -25,7 +25,7 @@ class InformasjonsMeldinger extends Component {
         </div>,
       );
     }
-    return (<React.Fragment>{children}</React.Fragment>);
+    return (<>{children}</>);
   }
 }
 
