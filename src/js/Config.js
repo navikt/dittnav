@@ -63,6 +63,19 @@ const getVtaPath = () => (ENV === 'local'
   ? 'http://127.0.0.1:3002'
   : `https://${window.location.hostname}/person/dittnav/veientilarbeid`);
 
+const getRegistreringUrl = () => {
+  if (ENV === 'prod') {
+    return 'https://arbeidssokerregistrering.nav.no';
+  }
+  if (ENV === 'local') {
+    return 'http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering';
+  }
+  if (ENV === 't1' || ENV === 't6') {
+    return `${window.location.origin}/veiledearbeidssoker/mistet-jobben/registrering`;
+  }
+  return 'https://arbeidssokerregistrering-q.nav.no';
+};
+
 const lenker = {
   ledigeStillinger: { tittel: 'Ledige stillinger', url: 'https://arbeidsplassen.nav.no/stillinger' },
   uforetrygd: { tittel: 'Uføretrygd', url: `${getServicesUrl()}/pselv/publisering/uforetrygd.jsf?context=ut` },
@@ -74,7 +87,7 @@ const lenker = {
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
   dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
   veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/` },
-  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
+  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getRegistreringUrl()}` },
   dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
   utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/` },
   saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/` },
