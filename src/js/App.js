@@ -52,7 +52,7 @@ class App extends Component {
     api.fetchPersonNavn()
       .then((r) => {
         this.setState(() => ({ person: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch();
+      }).catch(handleError);
 
     api.fetchPersonIdent()
       .then((r) => {
