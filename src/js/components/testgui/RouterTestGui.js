@@ -5,7 +5,7 @@ import HendelserTestGui from './HendelserTestGui';
 const RouterTestGui = () => (
   <Router>
     <Switch>
-      <Route path="/hendelser" component={HendelserTestGui} />
+      <Route path="/person/dittnav/hendelser" component={HendelserTestGui} />
     </Switch>
   </Router>
 );

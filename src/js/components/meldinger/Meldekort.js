@@ -12,11 +12,22 @@ const Meldekort = ({ meldekort }) => {
   const risikererTrekk = meldekort.nyeMeldekort.nesteMeldekort && meldekort.nyeMeldekort.nesteMeldekort.risikererTrekk;
 
   if (antallNyeMeldekort > 0) {
-    return <MeldekortLenkePanel meldekort={meldekort} count={antallNyeMeldekort} risikererTrekk={risikererTrekk} />;
+    return (
+      <MeldekortLenkePanel
+        meldekort={meldekort}
+        count={antallNyeMeldekort}
+        risikererTrekk={risikererTrekk}
+      />
+    );
   }
 
   if (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) {
-    return <MeldekortPanel meldekort={meldekort} risikererTrekk={risikererTrekk} />;
+    return (
+      <MeldekortPanel
+        meldekort={meldekort}
+        risikererTrekk={risikererTrekk}
+      />
+    );
   }
   return null;
 };
