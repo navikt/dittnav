@@ -4,7 +4,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
@@ -52,7 +52,7 @@ exports[`basic Meldekort test 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
@@ -106,7 +106,7 @@ exports[`basic one Meldekort test 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
@@ -158,7 +158,7 @@ exports[`basic one Meldekort test no risk 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
@@ -208,7 +208,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
@@ -289,7 +289,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
@@ -335,7 +335,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
 <a
   className="message clickable meldekort"
   data-ga="Dittnav/Varsel"
-  href="http://localhost:9222/meldekort/"
+  href="http://localhost:9222/meldekort"
 >
   <span
     aria-label="alarm-ikon"
