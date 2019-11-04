@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import AlertStripe from 'nav-frontend-alertstriper';
-
 import PropTypes from 'prop-types';
-import '../../../less/components/Informasjon.less';
+import AlertStripe from 'nav-frontend-alertstriper';
 
 class InformasjonTestGui extends Component {
   render() {

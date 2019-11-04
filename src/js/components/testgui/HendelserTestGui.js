@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
 import { FormattedMessage as F } from 'react-intl';
-import { Knapp, Fareknapp } from 'nav-frontend-knapper';
-import { Input } from 'nav-frontend-skjema';
-import { Innholdstittel } from 'nav-frontend-typografi';
+import { Fareknapp } from 'nav-frontend-knapper';
 import InformasjonTestGui from './InformasjonTestGui';
 import Api from '../../Api';
-import '../../../less/components/Hendelser.less';
 import Config from '../../Config';
+import HendelserTittelTestGui from './HendelserTittelTestGui';
+import HendelserFormTestGui from './HendelserFormTestGui';
 
 const HendelserTestGui = () => {
   const [hendelser, setHendelser] = useState([]);
   const [tekst, setTekst] = useState('');
-
-  const getInformasjonHendelser = () => Api
-    .fetchLegacyHendelser()
-    .then((r) => {
-      setHendelser(r);
-    });
 
   const removeHendelser = () => Api
     .postHendelser(
@@ -24,34 +17,10 @@ const HendelserTestGui = () => {
       null,
     );
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    Api.postHendelser(
-      Config.dittNav.DITTNAV_LEGACY_HENDELSER_URL,
-      {
-        tekst,
-        link: 'https://localhost/100',
-      },
-    );
-    setTekst('');
-  };
-
   return (
-    <div className="Hendelser">
-      <Innholdstittel>
-        <F id="hendelser.tittel" />
-      </Innholdstittel>
-      <form onSubmit={handleSubmit}>
-        <Input label="Skriv inn ny tekst:" value={tekst} onChange={e => setTekst(e.target.value)} />
-        <div className="knapper">
-          <Knapp className="knapper__send" htmlType="submit">
-            <F id="hendelser.send" />
-          </Knapp>
-          <Knapp className="knapper__hent" htmlType="button" onClick={() => getInformasjonHendelser()}>
-            <F id="hendelser.hent" />
-          </Knapp>
-        </div>
-      </form>
+    <div className="hendelser">
+      <HendelserTittelTestGui />
+      <HendelserFormTestGui tekst={tekst} setTekst={setTekst} setHendelser={setHendelser} />
       <Fareknapp onClick={() => removeHendelser()}>
         <F id="hendelser.fjern" />
       </Fareknapp>

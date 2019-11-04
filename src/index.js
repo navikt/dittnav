@@ -14,11 +14,20 @@ import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
+import HendelserTestGui from './js/components/testgui/HendelserTestGui';
 
-const loadMessages = () => ({ nb: nbMessages, en: enMessages });
+const loadMessages = () => ({
+  nb: nbMessages,
+  en: enMessages,
+});
 
 function renderApp() {
-  ReactDOM.render(<NavApp defaultSprak="nb" messages={loadMessages()}><App api={api} /></NavApp>, document.getElementById('app'));
+  ReactDOM.render(
+    <NavApp defaultSprak="nb" messages={loadMessages()}>
+      <App api={api} />
+    </NavApp>,
+    document.getElementById('app'),
+  );
 }
 
 function handleAuthError(e) {
@@ -41,13 +50,26 @@ function handleAuthError(e) {
     });
 }
 
-api.checkAuth()
-  .then(() => renderApp())
-  .catch((e) => {
-    if (Config.ENVIRONMENT === 'local') {
-      renderApp();
-      return;
-    }
+const params = new URLSearchParams(window.location.search);
 
-    handleAuthError(e);
-  });
+if (params.has('hendelser') && Config.ENVIRONMENT !== 'PROD') {
+  ReactDOM.render(
+    <NavApp defaultSprak="nb" messages={loadMessages()}>
+      <div className="hendelser-content">
+        <HendelserTestGui />
+      </div>
+    </NavApp>,
+    document.getElementById('app'),
+  );
+} else {
+  api.checkAuth()
+    .then(() => renderApp())
+    .catch((e) => {
+      if (Config.ENVIRONMENT === 'local') {
+        renderApp();
+        return;
+      }
+
+      handleAuthError(e);
+    });
+}

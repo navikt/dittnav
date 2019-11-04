@@ -1,15 +1,28 @@
-.Hendelser {
+.hendelser-content {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.hendelser {
   padding: 4rem 3rem;
   text-align: left;
   width: 100%;
   max-width: 50rem;
   margin: 0 auto;
-  background: #CCE1F3;
+  background: #FFFFFF;
   border-radius: 15px;
+
+  &__tittel-box {
+    display:flex;
+  }
+
+  &__tittel {
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .knapper {
-  padding: 0rem;
   display: flex;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -17,7 +30,7 @@
   justify-content: flex-start;
 
   &__send {
-    margin-right: 10px;
+    margin-right: 30px;
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -28,8 +41,17 @@
   }
 }
 
+.Informasjon {
+  padding-top: 30px;
+  border: 0.5rem solid #FFFFFF;
+}
+
+.InformasjonStripe {
+  background: #FFFFFF;
+}
+
 @media screen and (max-width: 510px) {
   .knapper__hent {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }

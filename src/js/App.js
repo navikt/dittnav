@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Config from './Config';
 import FeilMeldinger from './components/FeilMeldinger';
 import Home from './pages/Home';
 import '../less/index.less';
-import RouterTestGui from './components/testgui/RouterTestGui';
 
 class App extends Component {
   state = {
@@ -68,13 +66,11 @@ class App extends Component {
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
-    const erIDev = Config.ENVIRONMENT !== 'prod';
 
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          { erIDev ? <RouterTestGui /> : null }
           <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />
         </div>
       </main>
