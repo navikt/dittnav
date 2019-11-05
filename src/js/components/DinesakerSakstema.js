@@ -21,7 +21,7 @@ const sakstemaUrlOverride = {
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {
     const { temakode } = this.props.tema;
-    return sakstemaUrlOverride[temakode] || Config.LENKER.saksoversiktTema.url + temakode;
+    return sakstemaUrlOverride[temakode] || `${Config.LENKER.saksoversiktTema.url}/${temakode}`;
   }
 
   getStatusMelding() {

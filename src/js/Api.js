@@ -30,7 +30,7 @@ const fetchJSON = (url) => new Promise((res, rej) => {
 });
 
 const checkAuth = () => new Promise((res, rej) => {
-  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}?ts=${Date.now()}`)
     .then(r => {
       if (r.authenticated) {
         res(r);
@@ -42,7 +42,7 @@ const checkAuth = () => new Promise((res, rej) => {
 });
 
 const checkApiStatus = () => new Promise((res, rej) => {
-  fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`)
+  fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`)
     .then(r => res(r))
     .catch(e => rej(e));
 });
@@ -61,7 +61,10 @@ const postJSONAndCheckForErrors = (url, content) => {
     .catch((e) => console.log(`ERROR: ${e}`));
 };
 
-const fetchPersonInfoAndServices = () => fetchJSON(`${Config.dittNav.DITTNAV_API_URL}`);
+const fetchOppfolging = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`);
+const fetchMeldekort = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDEKORT_URL}`);
+const fetchPersonNavn = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_NAVN_URL}`);
+const fetchPersonIdent = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_IDENT_URL}`);
 const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
@@ -72,7 +75,10 @@ export default {
   fetchUnleashFeatures,
   checkAuth,
   checkApiStatus,
-  fetchPersonInfoAndServices,
+  fetchOppfolging,
+  fetchMeldekort,
+  fetchPersonNavn,
+  fetchPersonIdent,
   fetchSaker,
   fetchMeldinger,
   fetchLegacyHendelser,

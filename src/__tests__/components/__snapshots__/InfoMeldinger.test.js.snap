@@ -1,36 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render InfoMeldinger with ag messages 1`] = `
-<InfoMeldinger
-  isMeldeKortUser={false}
-  meldekort={null}
-  mininnboks={Array []}
-  paabegynteSoknader={null}
-/>
-`;
-
-exports[`render InfoMeldinger with ag messages but inactive 1`] = `
-<InfoMeldinger
-  isMeldeKortUser={false}
-  meldekort={null}
-  mininnboks={Array []}
-  paabegynteSoknader={null}
-/>
-`;
-
-exports[`render InfoMeldinger with empty infoMessages 1`] = `
-<InfoMeldinger
-  infoMessages={Object {}}
-  isMeldeKortUser={false}
-  meldekort={null}
-  mininnboks={Array []}
-  paabegynteSoknader={null}
-/>
-`;
-
 exports[`render empty InfoMeldinger component 1`] = `
 <InfoMeldinger
-  isMeldeKortUser={false}
   meldekort={null}
   mininnboks={Array []}
   paabegynteSoknader={null}

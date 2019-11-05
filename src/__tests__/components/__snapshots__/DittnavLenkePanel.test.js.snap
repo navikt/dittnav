@@ -11,7 +11,7 @@ exports[`Snapshot test med saker 1`] = `
     <a
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/saksoversikt/"
+      href="http://localhost:9222/saksoversikt"
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -27,7 +27,7 @@ exports[`Snapshot test med saker 1`] = `
     <a
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/utbetalingsoversikt/"
+      href="http://localhost:9222/utbetalingsoversikt"
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -43,7 +43,7 @@ exports[`Snapshot test med saker 1`] = `
     <a
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
-      href="http://localhost:9222/mininnboks/"
+      href="http://localhost:9222/mininnboks"
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -71,7 +71,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/saksoversikt/"
+      href="http://localhost:9222/saksoversikt"
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -87,7 +87,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/utbetalingsoversikt/"
+      href="http://localhost:9222/utbetalingsoversikt"
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -103,7 +103,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
-      href="http://localhost:9222/mininnboks/"
+      href="http://localhost:9222/mininnboks"
     >
       <span
         className="typo-undertittel lenkepanel__heading"

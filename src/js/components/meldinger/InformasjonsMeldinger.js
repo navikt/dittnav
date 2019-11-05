@@ -25,11 +25,7 @@ class InformasjonsMeldinger extends Component {
         </div>,
       );
     }
-    return (
-      <>
-        {children}
-      </>
-    );
+    return (<>{children}</>);
   }
 }
 

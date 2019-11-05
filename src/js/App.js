@@ -6,7 +6,10 @@ import '../less/index.less';
 
 class App extends Component {
   state = {
-    info: {},
+    oppfolging: null,
+    meldekort: null,
+    person: null,
+    identifikator: null,
     paabegynteSoknader: null,
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
@@ -22,7 +25,7 @@ class App extends Component {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
 
-      if (e.status === 401) {
+      if (e.status === 401 || e.status === 403) {
         return;
       }
 
@@ -30,15 +33,31 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    api.fetchPersonInfoAndServices()
+    const handlePersonIdentError = (e) => {
+      const { fetching } = this.state;
+      this.setState({ fetching: fetching + 1 });
+      console.log(`Failed to fetch PersonIdent: ${e}`);
+    };
+
+    api.fetchOppfolging()
       .then((r) => {
-        const { feilendeTjenester } = r;
-        if (feilendeTjenester.length > 0) {
-          errors.push('error.baksystemer');
-        }
-        this.setState(() => ({ info: r, errors, fetching: this.state.fetching + 1 }));
-      })
-      .catch(handleError);
+        this.setState(() => ({ oppfolging: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
+
+    api.fetchMeldekort()
+      .then((r) => {
+        this.setState(() => ({ meldekort: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
+
+    api.fetchPersonNavn()
+      .then((r) => {
+        this.setState(() => ({ person: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleError);
+
+    api.fetchPersonIdent()
+      .then((r) => {
+        this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handlePersonIdentError);
 
     api.fetchSaker()
       .then((r) => {
@@ -62,7 +81,15 @@ class App extends Component {
 
   render() {
     const {
-      info, paabegynteSoknader, mininnboks, errors, fetching, sakstema,
+      oppfolging,
+      meldekort,
+      person,
+      identifikator,
+      paabegynteSoknader,
+      sakstema,
+      mininnboks,
+      errors,
+      fetching,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -71,7 +98,16 @@ class App extends Component {
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />
         <div className="container">
-          <Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />
+          <Home
+            oppfolging={oppfolging}
+            meldekort={meldekort}
+            person={person}
+            identifikator={identifikator}
+            paabegynteSoknader={paabegynteSoknader}
+            mininnboks={mininnboks}
+            fetching={fetching}
+            sakstema={sakstema}
+          />
         </div>
       </main>
     );
@@ -80,7 +116,10 @@ class App extends Component {
 
 App.propTypes = {
   api: PropTypes.shape({
-    fetchPersonInfoAndServices: PropTypes.func.isRequired,
+    fetchOppfolging: PropTypes.func.isRequired,
+    fetchPersonNavn: PropTypes.func.isRequired,
+    fetchPersonIdent: PropTypes.func.isRequired,
+    fetchMeldekort: PropTypes.func.isRequired,
     fetchSaker: PropTypes.func.isRequired,
     fetchMeldinger: PropTypes.func.isRequired,
     fetchSakstema: PropTypes.func.isRequired,

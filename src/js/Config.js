@@ -63,24 +63,37 @@ const getVtaPath = () => (ENV === 'local'
   ? 'http://127.0.0.1:3002'
   : `https://${window.location.hostname}/person/dittnav/veientilarbeid`);
 
+const getRegistreringUrl = () => {
+  if (ENV === 'prod') {
+    return 'https://arbeidssokerregistrering.nav.no';
+  }
+  if (ENV === 'local') {
+    return 'http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering';
+  }
+  if (ENV === 't1' || ENV === 't6') {
+    return `${window.location.origin}/veiledearbeidssoker/mistet-jobben/registrering`;
+  }
+  return 'https://arbeidssokerregistrering-q.nav.no';
+};
+
 const lenker = {
   ledigeStillinger: { tittel: 'Ledige stillinger', url: 'https://arbeidsplassen.nav.no/stillinger' },
   uforetrygd: { tittel: 'Uføretrygd', url: `${getServicesUrl()}/pselv/publisering/uforetrygd.jsf?context=ut` },
   dineForeldrepenger: { tittel: 'Dine foreldrepenger', url: 'https://foreldrepenger.nav.no' },
-  aktivitetsplan: { tittel: 'Aktivitetsplan', url: `${getServicesUrl()}/aktivitetsplan/` },
-  dinProfil: { tittel: 'Din profil', url: `${getServicesUrl()}/brukerprofil/` },
+  aktivitetsplan: { tittel: 'Aktivitetsplan', url: `${getServicesUrl()}/aktivitetsplan` },
+  meldekort: { tittel: 'Meldekort', url: `${getNavUrl()}/meldekort/om-meldekort` },
   personopplysninger: { tittel: 'Personopplysninger', url: `${getNavUrl()}/person/personopplysninger` },
   skjemaer: { tittel: 'Skjemaer', url: `${getNavUrl()}/soknader` },
   dinPensjon: { tittel: 'Din pensjon', url: `${getServicesUrl()}/pselv/publisering/dinpensjon.jsf` },
   dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
-  veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/` },
-  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker/mistet-jobben/registrering` },
-  dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer/` },
-  utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt/` },
-  saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/` },
-  saksoversiktTema: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/tema/` },
+  veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${getServicesUrl()}/veiledearbeidssoker` },
+  registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${getRegistreringUrl()}` },
+  dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${getServicesUrl()}/sykefravaer` },
+  utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${getServicesUrl()}/utbetalingsoversikt` },
+  saksoversikt: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt` },
+  saksoversiktTema: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/tema` },
   saksoversiktHjelp: { tittel: 'Dine saker hjelp', url: '#' },
-  innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks/` },
+  innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks` },
 };
 
 const generelleLenker = [
@@ -88,7 +101,7 @@ const generelleLenker = [
   lenker.uforetrygd,
   lenker.dineForeldrepenger,
   lenker.aktivitetsplan,
-  lenker.dinProfil,
+  lenker.meldekort,
   lenker.registrerDegSomArbeidssoker,
   lenker.dineStillingssok,
   lenker.personopplysninger,
@@ -100,7 +113,7 @@ const oppfolgingsLenker = [
   lenker.dineForeldrepenger,
   lenker.dinPensjon,
   lenker.uforetrygd,
-  lenker.dinProfil,
+  lenker.meldekort,
   lenker.personopplysninger,
 ];
 
@@ -111,7 +124,10 @@ export default {
     SERVICES_URL: getServicesUrl(),
     NAV_URL: getNavUrl(),
     LOGINSERVICE: getLoginUrl(),
-    DITTNAV_API_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/person/personinfo`,
+    DITTNAV_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/oppfolging`,
+    DITTNAV_MELDEKORT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldekortinfo`,
+    DITTNAV_PERSON_NAVN_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/navn`,
+    DITTNAV_PERSON_IDENT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/ident`,
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/paabegynte`,
     DITTNAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
@@ -129,8 +145,8 @@ export default {
   INNLOGGINGSLINJE_AUTH: `${getServicesUrl()}/innloggingslinje-api/auth`,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
-  MELDEKORT_PATH: '/meldekort/',
-  ETTERREGISTRERT_PATH: '/meldekort/etterregistrer-meldekort/',
+  MELDEKORT_PATH: '/meldekort',
+  ETTERREGISTRERT_PATH: '/meldekort/etterregistrer-meldekort',
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
   LENKER: lenker,

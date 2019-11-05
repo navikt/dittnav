@@ -4,7 +4,10 @@ import Home from '../../js/pages/Home';
 const ReactTestRenderer = require('react-test-renderer');
 
 it('render Home page without props', () => {
-  const info = {};
+  const oppfolging = {};
+  const meldekort = {};
+  const person = {};
+  const identifikator = {};
 
   const paabegynteSoknader = {
     url: 'https://tjenester-t6.nav.no/',
@@ -14,13 +17,14 @@ it('render Home page without props', () => {
 
   const mininnboks = [];
   const sakstema = {
-    antallSaker: 0,
+    sakstemaList: [],
+    antallSakstema: 0,
   };
 
   const fetching = 4;
 
   const component = ReactTestRenderer
-    .create(wrapIntl(<Home info={info} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />));
+    .create(wrapIntl(<Home oppfolging={oppfolging} meldekort={meldekort} person={person} identifikator={identifikator} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} fetching={fetching} sakstema={sakstema} />));
 
   expect(component.toJSON()).toMatchSnapshot();
 });
