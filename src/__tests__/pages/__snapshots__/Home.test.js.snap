@@ -11,13 +11,6 @@ exports[`render Home page without props 1`] = `
       className="col-md-12"
       id="dittnav-main-container"
     >
-      <div
-        className="person-info"
-      >
-        <h1
-          className="person-info"
-        />
-      </div>
       <section
         className="infomeldinger-list"
       >
@@ -170,7 +163,7 @@ exports[`render Home page without props 1`] = `
           onClick={null}
         >
           <div
-            className="lenkepanel__innhold lenkepanel__heading"
+            className="lenkepanel__innhold"
           >
             <div
               className="lenkepanel__ikon"
@@ -202,7 +195,7 @@ exports[`render Home page without props 1`] = `
             </div>
             <div>
               <h2
-                className="typo-undertittel"
+                className="typo-undertittel lenkepanel__heading"
               >
                 <span>
                   Ditt sykefravær
@@ -227,7 +220,7 @@ exports[`render Home page without props 1`] = `
           onClick={null}
         >
           <div
-            className="lenkepanel__innhold lenkepanel__heading"
+            className="lenkepanel__innhold"
           >
             <div
               className="lenkepanel__ikon"
@@ -255,7 +248,7 @@ exports[`render Home page without props 1`] = `
             </div>
             <div>
               <h2
-                className="typo-undertittel"
+                className="typo-undertittel lenkepanel__heading"
               >
                 <span>
                   Mistet jobben?
@@ -284,7 +277,7 @@ exports[`render Home page without props 1`] = `
           onClick={null}
         >
           <div
-            className="lenkepanel__innhold lenkepanel__heading"
+            className="lenkepanel__innhold"
           >
             <div
               className="lenkepanel__ikon"
@@ -332,7 +325,7 @@ exports[`render Home page without props 1`] = `
             </div>
             <div>
               <h2
-                className="typo-undertittel"
+                className="typo-undertittel lenkepanel__heading"
               >
                 <span>
                   Skjemaer
@@ -357,7 +350,7 @@ exports[`render Home page without props 1`] = `
           onClick={null}
         >
           <div
-            className="lenkepanel__innhold lenkepanel__heading"
+            className="lenkepanel__innhold"
           >
             <div
               className="lenkepanel__ikon"
@@ -383,7 +376,7 @@ exports[`render Home page without props 1`] = `
             </div>
             <div>
               <h2
-                className="typo-undertittel"
+                className="typo-undertittel lenkepanel__heading"
               >
                 <span>
                   Din pensjon
