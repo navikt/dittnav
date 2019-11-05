@@ -28,7 +28,7 @@ const getHendelser = (setHendelser) => Api
 const removeHendelser = (hendelseId) => {
   console.log(`Marked all events as done for (id): ${hendelseId}`);
   Api.postHendelser(
-    `${Config.dittNav.DITTNAV_EVENT_HANDLER_URL}/produce/done/all`,
+    `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done/all`,
     {
       id: hendelseId,
     },

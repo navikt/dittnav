@@ -13,7 +13,7 @@ const HendelserTestGui = () => {
 
   const removeHendelser = () => Api
     .postHendelser(
-      `${Config.dittNav.DITTNAV_EVENT_HANDLER_URL}/produce/done/all`,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done/all`,
       null,
     );
 

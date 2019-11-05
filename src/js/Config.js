@@ -133,7 +133,7 @@ export default {
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
     DITTNAV_LEGACY_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/events`,
     DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/meldinger`,
-    DITTNAV_EVENT_HANDLER_URL: `${getDittNavBaseApiUrl()}/dittnav-event-handler`,
+    DITTNAV_EVENT_TEST: `${getDittNavBaseApiUrl()}/dittnav-event-test-producer`,
     DITTNAV_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/sakstema`,
     REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
