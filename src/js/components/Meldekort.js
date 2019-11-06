@@ -67,12 +67,12 @@ class Meldekort extends Component {
 }
 
 const NextCard = PropTypes.shape({
-  sisteDatoForTrekk: PropTypes.number,
+  sisteDatoForTrekk: PropTypes.string,
   risikererTrekk: PropTypes.bool,
   uke: PropTypes.string,
-  kanSendesFra: PropTypes.number,
-  til: PropTypes.number,
-  fra: PropTypes.number,
+  kanSendesFra: PropTypes.string,
+  til: PropTypes.string,
+  fra: PropTypes.string,
 });
 
 const NewCards = PropTypes.shape({
