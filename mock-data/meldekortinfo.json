@@ -5,11 +5,11 @@
     "antallNyeMeldekort": 3,
     "nesteInnsendingAvMeldekort": null,
     "nesteMeldekort": {
-      "fra": "2019-09-09",
-      "kanSendesFra": "2019-09-21",
+      "fra": 1567987200000,
+      "kanSendesFra": 1531808013471,
       "risikererTrekk": true,
-      "sisteDatoForTrekk": "2019-09-30",
-      "til": "2019-09-22",
+      "sisteDatoForTrekk": 1533814941280,
+      "til": 1569110400000,
       "uke": "37-38"
     }
   },
