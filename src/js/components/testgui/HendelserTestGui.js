@@ -26,7 +26,7 @@ const HendelserTestGui = () => {
       </Fareknapp>
       <div className="InformasjonHendelser">
         {hendelser.map(h => (
-          <InformasjonTestGui key={h.id} hendelse={h} />
+          h.type === 'INFORMASJON' ? <InformasjonTestGui key={h.id} hendelse={h} /> : null
         ))}
       </div>
     </div>

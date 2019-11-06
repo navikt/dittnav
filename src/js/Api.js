@@ -69,7 +69,6 @@ const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
 const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
-const fetchLegacyHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_LEGACY_HENDELSER_URL}`);
 
 export default {
   fetchUnleashFeatures,
@@ -81,7 +80,6 @@ export default {
   fetchPersonIdent,
   fetchSaker,
   fetchMeldinger,
-  fetchLegacyHendelser,
   fetchHendelser,
   fetchSakstema,
   postHendelser: postJSONAndCheckForErrors,

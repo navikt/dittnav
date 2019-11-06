@@ -8,7 +8,7 @@ import Config from '../../Config';
 
 const HendelserFormTestGui = ({ tekst, setTekst, setHendelser }) => {
   const getInformasjonHendelser = () => Api
-    .fetchLegacyHendelser()
+    .fetchHendelser()
     .then((r) => {
       setHendelser(r);
     });
@@ -16,7 +16,7 @@ const HendelserFormTestGui = ({ tekst, setTekst, setHendelser }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     Api.postHendelser(
-      Config.dittNav.DITTNAV_LEGACY_HENDELSER_URL,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/informasjon`,
       {
         tekst,
         link: 'https://localhost/100',
