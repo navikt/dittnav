@@ -1,13 +1,13 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
-import PanelOverskrift from '../../paneler/PanelOverskrift';
+import PanelOverskrift from '../../common/PanelOverskrift';
 import { fremtidig, trekk, melding, advarsel, feriedager } from './MeldekortMeldinger';
 import conf from '../../../Config';
-import { IkonOppgave, LenkepanelMedIkon } from '../../paneler/LenkepanelMedIkon';
+import { IkonOppgave, LenkepanelMedIkon } from '../../common/LenkepanelMedIkon';
 import i18n from '../../../../translations/i18n';
 
-const getOverskrift = (meldekort, count, risikererTrekk, formatDateMonth, formatDayAndMonth, numberToWord) => {
+const createOverskrift = (meldekort, count, risikererTrekk, formatDateMonth, formatDayAndMonth, numberToWord) => {
   const overskrift = (
     <>
       <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
@@ -20,7 +20,7 @@ const getOverskrift = (meldekort, count, risikererTrekk, formatDateMonth, format
   return <PanelOverskrift overskrift={overskrift} type="Element" />;
 };
 
-const getIngress = (meldekort, count) => (
+const createIngress = (meldekort, count) => (
   <>
     <span>{(count > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}. <br /></span>
     {feriedager(meldekort)}
@@ -35,8 +35,8 @@ const MeldekortLenkePanel = ({ meldekort, count, risikererTrekk, intl }) => {
       className="infoMelding"
       data-ga="Dittnav/Varsel"
       alt="Melding om meldekort"
-      overskrift={getOverskrift(meldekort, count, risikererTrekk, formatDateMonth, formatDayAndMonth, numberToWord)}
-      ingress={getIngress(meldekort, count)}
+      overskrift={createOverskrift(meldekort, count, risikererTrekk, formatDateMonth, formatDayAndMonth, numberToWord)}
+      ingress={createIngress(meldekort, count)}
       href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
     >
       <IkonOppgave />

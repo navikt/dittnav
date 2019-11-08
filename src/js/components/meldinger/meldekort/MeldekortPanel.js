@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../../translations/i18n';
-import { IkonOppgave } from '../../paneler/LenkepanelMedIkon';
-import PanelOverskrift from '../../paneler/PanelOverskrift';
-import PanelMedIkon from '../../paneler/PanelMedIkon';
+import { IkonInformasjon } from '../../common/LenkepanelMedIkon';
+import PanelOverskrift from '../../common/PanelOverskrift';
+import PanelMedIkon from '../../common/PanelMedIkon';
 import { fremtidig, advarsel, feriedager } from './MeldekortMeldinger';
 
-const getOverskrift = (meldekort, risikererTrekk, formatDateMonth) => {
+const createOverskrift = (meldekort, risikererTrekk, formatDateMonth) => {
   const overskrift = (
     <>
       <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
@@ -25,9 +25,9 @@ const MeldekortPanel = ({ meldekort, risikererTrekk, intl }) => {
     <PanelMedIkon
       data-ga="Dittnav/Varsel"
       alt="Melding om meldekort"
-      overskrift={getOverskrift(meldekort, risikererTrekk, formatDateMonth)}
+      overskrift={createOverskrift(meldekort, risikererTrekk, formatDateMonth)}
       ingress={feriedager(meldekort)}
-      ikon={<IkonOppgave />}
+      ikon={<IkonInformasjon />}
     />
   );
 };

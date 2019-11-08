@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import Api from '../Api';
 import Unleash from './Unleash';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
-import Meldekort, { MeldekortType } from './meldinger/Meldekort';
+import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';

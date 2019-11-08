@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import conf from '../../Config';
 import i18n from '../../../translations/i18n';
-import { IkonOppgave, LenkepanelMedIkon } from '../paneler/LenkepanelMedIkon';
-import PanelOverskrift from '../paneler/PanelOverskrift';
+import { IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import PanelOverskrift from '../common/PanelOverskrift';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
-const getOverskrift = (ettereg, intl) => {
+const createOverskrift = (ettereg, intl) => {
   const overskrift = (
     <F
       id="meldekort.etterregistreringer"
@@ -26,7 +26,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         className="infoMelding"
         data-ga="Dittnav/Varsel"
         alt="Melding om etterregistrerte meldekort"
-        overskrift={getOverskrift(ettereg, intl)}
+        overskrift={createOverskrift(ettereg, intl)}
         href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}
       >
         <IkonOppgave />

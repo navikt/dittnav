@@ -6,7 +6,9 @@ class InformasjonTestGui extends Component {
   render() {
     return (
       <div className="Informasjon">
-        <AlertStripe className="InformasjonStripe" type="info">{this.props.hendelse.tekst}</AlertStripe>
+        <AlertStripe className="InformasjonStripe" type="info">
+          {this.props.hendelse.tekst}
+        </AlertStripe>
       </div>
     );
   }

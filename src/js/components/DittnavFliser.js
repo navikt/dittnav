@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import Config from '../Config';
-import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './paneler/LenkepanelMedIkon';
-import PanelOverskrift from './paneler/PanelOverskrift';
+import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './common/LenkepanelMedIkon';
+import PanelOverskrift from './common/PanelOverskrift';
 
 const DittnavFliser = () => (
   <>

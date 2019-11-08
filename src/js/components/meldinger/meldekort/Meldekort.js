@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MeldekortLenkePanel from './meldekort/MeldekortLenkePanel';
-import MeldekortPanel from './meldekort/MeldekortPanel';
+import MeldekortLenkePanel from './MeldekortLenkePanel';
+import MeldekortPanel from './MeldekortPanel';
 
 const Meldekort = ({ meldekort }) => {
   if (!meldekort) {

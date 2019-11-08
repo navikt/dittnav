@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../paneler/LenkepanelMedIkon';
-import PanelOverskrift from '../paneler/PanelOverskrift';
+import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import PanelOverskrift from '../common/PanelOverskrift';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
@@ -16,7 +16,7 @@ const getMinInnboksIcon = (type) => {
   }
 };
 
-const getOverskrift = (message, numberToWord, formatFlereEn) => {
+const createOverskrift = (message, numberToWord, formatFlereEn) => {
   const overskrift = (
     <F
       id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)}
@@ -44,7 +44,7 @@ const MinInnboks = ({ mininnboks, intl }) => {
           className="infoMelding"
           data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
           alt="Melding fra mininnboks"
-          overskrift={getOverskrift(message, numberToWord, formatFlereEn)}
+          overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
           href={message.url}
         >
           {getMinInnboksIcon(message.type)}
