@@ -1,5 +1,4 @@
 window.dittnav = {
-  REG_STATUS_LINK: 'reg_status',
   SERVICES_URL: 'https://mytesturl.nav.no',
   ARBEIDSGIVER_LOGIN_URL: 'sbl',
   LOGINSERVICE: '/dittnav-legacy-api/local/cookie',
