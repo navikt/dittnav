@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Meldekort from 'js/components/meldinger/Meldekort';
+import Meldekort from 'js/components/meldinger/meldekort/Meldekort';
 import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
 const ReactTestRenderer = require('react-test-renderer');

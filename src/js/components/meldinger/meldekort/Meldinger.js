@@ -61,4 +61,4 @@ const trekk = (skalViseTrekkdato, formatDateMonth, next) => {
   return null;
 };
 
-export { fremtidig, feriedager, advarsel, melding, trekk, };
+export { fremtidig, feriedager, advarsel, melding, trekk };

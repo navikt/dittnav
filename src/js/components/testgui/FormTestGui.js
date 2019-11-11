@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Api from '../../Api';
 import Config from '../../Config';
 
-const HendelserFormTestGui = ({ tekst, setTekst, setHendelser }) => {
+const FormTestGui = ({ tekst, valg, setTekst, setHendelser }) => {
   const getInformasjonHendelser = () => Api
     .fetchHendelser()
     .then((r) => {
@@ -16,7 +16,7 @@ const HendelserFormTestGui = ({ tekst, setTekst, setHendelser }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     Api.postHendelser(
-      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/informasjon`,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/${valg}`,
       {
         tekst,
         link: 'https://localhost/100',
@@ -27,7 +27,11 @@ const HendelserFormTestGui = ({ tekst, setTekst, setHendelser }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input label="Skriv inn ny tekst:" value={tekst} onChange={e => setTekst(e.target.value)} />
+      <Input
+        label="Skriv inn ny tekst:"
+        value={tekst}
+        onChange={e => setTekst(e.target.value)}
+      />
       <div className="knapper">
         <Knapp className="knapper__send" htmlType="submit">
           <F id="hendelser.send" />
@@ -40,10 +44,11 @@ const HendelserFormTestGui = ({ tekst, setTekst, setHendelser }) => {
   );
 };
 
-HendelserFormTestGui.propTypes = {
+FormTestGui.propTypes = {
   tekst: PropTypes.string.isRequired,
+  valg: PropTypes.string.isRequired,
   setTekst: PropTypes.func.isRequired,
   setHendelser: PropTypes.func.isRequired,
 };
 
-export default HendelserFormTestGui;
+export default FormTestGui;

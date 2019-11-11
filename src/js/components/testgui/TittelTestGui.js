@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import Hjelpetekst from 'nav-frontend-hjelpetekst';
 import React from 'react';
 
-const HendelserTittelTestGui = () => (
+const TittelTestGui = () => (
   <div className="hendelser__tittel-box">
     <Innholdstittel className="hendelser__tittel">
       <F id="hendelser.tittel" />
@@ -14,4 +14,4 @@ const HendelserTittelTestGui = () => (
   </div>
 );
 
-export default HendelserTittelTestGui;
+export default TittelTestGui;

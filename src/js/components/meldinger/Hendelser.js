@@ -13,15 +13,17 @@ const Hendelser = () => {
       setHendelser(r);
     });
 
-  const removeHendelse = (hendelseId) => {
-    hendelser.todo.filter(h => hendelseId !== h.id);
+  const removeHendelse = (id) => {
+    setHendelser(hendelser
+      .filter(h => id !== h.id));
+
     Api.postHendelser(
-      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done/all`,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done`,
       {
-        id: hendelseId,
+        eventId: id,
       },
     );
-    console.log(`Marked all events as done for (id): ${hendelseId}`);
+    console.log(`Marked event as done for (id): ${id} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
   };
 
   useEffect(() => {

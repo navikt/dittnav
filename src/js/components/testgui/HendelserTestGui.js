@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Fareknapp } from 'nav-frontend-knapper';
-import InformasjonTestGui from './InformasjonTestGui';
+import { Panel } from 'nav-frontend-paneler';
 import Api from '../../Api';
 import Config from '../../Config';
-import HendelserTittelTestGui from './HendelserTittelTestGui';
-import HendelserFormTestGui from './HendelserFormTestGui';
+import TittelTestGui from './TittelTestGui';
+import FormTestGui from './FormTestGui';
+import Hendelse from '../meldinger/Hendelse';
+import SelectTestGui from './SelectTestGui';
 
 const HendelserTestGui = () => {
   const [hendelser, setHendelser] = useState([]);
   const [tekst, setTekst] = useState('');
+  const [valg, setValg] = useState('informasjon');
 
   const removeHendelser = () => Api
     .postHendelser(
@@ -17,17 +20,47 @@ const HendelserTestGui = () => {
       null,
     );
 
+  const removeHendelse = (id) => {
+    setHendelser(hendelser
+      .filter(h => id !== h.id));
+
+    Api.postHendelser(
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done`,
+      {
+        eventId: id,
+      },
+    );
+    console.log(`Marked event as done for (id): ${id} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
+  };
+
   return (
-    <div className="hendelser">
-      <HendelserTittelTestGui />
-      <HendelserFormTestGui tekst={tekst} setTekst={setTekst} setHendelser={setHendelser} />
-      <Fareknapp onClick={() => removeHendelser()}>
-        <F id="hendelser.fjern" />
-      </Fareknapp>
-      <div className="InformasjonHendelser">
-        {hendelser.map(h => (
-          h.type === 'INFORMASJON' ? <InformasjonTestGui key={h.id} hendelse={h} /> : null
-        ))}
+    <div>
+      <Panel className="hendelser" border>
+        <TittelTestGui />
+        <SelectTestGui setValg={setValg} />
+        <FormTestGui
+          tekst={tekst}
+          valg={valg}
+          setTekst={setTekst}
+          setHendelser={setHendelser}
+        />
+        <Fareknapp onClick={() => removeHendelser()}>
+          <F id="hendelser.fjern" />
+        </Fareknapp>
+      </Panel>
+
+      <div className="infomeldinger-list">
+        <div className="infomeldinger-list__container">
+          {hendelser.map(h => (
+            <Hendelse
+              id={h.id}
+              type={h.type}
+              tekst={h.tekst}
+              link={h.link}
+              removeHendelse={removeHendelse}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

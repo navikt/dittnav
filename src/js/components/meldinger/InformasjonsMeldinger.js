@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import PanelMedIkon from '../common/PanelMedIkon';
+import { IkonInformasjon } from '../common/LenkepanelMedIkon';
+import PanelOverskrift from '../common/PanelOverskrift';
 
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
     if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
-        <div className="message" key="general">
-          <span className="icon default-icon" aria-label="alarm-ikon" />
-          <div className="texts">
-            <p>{this.props.generellInfo}</p>
-          </div>
-        </div>,
+        <PanelMedIkon
+          overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
+          ikon={<IkonInformasjon />}
+        />,
       );
     }
     if (this.props.isMeldeKortUser && this.props.visMeldekortbrukerInfo) {
