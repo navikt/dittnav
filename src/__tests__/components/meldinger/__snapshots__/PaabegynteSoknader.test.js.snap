@@ -24,29 +24,22 @@ exports[`PaabegynteSoknader one soknad 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 5
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -303.000000)"
           >
             <g
-              id="Group-5"
               transform="translate(382.000000, 303.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#C2EAF7"
-                id="Oval"
                 r="24"
               />
               <path
@@ -102,29 +95,22 @@ exports[`PaabegynteSoknader several soknader 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 5
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -303.000000)"
           >
             <g
-              id="Group-5"
               transform="translate(382.000000, 303.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#C2EAF7"
-                id="Oval"
                 r="24"
               />
               <path

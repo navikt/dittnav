@@ -26,29 +26,22 @@ exports[`MinInnboks with one document 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 3
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -366.000000)"
           >
             <g
-              id="Group-3"
               transform="translate(382.000000, 366.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -98,29 +91,22 @@ exports[`MinInnboks with one task 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 4
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -429.000000)"
           >
             <g
-              id="Group-4"
               transform="translate(382.000000, 429.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -170,29 +156,22 @@ exports[`MinInnboks with one unanswered 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 3
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -366.000000)"
           >
             <g
-              id="Group-3"
               transform="translate(382.000000, 366.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -243,29 +222,22 @@ Array [
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <title>
-            Group 4
-          </title>
           <g
             fill="none"
             fillRule="evenodd"
-            id="Page-1"
             stroke="none"
             strokeWidth="1"
           >
             <g
-              id="Desktop-HD"
               transform="translate(-382.000000, -429.000000)"
             >
               <g
-                id="Group-4"
                 transform="translate(382.000000, 429.000000)"
               >
                 <circle
                   cx="24"
                   cy="24"
                   fill="#FFBD66"
-                  id="Oval"
                   r="24"
                 />
                 <path
@@ -312,29 +284,22 @@ Array [
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <title>
-            Group 3
-          </title>
           <g
             fill="none"
             fillRule="evenodd"
-            id="Page-1"
             stroke="none"
             strokeWidth="1"
           >
             <g
-              id="Desktop-HD"
               transform="translate(-382.000000, -366.000000)"
             >
               <g
-                id="Group-3"
                 transform="translate(382.000000, 366.000000)"
               >
                 <circle
                   cx="24"
                   cy="24"
                   fill="#FFBD66"
-                  id="Oval"
                   r="24"
                 />
                 <path
@@ -385,29 +350,22 @@ exports[`MinInnboks with two documents 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 3
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -366.000000)"
           >
             <g
-              id="Group-3"
               transform="translate(382.000000, 366.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -458,29 +416,22 @@ Array [
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <title>
-            Group 3
-          </title>
           <g
             fill="none"
             fillRule="evenodd"
-            id="Page-1"
             stroke="none"
             strokeWidth="1"
           >
             <g
-              id="Desktop-HD"
               transform="translate(-382.000000, -366.000000)"
             >
               <g
-                id="Group-3"
                 transform="translate(382.000000, 366.000000)"
               >
                 <circle
                   cx="24"
                   cy="24"
                   fill="#FFBD66"
-                  id="Oval"
                   r="24"
                 />
                 <path
@@ -527,29 +478,22 @@ Array [
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <title>
-            Group 3
-          </title>
           <g
             fill="none"
             fillRule="evenodd"
-            id="Page-1"
             stroke="none"
             strokeWidth="1"
           >
             <g
-              id="Desktop-HD"
               transform="translate(-382.000000, -366.000000)"
             >
               <g
-                id="Group-3"
                 transform="translate(382.000000, 366.000000)"
               >
                 <circle
                   cx="24"
                   cy="24"
                   fill="#FFBD66"
-                  id="Oval"
                   r="24"
                 />
                 <path
@@ -600,29 +544,22 @@ exports[`MinInnboks with two tasks 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 4
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -429.000000)"
           >
             <g
-              id="Group-4"
               transform="translate(382.000000, 429.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -672,29 +609,22 @@ exports[`MinInnboks with two unanswered 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 3
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -366.000000)"
           >
             <g
-              id="Group-3"
               transform="translate(382.000000, 366.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -744,29 +674,22 @@ exports[`MinInnboks with two unread 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 3
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -366.000000)"
           >
             <g
-              id="Group-3"
               transform="translate(382.000000, 366.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
@@ -816,29 +739,22 @@ exports[`MinInnboks with zero tasks 1`] = `
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <title>
-          Group 4
-        </title>
         <g
           fill="none"
           fillRule="evenodd"
-          id="Page-1"
           stroke="none"
           strokeWidth="1"
         >
           <g
-            id="Desktop-HD"
             transform="translate(-382.000000, -429.000000)"
           >
             <g
-              id="Group-4"
               transform="translate(382.000000, 429.000000)"
             >
               <circle
                 cx="24"
                 cy="24"
                 fill="#FFBD66"
-                id="Oval"
                 r="24"
               />
               <path
