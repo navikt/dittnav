@@ -53,7 +53,7 @@ const checkAuthThenRenderApp = () => {
 };
 const params = new URLSearchParams(window.location.search);
 
-if (params.has('hendelser') && Config.ENVIRONMENT !== 'PROD') {
+if (params.has('hendelser') && Config.IS_DEV) {
   ReactDOM.render(
     <NavApp defaultSprak="nb" messages={loadMessages()}>
       <div className="hendelser-content">
