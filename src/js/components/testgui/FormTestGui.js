@@ -19,7 +19,7 @@ const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) =
       `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/${valg}`,
       {
         tekst,
-        lenke,
+        link: lenke,
       },
     );
     setTekst('');
