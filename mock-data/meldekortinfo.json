@@ -2,7 +2,7 @@
   "etterregistrerteMeldekort": 0,
   "meldekortbruker": true,
   "nyeMeldekort": {
-    "antallNyeMeldekort": 3,
+    "antallNyeMeldekort": 1,
     "nesteInnsendingAvMeldekort": null,
     "nesteMeldekort": {
       "fra": "2019-09-09",

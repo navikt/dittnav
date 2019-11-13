@@ -1,5 +1,4 @@
 {
-  "dittnav.artikkel.lesmer": "Les mer om dette",
   "dittnav.infomeldinger.varsler": "Varsler",
 
   "generell.informasjonsmelding": "På grunn av teknisk vedlikehold kan Ditt NAV i korte perioder være ustabilt. Dersom du opplever at tjenestene er trege eller ikke tilgjengelige som vanlig, vennligst prøv igjen senere. Vi beklager ulempene dette medfører.",
@@ -26,6 +25,7 @@
   "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",
+  "hendelser.fjern": "Fjern hendelser",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
@@ -50,19 +50,6 @@
   "ytelse.AAP": "Du er mottaker av arbeidsavklaringspenger.",
   "ytelse.INDS": "Du er mottaker av tiltakspenger.",
   "ytelse.VENT": " ",
-
-  "regstatus.beskrivelse": "Du har startet på en registrering som arbeidssøker.",
-  "regstatus.lenke": "Fullfør registrering",
-
-  "ag.se": "Se melding",
-  "ag.se.oversikt": "Oversikt over meldinger",
-  "ag.melding.flere": "Du har fått {count} nye meldinger fra arbeidsgiver",
-  "ag.melding.en": "Du har fått en ny melding fra arbeidsgiver",
-
-  "melding.se": "Se melding",
-  "melding.se.oversikt": "Oversikt over meldinger",
-  "nav.melding.flere": "Du har fått {count} nye meldinger fra NAV",
-  "nav.melding.en": "Du har fått en ny melding fra NAV",
 
   "mininnboks.dokument_varsel.meldinger.en": "Du har ett ulest dokument i din innboks",
   "mininnboks.dokument_varsel.meldinger.flere": "Du har {count} uleste dokumenter i din innboks",

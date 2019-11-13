@@ -11,13 +11,13 @@ import Lenkelister from '../components/Lenkelister';
 import DelayedSpinner from '../components/DelayedSpinner';
 import Config from '../Config';
 
-const NUM_ENDPOINTS = 7;
+const ENDPOINTS = 7;
 
 class Home extends Component {
   render() {
     const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, fetching } = this.props;
     const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
-    const tjenesterEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
+    const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
     const generelleLenker = Config.dittNav.GENERELLE_LENKER;
 
@@ -27,10 +27,10 @@ class Home extends Component {
           <div className="maincontent side-innhold">
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo person={person} identifikator={identifikator} />
-              { fetching < NUM_ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
+              { fetching < ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />
               <DittnavLenkePanel sakstema={sakstema} />
-              {tjenesterEllerVta}
+              { oppfolging ? generelleEllerVta : null }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
               </Undertittel>

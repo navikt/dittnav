@@ -94,9 +94,6 @@ class App extends Component {
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
 
-    // const erIDev = Config.ENVIRONMENT !== 'prod';
-    // { erIDev ? <Hendelser /> : null }
-
     return (
       <main role="main">
         <FeilMeldinger errors={uniqueErrors} />

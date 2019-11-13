@@ -5,7 +5,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 
 test('render empty InfoMeldinger component', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<InfoMeldinger isInactive={false} />));
+  renderer.render(wrapIntl(<InfoMeldinger />));
   const component = renderer.getRenderOutput();
   expect(component).toMatchSnapshot();
 });

@@ -1,10 +1,13 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
+import Api from '../Api';
+import Unleash from './Unleash';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
-import Meldekort, { MeldekortType } from './Meldekort';
+import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
+import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
-import EtterregistreringMeldekort from './EtterregistreringMeldekort';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
+import Hendelser from './meldinger/Hendelser';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
@@ -17,6 +20,9 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
+      <Unleash api={Api} feature="dittnav.hendelser">
+        <Hendelser />
+      </Unleash>
     </section>
   );
 };

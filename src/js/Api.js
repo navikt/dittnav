@@ -47,17 +47,14 @@ const checkApiStatus = () => new Promise((res, rej) => {
     .catch(e => rej(e));
 });
 
-const sendJSONAndCheckForErrors = (tekst, url = `${Config.dittNav.DITTNAV_HENDELSER_URL}`) => {
+const postJSONAndCheckForErrors = (url, content) => {
   fetch(url, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      tekst,
-      link: 'https://localhost/100',
-    }),
+    body: JSON.stringify(content),
   })
     .then((r) => r.status)
     // eslint-disable-next-line no-console
@@ -85,6 +82,6 @@ export default {
   fetchMeldinger,
   fetchHendelser,
   fetchSakstema,
-  sendHendelser: sendJSONAndCheckForErrors,
+  postHendelser: postJSONAndCheckForErrors,
   redirectToLogin,
 };

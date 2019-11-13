@@ -4,10 +4,10 @@ import Home from '../../js/pages/Home';
 const ReactTestRenderer = require('react-test-renderer');
 
 it('render Home page without props', () => {
-  const oppfolging = {};
-  const meldekort = {};
-  const person = {};
-  const identifikator = {};
+  const oppfolging = null;
+  const meldekort = null;
+  const person = null;
+  const identifikator = null;
 
   const paabegynteSoknader = {
     url: 'https://tjenester-t6.nav.no/',

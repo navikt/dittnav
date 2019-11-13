@@ -16,6 +16,10 @@ const getEnvironment = () => {
 
 const ENV = getEnvironment();
 
+const isDev = () => (
+  ENV === 'q0' || ENV === 'q1' || ENV === 'local'
+);
+
 const getDittNavBaseApiUrl = () => (ENV === 'local'
   ? process.env.REACT_APP_DITT_NAV_BASE_API_URL
   : `https://${window.location.hostname}/person`);
@@ -131,9 +135,9 @@ export default {
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/paabegynte`,
     DITTNAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
-    DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/events`,
+    DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/meldinger`,
+    DITTNAV_EVENT_TEST: `${getDittNavBaseApiUrl()}/dittnav-event-test-producer`,
     DITTNAV_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/sakstema`,
-    REG_STATUS_LINK: 'https://nav.no/sbl/nav_security_check',
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
     GENERELLE_LENKER: generelleLenker,
@@ -148,4 +152,5 @@ export default {
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
   LENKER: lenker,
+  IS_DEV: isDev(),
 };

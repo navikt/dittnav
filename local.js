@@ -24,10 +24,11 @@ app.get('/dittnav-legacy-api/personalia/navn', (req, res) => res.sendFile(path.r
 app.get('/dittnav-legacy-api/personalia/ident', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-ident.json')));
 app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
 app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
-app.get('/dittnav-legacy-api/events', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
 app.get('/dittnav-legacy-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/sakstema.json')));
 app.get('/person/dittnav/api/feature', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/unleash.json')));
-app.post('/dittnav-legacy-api/events', (req, res) => res.send('Event ble opprettet'));
+app.get('/dittnav-api/meldinger', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
+app.post('/dittnav-event-test-producer/produce/informasjon', (req, res) => res.send('Done-eventer er produsert for alle identen: {ident} sine brukernotifikasjoner.'));
+app.post('/dittnav-event-test-producer/produce/done/all', (req, res) => res.send('Event ble opprettet'));
 
 app.use(bundler.middleware());
 

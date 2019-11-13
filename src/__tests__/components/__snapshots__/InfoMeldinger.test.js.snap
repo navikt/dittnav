@@ -2,7 +2,6 @@
 
 exports[`render empty InfoMeldinger component 1`] = `
 <InfoMeldinger
-  isInactive={false}
   meldekort={null}
   mininnboks={Array []}
   paabegynteSoknader={null}

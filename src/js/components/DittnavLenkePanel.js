@@ -1,12 +1,11 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
-
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../Config';
 import UnleashABTestgruppeVelger from '../UnleashABTestgruppeVelger';
 
-import OversiktspanelMedListe from './OversiktspanelMedListe';
+import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
 const stortSakspanelEnabledDefault = false;
@@ -57,8 +56,8 @@ class DittnavLenkePanel extends React.Component {
           ? (
             <OversiktspanelMedListe
               className="dittnav-lenkepanel-stor"
-              overskrift={<FormattedMessage id="saksoversikt.overskrift" />}
-              headerLenkeTekst={<FormattedMessage id="saksoversikt.alle.saker" values={{ count: sakstema.antallSakstema }} />}
+              overskrift={<F id="saksoversikt.overskrift" />}
+              headerLenkeTekst={<F id="saksoversikt.alle.saker" values={{ count: sakstema.antallSakstema }} />}
               headerLenkeHref={Config.LENKER.saksoversikt.url}
               border
               liste={
@@ -81,7 +80,7 @@ class DittnavLenkePanel extends React.Component {
                 href={Config.LENKER.saksoversikt.url}
                 border
               >
-                {<FormattedMessage id="fliser.dine.saker" />}
+                {<F id="fliser.dine.saker" />}
               </Lenkepanel>
             ) : null}
           <Lenkepanel
@@ -90,7 +89,7 @@ class DittnavLenkePanel extends React.Component {
             href={Config.LENKER.utbetalingsoversikt.url}
             border
           >
-            {<FormattedMessage id="fliser.dine.utbetalinger" />}
+            {<F id="fliser.dine.utbetalinger" />}
           </Lenkepanel>
           <Lenkepanel
             alt="Innboks"
@@ -98,7 +97,7 @@ class DittnavLenkePanel extends React.Component {
             href={Config.LENKER.innboks.url}
             border
           >
-            {<FormattedMessage id="fliser.innboks" />}
+            {<F id="fliser.innboks" />}
           </Lenkepanel>
         </div>
       </div>

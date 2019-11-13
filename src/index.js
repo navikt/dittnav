@@ -14,8 +14,12 @@ import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
+import HendelserTestGui from './js/components/testgui/HendelserTestGui';
 
-const loadMessages = () => ({ nb: nbMessages, en: enMessages });
+const loadMessages = () => ({
+  nb: nbMessages,
+  en: enMessages,
+});
 
 function renderApp() {
   ReactDOM.render(
@@ -47,5 +51,17 @@ const checkAuthThenRenderApp = () => {
       renderApp();
     });
 };
+const params = new URLSearchParams(window.location.search);
 
-checkAuthThenRenderApp();
+if (params.has('hendelser') && Config.IS_DEV) {
+  ReactDOM.render(
+    <NavApp defaultSprak="nb" messages={loadMessages()}>
+      <div className="hendelser-content">
+        <HendelserTestGui />
+      </div>
+    </NavApp>,
+    document.getElementById('app'),
+  );
+} else {
+  checkAuthThenRenderApp();
+}
