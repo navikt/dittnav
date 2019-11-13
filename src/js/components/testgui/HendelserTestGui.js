@@ -12,6 +12,7 @@ import SelectTestGui from './SelectTestGui';
 const HendelserTestGui = () => {
   const [hendelser, setHendelser] = useState([]);
   const [tekst, setTekst] = useState('');
+  const [lenke, setLenke] = useState('');
   const [valg, setValg] = useState('informasjon');
 
   const removeHendelser = () => Api
@@ -40,8 +41,10 @@ const HendelserTestGui = () => {
         <SelectTestGui setValg={setValg} />
         <FormTestGui
           tekst={tekst}
+          lenke={lenke}
           valg={valg}
           setTekst={setTekst}
+          setLenke={setLenke}
           setHendelser={setHendelser}
         />
         <Fareknapp onClick={() => removeHendelser()}>
