@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Api from '../../Api';
 import Config from '../../Config';
 
-const FormTestGui = ({ tekst, valg, setTekst, setHendelser }) => {
+const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
   const getInformasjonHendelser = () => Api
     .fetchHendelser()
     .then((r) => {
@@ -19,10 +19,11 @@ const FormTestGui = ({ tekst, valg, setTekst, setHendelser }) => {
       `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/${valg}`,
       {
         tekst,
-        link: 'https://localhost/100',
+        link: lenke,
       },
     );
     setTekst('');
+    setLenke('');
   };
 
   return (
@@ -31,6 +32,11 @@ const FormTestGui = ({ tekst, valg, setTekst, setHendelser }) => {
         label="Skriv inn ny tekst:"
         value={tekst}
         onChange={e => setTekst(e.target.value)}
+      />
+      <Input
+        label="Skriv inn ny lenke:"
+        value={lenke}
+        onChange={e => setLenke(e.target.value)}
       />
       <div className="knapper">
         <Knapp className="knapper__send" htmlType="submit">
@@ -46,8 +52,10 @@ const FormTestGui = ({ tekst, valg, setTekst, setHendelser }) => {
 
 FormTestGui.propTypes = {
   tekst: PropTypes.string.isRequired,
+  lenke: PropTypes.string.isRequired,
   valg: PropTypes.string.isRequired,
   setTekst: PropTypes.func.isRequired,
+  setLenke: PropTypes.func.isRequired,
   setHendelser: PropTypes.func.isRequired,
 };
 
