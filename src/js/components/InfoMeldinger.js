@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
+import PropTypes from 'prop-types';
 import Api from '../Api';
 import Unleash from './Unleash';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
@@ -8,6 +9,12 @@ import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
+
+const UnleashWrapper = ({ isFeatureEnabled }) => (
+  <>
+    {isFeatureEnabled ? <Hendelser /> : null}
+  </>
+);
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
@@ -21,7 +28,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
       <Unleash api={Api} feature="dittnav.hendelser">
-        <Hendelser />
+        <UnleashWrapper />
       </Unleash>
     </section>
   );
@@ -37,6 +44,10 @@ InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
+};
+
+UnleashWrapper.propTypes = {
+  isFeatureEnabled: PropTypes.number.isRequired,
 };
 
 export default InfoMeldinger;
