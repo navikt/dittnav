@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
 import Api from '../Api';
 import Unleash from './Unleash';

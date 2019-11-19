@@ -14,13 +14,6 @@ exports[`render Home page without props 1`] = `
       <section
         className="infomeldinger-list"
       >
-        <h1
-          className="vekk"
-        >
-          <span>
-            Varsler
-          </span>
-        </h1>
         <a
           className="lenkepanel infoMelding lenkepanel--border"
           href="https://tjenester-t6.nav.no/"
