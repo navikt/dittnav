@@ -28,7 +28,7 @@ resources:
 fasitResources:
   used:
   # alias: nav.dekoratoren
-    - alias: appres.cms
+  - alias: appres.cms
     resourceType: baseUrl
     propertyMap:
       url: APPRES_CMS_URL
