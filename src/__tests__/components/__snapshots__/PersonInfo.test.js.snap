@@ -6,9 +6,12 @@ exports[`basic green PersonInfo snaphot-test 1`] = `
 <div
   className="person-info"
 >
-  <h1
-    className="person-info"
-  >
+  <img
+    alt=""
+    className="person-info__ikon"
+    src="person.svg"
+  />
+  <h1>
     hello
   </h1>
 </div>
@@ -18,9 +21,12 @@ exports[`basic green PersonInfo snaphot-test without person and with ident 1`] =
 <div
   className="person-info"
 >
-  <h1
-    className="person-info"
-  >
+  <img
+    alt=""
+    className="person-info__ikon"
+    src="person.svg"
+  />
+  <h1>
     123
   </h1>
 </div>

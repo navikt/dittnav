@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Personikon from '../../images/person.svg';
 
 const PersonInfo = ({ person, identifikator }) => {
   if (!person && !identifikator) return null;
@@ -7,9 +8,8 @@ const PersonInfo = ({ person, identifikator }) => {
 
   return (
     <div className="person-info">
-      <h1 className="person-info">
-        {info}
-      </h1>
+      <img className="person-info__ikon" src={Personikon} alt="" />
+      <h1>{info}</h1>
     </div>
   );
 };
