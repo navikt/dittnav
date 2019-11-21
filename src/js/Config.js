@@ -135,7 +135,7 @@ export default {
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/paabegynte`,
     DITTNAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
     DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
-    DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/meldinger`,
+    DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/brukernotifikasjoner`,
     DITTNAV_EVENT_TEST: `${getDittNavBaseApiUrl()}/dittnav-event-test-producer`,
     DITTNAV_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/sakstema`,
     CONTEXT_PATH: '/person/dittnav',
