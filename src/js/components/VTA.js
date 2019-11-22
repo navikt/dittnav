@@ -5,10 +5,9 @@ import Config from '../Config';
 const VTA = NAVSPA.importer('vta');
 
 class Vta extends React.Component {
-  state = { render: false };
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = { render: false };
     const script = document.createElement('script');
     script.src = `${Config.VTA_PATH}/micro/static/js/main.js`;
     script.type = 'text/javascript';

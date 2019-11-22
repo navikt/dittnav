@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Unleash extends Component {
-  state = { isFeatureEnabled: null };
+  constructor(props) {
+    super(props);
+    this.state = { isFeatureEnabled: null };
+  }
 
   componentDidMount() {
     this.props.api.fetchUnleashFeatures([this.props.feature])

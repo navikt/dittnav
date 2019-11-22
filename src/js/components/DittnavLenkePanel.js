@@ -11,7 +11,10 @@ import DinesakerSakstema from './DinesakerSakstema';
 const stortSakspanelEnabledDefault = false;
 
 class DittnavLenkePanel extends React.Component {
-  state = { stortSakspanelEnabled: null };
+  constructor(props) {
+    super(props);
+    this.state = { stortSakspanelEnabled: null };
+  }
 
   componentDidMount() {
     UnleashABTestgruppeVelger(
@@ -80,7 +83,7 @@ class DittnavLenkePanel extends React.Component {
                 href={Config.LENKER.saksoversikt.url}
                 border
               >
-                {<F id="fliser.dine.saker" />}
+                <F id="fliser.dine.saker" />
               </Lenkepanel>
             ) : null}
           <Lenkepanel
@@ -89,7 +92,7 @@ class DittnavLenkePanel extends React.Component {
             href={Config.LENKER.utbetalingsoversikt.url}
             border
           >
-            {<F id="fliser.dine.utbetalinger" />}
+            <F id="fliser.dine.utbetalinger" />
           </Lenkepanel>
           <Lenkepanel
             alt="Innboks"
@@ -97,7 +100,7 @@ class DittnavLenkePanel extends React.Component {
             href={Config.LENKER.innboks.url}
             border
           >
-            {<F id="fliser.innboks" />}
+            <F id="fliser.innboks" />
           </Lenkepanel>
         </div>
       </div>
