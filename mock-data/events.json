@@ -72,7 +72,7 @@
 
   {
     "aktiv": true,
-    "type": "MELDING",
+    "type": "INNBOKS",
     "aktorId": "123",
     "dokumentId": "1001562939454499",
     "eventId": "1562939454499",
