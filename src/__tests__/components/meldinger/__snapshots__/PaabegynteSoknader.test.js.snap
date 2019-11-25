@@ -6,7 +6,7 @@ exports[`PaabegynteSoknader green test 1`] = `null`;
 
 exports[`PaabegynteSoknader one soknad 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://nav.no"
   onClick={null}
 >
@@ -77,7 +77,7 @@ exports[`PaabegynteSoknader one soknad 1`] = `
 
 exports[`PaabegynteSoknader several soknader 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="https://tjenester-t6.nav.no/"
   onClick={null}
 >

@@ -39,7 +39,7 @@ const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
           />
         ) : (
           <LenkepanelMedIkon
-            className="infoMelding"
+            className="infomelding"
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
