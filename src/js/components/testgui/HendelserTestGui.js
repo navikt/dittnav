@@ -56,7 +56,7 @@ const HendelserTestGui = () => {
         <div className="infomeldinger-list__container">
           {hendelser.map(h => (
             <Hendelse
-              id={h.eventId}
+              eventId={h.eventId}
               type={h.type}
               tekst={h.tekst}
               link={h.link}
