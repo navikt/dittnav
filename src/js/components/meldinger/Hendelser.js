@@ -34,7 +34,7 @@ const Hendelser = () => {
     <>
       {hendelser.map(h => (
         <Hendelse
-          id={h.id}
+          eventId={h.eventId}
           type={h.type}
           tekst={h.tekst}
           link={h.link}
