@@ -38,7 +38,7 @@ const checkAuth = () => new Promise((res, rej) => {
         rej(new Error('not authenticated'));
       }
     })
-    .catch(e => rej(e));
+    .catch(() => rej(new Error('not authenticated')));
 });
 
 const checkApiStatus = () => new Promise((res, rej) => {

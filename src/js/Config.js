@@ -144,7 +144,7 @@ export default {
     OPPFOLGINGS_LENKER: oppfolgingsLenker,
   },
   VTA_PATH: getVtaPath(),
-  INNLOGGINGSLINJE_AUTH: `${getServicesUrl()}/innloggingslinje-api/auth`,
+  INNLOGGINGSLINJE_AUTH: `${getNavUrl()}/innloggingslinje-api/auth`,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
   ARBEID_PATH: '/sbl/nav_security_check',
   MELDEKORT_PATH: '/meldekort',

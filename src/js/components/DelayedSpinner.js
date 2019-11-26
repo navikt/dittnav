@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 
 class DelayedSpinner extends Component {
-  state = { showSpinner: false };
+  constructor(props) {
+    super(props);
+    this.state = { showSpinner: false };
+  }
 
   componentDidMount() {
     this.timer = setTimeout(
