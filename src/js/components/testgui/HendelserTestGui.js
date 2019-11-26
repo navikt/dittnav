@@ -21,17 +21,17 @@ const HendelserTestGui = () => {
       null,
     );
 
-  const removeHendelse = (id) => {
+  const removeHendelse = (eventId) => {
     setHendelser(hendelser
-      .filter(h => id !== h.id));
+      .filter(h => eventId !== h.eventId));
 
     Api.postHendelser(
       `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done`,
       {
-        eventId: id,
+        eventId,
       },
     );
-    console.log(`Marked event as done for (id): ${id} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
+    console.log(`Marked event as done for (eventId): ${eventId} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
   };
 
   return (
@@ -56,7 +56,7 @@ const HendelserTestGui = () => {
         <div className="infomeldinger-list__container">
           {hendelser.map(h => (
             <Hendelse
-              id={h.id}
+              id={h.eventId}
               type={h.type}
               tekst={h.tekst}
               link={h.link}
