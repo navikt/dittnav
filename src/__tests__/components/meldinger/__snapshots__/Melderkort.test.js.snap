@@ -2,7 +2,7 @@
 
 exports[`12 Meldekort test no risk no remaining holidays 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -97,7 +97,7 @@ exports[`Meldekort without next card test 1`] = `null`;
 
 exports[`basic Meldekort test 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -197,7 +197,7 @@ exports[`basic Meldekort test with no meldekort 1`] = `null`;
 
 exports[`basic one Meldekort test 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -295,7 +295,7 @@ exports[`basic one Meldekort test 1`] = `
 
 exports[`basic one Meldekort test no risk 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -391,7 +391,7 @@ exports[`basic one Meldekort test no risk 1`] = `
 
 exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -484,7 +484,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 
 exports[`basic zero Meldekort test 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -566,7 +566,7 @@ exports[`basic zero Meldekort test 1`] = `
 
 exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -659,7 +659,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
 
 exports[`nesteInnsendingAvMeldekort is null 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -752,7 +752,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
 
 exports[`no cards no risk 1`] = `
 <a
-  className="lenkepanel infoMelding lenkepanel--border"
+  className="lenkepanel infomelding lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >

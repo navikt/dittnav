@@ -23,7 +23,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
   if (ettereg && ettereg.etterregistrerteMeldekort && ettereg.etterregistrerteMeldekort > 0) {
     return (
       <LenkepanelMedIkon
-        className="infoMelding"
+        className="infomelding"
         data-ga="Dittnav/Varsel"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}

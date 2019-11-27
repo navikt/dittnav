@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import { IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return <IkonMelding />;
+      return <IkonInnboks />;
     case 'OPPGAVE_VARSEL':
       return <IkonOppgave />;
     default:
-      return <IkonMelding />;
+      return <IkonInnboks />;
   }
 };
 
@@ -41,7 +41,7 @@ const MinInnboks = ({ mininnboks, intl }) => {
       {mininnboks && mininnboks.map(message => (
         <LenkepanelMedIkon
           key={message.type}
-          className="infoMelding"
+          className="infomelding"
           data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
           alt="Melding fra mininnboks"
           overskrift={createOverskrift(message, numberToWord, formatFlereEn)}

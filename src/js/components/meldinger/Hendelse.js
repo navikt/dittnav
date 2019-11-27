@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../less/components/Hendelser.less';
 import PropTypes from 'prop-types';
-import { IkonInformasjon, IkonMelding, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import { IkonInformasjon, IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 
@@ -11,8 +11,8 @@ const getHendelseIkon = (type) => {
       return <IkonInformasjon />;
     case 'OPPGAVE':
       return <IkonOppgave />;
-    case 'MELDING':
-      return <IkonMelding />;
+    case 'INNBOKS':
+      return <IkonInnboks />;
     default:
       return null;
   }
@@ -22,7 +22,7 @@ const createOverskrift = (tekst) => (
   <PanelOverskrift overskrift={tekst} type="Element" />
 );
 
-const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
+const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
   const erInformasjon = type === 'INFORMASJON';
 
   return (
@@ -34,17 +34,17 @@ const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
             ikon={<IkonInformasjon />}
-            onClick={() => removeHendelse(id)}
-            key={id}
+            onClick={() => removeHendelse(eventId)}
+            key={eventId}
           />
         ) : (
           <LenkepanelMedIkon
-            className="infoMelding"
+            className="infomelding"
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
             href={link}
-            key={id}
+            key={eventId}
           >
             {getHendelseIkon(type)}
           </LenkepanelMedIkon>
@@ -55,7 +55,7 @@ const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
 };
 
 Hendelse.propTypes = {
-  id: PropTypes.string.isRequired,
+  eventId: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   tekst: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,

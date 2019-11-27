@@ -51,17 +51,31 @@ const checkAuthThenRenderApp = () => {
       renderApp();
     });
 };
+
 const params = new URLSearchParams(window.location.search);
 
 if (params.has('hendelser') && Config.IS_DEV) {
-  ReactDOM.render(
+  const testApp = (
     <NavApp defaultSprak="nb" messages={loadMessages()}>
       <div className="hendelser-content">
         <HendelserTestGui />
       </div>
-    </NavApp>,
-    document.getElementById('app'),
+    </NavApp>
   );
+
+  api.checkAuth()
+    .then(() => {
+      ReactDOM.render(testApp, document.getElementById('app'));
+    })
+    .catch((e) => {
+      if (Config.ENVIRONMENT === 'local') {
+        ReactDOM.render(testApp, document.getElementById('app'));
+        return;
+      }
+      if (e.message === 'not authenticated') {
+        api.redirectToLogin();
+      }
+    });
 } else {
   checkAuthThenRenderApp();
 }

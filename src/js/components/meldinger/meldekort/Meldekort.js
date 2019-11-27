@@ -46,7 +46,7 @@ const Meldekort = ({ meldekort, intl }) => {
   if (antallNyeMeldekort > 0) {
     return (
       <LenkepanelMedIkon
-        className="infoMelding"
+        className="infomelding"
         data-ga="Dittnav/Varsel"
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(true)} type="Element" />}
@@ -61,7 +61,7 @@ const Meldekort = ({ meldekort, intl }) => {
   if (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) {
     return (
       <LenkepanelMedIkon
-        className="infoMelding"
+        className="infomelding"
         data-ga="Dittnav/Varsel"
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(false)} type="Element" />}
