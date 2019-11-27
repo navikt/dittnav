@@ -22,7 +22,7 @@ const createOverskrift = (tekst) => (
   <PanelOverskrift overskrift={tekst} type="Element" />
 );
 
-const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
+const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
   const erInformasjon = type === 'INFORMASJON';
 
   return (
@@ -34,8 +34,8 @@ const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
             ikon={<IkonInformasjon />}
-            onClick={() => removeHendelse(id)}
-            key={id}
+            onClick={() => removeHendelse(eventId)}
+            key={eventId}
           />
         ) : (
           <LenkepanelMedIkon
@@ -44,7 +44,7 @@ const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
             href={link}
-            key={id}
+            key={eventId}
           >
             {getHendelseIkon(type)}
           </LenkepanelMedIkon>
@@ -55,7 +55,7 @@ const Hendelse = ({ id, type, tekst, link, removeHendelse }) => {
 };
 
 Hendelse.propTypes = {
-  id: PropTypes.string.isRequired,
+  eventId: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   tekst: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
