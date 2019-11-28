@@ -2,8 +2,8 @@
   "antallSakstema": 6,
   "sakstemaList": [
     {
-      "temanavn":"Barnetrygd",
-      "temakode":"BAR",
+      "temanavn":"Sosialhjelp",
+      "temakode":"KOM",
       "antallStatusUnderBehandling":0,
       "sisteOppdatering":"2019-08-15T12:00:00+02:00"
     },

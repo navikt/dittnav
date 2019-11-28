@@ -98,6 +98,7 @@ const lenker = {
   saksoversiktTema: { tittel: 'Dine saker', url: `${getServicesUrl()}/saksoversikt/tema` },
   saksoversiktHjelp: { tittel: 'Dine saker hjelp', url: '#' },
   innboks: { tittel: 'Innboks', url: `${getServicesUrl()}/mininnboks` },
+  digisos: { tittel: 'Digisos', url: `${getNavUrl()}/sosialhjelp/innsyn` },
 };
 
 const generelleLenker = [
