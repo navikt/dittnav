@@ -7,7 +7,7 @@ import Api from '../../Api';
 import Config from '../../Config';
 
 const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
-  const getInformasjonHendelser = () => Api
+  const getHendelser = () => Api
     .fetchHendelser()
     .then((r) => {
       setHendelser(r);
@@ -42,7 +42,7 @@ const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) =
         <Knapp className="knapper__send" htmlType="submit">
           <F id="hendelser.send" />
         </Knapp>
-        <Knapp className="knapper__hent" htmlType="button" onClick={() => getInformasjonHendelser()}>
+        <Knapp className="knapper__hent" htmlType="button" onClick={() => getHendelser()}>
           <F id="hendelser.hent" />
         </Knapp>
       </div>

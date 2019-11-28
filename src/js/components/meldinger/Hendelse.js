@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../../less/components/Hendelser.less';
 import PropTypes from 'prop-types';
-import { IkonInformasjon, IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import { IkonBeskjed, IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 
 const getHendelseIkon = (type) => {
   switch (type) {
-    case 'INFORMASJON':
-      return <IkonInformasjon />;
+    case 'BESKJED':
+      return <IkonBeskjed />;
     case 'OPPGAVE':
       return <IkonOppgave />;
     case 'INNBOKS':
@@ -23,17 +23,17 @@ const createOverskrift = (tekst) => (
 );
 
 const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
-  const erInformasjon = type === 'INFORMASJON';
+  const erBeskjed = type === 'BESKJED';
 
   return (
     <>
       {
-        erInformasjon ? (
+        erBeskjed ? (
           <PanelMedIkon
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
-            ikon={<IkonInformasjon />}
+            ikon={<IkonBeskjed />}
             onClick={() => removeHendelse(eventId)}
             key={eventId}
           />

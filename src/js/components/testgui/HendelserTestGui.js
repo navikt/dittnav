@@ -13,7 +13,7 @@ const HendelserTestGui = () => {
   const [hendelser, setHendelser] = useState([]);
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
-  const [valg, setValg] = useState('informasjon');
+  const [valg, setValg] = useState('beskjed');
 
   const removeHendelser = () => Api
     .postHendelser(

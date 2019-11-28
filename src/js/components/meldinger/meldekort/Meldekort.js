@@ -3,7 +3,7 @@ import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import PanelOverskrift from '../../common/PanelOverskrift';
 import conf from '../../../Config';
-import { IkonInformasjon, IkonOppgave, LenkepanelMedIkon } from '../../common/LenkepanelMedIkon';
+import { IkonBeskjed, IkonOppgave, LenkepanelMedIkon } from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import i18n from '../../../../translations/i18n';
 
@@ -68,7 +68,7 @@ const Meldekort = ({ meldekort, intl }) => {
         ingress={ingress(false)}
         href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
       >
-        <IkonInformasjon />
+        <IkonBeskjed />
       </LenkepanelMedIkon>
     );
   }
