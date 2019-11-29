@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonInformasjon, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import { IkonBeskjed, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 
 const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
@@ -27,7 +27,7 @@ const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
       ingress={<F id="saksoversikt.lenke" />}
       href={paabegynteSoknader.url}
     >
-      <IkonInformasjon />
+      <IkonBeskjed />
     </LenkepanelMedIkon>
   );
 };

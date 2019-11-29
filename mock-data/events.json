@@ -1,87 +1,56 @@
 [
   {
-    "aktiv": true,
-    "type": "INFORMASJON",
-    "aktorId": "123",
-    "dokumentId": "1001562938538102",
-    "eventId": "1562938538102",
-    "eventTidspunkt": "1562938538.102000000",
-    "id": "21",
+    "produsent": "DittNAV",
+    "eventTidspunkt": "2019-11-27T17:51:26.001Z",
+    "eventId": "1874877086001",
+    "tekst": "Du har fått informasjon om [Familie]",
     "link": "https://enNyLenke",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562938540.722000000",
-    "tekst": "Du har fått informasjon om [Familie]"
+    "sistOppdatert": "2019-11-27T17:51:26.17575Z",
+    "type": "BESKJED"
   },
   {
-    "aktiv": true,
-    "type": "INFORMASJON",
-    "aktorId": "123",
-    "dokumentId": "1001562938558528",
-    "eventId": "1562938558528",
-    "eventTidspunkt": "1562938558.528000000",
-    "id": "22",
-    "link": "https://default.link",
     "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562938560.254000000",
-    "tekst": "Du har fått informasjon om [Familie]"
-  },
-  {
-    "aktiv": true,
-    "type": "INFORMASJON",
-    "aktorId": "123",
-    "dokumentId": "1001562938665917",
-    "eventId": "1562938665917",
-    "eventTidspunkt": "1562938665.917000000",
-    "id": "23",
-    "link": "https://default.link",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562938666.440000000",
-    "tekst": "Du har fått informasjon om [Helse]"
-  },
-  {
-    "aktiv": true,
-    "type": "OPPGAVE",
-    "aktorId": "123",
-    "dokumentId": "1001562938674068",
-    "eventId": "1562938674068",
-    "eventTidspunkt": "1562938674.068000000",
-    "id": "24",
+    "eventTidspunkt": "2019-11-27T12:24:34.671Z",
+    "eventId": "1174857474671",
+    "tekst": "Du har fått informasjon om [Helse]",
     "link": "https://enNyLenke",
-    "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562938674.449000000",
-    "tekst": "Du har fått en oppgave om [Helse]"
+    "sistOppdatert": "2019-11-27T12:24:35.014517Z",
+    "type": "BESKJED"
   },
   {
-    "aktiv": true,
-    "type": "OPPGAVE",
-    "aktorId": "123",
-    "dokumentId": "1001562939454499",
-    "eventId": "1562939454499",
-    "eventTidspunkt": "1562939454.499000000",
-    "id": "25",
-    "link": "https://enNyLenke",
     "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562939455.124000000",
-    "tekst": "Du har fått en oppgave om [Familie]"
+    "eventTidspunkt": "2019-11-27T17:51:31.214Z",
+    "eventId": "1674877091214",
+    "tekst": "Du har fått en oppgave om [Familie]",
+    "link": "https://enNyLenke",
+    "sistOppdatert": "2019-11-27T17:51:31.414467Z",
+    "type": "OPPGAVE"
   },
-
   {
-    "aktiv": true,
-    "type": "INNBOKS",
-    "aktorId": "123",
-    "dokumentId": "1001562939454499",
-    "eventId": "1562939454499",
-    "eventTidspunkt": "1562939454.499000000",
-    "id": "26",
-    "link": "https://enNyLenke",
     "produsent": "DittNAV",
-    "sikkerhetsnivaa": 4,
-    "sistOppdatert": "1562939455.124000000",
-    "tekst": "Du har fått en melding om [Familie]"
+    "eventTidspunkt": "2019-11-27T12:24:39.847Z",
+    "eventId": "1274857479847",
+    "tekst": "Du har fått en oppgave om [Helse]",
+    "link": "https://enNyLenke",
+    "sistOppdatert": "2019-11-27T12:24:40.006666Z",
+    "type": "OPPGAVE"
+  },
+  {
+    "produsent": "DittNAV",
+    "eventTidspunkt": "2019-11-27T17:51:31.214Z",
+    "eventId": "1574377091214",
+    "tekst": "Du har fått en beskjed i din innboks om [Familie]",
+    "link": "https://enNyLenke",
+    "sistOppdatert": "2019-11-27T17:51:31.414467Z",
+    "type": "INNBOKS"
+  },
+  {
+    "produsent": "DittNAV",
+    "eventTidspunkt": "2019-11-27T12:24:39.847Z",
+    "eventId": "1574857579847",
+    "tekst": "Du har fått en beskjed i din innboks om [Helse]",
+    "link": "https://enNyLenke",
+    "sistOppdatert": "2019-11-27T12:24:40.006666Z",
+    "type": "INNBOKS"
   }
 ]
