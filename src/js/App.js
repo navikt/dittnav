@@ -15,6 +15,7 @@ class App extends Component {
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     errors: [],
     fetching: 0,
+    oppfolgingHasLoaded: false,
   };
 
   async componentWillMount() {
@@ -41,7 +42,7 @@ class App extends Component {
 
     api.fetchOppfolging()
       .then((r) => {
-        this.setState(() => ({ oppfolging: r, errors, fetching: this.state.fetching + 1 }));
+        this.setState(() => ({ oppfolging: r, oppfolgingHasLoaded: true, errors, fetching: this.state.fetching + 1 }));
       }).catch(handleError);
 
     api.fetchMeldekort()
@@ -90,6 +91,7 @@ class App extends Component {
       mininnboks,
       errors,
       fetching,
+      oppfolgingHasLoaded,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -107,6 +109,7 @@ class App extends Component {
             mininnboks={mininnboks}
             fetching={fetching}
             sakstema={sakstema}
+            oppfolgingHasLoaded={oppfolgingHasLoaded}
           />
         </div>
       </main>
