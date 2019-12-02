@@ -34,16 +34,22 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    const handlePersonIdentError = (e) => {
+    const handlePersonIdentError = () => {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
-      console.log(`Failed to fetch PersonIdent: ${e}`);
+    };
+
+    const handleOppfolgingError = () => {
+      const { fetching } = this.state;
+      this.setState({ fetching: fetching + 1 });
+      errors.push('error.baksystemer');
+      this.setState({ errors, oppfolgingHasLoaded: true });
     };
 
     api.fetchOppfolging()
       .then((r) => {
         this.setState(() => ({ oppfolging: r, oppfolgingHasLoaded: true, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handleError);
+      }).catch(handleOppfolgingError);
 
     api.fetchMeldekort()
       .then((r) => {
