@@ -9,7 +9,7 @@ class Vta extends React.Component {
     super(props);
     this.state = { render: false };
     const script = document.createElement('script');
-    script.src = `${Config.VTA_PATH}/micro/static/js/main.js`;
+    script.src = Config.IS_LOCAL ? `${Config.VTA_PATH}/static/js/main.js` : `${Config.VTA_PATH}/micro/static/js/main.js`;
     script.type = 'text/javascript';
     script.addEventListener('load', () => {
       this.setState({ render: true });
