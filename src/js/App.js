@@ -22,9 +22,13 @@ class App extends Component {
     const { errors } = this.state;
     const { api } = this.props;
 
-    const handleError = (e) => {
+    const incrementFetching = () => {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
+    };
+
+    const handleError = (e) => {
+      incrementFetching();
 
       if (e.status === 401 || e.status === 403) {
         return;
@@ -34,14 +38,8 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    const handlePersonIdentError = () => {
-      const { fetching } = this.state;
-      this.setState({ fetching: fetching + 1 });
-    };
-
     const handleOppfolgingError = () => {
-      const { fetching } = this.state;
-      this.setState({ fetching: fetching + 1 });
+      incrementFetching();
       errors.push('error.baksystemer');
       this.setState({ errors, oppfolgingHasLoaded: true });
     };
@@ -64,7 +62,7 @@ class App extends Component {
     api.fetchPersonIdent()
       .then((r) => {
         this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handlePersonIdentError);
+      }).catch(incrementFetching);
 
     api.fetchSaker()
       .then((r) => {
