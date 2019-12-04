@@ -15,7 +15,7 @@ const ENDPOINTS = 7;
 
 class Home extends Component {
   render() {
-    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, fetching } = this.props;
+    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, oppfolgingHasLoaded, fetching } = this.props;
     const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
     const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -30,7 +30,7 @@ class Home extends Component {
               { fetching < ENDPOINTS ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} />
               <DittnavLenkePanel sakstema={sakstema} />
-              { oppfolging ? generelleEllerVta : null }
+              { oppfolgingHasLoaded ? generelleEllerVta : null }
               <Undertittel className="relatert-informasjon__subheader">
                 <F id="relatertInformasjon.header" />
               </Undertittel>
@@ -51,6 +51,7 @@ Home.propTypes = {
   paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  oppfolgingHasLoaded: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   fetching: PropTypes.number.isRequired,
 };
 
