@@ -20,10 +20,6 @@ const isDev = () => (
   ENV === 'q0' || ENV === 'q1' || ENV === 'local'
 );
 
-const isLocal = () => (
-  ENV === 'local'
-);
-
 const getDittNavBaseApiUrl = () => (ENV === 'local'
   ? process.env.REACT_APP_DITT_NAV_BASE_API_URL
   : `https://${window.location.hostname}/person`);
@@ -157,5 +153,4 @@ export default {
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
   LENKER: lenker,
   IS_DEV: isDev(),
-  IS_LOCAL: isLocal(),
 };
