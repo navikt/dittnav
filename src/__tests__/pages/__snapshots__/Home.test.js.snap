@@ -15,7 +15,7 @@ exports[`render Home page without props 1`] = `
         className="infomeldinger-list"
       >
         <h1
-          className="vekk"
+          className="skjermleser"
         >
           <span>
             Varsler
