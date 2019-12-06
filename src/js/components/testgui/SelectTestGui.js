@@ -9,7 +9,7 @@ const SelectTestGui = ({ setValg }) => {
 
   return (
     <Select label="Velg hendelse:" onChange={(e) => selectHendelse(e.target.value)}>
-      <option value="informasjon">Informasjon</option>
+      <option value="beskjed">Beskjed</option>
       <option value="oppgave">Oppgave</option>
       <option value="innboks">Innboks</option>
     </Select>

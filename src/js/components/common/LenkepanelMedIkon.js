@@ -64,7 +64,7 @@ const IkonOppgave = () => (
   </svg>
 );
 
-const IkonInformasjon = () => (
+const IkonBeskjed = () => (
   <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-382.000000, -303.000000)">
@@ -124,5 +124,5 @@ const IkonBlyant = () => (
 );
 
 export {
-  LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt, IkonOppgave, IkonInformasjon, IkonInnboks,
+  LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt, IkonOppgave, IkonBeskjed, IkonInnboks,
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PanelMedIkon from '../common/PanelMedIkon';
-import { IkonInformasjon } from '../common/LenkepanelMedIkon';
+import { IkonBeskjed } from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 
 class InformasjonsMeldinger extends Component {
@@ -12,7 +12,7 @@ class InformasjonsMeldinger extends Component {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
           overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
-          ikon={<IkonInformasjon />}
+          ikon={<IkonBeskjed />}
         />,
       );
     }
