@@ -55,7 +55,7 @@ const getLoginUrl = () => {
     return 'https://loginservice.nav.no/login?level=Level3';
   }
   if (ENV === 'local') {
-    return 'http://localhost:9111/login?level=Level3';
+    return 'http://localhost:5000';
   }
   if (ENV === 't1' || ENV === 't6') {
     return 'https://loginservice.nav.no/login?level=Level3';

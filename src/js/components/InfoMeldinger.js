@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
+import { FormattedMessage as F } from 'react-intl';
 import Api from '../Api';
 import Unleash from './Unleash';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
@@ -21,7 +21,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
 
   return (
     <section className="infomeldinger-list">
-      <h1 className="vekk"><F id="dittnav.infomeldinger.varsler" /></h1>
+      <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
       <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
       {isMeldeKortUser ? <Meldekort meldekort={meldekort} /> : null}
       <EtterregistreringMeldekort ettereg={meldekort} />
@@ -47,7 +47,11 @@ InfoMeldinger.defaultProps = {
 };
 
 UnleashWrapper.propTypes = {
-  isFeatureEnabled: PropTypes.number.isRequired,
+  isFeatureEnabled: PropTypes.bool,
+};
+
+UnleashWrapper.defaultProps = {
+  isFeatureEnabled: null,
 };
 
 export default InfoMeldinger;

@@ -27,10 +27,12 @@ resources:
     memory: 512Mi
 fasitResources:
   used:
+  # - alias: nav.dekoratoren
   - alias: appres.cms
     resourceType: baseUrl
     propertyMap:
-      url: APPRES_CMS_URL
+     url: APPRES_CMS_URL
+  #    url: NAV_DEKORATOREN_URL
   - alias: loginservice
     resourceType: restservice
     propertyMap:

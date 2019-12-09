@@ -15,15 +15,20 @@ class App extends Component {
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     errors: [],
     fetching: 0,
+    oppfolgingHasLoaded: false,
   };
 
   async componentWillMount() {
     const { errors } = this.state;
     const { api } = this.props;
 
-    const handleError = (e) => {
+    const incrementFetching = () => {
       const { fetching } = this.state;
       this.setState({ fetching: fetching + 1 });
+    };
+
+    const handleError = (e) => {
+      incrementFetching();
 
       if (e.status === 401 || e.status === 403) {
         return;
@@ -33,16 +38,16 @@ class App extends Component {
       this.setState({ errors });
     };
 
-    const handlePersonIdentError = (e) => {
-      const { fetching } = this.state;
-      this.setState({ fetching: fetching + 1 });
-      console.log(`Failed to fetch PersonIdent: ${e}`);
+    const handleOppfolgingError = () => {
+      incrementFetching();
+      errors.push('error.baksystemer');
+      this.setState({ errors, oppfolgingHasLoaded: true });
     };
 
     api.fetchOppfolging()
       .then((r) => {
-        this.setState(() => ({ oppfolging: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handleError);
+        this.setState(() => ({ oppfolging: r, oppfolgingHasLoaded: true, errors, fetching: this.state.fetching + 1 }));
+      }).catch(handleOppfolgingError);
 
     api.fetchMeldekort()
       .then((r) => {
@@ -57,7 +62,7 @@ class App extends Component {
     api.fetchPersonIdent()
       .then((r) => {
         this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handlePersonIdentError);
+      }).catch(incrementFetching);
 
     api.fetchSaker()
       .then((r) => {
@@ -90,6 +95,7 @@ class App extends Component {
       mininnboks,
       errors,
       fetching,
+      oppfolgingHasLoaded,
     } = this.state;
 
     const uniqueErrors = errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -107,6 +113,7 @@ class App extends Component {
             mininnboks={mininnboks}
             fetching={fetching}
             sakstema={sakstema}
+            oppfolgingHasLoaded={oppfolgingHasLoaded}
           />
         </div>
       </main>
