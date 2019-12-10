@@ -11,11 +11,7 @@ import i18n from '../../translations/i18n';
 import Config from '../Config';
 
 const sakstemaUrlOverride = {
-  // FOR: Config.LENKER.dineForeldrepenger.url,
-  // SYK: Config.LENKER.dittSykefravaer.url,
-  // SYM: Config.LENKER.dittSykefravaer.url,
-  // SYK_SYM: Config.LENKER.dittSykefravaer.url,
-  // SYM_SYK: Config.LENKER.dittSykefravaer.url,
+  KOM: Config.LENKER.digisos.url,
 };
 
 class DinesakerSakstema extends React.Component {
