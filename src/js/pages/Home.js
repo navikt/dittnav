@@ -11,7 +11,7 @@ import Lenkelister from '../components/Lenkelister';
 import DelayedSpinner from '../components/DelayedSpinner';
 import Config from '../Config';
 
-const ENDPOINTS = 7;
+const ENDPOINTS = 6;
 
 class Home extends Component {
   render() {

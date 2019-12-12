@@ -57,12 +57,15 @@ class App extends Component {
     api.fetchPersonNavn()
       .then((r) => {
         this.setState(() => ({ person: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(handleError);
-
-    api.fetchPersonIdent()
-      .then((r) => {
-        this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
-      }).catch(incrementFetching);
+      }).catch(() => {
+        api.fetchPersonIdent()
+          .then(r => {
+            this.setState(() => ({ identifikator: r, errors, fetching: this.state.fetching + 1 }));
+            errors.push('error.baksystemer');
+            this.setState({ errors });
+          })
+          .catch(handleError);
+      });
 
     api.fetchSaker()
       .then((r) => {
