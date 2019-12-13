@@ -50,7 +50,7 @@
     "nav-frontend-spinner-style": "^0.2.5",
     "nav-frontend-typografi": "^2.0.16",
     "nav-frontend-typografi-style": "^1.0.17",
-    "npm": "^6.13.1",
+    "npm": "^6.13.4",
     "parcel-bundler": "^1.12.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
