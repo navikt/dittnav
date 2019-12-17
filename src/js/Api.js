@@ -50,6 +50,7 @@ const checkApiStatus = () => new Promise((res, rej) => {
 const postJSONAndCheckForErrors = (url, content) => {
   fetch(url, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
