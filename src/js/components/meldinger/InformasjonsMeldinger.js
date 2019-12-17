@@ -11,7 +11,8 @@ class InformasjonsMeldinger extends Component {
     if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
-          overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
+          overskrift={<PanelOverskrift overskrift={this.props.generellInfoTittel} type="Element" />}
+          ingress={this.props.generellInfoIngress}
           ikon={<IkonBeskjed />}
         />,
       );
@@ -33,7 +34,8 @@ class InformasjonsMeldinger extends Component {
 InformasjonsMeldinger.propTypes = {
   isMeldeKortUser: PropTypes.bool,
   visGenerellInfo: PropTypes.bool,
-  generellInfo: PropTypes.node,
+  generellInfoTittel: PropTypes.node,
+  generellInfoIngress: PropTypes.node,
   visMeldekortbrukerInfo: PropTypes.bool,
   meldekortbrukerInfo: PropTypes.node,
   intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
@@ -42,7 +44,8 @@ InformasjonsMeldinger.propTypes = {
 InformasjonsMeldinger.defaultProps = {
   isMeldeKortUser: false,
   visGenerellInfo: true,
-  generellInfo: <F id="generell.informasjonsmelding.romjul" />,
+  generellInfoTittel: <F id="generell.informasjonsmelding.romjul.tittel" />,
+  generellInfoIngress: <F id="generell.informasjonsmelding.romjul.ingress" />,
   visMeldekortbrukerInfo: false,
   meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
 };

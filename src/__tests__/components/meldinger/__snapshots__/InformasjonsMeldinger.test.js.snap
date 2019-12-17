@@ -53,6 +53,13 @@ Array [
       >
         Hello
       </p>
+      <p
+        className="typo-normal"
+      >
+        <span>
+          NAV sine digitale tjenester vil være åpne, men man kan oppleve ustabilitet på grunn av systemvedlikehold knyttet til kommunesammenslåinger. Det gjelder i tidsrommet fra fredag 27.12.2019 kl. 21.00 til torsdag 02.01.2020 kl. 07.00.
+        </span>
+      </p>
     </div>
   </div>,
   <div
@@ -124,6 +131,13 @@ exports[`InformasjonsMeldinger with general 1`] = `
       className="typo-element lenkepanel__heading"
     >
       Hello
+    </p>
+    <p
+      className="typo-normal"
+    >
+      <span>
+        NAV sine digitale tjenester vil være åpne, men man kan oppleve ustabilitet på grunn av systemvedlikehold knyttet til kommunesammenslåinger. Det gjelder i tidsrommet fra fredag 27.12.2019 kl. 21.00 til torsdag 02.01.2020 kl. 07.00.
+      </span>
     </p>
   </div>
 </div>
