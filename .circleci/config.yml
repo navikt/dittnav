@@ -35,6 +35,7 @@ jobs:
           paths:
             - build/*
             - Dockerfile
+            - decorator.yaml
   docker-bygg-og-push-uten-latest:
     executor: nais/deployment-cli
     steps:
