@@ -42,7 +42,7 @@ const checkAuth = () => new Promise((res, rej) => {
 });
 
 const checkApiStatus = () => new Promise((res, rej) => {
-  fetchJSON(`${Config.dittNav.DITTNAV_API_PING_URL}`)
+  fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`)
     .then(r => res(r))
     .catch(e => rej(e));
 });
