@@ -51,9 +51,7 @@ Array [
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du kan oppleve at noen tjenester er ustabile i romjulen. Det gjelder perioden 27. desember kl. 21.00 til 2. januar kl. 07.00. Årsaken er vedlikehold etter kommunesammenslåinger.
-        </span>
+        Hello
       </p>
     </div>
   </div>,
@@ -125,9 +123,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
     <p
       className="typo-element lenkepanel__heading"
     >
-      <span>
-        Du kan oppleve at noen tjenester er ustabile i romjulen. Det gjelder perioden 27. desember kl. 21.00 til 2. januar kl. 07.00. Årsaken er vedlikehold etter kommunesammenslåinger.
-      </span>
+      Hello
     </p>
   </div>
 </div>

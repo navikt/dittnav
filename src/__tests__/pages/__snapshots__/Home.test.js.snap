@@ -202,6 +202,248 @@ exports[`render Home page without props 1`] = `
           </a>
         </div>
       </div>
+      <div
+        className="dittnav-lenkeikon-container"
+      >
+        <a
+          className="lenkepanel first lenkepanel--border"
+          href="http://localhost:9222/sykefravaer"
+          onClick={null}
+        >
+          <div
+            className="lenkepanel__innhold"
+          >
+            <div
+              className="lenkepanel__ikon"
+            >
+              <svg
+                fill="none"
+                height="48"
+                viewBox="0 0 177 177"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M62.6616 63.4795L114.327 115.591L145.089 84.4894C159.338 70.0829 159.21 46.853 144.804 32.6039C130.397 18.3548 107.167 18.4824 92.9181 32.8889L62.6616 63.4795Z"
+                  fill="#65A9C1"
+                  fillRule="evenodd"
+                />
+                <path
+                  d="M87.5801 58.3952C86.8022 59.1794 86.8074 60.4457 87.5916 61.2236C88.3758 62.0015 89.6421 61.9963 90.42 61.2121L87.5801 58.3952ZM103.989 44.6926L105.409 46.101C105.413 46.0969 105.417 46.0927 105.421 46.0885L103.989 44.6926ZM118.011 38.8431L117.856 40.8371L118.011 38.8431ZM131.665 47.1569C132.488 47.894 133.752 47.8248 134.49 47.0021C135.227 46.1795 135.157 44.9151 134.335 44.178L131.665 47.1569ZM90.42 61.2121L105.409 46.101L102.569 43.2841L87.5801 58.3952L90.42 61.2121ZM103.989 44.6926C105.421 46.0885 105.421 46.0889 105.421 46.0893C105.42 46.0894 105.42 46.0898 105.42 46.09C105.419 46.0905 105.419 46.0908 105.419 46.091C105.418 46.0915 105.418 46.0916 105.419 46.0913C105.419 46.0907 105.421 46.0886 105.425 46.0851C105.432 46.078 105.445 46.0651 105.463 46.0469C105.5 46.0104 105.56 45.9524 105.642 45.8761C105.805 45.7235 106.053 45.4986 106.377 45.227C107.027 44.6819 107.971 43.9582 109.135 43.2535C111.494 41.8251 114.573 40.5824 117.856 40.8371L118.166 36.849C113.713 36.5037 109.781 38.1858 107.063 39.8321C105.688 40.6648 104.577 41.516 103.807 42.1614C103.421 42.485 103.118 42.7593 102.907 42.9571C102.801 43.056 102.719 43.136 102.66 43.1937C102.63 43.2225 102.607 43.2458 102.59 43.2631C102.581 43.2717 102.574 43.2789 102.569 43.2845C102.566 43.2873 102.564 43.2897 102.562 43.2917C102.561 43.2928 102.56 43.2937 102.559 43.2945C102.558 43.2949 102.558 43.2954 102.558 43.2956C102.557 43.2962 102.557 43.2966 103.989 44.6926ZM117.856 40.8371C123.592 41.2819 127.546 43.4655 131.665 47.1569L134.335 44.178C129.751 40.0701 125.001 37.3791 118.166 36.849L117.856 40.8371Z"
+                  fill="#DCF3FA"
+                />
+                <path
+                  clipRule="evenodd"
+                  d="M115.031 114.915L63.3652 62.8037L32.6039 93.9048C18.3548 108.311 18.4824 131.541 32.8889 145.79C47.2954 160.039 70.5253 159.912 84.7744 145.505L115.031 114.915Z"
+                  fill="#D5D98E"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Ditt sykefravær
+                </span>
+              </h2>
+              <p
+                className="typo-normal"
+              >
+                <span>
+                  Dine sykmeldinger og oppgaver
+                </span>
+              </p>
+            </div>
+          </div>
+          <span
+            className="lenkepanel__indikator"
+          />
+        </a>
+        <a
+          className="lenkepanel lenkepanel--border"
+          href="http://localhost:9222/veiledearbeidssoker"
+          onClick={null}
+        >
+          <div
+            className="lenkepanel__innhold"
+          >
+            <div
+              className="lenkepanel__ikon"
+            >
+              <svg
+                fill="none"
+                height="48"
+                viewBox="0 0 177 177"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M93 164H85V17C85.5 16 87 14 89 14C91 14 92.6667 16 93 17V164Z"
+                  fill="#6D655F"
+                />
+                <path
+                  d="M144 130V85H31L15 107.5L31 130H144Z"
+                  fill="#90C9A7"
+                />
+                <path
+                  d="M34 74V29H147L163 51.5L147 74H34Z"
+                  fill="#FFB45B"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Mistet jobben?
+                </span>
+              </h2>
+              <p
+                className="typo-normal"
+              >
+                <span>
+                  Jobbsøkertips, økonomi og hjelp fra NAV
+                </span>
+              </p>
+            </div>
+          </div>
+          <span
+            className="lenkepanel__indikator"
+          />
+        </a>
+      </div>
+      <div
+        className="dittnav-lenkeikon-container blokk-xxl"
+      >
+        <a
+          className="lenkepanel first lenkepanel--border"
+          href="http://localhost:9222/soknader"
+          onClick={null}
+        >
+          <div
+            className="lenkepanel__innhold"
+          >
+            <div
+              className="lenkepanel__ikon"
+            >
+              <svg
+                fill="none"
+                height="48"
+                viewBox="0 0 177 177"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#C5D9E2"
+                  height="63"
+                  rx="5"
+                  width="141"
+                  x="18"
+                  y="89.3427"
+                />
+                <path
+                  d="M71 119.343L65 113.343L61 124.343L71 119.343Z"
+                  fill="black"
+                />
+                <path
+                  d="M72.8468 90.4231L94.5728 112.149L71 119.343L65 113.343L72.8468 90.4231Z"
+                  fill="#E0A9A0"
+                />
+                <rect
+                  fill="#E0A9A0"
+                  height="15.226"
+                  transform="rotate(45 138.262 25)"
+                  width="30.7384"
+                  x="138.262"
+                  y="25"
+                />
+                <rect
+                  fill="#C15647"
+                  height="77.2956"
+                  transform="rotate(45 127.5 35.7648)"
+                  width="30.7367"
+                  x="127.5"
+                  y="35.7648"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Skjemaer
+                </span>
+              </h2>
+              <p
+                className="typo-normal"
+              >
+                <span>
+                  Alle skjemaer og søknader i NAV
+                </span>
+              </p>
+            </div>
+          </div>
+          <span
+            className="lenkepanel__indikator"
+          />
+        </a>
+        <a
+          className="lenkepanel lenkepanel--border"
+          href="http://localhost:9222/pselv/publisering/dinpensjon.jsf"
+          onClick={null}
+        >
+          <div
+            className="lenkepanel__innhold"
+          >
+            <div
+              className="lenkepanel__ikon"
+            >
+              <svg
+                fill="none"
+                height="48"
+                viewBox="0 0 177 177"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M116 164V172"
+                  stroke="#4F4742"
+                  strokeLinecap="round"
+                  strokeWidth="10"
+                />
+                <path
+                  d="M116 32H121V31.6316L120.946 31.2673L116 32ZM121 167V32H111V167H121ZM120.946 31.2673C120.23 26.4341 118.44 18.7426 113.587 12.1585C108.545 5.31666 100.414 0 88 0V10C97.0862 10 102.289 13.6833 105.538 18.0915C108.977 22.7574 110.437 28.5659 111.054 32.7327L120.946 31.2673ZM88 0C75.0773 0 67.2216 6.82543 62.7924 14.991C58.5379 22.8345 57.3567 31.9633 57.0092 37.6975L66.9908 38.3025C67.31 33.0367 68.3787 25.6655 71.5826 19.759C74.6117 14.1746 79.4227 10 88 10V0Z"
+                  fill="#A96215"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2
+                className="typo-undertittel lenkepanel__heading"
+              >
+                <span>
+                  Din pensjon
+                </span>
+              </h2>
+              <p
+                className="typo-normal"
+              >
+                <span>
+                  Kalkulator, søknad og utbetalinger
+                </span>
+              </p>
+            </div>
+          </div>
+          <span
+            className="lenkepanel__indikator"
+          />
+        </a>
+      </div>
       <h2
         className="typo-undertittel relatert-informasjon__subheader"
       >

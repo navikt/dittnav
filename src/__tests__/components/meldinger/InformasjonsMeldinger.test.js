@@ -11,7 +11,7 @@ test('InformasjonsMeldinger without messages', () => {
 
 test('InformasjonsMeldinger with general', () => {
   const message =  'Hello';
-  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger generellInfoTittel={message}
+  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger generellInfo={message}
                                                                              visGenerellInfo={true}
                                                                              visMeldekortbrukerInfo={false}/>));
   expect(component.toJSON()).toMatchSnapshot();
@@ -38,7 +38,7 @@ test('InformasjonsMeldinger with meldekort but not user', () => {
 test('InformasjonsMeldinger with both', () => {
   const message =  'Hello';
   const melderkortMessage =  'Melderkort message';
-  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger generellInfoTittel={message}
+  const component = ReactTestRenderer.create(wrapIntl(<InformasjonsMeldinger generellInfo={message}
                                                                              visGenerellInfo={true}
                                                                              meldekortbrukerInfo={melderkortMessage}
                                                                              visMeldekortbrukerInfo={true}
