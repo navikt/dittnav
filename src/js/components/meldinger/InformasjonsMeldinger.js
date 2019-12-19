@@ -9,12 +9,12 @@ import PanelOverskrift from '../common/PanelOverskrift';
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
-    const lenke = <Lenke href="#">{this.props.generellInfoLenke}</Lenke>;
+    const lenke = <Lenke href="https://www.nav.no/">{this.props.generellInfoLenke}</Lenke>;
 
     if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
-          overskrift={<PanelOverskrift overskrift={<span>{this.props.generellInfoForkortet}</span>} type="Element" />}
+          overskrift={<PanelOverskrift overskrift={<span>{this.props.generellInfoTekst} {lenke}</span>} type="Element" />}
           ikon={<IkonBeskjed />}
         />,
       );
