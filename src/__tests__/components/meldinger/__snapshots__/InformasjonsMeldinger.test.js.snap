@@ -52,18 +52,7 @@ Array [
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Fra 27.12.2019 til 02.01.2020 kan enkelte tjenester være ustabile på grunn av
-          </span>
-           
-          <a
-            className="lenke lenke-vedlikehold"
-            href="https://www.nav.no/"
-          >
-            <span>
-              systemvedlikehold knyttet til kommunesammenslåinger.
-            </span>
-          </a>
+          Du kan oppleve at noen tjenester er ustabile i romjulen. Det gjelder perioden 27. desember kl. 21.00 til 2. januar kl. 07.00. Årsaken er vedlikehold etter kommunesammenslåinger.
         </span>
       </p>
     </div>
@@ -137,18 +126,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
       className="typo-element lenkepanel__heading"
     >
       <span>
-        <span>
-          Fra 27.12.2019 til 02.01.2020 kan enkelte tjenester være ustabile på grunn av
-        </span>
-         
-        <a
-          className="lenke lenke-vedlikehold"
-          href="https://www.nav.no/"
-        >
-          <span>
-            systemvedlikehold knyttet til kommunesammenslåinger.
-          </span>
-        </a>
+        Du kan oppleve at noen tjenester er ustabile i romjulen. Det gjelder perioden 27. desember kl. 21.00 til 2. januar kl. 07.00. Årsaken er vedlikehold etter kommunesammenslåinger.
       </span>
     </p>
   </div>
