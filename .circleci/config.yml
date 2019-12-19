@@ -2,41 +2,94 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  nais: 'navikt/nais-deployment@3.2.0'
+
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.11
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
       - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       - run: chmod +x ./cc-test-reporter
       - run: npm install
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
       # run tests!
-
       - run: ./cc-test-reporter before-build
       - run: npm run build && npm test
       - run: ./cc-test-reporter after-build --exit-code $?
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/*
+            - Dockerfile
+            - decorator.yaml
+  docker-bygg-og-push-uten-latest:
+    executor: nais/deployment-cli
+    steps:
+      - docker-deploy:
+          description: Docker build og push, uten latest
+          command: |
+            echo $DOCKER_PASSWORD | docker login --username $DOCKER_LOGIN --password-stdin
+            docker build -t "navikt/dittnav:$CIRCLE_SHA1" .
+            docker push "navikt/dittnav:$CIRCLE_SHA1"
+  docker-bygg-og-push-med-latest:
+    executor: nais/deployment-cli
+    steps:
+      - docker-deploy:
+          description: Docker build og push, med latest
+          command: |
+            echo $DOCKER_PASSWORD | docker login --username $DOCKER_LOGIN --password-stdin
+              docker build -t "navikt/dittnav:$CIRCLE_SHA1" -t "navikt/dittnav:latest" .
+              docker push "navikt/dittnav:$CIRCLE_SHA1"
+              docker push "navikt/dittnav:latest"
+
+commands:
+  docker-deploy:
+    description: Bygg og push Docker-image
+    parameters:
+      description:
+        type: string
+      command:
+        type: string
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - attach_workspace:
+          at: .
+      - run:
+          name: << parameters.description >>
+          command: << parameters.command >>
+
+workflows:
+  bygg-og-push:
+    jobs:
+      - build
+      - docker-bygg-og-push-uten-latest:
+          context: NAIS deployment
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
+      - docker-bygg-og-push-med-latest:
+          context: NAIS deployment
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
