@@ -76,7 +76,7 @@ exports[`render Home page without props 1`] = `
                 </span>
                  
                 <a
-                  className="lenke"
+                  className="lenke lenke-vedlikehold"
                   href="https://www.nav.no/"
                 >
                   <span>

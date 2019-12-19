@@ -57,7 +57,7 @@ Array [
           </span>
            
           <a
-            className="lenke"
+            className="lenke lenke-vedlikehold"
             href="https://www.nav.no/"
           >
             <span>
@@ -142,7 +142,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
         </span>
          
         <a
-          className="lenke"
+          className="lenke lenke-vedlikehold"
           href="https://www.nav.no/"
         >
           <span>
