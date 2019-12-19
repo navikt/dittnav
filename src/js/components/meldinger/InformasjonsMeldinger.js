@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import Lenke from 'nav-frontend-lenker';
 import PanelMedIkon from '../common/PanelMedIkon';
 import { IkonBeskjed } from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -8,11 +9,12 @@ import PanelOverskrift from '../common/PanelOverskrift';
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
+    const lenke = <Lenke href="#">{this.props.generellInfoLenke}</Lenke>;
+
     if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
-          overskrift={<PanelOverskrift overskrift={this.props.generellInfoTittel} type="Element" />}
-          ingress={this.props.generellInfoIngress}
+          overskrift={<PanelOverskrift overskrift={<span>{this.props.generellInfoForkortet}</span>} type="Element" />}
           ikon={<IkonBeskjed />}
         />,
       );
@@ -34,8 +36,9 @@ class InformasjonsMeldinger extends Component {
 InformasjonsMeldinger.propTypes = {
   isMeldeKortUser: PropTypes.bool,
   visGenerellInfo: PropTypes.bool,
-  generellInfoTittel: PropTypes.node,
-  generellInfoIngress: PropTypes.node,
+  generellInfoForkortet: PropTypes.bool,
+  generellInfoTekst: PropTypes.node,
+  generellInfoLenke: PropTypes.node,
   visMeldekortbrukerInfo: PropTypes.bool,
   meldekortbrukerInfo: PropTypes.node,
   intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
@@ -44,8 +47,9 @@ InformasjonsMeldinger.propTypes = {
 InformasjonsMeldinger.defaultProps = {
   isMeldeKortUser: false,
   visGenerellInfo: true,
-  generellInfoTittel: <F id="generell.informasjonsmelding.romjul.tittel" />,
-  generellInfoIngress: <F id="generell.informasjonsmelding.romjul.ingress" />,
+  generellInfoTekst: <F id="generell.informasjonsmelding.romjul.tekst" />,
+  generellInfoLenke: <F id="generell.informasjonsmelding.romjul.lenke" />,
+  generellInfoForkortet: <F id="generell.informasjonsmelding.romjul.forkortet" />,
   visMeldekortbrukerInfo: false,
   meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
 };

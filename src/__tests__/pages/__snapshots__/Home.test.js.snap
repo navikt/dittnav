@@ -71,14 +71,9 @@ exports[`render Home page without props 1`] = `
               className="typo-element lenkepanel__heading"
             >
               <span>
-                Ustabilitet på enkelte selvbetjeningstjenester i romjulen
-              </span>
-            </p>
-            <p
-              className="typo-normal"
-            >
-              <span>
-                NAV sine digitale tjenester vil være åpne, men man kan oppleve ustabilitet på grunn av systemvedlikehold knyttet til kommunesammenslåinger. Det gjelder i tidsrommet fra fredag 27.12.2019 kl. 21.00 til torsdag 02.01.2020 kl. 07.00.
+                <span>
+                  Du kan oppleve at noen tjenester er ustabile i romjulen. Det gjelder perioden 27. desember kl. 21.00 til 2. januar kl. 07.00. Årsaken er vedlikehold etter kommunesammenslåinger.
+                </span>
               </span>
             </p>
           </div>
