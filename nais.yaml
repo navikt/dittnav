@@ -11,7 +11,7 @@ healthcheck:
     path: person/dittnav/internal/isAlive
     initialDelay: 10
   readiness:
-    path: person/dittnav/internal/isReady
+    path: person/dittnav/internal/isAlive
     initialDelay: 10
 prometheus:
   port: https
