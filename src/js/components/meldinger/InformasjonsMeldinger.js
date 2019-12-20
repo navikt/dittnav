@@ -8,6 +8,7 @@ import PanelOverskrift from '../common/PanelOverskrift';
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
+
     if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
@@ -34,15 +35,15 @@ InformasjonsMeldinger.propTypes = {
   isMeldeKortUser: PropTypes.bool,
   visGenerellInfo: PropTypes.bool,
   generellInfo: PropTypes.node,
-  visMeldekortbrukerInfo: PropTypes.bool,
+  visMeldekortbrukerInfo: PropTypes.node,
   meldekortbrukerInfo: PropTypes.node,
   intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 InformasjonsMeldinger.defaultProps = {
   isMeldeKortUser: false,
-  visGenerellInfo: false,
-  generellInfo: <F id="generell.informasjonsmelding" />,
+  visGenerellInfo: true,
+  generellInfo: <F id="generell.informasjonsmelding.romjul" />,
   visMeldekortbrukerInfo: false,
   meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
 };
