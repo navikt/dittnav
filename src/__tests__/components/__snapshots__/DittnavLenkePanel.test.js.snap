@@ -5,25 +5,124 @@ exports[`Snapshot test med saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="dittnav-lenkepanel-liten"
-    id={null}
+    className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
   >
-    <a
-      alt="Dine saker"
-      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/saksoversikt"
+    <div
+      className="oversiktspanel__header"
     >
-      <span
-        className="typo-undertittel lenkepanel__heading"
+      <div
+        className="oversiktspanel__overskrift"
       >
-        <span>
-          Dine saker
-        </span>
-      </span>
-      <span
-        className="lenkepanel__indikator"
-      />
-    </a>
+        <h2
+          className="typo-systemtittel"
+        >
+          <span>
+            Dine siste saker
+          </span>
+        </h2>
+      </div>
+      <a
+        className="lenke"
+        href="http://localhost:9222/saksoversikt"
+        id="oversiktspanel__header-lenke-id"
+      >
+        <p
+          className="typo-normal oversiktspanel__header-lenke"
+        >
+          <span>
+            Se alle dine saker (6)
+          </span>
+          <i
+            className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
+          />
+        </p>
+      </a>
+    </div>
+    <hr />
+    <div
+      className="oversiktspanel__liste"
+    >
+      <div
+        className="sak-container"
+      >
+        <a
+          className="lenke sak-lenke"
+          href="http://localhost:9222/saksoversikt/tema/BAR"
+          id="sak-lenke-id"
+        >
+          <div
+            className="sak-temanavn"
+          >
+            <h2
+              className="typo-undertittel"
+            >
+              Barnetrygd
+            </h2>
+            <i
+              className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
+            />
+          </div>
+          <div
+            className="sak-status"
+          >
+            <p
+              className="typo-undertekst"
+            >
+              <span>
+                Sist oppdatert: 
+              </span>
+              <span>
+                2019 M08 15
+              </span>
+            </p>
+          </div>
+        </a>
+      </div>
+      <div
+        className="sak-container"
+      >
+        <a
+          className="lenke sak-lenke"
+          href="http://localhost:9222/saksoversikt/tema/SYK"
+          id="sak-lenke-id"
+        >
+          <div
+            className="sak-temanavn"
+          >
+            <h2
+              className="typo-undertittel"
+            >
+              Sykepenger og oppfølging
+            </h2>
+            <i
+              className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
+            />
+          </div>
+          <div
+            className="sak-status"
+          >
+            <p
+              className="typo-undertekst"
+            >
+              <span>
+                Du har ti søknader under behandling. 
+              </span>
+              <span>
+                Sist oppdatert: 
+              </span>
+              <span>
+                2019 M08 14
+              </span>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="dittnav-lenkepanel-liten"
+    id="cols-layout"
+  >
     <a
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
