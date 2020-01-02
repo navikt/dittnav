@@ -21,61 +21,6 @@ exports[`render Home page without props 1`] = `
             Varsler
           </span>
         </h1>
-        <div
-          className="panel panel-med-ikon panel--border"
-          onClick={null}
-        >
-          <div
-            className="panel-med-ikon__ikon"
-          >
-            <svg
-              height="48px"
-              version="1.1"
-              viewBox="0 0 48 48"
-              width="48px"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <g
-                fill="none"
-                fillRule="evenodd"
-                stroke="none"
-                strokeWidth="1"
-              >
-                <g
-                  transform="translate(-382.000000, -303.000000)"
-                >
-                  <g
-                    transform="translate(382.000000, 303.000000)"
-                  >
-                    <circle
-                      cx="24"
-                      cy="24"
-                      fill="#C2EAF7"
-                      r="24"
-                    />
-                    <path
-                      d="M23.5,12 C29.8410001,12 35,17.159 35,23.5 C35,29.8410001 29.8410001,35 23.5,35 C17.159,35 12,29.8410001 12,23.5 C12,17.159 17.159,12 23.5,12 Z M23.5,13 C17.71,13 13,17.71 13,23.5 C13,29.2900001 17.71,34 23.5,34 C29.2900001,34 34,29.2900001 34,23.5 C34,17.71 29.2900001,13 23.5,13 Z M21.5,21 L23.5,21 C23.7453334,21 23.9495803,21.1769877 23.9919397,21.4101619 L24,21.5 L24,30 L26.5,30 C26.7760001,30 27,30.2240001 27,30.5 C27,30.7453334 26.8230124,30.9495803 26.5898382,30.9919397 L26.5,31 L20.5,31 C20.224,31 20,30.7760001 20,30.5 C20,30.2546667 20.1769877,30.0504198 20.4101619,30.0080604 L20.5,30 L23,30 L23,22 L21.5,22 C21.224,22 21,21.776 21,21.5 C21,21.2546667 21.1769877,21.0504198 21.4101619,21.0080604 L21.5,21 L23.5,21 Z M23,16.5 C23.5522848,16.5 24,16.9477153 24,17.5 C24,18.0522848 23.5522848,18.5 23,18.5 C22.4477153,18.5 22,18.0522848 22,17.5 C22,16.9477153 22.4477153,16.5 23,16.5 Z"
-                      fill="#3E3832"
-                      id="Combined-Shape"
-                    />
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </div>
-          <div
-            className="panel-med-ikon__tekst"
-          >
-            <p
-              className="typo-element lenkepanel__heading"
-            >
-              <span>
-                Du kan oppleve at noen tjenester er ustabile i romjulen. Det gjelder perioden 27. desember kl. 21.00 til 2. januar kl. 07.00. Årsaken er vedlikehold etter kommunesammenslåinger.
-              </span>
-            </p>
-          </div>
-        </div>
         <a
           className="lenkepanel infomelding lenkepanel--border"
           href="https://tjenester-t6.nav.no/"
