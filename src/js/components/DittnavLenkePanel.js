@@ -3,55 +3,14 @@ import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../Config';
-import UnleashABTestgruppeVelger from '../UnleashABTestgruppeVelger';
 
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
-const stortSakspanelEnabledDefault = false;
-
 class DittnavLenkePanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { stortSakspanelEnabled: null };
-  }
-
-  componentDidMount() {
-    UnleashABTestgruppeVelger(
-      'dittnav.nytt-dinesakerpanel-testpool',
-      'dittnav.nytt-dinesakerpanel-ab',
-      this.unleashCallback.bind(this),
-    );
-  }
-
-  unleashCallback(testGruppe, error) {
-    if (error) {
-      // eslint-disable-next-line no-console
-      console.log(`Unleash error: ${error}`);
-    }
-
-    if (testGruppe) {
-      this.setState({ stortSakspanelEnabled: testGruppe === 'A' });
-      this.handleAnalytics();
-    } else {
-      this.setState({ stortSakspanelEnabled: stortSakspanelEnabledDefault });
-    }
-  }
-
-  handleAnalytics() {
-    const { stortSakspanelEnabled } = this.state;
-
-    window.dataLayer.push({
-      event: 'unleash',
-      feature: 'dinesaker-panel',
-      variant: stortSakspanelEnabled ? 'nytt' : 'gammelt',
-    });
-  }
-
   render() {
     const { sakstema } = this.props;
-    const visStortSakspanel = this.state.stortSakspanelEnabled
-      && sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
+    const visStortSakspanel = sakstema && sakstema.sakstemaList && sakstema.sakstemaList.length > 0;
 
     return (
       <div className="dittnav-lenkepanel-top-container">
