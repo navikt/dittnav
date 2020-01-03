@@ -3,6 +3,7 @@
   "ingresses": [
     "https://dittnav-q6.nais.oera-q.local",
     "https://dittnav-q6.dev-sbs.nais.io",
-    "https://www-q6.nav.no/person/dittnav"
+    "https://www-q6.nav.no/person/dittnav",
+    "https://tjenester-q6.nav.no/person/dittnav"
   ]
 }
