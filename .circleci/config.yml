@@ -101,7 +101,7 @@ commands:
       - nais/deploy-with-gh-app:
           repo: navikt/dittnav
           image: navikt/dittnav
-          github-app-id: < APP-ID >
+          github-app-id: 34043
           nais-template: nais/nais.yaml
           environment: << parameters.environment >>
           team: personbruker
