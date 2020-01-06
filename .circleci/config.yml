@@ -59,20 +59,20 @@ jobs:
     executor: nais/deployment-cli
     steps:
       - nais-deploy:
-        namespace: q6
-        environment: dev-sbs
+          namespace: q6
+          environment: dev-sbs
   deploy-q1:
     executor: nais/deployment-cli
     steps:
       - nais-deploy:
-        namespace: q1
-        environment: dev-sbs
+          namespace: q1
+          environment: dev-sbs
   deploy-q0:
     executor: nais/deployment-cli
     steps:
       - nais-deploy:
-        namespace: q1
-        environment: dev-sbs
+          namespace: q1
+          environment: dev-sbs
 
 commands:
   docker-deploy:
@@ -134,7 +134,7 @@ workflows:
             - docker-bygg-og-push-uten-latest
       - deploy-q6:
           requires:
-          - til-q6
+            - til-q6
       - til-q1:
           type: approval
           requires:
