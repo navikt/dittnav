@@ -57,22 +57,22 @@ jobs:
               docker push "navikt/dittnav:latest"
   deploy-q6:
     executor: nais/deployment-cli
-      steps:
-        - nais-deploy:
-          namespace: q6
-          environment: dev-sbs
+    steps:
+      - nais-deploy:
+        namespace: q6
+        environment: dev-sbs
   deploy-q1:
     executor: nais/deployment-cli
-      steps:
-        - nais-deploy:
-          namespace: q1
-          environment: dev-sbs
+    steps:
+      - nais-deploy:
+        namespace: q1
+        environment: dev-sbs
   deploy-q0:
     executor: nais/deployment-cli
-      steps:
-        - nais-deploy:
-          namespace: q1
-          environment: dev-sbs
+    steps:
+      - nais-deploy:
+        namespace: q1
+        environment: dev-sbs
 
 commands:
   docker-deploy:
