@@ -1,5 +1,200 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`expect Login page rendering 1`] = `
+<main
+  role="main"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="maincontent side-innhold"
+      >
+        <div
+          className="col-md-12"
+          id="dittnav-main-container"
+        >
+          <section
+            className="infomeldinger-list"
+          >
+            <h1
+              className="skjermleser"
+            >
+              <span>
+                Varsler
+              </span>
+            </h1>
+          </section>
+          <div
+            className="dittnav-lenkepanel-top-container"
+          >
+            <div
+              className="dittnav-lenkepanel-liten"
+              id={null}
+            >
+              <a
+                alt="Dine saker"
+                className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+                href="http://localhost:9222/saksoversikt"
+              >
+                <span
+                  className="typo-undertittel lenkepanel__heading"
+                >
+                  <span>
+                    Dine saker
+                  </span>
+                </span>
+                <span
+                  className="lenkepanel__indikator"
+                />
+              </a>
+              <a
+                alt="Utbetalinger"
+                className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+                href="http://localhost:9222/utbetalingsoversikt"
+              >
+                <span
+                  className="typo-undertittel lenkepanel__heading"
+                >
+                  <span>
+                    Dine utbetalinger
+                  </span>
+                </span>
+                <span
+                  className="lenkepanel__indikator"
+                />
+              </a>
+              <a
+                alt="Innboks"
+                className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
+                href="http://localhost:9222/mininnboks"
+              >
+                <span
+                  className="typo-undertittel lenkepanel__heading"
+                >
+                  <span>
+                    Innboks
+                  </span>
+                </span>
+                <span
+                  className="lenkepanel__indikator"
+                />
+              </a>
+            </div>
+          </div>
+          <h2
+            className="typo-undertittel relatert-informasjon__subheader"
+          >
+            <span>
+              Relatert informasjon
+            </span>
+          </h2>
+          <div
+            className="relatert-informasjon"
+          >
+            <nav
+              className="relatert-informasjon__links"
+            >
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://arbeidsplassen.nav.no/stillinger"
+                >
+                  Ledige stillinger
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
+                >
+                  Uføretrygd
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://foreldrepenger.nav.no"
+                >
+                  Dine foreldrepenger
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/aktivitetsplan"
+                >
+                  Aktivitetsplan
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/meldekort/om-meldekort"
+                >
+                  Meldekort
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                >
+                  Registrer deg som arbeidssøker
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
+                >
+                  Dine stillingssøk
+                </a>
+              </div>
+              <div
+                className="relatert-informasjon__link-container"
+              >
+                <a
+                  className="lenke relatert-informasjon__link"
+                  data-ga="Dittnav/Lenkeliste"
+                  href="http://localhost:9222/person/personopplysninger"
+                >
+                  Personopplysninger
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
 exports[`expect MeldekortInfo fetching 1`] = `
 <App
   api={

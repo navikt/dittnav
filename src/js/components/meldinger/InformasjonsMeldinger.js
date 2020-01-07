@@ -14,6 +14,7 @@ class InformasjonsMeldinger extends Component {
         <PanelMedIkon
           overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
           ikon={<IkonBeskjed />}
+          key="generell"
         />,
       );
     }
@@ -35,7 +36,7 @@ InformasjonsMeldinger.propTypes = {
   isMeldeKortUser: PropTypes.bool,
   visGenerellInfo: PropTypes.bool,
   generellInfo: PropTypes.node,
-  visMeldekortbrukerInfo: PropTypes.node,
+  visMeldekortbrukerInfo: PropTypes.bool,
   meldekortbrukerInfo: PropTypes.node,
   intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
