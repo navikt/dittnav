@@ -132,6 +132,7 @@ export default {
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_AUTH_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/authPing`,
     DITTNAV_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/oppfolging`,
+    DITTNAV_NY_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/oppfolging`,
     DITTNAV_MELDEKORT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldekortinfo`,
     DITTNAV_PERSON_NAVN_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/navn`,
     DITTNAV_PERSON_IDENT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/ident`,

@@ -1,5 +1,6 @@
 {
   "dittnav.nytt-dinesakerpanel-testpool": true,
   "dittnav.nytt-dinesakerpanel-ab": true,
-  "dittnav.hendelser": false
+  "dittnav.hendelser": false,
+  "dittnav.ny-backend": true
 }

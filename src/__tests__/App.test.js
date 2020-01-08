@@ -9,6 +9,7 @@ import wrapIntl from 'js/IntlTestHelper';
 const mockApi = () => {
   return {
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
+    fetchOppfolgingNyKilde: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
     fetchPersonNavn: () => new Promise((resolve, reject) => {}),
     fetchPersonIdent: () => new Promise((resolve, reject) => {}),
@@ -38,6 +39,23 @@ it('expect Login page rendering', () => {
 it('expect Oppfolging fetching', async () => {
   const api = mockApi();
   api.fetchOppfolging = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'erBrukerUnderOppfolging': false
+      },
+    );
+  });
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<App api={api}/>));
+  const component = renderer.getRenderOutput();
+  await flushPromises();
+
+  expect(component).toMatchSnapshot();
+});
+
+it('expect Oppfolging ny kilde fetching', async () => {
+  const api = mockApi();
+  api.fetchOppfolgingNyKilde = () => new Promise((resolve, reject) => {
     resolve(
       {
         'erBrukerUnderOppfolging': false
