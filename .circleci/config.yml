@@ -67,8 +67,6 @@ jobs:
       - nais-deploy:
           namespace: q1
           environment: dev-sbs
-    environment:
-      APIKEY: {{ secrets.NAIS_DEPLOY_APIKEY }}
   deploy-q0:
     executor: nais/deployment-cli
     steps:
