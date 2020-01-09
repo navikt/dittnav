@@ -19,7 +19,7 @@ function App(props) {
     oppfolgingHasLoaded: false,
   });
 
-  const { toggles } = useContext(FeatureToggles);
+  const { featureToggles } = useContext(FeatureToggles);
   const { api } = props;
 
   const handleOppfolgingError = () => {
@@ -84,7 +84,7 @@ function App(props) {
   // Denne dras ut midlertidig for å unngå at ALLE kallene kjøres på nytt når oppfølging hentes.
   useEffect(
     () => {
-      if (toggles && toggles['dittnav.ny-backend']) {
+      if (featureToggles && featureToggles['dittnav.ny-backend']) {
         api.fetchOppfolgingNyKilde()
           .then((r) => {
             setData(d => ({ ...d, oppfolging: r, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
@@ -95,7 +95,7 @@ function App(props) {
             setData(d => ({ ...d, oppfolging: r, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
           }).catch(handleOppfolgingError);
       }
-    }, [toggles, api],
+    }, [featureToggles, api],
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);

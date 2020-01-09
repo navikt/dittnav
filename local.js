@@ -33,9 +33,10 @@ app.get('/dittnav-api/personalia/ident', (req, res) => res.sendFile(path.resolve
 app.get('/dittnav-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
 app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
 app.get('/dittnav-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/sakstema.json')));
+app.get('/dittnav-api/brukernotifikasjoner', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
 
 app.get('/person/dittnav/api/feature', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/unleash.json')));
-app.get('/dittnav-api/brukernotifikasjoner', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
+
 app.post('/dittnav-event-test-producer/produce/beskjed', (req, res) => res.send('Done-eventer er produsert for alle identen: {ident} sine brukernotifikasjoner.'));
 app.post('/dittnav-event-test-producer/produce/oppgave', (req, res) => res.send('Et oppgave-event for identen: $userIdent har blitt lagt på kafka.'));
 app.post('/dittnav-event-test-producer/produce/innboks', (req, res) => res.send('Et innboks-event for identen: $userIdent har blitt lagt på kafka.'));

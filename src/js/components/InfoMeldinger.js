@@ -1,20 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
-import Api from '../Api';
-import Unleash from './Unleash';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
 import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
-
-const UnleashWrapper = ({ isFeatureEnabled }) => (
-  <>
-    {isFeatureEnabled ? <Hendelser /> : null}
-  </>
-);
+import { FeatureToggleWrapper } from './FeatureTogglesProvider';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
@@ -27,9 +19,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      <Unleash api={Api} feature="dittnav.hendelser">
-        <UnleashWrapper />
-      </Unleash>
+      <FeatureToggleWrapper toggle="dittnav.hendelser"><Hendelser /></FeatureToggleWrapper>
     </section>
   );
 };
@@ -44,14 +34,6 @@ InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
-};
-
-UnleashWrapper.propTypes = {
-  isFeatureEnabled: PropTypes.bool,
-};
-
-UnleashWrapper.defaultProps = {
-  isFeatureEnabled: null,
 };
 
 export default InfoMeldinger;
