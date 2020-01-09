@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import FeilMeldinger from './components/FeilMeldinger';
-import { FeatureToggles } from './components/FeatureTogglesProvider';
+import { FeatureToggles } from './components/FeatureToggles';
 import Home from './pages/Home';
 import '../less/index.less';
 

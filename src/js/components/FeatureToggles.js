@@ -20,7 +20,7 @@ FeatureToggleWrapper.defaultProps = {
 };
 
 const FeatureTogglesProvider = ({ children }) => {
-  const [featureToggles, setFeatureToggles] = useState([]);
+  const [featureToggles, setFeatureToggles] = useState({});
 
   useEffect(() => {
     fetch(`${Config.dittNav.CONTEXT_PATH}/api/feature`, { method: 'GET' })
