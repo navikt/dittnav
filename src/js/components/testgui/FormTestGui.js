@@ -4,7 +4,7 @@ import { FormattedMessage as F } from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Api from '../../Api';
-import Config from '../../Config';
+import Config from '../../globalConfig';
 
 const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
   const getHendelser = () => Api

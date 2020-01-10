@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import PanelOverskrift from '../../common/PanelOverskrift';
-import conf from '../../../Config';
+import conf from '../../../globalConfig';
 import { IkonBeskjed, IkonOppgave, LenkepanelMedIkon } from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import i18n from '../../../../translations/i18n';

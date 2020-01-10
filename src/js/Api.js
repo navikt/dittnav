@@ -1,4 +1,4 @@
-import Config from './Config';
+import Config from './globalConfig';
 
 const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`);

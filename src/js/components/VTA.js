@@ -1,6 +1,6 @@
 import React from 'react';
 import NAVSPA from '../../NAVSPA';
-import Config from '../Config';
+import Config from '../globalConfig';
 
 const VTA = NAVSPA.importer('vta');
 

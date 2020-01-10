@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import { Fareknapp } from 'nav-frontend-knapper';
 import { Panel } from 'nav-frontend-paneler';
 import Api from '../../Api';
-import Config from '../../Config';
+import Config from '../../globalConfig';
 import TittelTestGui from './TittelTestGui';
 import FormTestGui from './FormTestGui';
 import Hendelse from '../meldinger/Hendelse';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
-import Config from '../../Config';
+import Config from '../../globalConfig';
 import Hendelse from './Hendelse';
 
 const Hendelser = () => {
