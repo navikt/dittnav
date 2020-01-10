@@ -5,7 +5,7 @@ import { FeatureToggles } from './components/FeatureToggles';
 import Home from './pages/Home';
 import '../less/index.less';
 
-function App(props) {
+const App = (props) => {
   const [data, setData] = useState({
     oppfolging: null,
     meldekort: null,
