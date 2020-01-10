@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedDate, FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
@@ -63,7 +64,7 @@ class DinesakerSakstema extends React.Component {
                 sisteOppdatering && sisteOppdatering !== ''
                   ? (
                     <FormattedDate
-                      value={new Date(sisteOppdatering)}
+                      value={moment(sisteOppdatering, Config.SAKSTEMA_DATOTID_FORMAT)}
                       year="numeric"
                       month="short"
                       day="numeric"
