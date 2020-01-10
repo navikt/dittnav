@@ -156,7 +156,7 @@ workflows:
       - til-q1:
           type: approval
           requires:
-            - docker-bygg-og-push-uten-latest
+            - deploy-q6
       - automatisk-deploy-q1:
           requires:
             - docker-bygg-og-push-med-latest
