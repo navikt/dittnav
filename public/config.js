@@ -1,6 +1,9 @@
 console.log("Setter nødvendige variabler for å kunne kjøre lokalt")
 window.env = {}
-window.env.DITTNAV_BASEAPI_URL="http://localhost:8085"
+// Kjøring lokalt med mock i app
+window.env.DITTNAV_BASEAPI_URL="http://localhost:1234"
+// Kjøring lokalt med backend kjørende lokalt
+//window.env.DITTNAV_BASEAPI_URL="http://localhost:8090/person"
 window.env.TJENESTER_URL="http://localhost:9222"
 window.env.NAVNO_URL="http://localhost:9222"
 window.env.LOGIN_URL="http://localhost:5000"
