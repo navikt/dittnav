@@ -6,7 +6,12 @@ export const FeatureToggles = React.createContext({});
 
 export const FeatureToggleWrapper = ({ toggle, children }) => {
   const { featureToggles } = useContext(FeatureToggles);
-  return <>{ featureToggles[toggle] === null ? null : React.cloneElement(children, { isFeatureEnabled: featureToggles[toggle] })}</>;
+  return (
+    <>{featureToggles != null
+      ? React.cloneElement(children, { isFeatureEnabled: featureToggles[toggle] })
+      : React.cloneElement(children, { isFeatureEnabled: false })}
+    </>
+  );
 };
 
 FeatureToggleWrapper.propTypes = {

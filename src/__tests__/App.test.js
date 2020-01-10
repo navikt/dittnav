@@ -53,23 +53,6 @@ it('expect Oppfolging fetching', async () => {
   expect(component).toMatchSnapshot();
 });
 
-it('expect Oppfolging ny kilde fetching', async () => {
-  const api = mockApi();
-  api.fetchOppfolgingNyKilde = () => new Promise((resolve, reject) => {
-    resolve(
-      {
-        'erBrukerUnderOppfolging': false
-      },
-    );
-  });
-  const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api}/>));
-  const component = renderer.getRenderOutput();
-  await flushPromises();
-
-  expect(component).toMatchSnapshot();
-});
-
 it('expect MeldekortInfo fetching', async () => {
   const api = mockApi();
   api.fetchMeldekort = () => new Promise((resolve, reject) => {
@@ -155,6 +138,6 @@ it('expect PaabegynteSoknader fetching', async () => {
   const component = ReactTestRenderer.create(wrapIntl(<App api={api}/>));
   await flushPromises();
 
-  expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
+  expect(component).toMatchSnapshot();
 });
 

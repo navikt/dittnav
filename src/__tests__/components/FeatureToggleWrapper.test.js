@@ -41,3 +41,14 @@ test('no such feature Unleash snaphot-test', async () => {
   );
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('no set feature toggles', async () => {
+  const component = ReactTestRenderer.create(
+    <FeatureToggles.Provider value={{ }}>
+      <FeatureToggleWrapper toggle="dittnav.fo">
+        <C />
+      </FeatureToggleWrapper>
+    </FeatureToggles.Provider>
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});
