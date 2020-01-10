@@ -99,6 +99,7 @@ const App = (props) => {
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
+  const loading = (featureToggles && featureToggles['dittnav.ny-backend']) ? data.fetching < 7 : data.fetching < 6; // Denne logikken må endres
 
   return (
     <main role="main">
@@ -111,7 +112,7 @@ const App = (props) => {
           identifikator={data.identifikator}
           paabegynteSoknader={data.paabegynteSoknader}
           mininnboks={data.mininnboks}
-          fetching={data.fetching}
+          loading={loading}
           sakstema={data.sakstema}
           oppfolgingHasLoaded={data.oppfolgingHasLoaded}
         />
