@@ -1,48 +1,20 @@
 .person-info {
   text-align: center;
-  .arbeidssokerstatus {
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    span::after {
-      content: ' ';
-    }
+  &__ikon {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-bottom: 1rem;
   }
   h1 {
     text-transform: capitalize;
-    font-family: Modus,Arial,sans-serif;
-    margin-bottom: 0;
+    margin: 0;
     padding-bottom: 0.5rem;
     font-size: 1.875rem;
-    margin-top: 0;
-    padding-top: 3.6rem;
     font-weight: 600;
-    &:before {
-      content: "";
-      background-image: url(../images/person.svg);
-      background-color: transparent;
-      background-position: center top;
-      background-size: 100%;
-      width: 2.6rem;
-      height: 2.6rem;
-      display: block;
-      background-position: center center;
-      background-repeat: no-repeat;
-      left: 50%;
-      position: absolute;
-      top: 0;
-      border-radius: 50%;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-    }
   }
-  p {
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
-  }
+
 }

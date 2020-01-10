@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'js/App';
+
 const ReactTestRenderer = require('react-test-renderer');
 import ShallowRenderer from 'react-test-renderer/shallow';
 import wrapIntl from 'js/IntlTestHelper';
 
 const mockApi = () => {
   return {
-    fetchPersonInfoAndServices: () => new Promise((resolve, reject) => {}),
+    fetchOppfolging: () => new Promise((resolve, reject) => {}),
+    fetchMeldekort: () => new Promise((resolve, reject) => {}),
+    fetchPersonNavn: () => new Promise((resolve, reject) => {}),
+    fetchPersonIdent: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
-  }
+    fetchSakstema: () => new Promise((resolve, reject) => {}),
+  };
 };
 
 const flushPromises = () => {
@@ -20,7 +25,7 @@ const flushPromises = () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<App api={mockApi()} />), div);
+  ReactDOM.render(wrapIntl(<App api={mockApi()}/>), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -30,23 +35,82 @@ it('expect Login page rendering', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-it('expect PersonInfo fetching', async () => {
+it('expect Oppfolging fetching', async () => {
   const api = mockApi();
-  api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
-    resolve({
-      "personinfo": {
-        "navn": "Ola Ytelssen",
-        "fgkode": "RARBS",
-        "ytelse": "ATTF",
-        "registrert": true,
-        "inaktiv": false,
-        "meldekortbruker": true,
-        "erUnderRegistreringIArbeid": true
+  api.fetchOppfolging = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'erBrukerUnderOppfolging': false
       },
-    })
+    );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api} />));
+  renderer.render(wrapIntl(<App api={api}/>));
+  const component = renderer.getRenderOutput();
+  await flushPromises();
+
+  expect(component).toMatchSnapshot();
+});
+
+it('expect MeldekortInfo fetching', async () => {
+  const api = mockApi();
+  api.fetchMeldekort = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'etterregistrerteMeldekort': 0,
+        'meldekortbruker': true,
+        'nyeMeldekort': {
+          'antallNyeMeldekort': 3,
+          'nesteInnsendingAvMeldekort': null,
+          'nesteMeldekort': {
+            'fra': '2019-09-09',
+            'kanSendesFra': '2019-09-21',
+            'risikererTrekk': true,
+            'sisteDatoForTrekk': '2019-09-30',
+            'til': '2019-09-22',
+            'uke': '37-38'
+          }
+        },
+        'resterendeFeriedager': 0
+      }
+    );
+  });
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<App api={api}/>));
+  const component = renderer.getRenderOutput();
+  await flushPromises();
+
+  expect(component).toMatchSnapshot();
+});
+
+it('expect Personalia navn fetching', async () => {
+  const api = mockApi();
+  api.fetchPersonNavn = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'navn': 'VINAYAGUM-MASK AMIZIC'
+      },
+    );
+  });
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<App api={api}/>));
+  const component = renderer.getRenderOutput();
+  await flushPromises();
+
+  expect(component).toMatchSnapshot();
+});
+
+it('expect Personalia ident fetching', async () => {
+  const api = mockApi();
+  api.fetchPersonIdent = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'ident': 123
+      },
+    );
+  });
+  const renderer = new ShallowRenderer();
+  renderer.render(wrapIntl(<App api={api}/>));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -56,31 +120,21 @@ it('expect PersonInfo fetching', async () => {
 it('expect PaabegynteSoknader fetching', async () => {
   const api = mockApi();
 
-  api.fetchPersonInfoAndServices = () => new Promise((resolve, reject) => {
-    resolve({
-      "paabegynteSoknader": {
-        "url": "https://tjenester-t6.nav.no/",
-        "antallPaabegynte": 2,
-        "feilendeBaksystem": ['hello']
-      },
-      "personinfo": {
-        "navn": "Ola Ytelssen",
-        "fgkode": "RARBS",
-        "ytelse": "ATTF",
-        "registrert": true,
-        "inaktiv": false,
-        "meldekortbruker": true,
-        "erUnderRegistreringIArbeid": true
-      },
-      "feilendeTjenester":['error.baksystemer']
-    })
+  api.fetchSaker = () => new Promise((resolve, reject) => {
+    resolve(
+      {
+        'url': 'https://tjenester-t6.nav.no/',
+        'antallPaabegynte': 2,
+        'feilendeBaksystem': ['hello']
+      }
+    );
   });
 
   // api.fetchPaabegynteSaker = () => new Promise((resolve, reject) => {
   //   resolve({feilendeBaksystem: ['hello']});
   // });
 
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<App api={api}/>));
   await flushPromises();
 
   expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);

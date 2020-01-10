@@ -1,39 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage as F } from 'react-intl';
+import Personikon from '../../images/person.svg';
 
-class PersonInfo extends Component {
-  render() {
-    if (!this.props.personInfo) return null;
-    const {
-      navn, fgkode, ytelse, registrert, inaktiv,
-    } = this.props.personInfo;
-    return (
-      <div className="person-info">
-        <h1 className="person-info">{navn ? navn.toLowerCase() : ''}</h1>
-        {registrert && !inaktiv && fgkode && ytelse ? (
-          <p className="arbeidssokerstatus">
-            <F id={`fgkode.${fgkode}`} />
-            <F id={`ytelse.${ytelse}`} />
-          </p>
-        ) : null}
-      </div>
-    );
-  }
-}
+const PersonInfo = ({ person, identifikator }) => {
+  if (!person && !identifikator) return null;
+  const info = person && person.navn ? person.navn.toLowerCase() : identifikator.ident;
+
+  return (
+    <div className="person-info">
+      <img className="person-info__ikon" src={Personikon} alt="" />
+      <h1>{info}</h1>
+    </div>
+  );
+};
 
 PersonInfo.propTypes = {
-  personInfo: PropTypes.shape({
+  person: PropTypes.shape({
     navn: PropTypes.string.isRequired,
-    fgkode: PropTypes.oneOf(['IARBS', 'INGEN_FGKODE', 'ISERV', 'ARBS', 'PARBS', 'RARBS']),
-    ytelse: PropTypes.oneOf(['IYT', 'DAGP', 'ATTF', 'AAP', 'INDS', 'VENT']),
-    registrert: PropTypes.bool.isRequired,
-    inaktiv: PropTypes.bool.isRequired,
+  }),
+  identifikator: PropTypes.shape({
+    ident: PropTypes.number.isRequired,
   }),
 };
 
 PersonInfo.defaultProps = {
-  personInfo: null,
+  person: null,
+  identifikator: null,
 };
 
 export default PersonInfo;

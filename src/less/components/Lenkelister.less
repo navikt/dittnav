@@ -1,61 +1,72 @@
-.ditt-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-right: -10px;
-  margin-bottom: 40px;
+.relatert-informasjon {
+  margin: 1.5rem;
+  column-count: 1;
 
-  &:after {
-    content: "";
-    width: 32%;
-    margin-right: 10px;
+  &__subheader {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      text-align: center;
+
+      &::before,
+      &::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background-color: lightgray;
+      }
+
+      span {
+          flex-shrink: 0;
+          margin: 0 1rem;
+      }
   }
 
-  .lenkelist {
-    color: #3e3832;
-    padding-bottom: 0.5rem;
-    margin-top: 0.5rem !important;
-    margin-bottom: 0px !important;
-    position: relative;
+  &__link-container {
+      margin-bottom: 1.5rem;
+      text-align: center;
   }
 
-  .ditt-list-element {
-    width: 32%;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+  &__link {
+      color: #0067c5;
+      text-decoration: none;
+      border-bottom: 1px solid lightgray;
+
+      &:hover {
+          border-bottom-color: @navBla;
+      }
+
+      .typo-normal:hover {
+          border-bottom: 0;
+      }
+
+      .typo-normal:hover > p {
+          border-bottom: 0;
+      }
   }
 
-  .lenkelist:hover {
-    color: #0067c5;
-    border-bottom: 1px solid #b7b1a9;
-    &:before {
-      content: " ";
-      border: 3px solid #0067c5;
-      border-radius: 50%;
-      left: -10px;
-      top: 8px;
-      position: absolute;
-    }
+  &__link-icon {
+      margin-left: 0.5rem;
+      position: relative;
   }
-}
 
-@media screen and (max-width: 800px) {
-  .ditt-list {
-    .ditt-list-element {
-      width: 46%;
-      margin-top: 4px;
-    }
-  }  
-}
+  p {
+      text-align: center;
+      display: inline-block;
+      border-bottom: 1px solid transparent;
+  }
 
-@media screen and (max-width: 700px) {
-  .ditt-list {
-    margin: 0;
-    flex-flow: column;
-    .ditt-list-element {
-      width: 100%;
-      margin-top: 4px;
-    }
-  }  
+  a {
+      display: inline-block;
+  }
+
+  @media (min-width: @mobile-breakpoint) {
+      column-count: 2;
+  }
+
+  @media (min-width: @tablet-breakpoint) {
+      column-count: 3;
+  }
 }

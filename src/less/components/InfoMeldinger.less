@@ -1,128 +1,16 @@
 .infomeldinger-list {
-  padding: 0;
-  margin-top: 40px;
-  margin-right: 70px;
-  margin-left: 70px;
-  margin-bottom: 2em;
+  border-radius: 0.25rem;
+  margin-top: 2.5rem;
+  margin-right: 4.375rem;
+  margin-left: 4.375rem;
+  .blokk-xl();
 
-  .message {
-    text-decoration: none;
-    margin: 4px 0 0;
-    background: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: #3e3832;
-    border: none;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    position: relative;
-    min-height: 56px;
-    padding: 2px;
-    a {
-      border: none;
-    }
-    .icon {
-      display: inline;
-      -ms-flex: 0 0 54px;
-      flex: 0 0 54px;
-      background-size: auto 32px;
-      background-repeat: no-repeat;
-      background-position: 50%;
-      background-color: #ffe9cc;
-    }
-    .meldekort-icon {
-      background-image: url(../images/infomeldinger/alarm-clock.svg);
-      background-color: #ffe9cc;
-    }
-    .ag-icon {
-      background-image: url(../images/infomeldinger/ag-icon.svg);
-      background-color: #f1d8d4;
-    }
-    .mininnboks-default-icon {
-      background-image: url(../images/infomeldinger/ag-icon.svg);
-      background-color: #f1d8d4;
-    }
-    .document-icon {
-      background-image: url(../images/infomeldinger/dokument-normal.svg);
-      background-color: #e0dae7;
-    }
-    .registration-icon {
-      background-image: url(../images/infomeldinger/registration.svg);
-      background-color: #cce1f3;
-    }
-    .default-icon {
-      background-image: url(../images/infomeldinger/default-icon.svg);
-      background-color: #ffe9cc;
-    }
-    .texts {
-      * {
-        margin: 0;
-      }
-      -ms-flex-item-align: center;
-      align-self: center;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      margin: 16px 20px 16px 8px;
-    }
-  }
-  .clickable {
-    &:hover {
+  .infomelding {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
 
-      .document-icon {
-        background-image: url(../images/infomeldinger/dokument-hover.svg);
-        background-color: #a190b8;
-      }
-
-      .ag-icon {
-        background-image: url(../images/infomeldinger/ag-icon-hover.svg);
-        background-color: #d6897d;
-      }
-
-      .mininnboks-default-icon {
-        background-image: url(../images/infomeldinger/ag-icon-hover.svg);
-        background-color: #d6897d;
-      }
-
-      .registration-icon {
-        background-image: url(../images/infomeldinger/registration-hover.svg);
-        background-color: #a190b8;
-      }
-
-      .meldekort-icon {
-        background-image: url(../images/infomeldinger/alarm-clock-hover.svg);
-        background-color: #ffbd66;
-      }
-      
-      .default-icon {
-        background-image: url(../images/infomeldinger/default-icon-hover.svg);
-        background-color: #ffbd66;
-      }
-
-      &:after {
-        background-image: url(../images/infomeldinger/ikon-pil-klikkbart-hover.svg);
-      }
-      color: #0067c5;
-      border-bottom-color: #fff;
-      cursor: pointer;
-      -webkit-box-shadow: #b7b1a9 0 2px 1px 0;
-      box-shadow: 0 2px 1px 0 #b7b1a9;
-    }
-    &:after {
-      background-image: url(../images/infomeldinger/ikon-pil-klikkbart.svg);
-      background-repeat: no-repeat;
-      content: " ";
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex: 0 0 12px;
-      flex: 0 0 12px;
-      height: 20px;
-      -ms-flex-item-align: center;
-      align-self: center;
-      margin-right: 20px;
+    .lenkepanel__innhold {
+      padding: 0;
     }
   }
 }

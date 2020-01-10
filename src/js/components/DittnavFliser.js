@@ -1,44 +1,45 @@
 import React from 'react';
-
+import { FormattedMessage as F } from 'react-intl';
 import Config from '../Config';
-import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './LenkepanelMedIkon';
+import { LenkepanelMedIkon, IkonBlyant, IkonKane, IkonPille, IkonSkilt } from './common/LenkepanelMedIkon';
+import PanelOverskrift from './common/PanelOverskrift';
 
 const DittnavFliser = () => (
   <>
     <div className="dittnav-lenkeikon-container">
       <LenkepanelMedIkon
         alt="Ditt sykefravær"
-        overskrift="fliser.ditt.sykevravaer"
-        ingress="fliser.ditt.sykevravaer.ingress"
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.ditt.sykevravaer" />} type="Undertittel" />}
+        ingress={<F id="fliser.ditt.sykevravaer.ingress" />}
         className="first"
-        href={`${Config.dittNav.SERVICES_URL}/sykefravaer/`}
+        href={Config.LENKER.dittSykefravaer.url}
       >
         <IkonPille />
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
-        alt="Mistet jobben"
-        overskrift="fliser.mistet.jobben"
-        ingress="fliser.mistet.jobben.ingress"
-        href={`${Config.dittNav.SERVICES_URL}/veiledearbeidssoker/`}
+        alt="Mistet jobben?"
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.mistet.jobben" />} type="Undertittel" />}
+        ingress={<F id="fliser.mistet.jobben.ingress" />}
+        href={Config.LENKER.veilederArbeidssoker.url}
       >
         <IkonSkilt />
       </LenkepanelMedIkon>
     </div>
-    <div className="dittnav-lenkeikon-container">
+    <div className="dittnav-lenkeikon-container blokk-xxl">
       <LenkepanelMedIkon
         alt="Skjemaer"
-        overskrift="fliser.skjemaer"
-        ingress="fliser.skjemaer.ingress"
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.skjemaer" />} type="Undertittel" />}
+        ingress={<F id="fliser.skjemaer.ingress" />}
         className="first"
-        href="/no/person/skjemaer-for-privatpersoner"
+        href={Config.LENKER.skjemaer.url}
       >
         <IkonBlyant />
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Din pensjon"
-        overskrift="fliser.din.pensjon"
-        ingress="fliser.din.pensjon.ingress"
-        href={`${Config.dittNav.SERVICES_URL}/pselv/publisering/dinpensjon.jsf`}
+        overskrift={<PanelOverskrift overskrift={<F id="fliser.din.pensjon" />} type="Undertittel" />}
+        ingress={<F id="fliser.din.pensjon.ingress" />}
+        href={Config.LENKER.dinPensjon.url}
       >
         <IkonKane />
       </LenkepanelMedIkon>

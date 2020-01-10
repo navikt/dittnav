@@ -23,7 +23,7 @@ class Unleash extends Component {
 
   render() {
     const { isFeatureEnabled } = this.state;
-    return <React.Fragment>{isFeatureEnabled === null ? null : React.cloneElement(this.props.children, { isFeatureEnabled })}</React.Fragment>;
+    return <>{ isFeatureEnabled === null ? null : React.cloneElement(this.props.children, { isFeatureEnabled })}</>;
   }
 }
 

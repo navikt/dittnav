@@ -1,34 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`basic green Lenkelister test 1`] = `
-<section
-  className="ditt-list"
-/>
+<div
+  className="relatert-informasjon"
+>
+  <nav
+    className="relatert-informasjon__links"
+  />
+</div>
 `;
 
 exports[`render Lenkelister without links 1`] = `
-<section
-  className="ditt-list"
-/>
+<div
+  className="relatert-informasjon"
+>
+  <nav
+    className="relatert-informasjon__links"
+  />
+</div>
 `;
 
 exports[`render a couple of links 1`] = `
-<section
-  className="ditt-list"
+<div
+  className="relatert-informasjon"
 >
-  <a
-    className="lenke ditt-list-element lenkelist"
-    data-ga="Dittnav/Lenkeliste"
-    href="/mininnboks"
+  <nav
+    className="relatert-informasjon__links"
   >
-    Min innboks
-  </a>
-  <a
-    className="lenke ditt-list-element lenkelist"
-    data-ga="Dittnav/Lenkeliste"
-    href="/saksoversikt"
-  >
-    Innsyn og oversikt
-  </a>
-</section>
+    <div
+      className="relatert-informasjon__link-container"
+    >
+      <a
+        className="lenke relatert-informasjon__link"
+        data-ga="Dittnav/Lenkeliste"
+        href="/mininnboks"
+      >
+        Min innboks
+      </a>
+    </div>
+    <div
+      className="relatert-informasjon__link-container"
+    >
+      <a
+        className="lenke relatert-informasjon__link"
+        data-ga="Dittnav/Lenkeliste"
+        href="/saksoversikt"
+      >
+        Innsyn og oversikt
+      </a>
+    </div>
+  </nav>
+</div>
 `;

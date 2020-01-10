@@ -1,46 +1,63 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import i18n from 'translations/i18n';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import i18n from '../../../translations/i18n';
+import { IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import PanelOverskrift from '../common/PanelOverskrift';
 
-const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
-
-const getMessagesIcon = (type) => {
+const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return 'document-icon';
+      return <IkonInnboks />;
     case 'OPPGAVE_VARSEL':
-      return 'registration-icon';
+      return <IkonOppgave />;
     default:
-      return 'mininnboks-default-icon';
+      return <IkonInnboks />;
   }
 };
 
-class MinInnboks extends Component {
-  render() {
-    const { numberToWord } = i18n[this.props.intl.locale];
-    const messages = this.props.mininnboks;
-    return (
-      <React.Fragment>
-        {messages && messages.map(message => (
-          <a
-            key={message.type}
-            data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
-            className="message clickable"
-            href={message.url}
-          >
-            <span className={`icon ${getMessagesIcon(message.type)}`} aria-label={`${message.type.toLowerCase().replace(/_/g, ' ')} ikon`} />
-            <div className="texts">
-              <p><F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} /></p>
-            </div>
-          </a>
-        ))}
-      </React.Fragment>
-    );
-  }
-}
+const createOverskrift = (message, numberToWord, formatFlereEn) => {
+  const overskrift = (
+    <F
+      id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)}
+      values={{ count: numberToWord(message.antall) }}
+    />
+  );
 
-export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string.isRequired, uri: PropTypes.string }));
+  return (
+    <PanelOverskrift
+      overskrift={overskrift}
+      type="Element"
+    />
+  );
+};
+
+const MinInnboks = ({ mininnboks, intl }) => {
+  const { numberToWord } = i18n[intl.locale];
+  const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
+
+  return (
+    <>
+      {mininnboks && mininnboks.map(message => (
+        <LenkepanelMedIkon
+          key={message.type}
+          className="infomelding"
+          data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
+          alt="Melding fra mininnboks"
+          overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
+          href={message.url}
+        >
+          {getMinInnboksIcon(message.type)}
+        </LenkepanelMedIkon>
+      ))}
+    </>
+  );
+};
+
+export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({
+  type: PropTypes.string.isRequired,
+  url: PropTypes.string,
+}));
 
 MinInnboks.propTypes = {
   mininnboks: MinInnboksType,

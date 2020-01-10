@@ -1,54 +1,57 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
+import Api from '../Api';
+import Unleash from './Unleash';
+import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
+import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
+import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
+import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
+import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
+import Hendelser from './meldinger/Hendelser';
 
-import PaabegynteSoknader, { PaabegynteSoknaderType } from 'js/components/meldinger/PaabegynteSoknader';
-import RegStatusLink from 'js/components/RegStatusLink';
-import Meldekort, { MeldekortType } from 'js/components/Meldekort';
-import EtterregistreringMeldekort from 'js/components/EtterregistreringMeldekort';
-import AgMeldinger from 'js/components/meldinger/AgMeldinger';
-import NavMeldinger from 'js/components/meldinger/NavMeldinger';
-import MinInnboks, { MinInnboksType } from 'js/components/meldinger/MinInnboks';
-import InformasjonsMeldinger from 'js/components/meldinger/InformasjonsMeldinger';
+const UnleashWrapper = ({ isFeatureEnabled }) => (
+  <>
+    {isFeatureEnabled ? <Hendelser /> : null}
+  </>
+);
 
-class InfoMeldinger extends Component {
-  render() {
-    return (
-      <section className="infomeldinger-list">
-        <h1 className="vekk"><F id="dittnav.infomeldinger.varsler" /></h1>
-        <InformasjonsMeldinger isMeldeKortUser={this.props.isMeldeKortUser} />
-        <Meldekort meldekort={this.props.meldekort} />
-        <EtterregistreringMeldekort ettereg={this.props.meldekort} />
-        <RegStatusLink isRegisteredAtIArbeid={this.props.isRegisteredAtIArbeid} />
-        {!this.props.isInactive ? <AgMeldinger agMessagesCount={this.props.agMessagesCount} /> : null}
-        <NavMeldinger navMessagesCount={this.props.navMessagesCount} />
-        <PaabegynteSoknader paabegynteSoknader={this.props.paabegynteSoknader} />
-        <MinInnboks mininnboks={this.props.mininnboks} />
-      </section>
-    );
-  }
-}
+const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
+  const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
+
+  return (
+    <section className="infomeldinger-list">
+      <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
+      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
+      {isMeldeKortUser ? <Meldekort meldekort={meldekort} /> : null}
+      <EtterregistreringMeldekort ettereg={meldekort} />
+      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
+      <MinInnboks mininnboks={mininnboks} />
+      <Unleash api={Api} feature="dittnav.hendelser">
+        <UnleashWrapper />
+      </Unleash>
+    </section>
+  );
+};
 
 InfoMeldinger.propTypes = {
-  paabegynteSoknader: PaabegynteSoknaderType,
-  isRegisteredAtIArbeid: PropTypes.bool,
   meldekort: MeldekortType,
-  navMessagesCount: PropTypes.number,
-  agMessagesCount: PropTypes.number,
-  isMeldeKortUser: PropTypes.bool,
-  isInactive: PropTypes.bool.isRequired,
+  paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
-
 };
 
 InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
-  isRegisteredAtIArbeid: null,
   meldekort: null,
-  navMessagesCount: 0,
-  agMessagesCount: 0,
-  isMeldeKortUser: false,
   mininnboks: [],
+};
+
+UnleashWrapper.propTypes = {
+  isFeatureEnabled: PropTypes.bool,
+};
+
+UnleashWrapper.defaultProps = {
+  isFeatureEnabled: null,
 };
 
 export default InfoMeldinger;

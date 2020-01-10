@@ -1,4 +1,4 @@
-@coreModulePath: '../../node_modules/';
+@coreModulePath: '../../../node_modules/';
 @nav-frontend-core: '../../node_modules/';
 @import '../../node_modules/nav-frontend-lenker-style/src/lenker-style.less';
 @import '../../node_modules/nav-frontend-spinner-style/src/spinner-style.less';
@@ -6,13 +6,46 @@
 @import '../../node_modules/nav-frontend-lenker-style/src/lenker-style.less';
 @import '../../node_modules/nav-frontend-paneler-style/src/index.less';
 @import '../../node_modules/nav-frontend-typografi-style/src/index.less';
-@import './font.less';
+// Temp while showing events, see PB-162
+@import '../../node_modules/nav-frontend-alertstriper-style/src/index.less';
+@import '../../node_modules/nav-frontend-chevron-style/src/index.less';
+@import '../../node_modules/nav-frontend-skjema-style/src/index.less';
+@import '../../node_modules/nav-frontend-knapper-style/src/index.less';
+@import '../../node_modules/nav-frontend-hjelpetekst-style/src/hjelpetekst-style.less';
+@import '../../node_modules/nav-frontend-popover-style/src/popover-style.less';
+
+@main-content-max-width: 640px;
+@mobile-breakpoint: 576px;
+@tablet-breakpoint: @screen-tablet;
+
+.blokk-xxl() {
+  margin-bottom: 4rem;
+}
+
+.blokk-xxl {
+  .blokk-xxl();
+}
+
+.blokk-xl() {
+  margin-bottom: 2.5rem;
+}
+
+.blokk-xl {
+  .blokk-xl();
+}
+
 @import './components/Lenkelister.less';
-@import './components/Tjenester.less';
-@import './components/Artikkel.less';
 @import './components/PersonInfo.less';
 @import './components/InfoMeldinger.less';
 @import './components/LenkePanelMedIkon.less';
+@import './components/PanelMedIkon.less';
+@import 'components/DittnavLenkePanel.less';
+@import './components/OversiktspanelMedListe.less';
+@import './components/DinesakerSakstema.less';
+@import './old-decorator';
+
+// Temp while showing events, see PB-166
+@import './components/Hendelser';
 
 body {
   background: @navLysGra !important;
@@ -38,15 +71,21 @@ body {
   border-bottom: 1px solid #b7b1a9;
   padding: 10px 0;
 	.typo-element {
-    display: flex;
-    flex-flow: column;
-		color: #c30000;
-    margin: 0;
-    font-size: 1.1rem;
+      display: flex;
+      flex-flow: column;
+      color: #c30000;
+      margin: 0;
+      font-size: 1.1rem;
 	}
 }
 
 .header-spinner {
-  width: 100%;
+  width: 100% !important;
   margin-top: 1em;
 }
+
+// TODO: Remove when the new decorator is out.
+.btn-logout {
+  min-height: 1.25rem !important;
+}
+

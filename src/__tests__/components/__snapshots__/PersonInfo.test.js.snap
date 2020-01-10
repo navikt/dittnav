@@ -1,51 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PersonInfo inactive 1`] = `
-<div
-  className="person-info"
->
-  <h1
-    className="person-info"
-  >
-    hello
-  </h1>
-</div>
-`;
-
-exports[`PersonInfo not registered 1`] = `
-<div
-  className="person-info"
->
-  <h1
-    className="person-info"
-  >
-    hello
-  </h1>
-</div>
-`;
-
-exports[`PersonInfo without personInfo 1`] = `null`;
+exports[`PersonInfo without person and ident 1`] = `null`;
 
 exports[`basic green PersonInfo snaphot-test 1`] = `
 <div
   className="person-info"
 >
-  <h1
-    className="person-info"
-  >
+  <img
+    alt=""
+    className="person-info__ikon"
+    src="person.svg"
+  />
+  <h1>
     hello
   </h1>
 </div>
 `;
 
-exports[`basic green PersonInfo snaphot-test without fgkode/yrke 1`] = `
+exports[`basic green PersonInfo snaphot-test without person and with ident 1`] = `
 <div
   className="person-info"
 >
-  <h1
-    className="person-info"
-  >
-    hello
+  <img
+    alt=""
+    className="person-info__ikon"
+    src="person.svg"
+  />
+  <h1>
+    123
   </h1>
 </div>
 `;

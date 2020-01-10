@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "watch": ["src"],
+  "ext": "js,less",
+  "exec": "npm run local-win",
+  "events": {
+    "crash": "npm run local-win"
+  }
+}
