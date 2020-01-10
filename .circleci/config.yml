@@ -73,6 +73,24 @@ jobs:
       - nais-deploy:
           namespace: q0
           environment: dev-sbs
+  automatisk-deploy-q1:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q1
+          environment: dev-sbs
+  automatisk-deploy-q0:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q0
+          environment: dev-sbs
+  release:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: default
+          environment: prod-sbs
 
 commands:
   docker-deploy:
@@ -139,6 +157,22 @@ workflows:
           type: approval
           requires:
             - docker-bygg-og-push-uten-latest
+      - automatisk-deploy-q1:
+          requires:
+            - docker-bygg-og-push-med-latest
+          filters:
+            branches:
+              only: master
+      - bekreft-release:
+          type: approval
+          requires:
+            - automatisk-deploy-q1
+          filters:
+            branches:
+              only: master
+      - release:
+          requires:
+            - bekreft-release
       - deploy-q1:
           requires:
             - til-q1
@@ -149,3 +183,6 @@ workflows:
       - deploy-q0:
           requires:
             - til-q0
+      - automatisk-deploy-q0:
+          requires:
+            - release
