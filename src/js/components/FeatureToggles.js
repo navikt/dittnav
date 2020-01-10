@@ -28,7 +28,13 @@ const FeatureTogglesProvider = ({ children }) => {
   const [featureToggles, setFeatureToggles] = useState({});
 
   useEffect(() => {
-    fetch(`${Config.dittNav.CONTEXT_PATH}/api/feature`, { method: 'GET' })
+    const createURL = () => {
+      const toggles = Config.dittNav.FEATURE_TOGGLES.split(',');
+      const togglePath = toggles.reduce((accumulatedToggles, currentToggle) => `${accumulatedToggles}&feature=${currentToggle}`);
+      return `${Config.dittNav.CONTEXT_PATH}/api/feature?feature=${togglePath}`;
+    };
+
+    fetch(createURL(), { method: 'GET' })
       .then(r => r.json())
       .then(response => setFeatureToggles(response))
       // eslint-disable-next-line no-console
