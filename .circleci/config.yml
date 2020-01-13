@@ -79,7 +79,6 @@ jobs:
       - nais-deploy:
           namespace: q0
           environment: dev-sbs
-
   automatisk-deploy-q0:
     executor: nais/deployment-cli
     steps:
