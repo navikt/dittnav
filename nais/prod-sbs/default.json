@@ -1,7 +1,7 @@
 {
   "namespace": "default",
   "ingresses": [
-    "https://dittnav.nais.oera.local",
+    "https://dittnav.nais.oera.no",
     "https://www.nav.no/person/dittnav",
     "https://tjenester.nav.no/person/dittnav"
   ]
