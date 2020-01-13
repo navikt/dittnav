@@ -41,7 +41,6 @@ const oppfolgingsLenker = [
 ];
 
 export default {
-    UNLEASH_TIMEOUT: 3000,
     dittNav: {
         NAV_URL: window.env.NAVNO_URL,
         LOGINSERVICE: window.env.LOGIN_URL,
@@ -60,6 +59,7 @@ export default {
         ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
         GENERELLE_LENKER: generelleLenker,
         OPPFOLGINGS_LENKER: oppfolgingsLenker,
+        FEATURE_TOGGLES: 'dittnav.hendelser,dittnav.ny-backend', // a,b,c etc..
     },
     VTA_PATH: window.env.VTA_URL,
     INNLOGGINGSLINJE_AUTH: `${window.env.VTA_URL}/innloggingslinje-api/auth`,
