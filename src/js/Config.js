@@ -124,7 +124,6 @@ const oppfolgingsLenker = [
 
 export default {
   ENVIRONMENT: getEnvironment(),
-  UNLEASH_TIMEOUT: 3000,
   SAKSTEMA_DATOTID_FORMAT: 'YYYY-MM-DD-hh:mm:ss+Z',
   dittNav: {
     SERVICES_URL: getServicesUrl(),
