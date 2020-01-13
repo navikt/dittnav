@@ -9,6 +9,7 @@ import wrapIntl from 'js/IntlTestHelper';
 const mockApi = () => {
   return {
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
+    fetchOppfolgingNyKilde: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
     fetchPersonNavn: () => new Promise((resolve, reject) => {}),
     fetchPersonIdent: () => new Promise((resolve, reject) => {}),
@@ -137,6 +138,6 @@ it('expect PaabegynteSoknader fetching', async () => {
   const component = ReactTestRenderer.create(wrapIntl(<App api={api}/>));
   await flushPromises();
 
-  expect(component.root.children[0].instance.state.errors).toEqual(['error.baksystemer']);
+  expect(component).toMatchSnapshot();
 });
 
