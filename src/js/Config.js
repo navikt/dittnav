@@ -132,6 +132,7 @@ export default {
     LOGINSERVICE: getLoginUrl(),
     DITTNAV_API_AUTH_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/authPing`,
     DITTNAV_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/oppfolging`,
+    DITTNAV_NY_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/oppfolging`,
     DITTNAV_MELDEKORT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldekortinfo`,
     DITTNAV_PERSON_NAVN_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/navn`,
     DITTNAV_PERSON_IDENT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/ident`,
@@ -145,6 +146,7 @@ export default {
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
     GENERELLE_LENKER: generelleLenker,
     OPPFOLGINGS_LENKER: oppfolgingsLenker,
+    FEATURE_TOGGLES: 'dittnav.hendelser,dittnav.ny-backend', // a,b,c etc..
   },
   VTA_PATH: getVtaPath(),
   INNLOGGINGSLINJE_AUTH: `${getNavUrl()}/innloggingslinje-api/auth`,
