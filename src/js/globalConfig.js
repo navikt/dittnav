@@ -9,7 +9,7 @@ const lenker = {
     dinPensjon: { tittel: 'Din pensjon', url: `${window.env.TJENESTER_URL}/pselv/publisering/dinpensjon.jsf` },
     dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
     veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${window.env.TJENESTER_URL}/veiledearbeidssoker` },
-    registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${window.env.REGISTRERING_URL}` },
+    registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${window.env.ARBEIDSSOKERREGISTRERING_URL}` },
     dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${window.env.TJENESTER_URL}/sykefravaer` },
     utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${window.env.TJENESTER_URL}/utbetalingsoversikt` },
     saksoversikt: { tittel: 'Dine saker', url: `${window.env.TJENESTER_URL}/saksoversikt` },
