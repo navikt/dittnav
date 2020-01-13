@@ -25,6 +25,7 @@ resources:
     memory: 768Mi
   requests:
     memory: 512Mi
+webproxy: true
 fasitResources:
   used:
   # - alias: nav.dekoratoren
