@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`error while fetching Unleash snaphot-test 1`] = `null`;
-
 exports[`feature is disabled Unleash snaphot-test 1`] = `
 <div>
   Not hello, the feature is disabled
@@ -14,10 +12,14 @@ exports[`feature is enabled Unleash snaphot-test 1`] = `
 </div>
 `;
 
-exports[`no such feature Unleash snaphot-test 1`] = `
+exports[`no set feature toggles 1`] = `
 <div>
   Not hello, the feature is disabled
 </div>
 `;
 
-exports[`null while fetching Unleash snaphot-test 1`] = `null`;
+exports[`no such feature Unleash snaphot-test 1`] = `
+<div>
+  Not hello, the feature is disabled
+</div>
+`;
