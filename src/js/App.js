@@ -77,13 +77,7 @@ const App = (props) => {
         .then((r) => {
           setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
-    }, [api],
-  );
 
-
-  // Denne dras ut midlertidig for å unngå at ALLE kallene kjøres på nytt når oppfølging hentes.
-  useEffect(
-    () => {
       if (featureToggles && featureToggles['dittnav.ny-backend']) {
         api.fetchOppfolgingNyKilde()
           .then((r) => {
@@ -99,7 +93,7 @@ const App = (props) => {
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-  const loading = data.fetching < 7; // Denne logikken må endres
+  const loading = data.fetching < 6; // Denne logikken må endres
 
   return (
     <main role="main">

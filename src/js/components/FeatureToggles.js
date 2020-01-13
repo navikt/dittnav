@@ -26,6 +26,9 @@ FeatureToggleWrapper.defaultProps = {
 
 const FeatureTogglesProvider = ({ children }) => {
   const [featureToggles, setFeatureToggles] = useState({});
+  const [loaded, setLoaded] = useState(false);
+
+  const UNLEASH_TIMEOUT = 1000;
 
   useEffect(() => {
     const createURL = () => {
@@ -34,18 +37,28 @@ const FeatureTogglesProvider = ({ children }) => {
       return `${Config.dittNav.CONTEXT_PATH}/api/feature?feature=${togglePath}`;
     };
 
-    fetch(createURL(), { method: 'GET' })
-      .then(r => r.json())
+    Promise.race([
+      fetch(createURL(), { method: 'GET' })
+        .then(r => r.json()),
+      new Promise((_, reject) => setTimeout(() => {
+        const message = `Couldnt wait for unleash longer than ${UNLEASH_TIMEOUT} msec`;
+        return reject(new Error(message));
+      }, UNLEASH_TIMEOUT))])
       .then(response => setFeatureToggles(response))
-      // eslint-disable-next-line no-console
-      .catch(err => console.log(err));
+      .catch(err => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      })
+      .finally(() => setLoaded(true));
   }, []);
 
-  return (
-    <FeatureToggles.Provider value={{ featureToggles }}>
-      {children}
-    </FeatureToggles.Provider>
-  );
+  if (loaded) {
+    return (
+      <FeatureToggles.Provider value={{ featureToggles }}>
+        {children}
+      </FeatureToggles.Provider>
+    );
+  } return null;
 };
 
 FeatureTogglesProvider.propTypes = {
