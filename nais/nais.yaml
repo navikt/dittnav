@@ -4,7 +4,7 @@ metadata:
   name: dittnav
   namespace: {{namespace}}
   labels:
-    team: personbruker
+    team: {{team}}
 spec:
   image: {{version}}
   ingresses: {{ingresses}}
