@@ -212,6 +212,23 @@ exports[`expect MeldekortInfo fetching 1`] = `
 />
 `;
 
+exports[`expect MeldekortInfo fetching 2`] = `
+<App
+  api={
+    Object {
+      "fetchMeldekort": [Function],
+      "fetchMeldinger": [Function],
+      "fetchOppfolging": [Function],
+      "fetchOppfolgingNyKilde": [Function],
+      "fetchPersonIdent": [Function],
+      "fetchPersonNavn": [Function],
+      "fetchSaker": [Function],
+      "fetchSakstema": [Function],
+    }
+  }
+/>
+`;
+
 exports[`expect Oppfolging fetching 1`] = `
 <App
   api={
@@ -506,6 +523,23 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
 `;
 
 exports[`expect Personalia ident fetching 1`] = `
+<App
+  api={
+    Object {
+      "fetchMeldekort": [Function],
+      "fetchMeldinger": [Function],
+      "fetchOppfolging": [Function],
+      "fetchOppfolgingNyKilde": [Function],
+      "fetchPersonIdent": [Function],
+      "fetchPersonNavn": [Function],
+      "fetchSaker": [Function],
+      "fetchSakstema": [Function],
+    }
+  }
+/>
+`;
+
+exports[`expect Personalia ident fetching 2`] = `
 <App
   api={
     Object {
