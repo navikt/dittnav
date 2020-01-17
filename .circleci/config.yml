@@ -55,6 +55,42 @@ jobs:
               docker build -t "navikt/dittnav:$CIRCLE_SHA1" -t "navikt/dittnav:latest" .
               docker push "navikt/dittnav:$CIRCLE_SHA1"
               docker push "navikt/dittnav:latest"
+  deploy-q6:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q6
+          environment: dev-sbs
+  deploy-q1:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q1
+          environment: dev-sbs
+  automatisk-deploy-q1:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q1
+          environment: dev-sbs
+  deploy-q0:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q0
+          environment: dev-sbs
+  automatisk-deploy-q0:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: q0
+          environment: dev-sbs
+  release:
+    executor: nais/deployment-cli
+    steps:
+      - nais-deploy:
+          namespace: default
+          environment: prod-sbs
 
 commands:
   docker-deploy:
@@ -71,6 +107,24 @@ commands:
       - run:
           name: << parameters.description >>
           command: << parameters.command >>
+  nais-deploy:
+    description: Deploy til miljø
+    parameters:
+      namespace:
+        type: string
+      environment:
+        type: string
+    steps:
+      - checkout
+      - nais/deploy-with-gh-app:
+          repo: navikt/dittnav
+          image: navikt/dittnav
+          github-app-id: 34043
+          nais-template: nais/nais.yaml
+          environment: << parameters.environment >>
+          team: personbruker
+          enable-vars: true
+          template-vars: nais/<< parameters.environment >>/<< parameters.namespace >>.json
 
 workflows:
   bygg-og-push:
@@ -92,3 +146,43 @@ workflows:
             branches:
               only:
                 - master
+      - til-q6:
+          type: approval
+          requires:
+            - docker-bygg-og-push-uten-latest
+      - deploy-q6:
+          requires:
+            - til-q6
+      - til-q1:
+          type: approval
+          requires:
+            - deploy-q6
+      - deploy-q1:
+          requires:
+            - til-q1
+      - automatisk-deploy-q1:
+          requires:
+            - docker-bygg-og-push-med-latest
+          filters:
+            branches:
+              only: master
+      - bekreft-release:
+          type: approval
+          requires:
+            - automatisk-deploy-q1
+          filters:
+            branches:
+              only: master
+      - release:
+          requires:
+            - bekreft-release
+      - til-q0:
+          type: approval
+          requires:
+            - docker-bygg-og-push-uten-latest
+      - deploy-q0:
+          requires:
+            - til-q0
+      - automatisk-deploy-q0:
+          requires:
+            - release
