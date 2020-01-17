@@ -200,13 +200,19 @@ exports[`expect MeldekortInfo fetching 1`] = `
   api={
     Object {
       "fetchMeldekort": [Function],
+      "fetchMeldekortNyKilde": [Function],
       "fetchMeldinger": [Function],
+      "fetchMeldingerNyKilde": [Function],
       "fetchOppfolging": [Function],
       "fetchOppfolgingNyKilde": [Function],
       "fetchPersonIdent": [Function],
+      "fetchPersonIdentNyKilde": [Function],
       "fetchPersonNavn": [Function],
+      "fetchPersonNavnNyKilde": [Function],
       "fetchSaker": [Function],
+      "fetchSakerNyKilde": [Function],
       "fetchSakstema": [Function],
+      "fetchSakstemaNyKilde": [Function],
     }
   }
 />
@@ -217,13 +223,19 @@ exports[`expect Oppfolging fetching 1`] = `
   api={
     Object {
       "fetchMeldekort": [Function],
+      "fetchMeldekortNyKilde": [Function],
       "fetchMeldinger": [Function],
+      "fetchMeldingerNyKilde": [Function],
       "fetchOppfolging": [Function],
       "fetchOppfolgingNyKilde": [Function],
       "fetchPersonIdent": [Function],
+      "fetchPersonIdentNyKilde": [Function],
       "fetchPersonNavn": [Function],
+      "fetchPersonNavnNyKilde": [Function],
       "fetchSaker": [Function],
+      "fetchSakerNyKilde": [Function],
       "fetchSakstema": [Function],
+      "fetchSakstemaNyKilde": [Function],
     }
   }
 />
@@ -510,13 +522,19 @@ exports[`expect Personalia ident fetching 1`] = `
   api={
     Object {
       "fetchMeldekort": [Function],
+      "fetchMeldekortNyKilde": [Function],
       "fetchMeldinger": [Function],
+      "fetchMeldingerNyKilde": [Function],
       "fetchOppfolging": [Function],
       "fetchOppfolgingNyKilde": [Function],
       "fetchPersonIdent": [Function],
+      "fetchPersonIdentNyKilde": [Function],
       "fetchPersonNavn": [Function],
+      "fetchPersonNavnNyKilde": [Function],
       "fetchSaker": [Function],
+      "fetchSakerNyKilde": [Function],
       "fetchSakstema": [Function],
+      "fetchSakstemaNyKilde": [Function],
     }
   }
 />
@@ -527,13 +545,19 @@ exports[`expect Personalia navn fetching 1`] = `
   api={
     Object {
       "fetchMeldekort": [Function],
+      "fetchMeldekortNyKilde": [Function],
       "fetchMeldinger": [Function],
+      "fetchMeldingerNyKilde": [Function],
       "fetchOppfolging": [Function],
       "fetchOppfolgingNyKilde": [Function],
       "fetchPersonIdent": [Function],
+      "fetchPersonIdentNyKilde": [Function],
       "fetchPersonNavn": [Function],
+      "fetchPersonNavnNyKilde": [Function],
       "fetchSaker": [Function],
+      "fetchSakerNyKilde": [Function],
       "fetchSakstema": [Function],
+      "fetchSakstemaNyKilde": [Function],
     }
   }
 />
