@@ -246,13 +246,19 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
   api={
     Object {
       "fetchMeldekort": [Function],
+      "fetchMeldekortNyKilde": [Function],
       "fetchMeldinger": [Function],
+      "fetchMeldingerNyKilde": [Function],
       "fetchOppfolging": [Function],
       "fetchOppfolgingNyKilde": [Function],
       "fetchPersonIdent": [Function],
+      "fetchPersonIdentNyKilde": [Function],
       "fetchPersonNavn": [Function],
+      "fetchPersonNavnNyKilde": [Function],
       "fetchSaker": [Function],
+      "fetchSakerNyKilde": [Function],
       "fetchSakstema": [Function],
+      "fetchSakstemaNyKilde": [Function],
     }
   }
 />
