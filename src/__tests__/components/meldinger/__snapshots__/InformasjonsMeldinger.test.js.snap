@@ -4,7 +4,6 @@ exports[`InformasjonsMeldinger with both 1`] = `
 Array [
   <div
     className="panel panel-med-ikon panel--border"
-    onClick={null}
   >
     <div
       className="panel-med-ikon__ikon"
@@ -76,7 +75,6 @@ Array [
 exports[`InformasjonsMeldinger with general 1`] = `
 <div
   className="panel panel-med-ikon panel--border"
-  onClick={null}
 >
   <div
     className="panel-med-ikon__ikon"

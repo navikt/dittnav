@@ -36,6 +36,7 @@ const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
             ikon={<IkonBeskjed />}
             onClick={() => removeHendelse(eventId)}
             key={eventId}
+            knapp
           />
         ) : (
           <LenkepanelMedIkon

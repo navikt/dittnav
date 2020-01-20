@@ -27,6 +27,7 @@
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",
   "hendelser.fjern": "Fjern hendelser",
+  "hendelser.beskjed.knapp":  "Ok",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
