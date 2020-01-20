@@ -2,9 +2,10 @@
 @import (reference) '~nav-frontend-paneler-style/src/mixins';
 
 .infomeldinger-list .panel-med-ikon {
-  margin-bottom: 16px;
-  padding: 12px 12px;
+  margin-bottom: 1em;
+  padding: 0.75em 0.75em;
   display: flex;
+  flex-direction: row;
 
   &__ikon {
     align-self: center;
@@ -12,7 +13,13 @@
 
   &__tekst {
     align-self: center;
-    padding-left: 16px;
+    padding-left: 1em;
+  }
+
+  &__knapp {
+    align-self: center;
+    margin-left: auto;
+    padding-right: 0.5em;
   }
 }
 
