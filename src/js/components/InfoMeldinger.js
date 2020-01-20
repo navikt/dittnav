@@ -6,7 +6,7 @@ import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
-import { FeatureToggleWrapper } from './FeatureToggles';
+import Config from '../Config';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
@@ -19,7 +19,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      <FeatureToggleWrapper toggle="dittnav.hendelser"><Hendelser /></FeatureToggleWrapper>
+      {Config.IS_DEV ? <Hendelser /> : null}
     </section>
   );
 };

@@ -4,9 +4,14 @@ import '../../../less/components/Hendelser.less';
 import Config from '../../globalConfig';
 import Hendelse from './Hendelse';
 
-const Hendelser = (featureToggle) => {
+const Hendelser = () => {
   const [hendelser, setHendelser] = useState([]);
 
+  const getHendelser = () => Api
+    .fetchHendelser()
+    .then((r) => {
+      setHendelser(r);
+    });
   const removeHendelse = (eventId) => {
     setHendelser(hendelser
       .filter(h => eventId !== h.eventId));
@@ -21,14 +26,8 @@ const Hendelser = (featureToggle) => {
   };
 
   useEffect(() => {
-    if (featureToggle.isFeatureEnabled) {
-      Api
-        .fetchHendelser()
-        .then((r) => {
-          setHendelser(r);
-        });
-    }
-  }, [featureToggle]);
+    getHendelser();
+  }, []);
 
   return (
     <>
