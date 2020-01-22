@@ -64,8 +64,12 @@ Hendelse.propTypes = {
   eventId: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   tekst: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   removeHendelse: PropTypes.func.isRequired,
+};
+
+Hendelse.defaultProps = {
+  link: null,
 };
 
 export default Hendelse;
