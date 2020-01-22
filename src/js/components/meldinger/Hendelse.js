@@ -18,9 +18,13 @@ const getHendelseIkon = (type) => {
   }
 };
 
-const createOverskrift = (tekst) => (
-  <PanelOverskrift overskrift={tekst} type="Element" />
-);
+const createOverskrift = (tekst, erBeskjed) => {
+  const overskriftType = erBeskjed ? 'Normaltekst' : 'Element';
+
+  return (
+    <PanelOverskrift overskrift={tekst} type={overskriftType} />
+  );
+};
 
 const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
   const erBeskjed = type === 'BESKJED';
@@ -32,10 +36,11 @@ const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
           <PanelMedIkon
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
-            overskrift={createOverskrift(tekst)}
+            overskrift={createOverskrift(tekst, erBeskjed)}
             ikon={<IkonBeskjed />}
             onClick={() => removeHendelse(eventId)}
             key={eventId}
+            lenke={link}
             knapp
           />
         ) : (

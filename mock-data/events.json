@@ -19,6 +19,15 @@
   },
   {
     "produsent": "DittNAV",
+    "eventTidspunkt": "2019-11-27T12:24:34.671Z",
+    "eventId": "1174857474671",
+    "tekst": "Vi mottok søknaden din 28. september 2019. Du kan følge med på statusen i Dine foreldrepenger.",
+    "link": null,
+    "sistOppdatert": "2019-11-27T12:24:35.014517Z",
+    "type": "BESKJED"
+  },
+  {
+    "produsent": "DittNAV",
     "eventTidspunkt": "2019-11-27T17:51:31.214Z",
     "eventId": "1674877091214",
     "tekst": "Du har en sykemelding som må godkjennes",
