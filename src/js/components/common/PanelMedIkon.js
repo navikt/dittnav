@@ -22,7 +22,7 @@ const PanelMedIkon = ({ className, overskrift, ingress, ikon, knapp, lenke, onCl
         : null}
       {(lenke)
         ? (
-          <Lenke id="panel-lenke-id" href={lenke}>
+          <Lenke className="panel-lenke" id="panel-lenke-id" href={lenke}>
             <FormattedMessage id="hendelser.beskjed.lenke" />
           </Lenke>
         ) : null}
