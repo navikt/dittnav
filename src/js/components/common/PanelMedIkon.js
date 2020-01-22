@@ -56,7 +56,7 @@ PanelMedIkon.defaultProps = {
   onClick: null,
   ingress: null,
   knapp: null,
-  lenke: false,
+  lenke: null,
 };
 
 export default PanelMedIkon;
