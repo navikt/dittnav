@@ -159,7 +159,7 @@ exports[`expect Login page rendering 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                  href="http://localhost:3001/start"
                 >
                   Registrer deg som arbeidssøker
                 </a>
@@ -193,119 +193,4 @@ exports[`expect Login page rendering 1`] = `
     </div>
   </div>
 </main>
-`;
-
-exports[`expect MeldekortInfo fetching 1`] = `
-<App
-  api={
-    Object {
-      "fetchMeldekort": [Function],
-      "fetchMeldekortNyKilde": [Function],
-      "fetchMeldinger": [Function],
-      "fetchMeldingerNyKilde": [Function],
-      "fetchOppfolging": [Function],
-      "fetchOppfolgingNyKilde": [Function],
-      "fetchPersonIdent": [Function],
-      "fetchPersonIdentNyKilde": [Function],
-      "fetchPersonNavn": [Function],
-      "fetchPersonNavnNyKilde": [Function],
-      "fetchSaker": [Function],
-      "fetchSakerNyKilde": [Function],
-      "fetchSakstema": [Function],
-      "fetchSakstemaNyKilde": [Function],
-    }
-  }
-/>
-`;
-
-exports[`expect Oppfolging fetching 1`] = `
-<App
-  api={
-    Object {
-      "fetchMeldekort": [Function],
-      "fetchMeldekortNyKilde": [Function],
-      "fetchMeldinger": [Function],
-      "fetchMeldingerNyKilde": [Function],
-      "fetchOppfolging": [Function],
-      "fetchOppfolgingNyKilde": [Function],
-      "fetchPersonIdent": [Function],
-      "fetchPersonIdentNyKilde": [Function],
-      "fetchPersonNavn": [Function],
-      "fetchPersonNavnNyKilde": [Function],
-      "fetchSaker": [Function],
-      "fetchSakerNyKilde": [Function],
-      "fetchSakstema": [Function],
-      "fetchSakstemaNyKilde": [Function],
-    }
-  }
-/>
-`;
-
-exports[`expect PaabegynteSoknader fetching 1`] = `
-<App
-  api={
-    Object {
-      "fetchMeldekort": [Function],
-      "fetchMeldekortNyKilde": [Function],
-      "fetchMeldinger": [Function],
-      "fetchMeldingerNyKilde": [Function],
-      "fetchOppfolging": [Function],
-      "fetchOppfolgingNyKilde": [Function],
-      "fetchPersonIdent": [Function],
-      "fetchPersonIdentNyKilde": [Function],
-      "fetchPersonNavn": [Function],
-      "fetchPersonNavnNyKilde": [Function],
-      "fetchSaker": [Function],
-      "fetchSakerNyKilde": [Function],
-      "fetchSakstema": [Function],
-      "fetchSakstemaNyKilde": [Function],
-    }
-  }
-/>
-`;
-
-exports[`expect Personalia ident fetching 1`] = `
-<App
-  api={
-    Object {
-      "fetchMeldekort": [Function],
-      "fetchMeldekortNyKilde": [Function],
-      "fetchMeldinger": [Function],
-      "fetchMeldingerNyKilde": [Function],
-      "fetchOppfolging": [Function],
-      "fetchOppfolgingNyKilde": [Function],
-      "fetchPersonIdent": [Function],
-      "fetchPersonIdentNyKilde": [Function],
-      "fetchPersonNavn": [Function],
-      "fetchPersonNavnNyKilde": [Function],
-      "fetchSaker": [Function],
-      "fetchSakerNyKilde": [Function],
-      "fetchSakstema": [Function],
-      "fetchSakstemaNyKilde": [Function],
-    }
-  }
-/>
-`;
-
-exports[`expect Personalia navn fetching 1`] = `
-<App
-  api={
-    Object {
-      "fetchMeldekort": [Function],
-      "fetchMeldekortNyKilde": [Function],
-      "fetchMeldinger": [Function],
-      "fetchMeldingerNyKilde": [Function],
-      "fetchOppfolging": [Function],
-      "fetchOppfolgingNyKilde": [Function],
-      "fetchPersonIdent": [Function],
-      "fetchPersonIdentNyKilde": [Function],
-      "fetchPersonNavn": [Function],
-      "fetchPersonNavnNyKilde": [Function],
-      "fetchSaker": [Function],
-      "fetchSakerNyKilde": [Function],
-      "fetchSakstema": [Function],
-      "fetchSakstemaNyKilde": [Function],
-    }
-  }
-/>
 `;
