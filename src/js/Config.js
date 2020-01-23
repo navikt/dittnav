@@ -136,18 +136,27 @@ export default {
     SERVICES_URL: getServicesUrl(),
     NAV_URL: getNavUrl(),
     LOGINSERVICE: getLoginUrl(),
-    DITTNAV_API_AUTH_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/authPing`,
+    DITTNAV_API_AUTH_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/authPing`, // Sjekk av autentisering
+
     DITTNAV_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/oppfolging`,
-    DITTNAV_NY_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/oppfolging`,
     DITTNAV_MELDEKORT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldekortinfo`,
     DITTNAV_PERSON_NAVN_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/navn`,
     DITTNAV_PERSON_IDENT_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/personalia/ident`,
     DITTNAV_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/paabegynte`,
     DITTNAV_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/meldinger/ubehandlede`,
-    DITTNAV_API_PING_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/ping`,
+    DITTNAV_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/sakstema`,
+
+    DITTNAV_NY_OPPFOLGING_URL: `${getDittNavBaseApiUrl()}/dittnav-api/oppfolging`,
+    DITTNAV_NY_MELDEKORT_URL: `${getDittNavBaseApiUrl()}/dittnav-api/meldekortinfo`,
+    DITTNAV_NY_PERSON_NAVN_URL: `${getDittNavBaseApiUrl()}/dittnav-api/personalia/navn`,
+    DITTNAV_NY_PERSON_IDENT_URL: `${getDittNavBaseApiUrl()}/dittnav-api/personalia/ident`,
+    DITTNAV_NY_SAKER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/saker/paabegynte`,
+    DITTNAV_NY_MELDINGER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/meldinger/ubehandlede`,
+    DITTNAV_NY_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-api/saker/sakstema`,
+
     DITTNAV_HENDELSER_URL: `${getDittNavBaseApiUrl()}/dittnav-api/brukernotifikasjoner`,
     DITTNAV_EVENT_TEST: `${getDittNavBaseApiUrl()}/dittnav-event-test-producer`,
-    DITTNAV_SAKSTEMA_URL: `${getDittNavBaseApiUrl()}/dittnav-legacy-api/saker/sakstema`,
+
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
     GENERELLE_LENKER: generelleLenker,
