@@ -1,5 +1,5 @@
 import React from 'react';
-import { Element, Undertittel } from 'nav-frontend-typografi';
+import { Element, Normaltekst, Undertittel } from 'nav-frontend-typografi';
 
 const PanelOverskrift = ({ overskrift, type }) => {
   if (type === 'Undertittel') {
@@ -15,6 +15,14 @@ const PanelOverskrift = ({ overskrift, type }) => {
       <Element className="lenkepanel__heading">
         {overskrift}
       </Element>
+    );
+  }
+
+  if (type === 'Normaltekst') {
+    return (
+      <Normaltekst className="lenkepanel__heading">
+        {overskrift}
+      </Normaltekst>
     );
   }
   return overskrift;
