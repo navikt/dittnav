@@ -51,7 +51,7 @@ const Meldekort = ({ meldekort, intl }) => {
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(true)} type="Element" />}
         ingress={ingress(true)}
-        href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
+        href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>
@@ -66,7 +66,7 @@ const Meldekort = ({ meldekort, intl }) => {
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(false)} type="Element" />}
         ingress={ingress(false)}
-        href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
+        href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
       >
         <IkonBeskjed />
       </LenkepanelMedIkon>

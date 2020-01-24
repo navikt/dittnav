@@ -27,7 +27,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         data-ga="Dittnav/Varsel"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}
-        href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}
+        href={`${conf.dittNav.NAVNO_URL}${conf.ETTERREGISTRERT_PATH}`}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>

@@ -51,20 +51,27 @@ const postJSONAndCheckForErrors = (url, content) => {
 };
 
 const fetchOppfolging = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`);
-const fetchOppfolgingNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_OPPFOLGING_URL}`);
 const fetchMeldekort = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDEKORT_URL}`);
 const fetchPersonNavn = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_NAVN_URL}`);
 const fetchPersonIdent = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_IDENT_URL}`);
 const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
+
+const fetchOppfolgingNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_OPPFOLGING_URL}`);
+const fetchMeldekortNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_MELDEKORT_URL}`);
+const fetchPersonNavnNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_PERSON_NAVN_URL}`);
+const fetchPersonIdentNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_PERSON_IDENT_URL}`);
+const fetchSakerNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_SAKER_URL}`);
+const fetchMeldingerNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_MELDINGER_URL}`);
+const fetchSakstemaNyKilde = () => fetchJSON(Config.dittNav.DITTNAV_NY_SAKSTEMA_URL);
+
 const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
 
 export default {
   checkAuth,
   checkApiStatus,
   fetchOppfolging,
-  fetchOppfolgingNyKilde,
   fetchMeldekort,
   fetchPersonNavn,
   fetchPersonIdent,
@@ -72,6 +79,13 @@ export default {
   fetchMeldinger,
   fetchHendelser,
   fetchSakstema,
+  fetchOppfolgingNyKilde,
+  fetchMeldekortNyKilde,
+  fetchPersonNavnNyKilde,
+  fetchPersonIdentNyKilde,
+  fetchSakerNyKilde,
+  fetchMeldingerNyKilde,
+  fetchSakstemaNyKilde,
   postHendelser: postJSONAndCheckForErrors,
   redirectToLogin,
 };

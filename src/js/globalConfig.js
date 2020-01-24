@@ -8,7 +8,7 @@ const lenker = {
     skjemaer: { tittel: 'Skjemaer', url: `${window.env.NAVNO_URL}/soknader` },
     dinPensjon: { tittel: 'Din pensjon', url: `${window.env.TJENESTER_URL}/pselv/publisering/dinpensjon.jsf` },
     dineStillingssok: { tittel: 'Dine stillingssøk', url: 'https://stillingsok.nav.no/pam-stillingsok/lagrede-sok' },
-    veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${window.env.TJENESTER_URL}/veiledearbeidssoker` },
+    veilederArbeidssoker: { tittel: 'Veileder for arbeidssøker', url: `${window.env.VEILEDERARBEIDSSOKER_URL}` },
     registrerDegSomArbeidssoker: { tittel: 'Registrer deg som arbeidssøker', url: `${window.env.ARBEIDSSOKERREGISTRERING_URL}` },
     dittSykefravaer: { tittel: 'Ditt sykefravær', url: `${window.env.TJENESTER_URL}/sykefravaer` },
     utbetalingsoversikt: { tittel: 'Dine utbetalinger', url: `${window.env.TJENESTER_URL}/utbetalingsoversikt` },
@@ -42,26 +42,36 @@ const oppfolgingsLenker = [
 
 export default {
     dittNav: {
-        NAV_URL: window.env.NAVNO_URL,
+        NAVNO_URL: window.env.NAVNO_URL,
         LOGINSERVICE: window.env.LOGIN_URL,
         DITTNAV_API_AUTH_URL: `${window.env.DITTNAV_LEGACY_API_URL}/authPing`,
+
         DITTNAV_OPPFOLGING_URL: `${window.env.DITTNAV_LEGACY_API_URL}/oppfolging`,
-        DITTNAV_NY_OPPFOLGING_URL: `${window.env.DITTNAV_API_URL}/oppfolging`,
         DITTNAV_MELDEKORT_URL: `${window.env.DITTNAV_LEGACY_API_URL}/meldekortinfo`,
         DITTNAV_PERSON_NAVN_URL: `${window.env.DITTNAV_LEGACY_API_URL}/personalia/navn`,
         DITTNAV_PERSON_IDENT_URL: `${window.env.DITTNAV_LEGACY_API_URL}/personalia/ident`,
         DITTNAV_SAKER_URL: `${window.env.DITTNAV_LEGACY_API_URL}/saker/paabegynte`,
         DITTNAV_MELDINGER_URL: `${window.env.DITTNAV_LEGACY_API_URL}/meldinger/ubehandlede`,
-        DITTNAV_API_PING_URL: `${window.env.DITTNAV_LEGACY_API_URL}/ping`,
+        DITTNAV_SAKSTEMA_URL: `${window.env.DITTNAV_LEGACY_API_URL}/saker/sakstema`,
+
+        DITTNAV_NY_OPPFOLGING_URL: `${window.env.DITTNAV_API_URL}/oppfolging`,
+        DITTNAV_NY_MELDEKORT_URL: `${window.env.DITTNAV_API_URL}/meldekortinfo`,
+        DITTNAV_NY_PERSON_NAVN_URL: `${window.env.DITTNAV_API_URL}/personalia/navn`,
+        DITTNAV_NY_PERSON_IDENT_URL: `${window.env.DITTNAV_API_URL}/personalia/ident`,
+        DITTNAV_NY_SAKER_URL: `${window.env.DITTNAV_API_URL}/saker/paabegynte`,
+        DITTNAV_NY_MELDINGER_URL: `${window.env.DITTNAV_API_URL}/meldinger/ubehandlede`,
+        DITTNAV_NY_SAKSTEMA_URL: `${window.env.DITTNAV_API_URL}/saker/sakstema`,
+
         DITTNAV_HENDELSER_URL: `${window.env.DITTNAV_API_URL}/brukernotifikasjoner`,
         EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,
-        DITTNAV_SAKSTEMA_URL: `${window.env.DITTNAV_LEGACY_API_URL}/saker/sakstema`,
+
         CONTEXT_PATH: '/person/dittnav',
         ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
         GENERELLE_LENKER: generelleLenker,
         OPPFOLGINGS_LENKER: oppfolgingsLenker,
         FEATURE_TOGGLES: 'dittnav.hendelser,dittnav.ny-backend', // a,b,c etc..
     },
+    SAKSTEMA_DATOTID_FORMAT: 'YYYY-MM-DD-hh:mm:ss+Z',
     VTA_PATH: window.env.VTA_URL,
     INNLOGGINGSLINJE_AUTH: `${window.env.INNLOGGINGSLINJE_API_URL}/auth`,
     MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',

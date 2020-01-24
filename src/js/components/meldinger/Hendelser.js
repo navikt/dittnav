@@ -11,7 +11,12 @@ const Hendelser = () => {
     .fetchHendelser()
     .then((r) => {
       setHendelser(r);
+    })
+    .catch((e) => {
+      // eslint-disable-next-line no-console
+      console.log(`ERROR fetching hendelser: ${e}`);
     });
+
   const removeHendelse = (eventId) => {
     setHendelser(hendelser
       .filter(h => eventId !== h.eventId));
