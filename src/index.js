@@ -7,6 +7,7 @@ import 'intl';
 import NavApp from './js/NavApp';
 
 import Config from './js/Config';
+import enableHotModuleReplacement from './js/utils/Parcel';
 import App from './js/App';
 import api from './js/Api';
 
@@ -51,6 +52,8 @@ const checkAuthThenRenderApp = () => {
       renderApp();
     });
 };
+
+enableHotModuleReplacement();
 
 const params = new URLSearchParams(window.location.search);
 
