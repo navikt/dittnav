@@ -5,3 +5,8 @@ ENV CONTEXT_PATH=person/dittnav
 ENV FOOTER_TYPE=WITH_ALPHABET
 COPY ./build /app
 ADD decorator.yaml /decorator.yaml
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT /entrypoint.sh

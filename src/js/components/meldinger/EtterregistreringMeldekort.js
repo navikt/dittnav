@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import conf from '../../Config';
+import conf from '../../globalConfig';
 import i18n from '../../../translations/i18n';
 import { IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -27,7 +27,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         data-ga="Dittnav/Varsel"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}
-        href={`${conf.dittNav.NAV_URL}${conf.ETTERREGISTRERT_PATH}`}
+        href={`${conf.dittNav.NAVNO_URL}${conf.ETTERREGISTRERT_PATH}`}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>

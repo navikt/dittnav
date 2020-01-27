@@ -36,6 +36,7 @@ jobs:
             - build/*
             - Dockerfile
             - decorator.yaml
+            - entrypoint.sh
   docker-bygg-og-push-uten-latest:
     executor: nais/deployment-cli
     steps:
