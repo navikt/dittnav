@@ -69,9 +69,9 @@
     "build-scripts": "react-scripts build",
     "build-less": "lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css",
     "build-lint-check": "npm run lint-es",
-    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
-    "test-fix": "react-scripts test --env=jsdom -u",
-    "test-watch": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --modulePaths=src --coverage --watchAll=false",
+    "test-fix": "react-scripts test --modulePaths=src --env=jsdom -u",
+    "test-watch": "react-scripts test --modulePaths=src --env=jsdom",
     "eject": "react-scripts eject"
   },
   "jest": {
