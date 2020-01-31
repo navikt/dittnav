@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build/*
+            - dist/*
             - Dockerfile
             - decorator.yaml
   docker-bygg-og-push-uten-latest:

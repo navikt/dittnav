@@ -65,10 +65,10 @@
     "lint-es": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
-    "build": "npm-run-all -p build-*",
-    "build-scripts": "react-scripts build",
+    "build": "npm run build-less && npm run build-parcel && npm run build-lint",
+    "build-parcel": "rm -rf dist && parcel build public/index.html --public-url ./ --out-dir dist",
     "build-less": "lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css",
-    "build-lint-check": "npm run lint-es",
+    "build-lint": "npm run lint-es",
     "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
     "test-fix": "react-scripts test --env=jsdom -u",
     "test-watch": "react-scripts test --env=jsdom",
@@ -91,7 +91,6 @@
     "eslint-config-airbnb": "^18.0.1",
     "jest-fetch-mock": "^2.1.2",
     "less-watch-compiler": "^1.14.1",
-    "npm-run-all": "^4.1.5",
     "react-test-renderer": "^16.12.0"
   },
   "babel": {
