@@ -1,5 +1,38 @@
 #!/bin/bash
 
+if test -d /var/run/secrets/nais.io/vault;
+then
+    for FILE in /var/run/secrets/nais.io/vault/*.env
+    do
+        _oldIFS=$IFS
+        IFS='
+'
+        for line in $(cat "$FILE"); do
+            _key=${line%%=*}
+            _val=${line#*=}
+
+            if test "$_key" != "$line"
+            then
+                echo "- exporting $_key"
+            else
+                echo "- (warn) exporting contents of $FILE which is not formatted as KEY=VALUE"
+            fi
+
+            export "$_key"="$(echo "$_val"|sed -e "s/^['\"]//" -e "s/['\"]$//")"
+        done
+        IFS=$_oldIFS
+    done
+fi
+
+echo $DITTNAV_LEGACY_API_URL;
+echo $DITTNAV_API_URL;
+echo $TJENESTER_URL;
+echo $NAVNO_URL;
+echo $LOGIN_URL;
+echo $VTA_URL;
+echo $INNLOGGINGSLINJE_API_URL;
+echo $ARBEIDSSOKERREGISTRERING_URL;
+
 if [[ -z "$DITTNAV_LEGACY_API_URL" ]] ||
   [[ -z "$DITTNAV_API_URL" ]] ||
   [[ -z "$TJENESTER_URL" ]] ||
