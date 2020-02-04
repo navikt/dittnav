@@ -64,6 +64,7 @@ echo "* LOGIN_URL"
 echo "* VTA_URL"
 echo "* INNLOGGINGSLINJE_API_URL"
 echo "* ARBEIDSSOKERREGISTRERING_URL"
+echo "* ER_DEV"
 
 echo "window.env={};" > /app/config.js
 echo "window.env.DITTNAV_LEGACY_API_URL=\"$DITTNAV_LEGACY_API_URL\";" >> /app/config.js
@@ -74,5 +75,7 @@ echo "window.env.LOGIN_URL=\"$LOGIN_URL\";" >> /app/config.js
 echo "window.env.VTA_URL=\"$VTA_URL\";" >> /app/config.js
 echo "window.env.INNLOGGINGSLINJE_API_URL=\"$INNLOGGINGSLINJE_API_URL\";" >> /app/config.js
 echo "window.env.ARBEIDSSOKERREGISTRERING_URL=\"$ARBEIDSSOKERREGISTRERING_URL\";" >> /app/config.js
+# Midlertidig frem til feature-toggles pr namespace/miljø fungerer med pus-dekoratør og naiserator.
+echo "window.env.ER_DEV=\"$ER_DEV\";" >> /app/config.js
 
 /run.sh
