@@ -1,37 +1,9 @@
 #!/bin/bash
 
-if test -d /var/run/secrets/nais.io/vault;
-then
-    for FILE in /var/run/secrets/nais.io/vault/*.env
-    do
-        _oldIFS=$IFS
-        IFS='
-'
-        for line in $(cat "$FILE"); do
-            _key=${line%%=*}
-            _val=${line#*=}
-
-            if test "$_key" != "$line"
-            then
-                echo "- exporting $_key"
-            else
-                echo "- (warn) exporting contents of $FILE which is not formatted as KEY=VALUE"
-            fi
-
-            export "$_key"="$(echo "$_val"|sed -e "s/^['\"]//" -e "s/['\"]$//")"
-        done
-        IFS=$_oldIFS
-    done
-fi
-
 echo $DITTNAV_LEGACY_API_URL;
 echo $DITTNAV_API_URL;
 echo $TJENESTER_URL;
 echo $NAVNO_URL;
-echo $LOGIN_URL;
-echo $VTA_URL;
-echo $INNLOGGINGSLINJE_API_URL;
-echo $ARBEIDSSOKERREGISTRERING_URL;
 
 if [[ -z "$DITTNAV_LEGACY_API_URL" ]] ||
   [[ -z "$DITTNAV_API_URL" ]] ||
@@ -40,9 +12,10 @@ if [[ -z "$DITTNAV_LEGACY_API_URL" ]] ||
   [[ -z "$LOGIN_URL" ]] ||
   [[ -z "$VTA_URL" ]] ||
   [[ -z "$INNLOGGINGSLINJE_API_URL" ]] ||
-  [[ -z "$ARBEIDSSOKERREGISTRERING_URL" ]]; then
+  [[ -z "$ARBEIDSSOKERREGISTRERING_URL" ]] ||
+  [[ -z "$HENDELSER_FEATURE_TOGGLE" ]]; then
   echo "For å kunne starte applikasjonen må variablene DITTNAV_LEGACY_API_URL, DITTNAV_API_URL, TJENESTER_URL,
-  NAVNO_URL, LOGIN_URL, VTA_URL, INNLOGGINGSLINJE_API_URL og ARBEIDSSOKERREGISTRERING_URL være satt."
+  NAVNO_URL, LOGIN_URL, VTA_URL, INNLOGGINGSLINJE_API_URL, ARBEIDSSOKERREGISTRERING_URL og HENDELSER_FEATURE_TOGGLE være satt."
   echo "Avbryter oppstart."
   exit 1
 fi
@@ -64,7 +37,8 @@ echo "* LOGIN_URL"
 echo "* VTA_URL"
 echo "* INNLOGGINGSLINJE_API_URL"
 echo "* ARBEIDSSOKERREGISTRERING_URL"
-echo "* ER_DEV"
+echo "* HENDELSER_FEATURE_TOGGLE"
+echo "* EVENT_TEST_PRODUCER_URL"
 
 echo "window.env={};" > /app/config.js
 echo "window.env.DITTNAV_LEGACY_API_URL=\"$DITTNAV_LEGACY_API_URL\";" >> /app/config.js
@@ -75,7 +49,8 @@ echo "window.env.LOGIN_URL=\"$LOGIN_URL\";" >> /app/config.js
 echo "window.env.VTA_URL=\"$VTA_URL\";" >> /app/config.js
 echo "window.env.INNLOGGINGSLINJE_API_URL=\"$INNLOGGINGSLINJE_API_URL\";" >> /app/config.js
 echo "window.env.ARBEIDSSOKERREGISTRERING_URL=\"$ARBEIDSSOKERREGISTRERING_URL\";" >> /app/config.js
+echo "window.env.EVENT_TEST_PRODUCER_URL=\"$EVENT_TEST_PRODUCER_URL\";" >> /app/config.js
 # Midlertidig frem til feature-toggles pr namespace/miljø fungerer med pus-dekoratør og naiserator.
-echo "window.env.ER_DEV=\"$ER_DEV\";" >> /app/config.js
+echo "window.env.HENDELSER_FEATURE_TOGGLE=\"$HENDELSER_FEATURE_TOGGLE\";" >> /app/config.js
 
 /run.sh

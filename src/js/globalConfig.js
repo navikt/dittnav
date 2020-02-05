@@ -63,7 +63,7 @@ export default {
         DITTNAV_NY_SAKSTEMA_URL: `${window.env.DITTNAV_API_URL}/saker/sakstema`,
 
         DITTNAV_HENDELSER_URL: `${window.env.DITTNAV_API_URL}/brukernotifikasjoner`,
-        EVENT_TEST_PRODUCER_URL: `${window.env.NAVNO_URL}/person/dittnav-event-test-producer`,
+        EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,
 
         CONTEXT_PATH: '/person/dittnav',
         ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',
@@ -81,5 +81,6 @@ export default {
     PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
     PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
     LENKER: lenker,
-    IS_DEV: window.env.ER_DEV === "true",
+    HENDELSER_FEATURE_TOGGLE: window.env.HENDELSER_FEATURE_TOGGLE === "true",
+    IS_DEV: window.env.ER_DEV === "true"
 };

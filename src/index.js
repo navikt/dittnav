@@ -55,7 +55,7 @@ enableHotModuleReplacement();
 
 const params = new URLSearchParams(window.location.search);
 
-if (params.has('hendelser') && Config.IS_DEV) {
+if (params.has('hendelser') && Config.HENDELSER_FEATURE_TOGGLE) {
   const testApp = (
     <NavApp defaultSprak="nb" messages={loadMessages()}>
       <div className="hendelser-content">

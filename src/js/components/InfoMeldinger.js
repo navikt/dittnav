@@ -19,7 +19,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.IS_DEV ? <Hendelser /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser /> : null}
     </section>
   );
 };
