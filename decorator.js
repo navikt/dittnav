@@ -6,7 +6,7 @@ const { JSDOM } = jsdom;
 // const DECORATOR_URL = 'https://www.nav.no/person';
 // const DECORATOR_PATH = '/nav-dekoratoren';
 
-const DECORATOR_URL = 'https://appres.nav.no';
+const DECORATOR_URL = 'http://appres.nav.no';
 const DECORATOR_PATH = '/common-html/v4/navno';
 
 const DECORATOR_FRAGMENT_HEADER_WITHMENU = true;

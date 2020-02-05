@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import { Fareknapp } from 'nav-frontend-knapper';
 import { Panel } from 'nav-frontend-paneler';
 import Api from '../../Api';
-import Config from '../../globalConfig';
+import Config from '../../Config';
 import TittelTestGui from './TittelTestGui';
 import FormTestGui from './FormTestGui';
 import Hendelse from '../meldinger/Hendelse';
@@ -17,7 +17,7 @@ const HendelserTestGui = () => {
 
   const removeHendelser = () => Api
     .postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done/all`,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done/all`,
       null,
     );
 
@@ -26,12 +26,12 @@ const HendelserTestGui = () => {
       .filter(h => eventId !== h.eventId));
 
     Api.postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done`,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done`,
       {
         eventId,
       },
     );
-    console.log(`Marked event as done for (eventId): ${eventId} to url: ${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done}`);
+    console.log(`Marked event as done for (eventId): ${eventId} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
   };
 
   return (

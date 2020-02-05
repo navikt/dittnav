@@ -9,7 +9,7 @@ import DittnavFliser from '../components/DittnavFliser';
 import DittnavLenkePanel from '../components/DittnavLenkePanel';
 import Lenkelister from '../components/Lenkelister';
 import DelayedSpinner from '../components/DelayedSpinner';
-import Config from '../globalConfig';
+import Config from '../Config';
 
 class Home extends Component {
   render() {

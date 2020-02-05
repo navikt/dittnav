@@ -4,7 +4,7 @@ import { FormattedMessage as F } from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Api from '../../Api';
-import Config from '../../globalConfig';
+import Config from '../../Config';
 
 const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
   const getHendelser = () => Api
@@ -16,7 +16,7 @@ const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) =
   const handleSubmit = (event) => {
     event.preventDefault();
     Api.postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/${valg}`,
+      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/${valg}`,
       {
         tekst,
         link: lenke,

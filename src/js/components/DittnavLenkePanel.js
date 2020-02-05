@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
-import Config from '../globalConfig';
+import Config from '../Config';
 
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';

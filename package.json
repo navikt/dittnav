@@ -66,12 +66,12 @@
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
     "build": "npm run build-less && npm run build-parcel && npm run build-lint",
-    "build-parcel": "rm -rf dist && parcel build public/index.html public/config.js --public-url ./ --out-dir dist",
+    "build-parcel": "rm -rf dist && parcel build public/index.html --public-url ./ --out-dir dist",
     "build-less": "lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css",
     "build-lint": "npm run lint-es",
-    "test": "react-scripts test --env=jsdom --modulePaths=src --coverage --watchAll=false",
-    "test-fix": "react-scripts test --modulePaths=src --env=jsdom -u",
-    "test-watch": "react-scripts test --modulePaths=src --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
+    "test-fix": "react-scripts test --env=jsdom -u",
+    "test-watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "jest": {
