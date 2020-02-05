@@ -1,7 +1,7 @@
-import Config from './globalConfig';
+import Config from './Config';
 
 const redirectToLogin = () => {
-  window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
+  window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`);
 };
 
 const fetchJSON = (url) => new Promise((res, rej) => {
