@@ -9,7 +9,7 @@ import HoyreChevron from 'nav-frontend-chevron';
 
 import i18n from '../../translations/i18n';
 
-import Config from '../Config';
+import Config from '../globalConfig';
 
 const sakstemaUrlOverride = {
   KOM: Config.LENKER.digisos.url,

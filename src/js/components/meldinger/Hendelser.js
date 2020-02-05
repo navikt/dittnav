@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
-import Config from '../../Config';
+import Config from '../../globalConfig';
 import Hendelse from './Hendelse';
 
 const Hendelser = () => {
@@ -22,12 +22,12 @@ const Hendelser = () => {
       .filter(h => eventId !== h.eventId));
 
     Api.postHendelser(
-      `${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done`,
+      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done`,
       {
         eventId,
       },
     );
-    console.log(`Marked event as done for (id): ${eventId} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
+    console.log(`Marked event as done for (id): ${eventId} to url: ${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done}`);
   };
 
   useEffect(() => {

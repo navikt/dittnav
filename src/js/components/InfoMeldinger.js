@@ -6,7 +6,7 @@ import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
-import Config from '../Config';
+import Config from '../globalConfig';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;

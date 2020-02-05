@@ -1,8 +1,9 @@
-window.dittnav = {
-  SERVICES_URL: 'https://mytesturl.nav.no',
+window.env = {
+  TJENESTER_URL: 'http://localhost:9222',
+  NAVNO_URL: 'http://localhost:9222',
   ARBEIDSGIVER_LOGIN_URL: 'sbl',
-  LOGINSERVICE: '/dittnav-legacy-api/local/cookie',
+  LOGIN_URL: 'http://localhost:5000',
+  ARBEIDSSOKERREGISTRERING_URL: 'http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering',
   CONTEXT_PATH: '/dittnav',
 };
-
-global.fetch = require('jest-fetch-mock'); // eslint-disable-line import/no-extraneous-dependencies
+global.fetch = require('jest-fetch-mock'); // eslint-disable-line import/no-extraneous-dependenciesn
