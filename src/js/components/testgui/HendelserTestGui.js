@@ -35,7 +35,7 @@ const HendelserTestGui = () => {
   };
 
   return (
-    <div>
+    <div className="hendelser-content">
       <Panel className="hendelser" border>
         <TittelTestGui />
         <SelectTestGui setValg={setValg} />

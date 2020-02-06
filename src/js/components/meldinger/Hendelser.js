@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
 import Config from '../../Config';
 import Hendelse from './Hendelse';
 
-const Hendelser = () => {
-  const [hendelser, setHendelser] = useState([]);
-
-  const getHendelser = () => Api
-    .fetchHendelser()
-    .then((r) => {
-      setHendelser(r);
-    })
-    .catch((e) => {
-      // eslint-disable-next-line no-console
-      console.log(`ERROR fetching hendelser: ${e}`);
-    });
-
+const Hendelser = ({ hendelser, updateHendelser }) => {
   const removeHendelse = (eventId) => {
-    setHendelser(hendelser
+    updateHendelser(hendelser
       .filter(h => eventId !== h.eventId));
 
     Api.postHendelser(
@@ -27,12 +16,7 @@ const Hendelser = () => {
         eventId,
       },
     );
-    console.log(`Marked event as done for (id): ${eventId} to url: ${Config.dittNav.DITTNAV_EVENT_TEST}/produce/done}`);
   };
-
-  useEffect(() => {
-    getHendelser();
-  }, []);
 
   return (
     <>
@@ -48,6 +32,15 @@ const Hendelser = () => {
       ))}
     </>
   );
+};
+
+Hendelser.propTypes = {
+  hendelser: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  updateHendelser: PropTypes.func.isRequired,
+};
+
+Hendelser.defaultProps = {
+  hendelser: null,
 };
 
 

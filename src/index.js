@@ -15,7 +15,6 @@ import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
-import HendelserTestGui from './js/components/testgui/HendelserTestGui';
 
 const loadMessages = () => ({
   nb: nbMessages,
@@ -54,31 +53,4 @@ const checkAuthThenRenderApp = () => {
 };
 
 enableHotModuleReplacement();
-
-const params = new URLSearchParams(window.location.search);
-
-if (params.has('hendelser') && Config.IS_DEV) {
-  const testApp = (
-    <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <div className="hendelser-content">
-        <HendelserTestGui />
-      </div>
-    </NavApp>
-  );
-
-  api.checkAuth()
-    .then(() => {
-      ReactDOM.render(testApp, document.getElementById('app'));
-    })
-    .catch((e) => {
-      if (Config.ENVIRONMENT === 'local') {
-        ReactDOM.render(testApp, document.getElementById('app'));
-        return;
-      }
-      if (e.message === 'not authenticated') {
-        api.redirectToLogin();
-      }
-    });
-} else {
-  checkAuthThenRenderApp();
-}
+checkAuthThenRenderApp();

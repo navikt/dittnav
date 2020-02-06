@@ -30,6 +30,9 @@
   "hendelser.beskjed.knapp": "Ok",
   "hendelser.beskjed.lenke": "Se meldingen",
 
+  "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
+  "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
+
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
   "fliser.mistet.jobben": "Mistet jobben?",
@@ -40,19 +43,6 @@
   "fliser.din.pensjon.ingress": "Kalkulator, søknad og utbetalinger",
 
   "relatertInformasjon.header": "Relatert informasjon",
-
-  "fgkode.IARBS": "Du er registrert som 'ikke arbeidssøker'",
-  "fgkode.INGEN_FGKODE": " ",
-  "fgkode.ISERV": " ",
-  "fgkode.ARBS": "Du er registrert som arbeidssøker.",
-  "fgkode.PARBS": "Du er ennå ikke ferdig med å registrere deg som arbeidssøker på nav.no. Jo raskere du registrerer deg, desto raskere kan NAV hjelpe deg.",
-  "fgkode.RARBS": "Du er ennå ikke ferdig med å registrere deg som arbeidssøker på nav.no. Jo raskere du registrerer deg, desto raskere kan NAV hjelpe deg.",
-  "ytelse.IYT": " ",
-  "ytelse.DAGP": "Du er mottaker av dagpenger.",
-  "ytelse.ATTF": " ",
-  "ytelse.AAP": "Du er mottaker av arbeidsavklaringspenger.",
-  "ytelse.INDS": "Du er mottaker av tiltakspenger.",
-  "ytelse.VENT": " ",
 
   "mininnboks.dokument_varsel.meldinger.en": "Du har ett ulest dokument i din innboks",
   "mininnboks.dokument_varsel.meldinger.flere": "Du har {count} uleste dokumenter i din innboks",

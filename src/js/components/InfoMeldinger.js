@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
 import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
@@ -8,7 +9,7 @@ import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
 import Config from '../Config';
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
+const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser, updateHendelser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
 
   return (
@@ -19,7 +20,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.IS_DEV ? <Hendelser /> : null}
+      {Config.IS_DEV ? <Hendelser hendelser={hendelser} updateHendelser={updateHendelser} /> : null}
     </section>
   );
 };
@@ -28,12 +29,15 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
+  hendelser: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  updateHendelser: PropTypes.func.isRequired,
 };
 
 InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
+  hendelser: null,
 };
 
 export default InfoMeldinger;
