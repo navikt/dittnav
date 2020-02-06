@@ -10,13 +10,13 @@ import '../less/index.less';
 const App = () => (
   <Router>
     <Switch>
-      <Route path="/" exact>
+      <Route path="/person/dittnav" exact>
         <RenderHome api={Api} />
       </Route>
-      <Route path="/varslinger">
+      <Route path="/person/dittnav/varslinger">
         <RenderVarslinger api={Api} />
       </Route>
-      <Route path="/hendelser">
+      <Route path="/person/dittnav/hendelser">
         { Config.IS_DEV ? <HendelserTestGui /> : null }
       </Route>
     </Switch>
