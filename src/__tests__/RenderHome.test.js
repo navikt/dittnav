@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'js/App';
+import RenderHome from 'js/pages/Home/RenderHome';
 
-const ReactTestRenderer = require('react-test-renderer');
 import ShallowRenderer from 'react-test-renderer/shallow';
 import wrapIntl from 'js/IntlTestHelper';
+const ReactTestRenderer = require('react-test-renderer');
+
 
 const mockApi = () => {
   return {
@@ -22,6 +23,7 @@ const mockApi = () => {
     fetchSakerNyKilde: () => new Promise((resolve, reject) => {}),
     fetchMeldingerNyKilde: () => new Promise((resolve, reject) => {}),
     fetchSakstemaNyKilde: () => new Promise((resolve, reject) => {}),
+    fetchHendelser: () => new Promise((resolve, reject) => {}),
   };
 };
 
@@ -32,17 +34,16 @@ const flushPromises = () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<App api={mockApi()}/>), div);
+  ReactDOM.render(wrapIntl(<RenderHome api={mockApi()}/>), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('expect Login page rendering', () => {
   const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<App api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(<RenderHome api={api} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-/* Temp while feature toggling <Hendelser> in <Infomeldinger>.
 it('expect Oppfolging fetching', async () => {
   const api = mockApi();
   api.fetchOppfolging = () => new Promise((resolve, reject) => {
@@ -53,7 +54,7 @@ it('expect Oppfolging fetching', async () => {
     );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api}/>));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -83,8 +84,9 @@ it('expect MeldekortInfo fetching', async () => {
       }
     );
   });
+
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api}/>));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -101,7 +103,7 @@ it('expect Personalia navn fetching', async () => {
     );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api}/>));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -118,7 +120,7 @@ it('expect Personalia ident fetching', async () => {
     );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api}/>));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -140,10 +142,9 @@ it('expect PaabegynteSoknader fetching', async () => {
   });
 
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<App api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api}/>));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
   expect(component).toMatchSnapshot();
 });
- */
