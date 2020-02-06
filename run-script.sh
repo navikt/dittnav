@@ -1,12 +1,6 @@
 #!/bin/bash
 
-echo $DITTNAV_LEGACY_API_URL;
-echo $DITTNAV_API_URL;
-echo $TJENESTER_URL;
-echo $NAVNO_URL;
-
-if [[ -z "$DITTNAV_LEGACY_API_URL" ]] ||
-  [[ -z "$DITTNAV_API_URL" ]] ||
+if [[ -z "$DITTNAV_API_URL" ]] ||
   [[ -z "$TJENESTER_URL" ]] ||
   [[ -z "$NAVNO_URL" ]] ||
   [[ -z "$LOGIN_URL" ]] ||
@@ -14,7 +8,7 @@ if [[ -z "$DITTNAV_LEGACY_API_URL" ]] ||
   [[ -z "$INNLOGGINGSLINJE_API_URL" ]] ||
   [[ -z "$ARBEIDSSOKERREGISTRERING_URL" ]] ||
   [[ -z "$HENDELSER_FEATURE_TOGGLE" ]]; then
-  echo "For å kunne starte applikasjonen må variablene DITTNAV_LEGACY_API_URL, DITTNAV_API_URL, TJENESTER_URL,
+  echo "For å kunne starte applikasjonen må variablene DITTNAV_API_URL, TJENESTER_URL,
   NAVNO_URL, LOGIN_URL, VTA_URL, INNLOGGINGSLINJE_API_URL, ARBEIDSSOKERREGISTRERING_URL og HENDELSER_FEATURE_TOGGLE være satt."
   echo "Avbryter oppstart."
   exit 1
@@ -29,7 +23,6 @@ if test -f "${TEST_CONFIG_FILE}"; then
 fi
 
 echo "Tilgjengeliggjør følgende miljøvariabler for frontend-en:"
-echo "* DITTNAV_LEGACY_API_URL"
 echo "* DITTNAV_API_URL"
 echo "* TJENESTER_URL"
 echo "* NAVNO_URL"
@@ -41,7 +34,6 @@ echo "* HENDELSER_FEATURE_TOGGLE"
 echo "* EVENT_TEST_PRODUCER_URL"
 
 echo "window.env={};" > /app/config.js
-echo "window.env.DITTNAV_LEGACY_API_URL=\"$DITTNAV_LEGACY_API_URL\";" >> /app/config.js
 echo "window.env.DITTNAV_API_URL=\"$DITTNAV_API_URL\";" >> /app/config.js
 echo "window.env.TJENESTER_URL=\"$TJENESTER_URL\";" >> /app/config.js
 echo "window.env.NAVNO_URL=\"$NAVNO_URL\";" >> /app/config.js
