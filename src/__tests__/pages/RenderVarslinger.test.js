@@ -5,15 +5,17 @@ import wrapIntl from 'js/IntlTestHelper';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-const mockApi = () => {
-  return {
+/* eslint-disable no-unused-vars */
+const mockApi = () => (
+  {
     fetchHendelser: () => new Promise((resolve, reject) => {}),
-  };
-};
+  }
+);
+/* eslint-enable no-unused-vars */
 
-const flushPromises = () => {
-  return new Promise(resolve => setImmediate(resolve));
-};
+const flushPromises = () => (
+  new Promise(resolve => setImmediate(resolve))
+);
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -24,7 +26,7 @@ it('renders without crashing', () => {
 
 it('expect Oppfolging fetching', async () => {
   const api = mockApi();
-  api.fetchHendelser = () => new Promise((resolve, reject) => {
+  api.fetchHendelser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       [
         {

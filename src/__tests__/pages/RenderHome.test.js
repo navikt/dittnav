@@ -6,9 +6,9 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import wrapIntl from 'js/IntlTestHelper';
 const ReactTestRenderer = require('react-test-renderer');
 
-
-const mockApi = () => {
-  return {
+/* eslint-disable no-unused-vars */
+const mockApi = () => (
+  {
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
     fetchPersonNavn: () => new Promise((resolve, reject) => {}),
@@ -24,17 +24,18 @@ const mockApi = () => {
     fetchMeldingerNyKilde: () => new Promise((resolve, reject) => {}),
     fetchSakstemaNyKilde: () => new Promise((resolve, reject) => {}),
     fetchHendelser: () => new Promise((resolve, reject) => {}),
-  };
-};
+  }
+);
+/* eslint-enable no-unused-vars */
 
-const flushPromises = () => {
-  return new Promise(resolve => setImmediate(resolve));
-};
+const flushPromises = () => (
+  new Promise(resolve => setImmediate(resolve))
+);
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<RenderHome api={mockApi()}/>), div);
+  ReactDOM.render(wrapIntl(<RenderHome api={mockApi()} />), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -46,15 +47,15 @@ it('expect Login page rendering', () => {
 
 it('expect Oppfolging fetching', async () => {
   const api = mockApi();
-  api.fetchOppfolging = () => new Promise((resolve, reject) => {
+  api.fetchOppfolging = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       {
-        'erBrukerUnderOppfolging': false
+        erBrukerUnderOppfolging: false,
       },
     );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<RenderHome api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api} />));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -63,30 +64,30 @@ it('expect Oppfolging fetching', async () => {
 
 it('expect MeldekortInfo fetching', async () => {
   const api = mockApi();
-  api.fetchMeldekort = () => new Promise((resolve, reject) => {
+  api.fetchMeldekort = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       {
-        'etterregistrerteMeldekort': 0,
-        'meldekortbruker': true,
-        'nyeMeldekort': {
-          'antallNyeMeldekort': 3,
-          'nesteInnsendingAvMeldekort': null,
-          'nesteMeldekort': {
-            'fra': '2019-09-09',
-            'kanSendesFra': '2019-09-21',
-            'risikererTrekk': true,
-            'sisteDatoForTrekk': '2019-09-30',
-            'til': '2019-09-22',
-            'uke': '37-38'
-          }
+        etterregistrerteMeldekort: 0,
+        meldekortbruker: true,
+        nyeMeldekort: {
+          antallNyeMeldekort: 3,
+          nesteInnsendingAvMeldekort: null,
+          nesteMeldekort: {
+            fra: '2019-09-09',
+            kanSendesFra: '2019-09-21',
+            risikererTrekk: true,
+            sisteDatoForTrekk: '2019-09-30',
+            til: '2019-09-22',
+            uke: '37-38',
+          },
         },
-        'resterendeFeriedager': 0
-      }
+        resterendeFeriedager: 0,
+      },
     );
   });
 
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<RenderHome api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api} />));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -95,15 +96,15 @@ it('expect MeldekortInfo fetching', async () => {
 
 it('expect Personalia navn fetching', async () => {
   const api = mockApi();
-  api.fetchPersonNavn = () => new Promise((resolve, reject) => {
+  api.fetchPersonNavn = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       {
-        'navn': 'VINAYAGUM-MASK AMIZIC'
+        navn: 'VINAYAGUM-MASK AMIZIC',
       },
     );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<RenderHome api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api} />));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -112,15 +113,15 @@ it('expect Personalia navn fetching', async () => {
 
 it('expect Personalia ident fetching', async () => {
   const api = mockApi();
-  api.fetchPersonIdent = () => new Promise((resolve, reject) => {
+  api.fetchPersonIdent = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       {
-        'ident': 123
+        ident: 123,
       },
     );
   });
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<RenderHome api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api} />));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
@@ -131,18 +132,18 @@ it('expect Personalia ident fetching', async () => {
 it('expect PaabegynteSoknader fetching', async () => {
   const api = mockApi();
 
-  api.fetchSaker = () => new Promise((resolve, reject) => {
+  api.fetchSaker = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       {
-        'url': 'https://tjenester-t6.nav.no/',
-        'antallPaabegynte': 2,
-        'feilendeBaksystem': ['hello']
-      }
+        url: 'https://tjenester-t6.nav.no/',
+        antallPaabegynte: 2,
+        feilendeBaksystem: ['hello'],
+      },
     );
   });
 
   const renderer = new ShallowRenderer();
-  renderer.render(wrapIntl(<RenderHome api={api}/>));
+  renderer.render(wrapIntl(<RenderHome api={api} />));
   const component = renderer.getRenderOutput();
   await flushPromises();
 
