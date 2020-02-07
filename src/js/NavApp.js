@@ -13,9 +13,7 @@ class NavApp extends Component {
   render() {
     return (
       <IntlProvider locale={this.props.defaultSprak} messages={this.props.messages[this.props.defaultSprak]}>
-        <FeatureTogglesProvider>
           {this.props.children}
-        </FeatureTogglesProvider>
       </IntlProvider>
     );
   }

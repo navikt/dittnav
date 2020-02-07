@@ -14,14 +14,7 @@ const mockApi = () => {
     fetchPersonIdent: () => new Promise((resolve, reject) => {}),
     fetchSaker: () => new Promise((resolve, reject) => {}),
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
-    fetchSakstema: () => new Promise((resolve, reject) => {}),
-    fetchOppfolgingNyKilde: () => new Promise((resolve, reject) => {}),
-    fetchMeldekortNyKilde: () => new Promise((resolve, reject) => {}),
-    fetchPersonNavnNyKilde: () => new Promise((resolve, reject) => {}),
-    fetchPersonIdentNyKilde: () => new Promise((resolve, reject) => {}),
-    fetchSakerNyKilde: () => new Promise((resolve, reject) => {}),
-    fetchMeldingerNyKilde: () => new Promise((resolve, reject) => {}),
-    fetchSakstemaNyKilde: () => new Promise((resolve, reject) => {}),
+    fetchSakstema: () => new Promise((resolve, reject) => {})
   };
 };
 
