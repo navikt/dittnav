@@ -1,9 +1,12 @@
 import React from 'react';
 import '../../../less/components/Hendelser.less';
 import PropTypes from 'prop-types';
-import { IkonBeskjed, IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
+import IkonBeskjed from '../../../assets/IkonBeskjed';
+import IkonOppgave from '../../../assets/IkonOppgave';
+import IkonInnboks from '../../../assets/IkonInnboks';
 
 const getHendelseIkon = (type) => {
   switch (type) {
