@@ -83,7 +83,7 @@ exports[`Snapshot test med saker 1`] = `
       >
         <a
           className="lenke sak-lenke"
-          href="http://localhost:9222/saksoversikt/tema/SYK"
+          href="http://localhost:9222/sykefravaer"
           id="sak-lenke-id"
         >
           <div
