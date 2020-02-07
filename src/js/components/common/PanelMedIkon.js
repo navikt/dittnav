@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
 
-const PanelMedIkon = ({ className, overskrift, ingress, ikon, knapp, lenke, onClick }) => (
+const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, onClick }) => (
   <Panel className={className} border>
     <div className="panel-med-ikon__ikon">
-      {ikon}
+      {children}
     </div>
     <div className="panel-med-ikon__tekst">
       {overskrift}
@@ -46,7 +46,7 @@ PanelMedIkon.propTypes = {
   className: PropTypes.string,
   overskrift: PropTypes.shape({ root: PropTypes.any }).isRequired,
   ingress: PropTypes.shape({ root: PropTypes.any }),
-  ikon: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   knapp: PropTypes.bool,
   lenke: PropTypes.string,
 };

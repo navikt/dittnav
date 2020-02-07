@@ -13,9 +13,10 @@ class InformasjonsMeldinger extends Component {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
           overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
-          ikon={<IkonBeskjed />}
           key="generell"
-        />,
+        >
+          <IkonBeskjed />
+        </PanelMedIkon>,
       );
     }
     if (this.props.isMeldeKortUser && this.props.visMeldekortbrukerInfo) {

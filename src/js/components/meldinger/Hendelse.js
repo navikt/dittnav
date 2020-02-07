@@ -40,12 +40,13 @@ const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
             overskrift={createOverskrift(tekst, erBeskjed)}
-            ikon={<IkonBeskjed />}
             onClick={() => removeHendelse(eventId)}
             key={eventId}
             lenke={link}
             knapp
-          />
+          >
+            <IkonBeskjed />
+          </PanelMedIkon>
         ) : (
           <LenkepanelMedIkon
             className="infomelding"
