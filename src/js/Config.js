@@ -129,6 +129,13 @@ const oppfolgingsLenker = [
   lenker.personopplysninger,
 ];
 
+const sakstemaUrlOverrides = {
+  KOM: lenker.digisos.url,
+  SYK: lenker.dittSykefravaer.url,
+  SYM: lenker.dittSykefravaer.url,
+  SYK_SYM: lenker.dittSykefravaer.url,
+};
+
 export default {
   ENVIRONMENT: getEnvironment(),
   SAKSTEMA_DATOTID_FORMAT: 'YYYY-MM-DD-hh:mm:ss+Z',
@@ -172,5 +179,6 @@ export default {
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
   LENKER: lenker,
+  SAKSTEMA_URL_OVERRIDES: sakstemaUrlOverrides,
   IS_DEV: isDev(),
 };

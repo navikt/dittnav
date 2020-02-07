@@ -11,14 +11,10 @@ import i18n from '../../translations/i18n';
 
 import Config from '../Config';
 
-const sakstemaUrlOverride = {
-  KOM: Config.LENKER.digisos.url,
-};
-
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {
     const { temakode } = this.props.tema;
-    return sakstemaUrlOverride[temakode] || `${Config.LENKER.saksoversiktTema.url}/${temakode}`;
+    return Config.SAKSTEMA_URL_OVERRIDES[temakode] || `${Config.LENKER.saksoversiktTema.url}/${temakode}`;
   }
 
   getStatusMelding() {

@@ -2,10 +2,10 @@
   "antallSakstema": 6,
   "sakstemaList": [
     {
-      "temanavn":"Sosialhjelp",
-      "temakode":"KOM",
-      "antallStatusUnderBehandling":0,
-      "sisteOppdatering":"2019-08-15T12:00:00+02:00"
+      "temanavn":"Dagpenger",
+      "temakode":"DAG",
+      "antallStatusUnderBehandling":2,
+      "sisteOppdatering":"2020-01-15T12:00:00+02:00"
     },
     {
       "temanavn":"Sykepenger og oppfølging",
