@@ -30,24 +30,32 @@ exports[`render a couple of links 1`] = `
     <div
       className="relatert-informasjon__link-container"
     >
-      <a
-        className="lenke relatert-informasjon__link"
-        data-ga="Dittnav/Lenkeliste"
-        href="/mininnboks"
+      <p
+        className="typo-normal"
       >
-        Min innboks
-      </a>
+        <a
+          className="lenke relatert-informasjon__link"
+          data-ga="Dittnav/Lenkeliste"
+          href="/mininnboks"
+        >
+          Min innboks
+        </a>
+      </p>
     </div>
     <div
       className="relatert-informasjon__link-container"
     >
-      <a
-        className="lenke relatert-informasjon__link"
-        data-ga="Dittnav/Lenkeliste"
-        href="/saksoversikt"
+      <p
+        className="typo-normal"
       >
-        Innsyn og oversikt
-      </a>
+        <a
+          className="lenke relatert-informasjon__link"
+          data-ga="Dittnav/Lenkeliste"
+          href="/saksoversikt"
+        >
+          Innsyn og oversikt
+        </a>
+      </p>
     </div>
   </nav>
 </div>

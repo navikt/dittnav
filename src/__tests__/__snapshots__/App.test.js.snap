@@ -101,90 +101,122 @@ exports[`expect Login page rendering 1`] = `
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="https://arbeidsplassen.nav.no/stillinger"
+                <p
+                  className="typo-normal"
                 >
-                  Ledige stillinger
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="https://arbeidsplassen.nav.no/stillinger"
+                  >
+                    Ledige stillinger
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
+                <p
+                  className="typo-normal"
                 >
-                  Uføretrygd
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
+                  >
+                    Uføretrygd
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="https://foreldrepenger.nav.no"
+                <p
+                  className="typo-normal"
                 >
-                  Dine foreldrepenger
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="https://foreldrepenger.nav.no"
+                  >
+                    Dine foreldrepenger
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/aktivitetsplan"
+                <p
+                  className="typo-normal"
                 >
-                  Aktivitetsplan
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="http://localhost:9222/aktivitetsplan"
+                  >
+                    Aktivitetsplan
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/meldekort/om-meldekort"
+                <p
+                  className="typo-normal"
                 >
-                  Meldekort
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="http://localhost:9222/meldekort/om-meldekort"
+                  >
+                    Meldekort
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                <p
+                  className="typo-normal"
                 >
-                  Registrer deg som arbeidssøker
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
+                  >
+                    Registrer deg som arbeidssøker
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
+                <p
+                  className="typo-normal"
                 >
-                  Dine stillingssøk
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
+                  >
+                    Dine stillingssøk
+                  </a>
+                </p>
               </div>
               <div
                 className="relatert-informasjon__link-container"
               >
-                <a
-                  className="lenke relatert-informasjon__link"
-                  data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:9222/person/personopplysninger"
+                <p
+                  className="typo-normal"
                 >
-                  Personopplysninger
-                </a>
+                  <a
+                    className="lenke relatert-informasjon__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="http://localhost:9222/person/personopplysninger"
+                  >
+                    Personopplysninger
+                  </a>
+                </p>
               </div>
             </nav>
           </div>
