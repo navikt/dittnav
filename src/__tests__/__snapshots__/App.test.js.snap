@@ -159,7 +159,7 @@ exports[`expect Login page rendering 1`] = `
                 <a
                   className="lenke relatert-informasjon__link"
                   data-ga="Dittnav/Lenkeliste"
-                  href="http://localhost:3001/start"
+                  href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
                 >
                   Registrer deg som arbeidssøker
                 </a>

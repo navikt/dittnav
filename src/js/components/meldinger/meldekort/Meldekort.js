@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
-import conf from '../../../Config';
+import conf from '../../../globalConfig';
 import i18n from '../../../../translations/i18n';
 import PanelOverskrift from '../../common/PanelOverskrift';
 import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
@@ -53,7 +53,7 @@ const Meldekort = ({ meldekort, intl }) => {
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(true)} type="Element" />}
         ingress={ingress(true)}
-        href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
+        href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>
@@ -68,7 +68,7 @@ const Meldekort = ({ meldekort, intl }) => {
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(false)} type="Element" />}
         ingress={ingress(false)}
-        href={`${conf.dittNav.NAV_URL}${conf.MELDEKORT_PATH}`}
+        href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
       >
         <IkonBeskjed />
       </LenkepanelMedIkon>

@@ -32,6 +32,3 @@ spec:
       memory: 768Mi
     requests:
       memory: 512Mi
-#  env:
-#    - name: NAV_DEKORATOREN_URL
-#      value: https://www-{{namespace}}.nav.no

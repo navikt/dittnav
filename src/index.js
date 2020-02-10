@@ -5,8 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
 import NavApp from './js/NavApp';
-
-import Config from './js/Config';
+import Config from './js/globalConfig';
 import enableHotModuleReplacement from './js/utils/Parcel';
 import App from './js/App';
 import api from './js/Api';
@@ -35,7 +34,7 @@ const checkAuthThenRenderApp = () => {
     .then(() => api.checkApiStatus())
     .then(() => renderApp())
     .catch((e) => {
-      if (Config.ENVIRONMENT === 'local') {
+      if (Config.IS_DEV) {
         renderApp();
         return;
       }
@@ -47,7 +46,6 @@ const checkAuthThenRenderApp = () => {
         api.redirectToLogin();
         return;
       }
-
       console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
     });
@@ -57,7 +55,7 @@ enableHotModuleReplacement();
 
 const params = new URLSearchParams(window.location.search);
 
-if (params.has('hendelser') && Config.IS_DEV) {
+if (params.has('hendelser') && Config.HENDELSER_FEATURE_TOGGLE) {
   const testApp = (
     <NavApp defaultSprak="nb" messages={loadMessages()}>
       <div className="hendelser-content">
@@ -71,7 +69,7 @@ if (params.has('hendelser') && Config.IS_DEV) {
       ReactDOM.render(testApp, document.getElementById('app'));
     })
     .catch((e) => {
-      if (Config.ENVIRONMENT === 'local') {
+      if (Config.IS_DEV) {
         ReactDOM.render(testApp, document.getElementById('app'));
         return;
       }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
-import Config from '../Config';
+import Config from '../globalConfig';
 import LenkepanelMedIkon from './common/LenkepanelMedIkon';
 import PanelOverskrift from './common/PanelOverskrift';
 import IkonBlyant from '../../assets/IkonBlyant';
