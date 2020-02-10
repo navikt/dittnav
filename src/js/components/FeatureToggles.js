@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import Config from '../Config';
+import Config from '../globalConfig';
 
 export const FeatureToggles = React.createContext({});
 

@@ -4,7 +4,7 @@ import Api from './Api';
 import RenderHome from './pages/Home/RenderHome';
 import RenderVarslinger from './pages/Varslinger/RenderVarslinger';
 import HendelserTestGui from './components/testgui/HendelserTestGui';
-import Config from './Config';
+import Config from './globalConfig';
 import '../less/index.less';
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
         <RenderVarslinger api={Api} />
       </Route>
       <Route path="/person/dittnav/hendelser">
-        { Config.IS_DEV ? <HendelserTestGui /> : null }
+        { Config.HENDELSER_FEATURE_TOGGLE ? <HendelserTestGui /> : null }
       </Route>
     </Switch>
   </Router>

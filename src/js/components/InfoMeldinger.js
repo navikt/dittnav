@@ -7,7 +7,7 @@ import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
-import Config from '../Config';
+import Config from '../globalConfig';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser, updateHendelser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
@@ -20,7 +20,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser, u
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.IS_DEV ? <Hendelser hendelser={hendelser} updateHendelser={updateHendelser} /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser hendelser={hendelser} updateHendelser={updateHendelser} /> : null}
     </section>
   );
 };

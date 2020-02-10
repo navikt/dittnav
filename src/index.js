@@ -5,8 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
 import NavApp from './js/NavApp';
-
-import Config from './js/Config';
+import Config from './js/globalConfig';
 import enableHotModuleReplacement from './js/utils/Parcel';
 import App from './js/App';
 import api from './js/Api';
@@ -24,7 +23,7 @@ const loadMessages = () => ({
 function renderApp() {
   ReactDOM.render(
     <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <App api={api} />
+      <App />
     </NavApp>, document.getElementById('app'),
   );
 }
@@ -34,7 +33,7 @@ const checkAuthThenRenderApp = () => {
     .then(() => api.checkApiStatus())
     .then(() => renderApp())
     .catch((e) => {
-      if (Config.ENVIRONMENT === 'local') {
+      if (Config.IS_DEV) {
         renderApp();
         return;
       }
@@ -46,7 +45,6 @@ const checkAuthThenRenderApp = () => {
         api.redirectToLogin();
         return;
       }
-
       console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
     });
