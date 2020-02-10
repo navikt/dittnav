@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import FeilMeldinger from '../../components/FeilMeldinger';
-import { FeatureToggles } from '../../components/FeatureToggles';
 import Home from './Home';
 import '../../../less/index.less';
-import Config from '../../Config';
+import Config from '../../globalConfig';
 
 const RenderHome = (props) => {
   const [data, setData] = useState({
@@ -21,7 +20,6 @@ const RenderHome = (props) => {
     oppfolgingHasLoaded: false,
   });
 
-  const { featureToggles } = useContext(FeatureToggles);
   const { api } = props;
 
   const handleOppfolgingError = () => {
@@ -55,94 +53,51 @@ const RenderHome = (props) => {
           }).catch(handleError);
       }
 
-      if (featureToggles && featureToggles['dittnav.ny-backend']) {
-        api.fetchOppfolgingNyKilde()
-          .then((r) => {
-            setData(d => ({ ...d, oppfolging: r, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
-          }).catch(handleOppfolgingError);
+      api.fetchOppfolging()
+        .then((r) => {
+          setData(d => ({ ...d, oppfolging: r, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
+        }).catch(handleOppfolgingError);
 
-        api.fetchMeldekortNyKilde()
-          .then((r) => {
-            setData(d => ({ ...d, meldekort: r, fetching: d.fetching + 1 }));
-          }).catch(handleError);
+      api.fetchMeldekort()
+        .then((r) => {
+          setData(d => ({ ...d, meldekort: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
-        api.fetchPersonNavnNyKilde()
-          .then((r) => {
-            setData(d => ({ ...d, person: r, fetching: d.fetching + 1 }));
-          }).catch(() => {
-            api.fetchPersonIdent()
-              .then(r => {
-                setData(d => ({ ...d, identifikator: r, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1 }));
-              })
-              .catch(handleError);
-          });
+      api.fetchPersonNavn()
+        .then((r) => {
+          setData(d => ({ ...d, person: r, fetching: d.fetching + 1 }));
+        }).catch(() => {
+          api.fetchPersonIdent()
+            .then(r => {
+              setData(d => ({ ...d, identifikator: r, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1 }));
+            })
+            .catch(handleError);
+        });
 
-        api.fetchSakerNyKilde()
-          .then((r) => {
-            const { feilendeBaksystem } = r;
-            if (feilendeBaksystem.length > 0) {
-              setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1, errors: [...d.errors, 'error.baksystemer'] }));
-            } else {
-              setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1 }));
-            }
-          }).catch(handleError);
+      api.fetchSaker()
+        .then((r) => {
+          const { feilendeBaksystem } = r;
+          if (feilendeBaksystem.length > 0) {
+            setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1, errors: [...d.errors, 'error.baksystemer'] }));
+          } else {
+            setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1 }));
+          }
+        }).catch(handleError);
 
-        api.fetchMeldingerNyKilde()
-          .then((r) => {
-            setData(d => ({ ...d, mininnboks: r, fetching: d.fetching + 1 }));
-          }).catch(handleError);
+      api.fetchMeldinger()
+        .then((r) => {
+          setData(d => ({ ...d, mininnboks: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
-        api.fetchSakstemaNyKilde()
-          .then((r) => {
-            setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
-          }).catch(handleError);
-      } else {
-        api.fetchOppfolging()
-          .then((r) => {
-            setData(d => ({ ...d, oppfolging: r, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
-          }).catch(handleOppfolgingError);
-
-        api.fetchMeldekort()
-          .then((r) => {
-            setData(d => ({ ...d, meldekort: r, fetching: d.fetching + 1 }));
-          }).catch(handleError);
-
-        api.fetchPersonNavn()
-          .then((r) => {
-            setData(d => ({ ...d, person: r, fetching: d.fetching + 1 }));
-          }).catch(() => {
-            api.fetchPersonIdent()
-              .then(r => {
-                setData(d => ({ ...d, identifikator: r, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1 }));
-              })
-              .catch(handleError);
-          });
-
-        api.fetchSaker()
-          .then((r) => {
-            const { feilendeBaksystem } = r;
-            if (feilendeBaksystem.length > 0) {
-              setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1, errors: [...d.errors, 'error.baksystemer'] }));
-            } else {
-              setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1 }));
-            }
-          }).catch(handleError);
-
-        api.fetchMeldinger()
-          .then((r) => {
-            setData(d => ({ ...d, mininnboks: r, fetching: d.fetching + 1 }));
-          }).catch(handleError);
-
-        api.fetchSakstema()
-          .then((r) => {
-            setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
-          }).catch(handleError);
-      }
-    }, [featureToggles, api],
+      api.fetchSakstema()
+        .then((r) => {
+          setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
+    }, [api],
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-  const loading = data.fetching < 6; // Denne logikken må endres
+  const loading = data.fetching < 6;
 
   return (
     <main role="main">
@@ -175,13 +130,6 @@ RenderHome.propTypes = {
     fetchSaker: PropTypes.func.isRequired,
     fetchMeldinger: PropTypes.func.isRequired,
     fetchSakstema: PropTypes.func.isRequired,
-    fetchOppfolgingNyKilde: PropTypes.func.isRequired,
-    fetchPersonNavnNyKilde: PropTypes.func.isRequired,
-    fetchPersonIdentNyKilde: PropTypes.func.isRequired,
-    fetchMeldekortNyKilde: PropTypes.func.isRequired,
-    fetchSakerNyKilde: PropTypes.func.isRequired,
-    fetchMeldingerNyKilde: PropTypes.func.isRequired,
-    fetchSakstemaNyKilde: PropTypes.func.isRequired,
     fetchHendelser: PropTypes.func.isRequired,
   }).isRequired,
 };

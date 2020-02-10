@@ -4,7 +4,7 @@ import AlertStripe from 'nav-frontend-alertstriper';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
-import Config from '../../Config';
+import Config from '../../globalConfig';
 import Hendelser from '../../components/meldinger/Hendelser';
 
 const Varslinger = ({ hendelser, updateHendelser }) => (
