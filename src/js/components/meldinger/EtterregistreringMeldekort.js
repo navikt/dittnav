@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import conf from '../../globalConfig';
 import i18n from '../../../translations/i18n';
-import { IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
+import IkonOppgave from '../../../assets/IkonOppgave';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 

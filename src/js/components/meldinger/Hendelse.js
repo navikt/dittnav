@@ -1,9 +1,12 @@
 import React from 'react';
 import '../../../less/components/Hendelser.less';
 import PropTypes from 'prop-types';
-import { IkonBeskjed, IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
+import IkonBeskjed from '../../../assets/IkonBeskjed';
+import IkonOppgave from '../../../assets/IkonOppgave';
+import IkonInnboks from '../../../assets/IkonInnboks';
 
 const getHendelseIkon = (type) => {
   switch (type) {
@@ -37,12 +40,13 @@ const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
             overskrift={createOverskrift(tekst, erBeskjed)}
-            ikon={<IkonBeskjed />}
             onClick={() => removeHendelse(eventId)}
             key={eventId}
             lenke={link}
             knapp
-          />
+          >
+            <IkonBeskjed />
+          </PanelMedIkon>
         ) : (
           <LenkepanelMedIkon
             className="infomelding"

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PanelMedIkon from '../common/PanelMedIkon';
-import { IkonBeskjed } from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
+import IkonBeskjed from '../../../assets/IkonBeskjed';
 
 class InformasjonsMeldinger extends Component {
   render() {
@@ -13,9 +13,10 @@ class InformasjonsMeldinger extends Component {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
           overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
-          ikon={<IkonBeskjed />}
           key="generell"
-        />,
+        >
+          <IkonBeskjed />
+        </PanelMedIkon>,
       );
     }
     if (this.props.isMeldeKortUser && this.props.visMeldekortbrukerInfo) {

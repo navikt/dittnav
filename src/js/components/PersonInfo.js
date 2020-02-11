@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Personikon from '../../images/person.svg';
+import Personikon from '../../assets/person.svg';
 
 const PersonInfo = ({ person, identifikator }) => {
   if (!person && !identifikator) return null;

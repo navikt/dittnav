@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
+import IkonOppgave from '../../../assets/IkonOppgave';
+import IkonInnboks from '../../../assets/IkonInnboks';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
