@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Normaltekst } from 'nav-frontend-typografi';
 
 class Lenkelister extends Component {
   render() {
@@ -8,9 +9,11 @@ class Lenkelister extends Component {
         <nav className="relatert-informasjon__links">
           {this.props.links.map(l => (
             <div className="relatert-informasjon__link-container" key={l.url}>
-              <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke relatert-informasjon__link">
-                {l.tittel}
-              </a>
+              <Normaltekst>
+                <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke relatert-informasjon__link">
+                  {l.tittel}
+                </a>
+              </Normaltekst>
             </div>
           ))}
         </nav>

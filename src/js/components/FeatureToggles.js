@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import Config from '../globalConfig';
 
 export const FeatureToggles = React.createContext({});
 
@@ -25,6 +24,10 @@ FeatureToggleWrapper.defaultProps = {
 };
 
 const FeatureTogglesProvider = ({ children }) => {
+  const loaded = false;
+  const featureToggles = {};
+  /*
+  TODO: Utkommentert i påvente av at vi skriver vår egen unleash-toggle-provider istedenfor å bruke Unleash gjennom pus-dekoratør.
   const [featureToggles, setFeatureToggles] = useState({});
   const [loaded, setLoaded] = useState(false);
 
@@ -36,7 +39,6 @@ const FeatureTogglesProvider = ({ children }) => {
       const togglePath = toggles.reduce((accumulatedToggles, currentToggle) => `${accumulatedToggles}&feature=${currentToggle}`);
       return `${Config.dittNav.CONTEXT_PATH}/api/feature?feature=${togglePath}`;
     };
-
     Promise.race([
       fetch(createURL(), { method: 'GET' })
         .then(r => r.json()),
@@ -51,6 +53,8 @@ const FeatureTogglesProvider = ({ children }) => {
       })
       .finally(() => setLoaded(true));
   }, []);
+
+   */
 
   if (loaded) {
     return (
