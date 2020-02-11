@@ -19,6 +19,9 @@ const App = ({ api }) => (
       <Route path="/person/dittnav/hendelser">
         { Config.HENDELSER_FEATURE_TOGGLE ? <HendelserTestGui /> : null }
       </Route>
+      <Route path="/person/dittnav/*">
+        <RenderHome api={api} />
+      </Route>
     </Switch>
   </Router>
 );
