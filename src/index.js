@@ -8,7 +8,7 @@ import NavApp from './js/NavApp';
 import Config from './js/globalConfig';
 import enableHotModuleReplacement from './js/utils/Parcel';
 import App from './js/App';
-import api from './js/Api';
+import Api from './js/Api';
 
 import './css/index.css';
 
@@ -23,14 +23,14 @@ const loadMessages = () => ({
 function renderApp() {
   ReactDOM.render(
     <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <App />
+      <App api={Api} />
     </NavApp>, document.getElementById('app'),
   );
 }
 
 const checkAuthThenRenderApp = () => {
-  api.checkAuth()
-    .then(() => api.checkApiStatus())
+  Api.checkAuth()
+    .then(() => Api.checkApiStatus())
     .then(() => renderApp())
     .catch((e) => {
       if (Config.IS_DEV) {
@@ -38,11 +38,11 @@ const checkAuthThenRenderApp = () => {
         return;
       }
       if (e.message === 'not authenticated') {
-        api.redirectToLogin();
+        Api.redirectToLogin();
         return;
       }
       if (e.status === 401) {
-        api.redirectToLogin();
+        Api.redirectToLogin();
         return;
       }
       console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
