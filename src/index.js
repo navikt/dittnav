@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 import 'intl';
 import NavApp from './js/NavApp';
 import Config from './js/globalConfig';
-import enableHotModuleReplacement from './js/utils/Parcel';
 import App from './js/App';
 import Api from './js/Api';
 
@@ -14,6 +13,9 @@ import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
+
+import enableHotModuleReplacement from './js/utils/Parcel';
+import log from './js/utils/Logger';
 
 const loadMessages = () => ({
   nb: nbMessages,
@@ -45,7 +47,7 @@ const checkAuthThenRenderApp = () => {
         Api.redirectToLogin();
         return;
       }
-      console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
+      log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
     });
 };

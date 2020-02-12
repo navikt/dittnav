@@ -74,4 +74,5 @@ export default {
   LENKER: lenker,
   HENDELSER_FEATURE_TOGGLE: window.env.HENDELSER_FEATURE_TOGGLE === 'true',
   IS_DEV: window.env.ER_DEV === 'true',
+  IS_TEST: process.env.NODE_ENV === 'test',
 };

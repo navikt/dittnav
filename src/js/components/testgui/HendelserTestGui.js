@@ -31,7 +31,6 @@ const HendelserTestGui = () => {
         eventId,
       },
     );
-    console.log(`Marked event as done for (eventId): ${eventId} to url: ${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done}`);
   };
 
   return (
