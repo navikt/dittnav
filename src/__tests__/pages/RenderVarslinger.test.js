@@ -24,7 +24,7 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('expect Oppfolging fetching', async () => {
+it('expect Hendelser fetching', async () => {
   const api = mockApi();
   api.fetchHendelser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(

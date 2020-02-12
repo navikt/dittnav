@@ -13,7 +13,7 @@ import Config from '../../globalConfig';
 
 class Home extends Component {
   render() {
-    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, hendelser, updateHendelser, oppfolgingHasLoaded, loading } = this.props;
+    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, hendelser, oppfolgingHasLoaded, loading } = this.props;
     const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
     const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -26,7 +26,7 @@ class Home extends Component {
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo person={person} identifikator={identifikator} />
               { loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
-              <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} hendelser={hendelser} updateHendelser={updateHendelser} />
+              <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} hendelser={hendelser} />
               <DittnavLenkePanel sakstema={sakstema} />
               { oppfolgingHasLoaded ? generelleEllerVta : null }
               <Undertittel className="relatert-informasjon__subheader">
@@ -51,7 +51,6 @@ Home.propTypes = {
   sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   oppfolgingHasLoaded: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   hendelser: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  updateHendelser: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
 };
 

@@ -9,7 +9,7 @@ import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
 import Config from '../globalConfig';
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser, updateHendelser }) => {
+const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
 
   return (
@@ -20,7 +20,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser, u
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser hendelser={hendelser} updateHendelser={updateHendelser} /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser hendelser={hendelser} /> : null}
     </section>
   );
 };
@@ -30,7 +30,6 @@ InfoMeldinger.propTypes = {
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
   hendelser: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
-  updateHendelser: PropTypes.func.isRequired,
 };
 
 InfoMeldinger.defaultProps = {

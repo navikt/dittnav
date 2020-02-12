@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
 import Config from '../../globalConfig';
 import Hendelse from './Hendelse';
+import HendelseContext from '../../context/HendelseContext';
 
-const Hendelser = ({ hendelser, updateHendelser }) => {
+const Hendelser = ({ hendelser }) => {
+  const updateHendelser = useContext(HendelseContext);
+
   const removeHendelse = (eventId) => {
     updateHendelser(hendelser
       .filter(h => eventId !== h.eventId));
@@ -36,7 +39,6 @@ const Hendelser = ({ hendelser, updateHendelser }) => {
 
 Hendelser.propTypes = {
   hendelser: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
-  updateHendelser: PropTypes.func.isRequired,
 };
 
 Hendelser.defaultProps = {

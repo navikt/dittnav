@@ -4,14 +4,14 @@ import Hendelser from '../../components/meldinger/Hendelser';
 import AdvarselBox from './Alerts/AdvarselBox';
 import InfoBox from './Alerts/InfoBox';
 
-const Varslinger = ({ hendelser, updateHendelser }) => (
+const Varslinger = ({ hendelser }) => (
   <div className="row">
     <div className="maincontent side-innhold">
       <div className="col-md-12" id="dittnav-main-container">
         <section className="infomeldinger-list">
           <AdvarselBox />
           <InfoBox />
-          <Hendelser hendelser={hendelser} updateHendelser={updateHendelser} />
+          <Hendelser hendelser={hendelser} />
         </section>
       </div>
     </div>
@@ -20,7 +20,6 @@ const Varslinger = ({ hendelser, updateHendelser }) => (
 
 Varslinger.propTypes = {
   hendelser: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  updateHendelser: PropTypes.func.isRequired,
 };
 
 Varslinger.defaultProps = {

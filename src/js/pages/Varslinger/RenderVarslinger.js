@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
+import HendelseContext from '../../context/HendelseContext';
 
 const VarslingerRender = (props) => {
   const [data, setData] = useState({ hendelser: [], errors: [] });
@@ -34,9 +35,11 @@ const VarslingerRender = (props) => {
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
 
   return (
-    <PageFrame uniqueErrors={uniqueErrors}>
-      <Varslinger hendelser={data.hendelser} updateHendelser={updateHendelser} />
-    </PageFrame>
+    <HendelseContext.Provider value={updateHendelser}>
+      <PageFrame uniqueErrors={uniqueErrors}>
+        <Varslinger hendelser={data.hendelser} />
+      </PageFrame>
+    </HendelseContext.Provider>
   );
 };
 

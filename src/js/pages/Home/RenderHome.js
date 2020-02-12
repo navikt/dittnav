@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import FeilMeldinger from '../../components/FeilMeldinger';
 import Home from './Home';
 import '../../../less/index.less';
 import Config from '../../globalConfig';
+import PageFrame from '../PageFrame';
+import HendelseContext from '../../context/HendelseContext';
 
 const RenderHome = (props) => {
   const [data, setData] = useState({
@@ -100,9 +101,8 @@ const RenderHome = (props) => {
   const loading = data.fetching < 6;
 
   return (
-    <main role="main">
-      <FeilMeldinger errors={uniqueErrors} />
-      <div className="container">
+    <HendelseContext.Provider value={updateHendelser}>
+      <PageFrame uniqueErrors={uniqueErrors}>
         <Home
           oppfolging={data.oppfolging}
           meldekort={data.meldekort}
@@ -113,11 +113,10 @@ const RenderHome = (props) => {
           loading={loading}
           sakstema={data.sakstema}
           hendelser={data.hendelser}
-          updateHendelser={updateHendelser}
           oppfolgingHasLoaded={data.oppfolgingHasLoaded}
         />
-      </div>
-    </main>
+      </PageFrame>
+    </HendelseContext.Provider>
   );
 };
 
