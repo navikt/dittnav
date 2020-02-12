@@ -1,4 +1,5 @@
 import Config from './globalConfig';
+import log from './utils/Logger';
 
 const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
@@ -35,7 +36,7 @@ const checkApiStatus = () => new Promise((res, rej) => {
     .catch(e => rej(e));
 });
 
-const postJSONAndCheckForErrors = (url, content) => {
+const postJSON = (url, content) => {
   fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -46,8 +47,7 @@ const postJSONAndCheckForErrors = (url, content) => {
     body: JSON.stringify(content),
   })
     .then((r) => r.status)
-    // eslint-disable-next-line no-console
-    .catch((e) => console.log(`ERROR: ${e}`));
+    .catch((e) => log(`Error: ${e}`));
 };
 
 const fetchOppfolging = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`);
@@ -70,6 +70,6 @@ export default {
   fetchMeldinger,
   fetchHendelser,
   fetchSakstema,
-  postHendelser: postJSONAndCheckForErrors,
+  postHendelser: postJSON,
   redirectToLogin,
 };
