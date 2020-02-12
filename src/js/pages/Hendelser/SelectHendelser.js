@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from 'nav-frontend-skjema';
 import PropTypes from 'prop-types';
 
-const SelectTestGui = ({ setValg }) => {
+const SelectHendelser = ({ setValg }) => {
   const selectHendelse = (valg) => (
     setValg(valg)
   );
@@ -16,8 +16,8 @@ const SelectTestGui = ({ setValg }) => {
   );
 };
 
-SelectTestGui.propTypes = {
+SelectHendelser.propTypes = {
   setValg: PropTypes.func.isRequired,
 };
 
-export default SelectTestGui;
+export default SelectHendelser;

@@ -3,7 +3,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RenderHome from './pages/Home/RenderHome';
 import RenderVarslinger from './pages/Varslinger/RenderVarslinger';
-import HendelserTestGui from './components/testgui/HendelserTestGui';
+import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
 import Config from './globalConfig';
 import '../less/index.less';
 
@@ -17,7 +17,7 @@ const App = ({ api }) => (
         <RenderVarslinger api={api} />
       </Route>
       <Route path="/person/dittnav/hendelser">
-        { Config.HENDELSER_FEATURE_TOGGLE ? <HendelserTestGui /> : null }
+        { Config.HENDELSER_FEATURE_TOGGLE ? <HendelserTestSide /> : null }
       </Route>
       <Route path="/person/dittnav/*">
         <RenderHome api={api} />

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Api from '../../Api';
 import Config from '../../globalConfig';
 
-const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
+const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
   const getHendelser = () => Api
     .fetchHendelser()
     .then((r) => {
@@ -50,7 +50,7 @@ const FormTestGui = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) =
   );
 };
 
-FormTestGui.propTypes = {
+FormHendelser.propTypes = {
   tekst: PropTypes.string.isRequired,
   lenke: PropTypes.string.isRequired,
   valg: PropTypes.string.isRequired,
@@ -59,4 +59,4 @@ FormTestGui.propTypes = {
   setHendelser: PropTypes.func.isRequired,
 };
 
-export default FormTestGui;
+export default FormHendelser;
