@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hendelser from '../../components/meldinger/Hendelser';
 import AdvarselBox from './Alerts/AdvarselBox';
+import InfoBox from './Alerts/InfoBox';
 
 const Varslinger = ({ hendelser, updateHendelser }) => (
   <div className="row">
@@ -9,6 +10,7 @@ const Varslinger = ({ hendelser, updateHendelser }) => (
       <div className="col-md-12" id="dittnav-main-container">
         <section className="infomeldinger-list">
           <AdvarselBox />
+          <InfoBox />
           <Hendelser hendelser={hendelser} updateHendelser={updateHendelser} />
         </section>
       </div>
