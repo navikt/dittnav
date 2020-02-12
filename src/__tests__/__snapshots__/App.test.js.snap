@@ -86,26 +86,26 @@ exports[`expect Login page rendering 1`] = `
             </div>
           </div>
           <h2
-            className="typo-undertittel relatert-informasjon__subheader"
+            className="typo-undertittel flere-tjenester__subheader"
           >
             <span>
-              Relatert informasjon
+              Flere tjenester
             </span>
           </h2>
           <div
-            className="relatert-informasjon"
+            className="flere-tjenester"
           >
             <nav
-              className="relatert-informasjon__links"
+              className="flere-tjenester__links"
             >
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="https://arbeidsplassen.nav.no/stillinger"
                   >
@@ -114,13 +114,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
                   >
@@ -129,13 +129,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="https://foreldrepenger.nav.no"
                   >
@@ -144,13 +144,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/aktivitetsplan"
                   >
@@ -159,13 +159,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/meldekort/om-meldekort"
                   >
@@ -174,13 +174,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
                   >
@@ -189,13 +189,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
                   >
@@ -204,13 +204,13 @@ exports[`expect Login page rendering 1`] = `
                 </p>
               </div>
               <div
-                className="relatert-informasjon__link-container"
+                className="flere-tjenester__link-container"
               >
                 <p
                   className="typo-normal"
                 >
                   <a
-                    className="lenke relatert-informasjon__link"
+                    className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/person/personopplysninger"
                   >
