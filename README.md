@@ -14,7 +14,7 @@ For å kjøre opp app-en i dev:
 1. `npm install`
 2. `npm run build`
 3. `npm run local`
-4. gå til `http://localhost:9002/`
+4. gå til `http://localhost:9002/person/dittnav`
 
 For å kjøre tester:
 
