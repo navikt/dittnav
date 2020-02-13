@@ -2,39 +2,39 @@
 
 exports[`basic green Lenkelister test 1`] = `
 <div
-  className="relatert-informasjon"
+  className="flere-tjenester"
 >
   <nav
-    className="relatert-informasjon__links"
+    className="flere-tjenester__links"
   />
 </div>
 `;
 
 exports[`render Lenkelister without links 1`] = `
 <div
-  className="relatert-informasjon"
+  className="flere-tjenester"
 >
   <nav
-    className="relatert-informasjon__links"
+    className="flere-tjenester__links"
   />
 </div>
 `;
 
 exports[`render a couple of links 1`] = `
 <div
-  className="relatert-informasjon"
+  className="flere-tjenester"
 >
   <nav
-    className="relatert-informasjon__links"
+    className="flere-tjenester__links"
   >
     <div
-      className="relatert-informasjon__link-container"
+      className="flere-tjenester__link-container"
     >
       <p
         className="typo-normal"
       >
         <a
-          className="lenke relatert-informasjon__link"
+          className="lenke flere-tjenester__link"
           data-ga="Dittnav/Lenkeliste"
           href="/mininnboks"
         >
@@ -43,13 +43,13 @@ exports[`render a couple of links 1`] = `
       </p>
     </div>
     <div
-      className="relatert-informasjon__link-container"
+      className="flere-tjenester__link-container"
     >
       <p
         className="typo-normal"
       >
         <a
-          className="lenke relatert-informasjon__link"
+          className="lenke flere-tjenester__link"
           data-ga="Dittnav/Lenkeliste"
           href="/saksoversikt"
         >
