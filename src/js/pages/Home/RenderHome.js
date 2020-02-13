@@ -47,7 +47,7 @@ const RenderHome = (props) => {
         setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'] }));
       };
 
-      if (Config.IS_DEV) {
+      if (Config.HENDELSER_FEATURE_TOGGLE) {
         api.fetchHendelser()
           .then((r) => {
             setData(d => ({ ...d, hendelser: r }));
