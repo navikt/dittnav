@@ -21,113 +21,77 @@ exports[`expect Hendelser fetching 1`] = `
             className="infomeldinger-list"
           >
             <div
-              className="alertstripe infomelding alertstripe--advarsel"
+              className="alertbox"
             >
-              <span
-                aria-label="advarsel"
-                className="alertstripe__ikon"
-              >
-                <svg
-                  focusable="false"
-                  height="1.5em"
-                  kind="advarsel-sirkel-fyll"
-                  viewBox="0 0 24 24"
-                  width="1.5em"
-                >
-                  <g
-                    fill="none"
-                    fillRule="evenodd"
-                  >
-                    <path
-                      d="M12.205-.004l-.214.002a12.225 12.225 0 0 0-8.517 3.659C1.179 5.977-.053 9.013.002 12.208c.115 6.613 5.296 11.793 11.795 11.793l.212-.002c6.726-.116 12.105-5.595 11.99-12.21C23.883 5.178 18.702-.003 12.204-.003z"
-                      fill="#FFA733"
-                      fillRule="nonzero"
-                    />
-                    <path
-                      d="M12.027 19H12A1.499 1.499 0 0 1 11.973 16L12 16a1.501 1.501 0 0 1 .027 3z"
-                      fill="#3E3832"
-                    />
-                    <path
-                      d="M12 5a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1z"
-                      fill="#3E3832"
-                      fillRule="nonzero"
-                    />
-                  </g>
-                </svg>
-              </span>
               <div
-                className="typo-normal alertstripe__tekst"
+                className="alertstripe infomelding alertstripe--advarsel"
               >
-                <h2
-                  className="typo-undertittel"
+                <span
+                  aria-label="advarsel"
+                  className="alertstripe__ikon"
                 >
-                  <span>
-                    Denne siden er under utvikling
-                  </span>
-                </h2>
-                <p
-                  className="typo-normal"
-                >
-                  <span>
-                    Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.
-                  </span>
-                </p>
-              </div>
-            </div>
-            <div
-              className="alertstripe infomelding alertstripe--info"
-            >
-              <span
-                aria-label="info"
-                className="alertstripe__ikon"
-              >
-                <svg
-                  focusable="false"
-                  height="1.5em"
-                  kind="info-sirkel-fyll"
-                  viewBox="0 0 24 24"
-                  width="1.5em"
-                >
-                  <g
-                    fill="none"
+                  <svg
+                    focusable="false"
+                    height="1.5em"
+                    kind="advarsel-sirkel-fyll"
+                    viewBox="0 0 24 24"
+                    width="1.5em"
                   >
-                    <path
-                      d="M12 0C5.382 0 0 5.382 0 12s5.382 12 12 12c6.617 0 12-5.382 12-12S18.617 0 12 0z"
-                      fill="#669DB4"
-                    />
-                    <path
-                      d="M12 5a1.566 1.566 0 1 1 .11 3.13A1.566 1.566 0 0 1 12 5zm2.976 12.01c.563 0 1.043.431 1.043.991s-.48.992-1.043.992H9.39c-.564 0-1.043-.431-1.043-.992 0-.56.479-.99 1.043-.99h1.6v-5.016h-.986c-.565 0-1.044-.43-1.044-.991 0-.56.48-.991 1.044-.991h2.03c.563 0 1.043.43 1.043.99v6.007h1.899z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-              </span>
-              <div
-                className="typo-normal alertstripe__tekst"
-              >
-                <p
-                  className="typo-normal"
+                    <g
+                      fill="none"
+                      fillRule="evenodd"
+                    >
+                      <path
+                        d="M12.205-.004l-.214.002a12.225 12.225 0 0 0-8.517 3.659C1.179 5.977-.053 9.013.002 12.208c.115 6.613 5.296 11.793 11.795 11.793l.212-.002c6.726-.116 12.105-5.595 11.99-12.21C23.883 5.178 18.702-.003 12.204-.003z"
+                        fill="#FFA733"
+                        fillRule="nonzero"
+                      />
+                      <path
+                        d="M12.027 19H12A1.499 1.499 0 0 1 11.973 16L12 16a1.501 1.501 0 0 1 .027 3z"
+                        fill="#3E3832"
+                      />
+                      <path
+                        d="M12 5a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1z"
+                        fill="#3E3832"
+                        fillRule="nonzero"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <div
+                  className="typo-normal alertstripe__tekst"
                 >
-                  <span>
-                    Du kan finne flere meldinger i 
-                    <a
-                      className="lenke"
-                      href="http://localhost:9222/mininnboks"
-                      id="alert-lenke-id"
-                    >
-                      innboksen
-                    </a>
-                     eller se informasjon om sakene dine i 
-                    <a
-                      className="lenke"
-                      href="http://localhost:9222/saksoversikt"
-                      id="alert-lenke-id"
-                    >
-                      Dine saker
-                    </a>
-                    .
-                  </span>
-                </p>
+                  <h2
+                    className="typo-undertittel"
+                  >
+                    <span>
+                      Denne siden er under utvikling
+                    </span>
+                  </h2>
+                  <p
+                    className="typo-normal"
+                  >
+                    <span>
+                      Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i 
+                      <a
+                        className="lenke"
+                        href="http://localhost:9222/mininnboks"
+                        id="alert-lenke-id"
+                      >
+                        innboksen
+                      </a>
+                       eller se informasjon om sakene dine i 
+                      <a
+                        className="lenke"
+                        href="http://localhost:9222/saksoversikt"
+                        id="alert-lenke-id"
+                      >
+                        Dine saker
+                      </a>
+                      .
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </section>

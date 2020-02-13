@@ -30,9 +30,8 @@
   "hendelser.beskjed.knapp": "Ok",
   "hendelser.beskjed.lenke": "Se meldingen",
 
-  "varslinger.under.utvikling.advarsel.tittel": "Denne siden er under utvikling",
-  "varslinger.under.utvikling.advarsel.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.",
-  "varslinger.under.utvikling.info": "Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
+  "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
+  "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",
