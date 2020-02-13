@@ -29,8 +29,8 @@ class Home extends Component {
               <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} hendelser={hendelser} />
               <DittnavLenkePanel sakstema={sakstema} />
               { oppfolgingHasLoaded ? generelleEllerVta : null }
-              <Undertittel className="relatert-informasjon__subheader">
-                <F id="relatertInformasjon.header" />
+              <Undertittel className="flere-tjenester__subheader">
+                <F id="flere.tjenester.header" />
               </Undertittel>
               { erUnderOppfolging ? <Lenkelister links={oppfolgingsLenker} /> : <Lenkelister links={generelleLenker} /> }
             </div>

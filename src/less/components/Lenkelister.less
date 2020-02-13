@@ -1,72 +1,72 @@
-.relatert-informasjon {
+.flere-tjenester {
   margin: 1.5rem;
   column-count: 1;
 
   &__subheader {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    text-align: center;
 
-      &::before,
-      &::after {
-          content: '';
-          flex: 1;
-          height: 1px;
-          background-color: lightgray;
-      }
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: lightgray;
+    }
 
-      span {
-          flex-shrink: 0;
-          margin: 0 1rem;
-      }
+    span {
+      flex-shrink: 0;
+      margin: 0 1rem;
+    }
   }
 
   &__link-container {
-      margin-bottom: 1.5rem;
-      text-align: center;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   &__link {
-      color: #0067c5;
-      text-decoration: none;
-      border-bottom: 1px solid lightgray;
+    color: #0067c5;
+    text-decoration: none !important;
+    border-bottom: 1px solid lightgray;
 
-      &:hover {
-          border-bottom-color: @navBla;
-      }
+    &:hover {
+      border-bottom-color: @navBla;
+    }
 
-      .typo-normal:hover {
-          border-bottom: 0;
-      }
+    .typo-normal:hover {
+      border-bottom: 0;
+    }
 
-      .typo-normal:hover > p {
-          border-bottom: 0;
-      }
+    .typo-normal:hover > p {
+      border-bottom: 0;
+    }
   }
 
   &__link-icon {
-      margin-left: 0.5rem;
-      position: relative;
+    margin-left: 0.5rem;
+    position: relative;
   }
 
   p {
-      text-align: center;
-      display: inline-block;
-      border-bottom: 1px solid transparent;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
   }
 
   a {
-      display: inline-block;
+    display: inline-block;
   }
 
   @media (min-width: @mobile-breakpoint) {
-      column-count: 2;
+    column-count: 2;
   }
 
   @media (min-width: @tablet-breakpoint) {
-      column-count: 3;
+    column-count: 3;
   }
 }
