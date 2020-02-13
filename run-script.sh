@@ -44,5 +44,6 @@ echo "window.env.ARBEIDSSOKERREGISTRERING_URL=\"$ARBEIDSSOKERREGISTRERING_URL\";
 echo "window.env.EVENT_TEST_PRODUCER_URL=\"$EVENT_TEST_PRODUCER_URL\";" >> /app/config.js
 # Midlertidig frem til feature-toggles pr namespace/miljø fungerer med pus-dekoratør og naiserator.
 echo "window.env.HENDELSER_FEATURE_TOGGLE=\"$HENDELSER_FEATURE_TOGGLE\";" >> /app/config.js
+echo "window.env.VARSLINGER_FEATURE_TOGGLE=\"$VARSLINGER_FEATURE_TOGGLE\";" >> /app/config.js
 
 /run.sh
