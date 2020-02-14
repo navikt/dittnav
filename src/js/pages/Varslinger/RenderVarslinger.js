@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
 import HendelseContext from '../../context/HendelseContext';
+import ApiType from '../../types/ApiType';
 
-const VarslingerRender = (props) => {
+const VarslingerRender = ({ api }) => {
   const [data, setData] = useState({ hendelser: [], errors: [] });
-
-  const { api } = props;
 
   const handleError = (e) => {
     setData(d => ({ ...d, fetching: d.fetching + 1 }));
@@ -44,9 +42,7 @@ const VarslingerRender = (props) => {
 };
 
 VarslingerRender.propTypes = {
-  api: PropTypes.shape({
-    fetchHendelser: PropTypes.func.isRequired,
-  }).isRequired,
+  api: ApiType.isRequired,
 };
 
 export default VarslingerRender;

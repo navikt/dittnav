@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import Home from './Home';
 import '../../../less/index.less';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
 import HendelseContext from '../../context/HendelseContext';
+import ApiType from '../../types/ApiType';
 
-const RenderHome = (props) => {
+const RenderHome = ({ api }) => {
   const [data, setData] = useState({
     oppfolging: null,
     meldekort: null,
@@ -20,8 +20,6 @@ const RenderHome = (props) => {
     fetching: 0,
     oppfolgingHasLoaded: false,
   });
-
-  const { api } = props;
 
   const handleOppfolgingError = () => {
     setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1, oppfolgingHasLoaded: true }));
@@ -121,16 +119,7 @@ const RenderHome = (props) => {
 };
 
 RenderHome.propTypes = {
-  api: PropTypes.shape({
-    fetchOppfolging: PropTypes.func.isRequired,
-    fetchPersonNavn: PropTypes.func.isRequired,
-    fetchPersonIdent: PropTypes.func.isRequired,
-    fetchMeldekort: PropTypes.func.isRequired,
-    fetchSaker: PropTypes.func.isRequired,
-    fetchMeldinger: PropTypes.func.isRequired,
-    fetchSakstema: PropTypes.func.isRequired,
-    fetchHendelser: PropTypes.func.isRequired,
-  }).isRequired,
+  api: ApiType.isRequired,
 };
 
 export default RenderHome;

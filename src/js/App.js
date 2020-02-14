@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import RenderHome from './pages/Home/RenderHome';
 import RenderVarslinger from './pages/Varslinger/RenderVarslinger';
 import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
 import Config from './globalConfig';
 import '../less/index.less';
+import ApiType from './types/ApiType';
 
 const App = ({ api }) => (
   <Router>
@@ -27,16 +27,7 @@ const App = ({ api }) => (
 );
 
 App.propTypes = {
-  api: PropTypes.shape({
-    fetchOppfolging: PropTypes.func.isRequired,
-    fetchPersonNavn: PropTypes.func.isRequired,
-    fetchPersonIdent: PropTypes.func.isRequired,
-    fetchMeldekort: PropTypes.func.isRequired,
-    fetchSaker: PropTypes.func.isRequired,
-    fetchMeldinger: PropTypes.func.isRequired,
-    fetchSakstema: PropTypes.func.isRequired,
-    fetchHendelser: PropTypes.func.isRequired,
-  }).isRequired,
+  api: ApiType.isRequired,
 };
 
 export default App;
