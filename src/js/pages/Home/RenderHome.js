@@ -35,12 +35,8 @@ const RenderHome = ({ api }) => {
 
   useEffect(
     () => {
-      const handleError = (e) => {
+      const handleError = () => {
         incrementFetching();
-
-        if (e.status === 401 || e.status === 403) {
-          return;
-        }
 
         setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'] }));
       };

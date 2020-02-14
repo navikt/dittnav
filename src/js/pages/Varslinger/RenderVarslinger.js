@@ -5,37 +5,30 @@ import HendelseContext from '../../context/HendelseContext';
 import ApiType from '../../types/ApiType';
 
 const VarslingerRender = ({ api }) => {
-  const [data, setData] = useState({ hendelser: [], errors: [] });
+  const [hendelser, setHendelser] = useState([]);
+  const [error, setError] = useState([]);
 
-  const handleError = (e) => {
-    setData(d => ({ ...d, fetching: d.fetching + 1 }));
-
-    if (e.status === 401) {
-      return;
-    }
-
-    setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'] }));
+  const handleError = () => {
+    setError(['error.baksystemer']);
   };
 
   const updateHendelser = (h) => (
-    setData(d => ({ ...d, hendelser: h }))
+    setHendelser(h)
   );
 
   useEffect(
     () => {
       api.fetchHendelser()
         .then((r) => {
-          setData(d => ({ ...d, hendelser: r }));
+          setHendelser(r);
         }).catch(handleError);
     }, [],
   );
 
-  const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-
   return (
     <HendelseContext.Provider value={updateHendelser}>
-      <PageFrame uniqueErrors={uniqueErrors}>
-        <Varslinger hendelser={data.hendelser} />
+      <PageFrame uniqueErrors={error}>
+        <Varslinger hendelser={hendelser} />
       </PageFrame>
     </HendelseContext.Provider>
   );
