@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Hendelser from '../../components/meldinger/Hendelser';
-import AdvarselBox from './Alerts/AdvarselBox';
+import AdvarselBox from './alerts/AdvarselBox';
 
 const Varslinger = ({ hendelser }) => (
   <div className="row">
