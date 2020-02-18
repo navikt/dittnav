@@ -17,6 +17,17 @@ exports[`expect Hendelser fetching 1`] = `
           className="col-md-12"
           id="dittnav-main-container"
         >
+          <div
+            className="varslinger-tittel"
+          >
+            <h1
+              className="typo-sidetittel"
+            >
+              <span>
+                Varslinger fra NAV
+              </span>
+            </h1>
+          </div>
           <section
             className="infomeldinger-list"
           >
