@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import Api from '../../Api';
 import '../../../less/components/Hendelser.less';
 import Config from '../../globalConfig';
 import Hendelse from './Hendelse';
 import HendelseContext from '../../context/HendelseContext';
+import HendelserType from '../../types/HendelserType';
 
 const Hendelser = ({ hendelser }) => {
   const updateHendelser = useContext(HendelseContext);
@@ -38,7 +38,7 @@ const Hendelser = ({ hendelser }) => {
 };
 
 Hendelser.propTypes = {
-  hendelser: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  hendelser: HendelserType,
 };
 
 Hendelser.defaultProps = {
