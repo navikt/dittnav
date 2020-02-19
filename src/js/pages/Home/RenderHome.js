@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Home from './Home';
-import '../../../less/index.less';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
 import HendelseContext from '../../context/HendelseContext';

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
 import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
@@ -7,6 +6,7 @@ import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
+import HendelserType from '../types/HendelserType';
 import Config from '../globalConfig';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser }) => {
@@ -29,7 +29,7 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
-  hendelser: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  hendelser: HendelserType,
 };
 
 InfoMeldinger.defaultProps = {

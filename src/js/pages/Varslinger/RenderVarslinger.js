@@ -5,7 +5,7 @@ import HendelseContext from '../../context/HendelseContext';
 import ApiType from '../../types/ApiType';
 
 const VarslingerRender = ({ api }) => {
-  const [hendelser, setHendelser] = useState([]);
+  const [hendelser, setHendelser] = useState(null);
   const [error, setError] = useState([]);
 
   const handleError = () => {

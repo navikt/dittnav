@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Hendelser from '../../components/meldinger/Hendelser';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
+import HendelserType from '../../types/HendelserType';
+import AktiveVarsler from './AktiveVarsler';
 
 const Varslinger = ({ hendelser }) => (
   <div className="row">
@@ -11,7 +11,7 @@ const Varslinger = ({ hendelser }) => (
         <Tittel className="varslinger-tittel" tittelId="varslinger.tittel" />
         <section className="infomeldinger-list">
           <AdvarselBox />
-          <Hendelser hendelser={hendelser} />
+          <AktiveVarsler hendelser={hendelser} />
         </section>
       </div>
     </div>
@@ -19,7 +19,7 @@ const Varslinger = ({ hendelser }) => (
 );
 
 Varslinger.propTypes = {
-  hendelser: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  hendelser: HendelserType,
 };
 
 Varslinger.defaultProps = {
