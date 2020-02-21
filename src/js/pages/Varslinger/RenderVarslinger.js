@@ -12,10 +12,6 @@ const VarslingerRender = ({ api }) => {
     setError(['error.baksystemer']);
   };
 
-  const updateHendelser = (h) => (
-    setHendelser(h)
-  );
-
   useEffect(
     () => {
       api.fetchHendelser()
@@ -26,7 +22,7 @@ const VarslingerRender = ({ api }) => {
   );
 
   return (
-    <HendelseContext.Provider value={updateHendelser}>
+    <HendelseContext.Provider value={setHendelser}>
       <PageFrame uniqueErrors={error}>
         <Varslinger hendelser={hendelser} />
       </PageFrame>
