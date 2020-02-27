@@ -9,14 +9,15 @@ import HendelserType from '../../types/HendelserType';
 const Hendelser = ({ hendelser }) => {
   const updateHendelser = useContext(HendelseContext);
 
-  const removeHendelse = (eventId) => {
+  const removeHendelse = (eventId, uid) => {
     updateHendelser(hendelser
       .filter(h => eventId !== h.eventId));
 
     Api.postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done`,
+      `${Config.dittNav.DITTNAV_DONE_URL}`,
       {
         eventId,
+        uid,
       },
     );
   };
@@ -27,6 +28,7 @@ const Hendelser = ({ hendelser }) => {
         <Hendelse
           key={h.eventId}
           eventId={h.eventId}
+          uid={h.uid}
           type={h.type}
           tekst={h.tekst}
           link={h.link}

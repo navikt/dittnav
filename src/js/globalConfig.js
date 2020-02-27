@@ -54,6 +54,8 @@ export default {
     DITTNAV_SAKSTEMA_URL: `${window.env.DITTNAV_API_URL}/saker/sakstema`,
 
     DITTNAV_HENDELSER_URL: `${window.env.DITTNAV_API_URL}/brukernotifikasjoner`,
+    DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
+
     EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,
 
     CONTEXT_PATH: '/person/dittnav',

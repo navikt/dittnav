@@ -29,7 +29,7 @@ const createOverskrift = (tekst, erBeskjed) => {
   );
 };
 
-const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
+const Hendelse = ({ eventId, uid, type, tekst, link, removeHendelse }) => {
   const erBeskjed = type === 'BESKJED';
 
   return (
@@ -40,7 +40,7 @@ const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
             data-ga="Dittnav/Varsel"
             alt="Hendelse"
             overskrift={createOverskrift(tekst, erBeskjed)}
-            onClick={() => removeHendelse(eventId)}
+            onClick={() => removeHendelse(eventId, uid)}
             key={eventId}
             lenke={link}
             knapp
@@ -66,6 +66,7 @@ const Hendelse = ({ eventId, type, tekst, link, removeHendelse }) => {
 
 Hendelse.propTypes = {
   eventId: PropTypes.string.isRequired,
+  uid: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   tekst: PropTypes.string.isRequired,
   link: PropTypes.string,

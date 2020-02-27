@@ -58,6 +58,7 @@ const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
 const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
+const postDone = (content) => postJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`, content);
 
 export default {
   checkAuth,
@@ -71,5 +72,6 @@ export default {
   fetchHendelser,
   fetchSakstema,
   postHendelser: postJSON,
+  postDone,
   redirectToLogin,
 };

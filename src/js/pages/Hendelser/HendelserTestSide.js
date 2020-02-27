@@ -21,14 +21,15 @@ const HendelserTestSide = () => {
       null,
     );
 
-  const removeHendelse = (eventId) => {
+  const removeHendelse = (eventId, uid) => {
     setHendelser(hendelser
       .filter(h => eventId !== h.eventId));
 
     Api.postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done`,
+      `${Config.dittNav.DITTNAV_DONE_URL}`,
       {
         eventId,
+        uid,
       },
     );
   };
@@ -56,6 +57,7 @@ const HendelserTestSide = () => {
           {hendelser.map(h => (
             <Hendelse
               eventId={h.eventId}
+              uid={h.uid}
               type={h.type}
               tekst={h.tekst}
               link={h.link}
