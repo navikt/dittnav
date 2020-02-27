@@ -4,12 +4,12 @@ import { Fareknapp } from 'nav-frontend-knapper';
 import { Panel } from 'nav-frontend-paneler';
 import Api from '../../Api';
 import Config from '../../globalConfig';
-import TittelTestGui from './TittelTestGui';
-import FormTestGui from './FormTestGui';
-import Hendelse from '../meldinger/Hendelse';
-import SelectTestGui from './SelectTestGui';
+import TittelHendelser from './TittelHendelser';
+import FormHendelser from './FormHendelser';
+import Hendelse from '../../components/meldinger/Hendelse';
+import SelectHendelser from './SelectHendelser';
 
-const HendelserTestGui = () => {
+const HendelserTestSide = () => {
   const [hendelser, setHendelser] = useState([]);
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
@@ -31,15 +31,14 @@ const HendelserTestGui = () => {
         eventId,
       },
     );
-    console.log(`Marked event as done for (eventId): ${eventId} to url: ${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done}`);
   };
 
   return (
-    <div>
+    <div className="hendelser-content">
       <Panel className="hendelser" border>
-        <TittelTestGui />
-        <SelectTestGui setValg={setValg} />
-        <FormTestGui
+        <TittelHendelser />
+        <SelectHendelser setValg={setValg} />
+        <FormHendelser
           tekst={tekst}
           lenke={lenke}
           valg={valg}
@@ -69,4 +68,4 @@ const HendelserTestGui = () => {
   );
 };
 
-export default HendelserTestGui;
+export default HendelserTestSide;

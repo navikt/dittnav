@@ -2,8 +2,10 @@
 
 exports[`render empty InfoMeldinger component 1`] = `
 <InfoMeldinger
+  hendelser={null}
   meldekort={null}
   mininnboks={Array []}
   paabegynteSoknader={null}
+  updateHendelser={[Function]}
 />
 `;

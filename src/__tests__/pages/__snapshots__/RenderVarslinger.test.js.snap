@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect Hendelser fetching 1`] = `
+<main
+  role="main"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="maincontent side-innhold"
+      >
+        <div
+          className="col-md-12"
+          id="dittnav-main-container"
+        >
+          <div
+            className="varslinger-tittel"
+          >
+            <h1
+              className="typo-sidetittel"
+            >
+              <span>
+                Varslinger fra NAV
+              </span>
+            </h1>
+          </div>
+          <section
+            className="infomeldinger-list"
+          >
+            <div
+              className="alertbox"
+            >
+              <div
+                className="alertstripe infomelding alertstripe--advarsel"
+              >
+                <span
+                  aria-label="advarsel"
+                  className="alertstripe__ikon"
+                >
+                  <svg
+                    focusable="false"
+                    height="1.5em"
+                    kind="advarsel-sirkel-fyll"
+                    viewBox="0 0 24 24"
+                    width="1.5em"
+                  >
+                    <g
+                      fill="none"
+                      fillRule="evenodd"
+                    >
+                      <path
+                        d="M12.205-.004l-.214.002a12.225 12.225 0 0 0-8.517 3.659C1.179 5.977-.053 9.013.002 12.208c.115 6.613 5.296 11.793 11.795 11.793l.212-.002c6.726-.116 12.105-5.595 11.99-12.21C23.883 5.178 18.702-.003 12.204-.003z"
+                        fill="#FFA733"
+                        fillRule="nonzero"
+                      />
+                      <path
+                        d="M12.027 19H12A1.499 1.499 0 0 1 11.973 16L12 16a1.501 1.501 0 0 1 .027 3z"
+                        fill="#3E3832"
+                      />
+                      <path
+                        d="M12 5a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1z"
+                        fill="#3E3832"
+                        fillRule="nonzero"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <div
+                  className="typo-normal alertstripe__tekst"
+                >
+                  <h2
+                    className="typo-undertittel"
+                  >
+                    <span>
+                      Denne siden er under utvikling
+                    </span>
+                  </h2>
+                  <p
+                    className="typo-normal"
+                  >
+                    <span>
+                      Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i 
+                      <a
+                        className="lenke"
+                        href="http://localhost:9222/mininnboks"
+                        id="alert-lenke-id"
+                      >
+                        innboksen
+                      </a>
+                       eller se informasjon om sakene dine i 
+                      <a
+                        className="lenke"
+                        href="http://localhost:9222/saksoversikt"
+                        id="alert-lenke-id"
+                      >
+                        Dine saker
+                      </a>
+                      .
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

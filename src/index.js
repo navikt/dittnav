@@ -6,15 +6,16 @@ import ReactDOM from 'react-dom';
 import 'intl';
 import NavApp from './js/NavApp';
 import Config from './js/globalConfig';
-import enableHotModuleReplacement from './js/utils/Parcel';
 import App from './js/App';
-import api from './js/Api';
+import Api from './js/Api';
 
 import './css/index.css';
 
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
-import HendelserTestGui from './js/components/testgui/HendelserTestGui';
+
+import enableHotModuleReplacement from './js/utils/Parcel';
+import log from './js/utils/Logger';
 
 const loadMessages = () => ({
   nb: nbMessages,
@@ -24,14 +25,14 @@ const loadMessages = () => ({
 function renderApp() {
   ReactDOM.render(
     <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <App api={api} />
+      <App api={Api} />
     </NavApp>, document.getElementById('app'),
   );
 }
 
 const checkAuthThenRenderApp = () => {
-  api.checkAuth()
-    .then(() => api.checkApiStatus())
+  Api.checkAuth()
+    .then(() => Api.checkApiStatus())
     .then(() => renderApp())
     .catch((e) => {
       if (Config.IS_DEV) {
@@ -39,44 +40,17 @@ const checkAuthThenRenderApp = () => {
         return;
       }
       if (e.message === 'not authenticated') {
-        api.redirectToLogin();
+        Api.redirectToLogin();
         return;
       }
       if (e.status === 401) {
-        api.redirectToLogin();
+        Api.redirectToLogin();
         return;
       }
-      console.log(`Unexpected backend error, some page content may be unavailable: ${e}`);
+      log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
     });
 };
 
 enableHotModuleReplacement();
-
-const params = new URLSearchParams(window.location.search);
-
-if (params.has('hendelser') && Config.HENDELSER_FEATURE_TOGGLE) {
-  const testApp = (
-    <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <div className="hendelser-content">
-        <HendelserTestGui />
-      </div>
-    </NavApp>
-  );
-
-  api.checkAuth()
-    .then(() => {
-      ReactDOM.render(testApp, document.getElementById('app'));
-    })
-    .catch((e) => {
-      if (Config.IS_DEV) {
-        ReactDOM.render(testApp, document.getElementById('app'));
-        return;
-      }
-      if (e.message === 'not authenticated') {
-        api.redirectToLogin();
-      }
-    });
-} else {
-  checkAuthThenRenderApp();
-}
+checkAuthThenRenderApp();

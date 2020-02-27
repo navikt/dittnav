@@ -6,9 +6,10 @@ import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Hendelser from './meldinger/Hendelser';
+import HendelserType from '../types/HendelserType';
 import Config from '../globalConfig';
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
+const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
 
   return (
@@ -19,7 +20,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser hendelser={hendelser} /> : null}
     </section>
   );
 };
@@ -28,12 +29,14 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
+  hendelser: HendelserType,
 };
 
 InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
+  hendelser: null,
 };
 
 export default InfoMeldinger;
