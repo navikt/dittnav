@@ -16,15 +16,7 @@ const options = {}; // See options section of api docs, for the possibilities
 const bundler = new Bundler(file, options);
 
 // Let express use the bundler middleware, this will let Parcel handle every request over your express server
-
-app.use(cors({ origin: 'http://localhost:9002', credentials: true}));
-app.get('/dittnav-legacy-api/oppfolging', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/oppfolging.json')));
-app.get('/dittnav-legacy-api/meldekortinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/meldekortinfo.json')));
-app.get('/dittnav-legacy-api/personalia/navn', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-navn.json')));
-app.get('/dittnav-legacy-api/personalia/ident', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-ident.json')));
-app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
-app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
-app.get('/dittnav-legacy-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/sakstema.json')));
+app.use(cors({ origin: 'http://localhost:9002', credentials: true }));
 
 app.get('/dittnav-api/oppfolging', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/oppfolging.json')));
 app.get('/dittnav-api/meldekortinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/meldekortinfo.json')));
@@ -70,7 +62,7 @@ const shimproxy = () => {
               }
               return proxyResData;
             });
-        }
+        },
       }));
 
       proxy.listen(process.env.PORT, () => {
