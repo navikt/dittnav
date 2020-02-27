@@ -11,9 +11,9 @@ test('AktiveVarsler empty', () => {
 test('AktiveVarsler one beskjed', () => {
   const hendelser = [
     {
-      produsent: 'DittNAV',
       eventTidspunkt: '2019-11-27T17:51:26.001Z',
       eventId: '1874877086001',
+      uid: '937de6ce-f44f-47de-84d2-639ab2684627',
       tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:26.17575Z',
@@ -27,7 +27,6 @@ test('AktiveVarsler one beskjed', () => {
 test('AktiveVarsler one oppgave', () => {
   const hendelser = [
     {
-      produsent: 'DittNAV',
       eventTidspunkt: '2019-11-27T17:51:31.214Z',
       eventId: '1674877091214',
       tekst: 'Du har en sykemelding som må godkjennes',
@@ -43,7 +42,6 @@ test('AktiveVarsler one oppgave', () => {
 test('AktiveVarsler one innboks', () => {
   const hendelser = [
     {
-      produsent: 'DittNAV',
       eventTidspunkt: '2019-11-27T17:51:31.214Z',
       eventId: '1574377091214',
       tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
@@ -59,16 +57,15 @@ test('AktiveVarsler one innboks', () => {
 test('AktiveVarsler several hendelser', () => {
   const hendelser = [
     {
-      produsent: 'DittNAV',
       eventTidspunkt: '2019-11-27T17:51:26.001Z',
       eventId: '1874877086001',
+      uid: '937de6ce-f44f-47de-84d2-639ab2684627',
       tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:26.17575Z',
       type: 'BESKJED',
     },
     {
-      produsent: 'DittNAV',
       eventTidspunkt: '2019-11-27T17:51:31.214Z',
       eventId: '1674877091214',
       tekst: 'Du har en sykemelding som må godkjennes',
@@ -77,7 +74,6 @@ test('AktiveVarsler several hendelser', () => {
       type: 'OPPGAVE',
     },
     {
-      produsent: 'DittNAV',
       eventTidspunkt: '2019-11-27T17:51:31.214Z',
       eventId: '1574377091214',
       tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
