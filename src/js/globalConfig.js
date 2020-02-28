@@ -57,6 +57,7 @@ export default {
     DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
 
     EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,
+    EVENT_TEST_PRODUCER_DONE_ALL_URL: `${window.env.EVENT_TEST_PRODUCER_URL}/produce/done/all`,
 
     CONTEXT_PATH: '/person/dittnav',
     ARBEIDSGIVER_LOGIN_URL: 'https://www.nav.no/no/Bedrift/Tjenester+og+skjemaer/NAV-+og+Altinn-tjenester',

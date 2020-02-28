@@ -41,7 +41,6 @@ const Hendelse = ({ eventId, uid, type, tekst, link, removeHendelse }) => {
             alt="Hendelse"
             overskrift={createOverskrift(tekst, erBeskjed)}
             onClick={() => removeHendelse(eventId, uid)}
-            key={eventId}
             lenke={link}
             knapp
           >
@@ -54,7 +53,6 @@ const Hendelse = ({ eventId, uid, type, tekst, link, removeHendelse }) => {
             alt="Hendelse"
             overskrift={createOverskrift(tekst)}
             href={link}
-            key={eventId}
           >
             {getHendelseIkon(type)}
           </LenkepanelMedIkon>
@@ -66,7 +64,7 @@ const Hendelse = ({ eventId, uid, type, tekst, link, removeHendelse }) => {
 
 Hendelse.propTypes = {
   eventId: PropTypes.string.isRequired,
-  uid: PropTypes.string.isRequired,
+  uid: PropTypes.string,
   type: PropTypes.string.isRequired,
   tekst: PropTypes.string.isRequired,
   link: PropTypes.string,
@@ -74,6 +72,7 @@ Hendelse.propTypes = {
 };
 
 Hendelse.defaultProps = {
+  uid: null,
   link: null,
 };
 
