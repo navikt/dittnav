@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import PropTypes from 'prop-types';
 import conf from '../../../globalConfig';
 import i18n from '../../../../translations/i18n';
 import PanelOverskrift from '../../common/PanelOverskrift';
@@ -8,6 +7,7 @@ import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import IkonBeskjed from '../../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../../assets/IkonOppgave';
+import MeldekortType from '../../../types/MeldekortType';
 
 const Meldekort = ({ meldekort, intl }) => {
   if (!meldekort) {
@@ -76,27 +76,6 @@ const Meldekort = ({ meldekort, intl }) => {
   }
   return null;
 };
-
-const NesteMeldekortType = PropTypes.shape({
-  sisteDatoForTrekk: PropTypes.string,
-  risikererTrekk: PropTypes.bool,
-  uke: PropTypes.string,
-  kanSendesFra: PropTypes.string,
-  til: PropTypes.string,
-  fra: PropTypes.string,
-});
-
-const NyeMeldekortType = PropTypes.shape({
-  antallNyeMeldekort: PropTypes.number,
-  nesteInnsendingAvMeldekort: PropTypes.string,
-  nesteMeldekort: NesteMeldekortType,
-});
-
-export const MeldekortType = PropTypes.shape({
-  nyeMeldekort: NyeMeldekortType,
-  resterendeFeriedager: PropTypes.number,
-  etterregistrerteMeldekort: PropTypes.number,
-});
 
 Meldekort.propTypes = {
   meldekort: MeldekortType,
