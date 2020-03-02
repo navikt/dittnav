@@ -16,15 +16,7 @@ const options = {}; // See options section of api docs, for the possibilities
 const bundler = new Bundler(file, options);
 
 // Let express use the bundler middleware, this will let Parcel handle every request over your express server
-
-app.use(cors({ origin: 'http://localhost:9002', credentials: true}));
-app.get('/dittnav-legacy-api/oppfolging', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/oppfolging.json')));
-app.get('/dittnav-legacy-api/meldekortinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/meldekortinfo.json')));
-app.get('/dittnav-legacy-api/personalia/navn', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-navn.json')));
-app.get('/dittnav-legacy-api/personalia/ident', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/person-ident.json')));
-app.get('/dittnav-legacy-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/paabegynte.json')));
-app.get('/dittnav-legacy-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
-app.get('/dittnav-legacy-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/sakstema.json')));
+app.use(cors({ origin: 'http://localhost:9002', credentials: true }));
 
 app.get('/dittnav-api/oppfolging', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/oppfolging.json')));
 app.get('/dittnav-api/meldekortinfo', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/meldekortinfo.json')));
@@ -34,6 +26,7 @@ app.get('/dittnav-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve
 app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/ubehandlede.json')));
 app.get('/dittnav-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/sakstema.json')));
 app.get('/dittnav-api/brukernotifikasjoner', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/events.json')));
+app.post('/dittnav-api/produce/done', (req, res) => res.send('Done-event er sendt til handler for identen: {ident} sitt event med eventID: {eventId}.'));
 
 app.get('/person/dittnav/api/feature', (req, res) => res.sendFile(path.resolve(__dirname, './mock-data/unleash.json')));
 
@@ -41,7 +34,6 @@ app.post('/dittnav-event-test-producer/produce/beskjed', (req, res) => res.send(
 app.post('/dittnav-event-test-producer/produce/oppgave', (req, res) => res.send('Et oppgave-event for identen: $userIdent har blitt lagt på kafka.'));
 app.post('/dittnav-event-test-producer/produce/innboks', (req, res) => res.send('Et innboks-event for identen: $userIdent har blitt lagt på kafka.'));
 app.post('/dittnav-event-test-producer/produce/done/all', (req, res) => res.send('Done-eventer er produsert for alle identen: {ident} sine brukernotifikasjoner.'));
-app.post('/dittnav-event-test-producer/produce/done', (req, res) => res.send('Done-event er produsert for identen: $userIdent sitt event med eventID: {doneDto.eventId}.'));
 
 app.use(bundler.middleware());
 
@@ -69,7 +61,7 @@ const shimproxy = () => {
               }
               return proxyResData;
             });
-        }
+        },
       }));
 
       proxy.listen(process.env.PORT, () => {
