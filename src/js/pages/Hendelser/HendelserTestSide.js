@@ -6,7 +6,7 @@ import Api from '../../Api';
 import Config from '../../globalConfig';
 import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
-import Hendelse from '../../components/meldinger/Hendelse';
+import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
 
 const HendelserTestSide = () => {
@@ -53,15 +53,7 @@ const HendelserTestSide = () => {
 
       <div className="infomeldinger-list">
         <div className="infomeldinger-list__container">
-          {hendelser.map(h => (
-            <Hendelse
-              eventId={h.eventId}
-              type={h.type}
-              tekst={h.tekst}
-              link={h.link}
-              removeHendelse={removeHendelse}
-            />
-          ))}
+          <Brukernotifikasjoner hendelser={hendelser} />
         </div>
       </div>
     </div>

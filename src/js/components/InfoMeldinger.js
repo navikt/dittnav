@@ -5,7 +5,7 @@ import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
-import Hendelser from './meldinger/Hendelser';
+import Brukernotifikasjoner from './Brukernotifikasjoner';
 import HendelserType from '../types/HendelserType';
 import Config from '../globalConfig';
 
@@ -20,7 +20,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser })
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.HENDELSER_FEATURE_TOGGLE ? <Hendelser hendelser={hendelser} /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Brukernotifikasjoner hendelser={hendelser} /> : null}
     </section>
   );
 };

@@ -24,7 +24,7 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('expect Hendelser fetching', async () => {
+it('expect Brukernotifikasjoner fetching', async () => {
   const api = mockApi();
   api.fetchHendelser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(

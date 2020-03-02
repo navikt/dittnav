@@ -8,10 +8,10 @@ import Lenke from 'nav-frontend-lenker';
 
 const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, onClick }) => (
   <Panel className={className} border>
-    <div className="panel-med-ikon__ikon">
+    <div className={`${className}__ikon`}>
       {children}
     </div>
-    <div className="panel-med-ikon__tekst">
+    <div className={`${className}__tekst`}>
       {overskrift}
       {(ingress)
         ? (
@@ -30,7 +30,7 @@ const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, 
     <>
       {knapp
         ? (
-          <div className="panel-med-ikon__knapp">
+          <div className={`${className}__knapp`}>
             <Knapp onClick={onClick} form="kompakt">
               <FormattedMessage id="hendelser.beskjed.knapp" />
             </Knapp>
