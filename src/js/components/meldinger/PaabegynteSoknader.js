@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
+import PaabegynteSoknaderType from '../../types/PaabegynteSoknaderType';
 
 const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
   <PanelOverskrift
@@ -32,11 +32,6 @@ const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
     </LenkepanelMedIkon>
   );
 };
-
-export const PaabegynteSoknaderType = PropTypes.shape({
-  url: PropTypes.string.isRequired,
-  antallPaabegynte: PropTypes.number.isRequired,
-});
 
 PaabegynteSoknader.propTypes = {
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos

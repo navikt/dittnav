@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import conf from '../../globalConfig';
 import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
+import MeldekortType from '../../types/MeldekortType';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
@@ -37,9 +37,6 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
   return null;
 };
 
-export const MeldekortType = PropTypes.shape({
-  etterregistrerteMeldekort: PropTypes.number,
-});
 
 EtterregistreringMeldekort.propTypes = {
   ettereg: MeldekortType,
