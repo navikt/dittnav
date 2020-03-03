@@ -3,11 +3,11 @@ import { FormattedMessage as F } from 'react-intl';
 import { Fareknapp } from 'nav-frontend-knapper';
 import { Panel } from 'nav-frontend-paneler';
 import Api from '../../Api';
-import Config from '../../globalConfig';
 import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
+import HendelseContext from '../../context/HendelseContext';
 
 const HendelserTestSide = () => {
   const [hendelser, setHendelser] = useState([]);
@@ -16,22 +16,7 @@ const HendelserTestSide = () => {
   const [valg, setValg] = useState('beskjed');
 
   const removeHendelser = () => Api
-    .postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done/all`,
-      null,
-    );
-
-  const removeHendelse = (eventId) => {
-    setHendelser(hendelser
-      .filter(h => eventId !== h.eventId));
-
-    Api.postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done`,
-      {
-        eventId,
-      },
-    );
-  };
+    .postDoneAll();
 
   return (
     <div className="hendelser-content">
@@ -51,11 +36,13 @@ const HendelserTestSide = () => {
         </Fareknapp>
       </Panel>
 
-      <div className="infomeldinger-list">
-        <div className="infomeldinger-list__container">
-          <Brukernotifikasjoner hendelser={hendelser} />
+      <HendelseContext.Provider value={setHendelser}>
+        <div className="infomeldinger-list">
+          <div className="infomeldinger-list__container">
+            <Brukernotifikasjoner hendelser={hendelser} />
+          </div>
         </div>
-      </div>
+      </HendelseContext.Provider>
     </div>
   );
 };

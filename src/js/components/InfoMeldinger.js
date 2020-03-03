@@ -1,13 +1,16 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
-import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
-import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
-import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
-import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
+import Config from '../globalConfig';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
+import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
+import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
+import Meldekort from './meldinger/meldekort/Meldekort';
+import MeldekortType from '../types/MeldekortType';
+import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
+import MinInnboks from './meldinger/MinInnboks';
+import MinInnboksType from '../types/MinInnboksType';
 import HendelserType from '../types/HendelserType';
-import Config from '../globalConfig';
 
 const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
