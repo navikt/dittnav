@@ -43,7 +43,7 @@ const MinInnboks = ({ mininnboks, intl }) => {
       {mininnboks && mininnboks.map(message => (
         <LenkepanelMedIkon
           key={message.type}
-          className="infomelding"
+          className="infomelding innboks"
           data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
           alt="Melding fra mininnboks"
           overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
