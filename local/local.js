@@ -25,7 +25,7 @@ app.get('/dittnav-api/personalia/ident', (req, res) => res.sendFile(path.resolve
 app.get('/dittnav-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve(__dirname, './mock/paabegynte.json')));
 app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock/ubehandlede.json')));
 app.get('/dittnav-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock/sakstema.json')));
-app.get('/dittnav-api/brukernotifikasjoner', (req, res) => res.sendFile(path.resolve(__dirname, './mock/events.json')));
+app.get('/dittnav-api/brukernotifikasjoner', (req, res) => res.sendFile(path.resolve(__dirname, './mock/brukernotifikasjoner.json')));
 
 app.post('/dittnav-api/produce/done', (req, res) => res.send('Done-event er sendt til handler for identen: {ident} sitt event med eventID: {eventId}.'));
 
