@@ -4,22 +4,19 @@ import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import Api from '../../Api';
-import Config from '../../globalConfig';
 import HendelseContext from '../../context/HendelseContext';
 import HendelserType from '../../types/HendelserType';
 
 const Beskjed = ({ beskjed, hendelser }) => {
   const updateHendelser = useContext(HendelseContext);
 
-  const removeHendelse = (eventId) => {
+  const removeHendelse = (eventId, uid) => {
     updateHendelser(hendelser.filter(h => eventId !== h.eventId));
 
-    Api.postHendelser(
-      `${Config.dittNav.EVENT_TEST_PRODUCER_URL}/produce/done`,
-      {
-        eventId,
-      },
-    );
+    Api.postDone({
+      eventId,
+      uid,
+    });
   };
 
   return (
@@ -28,7 +25,7 @@ const Beskjed = ({ beskjed, hendelser }) => {
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
       overskrift={<PanelOverskrift overskrift={beskjed.tekst} type="Normaltekst" />}
-      onClick={() => removeHendelse(beskjed.eventId)}
+      onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
       key={beskjed.eventId}
       lenke={beskjed.link}
       knapp
@@ -40,6 +37,7 @@ const Beskjed = ({ beskjed, hendelser }) => {
 
 Beskjed.propTypes = {
   beskjed: PropTypes.shape({
+    uid: PropTypes.string,
     eventId: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     tekst: PropTypes.string.isRequired,
