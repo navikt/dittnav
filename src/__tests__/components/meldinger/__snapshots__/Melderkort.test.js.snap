@@ -484,7 +484,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 
 exports[`basic zero Meldekort test 1`] = `
 <a
-  className="lenkepanel infomelding beskjed lenkepanel--border"
+  className="lenkepanel infomelding meldekort-innsendt lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
@@ -752,7 +752,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
 
 exports[`no cards no risk 1`] = `
 <a
-  className="lenkepanel infomelding beskjed lenkepanel--border"
+  className="lenkepanel infomelding meldekort-innsendt lenkepanel--border"
   href="http://localhost:9222/meldekort"
   onClick={null}
 >
