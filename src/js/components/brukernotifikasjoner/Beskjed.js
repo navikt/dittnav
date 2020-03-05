@@ -1,14 +1,28 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import Api from '../../Api';
+import {
+  finnTekstForSikkerhetsnivaa,
+  finnLenkeForSikkerhetsnivaa,
+  skalSkjuleTekst,
+} from '../../utils/SikkerhetsNivaa';
 import HendelseContext from '../../context/HendelseContext';
 import HendelserType from '../../types/HendelserType';
+import InnloggingType from '../../types/InnloggingType';
+import BeskjedType from '../../types/BeskjedType';
 
-const Beskjed = ({ beskjed, hendelser }) => {
+const isLoading = (beskjed, hendelser, innlogging) => !beskjed || !hendelser || !innlogging;
+
+const Beskjed = ({ beskjed, hendelser, innlogging }) => {
+  if (isLoading(beskjed, hendelser, innlogging)) {
+    return null;
+  }
+
   const updateHendelser = useContext(HendelseContext);
+  const tekst = finnTekstForSikkerhetsnivaa(beskjed, innlogging);
+  const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
 
   const removeHendelse = (eventId, uid) => {
     updateHendelser(hendelser.filter(h => eventId !== h.eventId));
@@ -24,11 +38,11 @@ const Beskjed = ({ beskjed, hendelser }) => {
       className="beskjed"
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
-      overskrift={<PanelOverskrift overskrift={beskjed.tekst} type="Normaltekst" />}
+      overskrift={<PanelOverskrift overskrift={tekst} type="Normaltekst" />}
       onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
       key={beskjed.eventId}
-      lenke={beskjed.link}
-      knapp
+      lenke={lenke}
+      knapp={!skalSkjuleTekst(beskjed, innlogging)}
     >
       <IkonBeskjed />
     </PanelMedIkon>
@@ -36,19 +50,15 @@ const Beskjed = ({ beskjed, hendelser }) => {
 };
 
 Beskjed.propTypes = {
-  beskjed: PropTypes.shape({
-    uid: PropTypes.string,
-    eventId: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    tekst: PropTypes.string.isRequired,
-    link: PropTypes.string,
-  }),
+  beskjed: BeskjedType,
   hendelser: HendelserType,
+  innlogging: InnloggingType,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
   hendelser: null,
+  innlogging: null,
 };
 
 export default Beskjed;

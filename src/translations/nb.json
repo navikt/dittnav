@@ -23,6 +23,10 @@
   "fliser.dine.utbetalinger": "Dine utbetalinger",
   "fliser.innboks": "Innboks",
 
+  "brukernotifikasjoner.beskjed.alternativ.tekst": "Du har fått en melding",
+  "brukernotifikasjoner.oppgave.alternativ.tekst": "Du har fått en oppgave",
+  "brukernotifikasjoner.innboks.alternativ.tekst": "Du har fått en melding",
+
   "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",

@@ -15,6 +15,7 @@ const RenderHome = ({ api }) => {
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     hendelser: [],
+    innlogging: null,
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -44,6 +45,12 @@ const RenderHome = ({ api }) => {
         api.fetchHendelser()
           .then((r) => {
             setData(d => ({ ...d, hendelser: r }));
+          }).catch(handleError);
+      }
+      if (Config.HENDELSER_FEATURE_TOGGLE) {
+        api.fetchInnlogging()
+          .then((r) => {
+            setData(d => ({ ...d, innlogging: r, fetching: d.fetching + 1 }));
           }).catch(handleError);
       }
 
@@ -87,7 +94,7 @@ const RenderHome = ({ api }) => {
         .then((r) => {
           setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
-    }, [api],
+    }, [],
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
@@ -106,6 +113,7 @@ const RenderHome = ({ api }) => {
           loading={loading}
           sakstema={data.sakstema}
           hendelser={data.hendelser}
+          innlogging={data.innlogging}
           oppfolgingHasLoaded={data.oppfolgingHasLoaded}
         />
       </PageFrame>

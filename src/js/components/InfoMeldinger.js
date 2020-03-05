@@ -4,15 +4,16 @@ import Config from '../globalConfig';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
 import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
-import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import Meldekort from './meldinger/meldekort/Meldekort';
-import MeldekortType from '../types/MeldekortType';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks from './meldinger/MinInnboks';
+import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
+import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
 import HendelserType from '../types/HendelserType';
+import InnloggingType from '../types/InnloggingType';
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser }) => {
+const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser, innlogging }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
 
   return (
@@ -23,7 +24,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser })
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.HENDELSER_FEATURE_TOGGLE ? <Brukernotifikasjoner hendelser={hendelser} /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Brukernotifikasjoner hendelser={hendelser} innlogging={innlogging} /> : null}
     </section>
   );
 };
@@ -33,6 +34,7 @@ InfoMeldinger.propTypes = {
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
   hendelser: HendelserType,
+  innlogging: InnloggingType,
 };
 
 InfoMeldinger.defaultProps = {
@@ -40,6 +42,7 @@ InfoMeldinger.defaultProps = {
   meldekort: null,
   mininnboks: [],
   hendelser: null,
+  innlogging: null,
 };
 
 export default InfoMeldinger;

@@ -3,13 +3,14 @@ import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
 import HendelserType from '../types/HendelserType';
+import InnloggingType from '../types/InnloggingType';
 
-const Brukernotifikasjoner = ({ hendelser }) => {
+const Brukernotifikasjoner = ({ hendelser, innlogging }) => {
   const getBrukernotifikasjon = (bn) => {
     const BRUKERNOTIFIKASJON = {
-      BESKJED: <Beskjed beskjed={bn} hendelser={hendelser} />,
-      OPPGAVE: <Oppgave oppgave={bn} />,
-      INNBOKS: <Innboks innboks={bn} />,
+      BESKJED: <Beskjed beskjed={bn} hendelser={hendelser} innlogging={innlogging} />,
+      OPPGAVE: <Oppgave oppgave={bn} innlogging={innlogging} />,
+      INNBOKS: <Innboks innboks={bn} innlogging={innlogging} />,
     };
 
     return BRUKERNOTIFIKASJON[bn.type];
@@ -28,10 +29,12 @@ const Brukernotifikasjoner = ({ hendelser }) => {
 
 Brukernotifikasjoner.propTypes = {
   hendelser: HendelserType,
+  innlogging: InnloggingType,
 };
 
 Brukernotifikasjoner.defaultProps = {
   hendelser: null,
+  innlogging: null,
 };
 
 export default Brukernotifikasjoner;

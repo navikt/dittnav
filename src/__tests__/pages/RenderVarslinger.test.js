@@ -5,13 +5,12 @@ import wrapIntl from 'js/IntlTestHelper';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-/* eslint-disable no-unused-vars */
 const mockApi = () => (
   {
-    fetchHendelser: () => new Promise((resolve, reject) => {}),
+    fetchHendelser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInnlogging: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
   }
 );
-/* eslint-enable no-unused-vars */
 
 const flushPromises = () => (
   new Promise(resolve => setImmediate(resolve))
@@ -36,6 +35,7 @@ it('expect Brukernotifikasjoner fetching', async () => {
           tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
           link: 'https://enNyLenke',
           sistOppdatert: '2019-11-27T17:51:26.17575Z',
+          sikkerhetsnivaa: '4',
           type: 'BESKJED',
         },
         {
@@ -44,6 +44,7 @@ it('expect Brukernotifikasjoner fetching', async () => {
           tekst: 'Du har en sykemelding som må godkjennes',
           link: 'https://enNyLenke',
           sistOppdatert: '2019-11-27T17:51:31.414467Z',
+          sikkerhetsnivaa: '4',
           type: 'OPPGAVE',
         },
         {
@@ -52,11 +53,19 @@ it('expect Brukernotifikasjoner fetching', async () => {
           tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
           link: 'https://enNyLenke',
           sistOppdatert: '2019-11-27T17:51:31.414467Z',
+          sikkerhetsnivaa: '4',
           type: 'INNBOKS',
         },
       ],
     );
   });
+
+  api.fetchInnlogging = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+    resolve({
+      securityLevel: '4',
+    });
+  });
+
   const component = ReactTestRenderer.create(wrapIntl(<RenderVarslinger api={api} />));
   await flushPromises();
 

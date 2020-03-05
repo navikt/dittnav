@@ -6,6 +6,7 @@ import ApiType from '../../types/ApiType';
 
 const VarslingerRender = ({ api }) => {
   const [hendelser, setHendelser] = useState(null);
+  const [innlogging, setInnlogging] = useState(null);
   const [error, setError] = useState([]);
 
   const handleError = () => {
@@ -18,13 +19,17 @@ const VarslingerRender = ({ api }) => {
         .then((r) => {
           setHendelser(r);
         }).catch(handleError);
+      api.fetchInnlogging()
+        .then((r) => {
+          setInnlogging(r);
+        }).catch(handleError);
     }, [],
   );
 
   return (
     <HendelseContext.Provider value={setHendelser}>
       <PageFrame uniqueErrors={error}>
-        <Varslinger hendelser={hendelser} />
+        <Varslinger hendelser={hendelser} innlogging={innlogging} />
       </PageFrame>
     </HendelseContext.Provider>
   );

@@ -4,7 +4,7 @@ import AktiveVarsler from '../../js/pages/Varslinger/AktiveVarsler';
 const ReactTestRenderer = require('react-test-renderer');
 
 test('AktiveVarsler empty', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={null} />));
+  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={null} innlogging={null} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -17,10 +17,17 @@ test('AktiveVarsler one beskjed', () => {
       tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:26.17575Z',
+      sikkerhetsnivaa: '4',
       type: 'BESKJED',
     },
   ];
-  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} />));
+
+  const innlogging = {
+    securityLevel: '4', // eslint-disable-line no-unused-vars
+  };
+
+
+  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} innlogging={innlogging} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -32,10 +39,16 @@ test('AktiveVarsler one oppgave', () => {
       tekst: 'Du har en sykemelding som må godkjennes',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:31.414467Z',
+      sikkerhetsnivaa: '4',
       type: 'OPPGAVE',
     },
   ];
-  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} />));
+  const innlogging = {
+    securityLevel: '4', // eslint-disable-line no-unused-vars
+  };
+
+
+  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} innlogging={innlogging} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -47,10 +60,16 @@ test('AktiveVarsler one innboks', () => {
       tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:31.414467Z',
+      sikkerhetsnivaa: '4',
       type: 'INNBOKS',
     },
   ];
-  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} />));
+
+  const innlogging = {
+    securityLevel: '4', // eslint-disable-line no-unused-vars
+  };
+
+  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} innlogging={innlogging} />));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -63,6 +82,7 @@ test('AktiveVarsler several hendelser', () => {
       tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:26.17575Z',
+      sikkerhetsnivaa: '4',
       type: 'BESKJED',
     },
     {
@@ -71,6 +91,7 @@ test('AktiveVarsler several hendelser', () => {
       tekst: 'Du har en sykemelding som må godkjennes',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:31.414467Z',
+      sikkerhetsnivaa: '4',
       type: 'OPPGAVE',
     },
     {
@@ -79,9 +100,15 @@ test('AktiveVarsler several hendelser', () => {
       tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
       link: 'https://enNyLenke',
       sistOppdatert: '2019-11-27T17:51:31.414467Z',
+      sikkerhetsnivaa: '4',
       type: 'INNBOKS',
     },
   ];
-  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} />));
+
+  const innlogging = {
+    securityLevel: '4', // eslint-disable-line no-unused-vars
+  };
+
+  const component = ReactTestRenderer.create(wrapIntl(<AktiveVarsler hendelser={hendelser} innlogging={innlogging} />));
   expect(component.toJSON()).toMatchSnapshot();
 });

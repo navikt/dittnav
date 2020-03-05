@@ -3,6 +3,7 @@
 exports[`render empty InfoMeldinger component 1`] = `
 <InfoMeldinger
   hendelser={null}
+  innlogging={null}
   meldekort={null}
   mininnboks={Array []}
   paabegynteSoknader={null}

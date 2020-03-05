@@ -44,6 +44,7 @@ export default {
   dittNav: {
     NAVNO_URL: window.env.NAVNO_URL,
     LOGINSERVICE: window.env.LOGIN_URL,
+    LOGINSERVICE_LEVEL_4: window.env.LOGIN_LEVEL_4_URL,
     DITTNAV_API_AUTH_URL: `${window.env.DITTNAV_API_URL}/authPing`,
     DITTNAV_OPPFOLGING_URL: `${window.env.DITTNAV_API_URL}/oppfolging`,
     DITTNAV_MELDEKORT_URL: `${window.env.DITTNAV_API_URL}/meldekortinfo`,

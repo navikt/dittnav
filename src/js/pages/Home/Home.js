@@ -10,10 +10,24 @@ import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import Config from '../../globalConfig';
+import InnloggingType from '../../types/InnloggingType';
+import HendelserType from '../../types/HendelserType';
 
 class Home extends Component {
   render() {
-    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, hendelser, oppfolgingHasLoaded, loading } = this.props;
+    const {
+      oppfolging,
+      meldekort,
+      person,
+      identifikator,
+      paabegynteSoknader,
+      mininnboks,
+      sakstema,
+      hendelser,
+      innlogging,
+      oppfolgingHasLoaded,
+      loading,
+    } = this.props;
     const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
     const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
     const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -26,7 +40,13 @@ class Home extends Component {
             <div className="col-md-12" id="dittnav-main-container">
               <PersonInfo person={person} identifikator={identifikator} />
               { loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
-              <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} hendelser={hendelser} />
+              <InfoMeldinger
+                meldekort={meldekort}
+                paabegynteSoknader={paabegynteSoknader}
+                mininnboks={mininnboks}
+                hendelser={hendelser}
+                innlogging={innlogging}
+              />
               <DittnavLenkePanel sakstema={sakstema} />
               { oppfolgingHasLoaded ? generelleEllerVta : null }
               <Undertittel className="flere-tjenester__subheader">
@@ -50,8 +70,9 @@ Home.propTypes = {
   mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   oppfolgingHasLoaded: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
-  hendelser: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  hendelser: HendelserType, // eslint-disable-line react/forbid-prop-types
   loading: PropTypes.bool.isRequired,
+  innlogging: InnloggingType,
 };
 
 Home.defaultProps = {
@@ -61,6 +82,7 @@ Home.defaultProps = {
   identifikator: null,
   paabegynteSoknader: null,
   hendelser: null,
+  innlogging: null,
 };
 
 export default Home;
