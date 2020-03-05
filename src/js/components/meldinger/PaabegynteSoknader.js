@@ -21,7 +21,7 @@ const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
 
   return (
     <LenkepanelMedIkon
-      className="infomelding"
+      className="infomelding paabegynte-soknader"
       data-ga="Dittnav/Varsel/Paabegynt soknad"
       alt="Melding om Søknader"
       overskrift={createOverskrift(paabegynteSoknader, soknadstekst, intl)}

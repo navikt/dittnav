@@ -5,8 +5,9 @@ import { Panel } from 'nav-frontend-paneler';
 import Api from '../../Api';
 import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
-import Hendelse from '../../components/meldinger/Hendelse';
+import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
+import HendelseContext from '../../context/HendelseContext';
 
 const HendelserTestSide = () => {
   const [hendelser, setHendelser] = useState([]);
@@ -16,16 +17,6 @@ const HendelserTestSide = () => {
 
   const removeHendelser = () => Api
     .postDoneAll();
-
-  const removeHendelse = (eventId, uid) => {
-    setHendelser(hendelser
-      .filter(h => eventId !== h.eventId));
-
-    Api.postDone({
-      eventId,
-      uid,
-    });
-  };
 
   return (
     <div className="hendelser-content">
@@ -45,21 +36,13 @@ const HendelserTestSide = () => {
         </Fareknapp>
       </Panel>
 
-      <div className="infomeldinger-list">
-        <div className="infomeldinger-list__container">
-          {hendelser.map(h => (
-            <Hendelse
-              key={h.eventId}
-              eventId={h.eventId}
-              uid={h.uid}
-              type={h.type}
-              tekst={h.tekst}
-              link={h.link}
-              removeHendelse={removeHendelse}
-            />
-          ))}
+      <HendelseContext.Provider value={setHendelser}>
+        <div className="infomeldinger-list">
+          <div className="infomeldinger-list__container">
+            <Brukernotifikasjoner hendelser={hendelser} />
+          </div>
         </div>
-      </div>
+      </HendelseContext.Provider>
     </div>
   );
 };

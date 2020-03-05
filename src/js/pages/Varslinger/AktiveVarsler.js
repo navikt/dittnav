@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
-import Hendelser from '../../components/meldinger/Hendelser';
+import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import HendelserType from '../../types/HendelserType';
 
 
@@ -17,7 +17,7 @@ const AktiveVarsler = ({ hendelser }) => {
           <FormattedMessage id="varslinger.aktive.tittel" values={{ antall: hendelser.length }} />
         </Systemtittel>
       </div>
-      <Hendelser hendelser={hendelser} />
+      <Brukernotifikasjoner hendelser={hendelser} />
     </div>
   );
 };

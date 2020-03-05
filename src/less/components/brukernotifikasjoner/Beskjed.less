@@ -1,0 +1,49 @@
+.beskjed {
+  margin-bottom: 1em;
+  padding: 0.75em 0.75em !important;
+  display: flex !important;
+  flex-direction: row;
+  background-color: #f5fcfd !important;
+  border:none !important;
+
+  .panel__innhold {
+    padding: 0;
+  }
+
+  &__ikon {
+    align-self: center;
+  }
+
+  &__tekst {
+    align-self: center;
+    padding-left: 1em;
+  }
+
+  &__knapp {
+    align-self: center;
+    margin-left: auto;
+    padding-left: 0.25em;
+    padding-right: 0.5em;
+  }
+}
+
+@media screen and (max-width: @mobile-breakpoint) {
+  .beskjed {
+    padding: 1.025em 1.025em !important;
+    padding-top: 1.25em !important;
+    padding-bottom: 1.25em !important;
+
+    &__ikon {
+      display: none;
+    }
+
+    &__tekst {
+      padding-left: 0;
+    }
+
+    &__knapp {
+      padding-left: 0.725em;
+      padding-right: 0;
+    }
+  }
+}
