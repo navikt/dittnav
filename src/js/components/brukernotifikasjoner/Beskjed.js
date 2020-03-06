@@ -6,7 +6,7 @@ import Api from '../../Api';
 import {
   finnTekstForSikkerhetsnivaa,
   finnLenkeForSikkerhetsnivaa,
-  skalSkjuleTekst,
+  harSensitivTekst,
 } from '../../utils/SikkerhetsNivaa';
 import HendelseContext from '../../context/HendelseContext';
 import HendelserType from '../../types/HendelserType';
@@ -42,7 +42,7 @@ const Beskjed = ({ beskjed, hendelser, innlogging }) => {
       onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
       key={beskjed.eventId}
       lenke={lenke}
-      knapp={!skalSkjuleTekst(beskjed, innlogging)}
+      knapp={!harSensitivTekst(beskjed, innlogging)}
     >
       <IkonBeskjed />
     </PanelMedIkon>
