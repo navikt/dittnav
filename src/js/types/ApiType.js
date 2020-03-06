@@ -10,6 +10,7 @@ const ApiType = PropTypes.shape({
     fetchMeldinger: PropTypes.func.isRequired,
     fetchSakstema: PropTypes.func.isRequired,
     fetchHendelser: PropTypes.func.isRequired,
+    fetchInnlogging: PropTypes.func.isRequired,
   }),
 });
 
