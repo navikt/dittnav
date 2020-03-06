@@ -50,7 +50,7 @@ const RenderHome = ({ api }) => {
       if (Config.HENDELSER_FEATURE_TOGGLE) {
         api.fetchInnlogging()
           .then((r) => {
-            setData(d => ({ ...d, innlogging: r, fetching: d.fetching + 1 }));
+            setData(d => ({ ...d, innlogging: r }));
           }).catch(handleError);
       }
 
