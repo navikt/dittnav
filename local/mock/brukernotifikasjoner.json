@@ -6,7 +6,7 @@
     "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.",
     "link": "https://enNyLenke",
     "sistOppdatert": "2019-11-27T17:51:26.17575Z",
-    "sikkerhetsnivaa": "3",
+    "sikkerhetsnivaa": 3,
     "type": "BESKJED"
   },
   {
@@ -16,7 +16,7 @@
     "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.",
     "link": "",
     "sistOppdatert": "2019-11-27T12:24:35.014517Z",
-    "sikkerhetsnivaa": "4",
+    "sikkerhetsnivaa": 4,
     "type": "BESKJED"
   },
   {
@@ -26,7 +26,7 @@
     "tekst": "Vi har mottatt din søknad om pleiepenger. Hvis du er arbeidstaker må du ta kontakt med arbeidsgiver.",
     "link": null,
     "sistOppdatert": "2019-11-27T12:24:35.014517Z",
-    "sikkerhetsnivaa": "3",
+    "sikkerhetsnivaa": 3,
     "type": "BESKJED"
   },
   {
@@ -35,7 +35,7 @@
     "tekst": "Du har en sykemelding som må godkjennes",
     "link": "https://enNyLenke",
     "sistOppdatert": "2019-11-27T17:51:31.414467Z",
-    "sikkerhetsnivaa": "3",
+    "sikkerhetsnivaa": 3,
     "type": "OPPGAVE"
   },
   {
@@ -44,7 +44,7 @@
     "tekst": "Oppgave: Mangelende dokumentasjon til søknad",
     "link": "https://enNyLenke",
     "sistOppdatert": "2019-11-27T12:24:40.006666Z",
-    "sikkerhetsnivaa": "4",
+    "sikkerhetsnivaa": 4,
     "type": "OPPGAVE"
   },
   {
@@ -53,7 +53,7 @@
     "tekst": "Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...",
     "link": "https://enNyLenke",
     "sistOppdatert": "2019-11-27T17:51:31.414467Z",
-    "sikkerhetsnivaa": "3",
+    "sikkerhetsnivaa": 3,
     "type": "INNBOKS"
   },
   {
@@ -62,7 +62,7 @@
     "tekst": "Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44",
     "link": "https://enNyLenke",
     "sistOppdatert": "2019-11-27T12:24:40.006666Z",
-    "sikkerhetsnivaa": "4",
+    "sikkerhetsnivaa": 4,
     "type": "INNBOKS"
   }
 ]

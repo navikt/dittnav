@@ -35,7 +35,7 @@ it('expect Brukernotifikasjoner fetching', async () => {
           tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
           link: 'https://enNyLenke',
           sistOppdatert: '2019-11-27T17:51:26.17575Z',
-          sikkerhetsnivaa: '4',
+          sikkerhetsnivaa: 4,
           type: 'BESKJED',
         },
         {
@@ -44,7 +44,7 @@ it('expect Brukernotifikasjoner fetching', async () => {
           tekst: 'Du har en sykemelding som må godkjennes',
           link: 'https://enNyLenke',
           sistOppdatert: '2019-11-27T17:51:31.414467Z',
-          sikkerhetsnivaa: '4',
+          sikkerhetsnivaa: 4,
           type: 'OPPGAVE',
         },
         {
@@ -53,7 +53,7 @@ it('expect Brukernotifikasjoner fetching', async () => {
           tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
           link: 'https://enNyLenke',
           sistOppdatert: '2019-11-27T17:51:31.414467Z',
-          sikkerhetsnivaa: '4',
+          sikkerhetsnivaa: 4,
           type: 'INNBOKS',
         },
       ],
