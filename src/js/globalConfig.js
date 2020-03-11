@@ -66,6 +66,12 @@ export default {
     FEATURE_TOGGLES: '', // a,b,c etc..
   },
   SAKSTEMA_DATOTID_FORMAT: 'YYYY-MM-DD-hh:mm:ss+Z',
+  SAKSTEMA_URL_OVERRIDES: {
+    KOM: lenker.digisos.url,
+    SYK: lenker.dittSykefravaer.url,
+    SYM: lenker.dittSykefravaer.url,
+    SYK_SYM: lenker.dittSykefravaer.url,
+  },
   VTA_PATH: window.env.VTA_URL,
   INNLOGGINGSLINJE_AUTH: `${window.env.INNLOGGINGSLINJE_API_URL}/auth`,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',
