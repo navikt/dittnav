@@ -1,7 +1,8 @@
-import Config from './Config';
+import Config from './globalConfig';
+import log from './utils/Logger';
 
 const redirectToLogin = () => {
-  window.location.assign(`${Config.dittNav.LOGINSERVICE}&redirect=${window.location.href}`);
+  window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
 };
 
 const fetchJSON = (url) => new Promise((res, rej) => {
@@ -35,7 +36,7 @@ const checkApiStatus = () => new Promise((res, rej) => {
     .catch(e => rej(e));
 });
 
-const postJSONAndCheckForErrors = (url, content) => {
+const postJSON = (url, content) => {
   fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -46,8 +47,7 @@ const postJSONAndCheckForErrors = (url, content) => {
     body: JSON.stringify(content),
   })
     .then((r) => r.status)
-    // eslint-disable-next-line no-console
-    .catch((e) => console.log(`ERROR: ${e}`));
+    .catch((e) => log(`Error: ${e}`));
 };
 
 const fetchOppfolging = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`);
@@ -57,16 +57,11 @@ const fetchPersonIdent = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_IDENT_
 const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
 const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
 const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
-
-const fetchOppfolgingNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_OPPFOLGING_URL}`);
-const fetchMeldekortNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_MELDEKORT_URL}`);
-const fetchPersonNavnNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_PERSON_NAVN_URL}`);
-const fetchPersonIdentNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_PERSON_IDENT_URL}`);
-const fetchSakerNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_SAKER_URL}`);
-const fetchMeldingerNyKilde = () => fetchJSON(`${Config.dittNav.DITTNAV_NY_MELDINGER_URL}`);
-const fetchSakstemaNyKilde = () => fetchJSON(Config.dittNav.DITTNAV_NY_SAKSTEMA_URL);
-
 const fetchHendelser = () => fetchJSON(`${Config.dittNav.DITTNAV_HENDELSER_URL}`);
+
+const postHendelse = (path, content) => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_URL}/${path}`, content);
+const postDoneAll = () => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_DONE_ALL_URL}`, null);
+const postDone = (content) => postJSON(`${Config.dittNav.DITTNAV_DONE_URL}`, content);
 
 export default {
   checkAuth,
@@ -79,13 +74,8 @@ export default {
   fetchMeldinger,
   fetchHendelser,
   fetchSakstema,
-  fetchOppfolgingNyKilde,
-  fetchMeldekortNyKilde,
-  fetchPersonNavnNyKilde,
-  fetchPersonIdentNyKilde,
-  fetchSakerNyKilde,
-  fetchMeldingerNyKilde,
-  fetchSakstemaNyKilde,
-  postHendelser: postJSONAndCheckForErrors,
+  postHendelse,
+  postDoneAll,
+  postDone,
   redirectToLogin,
 };

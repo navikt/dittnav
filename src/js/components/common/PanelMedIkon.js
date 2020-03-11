@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
 
-const PanelMedIkon = ({ className, overskrift, ingress, ikon, knapp, lenke, onClick }) => (
+const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, onClick }) => (
   <Panel className={className} border>
-    <div className="panel-med-ikon__ikon">
-      {ikon}
+    <div className={`${className}__ikon`}>
+      {children}
     </div>
-    <div className="panel-med-ikon__tekst">
+    <div className={`${className}__tekst`}>
       {overskrift}
       {(ingress)
         ? (
@@ -30,7 +30,7 @@ const PanelMedIkon = ({ className, overskrift, ingress, ikon, knapp, lenke, onCl
     <>
       {knapp
         ? (
-          <div className="panel-med-ikon__knapp">
+          <div className={`${className}__knapp`}>
             <Knapp onClick={onClick} form="kompakt">
               <FormattedMessage id="hendelser.beskjed.knapp" />
             </Knapp>
@@ -46,7 +46,7 @@ PanelMedIkon.propTypes = {
   className: PropTypes.string,
   overskrift: PropTypes.shape({ root: PropTypes.any }).isRequired,
   ingress: PropTypes.shape({ root: PropTypes.any }),
-  ikon: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   knapp: PropTypes.bool,
   lenke: PropTypes.string,
 };

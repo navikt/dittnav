@@ -2,3 +2,4 @@ LICENSE.md
 CODEOWNERS
 README.md
 coverage/*
+public/config.js

@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import i18n from '../../../translations/i18n';
-import { IkonInnboks, IkonOppgave, LenkepanelMedIkon } from '../common/LenkepanelMedIkon';
+import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
+import IkonOppgave from '../../../assets/IkonOppgave';
+import IkonInnboks from '../../../assets/IkonInnboks';
+import MinInnboksType from '../../types/MinInnboksType';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
@@ -41,7 +43,7 @@ const MinInnboks = ({ mininnboks, intl }) => {
       {mininnboks && mininnboks.map(message => (
         <LenkepanelMedIkon
           key={message.type}
-          className="infomelding"
+          className="infomelding innboks"
           data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
           alt="Melding fra mininnboks"
           overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
@@ -53,11 +55,6 @@ const MinInnboks = ({ mininnboks, intl }) => {
     </>
   );
 };
-
-export const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({
-  type: PropTypes.string.isRequired,
-  url: PropTypes.string,
-}));
 
 MinInnboks.propTypes = {
   mininnboks: MinInnboksType,

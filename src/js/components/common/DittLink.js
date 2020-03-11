@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import conf from 'js/Config';
+import conf from '../../globalConfig';
 
 class DittLink extends Component {
   render() {

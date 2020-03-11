@@ -9,7 +9,7 @@ import HoyreChevron from 'nav-frontend-chevron';
 
 import i18n from '../../translations/i18n';
 
-import Config from '../Config';
+import Config from '../globalConfig';
 
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {

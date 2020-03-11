@@ -1,14 +1,18 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
-import PaabegynteSoknader, { PaabegynteSoknaderType } from './meldinger/PaabegynteSoknader';
-import Meldekort, { MeldekortType } from './meldinger/meldekort/Meldekort';
-import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
-import MinInnboks, { MinInnboksType } from './meldinger/MinInnboks';
+import Config from '../globalConfig';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
-import Hendelser from './meldinger/Hendelser';
-import Config from '../Config';
+import Brukernotifikasjoner from './Brukernotifikasjoner';
+import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
+import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
+import Meldekort from './meldinger/meldekort/Meldekort';
+import MeldekortType from '../types/MeldekortType';
+import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
+import MinInnboks from './meldinger/MinInnboks';
+import MinInnboksType from '../types/MinInnboksType';
+import HendelserType from '../types/HendelserType';
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
+const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, hendelser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
 
   return (
@@ -19,7 +23,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks }) => {
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
       <MinInnboks mininnboks={mininnboks} />
-      {Config.IS_DEV ? <Hendelser /> : null}
+      {Config.HENDELSER_FEATURE_TOGGLE ? <Brukernotifikasjoner hendelser={hendelser} /> : null}
     </section>
   );
 };
@@ -28,12 +32,14 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
+  hendelser: HendelserType,
 };
 
 InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
+  hendelser: null,
 };
 
 export default InfoMeldinger;

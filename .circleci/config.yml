@@ -36,6 +36,7 @@ jobs:
             - dist/*
             - Dockerfile
             - decorator.yaml
+            - run-script.sh
   docker-bygg-og-push-uten-latest:
     executor: nais/deployment-cli
     steps:
