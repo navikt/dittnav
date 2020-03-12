@@ -3,10 +3,10 @@
 exports[`InformasjonsMeldinger with both 1`] = `
 Array [
   <div
-    className="panel panel-med-ikon panel--border"
+    className="panel beskjed panel--border"
   >
     <div
-      className="panel-med-ikon__ikon"
+      className="beskjed__ikon"
     >
       <svg
         height="48px"
@@ -45,7 +45,7 @@ Array [
       </svg>
     </div>
     <div
-      className="panel-med-ikon__tekst"
+      className="beskjed__tekst"
     >
       <p
         className="typo-element lenkepanel__heading"
@@ -74,10 +74,10 @@ Array [
 
 exports[`InformasjonsMeldinger with general 1`] = `
 <div
-  className="panel panel-med-ikon panel--border"
+  className="panel beskjed panel--border"
 >
   <div
-    className="panel-med-ikon__ikon"
+    className="beskjed__ikon"
   >
     <svg
       height="48px"
@@ -116,7 +116,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
     </svg>
   </div>
   <div
-    className="panel-med-ikon__tekst"
+    className="beskjed__tekst"
   >
     <p
       className="typo-element lenkepanel__heading"
