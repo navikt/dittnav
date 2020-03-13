@@ -12,6 +12,7 @@ class InformasjonsMeldinger extends Component {
     if (this.props.visGenerellInfo) {
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
+          className="beskjed"
           overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
           key="generell"
         >
