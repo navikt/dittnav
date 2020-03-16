@@ -4,16 +4,35 @@ import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
+import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
 
+    if (this.props.visKoronaInfo) {
+      const koronaOverskrift = <PanelOverskrift overskrift={this.props.koronaOverskrift} type="Undertittel" />;
+      const koronaLenke = 'https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav';
+
+      children.push(// eslint-disable-line function-paren-newline
+        <LenkepanelMedIkon
+          className="infomelding beskjed"
+          href={koronaLenke}
+          overskrift={koronaOverskrift}
+          ingress={this.props.koronaIngress}
+          key="korona"
+        >
+          <IkonBeskjed />
+        </LenkepanelMedIkon>,
+      );
+    }
     if (this.props.visGenerellInfo) {
+      const generellInfoOverskrift = <PanelOverskrift overskrift={this.props.generellInfo} type="Normaltekst" />
+
       children.push(// eslint-disable-line function-paren-newline
         <PanelMedIkon
           className="beskjed"
-          overskrift={<PanelOverskrift overskrift={this.props.generellInfo} type="Element" />}
+          overskrift={generellInfoOverskrift}
           key="generell"
         >
           <IkonBeskjed />
@@ -35,6 +54,9 @@ class InformasjonsMeldinger extends Component {
 }
 
 InformasjonsMeldinger.propTypes = {
+  visKoronaInfo: PropTypes.bool,
+  koronaOverskrift: PropTypes.node,
+  koronaIngress: PropTypes.node,
   isMeldeKortUser: PropTypes.bool,
   visGenerellInfo: PropTypes.bool,
   generellInfo: PropTypes.node,
@@ -44,8 +66,11 @@ InformasjonsMeldinger.propTypes = {
 };
 
 InformasjonsMeldinger.defaultProps = {
+  visKoronaInfo: true,
   isMeldeKortUser: false,
   visGenerellInfo: false,
+  koronaOverskrift: <F id="generell.koronamelding.overskrift" />,
+  koronaIngress: <F id="generell.koronamelding.ingress" />,
   generellInfo: <F id="generell.informasjonsmelding" />,
   visMeldekortbrukerInfo: false,
   meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
