@@ -16,7 +16,7 @@ class InformasjonsMeldinger extends Component {
 
       children.push(// eslint-disable-line function-paren-newline
         <LenkepanelMedIkon
-          className="infomelding beskjed"
+          className="infomelding korona-informasjon"
           href={koronaLenke}
           overskrift={koronaOverskrift}
           ingress={this.props.koronaIngress}

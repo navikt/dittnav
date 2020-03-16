@@ -28,7 +28,7 @@ exports[`expect Login page rendering 1`] = `
               </span>
             </h1>
             <a
-              className="lenkepanel infomelding beskjed lenkepanel--border"
+              className="lenkepanel infomelding korona-informasjon lenkepanel--border"
               href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
               onClick={null}
             >
