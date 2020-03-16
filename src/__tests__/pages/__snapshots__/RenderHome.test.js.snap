@@ -75,13 +75,13 @@ exports[`expect Login page rendering 1`] = `
                   </svg>
                 </div>
                 <div>
-                  <h2
-                    className="typo-undertittel lenkepanel__heading"
+                  <p
+                    className="typo-element lenkepanel__heading"
                   >
                     <span>
                       Koronavirus – informasjon fra NAV
                     </span>
-                  </h2>
+                  </p>
                   <p
                     className="typo-normal"
                   >
