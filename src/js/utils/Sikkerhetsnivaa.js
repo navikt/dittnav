@@ -6,8 +6,8 @@ export const harSensitivTekst = (brukernotifikasjon, innlogging) => (
   brukernotifikasjon.sikkerhetsnivaa === 4 && innlogging.securityLevel === '3'
 );
 
-export const finnTekstForSikkerhetsnivaa = (brukernotifikasjon, innlogging) => {
-  const id = `brukernotifikasjoner.${brukernotifikasjon.type.toLowerCase()}.alternativ.tekst`;
+export const finnTekstForSikkerhetsnivaa = (brukernotifikasjon, type, innlogging) => {
+  const id = `brukernotifikasjoner.${type}.alternativ.tekst`;
   const alternativTekst = <FormattedMessage id={id} />;
 
   return harSensitivTekst(brukernotifikasjon, innlogging) ? alternativTekst : brukernotifikasjon.tekst;

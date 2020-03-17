@@ -11,7 +11,9 @@ import HendelseContext from '../../context/HendelseContext';
 import log from '../../utils/Logger';
 
 const HendelserTestSide = () => {
-  const [hendelser, setHendelser] = useState([]);
+  const [beskjeder, setBeskjeder] = useState(null);
+  const [oppgaver, setOppgaver] = useState(null);
+  const [innbokser, setInnbokser] = useState(null);
   const [innlogging, setInnlogging] = useState(null);
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
@@ -39,17 +41,24 @@ const HendelserTestSide = () => {
           valg={valg}
           setTekst={setTekst}
           setLenke={setLenke}
-          setHendelser={setHendelser}
+          setBeskjeder={setBeskjeder}
+          setOppgaver={setOppgaver}
+          setInnbokser={setInnbokser}
         />
         <Fareknapp onClick={() => removeHendelser()}>
           <F id="hendelser.fjern" />
         </Fareknapp>
       </Panel>
 
-      <HendelseContext.Provider value={setHendelser}>
+      <HendelseContext.Provider value={setBeskjeder}>
         <div className="infomeldinger-list">
           <div className="infomeldinger-list__container">
-            <Brukernotifikasjoner hendelser={hendelser} innlogging={innlogging} />
+            <Brukernotifikasjoner
+              beskjeder={beskjeder}
+              oppgaver={oppgaver}
+              innbokser={innbokser}
+              innlogging={innlogging}
+            />
           </div>
         </div>
       </HendelseContext.Provider>

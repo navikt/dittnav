@@ -5,18 +5,12 @@ import PanelOverskrift from '../common/PanelOverskrift';
 import {
   finnLenkeForSikkerhetsnivaa,
   finnTekstForSikkerhetsnivaa,
-} from '../../utils/SikkerhetsNivaa';
+} from '../../utils/Sikkerhetsnivaa';
 import InnloggingType from '../../types/InnloggingType';
 import InnboksType from '../../types/InnboksType';
 
-const isLoading = (innboks, innlogging) => !innboks || !innlogging;
-
 const Innboks = ({ innboks, innlogging }) => {
-  if (isLoading(innboks, innlogging)) {
-    return null;
-  }
-
-  const tekst = finnTekstForSikkerhetsnivaa(innboks, innlogging);
+  const tekst = finnTekstForSikkerhetsnivaa(innboks, 'innboks', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(innboks, innlogging);
 
   return (
@@ -26,7 +20,6 @@ const Innboks = ({ innboks, innlogging }) => {
       alt="Innboks"
       overskrift={<PanelOverskrift overskrift={tekst} type="Element" />}
       href={lenke}
-      key={innboks.eventId}
     >
       <IkonInnboks />
     </LenkepanelMedIkon>

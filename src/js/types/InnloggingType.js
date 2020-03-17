@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+import { shape, string } from 'prop-types';
 
-const InnloggingType = PropTypes.shape({
-  securityLevel: PropTypes.string.isRequired,
+const InnloggingType = shape({
+  securityLevel: string.isRequired,
 });
 
 export default InnloggingType;

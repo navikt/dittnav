@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
+import { shape, string, number } from 'prop-types';
 
-const OppgaveType = PropTypes.shape({
-  eventId: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  tekst: PropTypes.string.isRequired,
-  sikkerhetsnivaa: PropTypes.number.isRequired,
-  link: PropTypes.string,
+const OppgaveType = shape({
+  eventId: string.isRequired,
+  tekst: string.isRequired,
+  sikkerhetsnivaa: number.isRequired,
+  link: string,
 });
 
 export default OppgaveType;

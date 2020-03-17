@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import { shape, arrayOf, string } from 'prop-types';
 
-const MinInnboksType = PropTypes.arrayOf(PropTypes.shape({
-  type: PropTypes.string.isRequired,
-  url: PropTypes.string,
+const MinInnboksType = arrayOf(shape({
+  type: string.isRequired,
+  url: string,
 }));
 
 export default MinInnboksType;

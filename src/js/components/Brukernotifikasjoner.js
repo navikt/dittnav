@@ -1,39 +1,38 @@
 import React from 'react';
+import { arrayOf } from 'prop-types';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
-import HendelserType from '../types/HendelserType';
+import BeskjedType from '../types/BeskjedType';
+import OppgaverType from '../types/OppgaveType';
+import InnboksType from '../types/InnboksType';
 import InnloggingType from '../types/InnloggingType';
 
-const Brukernotifikasjoner = ({ hendelser, innlogging }) => {
-  const getBrukernotifikasjon = (bn) => {
-    const BRUKERNOTIFIKASJON = {
-      BESKJED: <Beskjed beskjed={bn} hendelser={hendelser} innlogging={innlogging} />,
-      OPPGAVE: <Oppgave oppgave={bn} innlogging={innlogging} />,
-      INNBOKS: <Innboks innboks={bn} innlogging={innlogging} />,
-    };
-
-    return BRUKERNOTIFIKASJON[bn.type];
-  };
-
-  return (
-    <>
-      {hendelser.map(bn => (
-        <div key={bn.eventId}>
-          {getBrukernotifikasjon(bn)}
-        </div>
-      ))}
-    </>
-  );
-};
+const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging }) => (
+  <>
+    {beskjeder && innlogging && beskjeder.map(b => (
+      <Beskjed key={b.eventId} beskjed={b} beskjeder={beskjeder} innlogging={innlogging} />
+    ))}
+    {oppgaver && innlogging && oppgaver.map(o => (
+      <Oppgave key={o.eventId} oppgave={o} innlogging={innlogging} />
+    ))}
+    {innbokser && innlogging && innbokser.map(i => (
+      <Innboks key={i.eventId} innboks={i} innlogging={innlogging} />
+    ))}
+  </>
+);
 
 Brukernotifikasjoner.propTypes = {
-  hendelser: HendelserType,
+  beskjeder: arrayOf(BeskjedType),
+  oppgaver: arrayOf(OppgaverType),
+  innbokser: arrayOf(InnboksType),
   innlogging: InnloggingType,
 };
 
 Brukernotifikasjoner.defaultProps = {
-  hendelser: null,
+  beskjeder: null,
+  oppgaver: null,
+  innbokser: null,
   innlogging: null,
 };
 

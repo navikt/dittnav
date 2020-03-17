@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
+import { shape, string, number } from 'prop-types';
 
-const InnboksType = PropTypes.shape({
-  eventId: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  tekst: PropTypes.string.isRequired,
-  sikkerhetsnivaa: PropTypes.number.isRequired,
-  link: PropTypes.string,
+const InnboksType = shape({
+  eventId: string.isRequired,
+  tekst: string.isRequired,
+  sikkerhetsnivaa: number.isRequired,
+  link: string,
 });
 
 export default InnboksType;
