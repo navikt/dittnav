@@ -5,7 +5,9 @@ import HendelseContext from '../../context/HendelseContext';
 import ApiType from '../../types/ApiType';
 
 const VarslingerRender = ({ api }) => {
-  const [hendelser, setHendelser] = useState(null);
+  const [beskjeder, setBeskjeder] = useState(null);
+  const [oppgaver, setOppgaver] = useState(null);
+  const [innbokser, setInnbokser] = useState(null);
   const [innlogging, setInnlogging] = useState(null);
   const [error, setError] = useState([]);
 
@@ -15,10 +17,21 @@ const VarslingerRender = ({ api }) => {
 
   useEffect(
     () => {
-      api.fetchHendelser()
+      api.fetchBeskjeder()
         .then((r) => {
-          setHendelser(r);
+          setBeskjeder(r);
         }).catch(handleError);
+
+      api.fetchOppgaver()
+        .then((r) => {
+          setOppgaver(r);
+        }).catch(handleError);
+
+      api.fetchInnbokser()
+        .then((r) => {
+          setInnbokser(r);
+        }).catch(handleError);
+
       api.fetchInnlogging()
         .then((r) => {
           setInnlogging(r);
@@ -27,9 +40,9 @@ const VarslingerRender = ({ api }) => {
   );
 
   return (
-    <HendelseContext.Provider value={setHendelser}>
+    <HendelseContext.Provider value={setBeskjeder}>
       <PageFrame uniqueErrors={error}>
-        <Varslinger hendelser={hendelser} innlogging={innlogging} />
+        <Varslinger beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
       </PageFrame>
     </HendelseContext.Provider>
   );

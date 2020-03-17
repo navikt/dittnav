@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import { shape, string, number } from 'prop-types';
 
-const PaabegynteSoknaderType = PropTypes.shape({
-  url: PropTypes.string.isRequired,
-  antallPaabegynte: PropTypes.number.isRequired,
+const PaabegynteSoknaderType = shape({
+  url: string.isRequired,
+  antallPaabegynte: number.isRequired,
 });
 
 export default PaabegynteSoknaderType;

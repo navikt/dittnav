@@ -54,7 +54,9 @@ export default {
     DITTNAV_MELDINGER_URL: `${window.env.DITTNAV_API_URL}/meldinger/ubehandlede`,
     DITTNAV_SAKSTEMA_URL: `${window.env.DITTNAV_API_URL}/saker/sakstema`,
 
-    DITTNAV_HENDELSER_URL: `${window.env.DITTNAV_API_URL}/brukernotifikasjoner`,
+    DITTNAV_BESKJED: `${window.env.DITTNAV_API_URL}/beskjed`,
+    DITTNAV_OPPGAVE: `${window.env.DITTNAV_API_URL}/oppgave`,
+    DITTNAV_INNBOKS: `${window.env.DITTNAV_API_URL}/innboks`,
     DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
 
     EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,

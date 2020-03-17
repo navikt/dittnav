@@ -5,18 +5,12 @@ import IkonOppgave from '../../../assets/IkonOppgave';
 import {
   finnLenkeForSikkerhetsnivaa,
   finnTekstForSikkerhetsnivaa,
-} from '../../utils/SikkerhetsNivaa';
+} from '../../utils/Sikkerhetsnivaa';
 import OppgaveType from '../../types/OppgaveType';
 import InnloggingType from '../../types/InnloggingType';
 
-const isLoading = (oppgave, innlogging) => !oppgave || !innlogging;
-
 const Oppgave = ({ oppgave, innlogging }) => {
-  if (isLoading(oppgave, innlogging)) {
-    return null;
-  }
-
-  const tekst = finnTekstForSikkerhetsnivaa(oppgave, innlogging);
+  const tekst = finnTekstForSikkerhetsnivaa(oppgave, 'oppgave', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(oppgave, innlogging);
 
   return (
@@ -26,7 +20,6 @@ const Oppgave = ({ oppgave, innlogging }) => {
       alt="Oppgave"
       overskrift={<PanelOverskrift overskrift={tekst} type="Element" />}
       href={lenke}
-      key={oppgave.eventId}
     >
       <IkonOppgave />
     </LenkepanelMedIkon>

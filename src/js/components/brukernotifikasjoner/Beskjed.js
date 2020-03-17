@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { arrayOf } from 'prop-types';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
@@ -7,25 +8,18 @@ import {
   finnTekstForSikkerhetsnivaa,
   finnLenkeForSikkerhetsnivaa,
   harSensitivTekst,
-} from '../../utils/SikkerhetsNivaa';
+} from '../../utils/Sikkerhetsnivaa';
 import HendelseContext from '../../context/HendelseContext';
-import HendelserType from '../../types/HendelserType';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
 
-const isLoading = (beskjed, hendelser, innlogging) => !beskjed || !hendelser || !innlogging;
-
-const Beskjed = ({ beskjed, hendelser, innlogging }) => {
-  if (isLoading(beskjed, hendelser, innlogging)) {
-    return null;
-  }
-
-  const updateHendelser = useContext(HendelseContext);
-  const tekst = finnTekstForSikkerhetsnivaa(beskjed, innlogging);
+const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
+  const updateBeskjeder = useContext(HendelseContext);
+  const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
 
   const removeHendelse = (eventId, uid) => {
-    updateHendelser(hendelser.filter(h => eventId !== h.eventId));
+    updateBeskjeder(beskjeder.filter(b => eventId !== b.eventId));
 
     Api.postDone({
       eventId,
@@ -40,7 +34,6 @@ const Beskjed = ({ beskjed, hendelser, innlogging }) => {
       alt="Beskjed"
       overskrift={<PanelOverskrift overskrift={tekst} type="Normaltekst" />}
       onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
-      key={beskjed.eventId}
       lenke={lenke}
       knapp={!harSensitivTekst(beskjed, innlogging)}
     >
@@ -51,13 +44,13 @@ const Beskjed = ({ beskjed, hendelser, innlogging }) => {
 
 Beskjed.propTypes = {
   beskjed: BeskjedType,
-  hendelser: HendelserType,
+  beskjeder: arrayOf(BeskjedType),
   innlogging: InnloggingType,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
-  hendelser: null,
+  beskjeder: null,
   innlogging: null,
 };
 

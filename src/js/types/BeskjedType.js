@@ -1,12 +1,11 @@
-import PropTypes from 'prop-types';
+import { shape, string, number } from 'prop-types';
 
-const BeskjedType = PropTypes.shape({
-  uid: PropTypes.string,
-  eventId: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  tekst: PropTypes.string.isRequired,
-  sikkerhetsnivaa: PropTypes.number.isRequired,
-  link: PropTypes.string,
+const BeskjedType = shape({
+  uid: string,
+  eventId: string.isRequired,
+  tekst: string.isRequired,
+  sikkerhetsnivaa: number.isRequired,
+  link: string,
 });
 
 export default BeskjedType;
