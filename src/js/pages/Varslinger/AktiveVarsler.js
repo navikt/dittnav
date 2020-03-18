@@ -8,19 +8,20 @@ import BeskjedType from '../../types/BeskjedType';
 import OppgaverType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
+const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
+
 const AktiveVarsler = ({ beskjeder, oppgaver, innbokser, innlogging }) => {
-  if (!beskjeder || !oppgaver || !innbokser || !innlogging) {
-    return null;
-  }
-  const antallAktiveVarsler = beskjeder.length + oppgaver.length + innbokser.length;
+  const antallAktiveVarsler = antallVarsler(beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
   return (
     <div className="aktive-varsler">
-      <div className="aktive-varsler__tittel">
-        <Systemtittel>
-          <FormattedMessage id="varslinger.aktive.tittel" values={{ antall: antallAktiveVarsler }} />
-        </Systemtittel>
-      </div>
+      {beskjeder && oppgaver && innbokser && (
+        <div className="aktive-varsler__tittel">
+          <Systemtittel>
+            <FormattedMessage id="varslinger.aktive.tittel" values={{ antall: antallAktiveVarsler }} />
+          </Systemtittel>
+        </div>
+      )}
       <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
     </div>
   );
