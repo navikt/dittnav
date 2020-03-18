@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Api from '../../Api';
 
 const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setBeskjeder, setOppgaver, setInnbokser }) => {
-  const getHendelser = () => {
+  const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
       .then((r) => {
         setBeskjeder(r);
@@ -52,7 +52,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setBeskjeder, s
         <Knapp className="knapper__send" htmlType="submit">
           <F id="hendelser.send" />
         </Knapp>
-        <Knapp className="knapper__hent" htmlType="button" onClick={() => getHendelser()}>
+        <Knapp className="knapper__hent" htmlType="button" onClick={() => getBrukernotifikasjoner()}>
           <F id="hendelser.hent" />
         </Knapp>
       </div>

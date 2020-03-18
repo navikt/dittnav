@@ -9,12 +9,12 @@ import {
   finnLenkeForSikkerhetsnivaa,
   harSensitivTekst,
 } from '../../utils/Sikkerhetsnivaa';
-import HendelseContext from '../../context/HendelseContext';
+import BeskjedContext from '../../context/BeskjedContext';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
 
 const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
-  const updateBeskjeder = useContext(HendelseContext);
+  const updateBeskjeder = useContext(BeskjedContext);
   const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
 

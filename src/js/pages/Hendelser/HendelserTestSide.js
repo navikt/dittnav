@@ -7,7 +7,7 @@ import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
-import HendelseContext from '../../context/HendelseContext';
+import BeskjedContext from '../../context/BeskjedContext';
 import log from '../../utils/Logger';
 
 const HendelserTestSide = () => {
@@ -50,7 +50,7 @@ const HendelserTestSide = () => {
         </Fareknapp>
       </Panel>
 
-      <HendelseContext.Provider value={setBeskjeder}>
+      <BeskjedContext.Provider value={setBeskjeder}>
         <div className="infomeldinger-list">
           <div className="infomeldinger-list__container">
             <Brukernotifikasjoner
@@ -61,7 +61,7 @@ const HendelserTestSide = () => {
             />
           </div>
         </div>
-      </HendelseContext.Provider>
+      </BeskjedContext.Provider>
     </div>
   );
 };

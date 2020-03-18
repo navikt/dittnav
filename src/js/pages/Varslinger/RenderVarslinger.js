@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
-import HendelseContext from '../../context/HendelseContext';
+import BeskjedContext from '../../context/BeskjedContext';
 import ApiType from '../../types/ApiType';
 
 const VarslingerRender = ({ api }) => {
@@ -40,11 +40,11 @@ const VarslingerRender = ({ api }) => {
   );
 
   return (
-    <HendelseContext.Provider value={setBeskjeder}>
+    <BeskjedContext.Provider value={setBeskjeder}>
       <PageFrame uniqueErrors={error}>
         <Varslinger beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
       </PageFrame>
-    </HendelseContext.Provider>
+    </BeskjedContext.Provider>
   );
 };
 

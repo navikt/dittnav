@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
-import HendelseContext from '../../context/HendelseContext';
+import BeskjedContext from '../../context/BeskjedContext';
 import ApiType from '../../types/ApiType';
 
 const RenderHome = ({ api }) => {
@@ -115,11 +115,11 @@ const RenderHome = ({ api }) => {
   const loading = data.fetching < 6;
 
   return (
-    <HendelseContext.Provider value={updateBeskjeder}>
+    <BeskjedContext.Provider value={updateBeskjeder}>
       <PageFrame uniqueErrors={uniqueErrors}>
         <Home data={data} loading={loading} />
       </PageFrame>
-    </HendelseContext.Provider>
+    </BeskjedContext.Provider>
   );
 };
 
