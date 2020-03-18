@@ -26,9 +26,13 @@ app.get('/dittnav-api/saker/paabegynte', (req, res) => res.sendFile(path.resolve
 app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => res.sendFile(path.resolve(__dirname, './mock/ubehandlede.json')));
 app.get('/dittnav-api/saker/sakstema', (req, res) => res.sendFile(path.resolve(__dirname, './mock/sakstema.json')));
 app.get('/innloggingslinje-api/auth', (req, res) => res.sendFile(path.resolve(__dirname, './mock/innloggingslinje.json')));
+
 app.get('/dittnav-api/beskjed', (req, res) => res.sendFile(path.resolve(__dirname, './mock/beskjed.json')));
 app.get('/dittnav-api/oppgave', (req, res) => res.sendFile(path.resolve(__dirname, './mock/oppgave.json')));
 app.get('/dittnav-api/innboks', (req, res) => res.sendFile(path.resolve(__dirname, './mock/innboks.json')));
+app.get('/dittnav-api/beskjed/inaktive', (req, res) => res.sendFile(path.resolve(__dirname, './mock/beskjed-inaktive.json')));
+app.get('/dittnav-api/oppgave/inaktive', (req, res) => res.sendFile(path.resolve(__dirname, './mock/oppgave-inaktive.json')));
+app.get('/dittnav-api/innboks/inaktive', (req, res) => res.sendFile(path.resolve(__dirname, './mock/innboks-inaktive.json')));
 
 app.get('/person/dittnav/api/feature', (req, res) => res.sendFile(path.resolve(__dirname, './mock/unleash.json')));
 

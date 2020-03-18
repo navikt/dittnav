@@ -11,6 +11,9 @@ const mockApi = () => (
     fetchOppgaver: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchInnbokser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchInnlogging: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInaktiveBeskjeder: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInaktiveOppgaver: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInaktiveInnbokser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
   }
 );
 

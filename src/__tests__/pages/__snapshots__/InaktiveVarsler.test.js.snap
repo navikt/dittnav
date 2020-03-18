@@ -1,15 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AktiveVarsler empty 1`] = `
+exports[`InaktiveVarsler empty 1`] = `
 <div
-  className="aktive-varsler"
+  className="inaktive-varsler"
 />
 `;
 
-exports[`AktiveVarsler one beskjed 1`] = `
+exports[`InaktiveVarsler one beskjed 1`] = `
 <div
-  className="aktive-varsler"
+  className="inaktive-varsler"
 >
+  <div
+    className="inaktive-varsler__tittel"
+  >
+    <h2
+      className="typo-systemtittel"
+    >
+      <span>
+        Tidligere varslinger
+      </span>
+    </h2>
+  </div>
   <div
     className="panel beskjed panel--border"
   >
@@ -88,10 +99,21 @@ exports[`AktiveVarsler one beskjed 1`] = `
 </div>
 `;
 
-exports[`AktiveVarsler one innboks 1`] = `
+exports[`InaktiveVarsler one innboks 1`] = `
 <div
-  className="aktive-varsler"
+  className="inaktive-varsler"
 >
+  <div
+    className="inaktive-varsler__tittel"
+  >
+    <h2
+      className="typo-systemtittel"
+    >
+      <span>
+        Tidligere varslinger
+      </span>
+    </h2>
+  </div>
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
@@ -155,10 +177,21 @@ exports[`AktiveVarsler one innboks 1`] = `
 </div>
 `;
 
-exports[`AktiveVarsler one oppgave 1`] = `
+exports[`InaktiveVarsler one oppgave 1`] = `
 <div
-  className="aktive-varsler"
+  className="inaktive-varsler"
 >
+  <div
+    className="inaktive-varsler__tittel"
+  >
+    <h2
+      className="typo-systemtittel"
+    >
+      <span>
+        Tidligere varslinger
+      </span>
+    </h2>
+  </div>
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
@@ -222,18 +255,18 @@ exports[`AktiveVarsler one oppgave 1`] = `
 </div>
 `;
 
-exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
+exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
 <div
-  className="aktive-varsler"
+  className="inaktive-varsler"
 >
   <div
-    className="aktive-varsler__tittel"
+    className="inaktive-varsler__tittel"
   >
     <h2
       className="typo-systemtittel"
     >
       <span>
-        Du har 3 varsler fra NAV
+        Tidligere varslinger
       </span>
     </h2>
   </div>

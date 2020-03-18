@@ -8,6 +8,9 @@ const VarslingerRender = ({ api }) => {
   const [beskjeder, setBeskjeder] = useState(null);
   const [oppgaver, setOppgaver] = useState(null);
   const [innbokser, setInnbokser] = useState(null);
+  const [inaktiveBeskjeder, setInaktiveBeskjeder] = useState(null);
+  const [inaktiveOppgaver, setInaktiveOppgaver] = useState(null);
+  const [inaktiveInnbokser, setInnaktiveInnbokser] = useState(null);
   const [innlogging, setInnlogging] = useState(null);
   const [error, setError] = useState([]);
 
@@ -32,6 +35,21 @@ const VarslingerRender = ({ api }) => {
           setInnbokser(r);
         }).catch(handleError);
 
+      api.fetchInaktiveBeskjeder()
+        .then((r) => {
+          setInaktiveBeskjeder(r);
+        }).catch(handleError);
+
+      api.fetchInaktiveOppgaver()
+        .then((r) => {
+          setInaktiveOppgaver(r);
+        }).catch(handleError);
+
+      api.fetchInaktiveInnbokser()
+        .then((r) => {
+          setInnaktiveInnbokser(r);
+        }).catch(handleError);
+
       api.fetchInnlogging()
         .then((r) => {
           setInnlogging(r);
@@ -42,7 +60,15 @@ const VarslingerRender = ({ api }) => {
   return (
     <BeskjedContext.Provider value={setBeskjeder}>
       <PageFrame uniqueErrors={error}>
-        <Varslinger beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+        <Varslinger
+          beskjeder={beskjeder}
+          oppgaver={oppgaver}
+          innbokser={innbokser}
+          inaktiveBeskjeder={inaktiveBeskjeder}
+          inaktiveOppgaver={inaktiveOppgaver}
+          inaktiveInnbokser={inaktiveInnbokser}
+          innlogging={innlogging}
+        />
       </PageFrame>
     </BeskjedContext.Provider>
   );

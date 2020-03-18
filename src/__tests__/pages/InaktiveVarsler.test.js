@@ -1,6 +1,6 @@
 import * as React from 'react';
 import wrapIntl from 'js/IntlTestHelper';
-import AktiveVarsler from '../../js/pages/Varslinger/AktiveVarsler';
+import InaktiveVarsler from '../../js/pages/Varslinger/InaktiveVarsler';
 const ReactTestRenderer = require('react-test-renderer');
 
 const beskjeder = [
@@ -41,37 +41,37 @@ const innlogging = {
   securityLevel: '4', // eslint-disable-line no-unused-vars
 };
 
-test('AktiveVarsler empty', () => {
+test('InaktiveVarsler empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <AktiveVarsler beskjeder={null} oppgaver={null} innbokser={null} innlogging={null} />,
+    <InaktiveVarsler beskjeder={null} oppgaver={null} innbokser={null} innlogging={null} />,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('AktiveVarsler one beskjed', () => {
+test('InaktiveVarsler one beskjed', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <AktiveVarsler beskjeder={beskjeder} oppgaver={null} innbokser={null} innlogging={innlogging} />,
+    <InaktiveVarsler beskjeder={beskjeder} oppgaver={null} innbokser={null} innlogging={innlogging} />,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('AktiveVarsler one oppgave', () => {
+test('InaktiveVarsler one oppgave', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <AktiveVarsler beskjeder={null} oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />,
+    <InaktiveVarsler beskjeder={null} oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('AktiveVarsler one innboks', () => {
+test('InaktiveVarsler one innboks', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <AktiveVarsler beskjeder={null} oppgaver={null} innbokser={innbokser} innlogging={innlogging} />,
+    <InaktiveVarsler beskjeder={null} oppgaver={null} innbokser={innbokser} innlogging={innlogging} />,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('AktiveVarsler several brukernotifikasjoner', () => {
+test('InaktiveVarsler several brukernotifikasjoner', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <AktiveVarsler beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />,
+    <InaktiveVarsler beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });

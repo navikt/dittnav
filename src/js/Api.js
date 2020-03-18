@@ -61,6 +61,9 @@ const fetchInnlogging = () => fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`);
 const fetchBeskjeder = () => fetchJSON(`${Config.dittNav.DITTNAV_BESKJED}`);
 const fetchOppgaver = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE}`);
 const fetchInnbokser = () => fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS}`);
+const fetchInaktiveBeskjeder = () => fetchJSON(`${Config.dittNav.DITTNAV_BESKJED_INAKTIVE}`);
+const fetchInaktiveOppgaver = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE_INAKTIVE}`);
+const fetchInaktiveInnbokser = () => fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS_INAKTIVE}`);
 
 const postHendelse = (path, content) => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_URL}/${path}`, content);
 const postDoneAll = () => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_DONE_ALL_URL}`, null);
@@ -80,6 +83,9 @@ export default {
   fetchBeskjeder,
   fetchOppgaver,
   fetchInnbokser,
+  fetchInaktiveBeskjeder,
+  fetchInaktiveOppgaver,
+  fetchInaktiveInnbokser,
   postHendelse,
   postDoneAll,
   postDone,
