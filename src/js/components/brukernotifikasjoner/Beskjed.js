@@ -7,7 +7,7 @@ import Api from '../../Api';
 import {
   finnTekstForSikkerhetsnivaa,
   finnLenkeForSikkerhetsnivaa,
-  skalSkjuleSensitivInfo,
+  skalMaskeres,
 } from '../../utils/Sikkerhetsnivaa';
 import BeskjedContext from '../../context/BeskjedContext';
 import InnloggingType from '../../types/InnloggingType';
@@ -15,7 +15,7 @@ import BeskjedType from '../../types/BeskjedType';
 
 const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
   const updateBeskjeder = useContext(BeskjedContext);
-  const erMaskert = skalSkjuleSensitivInfo(beskjed, innlogging);
+  const erMaskert = skalMaskeres(beskjed, innlogging);
   const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
 
