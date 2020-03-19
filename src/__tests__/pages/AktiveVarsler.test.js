@@ -1,6 +1,6 @@
 import * as React from 'react';
 import wrapIntl from 'js/IntlTestHelper';
-import AktiveVarsler from '../../js/pages/Varslinger/AktiveVarsler';
+import AktiveVarsler from '../../js/pages/Varslinger/varsler/AktiveVarsler';
 const ReactTestRenderer = require('react-test-renderer');
 
 const beskjeder = [

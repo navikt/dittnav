@@ -2,11 +2,11 @@ import React from 'react';
 import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
-import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
-import InnloggingType from '../../types/InnloggingType';
-import BeskjedType from '../../types/BeskjedType';
-import OppgaverType from '../../types/OppgaveType';
-import InnboksType from '../../types/InnboksType';
+import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
+import InnloggingType from '../../../types/InnloggingType';
+import BeskjedType from '../../../types/BeskjedType';
+import OppgaverType from '../../../types/OppgaveType';
+import InnboksType from '../../../types/InnboksType';
 
 const InaktiveVarsler = ({ beskjeder, oppgaver, innbokser, innlogging }) => (
   <div className="inaktive-varsler">
