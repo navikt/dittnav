@@ -57,9 +57,9 @@ export default {
     DITTNAV_BESKJED: `${window.env.DITTNAV_API_URL}/beskjed`,
     DITTNAV_OPPGAVE: `${window.env.DITTNAV_API_URL}/oppgave`,
     DITTNAV_INNBOKS: `${window.env.DITTNAV_API_URL}/innboks`,
-    DITTNAV_BESKJED_INAKTIVE: `${window.env.DITTNAV_API_URL}/beskjed/inaktive`,
-    DITTNAV_OPPGAVE_INAKTIVE: `${window.env.DITTNAV_API_URL}/oppgave/inaktive`,
-    DITTNAV_INNBOKS_INAKTIVE: `${window.env.DITTNAV_API_URL}/innboks/inaktive`,
+    DITTNAV_BESKJED_INAKTIV: `${window.env.DITTNAV_API_URL}/beskjed/inaktiv`,
+    DITTNAV_OPPGAVE_INAKTIV: `${window.env.DITTNAV_API_URL}/oppgave/inaktiv`,
+    DITTNAV_INNBOKS_INAKTIV: `${window.env.DITTNAV_API_URL}/innboks/inaktiv`,
     DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
 
     EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,
