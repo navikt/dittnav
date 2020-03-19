@@ -7,7 +7,7 @@ import Api from '../../Api';
 import {
   finnTekstForSikkerhetsnivaa,
   finnLenkeForSikkerhetsnivaa,
-  harSensitivTekst,
+  skalSkjuleSensitivInfo,
 } from '../../utils/Sikkerhetsnivaa';
 import BeskjedContext from '../../context/BeskjedContext';
 import InnloggingType from '../../types/InnloggingType';
@@ -15,6 +15,7 @@ import BeskjedType from '../../types/BeskjedType';
 
 const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
   const updateBeskjeder = useContext(BeskjedContext);
+  const erMaskert = skalSkjuleSensitivInfo(beskjed, innlogging);
   const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
 
@@ -35,7 +36,7 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
       overskrift={<PanelOverskrift overskrift={tekst} type="Normaltekst" />}
       onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
       lenke={lenke}
-      knapp={!harSensitivTekst(beskjed, innlogging)}
+      knapp={!erMaskert}
     >
       <IkonBeskjed />
     </PanelMedIkon>
