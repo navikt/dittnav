@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
-import HendelseContext from '../../context/HendelseContext';
+import BeskjedContext from '../../context/BeskjedContext';
 import ApiType from '../../types/ApiType';
 
 const RenderHome = ({ api }) => {
@@ -14,7 +14,10 @@ const RenderHome = ({ api }) => {
     paabegynteSoknader: null,
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
-    hendelser: [],
+    innlogging: null,
+    beskjeder: [],
+    oppgaver: [],
+    innbokser: [],
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -28,8 +31,8 @@ const RenderHome = ({ api }) => {
     setData(d => ({ ...d, fetching: d.fetching + 1 }));
   };
 
-  const updateHendelser = (h) => (
-    setData(d => ({ ...d, hendelser: h }))
+  const updateBeskjeder = (b) => (
+    setData(d => ({ ...d, beskjeder: b }))
   );
 
   useEffect(
@@ -41,9 +44,27 @@ const RenderHome = ({ api }) => {
       };
 
       if (Config.HENDELSER_FEATURE_TOGGLE) {
-        api.fetchHendelser()
+        api.fetchBeskjeder()
           .then((r) => {
-            setData(d => ({ ...d, hendelser: r }));
+            setData(d => ({ ...d, beskjeder: r }));
+          }).catch(handleError);
+      }
+      if (Config.HENDELSER_FEATURE_TOGGLE) {
+        api.fetchOppgaver()
+          .then((r) => {
+            setData(d => ({ ...d, oppgaver: r }));
+          }).catch(handleError);
+      }
+      if (Config.HENDELSER_FEATURE_TOGGLE) {
+        api.fetchInnbokser()
+          .then((r) => {
+            setData(d => ({ ...d, innbokser: r }));
+          }).catch(handleError);
+      }
+      if (Config.HENDELSER_FEATURE_TOGGLE) {
+        api.fetchInnlogging()
+          .then((r) => {
+            setData(d => ({ ...d, innlogging: r }));
           }).catch(handleError);
       }
 
@@ -87,29 +108,18 @@ const RenderHome = ({ api }) => {
         .then((r) => {
           setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
-    }, [api],
+    }, [],
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
   const loading = data.fetching < 6;
 
   return (
-    <HendelseContext.Provider value={updateHendelser}>
+    <BeskjedContext.Provider value={updateBeskjeder}>
       <PageFrame uniqueErrors={uniqueErrors}>
-        <Home
-          oppfolging={data.oppfolging}
-          meldekort={data.meldekort}
-          person={data.person}
-          identifikator={data.identifikator}
-          paabegynteSoknader={data.paabegynteSoknader}
-          mininnboks={data.mininnboks}
-          loading={loading}
-          sakstema={data.sakstema}
-          hendelser={data.hendelser}
-          oppfolgingHasLoaded={data.oppfolgingHasLoaded}
-        />
+        <Home data={data} loading={loading} />
       </PageFrame>
-    </HendelseContext.Provider>
+    </BeskjedContext.Provider>
   );
 };
 

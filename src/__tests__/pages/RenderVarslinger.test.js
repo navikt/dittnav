@@ -5,13 +5,17 @@ import wrapIntl from 'js/IntlTestHelper';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-/* eslint-disable no-unused-vars */
 const mockApi = () => (
   {
-    fetchHendelser: () => new Promise((resolve, reject) => {}),
+    fetchBeskjeder: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchOppgaver: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInnbokser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInnlogging: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInaktiveBeskjeder: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInaktiveOppgaver: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInaktiveInnbokser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
   }
 );
-/* eslint-enable no-unused-vars */
 
 const flushPromises = () => (
   new Promise(resolve => setImmediate(resolve))
@@ -26,37 +30,77 @@ it('renders without crashing', () => {
 
 it('expect Brukernotifikasjoner fetching', async () => {
   const api = mockApi();
-  api.fetchHendelser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+  api.fetchBeskjeder = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       [
         {
-          eventTidspunkt: '2019-11-27T17:51:26.001Z',
-          eventId: '1874877086001',
-          uid: '957de6ce-f44f-47de-84d2-639ab2684627',
+          uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
+          eventTidspunkt: '2020-03-13T08:53:17.47Z',
+          eventId: '1584093197470',
           tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
           link: 'https://enNyLenke',
-          sistOppdatert: '2019-11-27T17:51:26.17575Z',
-          type: 'BESKJED',
+          sistOppdatert: '2020-03-13T08:53:17.773555Z',
+          sikkerhetsnivaa: 4,
         },
         {
-          eventTidspunkt: '2019-11-27T17:51:31.214Z',
-          eventId: '1674877091214',
-          tekst: 'Du har en sykemelding som må godkjennes',
-          link: 'https://enNyLenke',
-          sistOppdatert: '2019-11-27T17:51:31.414467Z',
-          type: 'OPPGAVE',
+          eventTidspunkt: '2019-11-27T12:24:34.671Z',
+          eventId: '1174857474672',
+          uid: '934de6ce-f94f-47de-84d2-639ac2674627',
+          tekst: 'Vi har mottatt din søknad om pleiepenger. Hvis du er arbeidstaker må du ta kontakt med arbeidsgiver.',
+          link: null,
+          sistOppdatert: '2019-11-27T12:24:35.014517Z',
+          sikkerhetsnivaa: 4,
         },
         {
-          eventTidspunkt: '2019-11-27T17:51:31.214Z',
-          eventId: '1574377091214',
-          tekst: 'Svar fra veilederen din i innboksen: Hei, nå har jeg sjekket om...',
-          link: 'https://enNyLenke',
-          sistOppdatert: '2019-11-27T17:51:31.414467Z',
-          type: 'INNBOKS',
+          uid: 'b922506b-7789-4416-beab-409a7681f53e',
+          eventTidspunkt: '2020-03-13T09:03:01.449Z',
+          eventId: '1584093781449',
+          tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
+          link: '',
+          sistOppdatert: '2020-03-13T09:03:01.663016Z',
+          sikkerhetsnivaa: 4,
         },
       ],
     );
   });
+
+  api.fetchOppgaver = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+    resolve(
+      [
+        {
+          eventTidspunkt: '2020-03-13T08:53:24.636Z',
+          eventId: '1584093204636',
+          tekst: 'oppgave',
+          link: '',
+          sistOppdatert: '2020-03-13T08:53:25.002983Z',
+          sikkerhetsnivaa: 4,
+        },
+      ],
+    );
+  });
+
+
+  api.fetchInnbokser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+    resolve(
+      [
+        {
+          eventTidspunkt: '2020-03-13T08:53:31.607Z',
+          eventId: '1584093211607',
+          tekst: 'Innboks',
+          link: '',
+          sistOppdatert: '2020-03-13T08:53:31.969676Z',
+          sikkerhetsnivaa: 4,
+        },
+      ],
+    );
+  });
+
+  api.fetchInnlogging = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+    resolve({
+      securityLevel: '4',
+    });
+  });
+
   const component = ReactTestRenderer.create(wrapIntl(<RenderVarslinger api={api} />));
   await flushPromises();
 

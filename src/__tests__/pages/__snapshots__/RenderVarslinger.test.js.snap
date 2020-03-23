@@ -105,6 +105,12 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              className="aktive-varsler"
+            />
+            <div
+              className="inaktive-varsler"
+            />
           </section>
         </div>
       </div>

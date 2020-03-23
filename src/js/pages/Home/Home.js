@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Undertittel } from 'nav-frontend-typografi';
+import React from 'react';
+import { shape, arrayOf, any, bool } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
+import { Undertittel } from 'nav-frontend-typografi';
 import Vta from '../../components/VTA';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
@@ -10,57 +10,78 @@ import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import Config from '../../globalConfig';
+import InnloggingType from '../../types/InnloggingType';
+import BeskjedType from '../../types/BeskjedType';
+import OppgaveType from '../../types/OppgaveType';
+import InnboksType from '../../types/InnboksType';
 
-class Home extends Component {
-  render() {
-    const { oppfolging, meldekort, person, identifikator, paabegynteSoknader, mininnboks, sakstema, hendelser, oppfolgingHasLoaded, loading } = this.props;
-    const erUnderOppfolging = oppfolging && oppfolging.erBrukerUnderOppfolging;
-    const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
-    const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
-    const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+const Home = ({ data, loading }) => {
+  const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
+  const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
+  const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
+  const generelleLenker = Config.dittNav.GENERELLE_LENKER;
 
-    return (
-      <>
-        <div className="row">
-          <div className="maincontent side-innhold">
-            <div className="col-md-12" id="dittnav-main-container">
-              <PersonInfo person={person} identifikator={identifikator} />
-              { loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null }
-              <InfoMeldinger meldekort={meldekort} paabegynteSoknader={paabegynteSoknader} mininnboks={mininnboks} hendelser={hendelser} />
-              <DittnavLenkePanel sakstema={sakstema} />
-              { oppfolgingHasLoaded ? generelleEllerVta : null }
-              <Undertittel className="flere-tjenester__subheader">
-                <F id="flere.tjenester.header" />
-              </Undertittel>
-              { erUnderOppfolging ? <Lenkelister links={oppfolgingsLenker} /> : <Lenkelister links={generelleLenker} /> }
-            </div>
+  return (
+    <>
+      <div className="row">
+        <div className="maincontent side-innhold">
+          <div className="col-md-12" id="dittnav-main-container">
+            <PersonInfo person={data.person} identifikator={data.identifikator} />
+            {loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
+            <InfoMeldinger
+              meldekort={data.meldekort}
+              paabegynteSoknader={data.paabegynteSoknader}
+              mininnboks={data.mininnboks}
+              innlogging={data.innlogging}
+              beskjeder={data.beskjeder}
+              oppgaver={data.oppgaver}
+              innbokser={data.innbokser}
+            />
+            <DittnavLenkePanel sakstema={data.sakstema} />
+            {data.oppfolgingHasLoaded ? generelleEllerVta : null}
+            <Undertittel className="flere-tjenester__subheader">
+              <F id="flere.tjenester.header" />
+            </Undertittel>
+            {erUnderOppfolging
+              ? <Lenkelister links={oppfolgingsLenker} />
+              : <Lenkelister links={generelleLenker} />}
           </div>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
 
 Home.propTypes = {
-  oppfolging: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  meldekort: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  person: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  identifikator: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  paabegynteSoknader: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  mininnboks: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
-  sakstema: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
-  oppfolgingHasLoaded: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
-  hendelser: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  loading: PropTypes.bool.isRequired,
+  data: shape({
+    oppfolging: any, // eslint-disable-line react/forbid-prop-types
+    meldekort: any, // eslint-disable-line react/forbid-prop-types
+    person: any, // eslint-disable-line react/forbid-prop-types
+    identifikator: any, // eslint-disable-line react/forbid-prop-types
+    paabegynteSoknader: any, // eslint-disable-line react/forbid-prop-types
+    mininnboks: any.isRequired, // eslint-disable-line react/forbid-prop-types
+    sakstema: any.isRequired, // eslint-disable-line react/forbid-prop-types
+    oppfolgingHasLoaded: any.isRequired, // eslint-disable-line react/forbid-prop-types
+    beskjeder: arrayOf(BeskjedType),
+    oppgaver: arrayOf(OppgaveType),
+    innbokser: arrayOf(InnboksType),
+    innlogging: InnloggingType,
+  }),
+  loading: bool.isRequired,
 };
 
 Home.defaultProps = {
-  oppfolging: null,
-  meldekort: null,
-  person: null,
-  identifikator: null,
-  paabegynteSoknader: null,
-  hendelser: null,
+  data: shape({
+    oppfolging: null,
+    meldekort: null,
+    person: null,
+    identifikator: null,
+    paabegynteSoknader: null,
+    innlogging: null,
+    beskjeder: null,
+    oppgaver: null,
+    innbokser: null,
+  }),
 };
 
 export default Home;

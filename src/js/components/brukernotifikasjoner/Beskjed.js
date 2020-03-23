@@ -1,17 +1,26 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf } from 'prop-types';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import Api from '../../Api';
-import HendelseContext from '../../context/HendelseContext';
-import HendelserType from '../../types/HendelserType';
+import {
+  finnTekstForSikkerhetsnivaa,
+  finnLenkeForSikkerhetsnivaa,
+  skalMaskeres,
+} from '../../utils/Sikkerhetsnivaa';
+import BeskjedContext from '../../context/BeskjedContext';
+import InnloggingType from '../../types/InnloggingType';
+import BeskjedType from '../../types/BeskjedType';
 
-const Beskjed = ({ beskjed, hendelser }) => {
-  const updateHendelser = useContext(HendelseContext);
+const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
+  const updateBeskjeder = useContext(BeskjedContext);
+  const erMaskert = skalMaskeres(beskjed, innlogging);
+  const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
+  const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
 
   const removeHendelse = (eventId, uid) => {
-    updateHendelser(hendelser.filter(h => eventId !== h.eventId));
+    updateBeskjeder(beskjeder.filter(b => eventId !== b.eventId));
 
     Api.postDone({
       eventId,
@@ -24,11 +33,10 @@ const Beskjed = ({ beskjed, hendelser }) => {
       className="beskjed"
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
-      overskrift={<PanelOverskrift overskrift={beskjed.tekst} type="Normaltekst" />}
+      overskrift={<PanelOverskrift overskrift={tekst} type="Normaltekst" />}
       onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
-      key={beskjed.eventId}
-      lenke={beskjed.link}
-      knapp
+      lenke={lenke}
+      knapp={!erMaskert}
     >
       <IkonBeskjed />
     </PanelMedIkon>
@@ -36,19 +44,15 @@ const Beskjed = ({ beskjed, hendelser }) => {
 };
 
 Beskjed.propTypes = {
-  beskjed: PropTypes.shape({
-    uid: PropTypes.string,
-    eventId: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    tekst: PropTypes.string.isRequired,
-    link: PropTypes.string,
-  }),
-  hendelser: HendelserType,
+  beskjed: BeskjedType,
+  beskjeder: arrayOf(BeskjedType),
+  innlogging: InnloggingType,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
-  hendelser: null,
+  beskjeder: null,
+  innlogging: null,
 };
 
 export default Beskjed;

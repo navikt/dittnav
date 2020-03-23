@@ -44,6 +44,7 @@ export default {
   dittNav: {
     NAVNO_URL: window.env.NAVNO_URL,
     LOGINSERVICE: window.env.LOGIN_URL,
+    LOGINSERVICE_LEVEL_4: window.env.LOGIN_LEVEL_4_URL,
     DITTNAV_API_AUTH_URL: `${window.env.DITTNAV_API_URL}/authPing`,
     DITTNAV_OPPFOLGING_URL: `${window.env.DITTNAV_API_URL}/oppfolging`,
     DITTNAV_MELDEKORT_URL: `${window.env.DITTNAV_API_URL}/meldekortinfo`,
@@ -53,7 +54,12 @@ export default {
     DITTNAV_MELDINGER_URL: `${window.env.DITTNAV_API_URL}/meldinger/ubehandlede`,
     DITTNAV_SAKSTEMA_URL: `${window.env.DITTNAV_API_URL}/saker/sakstema`,
 
-    DITTNAV_HENDELSER_URL: `${window.env.DITTNAV_API_URL}/brukernotifikasjoner`,
+    DITTNAV_BESKJED: `${window.env.DITTNAV_API_URL}/beskjed`,
+    DITTNAV_OPPGAVE: `${window.env.DITTNAV_API_URL}/oppgave`,
+    DITTNAV_INNBOKS: `${window.env.DITTNAV_API_URL}/innboks`,
+    DITTNAV_BESKJED_INAKTIV: `${window.env.DITTNAV_API_URL}/beskjed/inaktiv`,
+    DITTNAV_OPPGAVE_INAKTIV: `${window.env.DITTNAV_API_URL}/oppgave/inaktiv`,
+    DITTNAV_INNBOKS_INAKTIV: `${window.env.DITTNAV_API_URL}/innboks/inaktiv`,
     DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
 
     EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,

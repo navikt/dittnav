@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Fareknapp } from 'nav-frontend-knapper';
 import { Panel } from 'nav-frontend-paneler';
@@ -7,16 +7,28 @@ import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
-import HendelseContext from '../../context/HendelseContext';
+import BeskjedContext from '../../context/BeskjedContext';
+import log from '../../utils/Logger';
 
 const HendelserTestSide = () => {
-  const [hendelser, setHendelser] = useState([]);
+  const [beskjeder, setBeskjeder] = useState(null);
+  const [oppgaver, setOppgaver] = useState(null);
+  const [innbokser, setInnbokser] = useState(null);
+  const [innlogging, setInnlogging] = useState(null);
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
   const [valg, setValg] = useState('beskjed');
 
   const removeHendelser = () => Api
     .postDoneAll();
+
+  useEffect(() => {
+    Api.fetchInnlogging()
+      .then((r) => {
+        setInnlogging(r);
+      })
+      .catch((e) => log(`Error: ${e}`));
+  }, []);
 
   return (
     <div className="hendelser-content">
@@ -29,20 +41,27 @@ const HendelserTestSide = () => {
           valg={valg}
           setTekst={setTekst}
           setLenke={setLenke}
-          setHendelser={setHendelser}
+          setBeskjeder={setBeskjeder}
+          setOppgaver={setOppgaver}
+          setInnbokser={setInnbokser}
         />
         <Fareknapp onClick={() => removeHendelser()}>
           <F id="hendelser.fjern" />
         </Fareknapp>
       </Panel>
 
-      <HendelseContext.Provider value={setHendelser}>
+      <BeskjedContext.Provider value={setBeskjeder}>
         <div className="infomeldinger-list">
           <div className="infomeldinger-list__container">
-            <Brukernotifikasjoner hendelser={hendelser} />
+            <Brukernotifikasjoner
+              beskjeder={beskjeder}
+              oppgaver={oppgaver}
+              innbokser={innbokser}
+              innlogging={innlogging}
+            />
           </div>
         </div>
-      </HendelseContext.Provider>
+      </BeskjedContext.Provider>
     </div>
   );
 };

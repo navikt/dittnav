@@ -1,24 +1,24 @@
-import PropTypes from 'prop-types';
+import { shape, string, number, bool } from 'prop-types';
 
-const NesteMeldekortType = PropTypes.shape({
-  sisteDatoForTrekk: PropTypes.string,
-  risikererTrekk: PropTypes.bool,
-  uke: PropTypes.string,
-  kanSendesFra: PropTypes.string,
-  til: PropTypes.string,
-  fra: PropTypes.string,
+const NesteMeldekortType = shape({
+  sisteDatoForTrekk: string,
+  risikererTrekk: bool,
+  uke: string,
+  kanSendesFra: string,
+  til: string,
+  fra: string,
 });
 
-const NyeMeldekortType = PropTypes.shape({
-  antallNyeMeldekort: PropTypes.number,
-  nesteInnsendingAvMeldekort: PropTypes.string,
+const NyeMeldekortType = shape({
+  antallNyeMeldekort: number,
+  nesteInnsendingAvMeldekort: string,
   nesteMeldekort: NesteMeldekortType,
 });
 
-const MeldekortType = PropTypes.shape({
+const MeldekortType = shape({
   nyeMeldekort: NyeMeldekortType,
-  resterendeFeriedager: PropTypes.number,
-  etterregistrerteMeldekort: PropTypes.number,
+  resterendeFeriedager: number,
+  etterregistrerteMeldekort: number,
 });
 
 export default MeldekortType;

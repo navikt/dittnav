@@ -25,6 +25,10 @@
   "fliser.dine.utbetalinger": "Dine utbetalinger",
   "fliser.innboks": "Innboks",
 
+  "brukernotifikasjoner.beskjed.maskert.tekst": "Du har fått en beskjed",
+  "brukernotifikasjoner.oppgave.maskert.tekst": "Du har fått en oppgave",
+  "brukernotifikasjoner.innboks.maskert.tekst": "Du har fått en melding",
+
   "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",
@@ -36,6 +40,7 @@
   "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
   "varslinger.tittel": "Varslinger fra NAV",
   "varslinger.aktive.tittel": "Du har {antall} varsler fra NAV",
+  "varslinger.inaktive.tittel": "Tidligere varslinger",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",

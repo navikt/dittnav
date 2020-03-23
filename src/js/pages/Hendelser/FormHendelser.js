@@ -5,12 +5,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Api from '../../Api';
 
-const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser }) => {
-  const getHendelser = () => Api
-    .fetchHendelser()
-    .then((r) => {
-      setHendelser(r);
-    });
+const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setBeskjeder, setOppgaver, setInnbokser }) => {
+  const getBrukernotifikasjoner = () => {
+    Api.fetchBeskjeder()
+      .then((r) => {
+        setBeskjeder(r);
+      });
+
+    Api.fetchOppgaver()
+      .then((r) => {
+        setOppgaver(r);
+      });
+
+    Api.fetchInnbokser()
+      .then((r) => {
+        setInnbokser(r);
+      });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,7 +52,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setHendelser })
         <Knapp className="knapper__send" htmlType="submit">
           <F id="hendelser.send" />
         </Knapp>
-        <Knapp className="knapper__hent" htmlType="button" onClick={() => getHendelser()}>
+        <Knapp className="knapper__hent" htmlType="button" onClick={() => getBrukernotifikasjoner()}>
           <F id="hendelser.hent" />
         </Knapp>
       </div>
@@ -55,7 +66,9 @@ FormHendelser.propTypes = {
   valg: PropTypes.string.isRequired,
   setTekst: PropTypes.func.isRequired,
   setLenke: PropTypes.func.isRequired,
-  setHendelser: PropTypes.func.isRequired,
+  setBeskjeder: PropTypes.func.isRequired,
+  setOppgaver: PropTypes.func.isRequired,
+  setInnbokser: PropTypes.func.isRequired,
 };
 
 export default FormHendelser;
