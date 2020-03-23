@@ -29,7 +29,7 @@ exports[`expect Login page rendering 1`] = `
             </h1>
             <a
               className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-              href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
+              href="https://www.nav.no/person/koronaveiviser/"
               onClick={null}
             >
               <div
@@ -79,16 +79,10 @@ exports[`expect Login page rendering 1`] = `
                     className="typo-element lenkepanel__heading"
                   >
                     <span>
-                      Koronavirus – informasjon fra NAV
+                      Koronavirus - hva gjelder i min situasjon?
                     </span>
                   </p>
-                  <p
-                    className="typo-normal"
-                  >
-                    <span>
-                      Om sykmelding, omsorgspenger, permittering, papirmeldekort, arbeidsmarkedstiltak, akuttolk for døve m.fl.
-                    </span>
-                  </p>
+                  
                 </div>
               </div>
               <span

@@ -4,7 +4,7 @@ exports[`InformasjonsMeldinger with both 1`] = `
 Array [
   <a
     className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-    href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
+    href="https://www.nav.no/person/koronaveiviser/"
     onClick={null}
   >
     <div
@@ -54,16 +54,10 @@ Array [
           className="typo-element lenkepanel__heading"
         >
           <span>
-            Koronavirus – informasjon fra NAV
+            Koronavirus - hva gjelder i min situasjon?
           </span>
         </p>
-        <p
-          className="typo-normal"
-        >
-          <span>
-            Om sykmelding, omsorgspenger, permittering, papirmeldekort, arbeidsmarkedstiltak, akuttolk for døve m.fl.
-          </span>
-        </p>
+        
       </div>
     </div>
     <span
@@ -144,7 +138,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
 Array [
   <a
     className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-    href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
+    href="https://www.nav.no/person/koronaveiviser/"
     onClick={null}
   >
     <div
@@ -194,16 +188,10 @@ Array [
           className="typo-element lenkepanel__heading"
         >
           <span>
-            Koronavirus – informasjon fra NAV
+            Koronavirus - hva gjelder i min situasjon?
           </span>
         </p>
-        <p
-          className="typo-normal"
-        >
-          <span>
-            Om sykmelding, omsorgspenger, permittering, papirmeldekort, arbeidsmarkedstiltak, akuttolk for døve m.fl.
-          </span>
-        </p>
+        
       </div>
     </div>
     <span
@@ -269,7 +257,7 @@ exports[`InformasjonsMeldinger with meldekort 1`] = `
 Array [
   <a
     className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-    href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
+    href="https://www.nav.no/person/koronaveiviser/"
     onClick={null}
   >
     <div
@@ -319,16 +307,10 @@ Array [
           className="typo-element lenkepanel__heading"
         >
           <span>
-            Koronavirus – informasjon fra NAV
+            Koronavirus - hva gjelder i min situasjon?
           </span>
         </p>
-        <p
-          className="typo-normal"
-        >
-          <span>
-            Om sykmelding, omsorgspenger, permittering, papirmeldekort, arbeidsmarkedstiltak, akuttolk for døve m.fl.
-          </span>
-        </p>
+        
       </div>
     </div>
     <span
@@ -356,7 +338,7 @@ Array [
 exports[`InformasjonsMeldinger with meldekort but not user 1`] = `
 <a
   className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-  href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
+  href="https://www.nav.no/person/koronaveiviser/"
   onClick={null}
 >
   <div
@@ -406,16 +388,10 @@ exports[`InformasjonsMeldinger with meldekort but not user 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          Koronavirus – informasjon fra NAV
+          Koronavirus - hva gjelder i min situasjon?
         </span>
       </p>
-      <p
-        className="typo-normal"
-      >
-        <span>
-          Om sykmelding, omsorgspenger, permittering, papirmeldekort, arbeidsmarkedstiltak, akuttolk for døve m.fl.
-        </span>
-      </p>
+      
     </div>
   </div>
   <span
@@ -427,7 +403,7 @@ exports[`InformasjonsMeldinger with meldekort but not user 1`] = `
 exports[`InformasjonsMeldinger without messages 1`] = `
 <a
   className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-  href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav"
+  href="https://www.nav.no/person/koronaveiviser/"
   onClick={null}
 >
   <div
@@ -477,16 +453,10 @@ exports[`InformasjonsMeldinger without messages 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          Koronavirus – informasjon fra NAV
+          Koronavirus - hva gjelder i min situasjon?
         </span>
       </p>
-      <p
-        className="typo-normal"
-      >
-        <span>
-          Om sykmelding, omsorgspenger, permittering, papirmeldekort, arbeidsmarkedstiltak, akuttolk for døve m.fl.
-        </span>
-      </p>
+      
     </div>
   </div>
   <span
