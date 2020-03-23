@@ -4,7 +4,7 @@ exports[`InformasjonsMeldinger with both 1`] = `
 Array [
   <a
     className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-    href="https://www.nav.no/person/koronaveiviser/"
+    href="https://www.nav.no/person/koronaveiviser"
     onClick={null}
   >
     <div
@@ -138,7 +138,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
 Array [
   <a
     className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-    href="https://www.nav.no/person/koronaveiviser/"
+    href="https://www.nav.no/person/koronaveiviser"
     onClick={null}
   >
     <div
@@ -257,7 +257,7 @@ exports[`InformasjonsMeldinger with meldekort 1`] = `
 Array [
   <a
     className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-    href="https://www.nav.no/person/koronaveiviser/"
+    href="https://www.nav.no/person/koronaveiviser"
     onClick={null}
   >
     <div
@@ -338,7 +338,7 @@ Array [
 exports[`InformasjonsMeldinger with meldekort but not user 1`] = `
 <a
   className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-  href="https://www.nav.no/person/koronaveiviser/"
+  href="https://www.nav.no/person/koronaveiviser"
   onClick={null}
 >
   <div
@@ -403,7 +403,7 @@ exports[`InformasjonsMeldinger with meldekort but not user 1`] = `
 exports[`InformasjonsMeldinger without messages 1`] = `
 <a
   className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-  href="https://www.nav.no/person/koronaveiviser/"
+  href="https://www.nav.no/person/koronaveiviser"
   onClick={null}
 >
   <div

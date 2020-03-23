@@ -29,7 +29,7 @@ exports[`expect Login page rendering 1`] = `
             </h1>
             <a
               className="lenkepanel infomelding korona-informasjon lenkepanel--border"
-              href="https://www.nav.no/person/koronaveiviser/"
+              href="https://www.nav.no/person/koronaveiviser"
               onClick={null}
             >
               <div
