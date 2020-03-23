@@ -12,7 +12,7 @@ class InformasjonsMeldinger extends Component {
 
     if (this.props.visKoronaInfo) {
       const koronaOverskrift = <PanelOverskrift overskrift={this.props.koronaOverskrift} type="Element" />;
-      const koronaLenke = 'https://www.nav.no/person/koronaveiviser/';
+      const koronaLenke = 'https://www.nav.no/person/koronaveiviser';
 
       children.push(// eslint-disable-line function-paren-newline
         <LenkepanelMedIkon
