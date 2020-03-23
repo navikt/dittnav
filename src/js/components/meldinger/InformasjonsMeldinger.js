@@ -12,14 +12,13 @@ class InformasjonsMeldinger extends Component {
 
     if (this.props.visKoronaInfo) {
       const koronaOverskrift = <PanelOverskrift overskrift={this.props.koronaOverskrift} type="Element" />;
-      const koronaLenke = 'https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav';
+      const koronaLenke = 'https://www.nav.no/person/koronaveiviser';
 
       children.push(// eslint-disable-line function-paren-newline
         <LenkepanelMedIkon
           className="infomelding korona-informasjon"
           href={koronaLenke}
           overskrift={koronaOverskrift}
-          ingress={this.props.koronaIngress}
           key="korona"
         >
           <IkonBeskjed />
@@ -56,7 +55,6 @@ class InformasjonsMeldinger extends Component {
 InformasjonsMeldinger.propTypes = {
   visKoronaInfo: PropTypes.bool,
   koronaOverskrift: PropTypes.node,
-  koronaIngress: PropTypes.node,
   isMeldeKortUser: PropTypes.bool,
   visGenerellInfo: PropTypes.bool,
   generellInfo: PropTypes.node,
@@ -70,7 +68,6 @@ InformasjonsMeldinger.defaultProps = {
   isMeldeKortUser: false,
   visGenerellInfo: false,
   koronaOverskrift: <F id="generell.koronamelding.overskrift" />,
-  koronaIngress: <F id="generell.koronamelding.ingress" />,
   generellInfo: <F id="generell.informasjonsmelding" />,
   visMeldekortbrukerInfo: false,
   meldekortbrukerInfo: <F id="meldekortbruker.informasjonsmelding" />,
