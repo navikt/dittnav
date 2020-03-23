@@ -29,12 +29,14 @@
   "brukernotifikasjoner.oppgave.maskert.tekst": "Du har fått en oppgave",
   "brukernotifikasjoner.innboks.maskert.tekst": "Du har fått en melding",
 
+  "brukernotifikasjoner.beskjed.lenke.tekst": "Se meldingen",
+  "brukernotifikasjoner.beskjed.stepup.lenke.tekst": "Logg inn med høyere sikkerhetsnivå for å se beskjeden",
+
   "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",
   "hendelser.fjern": "Fjern hendelser",
   "hendelser.beskjed.knapp": "Ok",
-  "hendelser.beskjed.lenke": "Se meldingen",
 
   "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
   "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",

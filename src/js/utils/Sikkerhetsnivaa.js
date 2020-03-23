@@ -18,3 +18,10 @@ export const finnLenkeForSikkerhetsnivaa = (brukernotifikasjon, innlogging) => {
 
   return skalMaskeres(brukernotifikasjon, innlogging) ? stepUpLenke : brukernotifikasjon.link;
 };
+
+export const finnLenkeTekstIdForSikkerhetsnivaa = (brukernotifikasjon, innlogging) => {
+  const lenkeTekstId = 'brukernotifikasjoner.beskjed.lenke.tekst';
+  const stepUpLenkeTekstId = 'brukernotifikasjoner.beskjed.stepup.lenke.tekst';
+
+  return skalMaskeres(brukernotifikasjon, innlogging) ? stepUpLenkeTekstId : lenkeTekstId;
+};

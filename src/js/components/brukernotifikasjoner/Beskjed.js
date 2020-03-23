@@ -7,6 +7,7 @@ import Api from '../../Api';
 import {
   finnTekstForSikkerhetsnivaa,
   finnLenkeForSikkerhetsnivaa,
+  finnLenkeTekstIdForSikkerhetsnivaa,
   skalMaskeres,
 } from '../../utils/Sikkerhetsnivaa';
 import BeskjedContext from '../../context/BeskjedContext';
@@ -18,6 +19,7 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
   const erMaskert = skalMaskeres(beskjed, innlogging);
   const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
   const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
+  const lenkeTekstId = finnLenkeTekstIdForSikkerhetsnivaa(beskjed, innlogging);
 
   const removeHendelse = (eventId, uid) => {
     updateBeskjeder(beskjeder.filter(b => eventId !== b.eventId));
@@ -36,6 +38,7 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
       overskrift={<PanelOverskrift overskrift={tekst} type="Normaltekst" />}
       onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
       lenke={lenke}
+      lenkeTekstId={lenkeTekstId}
       knapp={!erMaskert}
     >
       <IkonBeskjed />
