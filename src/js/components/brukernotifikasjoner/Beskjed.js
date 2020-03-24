@@ -1,45 +1,43 @@
 import React, { useContext } from 'react';
 import { arrayOf } from 'prop-types';
+import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import Api from '../../Api';
-import {
-  finnTekstForSikkerhetsnivaa,
-  finnLenkeForSikkerhetsnivaa,
-  finnLenkeTekstIdForSikkerhetsnivaa,
-  skalMaskeres,
-} from '../../utils/Sikkerhetsnivaa';
 import BeskjedContext from '../../context/BeskjedContext';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
 
+const removeHendelse = (beskjeder, updateBeskjeder, eventId, uid) => {
+  updateBeskjeder(beskjeder.filter(b => eventId !== b.eventId));
+
+  Api.postDone({
+    eventId,
+    uid,
+  });
+};
+
 const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
   const updateBeskjeder = useContext(BeskjedContext);
-  const erMaskert = skalMaskeres(beskjed, innlogging);
-  const tekst = finnTekstForSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
-  const lenke = finnLenkeForSikkerhetsnivaa(beskjed, innlogging);
-  const lenkeTekstId = finnLenkeTekstIdForSikkerhetsnivaa(beskjed, innlogging);
+  const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
 
-  const removeHendelse = (eventId, uid) => {
-    updateBeskjeder(beskjeder.filter(b => eventId !== b.eventId));
-
-    Api.postDone({
-      eventId,
-      uid,
-    });
-  };
+  const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
+  const lenkeTekst = sikkerhetsnivaa.erMaskert ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
 
   return (
     <PanelMedIkon
       className="beskjed"
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
-      overskrift={<PanelOverskrift overskrift={tekst} type="Normaltekst" />}
-      onClick={() => removeHendelse(beskjed.eventId, beskjed.uid)}
-      lenke={lenke}
-      lenkeTekstId={lenkeTekstId}
-      knapp={!erMaskert}
+      overskrift={overskrift}
+      onClick={() => removeHendelse(beskjeder,
+        updateBeskjeder,
+        beskjed.eventId,
+        beskjed.uid)}
+      lenke={sikkerhetsnivaa.lenke}
+      lenkeTekst={lenkeTekst}
+      knapp={!sikkerhetsnivaa.erMaskert}
     >
       <IkonBeskjed />
     </PanelMedIkon>
