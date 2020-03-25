@@ -17,7 +17,13 @@ const InaktiveVarsler = ({ beskjeder, oppgaver, innbokser, innlogging }) => (
         </Systemtittel>
       </div>
     )}
-    <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+    <Brukernotifikasjoner
+      beskjeder={beskjeder}
+      oppgaver={oppgaver}
+      innbokser={innbokser}
+      innlogging={innlogging}
+      erAktiv={false}
+    />
   </div>
 );
 

@@ -106,7 +106,7 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: 'https://enNyLenke',
     sistOppdatert: '2020-03-13T08:53:17.773555Z',
-    sikkerhetsnivaa: 4,
+    sikkerhetsnivaa: 3,
   };
 
   const innlogging = {

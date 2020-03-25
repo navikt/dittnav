@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { arrayOf } from 'prop-types';
+import { arrayOf, bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -18,12 +18,14 @@ const removeHendelse = (beskjeder, updateBeskjeder, eventId, uid) => {
   });
 };
 
-const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
+const Beskjed = ({ beskjed, beskjeder, innlogging, erInaktiv }) => {
   const updateBeskjeder = useContext(BeskjedContext);
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
   const lenkeTekst = sikkerhetsnivaa.erMaskert ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
+
+  const visKnapp = !(sikkerhetsnivaa.erMaskert || erInaktiv);
 
   return (
     <PanelMedIkon
@@ -37,7 +39,7 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
         beskjed.uid)}
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
-      knapp={!sikkerhetsnivaa.erMaskert}
+      knapp={visKnapp}
     >
       <IkonBeskjed />
     </PanelMedIkon>
@@ -48,12 +50,14 @@ Beskjed.propTypes = {
   beskjed: BeskjedType,
   beskjeder: arrayOf(BeskjedType),
   innlogging: InnloggingType,
+  erInaktiv: bool,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
   beskjeder: null,
   innlogging: null,
+  erInaktiv: false,
 };
 
 export default Beskjed;

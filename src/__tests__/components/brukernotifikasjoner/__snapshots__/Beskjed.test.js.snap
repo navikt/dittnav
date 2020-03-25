@@ -265,19 +265,31 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
     <p
       className="typo-normal lenkepanel__heading"
     >
-      <span>
-        Du har fått en beskjed
-      </span>
+      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     </p>
     <a
       className="lenke panel-lenke"
-      href="undefined"
+      href="https://enNyLenke"
       id="panel-lenke-id"
     >
       <span>
-        Logg inn med høyere sikkerhetsnivå for å se beskjeden
+        Se meldingen
       </span>
     </a>
+  </div>
+  <div
+    className="beskjed__knapp"
+  >
+    <button
+      className="knapp knapp--standard knapp--kompakt"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      <span>
+        Ok
+      </span>
+    </button>
   </div>
 </div>
 `;
