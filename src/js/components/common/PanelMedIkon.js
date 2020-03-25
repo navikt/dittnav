@@ -1,12 +1,12 @@
 import React from 'react';
-import { Normaltekst } from 'nav-frontend-typografi';
-import Knapp from 'nav-frontend-knapper';
-import { Panel } from 'nav-frontend-paneler';
-import PropTypes from 'prop-types';
+import { shape, node, func, any, bool, string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { Normaltekst } from 'nav-frontend-typografi';
+import { Panel } from 'nav-frontend-paneler';
+import Knapp from 'nav-frontend-knapper';
 import Lenke from 'nav-frontend-lenker';
 
-const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, onClick }) => (
+const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, lenkeTekst, onClick }) => (
   <Panel className={className} border>
     <div className={`${className}__ikon`}>
       {children}
@@ -23,7 +23,7 @@ const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, 
       {(lenke)
         ? (
           <Lenke className="panel-lenke" id="panel-lenke-id" href={lenke}>
-            <FormattedMessage id="hendelser.beskjed.lenke" />
+            <FormattedMessage id={lenkeTekst} />
           </Lenke>
         ) : null}
     </div>
@@ -42,13 +42,14 @@ const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, 
 );
 
 PanelMedIkon.propTypes = {
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  overskrift: PropTypes.shape({ root: PropTypes.any }).isRequired,
-  ingress: PropTypes.shape({ root: PropTypes.any }),
-  children: PropTypes.node.isRequired,
-  knapp: PropTypes.bool,
-  lenke: PropTypes.string,
+  onClick: func,
+  className: string,
+  overskrift: shape({ root: any }).isRequired,
+  ingress: shape({ root: any }),
+  children: node.isRequired,
+  knapp: bool,
+  lenke: string,
+  lenkeTekst: string,
 };
 
 PanelMedIkon.defaultProps = {
@@ -57,6 +58,7 @@ PanelMedIkon.defaultProps = {
   ingress: null,
   knapp: null,
   lenke: null,
+  lenkeTekst: null,
 };
 
 export default PanelMedIkon;

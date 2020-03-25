@@ -275,7 +275,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
       id="panel-lenke-id"
     >
       <span>
-        Se meldingen
+        Logg inn med høyere sikkerhetsnivå for å se beskjeden
       </span>
     </a>
   </div>
@@ -419,7 +419,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
       id="panel-lenke-id"
     >
       <span>
-        Se meldingen
+        Logg inn med høyere sikkerhetsnivå for å se beskjeden
       </span>
     </a>
   </div>
