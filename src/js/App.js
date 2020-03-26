@@ -17,7 +17,7 @@ const App = ({ api }) => (
         { Config.VARSLINGER_FEATURE_TOGGLE ? <RenderVarslinger api={api} /> : null }
       </Route>
       <Route path="/person/dittnav/hendelser">
-        { Config.HENDELSER_FEATURE_TOGGLE ? <HendelserTestSide /> : null }
+        { Config.TEST_SIDE_FEATURE_TOGGLE ? <HendelserTestSide /> : null }
       </Route>
       <Route path="/person/dittnav/*">
         <RenderHome api={api} />
