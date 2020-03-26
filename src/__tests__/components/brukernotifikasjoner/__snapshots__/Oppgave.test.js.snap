@@ -179,7 +179,7 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          Du har fått en oppgave
+          Du har fått en oppgave, logg inn med høyere sikkerhetsnivå for å se oppgaven
         </span>
       </p>
       

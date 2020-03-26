@@ -26,8 +26,8 @@
   "fliser.innboks": "Innboks",
 
   "beskjed.maskert.tekst": "Du har fått en beskjed",
-  "oppgave.maskert.tekst": "Du har fått en oppgave",
-  "innboks.maskert.tekst": "Du har fått en melding",
+  "oppgave.maskert.tekst": "Du har fått en oppgave, logg inn med høyere sikkerhetsnivå for å se oppgaven",
+  "innboks.maskert.tekst": "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen",
 
   "beskjed.lenke.tekst": "Se meldingen",
   "beskjed.lenke.stepup.tekst": "Logg inn med høyere sikkerhetsnivå for å se beskjeden",
