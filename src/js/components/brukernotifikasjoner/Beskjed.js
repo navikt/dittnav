@@ -23,7 +23,7 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
-  const lenkeTekst = sikkerhetsnivaa.erMaskert ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
+  const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
 
   return (
     <PanelMedIkon
@@ -37,7 +37,7 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
         beskjed.uid)}
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
-      knapp={!sikkerhetsnivaa.erMaskert}
+      knapp={!sikkerhetsnivaa.skalMaskeres}
     >
       <IkonBeskjed />
     </PanelMedIkon>
