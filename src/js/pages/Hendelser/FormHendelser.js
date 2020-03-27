@@ -1,15 +1,19 @@
+import React from 'react';
+import { func, string } from 'prop-types';
+import { FormattedMessage as F } from 'react-intl';
 import { Input } from 'nav-frontend-skjema';
 import { Knapp } from 'nav-frontend-knapper';
-import { FormattedMessage as F } from 'react-intl';
-import React from 'react';
-import PropTypes from 'prop-types';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 import Api from '../../Api';
+import { ADD_BESKJEDER } from '../../types/Actions';
 
-const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setBeskjeder, setOppgaver, setInnbokser }) => {
+const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, setInnbokser }) => {
+  const { dispatch } = useBeskjedStore();
+
   const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
       .then((r) => {
-        setBeskjeder(r);
+        dispatch({ type: ADD_BESKJEDER, payload: r });
       });
 
     Api.fetchOppgaver()
@@ -61,14 +65,13 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setBeskjeder, s
 };
 
 FormHendelser.propTypes = {
-  tekst: PropTypes.string.isRequired,
-  lenke: PropTypes.string.isRequired,
-  valg: PropTypes.string.isRequired,
-  setTekst: PropTypes.func.isRequired,
-  setLenke: PropTypes.func.isRequired,
-  setBeskjeder: PropTypes.func.isRequired,
-  setOppgaver: PropTypes.func.isRequired,
-  setInnbokser: PropTypes.func.isRequired,
+  tekst: string.isRequired,
+  lenke: string.isRequired,
+  valg: string.isRequired,
+  setTekst: func.isRequired,
+  setLenke: func.isRequired,
+  setOppgaver: func.isRequired,
+  setInnbokser: func.isRequired,
 };
 
 export default FormHendelser;
