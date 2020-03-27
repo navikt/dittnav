@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 import Home from './Home';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
-import BeskjedContext from '../../context/BeskjedContext';
+import { ADD_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
 const RenderHome = ({ api }) => {
@@ -15,13 +16,14 @@ const RenderHome = ({ api }) => {
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     innlogging: null,
-    beskjeder: [],
     oppgaver: [],
     innbokser: [],
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
   });
+
+  const { dispatch } = useBeskjedStore();
 
   const handleOppfolgingError = () => {
     setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1, oppfolgingHasLoaded: true }));
@@ -30,10 +32,6 @@ const RenderHome = ({ api }) => {
   const incrementFetching = () => {
     setData(d => ({ ...d, fetching: d.fetching + 1 }));
   };
-
-  const updateBeskjeder = (b) => (
-    setData(d => ({ ...d, beskjeder: b }))
-  );
 
   useEffect(
     () => {
@@ -46,7 +44,7 @@ const RenderHome = ({ api }) => {
       if (Config.HENDELSER_FEATURE_TOGGLE) {
         api.fetchBeskjeder()
           .then((r) => {
-            setData(d => ({ ...d, beskjeder: r }));
+            dispatch({ type: ADD_BESKJEDER, payload: r });
           }).catch(handleError);
       }
       if (Config.HENDELSER_FEATURE_TOGGLE) {
@@ -115,11 +113,9 @@ const RenderHome = ({ api }) => {
   const loading = data.fetching < 6;
 
   return (
-    <BeskjedContext.Provider value={updateBeskjeder}>
-      <PageFrame uniqueErrors={uniqueErrors}>
-        <Home data={data} loading={loading} />
-      </PageFrame>
-    </BeskjedContext.Provider>
+    <PageFrame uniqueErrors={uniqueErrors}>
+      <Home data={data} loading={loading} />
+    </PageFrame>
   );
 };
 

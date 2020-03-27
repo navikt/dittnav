@@ -11,7 +11,6 @@ import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import Config from '../../globalConfig';
 import InnloggingType from '../../types/InnloggingType';
-import BeskjedType from '../../types/BeskjedType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
@@ -33,7 +32,6 @@ const Home = ({ data, loading }) => {
               paabegynteSoknader={data.paabegynteSoknader}
               mininnboks={data.mininnboks}
               innlogging={data.innlogging}
-              beskjeder={data.beskjeder}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
             />
@@ -62,7 +60,6 @@ Home.propTypes = {
     mininnboks: any.isRequired, // eslint-disable-line react/forbid-prop-types
     sakstema: any.isRequired, // eslint-disable-line react/forbid-prop-types
     oppfolgingHasLoaded: any.isRequired, // eslint-disable-line react/forbid-prop-types
-    beskjeder: arrayOf(BeskjedType),
     oppgaver: arrayOf(OppgaveType),
     innbokser: arrayOf(InnboksType),
     innlogging: InnloggingType,
@@ -78,7 +75,6 @@ Home.defaultProps = {
     identifikator: null,
     paabegynteSoknader: null,
     innlogging: null,
-    beskjeder: null,
     oppgaver: null,
     innbokser: null,
   }),
