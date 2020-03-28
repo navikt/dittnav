@@ -9,5 +9,6 @@ exports[`render empty InfoMeldinger component 1`] = `
   mininnboks={Array []}
   oppgaver={null}
   paabegynteSoknader={null}
+  sakstema={null}
 />
 `;
