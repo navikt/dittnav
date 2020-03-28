@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { arrayOf } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import Config from '../globalConfig';
@@ -15,17 +16,14 @@ import InnloggingType from '../types/InnloggingType';
 import BeskjedType from '../types/BeskjedType';
 import OppgaverType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
-import SakstemaType from "../types/SakstemaType";
-import moment from "moment";
+import SakstemaType from '../types/SakstemaType';
 
 const InfoMeldinger = ({ sakstema, meldekort, paabegynteSoknader, mininnboks, innlogging, beskjeder, oppgaver, innbokser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
 
   const naaTid = moment();
   const harDagpengerSakSiste14Dager = sakstema.sakstemaList
-    .some(tema => tema.temakode === "DAG" && naaTid.diff(moment(tema.sisteOppdatering), "days") <= 14);
-
-  console.log(harDagpengerSakSiste14Dager);
+    .some(tema => tema.temakode === 'DAG' && naaTid.diff(moment(tema.sisteOppdatering), 'days') <= 14);
 
   return (
     <section className="infomeldinger-list">
