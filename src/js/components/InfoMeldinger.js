@@ -15,14 +15,22 @@ import InnloggingType from '../types/InnloggingType';
 import BeskjedType from '../types/BeskjedType';
 import OppgaverType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
+import SakstemaType from "../types/SakstemaType";
+import moment from "moment";
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, innlogging, beskjeder, oppgaver, innbokser }) => {
+const InfoMeldinger = ({ sakstema, meldekort, paabegynteSoknader, mininnboks, innlogging, beskjeder, oppgaver, innbokser }) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
+
+  const naaTid = moment();
+  const harDagpengerSakSiste14Dager = sakstema.sakstemaList
+    .some(tema => tema.temakode === "DAG" && naaTid.diff(moment(tema.sisteOppdatering), "days") <= 14);
+
+  console.log(harDagpengerSakSiste14Dager);
 
   return (
     <section className="infomeldinger-list">
       <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
-      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
+      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} visForskuddsInfo={harDagpengerSakSiste14Dager} />
       {isMeldeKortUser ? <Meldekort meldekort={meldekort} /> : null}
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
@@ -42,6 +50,7 @@ InfoMeldinger.propTypes = {
   beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaverType),
   innbokser: arrayOf(InnboksType),
+  sakstema: SakstemaType,
 };
 
 InfoMeldinger.defaultProps = {
@@ -52,6 +61,7 @@ InfoMeldinger.defaultProps = {
   beskjeder: null,
   oppgaver: null,
   innbokser: null,
+  sakstema: null,
 };
 
 export default InfoMeldinger;

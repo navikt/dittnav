@@ -1,17 +1,137 @@
 {
-  "antallSakstema": 6,
+  "antallSakstema": 22,
   "sakstemaList": [
     {
-      "temanavn":"Sosialhjelp",
-      "temakode":"KOM",
-      "antallStatusUnderBehandling":0,
-      "sisteOppdatering":"2019-08-15T12:00:00+02:00"
+      "temanavn": "Dagpenger og oppfølging",
+      "temakode": "DAG",
+      "antallStatusUnderBehandling": 2,
+      "sisteOppdatering": "2020-03-28T12:00:00+01:00"
     },
     {
-      "temanavn":"Sykepenger og oppfølging",
-      "temakode":"SYK",
-      "antallStatusUnderBehandling":10,
-      "sisteOppdatering":"2019-08-14T12:00:00+02:00"
+      "temanavn": "Arbeidsavklaringspenger og oppfølging",
+      "temakode": "AAP",
+      "antallStatusUnderBehandling": 2,
+      "sisteOppdatering": "2020-03-17T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Bil",
+      "temakode": "BIL",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2020-03-10T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Uføretrygd og oppfølging",
+      "temakode": "UFO",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2020-03-10T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Ajourhold - Grunnopplysninger",
+      "temakode": "AGR",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2020-03-07T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Sykmelding, sykepenger og oppfølging",
+      "temakode": "SYK_SYM",
+      "antallStatusUnderBehandling": 1,
+      "sisteOppdatering": "2020-03-03T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Barnetrygd",
+      "temakode": "BAR",
+      "antallStatusUnderBehandling": 1,
+      "sisteOppdatering": "2020-02-14T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Generell",
+      "temakode": "GEN",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2020-01-09T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Foreldre- og svangerskapspenger",
+      "temakode": "FOR",
+      "antallStatusUnderBehandling": 1,
+      "sisteOppdatering": "2019-11-29T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Pensjon",
+      "temakode": "PEN",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-11-19T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Hjelpemidler",
+      "temakode": "HJE",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-11-01T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Unntak fra medlemskap",
+      "temakode": "UFM",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-11-01T12:00:00+01:00"
+    },
+    {
+      "temanavn": "Yrkesskade / Menerstatning",
+      "temakode": "YRK",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-10-07T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Medlemskap",
+      "temakode": "MED",
+      "antallStatusUnderBehandling": 1,
+      "sisteOppdatering": "2019-10-07T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Fullmakt",
+      "temakode": "FUL",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-06-06T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Serviceklager",
+      "temakode": "SER",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-05-28T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Enslig forsørger",
+      "temakode": "ENF",
+      "antallStatusUnderBehandling": 1,
+      "sisteOppdatering": "2019-05-21T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Sosialhjelp",
+      "temakode": "KOM",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2019-05-15T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Erstatning",
+      "temakode": "ERS",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2017-04-23T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Trekkhåndtering",
+      "temakode": "TRK",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2016-09-08T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Gravferdsstønad",
+      "temakode": "GRA",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2016-08-18T12:00:00+02:00"
+    },
+    {
+      "temanavn": "Saksomkostninger",
+      "temakode": "SAK",
+      "antallStatusUnderBehandling": 0,
+      "sisteOppdatering": "2014-03-13T12:00:00+01:00"
     }
   ]
 }

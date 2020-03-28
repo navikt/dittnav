@@ -29,6 +29,7 @@ const Home = ({ data, loading }) => {
             <PersonInfo person={data.person} identifikator={data.identifikator} />
             {loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger
+              sakstema={data.sakstema}
               meldekort={data.meldekort}
               paabegynteSoknader={data.paabegynteSoknader}
               mininnboks={data.mininnboks}
