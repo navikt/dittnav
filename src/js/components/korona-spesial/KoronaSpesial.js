@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import SakstemaType from "../../types/SakstemaType";
 import { KoronaVarsel } from "./KoronaVarsel";
 import Config from "../../globalConfig";
 import BeskjedType from "../../types/BeskjedType";
+import { skalViseForskuddLenke } from "./DagpengerForskuddToggle";
 
 const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
   const naaTid = moment();
@@ -16,9 +17,12 @@ const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
   // TODO: finn ut hva jeg kan sjekke på her av tekst/id
   const harForskuddSoknad = beskjeder && beskjeder.some(beskjed => beskjed.tekst && beskjed.tekst.includes("Forskudd på dagpenger"));
 
+  const [skalViseForskudd, setSkalViseForskudd] = useState();
+  skalViseForskuddLenke(setSkalViseForskudd);
+
   return (
     <div className={`korona-spesial${isLoaded ? ' korona-spesial--loaded' : ''}`}>
-      {harDagpengerSakSiste14Dager || harForskuddSoknad ? (
+      {(harDagpengerSakSiste14Dager || harForskuddSoknad) && skalViseForskudd ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}
           href={Config.LENKER.dagpengerForskudd.url}
