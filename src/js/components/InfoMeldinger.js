@@ -22,7 +22,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, innlogging, 
   return (
     <section className="infomeldinger-list">
       <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
-      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser}/>
+      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
       {isMeldeKortUser ? <Meldekort meldekort={meldekort} /> : null}
       <EtterregistreringMeldekort ettereg={meldekort} />
       <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
