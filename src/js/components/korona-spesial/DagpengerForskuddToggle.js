@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import { getStorageItem, setStorageItem } from '../../utils/SessionStorage';
+import Cookies from 'js-cookie';
 
 const idKey = 'forskudd-dagpenger-session-id';
 const toggleCacheKey = 'forskudd-dagpenger-vises';
@@ -8,7 +9,7 @@ const toggleName = 'dagpenger.forskudd.entry.enabled';
 
 const reqBody = (id) => ({ sessionId: id, toggles: [toggleName] });
 
-const postAndCallbackOnResponse = (url, content, callback) =>
+const postThenCallbackToggleStatus = (url, content, callback) =>
   fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -21,10 +22,12 @@ const postAndCallbackOnResponse = (url, content, callback) =>
     .then(r => r.ok ? r : new Error(r.status))
     .then(r => r.json())
     .then(r => {
-      console.log(r);
-      callback(r[toggleName]);
+      console.log("Forskudd response:", r);
+      const toggleStatus = r[toggleName];
+      Cookies.set(toggleCacheKey, toggleStatus, { expires: 1 / 24 });
+      callback(toggleStatus);
     })
-    .catch(e => console.log("Error from forskudd", e));
+    .catch(e => console.log("Error from forskudd:", e));
 
 const getForskuddSessionId = () => {
   const idFromStorage = getStorageItem(idKey);
@@ -37,12 +40,12 @@ const getForskuddSessionId = () => {
 };
 
 export const skalViseForskuddLenke = (skalVisesCallback) => {
-  const toggleFromStorage = getStorageItem(toggleCacheKey);
-  if (toggleFromStorage) {
-    skalVisesCallback(toggleFromStorage === "true");
-    return;
-  }
+  // const toggleFromStorage = Cookies.get(toggleCacheKey);
+  // if (toggleFromStorage) {
+  //   skalVisesCallback(toggleFromStorage === "true");
+  //   return;
+  // }
 
   const sessionId = getForskuddSessionId();
-  postAndCallbackOnResponse(apiUrl, reqBody(sessionId), skalVisesCallback);
+  postThenCallbackToggleStatus(apiUrl, reqBody(sessionId), skalVisesCallback);
 };
