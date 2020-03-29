@@ -1,0 +1,155 @@
+@import (reference) "../../../node_modules/nav-frontend-core/less/_variabler";
+@import (reference) "../index";
+
+.col-setup(@cols, @margins) {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: calc(percentage(1 / (@cols + 1)) + 1px);
+  max-width: calc(percentage(1 / @cols) - (@margins - @margins / @cols));
+
+  &:not(:nth-child(@{cols}n)) {
+    margin-right: @margins;
+  }
+}
+
+.korona-spesial {
+  @cols: 2;
+  @margins: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  & > * {
+    @media (min-width: @tablet-breakpoint) {
+      .col-setup(2, 1rem);
+    }
+    @media (max-width: @tablet-breakpoint) {
+      .col-setup(1, 0.5rem);
+    }
+  }
+}
+
+.blaa-bakgrunn {
+  background-color: @navLysBlaLighten80;
+
+  &:not(:hover) {
+    border-color: @navLysBla;
+  }
+}
+
+.korona-varsel {
+  @spacing: 0.25rem;
+  @pulse-scale: 3;
+  @compress-scale: 0.85;
+  @sirkel-diameter: 24px;
+  @pulse-diameter: @sirkel-diameter * @pulse-scale;
+  @sirkel-farge: @navOransjeLighten20;
+  @pulse-farge: @navOransjeLighten60;
+
+  display: flex;
+  flex-direction: row;
+
+  padding: 1rem;
+  border-color: black;
+
+  .animation-props() {
+    animation-direction: normal;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+
+  &__ikon-kol {
+    position: relative;
+
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: -0.75rem;
+    min-width: @pulse-diameter;
+    min-height: @pulse-diameter;
+
+    @media (max-width: 768px) {
+      min-width: 40px;
+    }
+  }
+
+  &__sirkel {
+    position: absolute;
+    border-radius: 50%;
+    width: @sirkel-diameter;
+    height: @sirkel-diameter;
+
+    background-color: @navOransjeLighten20;
+
+    animation-name: compression;
+    .animation-props();
+  }
+
+  &__pulse {
+    position: absolute;
+    border-radius: 50%;
+    width: @sirkel-diameter;
+    height: @sirkel-diameter;
+
+    animation-name: shockwave;
+    .animation-props();
+  }
+
+  &__tekst-kol {
+    padding: 0.5rem;
+    text-align: left;
+    flex-grow: 1;
+    align-self: flex-start;
+  }
+
+  &__ingress {
+    margin-top: @spacing;
+  }
+
+  &__dato-tid {
+    color: @navGra60;
+    margin-top: @spacing;
+  }
+
+  @keyframes compression {
+    0% {
+      transform: scale(1);
+    }
+
+    15% {
+      transform: scale(@compress-scale);
+    }
+
+    20% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shockwave {
+    0% {
+      background-color: @pulse-farge;
+      transform: scale(@compress-scale);
+    }
+
+    15% {
+      transform: scale(@compress-scale);
+    }
+
+    20% {
+      background-color: @pulse-farge;
+      transform: scale(1);
+    }
+
+    50% {
+      background-color: transparent;
+      transform: scale(@pulse-scale);
+    }
+  }
+}

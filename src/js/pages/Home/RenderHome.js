@@ -16,6 +16,7 @@ const RenderHome = ({ api }) => {
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     innlogging: null,
     beskjeder: [],
+    inaktiveBeskjeder: [],
     oppgaver: [],
     innbokser: [],
     errors: [],
@@ -47,6 +48,10 @@ const RenderHome = ({ api }) => {
         api.fetchBeskjeder()
           .then((r) => {
             setData(d => ({ ...d, beskjeder: r }));
+          }).catch(handleError);
+        api.fetchInaktiveBeskjeder()
+          .then((r) => {
+            setData(d => ({ ...d, inaktiveBeskjeder: r }));
           }).catch(handleError);
       }
       if (Config.HENDELSER_FEATURE_TOGGLE) {
