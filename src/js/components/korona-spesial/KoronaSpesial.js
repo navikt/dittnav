@@ -8,13 +8,13 @@ import BeskjedType from "../../types/BeskjedType";
 
 const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
   const naaTid = moment();
-  const harDagpengerSakSiste14Dager = sakstema && sakstema.sakstemaList
+  const harDagpengerSakSiste14Dager = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
     .some(tema =>
       tema.temakode === 'DAG' &&
       naaTid.diff(moment(tema.sisteOppdatering), 'days') <= 14
     );
   // TODO: finn ut hva jeg kan sjekke på her av tekst/id
-  const harForskuddSoknad = beskjeder && beskjeder.some(beskjed => beskjed.tekst.includes("Forskudd på dagpenger"));
+  const harForskuddSoknad = beskjeder && beskjeder.some(beskjed => beskjed.tekst && beskjed.tekst.includes("Forskudd på dagpenger"));
 
   return (
     <div className={`korona-spesial${isLoaded ? ' korona-spesial--loaded' : ''}`}>
