@@ -5,12 +5,10 @@ import log from "../../utils/Logger";
 
 const sessionIdKey = 'forskudd-dagpenger-session-id';
 const toggleCookieKey = 'forskudd-dagpenger-vises';
-const apiUrl = 'https://www-q1.nav.no/dagpenger/forskudd-api/api/enabled/anonymous';
+const apiUrl = `${window.env.NAVNO_URL}/dagpenger/forskudd-api/api/enabled/anonymous`;
 const toggleName = 'dagpenger.forskudd.entry.enabled';
 
-const reqBody = (id) => ({ sessionId: id, toggles: [toggleName] });
-
-const postThenCallbackToggleStatus = (url, content, callback) =>
+const postThenCallbackToggleStatus = (url, sessionId, callback) =>
   fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -18,16 +16,21 @@ const postThenCallbackToggleStatus = (url, content, callback) =>
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(content),
+    body: JSON.stringify({ sessionId: sessionId, toggles: [toggleName] }),
   })
     .then(r => r.ok ? r : new Error(r.status))
     .then(r => r.json())
     .then(r => {
       const toggleStatus = r[toggleName];
-      Cookies.set(toggleCookieKey, toggleStatus, { expires: 1 / 24 });
+      setToggleCookies(toggleStatus, sessionId);
       callback(toggleStatus);
     })
     .catch(e => log(`Error: ${e}`));
+
+const setToggleCookies = (toggleStatus, sessionId) => {
+  Cookies.set(toggleCookieKey, toggleStatus, { expires: 1 / 24 });
+  Cookies.set(sessionIdKey, sessionId, { expires: 1 / 24 });
+};
 
 const getForskuddSessionId = () => {
   const idFromStorage = getStorageItem(sessionIdKey);
@@ -42,10 +45,11 @@ const getForskuddSessionId = () => {
 export const skalViseForskuddLenke = (skalVisesCallback) => {
   const toggleFromCookie = Cookies.get(toggleCookieKey);
   if (toggleFromCookie) {
+    setStorageItem(sessionIdKey, Cookies.get(sessionIdKey));
     skalVisesCallback(toggleFromCookie === "true");
     return;
   }
 
   const sessionId = getForskuddSessionId();
-  postThenCallbackToggleStatus(apiUrl, reqBody(sessionId), skalVisesCallback);
+  postThenCallbackToggleStatus(apiUrl, sessionId, skalVisesCallback);
 };
