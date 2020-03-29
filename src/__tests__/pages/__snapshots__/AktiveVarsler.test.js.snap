@@ -66,7 +66,7 @@ exports[`AktiveVarsler one beskjed 1`] = `
         id="panel-lenke-id"
       >
         <span>
-          Se meldingen
+          Se mer informasjon
         </span>
       </a>
     </div>
@@ -233,7 +233,7 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
       className="typo-systemtittel"
     >
       <span>
-        Du har 3 varsler fra NAV
+        Du har 3 beskjeder fra NAV
       </span>
     </h2>
   </div>
@@ -293,7 +293,7 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
         id="panel-lenke-id"
       >
         <span>
-          Se meldingen
+          Se mer informasjon
         </span>
       </a>
     </div>

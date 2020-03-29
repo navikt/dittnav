@@ -1,16 +1,17 @@
 import React, { createContext, useReducer } from 'react';
-import { node } from 'prop-types';
+import { arrayOf, node } from 'prop-types';
 import Api from '../Api';
 import {
   ADD_BESKJEDER,
   ADD_INAKTIVE_BESKJEDER,
   ADD_INAKTIV_BESKJED, REMOVE_BESKJED,
 } from '../types/Actions';
+import BeskjedType from '../types/BeskjedType';
 
-const initialState = {
-  beskjeder: null,
-  inaktiveBeskjeder: null,
-};
+const initialState = (beskjeder, inaktiveBeskjeder) => ({
+  beskjeder,
+  inaktiveBeskjeder,
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -45,8 +46,8 @@ const reducer = (state = initialState, action) => {
 
 export const BeskjedStoreContext = createContext(null);
 
-const BeskjedStoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const BeskjedStoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState(beskjeder, inaktiveBeskjeder));
   const value = { state, dispatch };
 
   return (
@@ -57,7 +58,14 @@ const BeskjedStoreProvider = ({ children }) => {
 };
 
 BeskjedStoreProvider.propTypes = {
+  beskjeder: arrayOf(BeskjedType),
+  inaktiveBeskjeder: arrayOf(BeskjedType),
   children: node.isRequired,
+};
+
+BeskjedStoreProvider.defaultProps = {
+  beskjeder: null,
+  inaktiveBeskjeder: null,
 };
 
 export default BeskjedStoreProvider;

@@ -126,7 +126,7 @@ exports[`Beskjed with link 1`] = `
       id="panel-lenke-id"
     >
       <span>
-        Se meldingen
+        Se mer informasjon
       </span>
     </a>
   </div>
@@ -273,7 +273,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
       id="panel-lenke-id"
     >
       <span>
-        Se meldingen
+        Se mer informasjon
       </span>
     </a>
   </div>
@@ -351,7 +351,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
       id="panel-lenke-id"
     >
       <span>
-        Se meldingen
+        Se mer informasjon
       </span>
     </a>
   </div>
@@ -495,7 +495,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
       id="panel-lenke-id"
     >
       <span>
-        Se meldingen
+        Se mer informasjon
       </span>
     </a>
   </div>
