@@ -33,7 +33,9 @@
 }
 
 .blaa-bakgrunn {
-  background-color: @navLysBlaLighten80;
+  &:not(:active):not(:focus) {
+    background-color: @navLysBlaLighten80;
+  }
 
   &:not(:hover) {
     border-color: @navLysBla;
