@@ -42,6 +42,7 @@ const Home = ({ data, loading }) => {
             <KoronaSpesial
               sakstema={data.sakstema}
               beskjeder={data.beskjeder.concat(data.inaktiveBeskjeder || [])}
+              isLoaded={!loading}
             />
             <DittnavLenkePanel sakstema={data.sakstema} />
             {data.oppfolgingHasLoaded ? generelleEllerVta : null}

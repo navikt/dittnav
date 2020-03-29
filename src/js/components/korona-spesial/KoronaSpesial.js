@@ -6,7 +6,7 @@ import { KoronaVarsel } from "./KoronaVarsel";
 import Config from "../../globalConfig";
 import BeskjedType from "../../types/BeskjedType";
 
-const KoronaSpesial = ({ sakstema, beskjeder }) => {
+const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
   const naaTid = moment();
   const harDagpengerSakSiste14Dager = sakstema && sakstema.sakstemaList
     .some(tema =>
@@ -17,7 +17,7 @@ const KoronaSpesial = ({ sakstema, beskjeder }) => {
   const harForskuddSoknad = beskjeder && beskjeder.some(beskjed => beskjed.tekst.includes("Forskudd på dagpenger"));
 
   return (
-    <div className={"korona-spesial"}>
+    <div className={`korona-spesial${isLoaded ? ' korona-spesial--loaded' : ''}`}>
       {harDagpengerSakSiste14Dager || harForskuddSoknad ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}
@@ -25,7 +25,7 @@ const KoronaSpesial = ({ sakstema, beskjeder }) => {
           ingressId={"korona.dagpenger-forskudd.ingress"}
           className={"blaa-bakgrunn"}
         />
-        ) : (
+      ) : (
         <KoronaVarsel
           tittel={Config.LENKER.koronaBehandlingstid.tittel}
           href={Config.LENKER.koronaBehandlingstid.url}

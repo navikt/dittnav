@@ -21,6 +21,13 @@
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+
+  &--loaded {
+    max-height: 20rem;
+  }
 
   & > * {
     @media (min-width: @tablet-breakpoint) {
