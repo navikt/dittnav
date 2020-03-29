@@ -32,9 +32,9 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
-  const lenkeTekst = sikkerhetsnivaa.erMaskert ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
+  const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
 
-  const visKnapp = !(sikkerhetsnivaa.erMaskert || erInaktiv);
+  const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 
   return (
     <PanelMedIkon

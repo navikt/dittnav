@@ -83,6 +83,8 @@ export default {
   LENKER: lenker,
   HENDELSER_FEATURE_TOGGLE: window.env.HENDELSER_FEATURE_TOGGLE === 'true',
   VARSLINGER_FEATURE_TOGGLE: window.env.VARSLINGER_FEATURE_TOGGLE === 'true',
+  TEST_SIDE_FEATURE_TOGGLE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
+
   IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
 };

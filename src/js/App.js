@@ -24,7 +24,7 @@ const App = ({ api }) => (
         ) : null }
       </Route>
       <Route path="/person/dittnav/hendelser">
-        { Config.HENDELSER_FEATURE_TOGGLE ? (
+        { Config.TEST_SIDE_FEATURE_TOGGLE ? (
           <BeskjedStoreProvider>
             <HendelserTestSide />
           </BeskjedStoreProvider>

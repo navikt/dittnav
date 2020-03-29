@@ -2,8 +2,8 @@
   "dittnav.infomeldinger.varsler": "Varsler",
 
   "generell.informasjonsmelding": "På grunn av teknisk vedlikehold kan Ditt NAV i korte perioder være ustabilt. Dersom du opplever at tjenestene er trege eller ikke tilgjengelige som vanlig, vennligst prøv igjen senere. Vi beklager ulempene dette medfører.",
-
   "generell.koronamelding.overskrift": "Koronavirus - hva gjelder i min situasjon?",
+  "generell.forskudds.overskrift": "Her kan det lenkes videre til skjemaet om forskuddsutbetalinger",
 
   "meldekortbruker.informasjonsmelding": "Her vises informasjon til meldekortbrukere",
 
@@ -26,8 +26,8 @@
   "fliser.innboks": "Innboks",
 
   "beskjed.maskert.tekst": "Du har fått en beskjed",
-  "oppgave.maskert.tekst": "Du har fått en oppgave",
-  "innboks.maskert.tekst": "Du har fått en melding",
+  "oppgave.maskert.tekst": "Du har fått en oppgave, logg inn med høyere sikkerhetsnivå for å se oppgaven",
+  "innboks.maskert.tekst": "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen",
 
   "beskjed.lenke.tekst": "Se mer informasjon",
   "beskjed.lenke.stepup.tekst": "Logg inn med høyere sikkerhetsnivå for å se beskjeden",
