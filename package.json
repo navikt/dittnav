@@ -18,6 +18,7 @@
     "express-http-proxy": "^1.6.0",
     "intl": "^1.2.5",
     "js": "^0.1.0",
+    "js-cookie": "^2.2.1",
     "jsdom": "^15.2.1",
     "less-plugin-npm-import": "^2.1.0",
     "lodash.throttle": "^4.1.1",
@@ -57,6 +58,7 @@
     "regenerator-runtime": "^0.13.3",
     "request": "^2.88.0",
     "translations": "^2.2.1",
+    "uuid": "^7.0.2",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
