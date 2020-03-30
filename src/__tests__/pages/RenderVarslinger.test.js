@@ -83,7 +83,6 @@ it('expect Brukernotifikasjoner fetching', async () => {
     );
   });
 
-
   api.fetchInnbokser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       [
