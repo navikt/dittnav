@@ -8,7 +8,7 @@ import BeskjedType from "../../types/BeskjedType";
 import { skalViseForskuddLenke } from "./DagpengerForskuddToggle";
 
 const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
-  const [skalViseForskudd, setSkalViseForskudd] = useState();
+  const [skalViseForskudd, setSkalViseForskudd] = useState(null);
 
   const naaTid = moment();
   const harDagpengerSakSiste14Dager = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
@@ -27,8 +27,10 @@ const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
     }
   }, [harDagpengerSakSiste14Dager]);
 
+  const loaded = isLoaded && skalViseForskudd !== null;
+
   return (
-    <div className={`korona-spesial${isLoaded ? ' korona-spesial--loaded' : ''}`}>
+    <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
       {(harDagpengerSakSiste14Dager && skalViseForskudd) && !harForskuddSoknad ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}

@@ -25,11 +25,11 @@ const lenker = {
     url: `${window.env.NAVNO_URL}/person/koronaveiviser`
   },
   dagpengerForskudd: {
-    tittel: "Trenger du forskudd på dagpenger fra NAV?",
+    tittel: "Trenger du forskudd på dagpenger?",
     url: `${window.env.NAVNO_URL}/dagpenger/forskudd`
   },
   koronaBehandlingstid: {
-    tittel: "Saksbehandlingstider i NAV",
+    tittel: "Lengre saksbehandlingstider",
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`
   }
 };
