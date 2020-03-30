@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import SakstemaType from "../../types/SakstemaType";
 import { KoronaVarsel } from "./KoronaVarsel";
 import Config from "../../globalConfig";
@@ -10,11 +9,10 @@ import { skalViseForskuddLenke } from "./DagpengerForskuddToggle";
 const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
   const [skalViseForskudd, setSkalViseForskudd] = useState(null);
 
-  const naaTid = moment();
-  const harDagpengerSakSiste14Dager = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
+  const harDagpengerSakUnderBehandling = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
     .some(tema =>
       tema.temakode === 'DAG' &&
-      naaTid.diff(moment(tema.sisteOppdatering), 'days') <= 14
+      tema.antallStatusUnderBehandling > 0
     );
 
   // TODO: finn ut hva jeg kan sjekke på her av tekst/id
@@ -22,16 +20,16 @@ const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
     .some(beskjed => beskjed.tekst && beskjed.tekst.includes("Forskudd på dagpenger"));
 
   useEffect(() => {
-    if (harDagpengerSakSiste14Dager) {
+    if (harDagpengerSakUnderBehandling) {
       skalViseForskuddLenke(setSkalViseForskudd);
     }
-  }, [harDagpengerSakSiste14Dager]);
+  }, [harDagpengerSakUnderBehandling]);
 
-  const loaded = isLoaded && (!harDagpengerSakSiste14Dager || skalViseForskudd !== null);
+  const loaded = isLoaded && (!harDagpengerSakUnderBehandling || skalViseForskudd !== null);
 
   return (
     <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
-      {(harDagpengerSakSiste14Dager && skalViseForskudd) && !harForskuddSoknad ? (
+      {(harDagpengerSakUnderBehandling && skalViseForskudd) && !harForskuddSoknad ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}
           href={Config.LENKER.dagpengerForskudd.url}
