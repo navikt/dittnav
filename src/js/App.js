@@ -31,7 +31,9 @@ const App = ({ api }) => (
         ) : null }
       </Route>
       <Route path="/person/dittnav/*">
-        <RenderHome api={api} />
+        <BeskjedStoreProvider>
+          <RenderHome api={api} />
+        </BeskjedStoreProvider>
       </Route>
     </Switch>
   </Router>
