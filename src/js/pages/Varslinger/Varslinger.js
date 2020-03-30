@@ -3,6 +3,7 @@ import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Panel from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
+import { Normaltekst } from 'nav-frontend-typografi';
 import Config from '../../globalConfig';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
@@ -29,13 +30,15 @@ const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, 
             innbokser={inaktiveInnbokser}
             innlogging={innlogging}
           />
-          <Panel>
-            <FormattedMessage
-              id="varslinger.innboks.melding"
-              values={{
-                innboksen: <Lenke id="innboksmelding-id" href={Config.LENKER.innboks.url}>innboksen</Lenke>,
-              }}
-            />
+          <Panel className="mininnboks-panel">
+            <Normaltekst>
+              <FormattedMessage
+                id="varslinger.mininnboks.melding"
+                values={{
+                  innboksen: <Lenke id="innboksmelding-id" href={Config.LENKER.innboks.url}>innboksen</Lenke>,
+                }}
+              />
+            </Normaltekst>
           </Panel>
         </section>
       </div>

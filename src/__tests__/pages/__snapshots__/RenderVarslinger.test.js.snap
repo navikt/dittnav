@@ -112,19 +112,23 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
               className="inaktive-varsler"
             />
             <div
-              className="panel"
+              className="panel mininnboks-panel"
             >
-              <span>
-                Finner du ikke meldingen du leter etter? Den ligger kanskje i 
-                <a
-                  className="lenke"
-                  href="http://localhost:9222/mininnboks"
-                  id="innboksmelding-id"
-                >
-                  innboksen
-                </a>
-                 din.
-              </span>
+              <p
+                className="typo-normal"
+              >
+                <span>
+                  Finner du ikke meldingen du leter etter? Den ligger kanskje i 
+                  <a
+                    className="lenke"
+                    href="http://localhost:9222/mininnboks"
+                    id="innboksmelding-id"
+                  >
+                    innboksen
+                  </a>
+                   din.
+                </span>
+              </p>
             </div>
           </section>
         </div>
