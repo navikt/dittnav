@@ -4,27 +4,10 @@ import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
-import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 
 class InformasjonsMeldinger extends Component {
   render() {
     const children = [];
-
-    if (this.props.visKoronaInfo) {
-      const koronaOverskrift = <PanelOverskrift overskrift={this.props.koronaOverskrift} type="Element" />;
-      const koronaLenke = 'https://www.nav.no/person/koronaveiviser';
-
-      children.push(// eslint-disable-line function-paren-newline
-        <LenkepanelMedIkon
-          className="infomelding korona-informasjon"
-          href={koronaLenke}
-          overskrift={koronaOverskrift}
-          key="korona"
-        >
-          <IkonBeskjed />
-        </LenkepanelMedIkon>,
-      );
-    }
 
     if (this.props.visGenerellInfo) {
       const generellInfoOverskrift = <PanelOverskrift overskrift={this.props.generellInfo} type="Normaltekst" />;
@@ -37,22 +20,6 @@ class InformasjonsMeldinger extends Component {
         >
           <IkonBeskjed />
         </PanelMedIkon>,
-      );
-    }
-
-    if (this.props.visForskuddsInfo) {
-      const forskuddsOverskrift = <PanelOverskrift overskrift={this.props.forskuddsOverskrift} type="Element" />;
-      const forskuddsLenke = '';
-
-      children.push(// eslint-disable-line function-paren-newline
-        <LenkepanelMedIkon
-          className="infomelding forskudds-informasjon"
-          href={forskuddsLenke}
-          overskrift={forskuddsOverskrift}
-          key="forskudd"
-        >
-          <IkonBeskjed />
-        </LenkepanelMedIkon>,
       );
     }
 
@@ -74,26 +41,18 @@ class InformasjonsMeldinger extends Component {
 }
 
 InformasjonsMeldinger.propTypes = {
-  visKoronaInfo: bool,
   visGenerellInfo: bool,
-  visForskuddsInfo: bool,
   visMeldekortbrukerInfo: bool,
-  koronaOverskrift: node,
-  forskuddsOverskrift: node,
-  meldekortOverskrift: node,
   isMeldeKortUser: bool,
+  meldekortOverskrift: node,
   generellInfo: node,
   intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 InformasjonsMeldinger.defaultProps = {
-  visKoronaInfo: true,
   visGenerellInfo: false,
-  visForskuddsInfo: false,
   visMeldekortbrukerInfo: false,
   isMeldeKortUser: false,
-  koronaOverskrift: <F id="generell.koronamelding.overskrift" />,
-  forskuddsOverskrift: <F id="generell.forskudds.overskrift" />,
   meldekortOverskrift: <F id="meldekortbruker.informasjonsmelding" />,
   generellInfo: <F id="generell.informasjonsmelding" />,
 };

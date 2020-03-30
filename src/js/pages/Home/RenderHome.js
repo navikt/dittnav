@@ -3,7 +3,7 @@ import useBeskjedStore from '../../hooks/useBeskjedStore';
 import Home from './Home';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
-import { ADD_BESKJEDER } from '../../types/Actions';
+import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
 const RenderHome = ({ api }) => {
@@ -46,20 +46,18 @@ const RenderHome = ({ api }) => {
           .then((r) => {
             dispatch({ type: ADD_BESKJEDER, payload: r });
           }).catch(handleError);
-      }
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
+        api.fetchInaktiveBeskjeder()
+          .then((r) => {
+            dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
+          }).catch(handleError);
         api.fetchOppgaver()
           .then((r) => {
             setData(d => ({ ...d, oppgaver: r }));
           }).catch(handleError);
-      }
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
         api.fetchInnbokser()
           .then((r) => {
             setData(d => ({ ...d, innbokser: r }));
           }).catch(handleError);
-      }
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
         api.fetchInnlogging()
           .then((r) => {
             setData(d => ({ ...d, innlogging: r }));

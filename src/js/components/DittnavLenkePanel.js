@@ -7,6 +7,8 @@ import Config from '../globalConfig';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 
+const antallSakstemaVist = 2;
+
 class DittnavLenkePanel extends React.Component {
   render() {
     const { sakstema } = this.props;
@@ -24,6 +26,7 @@ class DittnavLenkePanel extends React.Component {
               border
               liste={
                 sakstema.sakstemaList
+                  .slice(0, antallSakstemaVist)
                   .map((tema) => (
                     <DinesakerSakstema
                       key={tema.temakode}

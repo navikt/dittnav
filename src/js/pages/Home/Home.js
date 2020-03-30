@@ -13,6 +13,7 @@ import Config from '../../globalConfig';
 import InnloggingType from '../../types/InnloggingType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
+import KoronaSpesial from "../../components/korona-spesial/KoronaSpesial";
 
 const Home = ({ data, loading }) => {
   const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
@@ -28,12 +29,18 @@ const Home = ({ data, loading }) => {
             <PersonInfo person={data.person} identifikator={data.identifikator} />
             {loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger
+              sakstema={data.sakstema}
               meldekort={data.meldekort}
               paabegynteSoknader={data.paabegynteSoknader}
               mininnboks={data.mininnboks}
               innlogging={data.innlogging}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
+            />
+            <KoronaSpesial
+              sakstema={data.sakstema}
+              beskjeder={data.beskjeder.concat(data.inaktiveBeskjeder || [])}
+              isLoaded={!loading}
             />
             <DittnavLenkePanel sakstema={data.sakstema} />
             {data.oppfolgingHasLoaded ? generelleEllerVta : null}
