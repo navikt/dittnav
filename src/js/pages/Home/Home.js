@@ -13,13 +13,15 @@ import Config from '../../globalConfig';
 import InnloggingType from '../../types/InnloggingType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
-import KoronaSpesial from "../../components/korona-spesial/KoronaSpesial";
+import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 
 const Home = ({ data, loading }) => {
   const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
   const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
   const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
   const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+  const { state } = useBeskjedStore();
 
   return (
     <>
@@ -39,7 +41,7 @@ const Home = ({ data, loading }) => {
             />
             <KoronaSpesial
               sakstema={data.sakstema}
-              beskjeder={data.beskjeder.concat(data.inaktiveBeskjeder || [])}
+              beskjeder={data.beskjeder.concat(state.inaktiveBeskjeder || [])}
               isLoaded={!loading}
             />
             <DittnavLenkePanel sakstema={data.sakstema} />
