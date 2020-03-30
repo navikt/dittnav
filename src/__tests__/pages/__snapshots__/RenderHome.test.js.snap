@@ -41,13 +41,13 @@ exports[`expect Login page rendering 1`] = `
                 <h2
                   className="typo-undertittel lenkepanel__heading"
                 >
-                  Saksbehandlingstider i NAV
+                  Lengre saksbehandlingstider
                 </h2>
                 <p
                   className="typo-normal korona-varsel__ingress"
                 >
                   <span>
-                    På grunn av koronavirus forventer vi lengre saksbehandlingstid på søknader fremover. Les om endringene her.
+                    Koronasituasjonen gjør at det tar lengre tid å behandle søknader. Les om endringene.
                   </span>
                 </p>
               </div>

@@ -23,7 +23,7 @@ const postThenCallbackToggleStatus = (url, sessionId, callback) =>
       },
       body: JSON.stringify({ sessionId: sessionId, toggles: [toggleName] }),
     })
-      .then(r => r.ok ? r : new Error(r.status))
+      .then(r => r.ok ? r : new Error(r.status.toString()))
       .then(r => r.json())
       .then(r => {
         const toggleStatus = r[toggleName];
