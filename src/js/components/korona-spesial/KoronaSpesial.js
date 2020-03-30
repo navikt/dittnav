@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import SakstemaType from "../../types/SakstemaType";
 import { KoronaVarsel } from "./KoronaVarsel";
 import Config from "../../globalConfig";
 import BeskjedType from "../../types/BeskjedType";
 import { skalViseForskuddLenke } from "./DagpengerForskuddToggle";
 
+const visForskuddLenkeFra = "01-03-2020";
+
 const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
   const [skalViseForskudd, setSkalViseForskudd] = useState(null);
 
-  const harDagpengerSakUnderBehandling = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
+  const harDagpengerSakNyligOppdatert = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
     .some(tema =>
       tema.temakode === 'DAG' &&
-      tema.antallStatusUnderBehandling > 0
+      moment(tema.sisteOppdatering).isAfter(moment(visForskuddLenkeFra, "DD-MM-YYYY"))
     );
 
   // TODO: finn ut hva jeg kan sjekke på her av tekst/id
@@ -20,16 +23,16 @@ const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
     .some(beskjed => beskjed.tekst && beskjed.tekst.includes("Forskudd på dagpenger"));
 
   useEffect(() => {
-    if (harDagpengerSakUnderBehandling) {
+    if (harDagpengerSakNyligOppdatert) {
       skalViseForskuddLenke(setSkalViseForskudd);
     }
-  }, [harDagpengerSakUnderBehandling]);
+  }, [harDagpengerSakNyligOppdatert]);
 
-  const loaded = isLoaded && (!harDagpengerSakUnderBehandling || skalViseForskudd !== null);
+  const loaded = isLoaded && (!harDagpengerSakNyligOppdatert || skalViseForskudd !== null);
 
   return (
     <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
-      {(harDagpengerSakUnderBehandling && skalViseForskudd) && !harForskuddSoknad ? (
+      {(harDagpengerSakNyligOppdatert && skalViseForskudd) && !harForskuddSoknad ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}
           href={Config.LENKER.dagpengerForskudd.url}
