@@ -27,7 +27,7 @@ const KoronaSpesial = ({ sakstema, beskjeder, isLoaded }) => {
     }
   }, [harDagpengerSakSiste14Dager]);
 
-  const loaded = isLoaded && skalViseForskudd !== null;
+  const loaded = isLoaded && (!harDagpengerSakSiste14Dager || skalViseForskudd !== null);
 
   return (
     <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
