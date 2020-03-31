@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
     case REMOVE_BESKJED:
       Api.postDone({
         eventId: action.payload.eventId,
-        uid: action.payload.eventId,
+        uid: action.payload.uid,
       });
       return {
         ...state,
