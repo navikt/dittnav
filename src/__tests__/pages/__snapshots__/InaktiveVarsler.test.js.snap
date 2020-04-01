@@ -23,7 +23,7 @@ exports[`InaktiveVarsler one innboks 1`] = `
       className="typo-systemtittel"
     >
       <span>
-        Tidligere beskjeder
+        Tidligere Beskjeder og oppgaver
       </span>
     </h2>
   </div>
@@ -101,7 +101,7 @@ exports[`InaktiveVarsler one oppgave 1`] = `
       className="typo-systemtittel"
     >
       <span>
-        Tidligere beskjeder
+        Tidligere Beskjeder og oppgaver
       </span>
     </h2>
   </div>
@@ -179,7 +179,7 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
       className="typo-systemtittel"
     >
       <span>
-        Tidligere beskjeder
+        Tidligere Beskjeder og oppgaver
       </span>
     </h2>
   </div>
