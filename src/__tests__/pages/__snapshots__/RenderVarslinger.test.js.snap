@@ -83,7 +83,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
                     className="typo-normal"
                   >
                     <span>
-                      Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i 
+                      Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av beskjedene og oppgavene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i 
                       <a
                         className="lenke"
                         href="http://localhost:9222/mininnboks"
