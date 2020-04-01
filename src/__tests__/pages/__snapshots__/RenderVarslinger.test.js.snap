@@ -24,7 +24,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
               className="typo-sidetittel"
             >
               <span>
-                Varslinger fra NAV
+                Beskjeder fra NAV
               </span>
             </h1>
           </div>
@@ -83,7 +83,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
                     className="typo-normal"
                   >
                     <span>
-                      Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i 
+                      Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i 
                       <a
                         className="lenke"
                         href="http://localhost:9222/mininnboks"
@@ -111,6 +111,25 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
             <div
               className="inaktive-varsler"
             />
+            <div
+              className="panel mininnboks-panel"
+            >
+              <p
+                className="typo-normal"
+              >
+                <span>
+                  Finner du ikke meldingen du leter etter? Den ligger kanskje i 
+                  <a
+                    className="lenke"
+                    href="http://localhost:9222/mininnboks"
+                    id="innboksmelding-id"
+                  >
+                    innboksen
+                  </a>
+                   din.
+                </span>
+              </p>
+            </div>
           </section>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf } from 'prop-types';
+import { arrayOf, bool } from 'prop-types';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
@@ -8,10 +8,10 @@ import OppgaverType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingType from '../types/InnloggingType';
 
-const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging }) => (
+const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => (
   <>
     {beskjeder && innlogging && beskjeder.map(b => (
-      <Beskjed key={b.eventId} beskjed={b} beskjeder={beskjeder} innlogging={innlogging} />
+      <Beskjed key={b.uid} beskjed={b} beskjeder={beskjeder} innlogging={innlogging} erAktiv={erAktiv} erInaktiv={erInaktiv} />
     ))}
     {oppgaver && innlogging && oppgaver.map(o => (
       <Oppgave key={o.eventId} oppgave={o} innlogging={innlogging} />
@@ -27,6 +27,8 @@ Brukernotifikasjoner.propTypes = {
   oppgaver: arrayOf(OppgaverType),
   innbokser: arrayOf(InnboksType),
   innlogging: InnloggingType,
+  erAktiv: bool,
+  erInaktiv: bool,
 };
 
 Brukernotifikasjoner.defaultProps = {
@@ -34,6 +36,8 @@ Brukernotifikasjoner.defaultProps = {
   oppgaver: null,
   innbokser: null,
   innlogging: null,
+  erAktiv: false,
+  erInaktiv: false,
 };
 
 export default Brukernotifikasjoner;

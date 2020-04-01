@@ -1,29 +1,40 @@
-import React, { useContext } from 'react';
-import { arrayOf } from 'prop-types';
+import React from 'react';
+import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
-import Api from '../../Api';
-import BeskjedContext from '../../context/BeskjedContext';
+import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
 
-const removeHendelse = (beskjeder, updateBeskjeder, eventId, uid) => {
-  updateBeskjeder(beskjeder.filter(b => eventId !== b.eventId));
+const remove = (beskjed, dispatch) => dispatch({
+  type: REMOVE_BESKJED,
+  payload: beskjed,
+});
 
-  Api.postDone({
-    eventId,
-    uid,
-  });
+const addInaktiv = (beskjed, dispatch) => dispatch({
+  type: ADD_INAKTIV_BESKJED,
+  payload: beskjed,
+});
+
+const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
+  remove(beskjed, dispatch);
+
+  if (erAktiv) {
+    addInaktiv(beskjed, dispatch);
+  }
 };
 
-const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
-  const updateBeskjeder = useContext(BeskjedContext);
+const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
+  const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
+
+  const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 
   return (
     <PanelMedIkon
@@ -31,13 +42,10 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
       overskrift={overskrift}
-      onClick={() => removeHendelse(beskjeder,
-        updateBeskjeder,
-        beskjed.eventId,
-        beskjed.uid)}
+      onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
-      knapp={!sikkerhetsnivaa.skalMaskeres}
+      knapp={visKnapp}
     >
       <IkonBeskjed />
     </PanelMedIkon>
@@ -46,14 +54,16 @@ const Beskjed = ({ beskjed, beskjeder, innlogging }) => {
 
 Beskjed.propTypes = {
   beskjed: BeskjedType,
-  beskjeder: arrayOf(BeskjedType),
   innlogging: InnloggingType,
+  erAktiv: bool,
+  erInaktiv: bool,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
-  beskjeder: null,
   innlogging: null,
+  erAktiv: false,
+  erInaktiv: false,
 };
 
 export default Beskjed;

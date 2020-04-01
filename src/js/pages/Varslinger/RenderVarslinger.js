@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
-import BeskjedContext from '../../context/BeskjedContext';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
+import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
+
 const VarslingerRender = ({ api }) => {
-  const [beskjeder, setBeskjeder] = useState(null);
   const [oppgaver, setOppgaver] = useState(null);
   const [innbokser, setInnbokser] = useState(null);
-  const [inaktiveBeskjeder, setInaktiveBeskjeder] = useState(null);
   const [inaktiveOppgaver, setInaktiveOppgaver] = useState(null);
   const [inaktiveInnbokser, setInnaktiveInnbokser] = useState(null);
   const [innlogging, setInnlogging] = useState(null);
   const [error, setError] = useState([]);
+
+  const { dispatch } = useBeskjedStore();
 
   const handleError = () => {
     setError(['error.baksystemer']);
@@ -22,7 +24,7 @@ const VarslingerRender = ({ api }) => {
     () => {
       api.fetchBeskjeder()
         .then((r) => {
-          setBeskjeder(r);
+          dispatch({ type: ADD_BESKJEDER, payload: r });
         }).catch(handleError);
 
       api.fetchOppgaver()
@@ -37,7 +39,7 @@ const VarslingerRender = ({ api }) => {
 
       api.fetchInaktiveBeskjeder()
         .then((r) => {
-          setInaktiveBeskjeder(r);
+          dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
         }).catch(handleError);
 
       api.fetchInaktiveOppgaver()
@@ -58,19 +60,15 @@ const VarslingerRender = ({ api }) => {
   );
 
   return (
-    <BeskjedContext.Provider value={setBeskjeder}>
-      <PageFrame uniqueErrors={error}>
-        <Varslinger
-          beskjeder={beskjeder}
-          oppgaver={oppgaver}
-          innbokser={innbokser}
-          inaktiveBeskjeder={inaktiveBeskjeder}
-          inaktiveOppgaver={inaktiveOppgaver}
-          inaktiveInnbokser={inaktiveInnbokser}
-          innlogging={innlogging}
-        />
-      </PageFrame>
-    </BeskjedContext.Provider>
+    <PageFrame uniqueErrors={error}>
+      <Varslinger
+        oppgaver={oppgaver}
+        innbokser={innbokser}
+        inaktiveOppgaver={inaktiveOppgaver}
+        inaktiveInnbokser={inaktiveInnbokser}
+        innlogging={innlogging}
+      />
+    </PageFrame>
   );
 };
 
