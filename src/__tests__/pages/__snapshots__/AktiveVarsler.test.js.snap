@@ -233,7 +233,7 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
       className="typo-systemtittel"
     >
       <span>
-        Du har 3 beskjeder fra NAV
+        Du har 3 beskjeder eller oppgaver fra NAV
       </span>
     </h2>
   </div>
