@@ -24,7 +24,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
               className="typo-sidetittel"
             >
               <span>
-                Beskjeder fra NAV
+                Beskjeder og oppgaver fra NAV
               </span>
             </h1>
           </div>

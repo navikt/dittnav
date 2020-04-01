@@ -44,9 +44,9 @@
 
   "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
   "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av beskjedene og oppgavene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
-  "varslinger.tittel": "Beskjeder fra NAV",
-  "varslinger.aktive.tittel": "Du har {antall} beskjeder fra NAV",
-  "varslinger.inaktive.tittel": "Tidligere beskjeder",
+  "varslinger.tittel": "Beskjeder og oppgaver fra NAV",
+  "varslinger.aktive.tittel": "Du har {antall} beskjeder eller oppgaver fra NAV",
+  "varslinger.inaktive.tittel": "Tidligere beskjeder og oppgaver",
   "varslinger.mininnboks.melding": "Finner du ikke meldingen du leter etter? Den ligger kanskje i {innboksen} din.",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
