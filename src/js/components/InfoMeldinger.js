@@ -22,12 +22,6 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, innlogging, 
 
   return (
     <section className="infomeldinger-list">
-      <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
-      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
-      {isMeldeKortUser ? <Meldekort meldekort={meldekort} /> : null}
-      <EtterregistreringMeldekort ettereg={meldekort} />
-      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
-      <MinInnboks mininnboks={mininnboks} />
       {Config.HENDELSER_FEATURE_TOGGLE
         ? (
           <Brukernotifikasjoner
@@ -37,6 +31,12 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, innlogging, 
             innlogging={innlogging}
           />
         ) : null}
+      <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
+      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
+      {isMeldeKortUser ? <Meldekort meldekort={meldekort} /> : null}
+      <EtterregistreringMeldekort ettereg={meldekort} />
+      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
+      <MinInnboks mininnboks={mininnboks} />
     </section>
   );
 };
