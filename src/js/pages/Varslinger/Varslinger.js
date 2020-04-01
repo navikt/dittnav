@@ -1,15 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf } from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+import Panel from 'nav-frontend-paneler';
+import Lenke from 'nav-frontend-lenker';
+import { Normaltekst } from 'nav-frontend-typografi';
+import Config from '../../globalConfig';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
 import InnloggingType from '../../types/InnloggingType';
-import BeskjedType from '../../types/BeskjedType';
 import OppgaverType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
-const Varslinger = ({ beskjeder, oppgaver, innbokser, inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser, innlogging }) => (
+const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, innlogging }) => (
   <div className="row">
     <div className="maincontent side-innhold">
       <div className="col-md-12" id="dittnav-main-container">
@@ -17,17 +21,25 @@ const Varslinger = ({ beskjeder, oppgaver, innbokser, inaktiveBeskjeder, inaktiv
         <section className="infomeldinger-list">
           <AdvarselBox />
           <AktiveVarsler
-            beskjeder={beskjeder}
             oppgaver={oppgaver}
             innbokser={innbokser}
             innlogging={innlogging}
           />
           <InaktiveVarsler
-            beskjeder={inaktiveBeskjeder}
             oppgaver={inaktiveOppgaver}
             innbokser={inaktiveInnbokser}
             innlogging={innlogging}
           />
+          <Panel className="mininnboks-panel">
+            <Normaltekst>
+              <FormattedMessage
+                id="varslinger.mininnboks.melding"
+                values={{
+                  innboksen: <Lenke id="innboksmelding-id" href={Config.LENKER.innboks.url}>innboksen</Lenke>,
+                }}
+              />
+            </Normaltekst>
+          </Panel>
         </section>
       </div>
     </div>
@@ -35,22 +47,17 @@ const Varslinger = ({ beskjeder, oppgaver, innbokser, inaktiveBeskjeder, inaktiv
 );
 
 Varslinger.propTypes = {
-  beskjeder: PropTypes.arrayOf(BeskjedType),
-  oppgaver: PropTypes.arrayOf(OppgaverType),
-  innbokser: PropTypes.arrayOf(InnboksType),
-  inaktiveBeskjeder: PropTypes.arrayOf(BeskjedType),
-  inaktiveOppgaver: PropTypes.arrayOf(OppgaverType),
-  inaktiveInnbokser: PropTypes.arrayOf(InnboksType),
-
+  oppgaver: arrayOf(OppgaverType),
+  innbokser: arrayOf(InnboksType),
+  inaktiveOppgaver: arrayOf(OppgaverType),
+  inaktiveInnbokser: arrayOf(InnboksType),
   innlogging: InnloggingType,
 };
 
 Varslinger.defaultProps = {
-  beskjeder: null,
   oppgaver: null,
   innbokser: null,
   innlogging: null,
-  inaktiveBeskjeder: null,
   inaktiveOppgaver: null,
   inaktiveInnbokser: null,
 };

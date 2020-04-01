@@ -18,15 +18,23 @@
   }
 }
 
-#alert-lenke-id {
-  border-bottom: none;
-  color: #0067C5;
+.mininnboks-panel {
+  padding: 1.5rem;
 }
 
 .alertbox {
   padding-bottom: 2.25rem;
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.lenke-overstyring() {
+  border-bottom: none;
+  color: #0067C5;
+}
+
+#alert-lenke-id, #innboksmelding-id {
+  .lenke-overstyring();
 }
 
 @media screen and (max-width: 768px) {

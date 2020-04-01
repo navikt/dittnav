@@ -1,12 +1,14 @@
 import * as React from 'react';
 import wrapIntl from 'js/IntlTestHelper';
 import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
+import BeskjedStoreProvider from 'js/context/BeskjedStoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
 const beskjeder = [
   {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
     eventId: '1784093204636',
+    uid: '934de6ce-f94f-47de-84d2-639ac2674627',
     tekst: 'Du har en sykemelding som må godkjennes',
     link: 'https://enNyLenke',
     sistOppdatert: '2020-03-13T08:53:25.002983Z',
@@ -15,6 +17,7 @@ const beskjeder = [
   {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
     eventId: '1584093204636',
+    uid: '9346e6ce-f94f-47de-84g2-639ac2674627',
     tekst: 'Du har en sykemelding som må godkjennes',
     link: 'https://enNyLenke',
     sistOppdatert: '2020-03-13T08:53:25.002983Z',
@@ -66,42 +69,53 @@ const innlogging = {
 
 test('Brukernotifikasjoner empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner beskjeder={null} oppgaver={null} innbokser={null} innlogging={null} />,
+    <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={null} />,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with beskjeder', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={null} innbokser={null} innlogging={innlogging} />,
+    <BeskjedStoreProvider beskjeder={beskjeder}>
+      <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={innlogging} />
+    </BeskjedStoreProvider>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
+
 test('Brukernotifikasjoner with oppgaver', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner beskjeder={null} oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />,
+    <BeskjedStoreProvider>
+      <Brukernotifikasjoner oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
+    </BeskjedStoreProvider>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with innbokser', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner beskjeder={null} oppgaver={null} innbokser={innbokser} innlogging={innlogging} />,
+    <BeskjedStoreProvider>
+      <Brukernotifikasjoner oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
+    </BeskjedStoreProvider>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />,
+    <BeskjedStoreProvider beskjeder={beskjeder}>
+      <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+    </BeskjedStoreProvider>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser, but no innlogging', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={null} />,
+    <BeskjedStoreProvider beskjeder={beskjeder}>
+      <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={null} />
+    </BeskjedStoreProvider>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });

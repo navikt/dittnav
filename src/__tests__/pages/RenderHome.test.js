@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RenderHome from 'js/pages/Home/RenderHome';
-
 import ShallowRenderer from 'react-test-renderer/shallow';
 import wrapIntl from 'js/IntlTestHelper';
+import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
 /* eslint-disable no-unused-vars */
@@ -21,6 +21,7 @@ const mockApi = () => (
 );
 /* eslint-enable no-unused-vars */
 
+
 const flushPromises = () => (
   new Promise(resolve => setImmediate(resolve))
 );
@@ -28,13 +29,21 @@ const flushPromises = () => (
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<RenderHome api={mockApi()} />), div);
+  ReactDOM.render(wrapIntl(
+    <BeskjedStoreProvider>
+      <RenderHome api={mockApi()} />
+    </BeskjedStoreProvider>,
+  ), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('expect Login page rendering', () => {
   const api = mockApi();
-  const component = ReactTestRenderer.create(wrapIntl(<RenderHome api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(
+    <BeskjedStoreProvider>
+      <RenderHome api={api} />
+    </BeskjedStoreProvider>,
+  ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 

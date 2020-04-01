@@ -7,17 +7,17 @@ import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
-import BeskjedContext from '../../context/BeskjedContext';
 import log from '../../utils/Logger';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 
 const HendelserTestSide = () => {
-  const [beskjeder, setBeskjeder] = useState(null);
   const [oppgaver, setOppgaver] = useState(null);
   const [innbokser, setInnbokser] = useState(null);
   const [innlogging, setInnlogging] = useState(null);
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
   const [valg, setValg] = useState('beskjed');
+  const { state } = useBeskjedStore();
 
   const removeHendelser = () => Api
     .postDoneAll();
@@ -41,7 +41,6 @@ const HendelserTestSide = () => {
           valg={valg}
           setTekst={setTekst}
           setLenke={setLenke}
-          setBeskjeder={setBeskjeder}
           setOppgaver={setOppgaver}
           setInnbokser={setInnbokser}
         />
@@ -50,18 +49,16 @@ const HendelserTestSide = () => {
         </Fareknapp>
       </Panel>
 
-      <BeskjedContext.Provider value={setBeskjeder}>
-        <div className="infomeldinger-list">
-          <div className="infomeldinger-list__container">
-            <Brukernotifikasjoner
-              beskjeder={beskjeder}
-              oppgaver={oppgaver}
-              innbokser={innbokser}
-              innlogging={innlogging}
-            />
-          </div>
+      <div className="infomeldinger-list">
+        <div className="infomeldinger-list__container">
+          <Brukernotifikasjoner
+            beskjeder={state.beskjeder}
+            oppgaver={oppgaver}
+            innbokser={innbokser}
+            innlogging={innlogging}
+          />
         </div>
-      </BeskjedContext.Provider>
+      </div>
     </div>
   );
 };

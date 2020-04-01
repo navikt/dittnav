@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 import Home from './Home';
 import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
-import BeskjedContext from '../../context/BeskjedContext';
+import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
 const RenderHome = ({ api }) => {
@@ -15,16 +16,16 @@ const RenderHome = ({ api }) => {
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     innlogging: null,
-    beskjeder: [],
-    oppgaver: [],
-    innbokser: [],
-    inaktiveBeskjeder: [],
-    inaktiveOppgaver: [],
-    inaktiveInnbokser: [],
+    oppgaver: null,
+    innbokser: null,
+    inaktiveOppgaver: null,
+    inaktiveInnbokser: null,
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
   });
+
+  const { dispatch } = useBeskjedStore();
 
   const handleOppfolgingError = () => {
     setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1, oppfolgingHasLoaded: true }));
@@ -34,27 +35,17 @@ const RenderHome = ({ api }) => {
     setData(d => ({ ...d, fetching: d.fetching + 1 }));
   };
 
-  const updateBeskjeder = (b) => (
-    setData(d => ({ ...d, beskjeder: b }))
-  );
-
   useEffect(
     () => {
       const handleError = () => {
         incrementFetching();
-
         setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'] }));
       };
 
       if (Config.HENDELSER_FEATURE_TOGGLE) {
         api.fetchBeskjeder()
           .then((r) => {
-            setData(d => ({ ...d, beskjeder: r }));
-          }).catch(handleError);
-
-        api.fetchInaktiveBeskjeder()
-          .then((r) => {
-            setData(d => ({ ...d, inaktiveBeskjeder: r }));
+            dispatch({ type: ADD_BESKJEDER, payload: r });
           }).catch(handleError);
 
         api.fetchOppgaver()
@@ -62,17 +53,22 @@ const RenderHome = ({ api }) => {
             setData(d => ({ ...d, oppgaver: r }));
           }).catch(handleError);
 
-        api.fetchInaktiveOppgaver()
-          .then((r) => {
-            setData(d => ({ ...d, inaktiveOppgaver: r }));
-          }).catch(handleError);
-
         api.fetchInnbokser()
           .then((r) => {
             setData(d => ({ ...d, innbokser: r }));
           }).catch(handleError);
 
+        api.fetchInaktiveBeskjeder()
+          .then((r) => {
+            dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
+          }).catch(handleError);
+
         api.fetchInaktiveOppgaver()
+          .then((r) => {
+            setData(d => ({ ...d, inaktiveOppgaver: r }));
+          }).catch(handleError);
+
+        api.fetchInaktiveInnbokser()
           .then((r) => {
             setData(d => ({ ...d, inaktiveInnbokser: r }));
           }).catch(handleError);
@@ -130,11 +126,9 @@ const RenderHome = ({ api }) => {
   const loading = data.fetching < 6;
 
   return (
-    <BeskjedContext.Provider value={updateBeskjeder}>
-      <PageFrame uniqueErrors={uniqueErrors}>
-        <Home data={data} loading={loading} />
-      </PageFrame>
-    </BeskjedContext.Provider>
+    <PageFrame uniqueErrors={uniqueErrors}>
+      <Home data={data} loading={loading} />
+    </PageFrame>
   );
 };
 

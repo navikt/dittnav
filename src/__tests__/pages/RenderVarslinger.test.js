@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
-
+import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
 const mockApi = () => (
@@ -24,7 +24,11 @@ const flushPromises = () => (
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(wrapIntl(<RenderVarslinger api={mockApi()} />), div);
+  ReactDOM.render(wrapIntl(
+    <BeskjedStoreProvider>
+      <RenderVarslinger api={mockApi()} />
+    </BeskjedStoreProvider>,
+  ), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -79,7 +83,6 @@ it('expect Brukernotifikasjoner fetching', async () => {
     );
   });
 
-
   api.fetchInnbokser = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       [
@@ -101,7 +104,11 @@ it('expect Brukernotifikasjoner fetching', async () => {
     });
   });
 
-  const component = ReactTestRenderer.create(wrapIntl(<RenderVarslinger api={api} />));
+  const component = ReactTestRenderer.create(wrapIntl(
+    <BeskjedStoreProvider>
+      <RenderVarslinger api={api} />
+    </BeskjedStoreProvider>,
+  ));
   await flushPromises();
 
   expect(component.toJSON()).toMatchSnapshot();

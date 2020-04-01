@@ -6,21 +6,22 @@ import Vta from '../../components/VTA';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import DittnavFliser from '../../components/DittnavFliser';
+import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import Config from '../../globalConfig';
 import InnloggingType from '../../types/InnloggingType';
-import BeskjedType from '../../types/BeskjedType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
-import KoronaSpesial from "../../components/korona-spesial/KoronaSpesial";
 
 const Home = ({ data, loading }) => {
   const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
   const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
   const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
   const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+  const { state } = useBeskjedStore();
 
   return (
     <>
@@ -35,7 +36,6 @@ const Home = ({ data, loading }) => {
               paabegynteSoknader={data.paabegynteSoknader}
               mininnboks={data.mininnboks}
               innlogging={data.innlogging}
-              beskjeder={data.beskjeder}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
               inaktiveBeskjeder={data.inaktiveBeskjeder}
@@ -44,7 +44,8 @@ const Home = ({ data, loading }) => {
             />
             <KoronaSpesial
               sakstema={data.sakstema}
-              beskjeder={data.beskjeder.concat(data.inaktiveBeskjeder || [])}
+              beskjeder={state.beskjeder}
+              inaktiveBeskjeder={state.inaktiveBeskjeder}
               isLoaded={!loading}
             />
             <DittnavLenkePanel sakstema={data.sakstema} />
@@ -72,7 +73,6 @@ Home.propTypes = {
     mininnboks: any.isRequired, // eslint-disable-line react/forbid-prop-types
     sakstema: any.isRequired, // eslint-disable-line react/forbid-prop-types
     oppfolgingHasLoaded: any.isRequired, // eslint-disable-line react/forbid-prop-types
-    beskjeder: arrayOf(BeskjedType),
     oppgaver: arrayOf(OppgaveType),
     innbokser: arrayOf(InnboksType),
     innlogging: InnloggingType,
@@ -88,7 +88,6 @@ Home.defaultProps = {
     identifikator: null,
     paabegynteSoknader: null,
     innlogging: null,
-    beskjeder: null,
     oppgaver: null,
     innbokser: null,
   }),
