@@ -38,6 +38,9 @@ const Home = ({ data, loading }) => {
               beskjeder={data.beskjeder}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
+              inaktiveBeskjeder={data.inaktiveBeskjeder}
+              inaktiveOppgaver={data.inaktiveOppgaver}
+              inaktiveInnbokser={data.inaktiveInnbokser}
             />
             <KoronaSpesial
               sakstema={data.sakstema}

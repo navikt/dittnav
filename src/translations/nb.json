@@ -4,6 +4,7 @@
   "korona.behandlingstid.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknader. Les om endringene.",
 
   "dittnav.infomeldinger.varsler": "Varsler",
+  "dittnav.infomeldinger.inngang.varslinger": "Se alle meldinger",
 
   "generell.informasjonsmelding": "På grunn av teknisk vedlikehold kan Ditt NAV i korte perioder være ustabilt. Dersom du opplever at tjenestene er trege eller ikke tilgjengelige som vanlig, vennligst prøv igjen senere. Vi beklager ulempene dette medfører.",
   "generell.koronamelding.overskrift": "Koronavirus - hva gjelder i min situasjon?",
@@ -44,9 +45,9 @@
 
   "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
   "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av meldingene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende.Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
-  "varslinger.tittel": "Varslinger fra NAV",
-  "varslinger.aktive.tittel": "Du har {antall} varsler fra NAV",
-  "varslinger.inaktive.tittel": "Tidligere varslinger",
+  "varslinger.tittel": "Meldinger fra NAV",
+  "varslinger.aktive.tittel": "Du har {antall} meldinger fra NAV",
+  "varslinger.inaktive.tittel": "Tidligere meldinger",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",

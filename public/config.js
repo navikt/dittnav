@@ -5,7 +5,7 @@ window.env.DITTNAV_API_URL="http://localhost:1234/dittnav-api"
 // Kjøring lokalt med backend kjørende lokalt
 //window.env.DITTNAV_API_URL="http://localhost:8091/person/dittnav-api"
 window.env.TJENESTER_URL="http://localhost:9222"
-window.env.NAVNO_URL="http://localhost:9222"
+window.env.NAVNO_URL="http://localhost:9002"
 window.env.LOGIN_URL="http://localhost:5000"
 window.env.LOGIN_LEVEL_4_URL="http://localhost:5000"
 window.env.VTA_URL="http://127.0.0.1:3002"

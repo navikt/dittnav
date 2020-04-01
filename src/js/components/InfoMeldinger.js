@@ -8,6 +8,7 @@ import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
 import Meldekort from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks from './meldinger/MinInnboks';
+import InngangVarslinger from './InngangVarslinger';
 import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
@@ -16,8 +17,21 @@ import BeskjedType from '../types/BeskjedType';
 import OppgaverType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 
-const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, innlogging, beskjeder, oppgaver, innbokser }) => {
+const InfoMeldinger = ({
+  meldekort,
+  paabegynteSoknader,
+  mininnboks,
+  innlogging,
+  beskjeder,
+  oppgaver,
+  innbokser,
+  inaktiveBeskjeder,
+  inaktiveOppgaver,
+  inaktiveInnbokser,
+}) => {
   const isMeldeKortUser = meldekort ? meldekort.meldekortbruker : false;
+  const skalViseInngangTilVarslinger = beskjeder || oppgaver || innbokser || inaktiveBeskjeder || inaktiveOppgaver
+    || inaktiveInnbokser;
 
   return (
     <section className="infomeldinger-list">
@@ -30,6 +44,7 @@ const InfoMeldinger = ({ meldekort, paabegynteSoknader, mininnboks, innlogging, 
       {Config.HENDELSER_FEATURE_TOGGLE
         ? <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
         : null}
+      {skalViseInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
   );
 };
@@ -42,6 +57,9 @@ InfoMeldinger.propTypes = {
   beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaverType),
   innbokser: arrayOf(InnboksType),
+  inaktiveBeskjeder: arrayOf(BeskjedType),
+  inaktiveOppgaver: arrayOf(OppgaverType),
+  inaktiveInnbokser: arrayOf(InnboksType),
 };
 
 InfoMeldinger.defaultProps = {
@@ -52,6 +70,9 @@ InfoMeldinger.defaultProps = {
   beskjeder: null,
   oppgaver: null,
   innbokser: null,
+  inaktiveBeskjeder: null,
+  inaktiveOppgaver: null,
+  inaktiveInnbokser: null,
 };
 
 export default InfoMeldinger;

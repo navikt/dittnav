@@ -16,9 +16,11 @@ const RenderHome = ({ api }) => {
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     innlogging: null,
     beskjeder: [],
-    inaktiveBeskjeder: [],
     oppgaver: [],
     innbokser: [],
+    inaktiveBeskjeder: [],
+    inaktiveOppgaver: [],
+    inaktiveInnbokser: [],
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -49,24 +51,32 @@ const RenderHome = ({ api }) => {
           .then((r) => {
             setData(d => ({ ...d, beskjeder: r }));
           }).catch(handleError);
+
         api.fetchInaktiveBeskjeder()
           .then((r) => {
             setData(d => ({ ...d, inaktiveBeskjeder: r }));
           }).catch(handleError);
-      }
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
+
         api.fetchOppgaver()
           .then((r) => {
             setData(d => ({ ...d, oppgaver: r }));
           }).catch(handleError);
-      }
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
+
+        api.fetchInaktiveOppgaver()
+          .then((r) => {
+            setData(d => ({ ...d, inaktiveOppgaver: r }));
+          }).catch(handleError);
+
         api.fetchInnbokser()
           .then((r) => {
             setData(d => ({ ...d, innbokser: r }));
           }).catch(handleError);
-      }
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
+
+        api.fetchInaktiveOppgaver()
+          .then((r) => {
+            setData(d => ({ ...d, inaktiveInnbokser: r }));
+          }).catch(handleError);
+
         api.fetchInnlogging()
           .then((r) => {
             setData(d => ({ ...d, innlogging: r }));
