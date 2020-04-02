@@ -10,6 +10,7 @@ import Meldekort from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks from './meldinger/MinInnboks';
 import InngangVarslinger from './InngangVarslinger';
+import isEmpty from '../utils/List';
 import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
@@ -20,8 +21,13 @@ import InnboksType from '../types/InnboksType';
 const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  const skalViseInngangTilVarslinger = state.beskjeder || props.oppgaver || props.innbokser || state.inaktiveBeskjeder
-    || props.inaktiveOppgaver || props.inaktiveInnbokser;
+
+  const skalViseInngangTilVarslinger = (state.beskjeder && !isEmpty(state.beskjeder))
+    || (props.oppgaver && !isEmpty(props.oppgaver))
+    || (props.innbokser && !isEmpty(props.innbokser))
+    || (state.inaktiveBeskjeder && !isEmpty(state.inaktiveBeskjeder))
+    || (props.inaktiveOppgaver && !isEmpty(props.inaktiveOppgaver))
+    || (props.inaktiveInnbokser && !isEmpty(props.inaktiveInnbokser));
 
   return (
     <section className="infomeldinger-list">
