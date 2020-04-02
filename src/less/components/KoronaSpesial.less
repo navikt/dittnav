@@ -20,11 +20,13 @@
   margin-bottom: 1rem;
   max-height: 0;
   overflow: hidden;
+  visibility: hidden;
   padding: 3px;
   transition: max-height 0.5s ease-out;
 
   &--loaded {
     max-height: 20rem;
+    visibility: visible;
   }
 
   & > * {
