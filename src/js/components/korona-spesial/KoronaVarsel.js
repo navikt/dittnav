@@ -16,7 +16,11 @@ export const KoronaVarsel = ({ tittel, href, visIkon = false, children, classNam
       <Undertittel className={`lenkepanel__heading`}>
         {tittel}
       </Undertittel>
-      {children}
+      {children && (
+        <div className={`${cssPrefix}__ingress`}>
+          {children}
+        </div>
+      )}
     </div>
   </LenkepanelBase>
 );
