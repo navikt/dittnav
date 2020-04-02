@@ -28,11 +28,12 @@ const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
 };
 
 const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
-  // Midlertidig fix for beskjeder om forskudd på dagpenger.
-  return null;
-  
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
+
+  if (beskjed.tekst.includes('forskudd') || sikkerhetsnivaa.skalMaskeres) {
+    return null;
+  }
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
