@@ -17,17 +17,18 @@ const KoronaSpesial = ({ sakstema, beskjeder, inaktiveBeskjeder, isLoaded }) => 
       && moment(tema.sisteOppdatering).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY')));
 
   const forskuddTekst = beskjed => beskjed.tekst.toLowerCase().includes('forskudd på dagpenger');
-
   const harForskuddSoknad = (beskjeder && beskjeder.some(forskuddTekst))
     || (inaktiveBeskjeder && inaktiveBeskjeder.some(forskuddTekst));
 
+  const skalKalleForskuddAppen = harDagpengerSakNyligOppdatert && !harForskuddSoknad;
+
   useEffect(() => {
-    if (harDagpengerSakNyligOppdatert) {
+    if (skalKalleForskuddAppen) {
       skalViseForskuddLenke(setSkalViseForskudd);
     }
-  }, [harDagpengerSakNyligOppdatert]);
+  }, [skalKalleForskuddAppen]);
 
-  const loaded = isLoaded && (!harDagpengerSakNyligOppdatert || skalViseForskudd !== null);
+  const loaded = isLoaded && (!skalKalleForskuddAppen || skalViseForskudd !== null);
 
   return (
     <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
