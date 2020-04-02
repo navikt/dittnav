@@ -16,8 +16,7 @@ const KoronaSpesial = ({ sakstema, beskjeder, inaktiveBeskjeder, isLoaded }) => 
     .some(tema => tema.temakode === 'DAG'
       && moment(tema.sisteOppdatering).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY')));
 
-  // TODO: finn ut hva jeg kan sjekke på her av tekst/id
-  const forskuddTekst = beskjed => beskjed.tekst.includes('Forskudd på dagpenger');
+  const forskuddTekst = beskjed => beskjed.tekst.toLowerCase().includes('forskudd på dagpenger');
 
   const harForskuddSoknad = (beskjeder && beskjeder.some(forskuddTekst))
     || (inaktiveBeskjeder && inaktiveBeskjeder.some(forskuddTekst));
