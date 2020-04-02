@@ -1,0 +1,48 @@
+name: Deploy og bygg docker-image
+
+on:
+  repository_dispatch:
+    types: deploy-new-image
+
+env:
+  GIT_REF: ${{ github.event.client_payload.branch }}
+  CLUSTER: ${{ github.event.client_payload.cluster }}
+  NAMESPACE: ${{ github.event.client_payload.namespace }}
+
+jobs:
+  docker-build-and-nais-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: 'Sjekk ut koden for dette repo-et'
+        uses: 'actions/checkout@v2'
+        with:
+          FETCH-DEPTH: '0'
+
+      - name: 'Sjekker ut en branchen det ønskes å lage et docker-image for'
+        run: |
+          git fetch --prune origin +refs/heads/*:refs/remotes/origin/*
+          git checkout $GIT_REF
+          echo "::set-env name=CURRENT_REF::$(git log -1 --pretty='%H')"
+
+      - name: Kompiler
+        uses: navikt/pb-common-gh-actions/build@v1
+        with:
+          SKIP_TESTS: "true"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bygg, tag og push Docker image
+        uses: navikt/pb-common-gh-actions/docker-publish@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Deploy-er til ${{ env.NAMESPACE }} i ${{ env.CLUSTER }}'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: ${{ env.CLUSTER }}
+          RESOURCE: ./nais/nais.yaml
+          VARS: ./nais/${{ env.CLUSTER }}/${{ env.NAMESPACE }}.json
+          VAR: version=${{ env.IMAGE }}
+          PRINT_PAYLOAD: true
+          REF: ${{ env.CURRENT_REF }}

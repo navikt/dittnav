@@ -1,0 +1,19 @@
+name: Bygg branch
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build-branch:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Sjekk ut koden
+        uses: actions/checkout@v2
+
+      - name: Kompiler
+        uses: navikt/pb-common-gh-actions/build@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,44 @@
+name: Trigg visning av deploy-knapper i slack
+
+on:
+  repository_dispatch:
+    types: show-slack-buttons
+
+env:
+  COMMIT_BRANCH: ${{ github.event.client_payload.branch }}
+  COMMIT_SHA: ${{ github.event.client_payload.commit }}
+  ALLOW_PROD: ${{ github.event.client_payload.allow_prod }}
+
+jobs:
+  show-slack-buttons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: 'Sjekker ut en branchen det ønskes å lage et docker-image for'
+        run: |
+          git fetch --no-tags --prune origin +refs/heads/*:refs/remotes/origin/*
+          git checkout $COMMIT_BRANCH
+          echo "::set-env name=CURRENT_REF::$(git log -1 --pretty='%H')"
+
+      - name: Kompiler
+        uses: navikt/pb-common-gh-actions/build@v1
+        with:
+          SKIP_TESTS: "true"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bygg, tag og push Docker image
+        uses: navikt/pb-common-gh-actions/docker-publish@v1
+        with:
+          TAG_LASTEST: "false"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Vis deploy-knapper i slack
+        uses: navikt/deploy-trigger-slack-integration@v1
+        with:
+          slack_channel: "#dittnav-deploy-actions"
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          commit_sha: ${{ env.COMMIT_SHA }}
+          commit_branch: ${{ env.COMMIT_BRANCH }}
+          allow_prod: ${{ env.ALLOW_PROD }}
