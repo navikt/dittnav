@@ -1,0 +1,47 @@
+name: Bygg og publiser docker-image for master
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - .github/workflows/**
+
+jobs:
+  build-and-publish-on-master:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Sjekk ut koden
+        uses: actions/checkout@v2
+
+      - name: Kompiler
+        uses: navikt/pb-common-gh-actions/build@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bygg, tag og push Docker image
+        uses: navikt/pb-common-gh-actions/docker-publish@v1
+        with:
+          TAG_LATEST: "true"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag release i git-repo-et
+        run: |
+          TAG="$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(git log -1 --pretty='%h')"
+          git config user.name "Team Personbruker CI"
+          git config user.email "personbruker@nav.no"
+          git tag $TAG
+          git push origin $TAG
+
+      - name: Sjekk om slack-integrering er mulig
+        run: echo "::set-env name=SLACK_URL_SPECIFIED::$([[ ! -z $WEBHOOK_URL ]] && echo 'true' || echo 'false')"
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+
+      - name: Vis deploy-knapper i slack
+        if: env.SLACK_URL_SPECIFIED == 'true'
+        uses: navikt/deploy-trigger-slack-integration@v1
+        with:
+          slack_channel: "#dittnav-deploy-actions"
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
