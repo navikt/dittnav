@@ -6,6 +6,8 @@ import { skalViseForskuddLenke } from './DagpengerForskuddToggle';
 import Config from '../../globalConfig';
 import SakstemaType from '../../types/SakstemaType';
 import BeskjedType from '../../types/BeskjedType';
+import { Normaltekst } from "nav-frontend-typografi";
+import { FormattedMessage } from "react-intl";
 
 const visForskuddLenkeFra = '01-03-2020';
 
@@ -17,10 +19,10 @@ const KoronaSpesial = ({ sakstema, beskjeder, inaktiveBeskjeder, isLoaded }) => 
       && moment(tema.sisteOppdatering).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY')));
 
   const forskuddTekst = beskjed => beskjed.tekst.toLowerCase().includes('forskudd på dagpenger');
-  const harForskuddSoknad = (beskjeder && beskjeder.some(forskuddTekst))
+  const harForskuddSoknadKvittering = (beskjeder && beskjeder.some(forskuddTekst))
     || (inaktiveBeskjeder && inaktiveBeskjeder.some(forskuddTekst));
 
-  const skalKalleForskuddAppen = harDagpengerSakNyligOppdatert && !harForskuddSoknad;
+  const skalKalleForskuddAppen = harDagpengerSakNyligOppdatert;
 
   useEffect(() => {
     if (skalKalleForskuddAppen) {
@@ -32,26 +34,42 @@ const KoronaSpesial = ({ sakstema, beskjeder, inaktiveBeskjeder, isLoaded }) => 
 
   return (
     <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
-      {(harDagpengerSakNyligOppdatert && skalViseForskudd) && !harForskuddSoknad ? (
+      {(harDagpengerSakNyligOppdatert && skalViseForskudd) ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}
           href={Config.LENKER.dagpengerForskudd.url}
-          ingressId="korona.dagpenger-forskudd.ingress"
           className="blaa-bakgrunn"
-        />
+        >
+          <>
+            <Normaltekst>
+              <FormattedMessage id={"korona.dagpenger-forskudd.ingress"} />
+            </Normaltekst>
+            {harForskuddSoknadKvittering && (
+              <Normaltekst>
+                <FormattedMessage id={"korona.dagpenger-forskudd.ingress-feil"} />
+              </Normaltekst>
+            )}
+          </>
+        </KoronaVarsel>
       ) : (
         <KoronaVarsel
           tittel={Config.LENKER.koronaBehandlingstid.tittel}
           href={Config.LENKER.koronaBehandlingstid.url}
-          ingressId="korona.behandlingstid.ingress"
           className="blaa-bakgrunn"
-        />
+        >
+          <Normaltekst>
+            <FormattedMessage id={"korona.behandlingstid.ingress"} />
+          </Normaltekst>
+        </KoronaVarsel>
       )}
       <KoronaVarsel
         tittel={Config.LENKER.koronaVeiviser.tittel}
         href={Config.LENKER.koronaVeiviser.url}
-        ingressId="korona.virus-varsel.ingress"
-      />
+      >
+        <Normaltekst>
+          <FormattedMessage id={"korona.virus-varsel.ingress"} />
+        </Normaltekst>
+      </KoronaVarsel>
     </div>
   );
 };
