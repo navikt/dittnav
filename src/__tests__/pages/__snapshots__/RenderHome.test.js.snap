@@ -65,13 +65,13 @@ exports[`expect Login page rendering 1`] = `
                 <h2
                   className="typo-undertittel lenkepanel__heading"
                 >
-                  Koronavirus - hva gjelder i min situasjon?
+                  Koronavirus – hva gjelder i min situasjon?
                 </h2>
                 <p
                   className="typo-normal korona-varsel__ingress"
                 >
                   <span>
-                    Se oppdatert informasjon fra NAV om dine rettigheter i forbindelse med koronapandemien.
+                    Se informasjon om rettighetene dine.
                   </span>
                 </p>
               </div>
