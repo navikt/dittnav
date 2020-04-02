@@ -22,10 +22,7 @@ const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
 
-  const skalViseInngangTilVarslinger = (state.beskjeder && !isEmpty(state.beskjeder))
-    || (props.oppgaver && !isEmpty(props.oppgaver))
-    || (props.innbokser && !isEmpty(props.innbokser))
-    || (state.inaktiveBeskjeder && !isEmpty(state.inaktiveBeskjeder))
+  const visInngangTilVarslinger = (state.inaktiveBeskjeder && !isEmpty(state.inaktiveBeskjeder))
     || (props.inaktiveOppgaver && !isEmpty(props.inaktiveOppgaver))
     || (props.inaktiveInnbokser && !isEmpty(props.inaktiveInnbokser));
 
@@ -46,7 +43,7 @@ const InfoMeldinger = (props) => {
       <EtterregistreringMeldekort ettereg={props.meldekort} />
       <PaabegynteSoknader paabegynteSoknader={props.paabegynteSoknader} />
       <MinInnboks mininnboks={props.mininnboks} />
-      {skalViseInngangTilVarslinger ? <InngangVarslinger /> : null}
+      {visInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
   );
 };
