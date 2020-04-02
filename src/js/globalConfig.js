@@ -21,7 +21,7 @@ const lenker = {
   innboks: { tittel: 'Innboks', url: `${window.env.TJENESTER_URL}/mininnboks` },
   digisos: { tittel: 'Digisos', url: `${window.env.NAVNO_URL}/sosialhjelp/innsyn` },
   koronaVeiviser: {
-    tittel: "Koronavirus - hva gjelder i min situasjon?",
+    tittel: "Koronavirus – hva gjelder i min situasjon?",
     url: `${window.env.NAVNO_URL}/person/koronaveiviser`
   },
   dagpengerForskudd: {
