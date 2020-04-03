@@ -17,11 +17,11 @@ import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
 const Home = ({ data, loading }) => {
+  const { state } = useBeskjedStore();
   const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
   const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
   const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
   const generelleLenker = Config.dittNav.GENERELLE_LENKER;
-  const { state } = useBeskjedStore();
 
   return (
     <>
@@ -38,6 +38,9 @@ const Home = ({ data, loading }) => {
               innlogging={data.innlogging}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
+              inaktiveBeskjeder={data.inaktiveBeskjeder}
+              inaktiveOppgaver={data.inaktiveOppgaver}
+              inaktiveInnbokser={data.inaktiveInnbokser}
             />
             <KoronaSpesial
               sakstema={data.sakstema}

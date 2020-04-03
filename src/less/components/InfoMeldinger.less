@@ -15,9 +15,43 @@
   }
 }
 
+.varslinger-inngang-wrapper {
+  text-align: center;
+}
+
+.varslinger-inngang {
+  display: inline-block;
+
+  &__chevron {
+    display: inline-block;
+    margin-left: 0.25em;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    .varslinger-inngang__chevron {
+      transform: translateX(6px) rotate(-90deg);
+    }
+  }
+}
+
+#varslinger-inngang__lenke-id {
+  border-bottom: 0;
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .infomeldinger-list {
     margin-right: 0;
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: @mobile-breakpoint) {
+  .varslinger-inngang {
+    font-size: 1rem;
   }
 }

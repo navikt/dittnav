@@ -76,6 +76,7 @@ export default {
     DITTNAV_OPPGAVE_INAKTIV: `${window.env.DITTNAV_API_URL}/oppgave/inaktiv`,
     DITTNAV_INNBOKS_INAKTIV: `${window.env.DITTNAV_API_URL}/innboks/inaktiv`,
     DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
+    DITTNAV_VARSLINGER: `${window.env.NAVNO_URL}/person/dittnav/varslinger`,
 
     EVENT_TEST_PRODUCER_URL: window.env.EVENT_TEST_PRODUCER_URL,
     EVENT_TEST_PRODUCER_DONE_ALL_URL: `${window.env.EVENT_TEST_PRODUCER_URL}/produce/done/all`,

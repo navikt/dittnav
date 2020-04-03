@@ -16,8 +16,10 @@ const RenderHome = ({ api }) => {
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
     innlogging: null,
-    oppgaver: [],
-    innbokser: [],
+    oppgaver: null,
+    innbokser: null,
+    inaktiveOppgaver: null,
+    inaktiveInnbokser: null,
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -37,7 +39,6 @@ const RenderHome = ({ api }) => {
     () => {
       const handleError = () => {
         incrementFetching();
-
         setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'] }));
       };
 
@@ -46,18 +47,32 @@ const RenderHome = ({ api }) => {
           .then((r) => {
             dispatch({ type: ADD_BESKJEDER, payload: r });
           }).catch(handleError);
-        api.fetchInaktiveBeskjeder()
-          .then((r) => {
-            dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
-          }).catch(handleError);
+
         api.fetchOppgaver()
           .then((r) => {
             setData(d => ({ ...d, oppgaver: r }));
           }).catch(handleError);
+
         api.fetchInnbokser()
           .then((r) => {
             setData(d => ({ ...d, innbokser: r }));
           }).catch(handleError);
+
+        api.fetchInaktiveBeskjeder()
+          .then((r) => {
+            dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
+          }).catch(handleError);
+
+        api.fetchInaktiveOppgaver()
+          .then((r) => {
+            setData(d => ({ ...d, inaktiveOppgaver: r }));
+          }).catch(handleError);
+
+        api.fetchInaktiveInnbokser()
+          .then((r) => {
+            setData(d => ({ ...d, inaktiveInnbokser: r }));
+          }).catch(handleError);
+
         api.fetchInnlogging()
           .then((r) => {
             setData(d => ({ ...d, innlogging: r }));
