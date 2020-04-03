@@ -22,7 +22,7 @@ const KoronaSpesial = ({ sakstema, beskjeder, inaktiveBeskjeder, isLoaded }) => 
   const harForskuddSoknadKvittering = (beskjeder && beskjeder.some(forskuddTekst))
     || (inaktiveBeskjeder && inaktiveBeskjeder.some(forskuddTekst));
 
-  const skalKalleForskuddAppen = harDagpengerSakNyligOppdatert;
+  const skalKalleForskuddAppen = harDagpengerSakNyligOppdatert && !harForskuddSoknadKvittering;
 
   useEffect(() => {
     if (skalKalleForskuddAppen) {
@@ -34,22 +34,15 @@ const KoronaSpesial = ({ sakstema, beskjeder, inaktiveBeskjeder, isLoaded }) => 
 
   return (
     <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
-      {(harDagpengerSakNyligOppdatert && skalViseForskudd) ? (
+      {skalViseForskudd ? (
         <KoronaVarsel
           tittel={Config.LENKER.dagpengerForskudd.tittel}
           href={Config.LENKER.dagpengerForskudd.url}
           className="blaa-bakgrunn"
         >
-          <>
-            <Normaltekst>
-              <FormattedMessage id={"korona.dagpenger-forskudd.ingress"} />
-            </Normaltekst>
-            {harForskuddSoknadKvittering && (
-              <Normaltekst>
-                <FormattedMessage id={"korona.dagpenger-forskudd.ingress-feil"} />
-              </Normaltekst>
-            )}
-          </>
+          <Normaltekst>
+            <FormattedMessage id={"korona.dagpenger-forskudd.ingress"} />
+          </Normaltekst>
         </KoronaVarsel>
       ) : (
         <KoronaVarsel
