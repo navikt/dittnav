@@ -29,6 +29,11 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
       });
   };
 
+  const clearInput = () => {
+    setTekst('');
+    setLenke('');
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     Api.postHendelse(
@@ -38,14 +43,13 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         link: lenke,
       },
     );
-    setTekst('');
-    setLenke('');
+    clearInput();
   };
 
   const handleTekstValidation = (event) => {
     setTekst(event.target.value);
 
-    if (tekst.length > 500) {
+    if (tekst.length > 500 - 2) {
       setError('Maks lengde på teksten er 500 tegn');
       setDisabled(true);
     }
@@ -66,7 +70,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         onChange={e => setLenke(e.target.value)}
       />
       <div className="knapper">
-        <Knapp className="knapper__send" htmlType="submit">
+        <Knapp className="knapper__send" htmlType="submit" disabled={disabled}>
           <F id="hendelser.send" />
         </Knapp>
         <Knapp className="knapper__hent" htmlType="button" onClick={() => getBrukernotifikasjoner()}>
