@@ -62,7 +62,6 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         value={tekst}
         onChange={e => handleTekstValidation(e)}
         feil={error}
-        disabled={disabled}
       />
       <Input
         label="Skriv inn ny lenke:"
