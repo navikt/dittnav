@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { func, string } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import { Input } from 'nav-frontend-skjema';
@@ -9,6 +9,8 @@ import { ADD_BESKJEDER } from '../../types/Actions';
 
 const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, setInnbokser }) => {
   const { dispatch } = useBeskjedStore();
+  const [error, setError] = useState('');
+  const [disabled, setDisabled] = useState(false);
 
   const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
@@ -27,6 +29,11 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
       });
   };
 
+  const clearInput = () => {
+    setTekst('');
+    setLenke('');
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     Api.postHendelse(
@@ -36,8 +43,16 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         link: lenke,
       },
     );
-    setTekst('');
-    setLenke('');
+    clearInput();
+  };
+
+  const handleTekstValidation = (event) => {
+    setTekst(event.target.value);
+
+    if (tekst.length > 500 - 2) {
+      setError('Maks lengde på teksten er 500 tegn');
+      setDisabled(true);
+    }
   };
 
   return (
@@ -45,7 +60,8 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
       <Input
         label="Skriv inn ny tekst:"
         value={tekst}
-        onChange={e => setTekst(e.target.value)}
+        onChange={e => handleTekstValidation(e)}
+        feil={error}
       />
       <Input
         label="Skriv inn ny lenke:"
@@ -53,7 +69,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         onChange={e => setLenke(e.target.value)}
       />
       <div className="knapper">
-        <Knapp className="knapper__send" htmlType="submit">
+        <Knapp className="knapper__send" htmlType="submit" disabled={disabled}>
           <F id="hendelser.send" />
         </Knapp>
         <Knapp className="knapper__hent" htmlType="button" onClick={() => getBrukernotifikasjoner()}>
