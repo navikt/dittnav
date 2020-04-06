@@ -9,8 +9,9 @@ import { ADD_BESKJEDER } from '../../types/Actions';
 
 const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, setInnbokser }) => {
   const { dispatch } = useBeskjedStore();
-  const [error, setError] = useState('');
-  const [disabled, setDisabled] = useState(false);
+  const [tekstError, setTekstError] = useState({ tekst: '', value: false });
+  const [lenkeError, setLenkeError] = useState({ tekst: '', value: false });
+  const disabled = tekstError.value || lenkeError.value;
 
   const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
@@ -46,13 +47,27 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
     clearInput();
   };
 
+  const checkInputLength = (input, setInputError, limit, message) => {
+    const isTooLong = input.length > limit;
+    const shouldClearError = input.length < limit && disabled;
+
+    (() => (
+      isTooLong && setInputError({ tekst: message, value: true }))
+    )();
+
+    (() => (
+      shouldClearError && setInputError({ tekst: '', value: false }))
+    )();
+  };
+
   const handleTekstValidation = (event) => {
     setTekst(event.target.value);
+    checkInputLength(tekst, setTekstError, 500 - 2, 'Maks lengde på teksten er 500 tegn');
+  };
 
-    if (tekst.length > 500 - 2) {
-      setError('Maks lengde på teksten er 500 tegn');
-      setDisabled(true);
-    }
+  const handleLenkeValidation = (event) => {
+    setLenke(event.target.value);
+    checkInputLength(lenke, setLenkeError, 200 - 2, 'Maks lengde på lenken er 200 tegn');
   };
 
   return (
@@ -61,12 +76,13 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         label="Skriv inn ny tekst:"
         value={tekst}
         onChange={e => handleTekstValidation(e)}
-        feil={error}
+        feil={tekstError.tekst}
       />
       <Input
         label="Skriv inn ny lenke:"
         value={lenke}
-        onChange={e => setLenke(e.target.value)}
+        onChange={e => handleLenkeValidation(e)}
+        feil={lenkeError.tekst}
       />
       <div className="knapper">
         <Knapp className="knapper__send" htmlType="submit" disabled={disabled}>
