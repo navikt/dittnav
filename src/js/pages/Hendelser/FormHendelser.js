@@ -48,16 +48,13 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
   };
 
   const checkInputLength = (input, setInputError, limit, message) => {
-    const isTooLong = input.length > limit;
-    const shouldClearError = input.length < limit && disabled;
+    if (input.length > limit) {
+      setInputError({ tekst: message, value: true });
+    }
 
-    (() => (
-      isTooLong && setInputError({ tekst: message, value: true }))
-    )();
-
-    (() => (
-      shouldClearError && setInputError({ tekst: '', value: false }))
-    )();
+    if (input.length < limit && disabled) {
+      setInputError({ tekst: '', value: false });
+    }
   };
 
   const handleTekstValidation = (event) => {
