@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { func, string } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import { Input } from 'nav-frontend-skjema';
@@ -9,6 +9,8 @@ import { ADD_BESKJEDER } from '../../types/Actions';
 
 const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, setInnbokser }) => {
   const { dispatch } = useBeskjedStore();
+  const [error, setError] = useState('');
+  const [disabled, setDisabled] = useState(false);
 
   const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
@@ -40,12 +42,23 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
     setLenke('');
   };
 
+  const handleTekstValidation = (event) => {
+    setTekst(event.target.value);
+
+    if (tekst.length > 500) {
+      setError('Maks lengde på teksten er 500 tegn');
+      setDisabled(true);
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <Input
         label="Skriv inn ny tekst:"
         value={tekst}
-        onChange={e => setTekst(e.target.value)}
+        onChange={e => handleTekstValidation(e)}
+        feil={error}
+        disabled={disabled}
       />
       <Input
         label="Skriv inn ny lenke:"
