@@ -48,7 +48,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
   };
 
   const checkInputLength = (input, setInputError, limit, message) => {
-    if (input.length > limit) {
+    if (input.length >= limit) {
       setInputError({ tekst: message, value: true });
     }
 
@@ -59,12 +59,12 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
 
   const handleTekstValidation = (event) => {
     setTekst(event.target.value);
-    checkInputLength(tekst, setTekstError, 500 - 2, 'Maks lengde på teksten er 500 tegn');
+    checkInputLength(tekst, setTekstError, 500, 'Maks lengde på teksten er 500 tegn');
   };
 
   const handleLenkeValidation = (event) => {
     setLenke(event.target.value);
-    checkInputLength(lenke, setLenkeError, 200 - 2, 'Maks lengde på lenken er 200 tegn');
+    checkInputLength(lenke, setLenkeError, 200, 'Maks lengde på lenken er 200 tegn');
   };
 
   return (
