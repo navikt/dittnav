@@ -5,6 +5,7 @@ import useBeskjedStore from '../../hooks/useBeskjedStore';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
+import { hotjarTrigger } from '../../utils/Hotjar';
 import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
@@ -21,6 +22,7 @@ const addInaktiv = (beskjed, dispatch) => dispatch({
 
 const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
   remove(beskjed, dispatch);
+  hotjarTrigger('beskjed_trykket_ok');
 
   if (erAktiv) {
     addInaktiv(beskjed, dispatch);
