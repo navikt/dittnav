@@ -74,13 +74,13 @@ exports[`AktiveVarsler one beskjed 1`] = `
       className="beskjed__knapp"
     >
       <button
-        className="knapp knapp--standard knapp--kompakt"
-        disabled={false}
+        className="lukknapp lukknapp--bla"
         onClick={[Function]}
-        type="submit"
       >
-        <span>
-          Ok
+        <span
+          className="text-hide"
+        >
+          Fjern beskjeden
         </span>
       </button>
     </div>
@@ -301,13 +301,13 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
       className="beskjed__knapp"
     >
       <button
-        className="knapp knapp--standard knapp--kompakt"
-        disabled={false}
+        className="lukknapp lukknapp--bla"
         onClick={[Function]}
-        type="submit"
       >
-        <span>
-          Ok
+        <span
+          className="text-hide"
+        >
+          Fjern beskjeden
         </span>
       </button>
     </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shape, node, func, any, bool, string } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { Panel } from 'nav-frontend-paneler';
-import Knapp from 'nav-frontend-knapper';
+import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
 
-const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, lenkeTekst, onClick }) => (
+const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, lenkeTekst, onClick, skjermleserTekst, intl }) => (
   <Panel className={className} border>
     <div className={`${className}__ikon`}>
       {children}
@@ -31,9 +31,11 @@ const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, 
       {knapp
         ? (
           <div className={`${className}__knapp`}>
-            <Knapp onClick={onClick} form="kompakt">
-              <FormattedMessage id="hendelser.beskjed.knapp" />
-            </Knapp>
+            <Lukknapp bla onClick={onClick}>
+              {skjermleserTekst
+                ? intl.formatMessage({ id: skjermleserTekst })
+                : intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
+            </Lukknapp>
           </div>
         )
         : null}
@@ -50,6 +52,8 @@ PanelMedIkon.propTypes = {
   knapp: bool,
   lenke: string,
   lenkeTekst: string,
+  skjermleserTekst: string,
+  intl: intlShape.isRequired,
 };
 
 PanelMedIkon.defaultProps = {
@@ -59,6 +63,7 @@ PanelMedIkon.defaultProps = {
   knapp: null,
   lenke: null,
   lenkeTekst: null,
+  skjermleserTekst: null,
 };
 
-export default PanelMedIkon;
+export default injectIntl(PanelMedIkon);
