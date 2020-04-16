@@ -4,10 +4,13 @@ metadata:
   name: dittnav
   namespace: {{namespace}}
   labels:
-    team: {{team}}
+    team: personbruker
 spec:
   image: {{version}}
-  ingresses: {{ingresses}}
+  ingresses:
+  {{#each ingresses}}
+     - "{{this}}"
+  {{/each}}
   vault:
     enabled: true
   liveness:
