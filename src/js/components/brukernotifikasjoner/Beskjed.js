@@ -46,6 +46,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
       alt="Beskjed"
       overskrift={overskrift}
       onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
+      skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
       knapp={visKnapp}
