@@ -56,13 +56,13 @@ exports[`Beskjed with empty link 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="knapp knapp--standard knapp--kompakt"
-      disabled={false}
+      className="lukknapp lukknapp--bla"
       onClick={[Function]}
-      type="submit"
     >
-      <span>
-        Ok
+      <span
+        className="text-hide"
+      >
+        Fjern beskjeden
       </span>
     </button>
   </div>
@@ -134,13 +134,13 @@ exports[`Beskjed with link 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="knapp knapp--standard knapp--kompakt"
-      disabled={false}
+      className="lukknapp lukknapp--bla"
       onClick={[Function]}
-      type="submit"
     >
-      <span>
-        Ok
+      <span
+        className="text-hide"
+      >
+        Fjern beskjeden
       </span>
     </button>
   </div>
@@ -203,13 +203,13 @@ exports[`Beskjed with null as link 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="knapp knapp--standard knapp--kompakt"
-      disabled={false}
+      className="lukknapp lukknapp--bla"
       onClick={[Function]}
-      type="submit"
     >
-      <span>
-        Ok
+      <span
+        className="text-hide"
+      >
+        Fjern beskjeden
       </span>
     </button>
   </div>
@@ -281,13 +281,13 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="knapp knapp--standard knapp--kompakt"
-      disabled={false}
+      className="lukknapp lukknapp--bla"
       onClick={[Function]}
-      type="submit"
     >
-      <span>
-        Ok
+      <span
+        className="text-hide"
+      >
+        Fjern beskjeden
       </span>
     </button>
   </div>
@@ -359,13 +359,13 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="knapp knapp--standard knapp--kompakt"
-      disabled={false}
+      className="lukknapp lukknapp--bla"
       onClick={[Function]}
-      type="submit"
     >
-      <span>
-        Ok
+      <span
+        className="text-hide"
+      >
+        Fjern beskjeden
       </span>
     </button>
   </div>
@@ -503,13 +503,13 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="knapp knapp--standard knapp--kompakt"
-      disabled={false}
+      className="lukknapp lukknapp--bla"
       onClick={[Function]}
-      type="submit"
     >
-      <span>
-        Ok
+      <span
+        className="text-hide"
+      >
+        Fjern beskjeden
       </span>
     </button>
   </div>

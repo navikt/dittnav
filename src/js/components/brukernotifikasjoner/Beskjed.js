@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
+import { hotjarTrigger, hotjarSafetyStub } from '../../utils/Hotjar';
 import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
@@ -21,6 +22,7 @@ const addInaktiv = (beskjed, dispatch) => dispatch({
 
 const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
   remove(beskjed, dispatch);
+  hotjarTrigger('beskjed_trykket_ok');
 
   if (erAktiv) {
     addInaktiv(beskjed, dispatch);
@@ -30,6 +32,10 @@ const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
 const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
+
+  useEffect(() => {
+    hotjarSafetyStub();
+  }, []);
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
@@ -44,6 +50,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
       alt="Beskjed"
       overskrift={overskrift}
       onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
+      skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
       knapp={visKnapp}

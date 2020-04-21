@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
-const ReactTestRenderer = require('react-test-renderer');
 
 function mockRouter() {
   const original = require.requireActual('react-router-dom');
@@ -120,14 +120,18 @@ it('expect Brukernotifikasjoner fetching', async () => {
     });
   });
 
-  const component = ReactTestRenderer.create(wrapIntl(
+  const renderer = new ShallowRenderer();
+
+  renderer.render(wrapIntl(
     <Router>
       <BeskjedStoreProvider>
         <RenderVarslinger api={api} />
       </BeskjedStoreProvider>
     </Router>,
   ));
+
+  const component = renderer.getRenderOutput();
   await flushPromises();
 
-  expect(component.toJSON()).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
