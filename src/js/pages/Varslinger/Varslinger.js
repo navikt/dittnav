@@ -5,6 +5,7 @@ import Panel from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
 import { Normaltekst } from 'nav-frontend-typografi';
 import Config from '../../globalConfig';
+import Brodsmulesti from '../../components/brodsmulesti/Brodsmulesti';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
@@ -15,6 +16,9 @@ import InnboksType from '../../types/InnboksType';
 
 const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, innlogging }) => (
   <div className="row">
+    <div className="brodsmulesti-row">
+      <Brodsmulesti />
+    </div>
     <div className="maincontent side-innhold">
       <div className="col-md-12" id="dittnav-main-container">
         <Tittel className="varslinger-tittel" tittelId="varslinger.tittel" />

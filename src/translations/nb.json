@@ -43,6 +43,10 @@
   "hendelser.fjern": "Fjern hendelser",
   "hendelser.beskjed.knapp": "Ok",
 
+  "brodsmulesti.dittnav": "Ditt NAV",
+  "brodsmulesti.varslinger": "Varslinger",
+  "brodsmulesti.skjermleser": "Du er her:",
+
   "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
   "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av beskjedene og oppgavene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",
   "varslinger.tittel": "Beskjeder og oppgaver fra NAV",

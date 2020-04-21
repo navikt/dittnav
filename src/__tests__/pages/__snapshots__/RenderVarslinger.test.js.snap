@@ -11,6 +11,51 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
       className="row"
     >
       <div
+        className="brodsmulesti-row"
+      >
+        <nav
+          aria-label="Du er her:"
+        >
+          <img
+            alt=""
+            className="brodsmulesti-ikon"
+            src="hjem.svg"
+          />
+          <ol
+            className="brodsmulesti"
+          >
+            <li
+              className="brodsmule"
+            >
+              <a
+                className="lenke"
+                href="/dittnav"
+                onClick={[Function]}
+              >
+                <span>
+                  Ditt NAV
+                </span>
+              </a>
+              <span
+                aria-hidden="true"
+                className="brodsmule__deler"
+              >
+                /
+              </span>
+            </li>
+            <li
+              className="brodsmule"
+            >
+              <span>
+                <span>
+                  Varslinger
+                </span>
+              </span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div
         className="maincontent side-innhold"
       >
         <div

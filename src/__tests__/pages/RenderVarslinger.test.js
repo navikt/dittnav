@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
 import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
+
+function mockRouter() {
+  const original = require.requireActual('react-router-dom');
+  return {
+    ...original,
+    useLocation: jest.fn().mockReturnValue({
+      pathname: '/person/dittnav/varslinger',
+    }),
+  };
+}
+
+jest.mock('react-router-dom', () => mockRouter());
 
 const mockApi = () => (
   {
@@ -25,15 +38,18 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(wrapIntl(
-    <BeskjedStoreProvider>
-      <RenderVarslinger api={mockApi()} />
-    </BeskjedStoreProvider>,
+    <Router>
+      <BeskjedStoreProvider>
+        <RenderVarslinger api={mockApi()} />
+      </BeskjedStoreProvider>
+    </Router>,
   ), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('expect Brukernotifikasjoner fetching', async () => {
   const api = mockApi();
+
   api.fetchBeskjeder = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       [
@@ -105,9 +121,11 @@ it('expect Brukernotifikasjoner fetching', async () => {
   });
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <RenderVarslinger api={api} />
-    </BeskjedStoreProvider>,
+    <Router>
+      <BeskjedStoreProvider>
+        <RenderVarslinger api={api} />
+      </BeskjedStoreProvider>
+    </Router>,
   ));
   await flushPromises();
 
