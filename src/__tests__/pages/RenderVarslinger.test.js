@@ -26,7 +26,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(wrapIntl(
-    <MemoryRouter initialEntries={["/person/dittnav/varslinger"]}>
+    <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
       <BeskjedStoreProvider>
         <RenderVarslinger api={mockApi()} />
       </BeskjedStoreProvider>
@@ -111,7 +111,7 @@ it('expect Brukernotifikasjoner fetching', async () => {
   const renderer = new ShallowRenderer();
 
   renderer.render(wrapIntl(
-    <MemoryRouter initialEntries={["/person/dittnav/varslinger"]}>
+    <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
       <BeskjedStoreProvider>
         <RenderVarslinger api={api} />
       </BeskjedStoreProvider>
