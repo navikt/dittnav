@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
 import ShallowRenderer from 'react-test-renderer/shallow';
@@ -25,15 +26,18 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(wrapIntl(
-    <BeskjedStoreProvider>
-      <RenderVarslinger api={mockApi()} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
+      <BeskjedStoreProvider>
+        <RenderVarslinger api={mockApi()} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ), div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('expect Brukernotifikasjoner fetching', async () => {
   const api = mockApi();
+
   api.fetchBeskjeder = () => new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     resolve(
       [
@@ -104,13 +108,14 @@ it('expect Brukernotifikasjoner fetching', async () => {
     });
   });
 
-
   const renderer = new ShallowRenderer();
 
   renderer.render(wrapIntl(
-    <BeskjedStoreProvider>
-      <RenderVarslinger api={api} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
+      <BeskjedStoreProvider>
+        <RenderVarslinger api={api} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
 
   const component = renderer.getRenderOutput();

@@ -1,22 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`expect Brukernotifikasjoner fetching 1`] = `
-<BeskjedStoreProvider
-  beskjeder={null}
-  inaktiveBeskjeder={null}
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/person/dittnav/varslinger",
+    ]
+  }
 >
-  <VarslingerRender
-    api={
-      Object {
-        "fetchBeskjeder": [Function],
-        "fetchInaktiveBeskjeder": [Function],
-        "fetchInaktiveInnbokser": [Function],
-        "fetchInaktiveOppgaver": [Function],
-        "fetchInnbokser": [Function],
-        "fetchInnlogging": [Function],
-        "fetchOppgaver": [Function],
+  <BeskjedStoreProvider
+    beskjeder={null}
+    inaktiveBeskjeder={null}
+  >
+    <VarslingerRender
+      api={
+        Object {
+          "fetchBeskjeder": [Function],
+          "fetchInaktiveBeskjeder": [Function],
+          "fetchInaktiveInnbokser": [Function],
+          "fetchInaktiveOppgaver": [Function],
+          "fetchInnbokser": [Function],
+          "fetchInnlogging": [Function],
+          "fetchOppgaver": [Function],
+        }
       }
-    }
-  />
-</BeskjedStoreProvider>
+    />
+  </BeskjedStoreProvider>
+</MemoryRouter>
 `;
