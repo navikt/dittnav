@@ -1,22 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
-
-function mockRouter() {
-  const original = require.requireActual('react-router-dom');
-  return {
-    ...original,
-    useLocation: jest.fn().mockReturnValue({
-      pathname: '/person/dittnav/varslinger',
-    }),
-  };
-}
-
-jest.mock('react-router-dom', () => mockRouter());
 
 const mockApi = () => (
   {
@@ -38,11 +26,11 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(wrapIntl(
-    <Router>
+    <MemoryRouter initialEntries={["/person/dittnav/varslinger"]}>
       <BeskjedStoreProvider>
         <RenderVarslinger api={mockApi()} />
       </BeskjedStoreProvider>
-    </Router>,
+    </MemoryRouter>,
   ), div);
   ReactDOM.unmountComponentAtNode(div);
 });
@@ -123,11 +111,11 @@ it('expect Brukernotifikasjoner fetching', async () => {
   const renderer = new ShallowRenderer();
 
   renderer.render(wrapIntl(
-    <Router>
+    <MemoryRouter initialEntries={["/person/dittnav/varslinger"]}>
       <BeskjedStoreProvider>
         <RenderVarslinger api={api} />
       </BeskjedStoreProvider>
-    </Router>,
+    </MemoryRouter>,
   ));
 
   const component = renderer.getRenderOutput();

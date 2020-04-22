@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`expect Brukernotifikasjoner fetching 1`] = `
-<BrowserRouter>
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/person/dittnav/varslinger",
+    ]
+  }
+>
   <BeskjedStoreProvider
     beskjeder={null}
     inaktiveBeskjeder={null}
@@ -20,5 +26,5 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
       }
     />
   </BeskjedStoreProvider>
-</BrowserRouter>
+</MemoryRouter>
 `;
