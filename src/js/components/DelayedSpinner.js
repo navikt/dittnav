@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import NavFrontendSpinner from 'nav-frontend-spinner';
+import { FormattedMessage } from "react-intl";
+import { Undertittel } from "nav-frontend-typografi";
 
 class DelayedSpinner extends Component {
   constructor(props) {
@@ -20,7 +22,14 @@ class DelayedSpinner extends Component {
   }
 
   render() {
-    return this.state.showSpinner && <NavFrontendSpinner className={this.props.spinnerClass} />;
+    return this.state.showSpinner && (
+      <div className={this.props.spinnerClass}>
+        <NavFrontendSpinner className={"spinner"} />
+        <Undertittel>
+          <FormattedMessage id={"spinner.melding"} />
+        </Undertittel>
+      </div>
+    );
   }
 }
 
