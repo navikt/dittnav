@@ -9,7 +9,7 @@ import Meldekort from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks from './meldinger/MinInnboks';
 import InngangVarslinger from './InngangVarslinger';
-import isEmpty from '../utils/List';
+import isEmpty from '../utils/Array';
 import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';

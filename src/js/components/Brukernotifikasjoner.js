@@ -1,6 +1,6 @@
 import React from 'react';
 import { arrayOf, bool } from 'prop-types';
-import moment from 'moment';
+import { byEventTidspunkt } from '../utils/Array';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
@@ -8,13 +8,6 @@ import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingType from '../types/InnloggingType';
-
-const byEventTidspunkt = (bn1, bn2) => {
-  const moment1 = moment(bn1.eventTidspunkt, 'YYYY-MM-DDTHH:mm:ss.SSSSZ');
-  const moment2 = moment(bn2.eventTidspunkt, 'YYYY-MM-DDTHH:mm:ss.SSSSZ');
-
-  return moment2.diff(moment1);
-};
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => (
   <>

@@ -5,7 +5,7 @@ import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
 import useBeskjedStore from '../../../hooks/useBeskjedStore';
 import InnloggingType from '../../../types/InnloggingType';
-import OppgaverType from '../../../types/OppgaveType';
+import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
 
 const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
@@ -32,7 +32,7 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
 };
 
 InaktiveVarsler.propTypes = {
-  oppgaver: arrayOf(OppgaverType),
+  oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
   innlogging: InnloggingType,
 };
