@@ -38,11 +38,7 @@ const InfoMeldinger = (props) => {
           />
         ) : null}
       <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
-      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
-      {isMeldeKortUser ? <Meldekort meldekort={props.meldekort} /> : null}
-      <EtterregistreringMeldekort ettereg={props.meldekort} />
-      <PaabegynteSoknader paabegynteSoknader={props.paabegynteSoknader} />
-      <MinInnboks mininnboks={props.mininnboks} />
+
       {visInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
   );
