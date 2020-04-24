@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
-import Home from './Home';
-import Config from '../../globalConfig';
 import PageFrame from '../PageFrame';
+import Home from './Home';
 import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
@@ -42,42 +41,42 @@ const RenderHome = ({ api }) => {
         setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'] }));
       };
 
-      if (Config.HENDELSER_FEATURE_TOGGLE) {
-        api.fetchBeskjeder()
-          .then((r) => {
-            dispatch({ type: ADD_BESKJEDER, payload: r });
-          }).catch(handleError);
+      api.fetchBeskjeder()
+        .then((r) => {
+          incrementFetching();
+          dispatch({ type: ADD_BESKJEDER, payload: r });
+        }).catch(handleError);
 
-        api.fetchOppgaver()
-          .then((r) => {
-            setData(d => ({ ...d, oppgaver: r }));
-          }).catch(handleError);
+      api.fetchOppgaver()
+        .then((r) => {
+          setData(d => ({ ...d, oppgaver: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
-        api.fetchInnbokser()
-          .then((r) => {
-            setData(d => ({ ...d, innbokser: r }));
-          }).catch(handleError);
+      api.fetchInnbokser()
+        .then((r) => {
+          setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
-        api.fetchInaktiveBeskjeder()
-          .then((r) => {
-            dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
-          }).catch(handleError);
+      api.fetchInaktiveBeskjeder()
+        .then((r) => {
+          incrementFetching();
+          dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
+        }).catch(handleError);
 
-        api.fetchInaktiveOppgaver()
-          .then((r) => {
-            setData(d => ({ ...d, inaktiveOppgaver: r }));
-          }).catch(handleError);
+      api.fetchInaktiveOppgaver()
+        .then((r) => {
+          setData(d => ({ ...d, inaktiveOppgaver: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
-        api.fetchInaktiveInnbokser()
-          .then((r) => {
-            setData(d => ({ ...d, inaktiveInnbokser: r }));
-          }).catch(handleError);
+      api.fetchInaktiveInnbokser()
+        .then((r) => {
+          setData(d => ({ ...d, inaktiveInnbokser: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
-        api.fetchInnlogging()
-          .then((r) => {
-            setData(d => ({ ...d, innlogging: r }));
-          }).catch(handleError);
-      }
+      api.fetchInnlogging()
+        .then((r) => {
+          setData(d => ({ ...d, innlogging: r, fetching: d.fetching + 1 }));
+        }).catch(handleError);
 
       api.fetchOppfolging()
         .then((r) => {
@@ -123,7 +122,7 @@ const RenderHome = ({ api }) => {
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-  const loading = data.fetching < 6;
+  const loading = data.fetching < 13;
 
   return (
     <PageFrame uniqueErrors={uniqueErrors}>

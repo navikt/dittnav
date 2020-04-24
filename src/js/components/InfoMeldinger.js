@@ -1,7 +1,6 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
-import Config from '../globalConfig';
 import useBeskjedStore from '../hooks/useBeskjedStore';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
@@ -15,7 +14,7 @@ import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
 import InnloggingType from '../types/InnloggingType';
-import OppgaverType from '../types/OppgaveType';
+import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 
 const InfoMeldinger = (props) => {
@@ -28,17 +27,18 @@ const InfoMeldinger = (props) => {
 
   return (
     <section className="infomeldinger-list">
-      {Config.HENDELSER_FEATURE_TOGGLE
-        ? (
-          <Brukernotifikasjoner
-            beskjeder={state.beskjeder}
-            oppgaver={props.oppgaver}
-            innbokser={props.innbokser}
-            innlogging={props.innlogging}
-          />
-        ) : null}
       <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
-
+      <Brukernotifikasjoner
+        beskjeder={state.beskjeder}
+        oppgaver={props.oppgaver}
+        innbokser={props.innbokser}
+        innlogging={props.innlogging}
+      />
+      <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
+      {isMeldeKortUser ? <Meldekort meldekort={props.meldekort} /> : null}
+      <EtterregistreringMeldekort ettereg={props.meldekort} />
+      <PaabegynteSoknader paabegynteSoknader={props.paabegynteSoknader} />
+      <MinInnboks mininnboks={props.mininnboks} />
       {visInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
   );
@@ -49,9 +49,9 @@ InfoMeldinger.propTypes = {
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
   innlogging: InnloggingType,
-  oppgaver: arrayOf(OppgaverType),
+  oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  inaktiveOppgaver: arrayOf(OppgaverType),
+  inaktiveOppgaver: arrayOf(OppgaveType),
   inaktiveInnbokser: arrayOf(InnboksType),
 };
 
