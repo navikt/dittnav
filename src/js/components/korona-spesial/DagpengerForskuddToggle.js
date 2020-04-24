@@ -7,7 +7,7 @@ const sessionIdKey = 'forskudd-dagpenger-session-id';
 const toggleCookieKey = 'forskudd-dagpenger-vises';
 const apiUrl = `${window.env.NAVNO_URL}/dagpenger/forskudd-api/api/enabled/anonymous`;
 const toggleName = 'dagpenger.forskudd.entry.enabled';
-const toggleDefault = false;
+const toggleDefault = true;
 const unleashTimeout = 3000;
 
 const timeoutPromise = (ms, msg) =>
@@ -51,7 +51,7 @@ const getForskuddSessionId = () => {
   return idFromStorage;
 };
 
-export const skalViseForskuddLenke = (skalVisesCallback) => {
+export const getForskuddToggle = (skalVisesCallback) => {
   const toggleFromCookie = Cookies.get(toggleCookieKey);
   if (toggleFromCookie) {
     setStorageItem(sessionIdKey, Cookies.get(sessionIdKey));
