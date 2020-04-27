@@ -52,6 +52,7 @@ Array [
       >
         Hello
       </p>
+      
     </div>
   </div>,
   <div
@@ -106,6 +107,7 @@ Array [
           Her vises informasjon til meldekortbrukere
         </span>
       </p>
+      
     </div>
   </div>,
 ]
@@ -162,6 +164,7 @@ exports[`InformasjonsMeldinger with general 1`] = `
     >
       Hello
     </p>
+    
   </div>
 </div>
 `;
@@ -219,6 +222,7 @@ exports[`InformasjonsMeldinger with meldekort 1`] = `
         Her vises informasjon til meldekortbrukere
       </span>
     </p>
+    
   </div>
 </div>
 `;

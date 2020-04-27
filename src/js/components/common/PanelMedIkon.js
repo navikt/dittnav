@@ -1,12 +1,12 @@
 import React from 'react';
 import { shape, node, func, any, bool, string } from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Normaltekst } from 'nav-frontend-typografi';
+import { Normaltekst, Undertekst } from 'nav-frontend-typografi';
 import { Panel } from 'nav-frontend-paneler';
 import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
 
-const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, lenkeTekst, onClick, skjermleserTekst, intl }) => (
+const PanelMedIkon = ({ className, overskrift, ingress, etikett, children, knapp, lenke, lenkeTekst, onClick, skjermleserTekst, intl }) => (
   <Panel className={className} border>
     <div className={`${className}__ikon`}>
       {children}
@@ -20,6 +20,12 @@ const PanelMedIkon = ({ className, overskrift, ingress, children, knapp, lenke, 
           </Normaltekst>
         )
         : null}
+      {etikett
+        ? (
+          <Undertekst className="panel__etikett">
+            {etikett}
+          </Undertekst>
+        ) : ''}
       {(lenke)
         ? (
           <Lenke className="panel-lenke" id="panel-lenke-id" href={lenke}>
@@ -48,6 +54,7 @@ PanelMedIkon.propTypes = {
   className: string,
   overskrift: shape({ root: any }).isRequired,
   ingress: shape({ root: any }),
+  etikett: string,
   children: node.isRequired,
   knapp: bool,
   lenke: string,
@@ -60,6 +67,7 @@ PanelMedIkon.defaultProps = {
   className: 'panel-med-ikon',
   onClick: null,
   ingress: null,
+  etikett: null,
   knapp: null,
   lenke: null,
   lenkeTekst: null,

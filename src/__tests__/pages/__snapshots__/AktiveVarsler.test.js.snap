@@ -60,6 +60,11 @@ exports[`AktiveVarsler one beskjed 1`] = `
       >
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
       </p>
+      <p
+        className="typo-undertekst panel__etikett"
+      >
+        13.03.2020
+      </p>
       <a
         className="lenke panel-lenke"
         href="https://enNyLenke"
@@ -146,6 +151,11 @@ exports[`AktiveVarsler one innboks 1`] = `
           Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -213,6 +223,11 @@ exports[`AktiveVarsler one oppgave 1`] = `
           Oppgave: Mangelende dokumentasjon til søknad
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -286,6 +301,11 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
         className="typo-normal lenkepanel__heading"
       >
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      </p>
+      <p
+        className="typo-undertekst panel__etikett"
+      >
+        13.03.2020
       </p>
       <a
         className="lenke panel-lenke"
@@ -366,6 +386,11 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
           Oppgave: Mangelende dokumentasjon til søknad
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -426,6 +451,11 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
           Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span

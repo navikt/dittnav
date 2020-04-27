@@ -51,6 +51,11 @@ exports[`Beskjed with empty link 1`] = `
     >
       Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
+    </p>
   </div>
   <div
     className="beskjed__knapp"
@@ -119,6 +124,11 @@ exports[`Beskjed with link 1`] = `
       className="typo-normal lenkepanel__heading"
     >
       Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
     </p>
     <a
       className="lenke panel-lenke"
@@ -198,6 +208,11 @@ exports[`Beskjed with null as link 1`] = `
     >
       Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
+    </p>
   </div>
   <div
     className="beskjed__knapp"
@@ -266,6 +281,11 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
       className="typo-normal lenkepanel__heading"
     >
       Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
     </p>
     <a
       className="lenke panel-lenke"
@@ -344,6 +364,11 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
       className="typo-normal lenkepanel__heading"
     >
       Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
     </p>
     <a
       className="lenke panel-lenke"
@@ -425,6 +450,11 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         Du har fått en beskjed
       </span>
     </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
+    </p>
     <a
       className="lenke panel-lenke"
       href="undefined"
@@ -488,6 +518,11 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
       className="typo-normal lenkepanel__heading"
     >
       Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    </p>
+    <p
+      className="typo-undertekst panel__etikett"
+    >
+      13.03.2020
     </p>
     <a
       className="lenke panel-lenke"

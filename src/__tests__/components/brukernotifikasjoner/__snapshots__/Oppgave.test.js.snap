@@ -55,6 +55,11 @@ exports[`Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
         Du har en sykemelding som må godkjennes
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span
@@ -118,6 +123,11 @@ exports[`Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
         Du har en sykemelding som må godkjennes
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span
@@ -183,6 +193,11 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         </span>
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span
@@ -246,6 +261,11 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
         Du har en sykemelding som må godkjennes
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span

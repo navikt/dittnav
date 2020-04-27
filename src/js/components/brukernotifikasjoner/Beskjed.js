@@ -9,6 +9,7 @@ import { hotjarTrigger, hotjarSafetyStub } from '../../utils/Hotjar';
 import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
+import transformTolokalDatoTid from '../../utils/DatoUtils';
 
 const remove = (beskjed, dispatch) => dispatch({
   type: REMOVE_BESKJED,
@@ -39,6 +40,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
 
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
+  const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv)
     && !beskjed.tekst.includes('forskudd');
@@ -49,6 +51,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
       overskrift={overskrift}
+      etikett={lokalDatoTid}
       onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
