@@ -138,7 +138,7 @@ export default {
     FEATURE_TOGGLES: '', // a,b,c etc..
   },
   SAKSTEMA_DATOTID_FORMAT: 'YYYY-MM-DD-hh:mm:ss+Z',
-  BRUKERNOTIFIKASJONER_FORMAT: 'YYYY-MM-DDTHH:mm:ss.SSSSZ',
+  BRUKERNOTIFIKASJONER_FORMAT: 'YYYY-MM-DDTHH:mm:ss:SSS[Z]',
   VTA_PATH: window.env.VTA_URL,
   INNLOGGINGSLINJE_AUTH: `${window.env.INNLOGGINGSLINJE_API_URL}/auth`,
   MELDINGER_NAV_PATH: '/sbl/as/minside/meldinger/meldingerNAV.do',

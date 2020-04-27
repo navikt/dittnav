@@ -14,7 +14,7 @@ const byEventTidspunkt = (a, b) => {
   const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
   const momentB = moment(b.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
 
-  return momentA.diff(momentB);
+  return momentB.diff(momentA);
 };
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => (
