@@ -41,7 +41,6 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv)
-    && !beskjed.tekst.includes('forskudd');
 
   return (
     <PanelMedIkon
