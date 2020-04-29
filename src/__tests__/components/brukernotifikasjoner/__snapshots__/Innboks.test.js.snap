@@ -55,6 +55,11 @@ exports[`Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
         Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span
@@ -118,6 +123,11 @@ exports[`Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
         Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span
@@ -179,10 +189,15 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen
+          Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.
         </span>
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span
@@ -246,6 +261,11 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
         Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
       </p>
       
+      <p
+        className="typo-undertekst lenkepanel__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
   </div>
   <span

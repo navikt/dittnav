@@ -63,6 +63,7 @@ exports[`MinInnboks with one document 1`] = `
         </span>
       </p>
       
+      
     </div>
   </div>
   <span
@@ -128,6 +129,7 @@ exports[`MinInnboks with one task 1`] = `
         </span>
       </p>
       
+      
     </div>
   </div>
   <span
@@ -192,6 +194,7 @@ exports[`MinInnboks with one unanswered 1`] = `
           Du har ett ubesvart spørsmål i din innboks
         </span>
       </p>
+      
       
     </div>
   </div>
@@ -259,6 +262,7 @@ Array [
           </span>
         </p>
         
+        
       </div>
     </div>
     <span
@@ -320,6 +324,7 @@ Array [
             Du har én ulest melding i din innboks
           </span>
         </p>
+        
         
       </div>
     </div>
@@ -387,6 +392,7 @@ exports[`MinInnboks with two documents 1`] = `
         </span>
       </p>
       
+      
     </div>
   </div>
   <span
@@ -453,6 +459,7 @@ Array [
           </span>
         </p>
         
+        
       </div>
     </div>
     <span
@@ -514,6 +521,7 @@ Array [
             Du har  ubesvarte spørsmål i din innboks
           </span>
         </p>
+        
         
       </div>
     </div>
@@ -581,6 +589,7 @@ exports[`MinInnboks with two tasks 1`] = `
         </span>
       </p>
       
+      
     </div>
   </div>
   <span
@@ -645,6 +654,7 @@ exports[`MinInnboks with two unanswered 1`] = `
           Du har to ubesvarte spørsmål i din innboks
         </span>
       </p>
+      
       
     </div>
   </div>
@@ -711,6 +721,7 @@ exports[`MinInnboks with two unread 1`] = `
         </span>
       </p>
       
+      
     </div>
   </div>
   <span
@@ -775,6 +786,7 @@ exports[`MinInnboks with zero tasks 1`] = `
           Du har  uleste oppgaver
         </span>
       </p>
+      
       
     </div>
   </div>

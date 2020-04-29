@@ -81,6 +81,11 @@ exports[`InaktiveVarsler one innboks 1`] = `
           Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -159,6 +164,11 @@ exports[`InaktiveVarsler one oppgave 1`] = `
           Oppgave: Mangelende dokumentasjon til søknad
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -237,6 +247,11 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
           Oppgave: Mangelende dokumentasjon til søknad
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -297,6 +312,11 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
           Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span

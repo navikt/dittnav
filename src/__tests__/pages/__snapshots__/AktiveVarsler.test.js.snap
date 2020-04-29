@@ -56,19 +56,27 @@ exports[`AktiveVarsler one beskjed 1`] = `
       className="beskjed__tekst"
     >
       <p
-        className="typo-normal lenkepanel__heading"
-      >
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-      </p>
-      <a
-        className="lenke panel-lenke"
-        href="https://enNyLenke"
-        id="panel-lenke-id"
+        className="typo-normal"
       >
         <span>
-          Se mer informasjon
+          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+           
+          <a
+            className="lenke panel-lenke"
+            href="https://enNyLenke"
+            id="panel-lenke-id"
+          >
+            <span>
+              Se mer informasjon
+            </span>
+          </a>
         </span>
-      </a>
+      </p>
+      <p
+        className="typo-undertekst beskjed__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
     <div
       className="beskjed__knapp"
@@ -146,6 +154,11 @@ exports[`AktiveVarsler one innboks 1`] = `
           Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -213,6 +226,11 @@ exports[`AktiveVarsler one oppgave 1`] = `
           Oppgave: Mangelende dokumentasjon til søknad
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -291,6 +309,11 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
           Oppgave: Mangelende dokumentasjon til søknad
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
@@ -343,19 +366,27 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
       className="beskjed__tekst"
     >
       <p
-        className="typo-normal lenkepanel__heading"
-      >
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-      </p>
-      <a
-        className="lenke panel-lenke"
-        href="https://enNyLenke"
-        id="panel-lenke-id"
+        className="typo-normal"
       >
         <span>
-          Se mer informasjon
+          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+           
+          <a
+            className="lenke panel-lenke"
+            href="https://enNyLenke"
+            id="panel-lenke-id"
+          >
+            <span>
+              Se mer informasjon
+            </span>
+          </a>
         </span>
-      </a>
+      </p>
+      <p
+        className="typo-undertekst beskjed__etikett"
+      >
+        13.03.2020
+      </p>
     </div>
     <div
       className="beskjed__knapp"
@@ -426,6 +457,11 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
           Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44
         </p>
         
+        <p
+          className="typo-undertekst lenkepanel__etikett"
+        >
+          13.03.2020
+        </p>
       </div>
     </div>
     <span
