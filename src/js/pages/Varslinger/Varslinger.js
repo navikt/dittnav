@@ -11,7 +11,7 @@ import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
 import InnloggingType from '../../types/InnloggingType';
-import OppgaverType from '../../types/OppgaveType';
+import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
 const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, innlogging }) => (
@@ -51,9 +51,9 @@ const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, 
 );
 
 Varslinger.propTypes = {
-  oppgaver: arrayOf(OppgaverType),
+  oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  inaktiveOppgaver: arrayOf(OppgaverType),
+  inaktiveOppgaver: arrayOf(OppgaveType),
   inaktiveInnbokser: arrayOf(InnboksType),
   innlogging: InnloggingType,
 };

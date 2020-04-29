@@ -291,10 +291,17 @@ exports[`expect MeldekortInfo fetching 1`] = `
 <RenderHome
   api={
     Object {
+      "fetchBeskjeder": [Function],
       "fetchHendelser": [Function],
+      "fetchInaktiveBeskjeder": [Function],
+      "fetchInaktiveInnbokser": [Function],
+      "fetchInaktiveOppgaver": [Function],
+      "fetchInnbokser": [Function],
+      "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchOppgaver": [Function],
       "fetchPersonIdent": [Function],
       "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
@@ -308,10 +315,17 @@ exports[`expect Oppfolging fetching 1`] = `
 <RenderHome
   api={
     Object {
+      "fetchBeskjeder": [Function],
       "fetchHendelser": [Function],
+      "fetchInaktiveBeskjeder": [Function],
+      "fetchInaktiveInnbokser": [Function],
+      "fetchInaktiveOppgaver": [Function],
+      "fetchInnbokser": [Function],
+      "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchOppgaver": [Function],
       "fetchPersonIdent": [Function],
       "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
@@ -325,10 +339,17 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
 <RenderHome
   api={
     Object {
+      "fetchBeskjeder": [Function],
       "fetchHendelser": [Function],
+      "fetchInaktiveBeskjeder": [Function],
+      "fetchInaktiveInnbokser": [Function],
+      "fetchInaktiveOppgaver": [Function],
+      "fetchInnbokser": [Function],
+      "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchOppgaver": [Function],
       "fetchPersonIdent": [Function],
       "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
@@ -342,10 +363,17 @@ exports[`expect Personalia ident fetching 1`] = `
 <RenderHome
   api={
     Object {
+      "fetchBeskjeder": [Function],
       "fetchHendelser": [Function],
+      "fetchInaktiveBeskjeder": [Function],
+      "fetchInaktiveInnbokser": [Function],
+      "fetchInaktiveOppgaver": [Function],
+      "fetchInnbokser": [Function],
+      "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchOppgaver": [Function],
       "fetchPersonIdent": [Function],
       "fetchPersonNavn": [Function],
       "fetchSaker": [Function],
@@ -359,10 +387,17 @@ exports[`expect Personalia navn fetching 1`] = `
 <RenderHome
   api={
     Object {
+      "fetchBeskjeder": [Function],
       "fetchHendelser": [Function],
+      "fetchInaktiveBeskjeder": [Function],
+      "fetchInaktiveInnbokser": [Function],
+      "fetchInaktiveOppgaver": [Function],
+      "fetchInnbokser": [Function],
+      "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
       "fetchMeldinger": [Function],
       "fetchOppfolging": [Function],
+      "fetchOppgaver": [Function],
       "fetchPersonIdent": [Function],
       "fetchPersonNavn": [Function],
       "fetchSaker": [Function],

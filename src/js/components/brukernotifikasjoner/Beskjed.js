@@ -41,7 +41,6 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv)
-    && !beskjed.tekst.includes('forskudd');
 
   return (
     <PanelMedIkon
