@@ -9,6 +9,13 @@ const ReactTestRenderer = require('react-test-renderer');
 /* eslint-disable no-unused-vars */
 const mockApi = () => (
   {
+    fetchBeskjeder: () => new Promise((resolve, reject) => {}),
+    fetchOppgaver: () => new Promise((resolve, reject) => {}),
+    fetchInnbokser: () => new Promise((resolve, reject) => {}),
+    fetchInaktiveBeskjeder: () => new Promise((resolve, reject) => {}),
+    fetchInaktiveOppgaver: () => new Promise((resolve, reject) => {}),
+    fetchInaktiveInnbokser: () => new Promise((resolve, reject) => {}),
+    fetchInnlogging: () => new Promise((resolve, reject) => {}),
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
     fetchPersonNavn: () => new Promise((resolve, reject) => {}),
@@ -20,7 +27,6 @@ const mockApi = () => (
   }
 );
 /* eslint-enable no-unused-vars */
-
 
 const flushPromises = () => (
   new Promise(resolve => setImmediate(resolve))
