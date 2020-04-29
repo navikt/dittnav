@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
-import PanelMedIkon from '../common/PanelMedIkon';
-import PanelOverskrift from '../common/PanelOverskrift';
-import IkonBeskjed from '../../../assets/IkonBeskjed';
 import { hotjarTrigger, hotjarSafetyStub } from '../../utils/Hotjar';
+import transformTolokalDatoTid from '../../utils/DatoUtils';
+import PanelMedIkon from '../common/PanelMedIkon';
+import IkonBeskjed from '../../../assets/IkonBeskjed';
 import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
-import transformTolokalDatoTid from '../../utils/DatoUtils';
 
 const remove = (beskjed, dispatch) => dispatch({
   type: REMOVE_BESKJED,
@@ -38,7 +37,6 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
     hotjarSafetyStub();
   }, []);
 
-  const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Normaltekst" />;
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
   const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
@@ -50,7 +48,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
       className="beskjed"
       data-ga="Dittnav/Varsel"
       alt="Beskjed"
-      overskrift={overskrift}
+      overskrift={sikkerhetsnivaa.tekst}
       etikett={lokalDatoTid}
       onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"

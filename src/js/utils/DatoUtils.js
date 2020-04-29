@@ -1,7 +1,7 @@
 import moment from 'moment';
 
-const transformTolokalDatoTid = (eventTidspunkt) => (
-  moment(eventTidspunkt).local()
+const transformTolokalDatoTid = (tidspunkt) => (
+  moment(tidspunkt).local()
     .format('DD-MM-YYYY')
     .replace(/-/g, '.')
 );
