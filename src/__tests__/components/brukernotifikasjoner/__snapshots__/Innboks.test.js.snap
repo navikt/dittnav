@@ -189,7 +189,7 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen
+          Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.
         </span>
       </p>
       

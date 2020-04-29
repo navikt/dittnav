@@ -47,12 +47,16 @@ exports[`Beskjed with empty link 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
-      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+         
+        
+      </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
@@ -121,24 +125,27 @@ exports[`Beskjed with link 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
-      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+         
+        <a
+          className="lenke panel-lenke"
+          href="https://enNyLenke"
+          id="panel-lenke-id"
+        >
+          <span>
+            Se mer informasjon
+          </span>
+        </a>
+      </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
-    <a
-      className="lenke panel-lenke"
-      href="https://enNyLenke"
-      id="panel-lenke-id"
-    >
-      <span>
-        Se mer informasjon
-      </span>
-    </a>
   </div>
   <div
     className="beskjed__knapp"
@@ -204,12 +211,16 @@ exports[`Beskjed with null as link 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
-      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+         
+        
+      </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
@@ -278,24 +289,27 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
-      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+         
+        <a
+          className="lenke panel-lenke"
+          href="https://enNyLenke"
+          id="panel-lenke-id"
+        >
+          <span>
+            Se mer informasjon
+          </span>
+        </a>
+      </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
-    <a
-      className="lenke panel-lenke"
-      href="https://enNyLenke"
-      id="panel-lenke-id"
-    >
-      <span>
-        Se mer informasjon
-      </span>
-    </a>
   </div>
   <div
     className="beskjed__knapp"
@@ -361,24 +375,27 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
-      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+         
+        <a
+          className="lenke panel-lenke"
+          href="https://enNyLenke"
+          id="panel-lenke-id"
+        >
+          <span>
+            Se mer informasjon
+          </span>
+        </a>
+      </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
-    <a
-      className="lenke panel-lenke"
-      href="https://enNyLenke"
-      id="panel-lenke-id"
-    >
-      <span>
-        Se mer informasjon
-      </span>
-    </a>
   </div>
   <div
     className="beskjed__knapp"
@@ -444,26 +461,29 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
       <span>
-        Du har fått en beskjed
+        <span>
+          Du har fått en beskjed.
+        </span>
+         
+        <a
+          className="lenke panel-lenke"
+          href="undefined"
+          id="panel-lenke-id"
+        >
+          <span>
+            Logg inn med høyere sikkerhetsnivå for å se beskjeden
+          </span>
+        </a>
       </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
-    <a
-      className="lenke panel-lenke"
-      href="undefined"
-      id="panel-lenke-id"
-    >
-      <span>
-        Logg inn med høyere sikkerhetsnivå for å se beskjeden
-      </span>
-    </a>
   </div>
 </div>
 `;
@@ -515,24 +535,27 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal lenkepanel__heading"
+      className="typo-normal"
     >
-      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+         
+        <a
+          className="lenke panel-lenke"
+          href="https://enNyLenke"
+          id="panel-lenke-id"
+        >
+          <span>
+            Se mer informasjon
+          </span>
+        </a>
+      </span>
     </p>
     <p
-      className="typo-undertekst panel__etikett"
+      className="typo-undertekst beskjed__etikett"
     >
       13.03.2020
     </p>
-    <a
-      className="lenke panel-lenke"
-      href="https://enNyLenke"
-      id="panel-lenke-id"
-    >
-      <span>
-        Se mer informasjon
-      </span>
-    </a>
   </div>
   <div
     className="beskjed__knapp"
