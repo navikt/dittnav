@@ -7,7 +7,6 @@ import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import DittnavFliser from '../../components/DittnavFliser';
 import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
@@ -17,7 +16,6 @@ import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
 const Home = ({ data, loading }) => {
-  const { state } = useBeskjedStore();
   const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
   const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
   const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
@@ -44,8 +42,6 @@ const Home = ({ data, loading }) => {
             />
             <KoronaSpesial
               sakstema={data.sakstema}
-              beskjeder={state.beskjeder}
-              inaktiveBeskjeder={state.inaktiveBeskjeder}
               isLoaded={!loading}
             />
             <DittnavLenkePanel sakstema={data.sakstema} />
