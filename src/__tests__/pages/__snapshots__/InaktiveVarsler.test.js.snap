@@ -84,7 +84,7 @@ exports[`InaktiveVarsler one innboks 1`] = `
         <p
           className="typo-undertekst lenkepanel__etikett"
         >
-          13.03.2020
+          13.03.2020 - 09:53
         </p>
       </div>
     </div>
@@ -167,7 +167,7 @@ exports[`InaktiveVarsler one oppgave 1`] = `
         <p
           className="typo-undertekst lenkepanel__etikett"
         >
-          13.03.2020
+          13.03.2020 - 09:53
         </p>
       </div>
     </div>
@@ -250,7 +250,7 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
         <p
           className="typo-undertekst lenkepanel__etikett"
         >
-          13.03.2020
+          13.03.2020 - 09:53
         </p>
       </div>
     </div>
@@ -315,7 +315,7 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
         <p
           className="typo-undertekst lenkepanel__etikett"
         >
-          13.03.2020
+          13.03.2020 - 09:53
         </p>
       </div>
     </div>
