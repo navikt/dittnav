@@ -67,6 +67,7 @@ exports[`PaabegynteSoknader one soknad 1`] = `
           Fortsett innsending
         </span>
       </p>
+      
     </div>
   </div>
   <span
@@ -138,6 +139,7 @@ exports[`PaabegynteSoknader several soknader 1`] = `
           Fortsett innsending
         </span>
       </p>
+      
     </div>
   </div>
   <span
