@@ -7,7 +7,6 @@ if [[ -z "$DITTNAV_API_URL" ]] ||
   [[ -z "$VTA_URL" ]] ||
   [[ -z "$INNLOGGINGSLINJE_API_URL" ]] ||
   [[ -z "$ARBEIDSSOKERREGISTRERING_URL" ]] ||
-  [[ -z "$HENDELSER_FEATURE_TOGGLE" ]] ||
   [[ -z "$VARSLINGER_FEATURE_TOGGLE" ]] ||
   [[ -z "$TEST_SIDE_FEATURE_TOGGLE" ]]; then
   echo "For å kunne starte applikasjonen må variablene DITTNAV_API_URL, TJENESTER_URL,
