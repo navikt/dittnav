@@ -58,7 +58,7 @@ exports[`Beskjed with empty link 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
   <div
@@ -144,7 +144,7 @@ exports[`Beskjed with link 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
   <div
@@ -222,7 +222,7 @@ exports[`Beskjed with null as link 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
   <div
@@ -308,7 +308,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
   <div
@@ -394,7 +394,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
   <div
@@ -482,7 +482,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
 </div>
@@ -554,7 +554,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
     <p
       className="typo-undertekst beskjed__etikett"
     >
-      13.03.2020
+      13.03.2020 - 09:53
     </p>
   </div>
   <div

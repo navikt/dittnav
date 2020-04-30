@@ -7,8 +7,7 @@ const transformTolokalDatoTid = (tidspunkt) => {
 
   return moment(tidspunkt)
     .local()
-    .format('DD-MM-YYYY')
-    .replace(/-/g, '.');
+    .format('DD.MM.YYYY - HH:mm');
 };
 
 export default transformTolokalDatoTid;

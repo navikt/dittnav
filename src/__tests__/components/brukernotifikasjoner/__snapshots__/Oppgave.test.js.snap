@@ -58,7 +58,7 @@ exports[`Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
       <p
         className="typo-undertekst lenkepanel__etikett"
       >
-        13.03.2020
+        13.03.2020 - 09:53
       </p>
     </div>
   </div>
@@ -126,7 +126,7 @@ exports[`Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
       <p
         className="typo-undertekst lenkepanel__etikett"
       >
-        13.03.2020
+        13.03.2020 - 09:53
       </p>
     </div>
   </div>
@@ -196,7 +196,7 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
       <p
         className="typo-undertekst lenkepanel__etikett"
       >
-        13.03.2020
+        13.03.2020 - 09:53
       </p>
     </div>
   </div>
@@ -264,7 +264,7 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
       <p
         className="typo-undertekst lenkepanel__etikett"
       >
-        13.03.2020
+        13.03.2020 - 09:53
       </p>
     </div>
   </div>
