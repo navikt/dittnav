@@ -1,5 +1,5 @@
 FROM navikt/common:0.1 AS navikt-common
-FROM navikt/pus-decorator
+FROM docker.pkg.github.com/navikt/pus-decorator/pus-decorator
 
 ENV APPLICATION_NAME=dittnav
 ENV CONTEXT_PATH=person/dittnav

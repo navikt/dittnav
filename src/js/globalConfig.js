@@ -148,7 +148,6 @@ export default {
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
   LENKER: lenker,
-  HENDELSER_FEATURE_TOGGLE: window.env.HENDELSER_FEATURE_TOGGLE === 'true',
   VARSLINGER_FEATURE_TOGGLE: window.env.VARSLINGER_FEATURE_TOGGLE === 'true',
   TEST_SIDE_FEATURE_TOGGLE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
 
