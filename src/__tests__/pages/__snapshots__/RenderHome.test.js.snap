@@ -278,6 +278,21 @@ exports[`expect Login page rendering 1`] = `
                   </a>
                 </p>
               </div>
+              <div
+                className="flere-tjenester__link-container"
+              >
+                <p
+                  className="typo-normal"
+                >
+                  <a
+                    className="lenke flere-tjenester__link"
+                    data-ga="Dittnav/Lenkeliste"
+                    href="http://localhost:9222/person/pdl-fullmakt-ui"
+                  >
+                    Dine fullmakter
+                  </a>
+                </p>
+              </div>
             </nav>
           </div>
         </div>
