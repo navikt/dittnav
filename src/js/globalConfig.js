@@ -61,7 +61,8 @@ const lenker = {
   },
   saksoversiktHjelp: {
     tittel: 'Dine saker hjelp',
-    url: '#' },
+    url: '#',
+  },
   innboks: {
     tittel: 'Innboks',
     url: `${window.env.TJENESTER_URL}/mininnboks`,
@@ -82,6 +83,10 @@ const lenker = {
     tittel: 'Lengre saksbehandlingstider',
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`,
   },
+  dineFullmakter: {
+    tittel: 'Dine fullmakter',
+    url: `${window.env.NAVNO_URL}/person/pdl-fullmakt-ui`,
+  },
 };
 
 const generelleLenker = [
@@ -93,6 +98,7 @@ const generelleLenker = [
   lenker.registrerDegSomArbeidssoker,
   lenker.dineStillingssok,
   lenker.personopplysninger,
+  lenker.dineFullmakter,
 ];
 
 const oppfolgingsLenker = [
@@ -103,6 +109,7 @@ const oppfolgingsLenker = [
   lenker.uforetrygd,
   lenker.meldekort,
   lenker.personopplysninger,
+  lenker.dineFullmakter,
 ];
 
 export default {
