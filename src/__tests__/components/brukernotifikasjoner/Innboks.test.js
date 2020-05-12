@@ -9,6 +9,7 @@ test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
     eventId: '1584093204636',
     tekst: 'Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44',
     link: 'https://enNyLenke',
+    produsent: 'dittnav',
     sistOppdatert: '2020-03-13T08:53:25.002983Z',
     sikkerhetsnivaa: 4,
   };
@@ -27,6 +28,7 @@ test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
     eventId: '1584093204636',
     tekst: 'Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44',
     link: 'https://enNyLenke',
+    produsent: 'dittnav',
     sistOppdatert: '2020-03-13T08:53:25.002983Z',
     sikkerhetsnivaa: 4,
   };
@@ -45,6 +47,7 @@ test('Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
     eventId: '1584093204636',
     tekst: 'Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44',
     link: 'https://enNyLenke',
+    produsent: 'dittnav',
     sistOppdatert: '2020-03-13T08:53:25.002983Z',
     sikkerhetsnivaa: 3,
   };
@@ -63,6 +66,7 @@ test('Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
     eventId: '1584093204636',
     tekst: 'Samtalereferat fra telefonsamtale 08.12.2019 kl. 11:44',
     link: 'https://enNyLenke',
+    produsent: 'dittnav',
     sistOppdatert: '2020-03-13T08:53:25.002983Z',
     sikkerhetsnivaa: 3,
   };
