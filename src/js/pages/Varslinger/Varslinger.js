@@ -48,7 +48,7 @@ const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, 
                     <Lenke
                       id="innboksmelding-id"
                       href={Config.LENKER.innboks.url}
-                      onClick={trackEvent(
+                      onClick={() => trackEvent(
                         GoogleAnalyticsCategory.Varslinger,
                         GoogleAnalyticsAction.Innboks,
                         Config.LENKER.innboks.url,

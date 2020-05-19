@@ -24,7 +24,7 @@ const AdvarselBox = () => (
               <Lenke
                 id="alert-lenke-id"
                 href={Config.LENKER.innboks.url}
-                onClick={trackEvent(
+                onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Varslinger,
                   GoogleAnalyticsAction.Innboks,
                   Config.LENKER.innboks.url,
@@ -37,7 +37,7 @@ const AdvarselBox = () => (
               <Lenke
                 id="alert-lenke-id"
                 href={Config.LENKER.saksoversikt.url}
-                onClick={trackEvent(
+                onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Varslinger,
                   GoogleAnalyticsAction.DineSaker,
                   Config.LENKER.saksoversikt.url,

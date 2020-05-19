@@ -11,7 +11,7 @@ const InngangVarslinger = () => (
     <Undertittel className="varslinger-inngang">
       <Lenke
         href={Config.dittNav.DITTNAV_VARSLINGER}
-        onClick={trackEvent(
+        onClick={() => trackEvent(
           GoogleAnalyticsCategory.Forside,
           GoogleAnalyticsAction.Varslinger,
           `${Config.dittNav.DITTNAV_VARSLINGER}`,

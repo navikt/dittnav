@@ -21,7 +21,7 @@ const PanelMedIkon = (props) => (
                 className="panel-lenke"
                 id="panel-lenke-id"
                 href={props.lenke}
-                onClick={trackEvent(props.gaCategory, props.gaAction, removeFragment(props.lenke))}
+                onClick={() => trackEvent(props.gaCategory, props.gaAction, removeFragment(props.lenke))}
               >
                 <FormattedMessage id={props.lenkeTekst} />
               </Lenke>

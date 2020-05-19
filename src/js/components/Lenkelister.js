@@ -13,7 +13,7 @@ const Lenkelister = (props) => (
               href={l.url}
               data-ga="Dittnav/Lenkeliste"
               className="lenke flere-tjenester__link"
-              onClick={trackEvent(
+              onClick={() => trackEvent(
                 GoogleAnalyticsCategory.Forside,
                 `${GoogleAnalyticsAction.FlereTjenester}/${l.tittel}`,
                 l.url,

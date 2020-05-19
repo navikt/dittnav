@@ -44,7 +44,7 @@ class DittnavLenkePanel extends React.Component {
                 alt="Dine saker"
                 className="dittnav-lenkepanel-liten-item"
                 href={Config.LENKER.saksoversikt.url}
-                onClick={trackEvent(
+                onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Forside,
                   GoogleAnalyticsAction.DineSaker,
                   Config.LENKER.saksoversikt.url,
@@ -58,7 +58,7 @@ class DittnavLenkePanel extends React.Component {
             alt="Utbetalinger"
             className="dittnav-lenkepanel-liten-item"
             href={Config.LENKER.utbetalingsoversikt.url}
-            onClick={trackEvent(
+            onClick={() => trackEvent(
               GoogleAnalyticsCategory.Forside,
               GoogleAnalyticsAction.Utbetalinger,
               Config.LENKER.utbetalingsoversikt.url,
@@ -71,7 +71,7 @@ class DittnavLenkePanel extends React.Component {
             alt="Innboks"
             className="dittnav-lenkepanel-liten-item last"
             href={Config.LENKER.innboks.url}
-            onClick={trackEvent(
+            onClick={() => trackEvent(
               GoogleAnalyticsCategory.Forside,
               GoogleAnalyticsAction.MinInnboks,
               Config.LENKER.innboks.url,

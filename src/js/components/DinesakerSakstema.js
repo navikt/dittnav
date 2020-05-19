@@ -54,7 +54,7 @@ class DinesakerSakstema extends React.Component {
           href={this.getTemaUrl()}
           className="sak-lenke"
           id="sak-lenke-id"
-          onClick={trackEvent(
+          onClick={() => trackEvent(
             GoogleAnalyticsCategory.Forside,
             GoogleAnalyticsAction.DineSisteSaker,
             removeFragment(this.getTemaUrl()),

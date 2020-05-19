@@ -14,7 +14,7 @@ class LenkepanelMedIkon extends React.Component {
       <LenkepanelBase
         className={className}
         href={href}
-        onClick={trackEvent(gaCategory, gaAction, (gaUrl || href))}
+        onClick={() => trackEvent(gaCategory, gaAction, (gaUrl || href))}
         linkCreator={linkCreator}
         border
       >
