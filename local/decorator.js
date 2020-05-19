@@ -3,11 +3,8 @@ const request = require('request');
 
 const { JSDOM } = jsdom;
 
-// const DECORATOR_URL = 'https://www.nav.no/person';
-// const DECORATOR_PATH = '/nav-dekoratoren';
-
-const DECORATOR_URL = 'https://appres.nav.no';
-const DECORATOR_PATH = '/common-html/v4/navno';
+const DECORATOR_URL = 'https://www.nav.no';
+const DECORATOR_PATH = '/dekoratoren';
 
 const DECORATOR_FRAGMENT_HEADER_WITHMENU = true;
 const DECORATOR_FRAGMENT_STYLES = true;
@@ -18,7 +15,7 @@ const DECORATOR_FRAGMENT_MEGAMENU_RESOURCES = true;
 
 const decoratedUrl = `${
   DECORATOR_URL
-}${DECORATOR_PATH}?header-withmenu=${DECORATOR_FRAGMENT_HEADER_WITHMENU}&styles=${DECORATOR_FRAGMENT_STYLES}&scripts=${DECORATOR_FRAGMENT_SCRIPTS}&footer-withmenu=${DECORATOR_FRAGMENT_FOOTER_WITH_MENU}&skiplinks=${DECORATOR_FRAGMENT_SKIP_LINKS}&megamenu-resources=${DECORATOR_FRAGMENT_MEGAMENU_RESOURCES}`;
+}${DECORATOR_PATH}/?header-withmenu=${DECORATOR_FRAGMENT_HEADER_WITHMENU}&styles=${DECORATOR_FRAGMENT_STYLES}&scripts=${DECORATOR_FRAGMENT_SCRIPTS}&footer-withmenu=${DECORATOR_FRAGMENT_FOOTER_WITH_MENU}&skiplinks=${DECORATOR_FRAGMENT_SKIP_LINKS}&megamenu-resources=${DECORATOR_FRAGMENT_MEGAMENU_RESOURCES}`;
 
 const requestDecorator = callback => request(
   decoratedUrl,
