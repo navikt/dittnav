@@ -25,7 +25,7 @@ export const GoogleAnalyticsAction = Object.freeze({
   Beskjed: 'Notifikasjon/Beskjed',
   BeskjedLukk: 'Notifikasjon/Lukk beskjed',
   Oppgave: 'Notifikasjon/Oppgave',
-  Innboks: 'Notifikasjon/Inbboks',
+  Innboks: 'Notifikasjon/Innboks',
   Koronaveiviser: 'Koronavirus - Hva gjelder i min situasjon?',
   DagpengerForskudd: 'Trenger du forsukdd på dagpenger?',
   Behandlingstid: 'Behandlingstid',
