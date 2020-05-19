@@ -30,6 +30,7 @@ exports[`InaktiveVarsler one innboks 1`] = `
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -112,6 +113,7 @@ exports[`InaktiveVarsler one oppgave 1`] = `
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -194,6 +196,7 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -258,6 +261,7 @@ exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"

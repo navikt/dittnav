@@ -8,6 +8,7 @@ exports[`PaabegynteSoknader one soknad 1`] = `
 <a
   className="lenkepanel infomelding paabegynte-soknader lenkepanel--border"
   href="http://nav.no"
+  onClick={[Function]}
 >
   <div
     className="lenkepanel__innhold"
@@ -79,6 +80,7 @@ exports[`PaabegynteSoknader several soknader 1`] = `
 <a
   className="lenkepanel infomelding paabegynte-soknader lenkepanel--border"
   href="https://tjenester-t6.nav.no/"
+  onClick={[Function]}
 >
   <div
     className="lenkepanel__innhold"

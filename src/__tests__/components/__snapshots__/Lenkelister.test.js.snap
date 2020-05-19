@@ -37,6 +37,7 @@ exports[`render a couple of links 1`] = `
           className="lenke flere-tjenester__link"
           data-ga="Dittnav/Lenkeliste"
           href="/mininnboks"
+          onClick={[Function]}
         >
           Min innboks
         </a>
@@ -52,6 +53,7 @@ exports[`render a couple of links 1`] = `
           className="lenke flere-tjenester__link"
           data-ga="Dittnav/Lenkeliste"
           href="/saksoversikt"
+          onClick={[Function]}
         >
           Innsyn og oversikt
         </a>

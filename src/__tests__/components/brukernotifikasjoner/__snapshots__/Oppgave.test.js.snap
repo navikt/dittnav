@@ -4,6 +4,7 @@ exports[`Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
 <a
   className="lenkepanel oppgave lenkepanel--border"
   href="https://enNyLenke"
+  onClick={[Function]}
 >
   <div
     className="lenkepanel__innhold"
@@ -71,6 +72,7 @@ exports[`Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
 <a
   className="lenkepanel oppgave lenkepanel--border"
   href="https://enNyLenke"
+  onClick={[Function]}
 >
   <div
     className="lenkepanel__innhold"
@@ -138,6 +140,7 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
 <a
   className="lenkepanel oppgave lenkepanel--border"
   href="undefined"
+  onClick={[Function]}
 >
   <div
     className="lenkepanel__innhold"
@@ -207,6 +210,7 @@ exports[`Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
 <a
   className="lenkepanel oppgave lenkepanel--border"
   href="https://enNyLenke"
+  onClick={[Function]}
 >
   <div
     className="lenkepanel__innhold"
