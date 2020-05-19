@@ -32,14 +32,6 @@ export const initializeGoogleAnalytics = () => ReactGA.initialize(trackingId, {
   debug: false,
 });
 
-export const trackPageView = (location) => {
-  ReactGA.set({
-    page: location.pathname,
-  });
-
-  ReactGA.pageview(location.pathname);
-};
-
 export const trackEvent = (category, action, label) => (
   ReactGA.event({
     category,
