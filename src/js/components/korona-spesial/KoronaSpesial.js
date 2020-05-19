@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { bool } from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+import { Normaltekst } from 'nav-frontend-typografi';
 import { KoronaVarsel } from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
 import Config from '../../globalConfig';
 import SakstemaType from '../../types/SakstemaType';
-import { Normaltekst } from 'nav-frontend-typografi';
-import { FormattedMessage } from 'react-intl';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 
 const visForskuddLenkeFra = '01-03-2020';
 
@@ -25,11 +26,15 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
 
   const venstreLenke = forskuddToggle
     ? Config.LENKER.dagpengerForskudd
-    : Config.LENKER.koronaBehandlingstid
+    : Config.LENKER.koronaBehandlingstid;
 
   const venstreTekst = forskuddToggle
     ? 'korona.dagpenger-forskudd.ingress'
     : 'korona.behandlingstid.ingress';
+
+  const venstreGaAction = forskuddToggle
+    ? GoogleAnalyticsAction.DagpengerForskudd
+    : GoogleAnalyticsAction.Behandlingstid;
 
   const loaded = isLoaded && (!harDagpengerSakNyligOppdatert || forskuddToggle !== null);
 
@@ -39,6 +44,8 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
         tittel={venstreLenke.tittel}
         href={venstreLenke.url}
         className="blaa-bakgrunn"
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={venstreGaAction}
       >
         <Normaltekst>
           <FormattedMessage id={venstreTekst} />
@@ -47,6 +54,8 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
       <KoronaVarsel
         tittel={Config.LENKER.koronaVeiviser.tittel}
         href={Config.LENKER.koronaVeiviser.url}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.Koronaveiviser}
       >
         <Normaltekst>
           <FormattedMessage id={'korona.virus-varsel.ingress'} />
@@ -58,12 +67,12 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
 
 KoronaSpesial.propTypes = {
   sakstema: SakstemaType,
-  isLoaded: bool
+  isLoaded: bool,
 };
 
 KoronaSpesial.defaultProps = {
   sakstema: null,
-  isLoaded: false
+  isLoaded: false,
 };
 
 export default KoronaSpesial;

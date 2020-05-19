@@ -26,6 +26,9 @@ export const GoogleAnalyticsAction = Object.freeze({
   BeskjedLukk: 'Notifikasjon/Lukk beskjed',
   Oppgave: 'Notifikasjon/Oppgave',
   Innboks: 'Notifikasjon/Inbboks',
+  Koronaveiviser: 'Koronavirus - Hva gjelder i min situasjon?',
+  DagpengerForskudd: 'Trenger du forsukdd på dagpenger?',
+  Behandlingstid: 'Behandlingstid',
 });
 
 export const initializeGoogleAnalytics = () => ReactGA.initialize(trackingId, {
