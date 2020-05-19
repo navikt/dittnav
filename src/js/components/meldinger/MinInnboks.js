@@ -6,6 +6,7 @@ import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import IkonInnboks from '../../../assets/IkonInnboks';
 import MinInnboksType from '../../types/MinInnboksType';
+import { GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
@@ -44,10 +45,11 @@ const MinInnboks = ({ mininnboks, intl }) => {
         <LenkepanelMedIkon
           key={message.type}
           className="infomelding innboks"
-          data-ga={`Dittnav/Varsel/${message.type.toLowerCase()} melding`}
           alt="Melding fra mininnboks"
           overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
           href={message.url}
+          gaCategory={GoogleAnalyticsCategory.Forside}
+          gaAction={`${message.type.toLowerCase()}`}
         >
           {getMinInnboksIcon(message.type)}
         </LenkepanelMedIkon>

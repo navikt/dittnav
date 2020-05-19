@@ -3,6 +3,8 @@ const ReactTestRenderer = require('react-test-renderer');
 import MinInnboks from 'js/components/meldinger/MinInnboks'
 import wrapIntl from 'js/IntlTestHelper';
 
+jest.mock('react-ga');
+
 test('MinInnboks without any messages', () => {
   const component = ReactTestRenderer.create(wrapIntl(<MinInnboks mininnboks={[]} />));
   expect(component.toJSON()).toMatchSnapshot();

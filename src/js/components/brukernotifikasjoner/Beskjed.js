@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
@@ -9,6 +10,11 @@ import IkonBeskjed from '../../../assets/IkonBeskjed';
 import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
+import {
+  GoogleAnalyticsAction,
+  GoogleAnalyticsCategory,
+  trackEvent,
+} from '../../utils/GoogleAnalytics';
 
 const remove = (beskjed, dispatch) => dispatch({
   type: REMOVE_BESKJED,
@@ -23,6 +29,7 @@ const addInaktiv = (beskjed, dispatch) => dispatch({
 const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
   remove(beskjed, dispatch);
   hotjarTrigger('beskjed_trykket_ok');
+  trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
 
   if (erAktiv) {
     addInaktiv(beskjed, dispatch);
@@ -30,6 +37,7 @@ const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
 };
 
 const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
+  const location = useLocation();
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
 
@@ -40,7 +48,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
   const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
-  const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv)
+  const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 
   return (
     <PanelMedIkon
@@ -53,6 +61,8 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
+      gaCategory={`Ditt NAV${location.pathname}`}
+      gaAction={GoogleAnalyticsAction.Beskjed}
       knapp={visKnapp}
     >
       <IkonBeskjed />

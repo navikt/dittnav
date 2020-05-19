@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
+import { trackPageView } from '../../utils/GoogleAnalytics';
 import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
-
 const VarslingerRender = ({ api }) => {
+  const location = useLocation();
   const [oppgaver, setOppgaver] = useState(null);
   const [innbokser, setInnbokser] = useState(null);
   const [inaktiveOppgaver, setInaktiveOppgaver] = useState(null);
@@ -19,6 +21,12 @@ const VarslingerRender = ({ api }) => {
   const handleError = () => {
     setError(['error.baksystemer']);
   };
+
+  useEffect(
+    () => {
+      trackPageView(location);
+    }, [],
+  );
 
   useEffect(
     () => {

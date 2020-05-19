@@ -10,6 +10,12 @@ import HoyreChevron from 'nav-frontend-chevron';
 import i18n from '../../translations/i18n';
 
 import Config from '../globalConfig';
+import {
+  GoogleAnalyticsAction,
+  GoogleAnalyticsCategory,
+  trackEvent,
+  removeFragment,
+} from '../utils/GoogleAnalytics';
 
 const sakstemaUrlOverride = {
   KOM: Config.LENKER.digisos.url,
@@ -48,6 +54,11 @@ class DinesakerSakstema extends React.Component {
           href={this.getTemaUrl()}
           className="sak-lenke"
           id="sak-lenke-id"
+          onClick={trackEvent(
+            GoogleAnalyticsCategory.Forside,
+            GoogleAnalyticsAction.DineSisteSaker,
+            removeFragment(this.getTemaUrl()),
+          )}
         >
           <div className="sak-temanavn">
             <Undertittel>

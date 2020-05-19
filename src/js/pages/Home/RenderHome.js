@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
 import PageFrame from '../PageFrame';
 import Home from './Home';
 import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
+import { trackPageView } from '../../utils/GoogleAnalytics';
 
 const RenderHome = ({ api }) => {
   const [data, setData] = useState({
@@ -24,6 +26,7 @@ const RenderHome = ({ api }) => {
     oppfolgingHasLoaded: false,
   });
 
+  const location = useLocation();
   const { dispatch } = useBeskjedStore();
 
   const handleOppfolgingError = () => {
@@ -33,6 +36,12 @@ const RenderHome = ({ api }) => {
   const incrementFetching = () => {
     setData(d => ({ ...d, fetching: d.fetching + 1 }));
   };
+
+  useEffect(
+    () => {
+      trackPageView(location);
+    }, [],
+  );
 
   useEffect(
     () => {

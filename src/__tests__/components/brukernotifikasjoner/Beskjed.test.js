@@ -3,6 +3,9 @@ const ReactTestRenderer = require('react-test-renderer');
 import Beskjed from 'js/components/brukernotifikasjoner/Beskjed';
 import BeskjedStoreProvider from '../../../js/context/BeskjedStoreProvider';
 import wrapIntl from 'js/IntlTestHelper';
+import { MemoryRouter } from 'react-router-dom';
+
+jest.mock('react-ga');
 
 test('Beskjed with link', () => {
   const beskjed = {
@@ -21,9 +24,11 @@ test('Beskjed with link', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -45,9 +50,11 @@ test('Beskjed with empty link', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -69,9 +76,11 @@ test('Beskjed with null as link', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -93,9 +102,11 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -117,9 +128,11 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -141,9 +154,11 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -165,9 +180,11 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Beskjed beskjed={beskjed} beskjeder={null} innlogging={innlogging}/>
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });

@@ -10,7 +10,6 @@ exports[`MinInnboks with one document 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -76,7 +75,6 @@ exports[`MinInnboks with one task 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -142,7 +140,6 @@ exports[`MinInnboks with one unanswered 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -209,7 +206,6 @@ Array [
   <a
     className="lenkepanel infomelding innboks lenkepanel--border"
     href="https://tjenester-t6.nav.no/mininnboks"
-    onClick={null}
   >
     <div
       className="lenkepanel__innhold"
@@ -272,7 +268,6 @@ Array [
   <a
     className="lenkepanel infomelding innboks lenkepanel--border"
     href="https://tjenester-t6.nav.no/mininnboks"
-    onClick={null}
   >
     <div
       className="lenkepanel__innhold"
@@ -339,7 +334,6 @@ exports[`MinInnboks with two documents 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -406,7 +400,6 @@ Array [
   <a
     className="lenkepanel infomelding innboks lenkepanel--border"
     href="https://tjenester-t6.nav.no/mininnboks"
-    onClick={null}
   >
     <div
       className="lenkepanel__innhold"
@@ -469,7 +462,6 @@ Array [
   <a
     className="lenkepanel infomelding innboks lenkepanel--border"
     href="https://tjenester-t6.nav.no/someother"
-    onClick={null}
   >
     <div
       className="lenkepanel__innhold"
@@ -536,7 +528,6 @@ exports[`MinInnboks with two tasks 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -602,7 +593,6 @@ exports[`MinInnboks with two unanswered 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -668,7 +658,6 @@ exports[`MinInnboks with two unread 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -734,7 +723,6 @@ exports[`MinInnboks with zero tasks 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"

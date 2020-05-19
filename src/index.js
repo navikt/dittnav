@@ -14,6 +14,7 @@ import './css/index.css';
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
 
+import { initializeGoogleAnalytics } from './js/utils/GoogleAnalytics';
 import enableHotModuleReplacement from './js/utils/Parcel';
 import log from './js/utils/Logger';
 
@@ -52,5 +53,6 @@ const checkAuthThenRenderApp = () => {
     });
 };
 
+initializeGoogleAnalytics();
 enableHotModuleReplacement();
 checkAuthThenRenderApp();

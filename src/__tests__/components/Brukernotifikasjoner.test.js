@@ -2,7 +2,10 @@ import * as React from 'react';
 import wrapIntl from 'js/IntlTestHelper';
 import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
 import BeskjedStoreProvider from 'js/context/BeskjedStoreProvider';
+import { MemoryRouter } from 'react-router-dom';
 const ReactTestRenderer = require('react-test-renderer');
+
+jest.mock('react-ga');
 
 const beskjeder = [
   {
@@ -75,16 +78,20 @@ const innlogging = {
 
 test('Brukernotifikasjoner empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={null} />,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={null} />
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with beskjeder', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider beskjeder={beskjeder}>
-      <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider beskjeder={beskjeder}>
+        <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -92,36 +99,44 @@ test('Brukernotifikasjoner with beskjeder', () => {
 
 test('Brukernotifikasjoner with oppgaver', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Brukernotifikasjoner oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with innbokser', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <Brukernotifikasjoner oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <Brukernotifikasjoner oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider beskjeder={beskjeder}>
-      <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider beskjeder={beskjeder}>
+        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser, but no innlogging', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider beskjeder={beskjeder}>
-      <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={null} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider beskjeder={beskjeder}>
+        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={null} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });

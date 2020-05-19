@@ -4,7 +4,6 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -100,7 +99,6 @@ exports[`basic Meldekort test 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -201,7 +199,6 @@ exports[`basic one Meldekort test 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -300,7 +297,6 @@ exports[`basic one Meldekort test no risk 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -397,7 +393,6 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -491,7 +486,6 @@ exports[`basic zero Meldekort test 1`] = `
 <a
   className="lenkepanel infomelding meldekort-innsendt lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -574,7 +568,6 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -668,7 +661,6 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
 <a
   className="lenkepanel infomelding oppgave lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"
@@ -762,7 +754,6 @@ exports[`no cards no risk 1`] = `
 <a
   className="lenkepanel infomelding meldekort-innsendt lenkepanel--border"
   href="http://localhost:9222/meldekort"
-  onClick={null}
 >
   <div
     className="lenkepanel__innhold"

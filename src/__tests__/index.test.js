@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from '../js/App';
 import Api from '../js/Api';
 import NavApp from '../js/NavApp';
-
 import nbMessages from 'translations/nb.json';
 import enMessages from 'translations/en.json';
 
@@ -20,10 +19,13 @@ const wrapNavApp = (children, props = { defaultSprak: 'nb', messages: loadMessag
   </NavApp>
 );
 
-jest.mock('react-dom', () => ({render: jest.fn()}))
+jest.mock('react-dom', () => ({render: jest.fn()}));
+jest.mock('react-ga');
 
 it('index renders without crashing', async () => {
+
   const expectedF = jest.fn();
+
   Api.checkAuth = () => new Promise((resolve, reject) => {
     expectedF();
     resolve(true);

@@ -6,6 +6,7 @@ import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import MeldekortType from '../../types/MeldekortType';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
@@ -25,10 +26,11 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
     return (
       <LenkepanelMedIkon
         className="infomelding oppgave"
-        data-ga="Dittnav/Varsel"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}
         href={`${conf.dittNav.NAVNO_URL}${conf.ETTERREGISTRERT_PATH}`}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.EtterregistrerteMeldekort}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>

@@ -3,6 +3,8 @@ const ReactTestRenderer = require('react-test-renderer');
 import PaabegynteSoknader from 'js/components/meldinger/PaabegynteSoknader';
 import wrapIntl from 'js/IntlTestHelper';
 
+jest.mock('react-ga');
+
 test('PaabegynteSoknader green test', () => {
   const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader />));
   expect(component.toJSON()).toMatchSnapshot();

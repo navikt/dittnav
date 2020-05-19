@@ -4,6 +4,8 @@ import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 
 const ReactTestRenderer = require('react-test-renderer');
 
+jest.mock('react-ga');
+
 const sakstemaMedSaker = {
   antallSakstema: 6,
   sakstemaList: [

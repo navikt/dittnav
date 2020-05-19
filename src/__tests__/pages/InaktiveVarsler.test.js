@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import wrapIntl from 'js/IntlTestHelper';
 import InaktiveVarsler from '../../js/pages/Varslinger/varsler/InaktiveVarsler';
 import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
+
+jest.mock('react-ga');
 
 const beskjeder = [
   {
@@ -47,45 +50,55 @@ const innlogging = {
 
 test('InaktiveVarsler empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <InaktiveVarsler oppgaver={null} innbokser={null} innlogging={null} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <InaktiveVarsler oppgaver={null} innbokser={null} innlogging={null} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InaktiveVarsler one beskjed', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider beskjeder={beskjeder}>
-      <InaktiveVarsler oppgaver={null} innbokser={null} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider beskjeder={beskjeder}>
+        <InaktiveVarsler oppgaver={null} innbokser={null} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InaktiveVarsler one oppgave', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <InaktiveVarsler oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <InaktiveVarsler oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InaktiveVarsler one innboks', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider>
-      <InaktiveVarsler oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider>
+        <InaktiveVarsler oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('InaktiveVarsler several brukernotifikasjoner', () => {
   const component = ReactTestRenderer.create(wrapIntl(
-    <BeskjedStoreProvider beskjeder={beskjeder}>
-      <InaktiveVarsler oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
-    </BeskjedStoreProvider>,
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <BeskjedStoreProvider beskjeder={beskjeder}>
+        <InaktiveVarsler oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+      </BeskjedStoreProvider>
+    </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
