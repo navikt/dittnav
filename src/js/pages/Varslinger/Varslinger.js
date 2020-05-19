@@ -13,6 +13,11 @@ import InaktiveVarsler from './varsler/InaktiveVarsler';
 import InnloggingType from '../../types/InnloggingType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
+import {
+  GoogleAnalyticsAction,
+  GoogleAnalyticsCategory,
+  trackEvent,
+} from '../../utils/GoogleAnalytics';
 
 const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, innlogging }) => (
   <div className="row">
@@ -39,7 +44,19 @@ const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, 
               <FormattedMessage
                 id="varslinger.mininnboks.melding"
                 values={{
-                  innboksen: <Lenke id="innboksmelding-id" href={Config.LENKER.innboks.url}>innboksen</Lenke>,
+                  innboksen: (
+                    <Lenke
+                      id="innboksmelding-id"
+                      href={Config.LENKER.innboks.url}
+                      onClick={() => trackEvent(
+                        GoogleAnalyticsCategory.Varslinger,
+                        GoogleAnalyticsAction.Innboks,
+                        Config.LENKER.innboks.url,
+                      )}
+                    >
+                      innboksen
+                    </Lenke>
+                  ),
                 }}
               />
             </Normaltekst>

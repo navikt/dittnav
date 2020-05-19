@@ -1,31 +1,37 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { shape, arrayOf, string } from 'prop-types';
 import { Normaltekst } from 'nav-frontend-typografi';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
 
-class Lenkelister extends Component {
-  render() {
-    return (
-      <div className="flere-tjenester">
-        <nav className="flere-tjenester__links">
-          {this.props.links.map(l => (
-            <div className="flere-tjenester__link-container" key={l.url}>
-              <Normaltekst>
-                <a href={l.url} data-ga="Dittnav/Lenkeliste" className="lenke flere-tjenester__link">
-                  {l.tittel}
-                </a>
-              </Normaltekst>
-            </div>
-          ))}
-        </nav>
-      </div>
-    );
-  }
-}
+const Lenkelister = (props) => (
+  <div className="flere-tjenester">
+    <nav className="flere-tjenester__links">
+      {props.links.map(l => (
+        <div className="flere-tjenester__link-container" key={l.url}>
+          <Normaltekst>
+            <a
+              href={l.url}
+              data-ga="Dittnav/Lenkeliste"
+              className="lenke flere-tjenester__link"
+              onClick={() => trackEvent(
+                GoogleAnalyticsCategory.Forside,
+                `${GoogleAnalyticsAction.FlereTjenester}/${l.tittel}`,
+                l.url,
+              )}
+            >
+              {l.tittel}
+            </a>
+          </Normaltekst>
+        </div>
+      ))}
+    </nav>
+  </div>
+);
 
 Lenkelister.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    tittel: PropTypes.string.isRequired,
+  links: arrayOf(shape({
+    url: string.isRequired,
+    tittel: string.isRequired,
   })),
 };
 

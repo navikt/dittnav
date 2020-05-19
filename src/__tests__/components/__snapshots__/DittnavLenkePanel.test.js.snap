@@ -49,6 +49,7 @@ exports[`Snapshot test med saker 1`] = `
           className="lenke sak-lenke"
           href="http://localhost:9222/saksoversikt/tema/BAR"
           id="sak-lenke-id"
+          onClick={[Function]}
         >
           <div
             className="sak-temanavn"
@@ -85,6 +86,7 @@ exports[`Snapshot test med saker 1`] = `
           className="lenke sak-lenke"
           href="http://localhost:9222/saksoversikt/tema/SYK"
           id="sak-lenke-id"
+          onClick={[Function]}
         >
           <div
             className="sak-temanavn"
@@ -127,6 +129,7 @@ exports[`Snapshot test med saker 1`] = `
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -143,6 +146,7 @@ exports[`Snapshot test med saker 1`] = `
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
       href="http://localhost:9222/mininnboks"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -171,6 +175,7 @@ exports[`Snapshot test uten saker 1`] = `
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/saksoversikt"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -187,6 +192,7 @@ exports[`Snapshot test uten saker 1`] = `
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -203,6 +209,7 @@ exports[`Snapshot test uten saker 1`] = `
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
       href="http://localhost:9222/mininnboks"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"

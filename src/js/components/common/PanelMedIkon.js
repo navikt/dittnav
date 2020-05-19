@@ -5,46 +5,52 @@ import { Normaltekst, Undertekst } from 'nav-frontend-typografi';
 import { Panel } from 'nav-frontend-paneler';
 import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
+import { trackEvent, removeFragment } from '../../utils/GoogleAnalytics';
 
-const PanelMedIkon = ({ className, overskrift, ingress, etikett, children, knapp, lenke, lenkeTekst, onClick, skjermleserTekst, intl }) => (
-  <Panel className={className} border>
-    <div className={`${className}__ikon`}>
-      {children}
+const PanelMedIkon = (props) => (
+  <Panel className={props.className} border>
+    <div className={`${props.className}__ikon`}>
+      {props.children}
     </div>
-    <div className={`${className}__tekst`}>
+    <div className={`${props.className}__tekst`}>
       <Normaltekst>
         <span>
-          {overskrift} {(lenke)
+          {props.overskrift} {(props.lenke)
             ? (
-              <Lenke className="panel-lenke" id="panel-lenke-id" href={lenke}>
-                <FormattedMessage id={lenkeTekst} />
+              <Lenke
+                className="panel-lenke"
+                id="panel-lenke-id"
+                href={props.lenke}
+                onClick={() => trackEvent(props.gaCategory, props.gaAction, removeFragment(props.lenke))}
+              >
+                <FormattedMessage id={props.lenkeTekst} />
               </Lenke>
             )
             : ''}
         </span>
       </Normaltekst>
-      {(ingress)
+      {(props.ingress)
         ? (
           <Normaltekst>
-            {ingress}
+            {props.ingress}
           </Normaltekst>
         )
         : null}
-      {etikett
+      {props.etikett
         ? (
-          <Undertekst className={`${className}__etikett`}>
-            {etikett}
+          <Undertekst className={`${props.className}__etikett`}>
+            {props.etikett}
           </Undertekst>
         ) : ''}
     </div>
     <>
-      {knapp
+      {props.knapp
         ? (
-          <div className={`${className}__knapp`}>
-            <Lukknapp bla onClick={onClick}>
-              {skjermleserTekst
-                ? intl.formatMessage({ id: skjermleserTekst })
-                : intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
+          <div className={`${props.className}__knapp`}>
+            <Lukknapp bla onClick={props.onClick}>
+              {props.skjermleserTekst
+                ? props.intl.formatMessage({ id: props.skjermleserTekst })
+                : props.intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
             </Lukknapp>
           </div>
         )
@@ -62,6 +68,8 @@ PanelMedIkon.propTypes = {
   ]).isRequired,
   ingress: shape({ root: any }),
   etikett: string,
+  gaCategory: string,
+  gaAction: string,
   children: node.isRequired,
   knapp: bool,
   lenke: string,
@@ -75,6 +83,8 @@ PanelMedIkon.defaultProps = {
   onClick: null,
   ingress: null,
   etikett: null,
+  gaCategory: null,
+  gaAction: null,
   knapp: null,
   lenke: null,
   lenkeTekst: null,

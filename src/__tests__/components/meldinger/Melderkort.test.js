@@ -4,6 +4,8 @@ import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
 const ReactTestRenderer = require('react-test-renderer');
 
+jest.mock('react-ga');
+
 i18n.nb.formatDate = date => new Date(date).toLocaleDateString('en-US');
 
 test('basic Meldekort test with no meldekort', () => {

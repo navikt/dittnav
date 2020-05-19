@@ -6,6 +6,8 @@ import wrapIntl from 'js/IntlTestHelper';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
 
+jest.mock('react-ga');
+
 const mockApi = () => (
   {
     fetchBeskjeder: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars

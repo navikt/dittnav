@@ -1,11 +1,17 @@
 import React from "react";
 import { Undertittel } from "nav-frontend-typografi";
 import { LenkepanelBase } from "nav-frontend-lenkepanel/lib";
+import { trackEvent } from '../../utils/GoogleAnalytics';
 
 const cssPrefix = "korona-varsel";
 
-export const KoronaVarsel = ({ tittel, href, visIkon = false, children, className }) => (
-  <LenkepanelBase className={`${cssPrefix}${className ? ` ${className}` : ''}`} href={href} border={true}>
+export const KoronaVarsel = ({ tittel, href, visIkon = false, children, className, gaCategory, gaAction }) => (
+  <LenkepanelBase
+    className={`${cssPrefix}${className ? ` ${className}` : ''}`}
+    href={href}
+    onClick={() => trackEvent(gaCategory, gaAction, href)}
+    border
+  >
     {visIkon && (
       <div className={`${cssPrefix}__ikon-kol`}>
         <div className={`${cssPrefix}__pulse`} />

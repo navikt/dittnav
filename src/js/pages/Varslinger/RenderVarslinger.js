@@ -5,7 +5,6 @@ import useBeskjedStore from '../../hooks/useBeskjedStore';
 import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
-
 const VarslingerRender = ({ api }) => {
   const [oppgaver, setOppgaver] = useState(null);
   const [innbokser, setInnbokser] = useState(null);

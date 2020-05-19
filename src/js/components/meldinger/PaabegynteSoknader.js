@@ -5,6 +5,7 @@ import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import PaabegynteSoknaderType from '../../types/PaabegynteSoknaderType';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 
 const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
   <PanelOverskrift
@@ -22,11 +23,12 @@ const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
   return (
     <LenkepanelMedIkon
       className="infomelding paabegynte-soknader"
-      data-ga="Dittnav/Varsel/Paabegynt soknad"
       alt="Melding om Søknader"
       overskrift={createOverskrift(paabegynteSoknader, soknadstekst, intl)}
       ingress={<F id="saksoversikt.lenke" />}
       href={paabegynteSoknader.url}
+      gaCategory={GoogleAnalyticsCategory.Forside}
+      gaAction={GoogleAnalyticsAction.PaabegynteSoknader}
     >
       <IkonBeskjed />
     </LenkepanelMedIkon>

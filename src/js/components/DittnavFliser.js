@@ -7,6 +7,7 @@ import IkonBlyant from '../../assets/IkonBlyant';
 import IkonKane from '../../assets/IkonKane';
 import IkonPille from '../../assets/IkonPille';
 import IkonSkilt from '../../assets/IkonSkilt';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../utils/GoogleAnalytics';
 
 const DittnavFliser = () => (
   <>
@@ -17,6 +18,8 @@ const DittnavFliser = () => (
         ingress={<F id="fliser.ditt.sykevravaer.ingress" />}
         className="first"
         href={Config.LENKER.dittSykefravaer.url}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.DittSykefravaer}
       >
         <IkonPille />
       </LenkepanelMedIkon>
@@ -25,6 +28,8 @@ const DittnavFliser = () => (
         overskrift={<PanelOverskrift overskrift={<F id="fliser.mistet.jobben" />} type="Undertittel" />}
         ingress={<F id="fliser.mistet.jobben.ingress" />}
         href={Config.LENKER.veilederArbeidssoker.url}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.MistetJobben}
       >
         <IkonSkilt />
       </LenkepanelMedIkon>
@@ -36,6 +41,8 @@ const DittnavFliser = () => (
         ingress={<F id="fliser.skjemaer.ingress" />}
         className="first"
         href={Config.LENKER.skjemaer.url}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.Skjemaer}
       >
         <IkonBlyant />
       </LenkepanelMedIkon>
@@ -44,6 +51,8 @@ const DittnavFliser = () => (
         overskrift={<PanelOverskrift overskrift={<F id="fliser.din.pensjon" />} type="Undertittel" />}
         ingress={<F id="fliser.din.pensjon.ingress" />}
         href={Config.LENKER.dinPensjon.url}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.DinPensjon}
       >
         <IkonKane />
       </LenkepanelMedIkon>

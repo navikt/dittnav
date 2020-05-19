@@ -4,6 +4,11 @@ import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
 import Config from '../../../globalConfig';
+import {
+  GoogleAnalyticsAction,
+  GoogleAnalyticsCategory,
+  trackEvent,
+} from '../../../utils/GoogleAnalytics';
 
 const AdvarselBox = () => (
   <div className="alertbox">
@@ -15,8 +20,32 @@ const AdvarselBox = () => (
         <FormattedMessage
           id="varslinger.under.utvikling.ingress"
           values={{
-            innboks: <Lenke id="alert-lenke-id" href={Config.LENKER.innboks.url}>innboksen</Lenke>,
-            saksoversikt: <Lenke id="alert-lenke-id" href={Config.LENKER.saksoversikt.url}>Dine saker</Lenke>,
+            innboks: (
+              <Lenke
+                id="alert-lenke-id"
+                href={Config.LENKER.innboks.url}
+                onClick={() => trackEvent(
+                  GoogleAnalyticsCategory.Varslinger,
+                  GoogleAnalyticsAction.Innboks,
+                  Config.LENKER.innboks.url,
+                )}
+              >
+                innboksen
+              </Lenke>
+            ),
+            saksoversikt: (
+              <Lenke
+                id="alert-lenke-id"
+                href={Config.LENKER.saksoversikt.url}
+                onClick={() => trackEvent(
+                  GoogleAnalyticsCategory.Varslinger,
+                  GoogleAnalyticsAction.DineSaker,
+                  Config.LENKER.saksoversikt.url,
+                )}
+              >
+                Dine saker
+              </Lenke>
+            ),
           }}
         />
       </Normaltekst>

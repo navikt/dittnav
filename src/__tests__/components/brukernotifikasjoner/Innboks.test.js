@@ -2,6 +2,9 @@ import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import Innboks from 'js/components/brukernotifikasjoner/Innboks';
 import wrapIntl from 'js/IntlTestHelper';
+import { MemoryRouter } from 'react-router-dom';
+
+jest.mock('react-ga');
 
 test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   const innboks = {
@@ -18,7 +21,11 @@ test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
     securityLevel: '4',
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Innboks innboks={innboks} innlogging={innlogging}/>));
+  const component = ReactTestRenderer.create(wrapIntl(
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <Innboks innboks={innboks} innlogging={innlogging}/>
+    </MemoryRouter>,
+  ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -37,7 +44,11 @@ test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
     securityLevel: '3',
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Innboks innboks={innboks} innlogging={innlogging}/>));
+  const component = ReactTestRenderer.create(wrapIntl(
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <Innboks innboks={innboks} innlogging={innlogging}/>
+    </MemoryRouter>,
+  ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -56,7 +67,11 @@ test('Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
     securityLevel: '3',
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Innboks innboks={innboks} innlogging={innlogging}/>));
+  const component = ReactTestRenderer.create(wrapIntl(
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <Innboks innboks={innboks} innlogging={innlogging}/>
+    </MemoryRouter>
+  ));
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -75,6 +90,10 @@ test('Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
     securityLevel: '4',
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Innboks innboks={innboks} innlogging={innlogging}/>));
+  const component = ReactTestRenderer.create(wrapIntl(
+    <MemoryRouter initialEntries={['/person/dittnav']}>
+      <Innboks innboks={innboks} innlogging={innlogging}/>
+    </MemoryRouter>,
+  ));
   expect(component.toJSON()).toMatchSnapshot();
 });

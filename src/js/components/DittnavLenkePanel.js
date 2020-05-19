@@ -6,6 +6,7 @@ import Config from '../globalConfig';
 
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
 
 const antallSakstemaVist = 2;
 
@@ -43,6 +44,11 @@ class DittnavLenkePanel extends React.Component {
                 alt="Dine saker"
                 className="dittnav-lenkepanel-liten-item"
                 href={Config.LENKER.saksoversikt.url}
+                onClick={() => trackEvent(
+                  GoogleAnalyticsCategory.Forside,
+                  GoogleAnalyticsAction.DineSaker,
+                  Config.LENKER.saksoversikt.url,
+                )}
                 border
               >
                 <F id="fliser.dine.saker" />
@@ -52,6 +58,11 @@ class DittnavLenkePanel extends React.Component {
             alt="Utbetalinger"
             className="dittnav-lenkepanel-liten-item"
             href={Config.LENKER.utbetalingsoversikt.url}
+            onClick={() => trackEvent(
+              GoogleAnalyticsCategory.Forside,
+              GoogleAnalyticsAction.Utbetalinger,
+              Config.LENKER.utbetalingsoversikt.url,
+            )}
             border
           >
             <F id="fliser.dine.utbetalinger" />
@@ -60,6 +71,11 @@ class DittnavLenkePanel extends React.Component {
             alt="Innboks"
             className="dittnav-lenkepanel-liten-item last"
             href={Config.LENKER.innboks.url}
+            onClick={() => trackEvent(
+              GoogleAnalyticsCategory.Forside,
+              GoogleAnalyticsAction.MinInnboks,
+              Config.LENKER.innboks.url,
+            )}
             border
           >
             <F id="fliser.innboks" />

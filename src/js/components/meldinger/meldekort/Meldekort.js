@@ -8,6 +8,7 @@ import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import IkonBeskjed from '../../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../../assets/IkonOppgave';
 import MeldekortType from '../../../types/MeldekortType';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/GoogleAnalytics';
 
 const Meldekort = ({ meldekort, intl }) => {
   if (!meldekort) {
@@ -49,11 +50,12 @@ const Meldekort = ({ meldekort, intl }) => {
     return (
       <LenkepanelMedIkon
         className="infomelding oppgave"
-        data-ga="Dittnav/Varsel"
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(true)} type="Element" />}
         ingress={ingress(true)}
         href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.MeldekortKlar}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>
@@ -64,11 +66,12 @@ const Meldekort = ({ meldekort, intl }) => {
     return (
       <LenkepanelMedIkon
         className="infomelding meldekort-innsendt"
-        data-ga="Dittnav/Varsel"
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(false)} type="Element" />}
         ingress={ingress(false)}
         href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
+        gaCategory={GoogleAnalyticsCategory.Forside}
+        gaAction={GoogleAnalyticsAction.MeldekortVent}
       >
         <IkonBeskjed />
       </LenkepanelMedIkon>

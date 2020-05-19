@@ -9,7 +9,7 @@ Array [
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -74,7 +74,7 @@ Array [
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -139,7 +139,7 @@ Array [
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -204,7 +204,7 @@ Array [
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -276,7 +276,7 @@ Array [
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -341,7 +341,7 @@ Array [
   <a
     className="lenkepanel innboks lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -411,7 +411,7 @@ Array [
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
@@ -476,7 +476,7 @@ Array [
   <a
     className="lenkepanel oppgave lenkepanel--border"
     href="https://enNyLenke"
-    onClick={null}
+    onClick={[Function]}
   >
     <div
       className="lenkepanel__innhold"
