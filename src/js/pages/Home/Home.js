@@ -36,9 +36,7 @@ const Home = ({ data, loading }) => {
               innlogging={data.innlogging}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
-              inaktiveBeskjeder={data.inaktiveBeskjeder}
-              inaktiveOppgaver={data.inaktiveOppgaver}
-              inaktiveInnbokser={data.inaktiveInnbokser}
+              hasInactiveEvents={data.hasInactiveEvents}
             />
             <KoronaSpesial
               sakstema={data.sakstema}
@@ -72,6 +70,7 @@ Home.propTypes = {
     oppgaver: arrayOf(OppgaveType),
     innbokser: arrayOf(InnboksType),
     innlogging: InnloggingType,
+    hasInactiveEvents: bool,
   }),
   loading: bool.isRequired,
 };
@@ -86,6 +85,7 @@ Home.defaultProps = {
     innlogging: null,
     oppgaver: null,
     innbokser: null,
+    hasInactiveEvents: false,
   }),
 };
 
