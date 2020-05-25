@@ -57,6 +57,7 @@ const RenderHome = ({ api }) => {
           setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
+      /* Slår midlertidig av kall som henter inn inaktive brukernotifikasjoner.
       api.fetchInaktiveBeskjeder()
         .then((r) => {
           incrementFetching();
@@ -72,6 +73,7 @@ const RenderHome = ({ api }) => {
         .then((r) => {
           setData(d => ({ ...d, inaktiveInnbokser: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
+      */
 
       api.fetchInnlogging()
         .then((r) => {
@@ -122,7 +124,7 @@ const RenderHome = ({ api }) => {
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-  const loading = data.fetching < 13;
+  const loading = data.fetching < 10;
 
   return (
     <PageFrame uniqueErrors={uniqueErrors}>
