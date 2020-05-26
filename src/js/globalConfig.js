@@ -132,6 +132,7 @@ export default {
     DITTNAV_BESKJED_INAKTIV: `${window.env.DITTNAV_API_URL}/beskjed/inaktiv`,
     DITTNAV_OPPGAVE_INAKTIV: `${window.env.DITTNAV_API_URL}/oppgave/inaktiv`,
     DITTNAV_INNBOKS_INAKTIV: `${window.env.DITTNAV_API_URL}/innboks/inaktiv`,
+    DITTNAV_INACTIVE_COUNT: `${window.env.DITTNAV_API_URL}/brukernotifikasjon/count/inactive`,
     DITTNAV_DONE_URL: `${window.env.DITTNAV_API_URL}/produce/done`,
     DITTNAV_VARSLINGER: `${window.env.NAVNO_URL}/person/dittnav/varslinger`,
 
