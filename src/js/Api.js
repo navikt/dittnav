@@ -64,7 +64,7 @@ const fetchInnbokser = () => fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS}`);
 const fetchInaktiveBeskjeder = () => fetchJSON(`${Config.dittNav.DITTNAV_BESKJED_INAKTIV}`);
 const fetchInaktiveOppgaver = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE_INAKTIV}`);
 const fetchInaktiveInnbokser = () => fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS_INAKTIV}`);
-
+const fetchInactiveCount = () => fetchJSON(`${Config.dittNav.DITTNAV_INACTIVE_COUNT}`);
 const postHendelse = (path, content) => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_URL}/${path}`, content);
 const postDoneAll = () => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_DONE_ALL_URL}`, null);
 const postDone = (content) => postJSON(`${Config.dittNav.DITTNAV_DONE_URL}`, content);
@@ -86,6 +86,7 @@ export default {
   fetchInaktiveBeskjeder,
   fetchInaktiveOppgaver,
   fetchInaktiveInnbokser,
+  fetchInactiveCount,
   postHendelse,
   postDoneAll,
   postDone,

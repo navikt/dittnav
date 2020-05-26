@@ -2,8 +2,7 @@
 
 exports[`render empty InfoMeldinger component 1`] = `
 <InfoMeldinger
-  inaktiveInnbokser={null}
-  inaktiveOppgaver={null}
+  inactiveCount={0}
   innbokser={null}
   innlogging={null}
   meldekort={null}

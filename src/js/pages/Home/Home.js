@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, arrayOf, any, bool } from 'prop-types';
+import { shape, arrayOf, any, bool, number } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import Vta from '../../components/VTA';
@@ -36,9 +36,7 @@ const Home = ({ data, loading }) => {
               innlogging={data.innlogging}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
-              inaktiveBeskjeder={data.inaktiveBeskjeder}
-              inaktiveOppgaver={data.inaktiveOppgaver}
-              inaktiveInnbokser={data.inaktiveInnbokser}
+              inactiveCount={data.inactiveCount}
             />
             <KoronaSpesial
               sakstema={data.sakstema}
@@ -72,6 +70,7 @@ Home.propTypes = {
     oppgaver: arrayOf(OppgaveType),
     innbokser: arrayOf(InnboksType),
     innlogging: InnloggingType,
+    inactiveCount: number,
   }),
   loading: bool.isRequired,
 };
@@ -86,6 +85,7 @@ Home.defaultProps = {
     innlogging: null,
     oppgaver: null,
     innbokser: null,
+    inactiveCount: 0,
   }),
 };
 

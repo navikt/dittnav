@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
 import PageFrame from '../PageFrame';
 import Home from './Home';
-import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
+import { ADD_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
 const RenderHome = ({ api }) => {
@@ -17,8 +17,7 @@ const RenderHome = ({ api }) => {
     innlogging: null,
     oppgaver: null,
     innbokser: null,
-    inaktiveOppgaver: null,
-    inaktiveInnbokser: null,
+    inactiveCount: 0,
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -57,20 +56,9 @@ const RenderHome = ({ api }) => {
           setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
-      api.fetchInaktiveBeskjeder()
+      api.fetchInactiveCount()
         .then((r) => {
-          incrementFetching();
-          dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
-        }).catch(handleError);
-
-      api.fetchInaktiveOppgaver()
-        .then((r) => {
-          setData(d => ({ ...d, inaktiveOppgaver: r, fetching: d.fetching + 1 }));
-        }).catch(handleError);
-
-      api.fetchInaktiveInnbokser()
-        .then((r) => {
-          setData(d => ({ ...d, inaktiveInnbokser: r, fetching: d.fetching + 1 }));
+          setData(d => ({ ...d, inactiveCount: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
       api.fetchInnlogging()
@@ -122,7 +110,7 @@ const RenderHome = ({ api }) => {
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-  const loading = data.fetching < 13;
+  const loading = data.fetching < 11;
 
   return (
     <PageFrame uniqueErrors={uniqueErrors}>
