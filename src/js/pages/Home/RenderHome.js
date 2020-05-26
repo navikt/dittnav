@@ -17,7 +17,7 @@ const RenderHome = ({ api }) => {
     innlogging: null,
     oppgaver: null,
     innbokser: null,
-    hasInactiveEvents: false,
+    inactiveCount: 0,
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -56,9 +56,9 @@ const RenderHome = ({ api }) => {
           setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
-      api.fetchHasInactiveEvents()
+      api.fetchInactiveCount()
         .then((r) => {
-          setData(d => ({ ...d, hasInactiveEvents: r, fetching: d.fetching + 1 }));
+          setData(d => ({ ...d, inactiveCount: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
       api.fetchInnlogging()

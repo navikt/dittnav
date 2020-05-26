@@ -321,8 +321,8 @@ exports[`expect MeldekortInfo fetching 1`] = `
   api={
     Object {
       "fetchBeskjeder": [Function],
-      "fetchHasInactiveEvents": [Function],
       "fetchHendelser": [Function],
+      "fetchInactiveCount": [Function],
       "fetchInnbokser": [Function],
       "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
@@ -343,8 +343,8 @@ exports[`expect Oppfolging fetching 1`] = `
   api={
     Object {
       "fetchBeskjeder": [Function],
-      "fetchHasInactiveEvents": [Function],
       "fetchHendelser": [Function],
+      "fetchInactiveCount": [Function],
       "fetchInnbokser": [Function],
       "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
@@ -365,8 +365,8 @@ exports[`expect PaabegynteSoknader fetching 1`] = `
   api={
     Object {
       "fetchBeskjeder": [Function],
-      "fetchHasInactiveEvents": [Function],
       "fetchHendelser": [Function],
+      "fetchInactiveCount": [Function],
       "fetchInnbokser": [Function],
       "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
@@ -387,8 +387,8 @@ exports[`expect Personalia ident fetching 1`] = `
   api={
     Object {
       "fetchBeskjeder": [Function],
-      "fetchHasInactiveEvents": [Function],
       "fetchHendelser": [Function],
+      "fetchInactiveCount": [Function],
       "fetchInnbokser": [Function],
       "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],
@@ -409,8 +409,8 @@ exports[`expect Personalia navn fetching 1`] = `
   api={
     Object {
       "fetchBeskjeder": [Function],
-      "fetchHasInactiveEvents": [Function],
       "fetchHendelser": [Function],
+      "fetchInactiveCount": [Function],
       "fetchInnbokser": [Function],
       "fetchInnlogging": [Function],
       "fetchMeldekort": [Function],

@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, bool } from 'prop-types';
+import { arrayOf, number } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import useBeskjedStore from '../hooks/useBeskjedStore';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
@@ -19,7 +19,7 @@ import InnboksType from '../types/InnboksType';
 const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  const visInngangTilVarslinger = props.hasInactiveEvents;
+  const visInngangTilVarslinger = props.inactiveCount > 0;
 
   return (
     <section className="infomeldinger-list">
@@ -47,7 +47,7 @@ InfoMeldinger.propTypes = {
   innlogging: InnloggingType,
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  hasInactiveEvents: bool,
+  inactiveCount: number,
 };
 
 InfoMeldinger.defaultProps = {
@@ -57,7 +57,7 @@ InfoMeldinger.defaultProps = {
   innlogging: null,
   oppgaver: null,
   innbokser: null,
-  hasInactiveEvents: false,
+  inactiveCount: 0,
 };
 
 export default InfoMeldinger;
