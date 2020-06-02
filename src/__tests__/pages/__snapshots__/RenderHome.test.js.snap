@@ -220,7 +220,7 @@ exports[`expect Login page rendering 1`] = `
                   <a
                     className="lenke flere-tjenester__link"
                     data-ga="Dittnav/Lenkeliste"
-                    href="http://localhost:9222/aktivitetsplan"
+                    href="undefined"
                     onClick={[Function]}
                   >
                     Aktivitetsplan

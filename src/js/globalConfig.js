@@ -13,7 +13,7 @@ const lenker = {
   },
   aktivitetsplan: {
     tittel: 'Aktivitetsplan',
-    url: `${window.env.TJENESTER_URL}/aktivitetsplan`,
+    url: `${window.env.AKTIVITETSPLAN_URL}`,
   },
   meldekort: {
     tittel: 'Meldekort',

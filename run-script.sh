@@ -7,6 +7,7 @@ if [[ -z "$DITTNAV_API_URL" ]] ||
   [[ -z "$VTA_URL" ]] ||
   [[ -z "$INNLOGGINGSLINJE_API_URL" ]] ||
   [[ -z "$ARBEIDSSOKERREGISTRERING_URL" ]] ||
+  [[ -z "$AKTIVITETSPLAN_URL" ]] ||
   [[ -z "$VARSLINGER_FEATURE_TOGGLE" ]] ||
   [[ -z "$TEST_SIDE_FEATURE_TOGGLE" ]]; then
   echo "For å kunne starte applikasjonen må variablene DITTNAV_API_URL, TJENESTER_URL,
@@ -32,6 +33,7 @@ echo "* LOGIN_URL"
 echo "* VTA_URL"
 echo "* INNLOGGINGSLINJE_API_URL"
 echo "* ARBEIDSSOKERREGISTRERING_URL"
+echo "* AKTIVITETSPLAN_URL"
 echo "* EVENT_TEST_PRODUCER_URL"
 echo "* VARSLINGER_FEATURE_TOGGLE"
 echo "* TEST_SIDE_FEATURE_TOGGLE"
@@ -46,6 +48,7 @@ echo "window.env.VTA_URL=\"$VTA_URL\";" >> /app/config.js
 echo "window.env.INNLOGGINGSLINJE_API_URL=\"$INNLOGGINGSLINJE_API_URL\";" >> /app/config.js
 echo "window.env.ARBEIDSSOKERREGISTRERING_URL=\"$ARBEIDSSOKERREGISTRERING_URL\";" >> /app/config.js
 echo "window.env.VEILEDERARBEIDSSOKER_URL=\"$VEILEDERARBEIDSSOKER_URL\";" >> /app/config.js
+echo "window.env.AKTIVITETSPLAN_URL=\"$AKTIVITETSPLAN_URL\";" >> /app/config.js
 echo "window.env.EVENT_TEST_PRODUCER_URL=\"$EVENT_TEST_PRODUCER_URL\";" >> /app/config.js
 # Midlertidig frem til feature-toggles pr namespace/miljø fungerer med pus-dekoratør og naiserator.
 echo "window.env.VARSLINGER_FEATURE_TOGGLE=\"$VARSLINGER_FEATURE_TOGGLE\";" >> /app/config.js
