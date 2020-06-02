@@ -171,7 +171,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="https://arbeidsplassen.nav.no/stillinger"
                     onClick={[Function]}
                   >
@@ -187,7 +186,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/pselv/publisering/uforetrygd.jsf?context=ut"
                     onClick={[Function]}
                   >
@@ -203,7 +201,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="https://foreldrepenger.nav.no"
                     onClick={[Function]}
                   >
@@ -219,7 +216,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="undefined"
                     onClick={[Function]}
                   >
@@ -235,7 +231,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/meldekort/om-meldekort"
                     onClick={[Function]}
                   >
@@ -251,7 +246,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering"
                     onClick={[Function]}
                   >
@@ -267,7 +261,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="https://stillingsok.nav.no/pam-stillingsok/lagrede-sok"
                     onClick={[Function]}
                   >
@@ -283,7 +276,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/person/personopplysninger"
                     onClick={[Function]}
                   >
@@ -299,7 +291,6 @@ exports[`expect Login page rendering 1`] = `
                 >
                   <a
                     className="lenke flere-tjenester__link"
-                    data-ga="Dittnav/Lenkeliste"
                     href="http://localhost:9222/person/pdl-fullmakt-ui"
                     onClick={[Function]}
                   >

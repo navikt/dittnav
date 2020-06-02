@@ -11,7 +11,6 @@ const Lenkelister = (props) => (
           <Normaltekst>
             <a
               href={l.url}
-              data-ga="Dittnav/Lenkeliste"
               className="lenke flere-tjenester__link"
               onClick={() => trackEvent(
                 GoogleAnalyticsCategory.Forside,
