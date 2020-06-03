@@ -18,7 +18,6 @@ const Oppgave = ({ oppgave, innlogging }) => {
   return (
     <LenkepanelMedIkon
       className="oppgave"
-      data-ga="Dittnav/Varsel"
       alt="Oppgave"
       overskrift={overskrift}
       etikett={lokalDatoTid}

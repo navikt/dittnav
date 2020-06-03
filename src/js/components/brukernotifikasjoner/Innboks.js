@@ -18,7 +18,6 @@ const Innboks = ({ innboks, innlogging }) => {
   return (
     <LenkepanelMedIkon
       className="innboks"
-      data-ga="Dittnav/Varsel"
       alt="Innboks"
       overskrift={overskrift}
       etikett={lokalDatoTid}

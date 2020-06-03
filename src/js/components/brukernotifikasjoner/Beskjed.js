@@ -53,7 +53,6 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   return (
     <PanelMedIkon
       className="beskjed"
-      data-ga="Dittnav/Varsel"
       alt="Beskjed"
       overskrift={sikkerhetsnivaa.tekst}
       etikett={lokalDatoTid}
