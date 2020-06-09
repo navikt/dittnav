@@ -15,7 +15,6 @@ const mockApi = () => (
     fetchBeskjeder: () => new Promise((resolve, reject) => {}),
     fetchOppgaver: () => new Promise((resolve, reject) => {}),
     fetchInnbokser: () => new Promise((resolve, reject) => {}),
-    fetchInactiveCount: () => new Promise((resolve, reject) => {}),
     fetchInnlogging: () => new Promise((resolve, reject) => {}),
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
@@ -25,6 +24,7 @@ const mockApi = () => (
     fetchMeldinger: () => new Promise((resolve, reject) => {}),
     fetchSakstema: () => new Promise((resolve, reject) => {}),
     fetchHendelser: () => new Promise((resolve, reject) => {}),
+    fetchAntallBrukernotifikasjoner: () => new Promise((resolve, reject) => {}),
   }
 );
 /* eslint-enable no-unused-vars */

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
 import useBeskjedStore from '../../hooks/useBeskjedStore';
+import scroll from '../../utils/scroll';
 import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
@@ -14,6 +16,7 @@ const VarslingerRender = ({ api }) => {
   const [error, setError] = useState([]);
 
   const { dispatch } = useBeskjedStore();
+  const location = useLocation();
 
   const handleError = () => {
     setError(['error.baksystemer']);
@@ -24,39 +27,50 @@ const VarslingerRender = ({ api }) => {
       api.fetchBeskjeder()
         .then((r) => {
           dispatch({ type: ADD_BESKJEDER, payload: r });
-        }).catch(handleError);
+        })
+        .catch(handleError);
 
       api.fetchOppgaver()
         .then((r) => {
           setOppgaver(r);
-        }).catch(handleError);
+        })
+        .catch(handleError);
 
       api.fetchInnbokser()
         .then((r) => {
           setInnbokser(r);
-        }).catch(handleError);
+        })
+        .catch(handleError);
 
       api.fetchInaktiveBeskjeder()
         .then((r) => {
           dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
-        }).catch(handleError);
+        })
+        .catch(handleError);
 
       api.fetchInaktiveOppgaver()
         .then((r) => {
           setInaktiveOppgaver(r);
-        }).catch(handleError);
+        })
+        .catch(handleError);
 
       api.fetchInaktiveInnbokser()
         .then((r) => {
           setInnaktiveInnbokser(r);
-        }).catch(handleError);
+        })
+        .catch(handleError);
 
       api.fetchInnlogging()
         .then((r) => {
           setInnlogging(r);
-        }).catch(handleError);
+        })
+        .catch(handleError);
     }, [],
   );
+
+  if (location.hash) {
+    scroll(location.hash);
+  }
 
   return (
     <PageFrame uniqueErrors={error}>

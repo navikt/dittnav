@@ -17,7 +17,7 @@ const RenderHome = ({ api }) => {
     innlogging: null,
     oppgaver: null,
     innbokser: null,
-    inactiveCount: 0,
+    antallBrukernotifikasjoner: 0,
     errors: [],
     fetching: 0,
     oppfolgingHasLoaded: false,
@@ -56,9 +56,9 @@ const RenderHome = ({ api }) => {
           setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
-      api.fetchInactiveCount()
+      api.fetchAntallBrukernotifikasjoner()
         .then((r) => {
-          setData(d => ({ ...d, inactiveCount: r, fetching: d.fetching + 1 }));
+          setData(d => ({ ...d, antallBrukernotifikasjoner: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
       api.fetchInnlogging()

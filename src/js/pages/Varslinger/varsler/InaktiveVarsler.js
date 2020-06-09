@@ -12,7 +12,7 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
   const { state } = useBeskjedStore();
 
   return (
-    <div className="inaktive-varsler">
+    <div className="inaktive-varsler" id="inaktive-varsler">
       {(state.inaktiveBeskjeder || oppgaver || innbokser) && (
         <div className="inaktive-varsler__tittel">
           <Systemtittel>
