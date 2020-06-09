@@ -59,6 +59,7 @@
     "react-scripts": "^3.4.0",
     "regenerator-runtime": "^0.13.3",
     "request": "^2.88.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "translations": "^2.2.1",
     "uuid": "^7.0.2",
     "whatwg-fetch": "^3.0.0"
