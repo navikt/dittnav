@@ -34,13 +34,14 @@ const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
   if (erAktiv) {
     addInaktiv(beskjed, dispatch);
   }
+
+  return false;
 };
 
 const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const location = useLocation();
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
-
   useEffect(() => {
     hotjarSafetyStub();
   }, []);
