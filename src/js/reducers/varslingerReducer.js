@@ -98,5 +98,3 @@ export const varslingerReducer = (state, action) => {
       return state;
   }
 };
-
-export default varslingerReducer;
