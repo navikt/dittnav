@@ -1,89 +1,80 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { useLocation } from 'react-router-dom';
+import useBeskjedStore from '../../hooks/useBeskjedStore';
+import { varslingerReducer, initialVarslingerState } from '../../reducers/varslingerReducer';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
-import scroll from '../../utils/scroll';
-import { ADD_BESKJEDER, ADD_INAKTIVE_BESKJEDER } from '../../types/Actions';
-import ApiType from '../../types/ApiType';
 import DelayedSpinner from '../../components/DelayedSpinner';
+import scroll from '../../utils/scroll';
+import {
+  ADD_BESKJEDER,
+  ADD_OPPGAVER,
+  ADD_INNBOKSER,
+  ADD_INAKTIVE_BESKJEDER,
+  ADD_INAKTIVE_OPPGAVER,
+  ADD_INAKTIVE_INNBOKSER,
+  ADD_INNLOGGING,
+  SET_BESKJEDER_LOADING,
+  SET_INAKTIVE_BESKJEDER_LOADING,
+  ERROR,
+} from '../../types/Actions';
+import ApiType from '../../types/ApiType';
 
-const VarslingerRender = ({ api }) => {
-  const [beskjeder, setBeskjeder] = useState({ loading: true });
-  const [oppgaver, setOppgaver] = useState({ data: null, loading: true });
-  const [innbokser, setInnbokser] = useState({ data: null, loading: true });
-  const [inaktiveBeskjeder, setInaktiveBeskjeder] = useState({ loading: true });
-  const [inaktiveOppgaver, setInaktiveOppgaver] = useState({ data: null, loading: true });
-  const [inaktiveInnbokser, setInnaktiveInnbokser] = useState({ data: null, loading: true });
-  const [innlogging, setInnlogging] = useState({ data: null, loading: true });
-  const [error, setError] = useState([]);
-  const { dispatch } = useBeskjedStore();
+const RenderVarslinger = ({ api }) => {
+  const [state, dispatch] = useReducer(varslingerReducer, initialVarslingerState);
+  const store = useBeskjedStore();
   const location = useLocation();
+
+  const dispatchResult = (type, result, _dispatch = dispatch) => (
+    _dispatch({ type, payload: result })
+  );
+
+  const dispatchError = () => (
+    dispatch({ type: ERROR, payload: null })
+  );
 
   useEffect(
     () => {
       api.fetchBeskjeder()
-        .then((r) => {
-          dispatch({ type: ADD_BESKJEDER, payload: r });
-          setBeskjeder({ loading: false });
-        }).catch(() => {
-          setBeskjeder({ loading: false });
-          setError(['error.baksystemer']);
-        });
+        .then((result) => {
+          dispatchResult(ADD_BESKJEDER, result, store.dispatch);
+          dispatchResult(SET_BESKJEDER_LOADING, result);
+        })
+        .catch(dispatchError);
 
       api.fetchOppgaver()
-        .then((r) => {
-          setOppgaver({ data: r, loading: false });
-        }).catch(() => {
-          setOppgaver(d => ({ ...d, loading: false }));
-          setError(['error.baksystemer']);
-        });
+        .then((result) => dispatchResult(ADD_OPPGAVER, result))
+        .catch(dispatchError);
 
       api.fetchInnbokser()
-        .then((r) => {
-          setInnbokser({ data: r, loading: false });
-        }).catch(() => {
-          setInnbokser(d => ({ ...d, loading: false }));
-          setError(['error.baksystemer']);
-        });
+        .then((result) => dispatchResult(ADD_INNBOKSER, result))
+        .catch(dispatchError);
 
       api.fetchInaktiveBeskjeder()
-        .then((r) => {
-          dispatch({ type: ADD_INAKTIVE_BESKJEDER, payload: r });
-          setInaktiveBeskjeder({ loading: false });
-        }).catch(() => {
-          setInaktiveBeskjeder({ loading: false });
-          setError(['error.baksystemer']);
-        });
+        .then((result) => {
+          dispatchResult(ADD_INAKTIVE_BESKJEDER, result, store.dispatch);
+          dispatchResult(SET_INAKTIVE_BESKJEDER_LOADING, result);
+        })
+        .catch(dispatchError);
 
       api.fetchInaktiveOppgaver()
-        .then((r) => {
-          setInaktiveOppgaver({ data: r, loading: false });
-        }).catch(() => {
-          setInaktiveOppgaver(d => ({ ...d, loading: false }));
-          setError(['error.baksystemer']);
-        });
+        .then((result) => dispatchResult(ADD_INAKTIVE_OPPGAVER, result))
+        .catch(dispatchError);
 
       api.fetchInaktiveInnbokser()
-        .then((r) => {
-          setInnaktiveInnbokser({ data: r, loading: false });
-        }).catch(() => {
-          setInnaktiveInnbokser(d => ({ ...d, loading: false }));
-          setError(['error.baksystemer']);
-        });
+        .then((result) => dispatchResult(ADD_INAKTIVE_INNBOKSER, result))
+        .catch(dispatchError);
 
       api.fetchInnlogging()
-        .then((r) => {
-          setInnlogging({ data: r, loading: false });
-        }).catch(() => {
-          setInnlogging(d => ({ ...d, loading: false }));
-          setError(['error.baksystemer']);
-        });
+        .then((result) => dispatchResult(ADD_INNLOGGING, result))
+        .catch(dispatchError);
     }, [],
   );
 
-  const areLoading = (result) => result.loading;
-  const isLoading = [beskjeder, oppgaver, innbokser, inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser, innlogging].some(areLoading);
+  const areLoading = (key) => state[key].loading === true;
+
+  const isLoading = Object.keys(state)
+    .some(areLoading);
 
   if (!isLoading && location.hash) {
     scroll(location.hash);
@@ -94,13 +85,13 @@ const VarslingerRender = ({ api }) => {
       {isLoading
         ? <DelayedSpinner delay={500} spinnerClass="header-spinner spinner-container" />
         : (
-          <PageFrame uniqueErrors={error}>
+          <PageFrame uniqueErrors={state.error}>
             <Varslinger
-              oppgaver={oppgaver.data}
-              innbokser={innbokser.data}
-              inaktiveOppgaver={inaktiveOppgaver.data}
-              inaktiveInnbokser={inaktiveInnbokser.data}
-              innlogging={innlogging.data}
+              oppgaver={state.oppgaver.data}
+              innbokser={state.innbokser.data}
+              inaktiveOppgaver={state.inaktiveOppgaver.data}
+              inaktiveInnbokser={state.inaktiveInnbokser.data}
+              innlogging={state.innlogging.data}
             />
           </PageFrame>
         )}
@@ -108,8 +99,8 @@ const VarslingerRender = ({ api }) => {
   );
 };
 
-VarslingerRender.propTypes = {
+RenderVarslinger.propTypes = {
   api: ApiType.isRequired,
 };
 
-export default VarslingerRender;
+export default RenderVarslinger;
