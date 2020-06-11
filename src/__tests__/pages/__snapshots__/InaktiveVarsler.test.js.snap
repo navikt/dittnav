@@ -3,18 +3,21 @@
 exports[`InaktiveVarsler empty 1`] = `
 <div
   className="inaktive-varsler"
+  id="inaktive-varsler"
 />
 `;
 
 exports[`InaktiveVarsler one beskjed 1`] = `
 <div
   className="inaktive-varsler"
+  id="inaktive-varsler"
 />
 `;
 
 exports[`InaktiveVarsler one innboks 1`] = `
 <div
   className="inaktive-varsler"
+  id="inaktive-varsler"
 >
   <div
     className="inaktive-varsler__tittel"
@@ -98,6 +101,7 @@ exports[`InaktiveVarsler one innboks 1`] = `
 exports[`InaktiveVarsler one oppgave 1`] = `
 <div
   className="inaktive-varsler"
+  id="inaktive-varsler"
 >
   <div
     className="inaktive-varsler__tittel"
@@ -181,6 +185,7 @@ exports[`InaktiveVarsler one oppgave 1`] = `
 exports[`InaktiveVarsler several brukernotifikasjoner 1`] = `
 <div
   className="inaktive-varsler"
+  id="inaktive-varsler"
 >
   <div
     className="inaktive-varsler__tittel"

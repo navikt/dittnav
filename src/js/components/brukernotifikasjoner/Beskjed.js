@@ -26,21 +26,10 @@ const addInaktiv = (beskjed, dispatch) => dispatch({
   payload: beskjed,
 });
 
-const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
-  remove(beskjed, dispatch);
-  hotjarTrigger('beskjed_trykket_ok');
-  trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
-
-  if (erAktiv) {
-    addInaktiv(beskjed, dispatch);
-  }
-};
-
 const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const location = useLocation();
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
-
   useEffect(() => {
     hotjarSafetyStub();
   }, []);
@@ -50,13 +39,24 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 
+  const onClickBeskjed = () => {
+    remove(beskjed, dispatch);
+    hotjarTrigger('beskjed_trykket_ok');
+    trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
+
+    if (erAktiv) {
+      addInaktiv(beskjed, dispatch);
+      location.hash = '';
+    }
+  };
+
   return (
     <PanelMedIkon
       className="beskjed"
       alt="Beskjed"
       overskrift={sikkerhetsnivaa.tekst}
       etikett={lokalDatoTid}
-      onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
+      onClick={() => onClickBeskjed()}
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}

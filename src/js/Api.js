@@ -50,24 +50,77 @@ const postJSON = (url, content) => {
     .catch((e) => log(`Error: ${e}`));
 };
 
-const fetchOppfolging = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`);
-const fetchMeldekort = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDEKORT_URL}`);
-const fetchPersonNavn = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_NAVN_URL}`);
-const fetchPersonIdent = () => fetchJSON(`${Config.dittNav.DITTNAV_PERSON_IDENT_URL}`);
-const fetchSaker = () => fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`);
-const fetchMeldinger = () => fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`);
-const fetchSakstema = () => fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL);
-const fetchInnlogging = () => fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`);
-const fetchBeskjeder = () => fetchJSON(`${Config.dittNav.DITTNAV_BESKJED}`);
-const fetchOppgaver = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE}`);
-const fetchInnbokser = () => fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS}`);
-const fetchInaktiveBeskjeder = () => fetchJSON(`${Config.dittNav.DITTNAV_BESKJED_INAKTIV}`);
-const fetchInaktiveOppgaver = () => fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE_INAKTIV}`);
-const fetchInaktiveInnbokser = () => fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS_INAKTIV}`);
-const fetchInactiveCount = () => fetchJSON(`${Config.dittNav.DITTNAV_INACTIVE_COUNT}`);
-const postHendelse = (path, content) => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_URL}/${path}`, content);
-const postDoneAll = () => postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_DONE_ALL_URL}`, null);
-const postDone = (content) => postJSON(`${Config.dittNav.DITTNAV_DONE_URL}`, content);
+const fetchOppfolging = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`)
+);
+
+const fetchMeldekort = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_MELDEKORT_URL}`)
+);
+
+const fetchPersonNavn = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_PERSON_NAVN_URL}`)
+);
+
+const fetchPersonIdent = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_PERSON_IDENT_URL}`)
+);
+
+const fetchSaker = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`)
+);
+
+const fetchMeldinger = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`)
+);
+
+const fetchSakstema = () => (
+  fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL)
+);
+
+const fetchInnlogging = () => (
+  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
+);
+
+const fetchBeskjeder = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_BESKJED}`)
+);
+
+const fetchOppgaver = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE}`)
+);
+
+const fetchInnbokser = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS}`)
+);
+
+const fetchInaktiveBeskjeder = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_BESKJED_INAKTIV}`)
+);
+
+const fetchInaktiveOppgaver = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE_INAKTIV}`)
+);
+
+const fetchInaktiveInnbokser = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS_INAKTIV}`)
+);
+
+const fetchAntallBrukernotifikasjoner = () => (
+  fetchJSON(`${Config.dittNav.DITTNAV_BRUKERNOTIFIKASJONER_COUNT}`)
+);
+
+const postHendelse = (path, content) => (
+  postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_URL}/${path}`, content)
+);
+
+const postDoneAll = () => (
+  postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_DONE_ALL_URL}`, null)
+);
+
+const postDone = (content) => (
+  postJSON(`${Config.dittNav.DITTNAV_DONE_URL}`, content)
+);
 
 export default {
   checkAuth,
@@ -86,7 +139,7 @@ export default {
   fetchInaktiveBeskjeder,
   fetchInaktiveOppgaver,
   fetchInaktiveInnbokser,
-  fetchInactiveCount,
+  fetchAntallBrukernotifikasjoner,
   postHendelse,
   postDoneAll,
   postDone,

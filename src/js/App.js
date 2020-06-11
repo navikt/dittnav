@@ -4,12 +4,14 @@ import RenderHome from './pages/Home/RenderHome';
 import RenderVarslinger from './pages/Varslinger/RenderVarslinger';
 import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
 import BeskjedStoreProvider from './context/BeskjedStoreProvider';
+import ScrollToTop from './components/scroll/ScrollToTop';
 import Config from './globalConfig';
 import '../less/index.less';
 import ApiType from './types/ApiType';
 
 const App = ({ api }) => (
   <Router basename="/person">
+    <ScrollToTop />
     <Switch>
       <Route
         path="/dittnav"

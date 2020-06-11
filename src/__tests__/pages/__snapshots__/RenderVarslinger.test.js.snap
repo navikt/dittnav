@@ -12,7 +12,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
     beskjeder={null}
     inaktiveBeskjeder={null}
   >
-    <VarslingerRender
+    <RenderVarslinger
       api={
         Object {
           "fetchBeskjeder": [Function],

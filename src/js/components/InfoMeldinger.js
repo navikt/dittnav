@@ -19,7 +19,7 @@ import InnboksType from '../types/InnboksType';
 const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  const visInngangTilVarslinger = props.inactiveCount > 0;
+  const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 
   return (
     <section className="infomeldinger-list">
@@ -47,7 +47,7 @@ InfoMeldinger.propTypes = {
   innlogging: InnloggingType,
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  inactiveCount: number,
+  antallBrukernotifikasjoner: number,
 };
 
 InfoMeldinger.defaultProps = {
@@ -57,7 +57,7 @@ InfoMeldinger.defaultProps = {
   innlogging: null,
   oppgaver: null,
   innbokser: null,
-  inactiveCount: 0,
+  antallBrukernotifikasjoner: 0,
 };
 
 export default InfoMeldinger;

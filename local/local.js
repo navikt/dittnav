@@ -33,7 +33,7 @@ app.get('/dittnav-api/innboks', (req, res) => res.sendFile(path.resolve(__dirnam
 app.get('/dittnav-api/beskjed/inaktiv', (req, res) => res.sendFile(path.resolve(__dirname, './mock/beskjed-inaktiv.json')));
 app.get('/dittnav-api/oppgave/inaktiv', (req, res) => res.sendFile(path.resolve(__dirname, './mock/oppgave-inaktiv.json')));
 app.get('/dittnav-api/innboks/inaktiv', (req, res) => res.sendFile(path.resolve(__dirname, './mock/innboks-inaktiv.json')));
-app.get('/dittnav-api/brukernotifikasjon/count/inactive', (req, res) => res.sendFile(path.resolve(__dirname, './mock/count-inactive.json')));
+app.get('/dittnav-api/brukernotifikasjon/count', (req, res) => res.sendFile(path.resolve(__dirname, './mock/count.json')));
 
 app.get('/person/dittnav/api/feature', (req, res) => res.sendFile(path.resolve(__dirname, './mock/unleash.json')));
 
