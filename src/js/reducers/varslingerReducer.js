@@ -1,10 +1,7 @@
 import {
-  ADD_OPPGAVER,
-  ADD_INNBOKSER,
-  ADD_INAKTIVE_OPPGAVER,
-  ADD_INAKTIVE_INNBOKSER,
-  ADD_INNLOGGING,
-  ERROR, SET_BESKJEDER_LOADING, SET_INAKTIVE_BESKJEDER_LOADING,
+  ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER, ADD_INNLOGGING, SET_BESKJEDER_LOADING,
+  SET_INAKTIVE_BESKJEDER_LOADING, BESKJEDER_ERROR, OPPGAVER_ERROR, INNBOKSER_ERROR, INAKTIVE_BESKJEDER_ERROR,
+  INAKTIVE_OPPGAVER_ERROR, INAKTIVE_INNBOKSER_ERROR, INNLOGGING_ERROR,
 } from '../types/Actions';
 
 export const initialVarslingerState = {
@@ -55,10 +52,47 @@ export const varslingerReducer = (state, action) => {
         ...state,
         innlogging: { data: action.payload, loading: false },
       };
-    case ERROR:
+    case BESKJEDER_ERROR:
       return {
         ...state,
-        error: ['error.baksystemer'],
+        beskjeder: { loading: false },
+        error: [action.payload],
+      };
+    case OPPGAVER_ERROR:
+      return {
+        ...state,
+        oppgaver: { ...state.oppgaver.data, loading: false },
+        error: [action.payload],
+      };
+    case INNBOKSER_ERROR:
+      return {
+        ...state,
+        innbokser: { ...state.innbokser.data, loading: false },
+        error: [action.payload],
+      };
+    case INAKTIVE_BESKJEDER_ERROR:
+      return {
+        ...state,
+        inaktiveBeskjeder: { loading: false },
+        error: [action.payload],
+      };
+    case INAKTIVE_OPPGAVER_ERROR:
+      return {
+        ...state,
+        inaktiveOppgaver: { ...state.inaktiveOppgaver.data, loading: false },
+        error: [action.payload],
+      };
+    case INAKTIVE_INNBOKSER_ERROR:
+      return {
+        ...state,
+        inaktiveInnbokser: { ...state.inaktiveInnbokser.data, loading: false },
+        error: [action.payload],
+      };
+    case INNLOGGING_ERROR:
+      return {
+        ...state,
+        innlogging: { ...state.innlogging.data, loading: false },
+        error: [action.payload],
       };
     default:
       return state;
