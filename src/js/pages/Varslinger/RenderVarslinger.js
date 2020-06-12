@@ -7,16 +7,9 @@ import Varslinger from './Varslinger';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import scroll from '../../utils/scroll';
 import {
-  ADD_BESKJEDER,
-  ADD_OPPGAVER,
-  ADD_INNBOKSER,
-  ADD_INAKTIVE_BESKJEDER,
-  ADD_INAKTIVE_OPPGAVER,
-  ADD_INAKTIVE_INNBOKSER,
-  ADD_INNLOGGING,
-  SET_BESKJEDER_LOADING,
-  SET_INAKTIVE_BESKJEDER_LOADING,
-  ERROR,
+  ADD_BESKJEDER, ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_BESKJEDER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER,
+  ADD_INNLOGGING, SET_BESKJEDER_LOADING, SET_INAKTIVE_BESKJEDER_LOADING, BESKJEDER_ERROR, OPPGAVER_ERROR,
+  INNBOKSER_ERROR, INAKTIVE_BESKJEDER_ERROR, INAKTIVE_OPPGAVER_ERROR, INNLOGGING_ERROR, INAKTIVE_INNBOKSER_ERROR,
 } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 
@@ -29,8 +22,8 @@ const RenderVarslinger = ({ api }) => {
     _dispatch({ type, payload: result })
   );
 
-  const dispatchError = () => (
-    dispatch({ type: ERROR, payload: null })
+  const dispatchError = (type) => (
+    dispatch({ type, payload: 'error.baksystemer' })
   );
 
   useEffect(
@@ -40,34 +33,34 @@ const RenderVarslinger = ({ api }) => {
           dispatchResult(ADD_BESKJEDER, result, store.dispatch);
           dispatchResult(SET_BESKJEDER_LOADING, result);
         })
-        .catch(dispatchError);
+        .catch(() => dispatchError(BESKJEDER_ERROR));
 
       api.fetchOppgaver()
         .then((result) => dispatchResult(ADD_OPPGAVER, result))
-        .catch(dispatchError);
+        .catch(() => dispatchError(OPPGAVER_ERROR));
 
       api.fetchInnbokser()
         .then((result) => dispatchResult(ADD_INNBOKSER, result))
-        .catch(dispatchError);
+        .catch(() => dispatchError(INNBOKSER_ERROR));
 
       api.fetchInaktiveBeskjeder()
         .then((result) => {
           dispatchResult(ADD_INAKTIVE_BESKJEDER, result, store.dispatch);
           dispatchResult(SET_INAKTIVE_BESKJEDER_LOADING, result);
         })
-        .catch(dispatchError);
+        .catch(() => dispatchError(INAKTIVE_BESKJEDER_ERROR));
 
       api.fetchInaktiveOppgaver()
         .then((result) => dispatchResult(ADD_INAKTIVE_OPPGAVER, result))
-        .catch(dispatchError);
+        .catch(() => dispatchError(INAKTIVE_OPPGAVER_ERROR));
 
       api.fetchInaktiveInnbokser()
         .then((result) => dispatchResult(ADD_INAKTIVE_INNBOKSER, result))
-        .catch(dispatchError);
+        .catch(() => dispatchError(INAKTIVE_INNBOKSER_ERROR));
 
       api.fetchInnlogging()
         .then((result) => dispatchResult(ADD_INNLOGGING, result))
-        .catch(dispatchError);
+        .catch(() => dispatchError(INNLOGGING_ERROR));
     }, [],
   );
 
