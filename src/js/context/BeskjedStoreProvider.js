@@ -1,11 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import { arrayOf, node } from 'prop-types';
 import Api from '../Api';
-import {
-  ADD_BESKJEDER,
-  ADD_INAKTIVE_BESKJEDER,
-  ADD_INAKTIV_BESKJED, REMOVE_BESKJED,
-} from '../types/Actions';
+import { ADD, REMOVE, } from '../types/Actions';
 import BeskjedType from '../types/BeskjedType';
 
 const initialState = (beskjeder, inaktiveBeskjeder) => ({
@@ -15,17 +11,17 @@ const initialState = (beskjeder, inaktiveBeskjeder) => ({
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BESKJEDER:
+    case ADD.BESKJEDER:
       return {
         ...state,
         beskjeder: action.payload,
       };
-    case ADD_INAKTIVE_BESKJEDER:
+    case ADD.INAKTIVE_BESKJEDER:
       return {
         ...state,
         inaktiveBeskjeder: action.payload,
       };
-    case REMOVE_BESKJED:
+    case REMOVE.BESKJED:
       Api.postDone({
         eventId: action.payload.eventId,
         uid: action.payload.uid,
@@ -34,7 +30,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         beskjeder: state.beskjeder.filter(b => action.payload.uid !== b.uid),
       };
-    case ADD_INAKTIV_BESKJED:
+    case ADD.INAKTIV_BESKJED:
       return {
         ...state,
         inaktiveBeskjeder: [...state.inaktiveBeskjeder, action.payload],
