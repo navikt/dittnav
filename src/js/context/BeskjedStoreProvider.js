@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import { arrayOf, node } from 'prop-types';
 import Api from '../Api';
-import { ADD, REMOVE, } from '../types/Actions';
+import { ADD, REMOVE } from '../types/Actions';
 import BeskjedType from '../types/BeskjedType';
 
 const initialState = (beskjeder, inaktiveBeskjeder) => ({
