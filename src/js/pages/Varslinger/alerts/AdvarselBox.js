@@ -22,7 +22,6 @@ const AdvarselBox = () => (
           values={{
             innboks: (
               <Lenke
-                id="alert-lenke-id"
                 href={Config.LENKER.innboks.url}
                 onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Varslinger,
@@ -35,7 +34,6 @@ const AdvarselBox = () => (
             ),
             saksoversikt: (
               <Lenke
-                id="alert-lenke-id"
                 href={Config.LENKER.saksoversikt.url}
                 onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Varslinger,
