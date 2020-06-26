@@ -40,16 +40,18 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
 
   return (
     <>
-      <KoronaVarsel
-        tittel={Config.LENKER.koronaSituasjon.tittel}
-        href={Config.LENKER.koronaSituasjon.url}
-        gaCategory={GoogleAnalyticsCategory.Forside}
-        gaAction={GoogleAnalyticsAction.KoronaSituasjon}
-      >
-        <Normaltekst>
-          <FormattedMessage id="korona.din.situasjon.ingress" />
-        </Normaltekst>
-      </KoronaVarsel>
+      {forskuddToggle ? (
+        <KoronaVarsel
+          tittel={Config.LENKER.koronaSituasjon.tittel}
+          href={Config.LENKER.koronaSituasjon.url}
+          gaCategory={GoogleAnalyticsCategory.Forside}
+          gaAction={GoogleAnalyticsAction.KoronaSituasjon}
+        >
+          <Normaltekst>
+            <FormattedMessage id="korona.din.situasjon.ingress" />
+          </Normaltekst>
+        </KoronaVarsel>
+      ) : null}
       <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
         <KoronaVarsel
           tittel={venstreLenke.tittel}
