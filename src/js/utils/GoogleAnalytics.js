@@ -29,6 +29,7 @@ export const GoogleAnalyticsAction = Object.freeze({
   Koronaveiviser: 'Koronavirus - Hva gjelder i min situasjon?',
   DagpengerForskudd: 'Trenger du forsukdd på dagpenger?',
   Behandlingstid: 'Behandlingstid',
+  KoronaSituasjon: 'Din økonomiske situasjon i forbindelse med forskudd på dagpenger',
 });
 
 export const initializeGoogleAnalytics = () => ReactGA.initialize(trackingId, {
