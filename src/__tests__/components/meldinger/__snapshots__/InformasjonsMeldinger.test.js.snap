@@ -51,12 +51,9 @@ Array [
         className="typo-normal"
       >
         <span>
-          <p
-            className="typo-normal lenkepanel__heading"
-          >
-            Hello
-          </p>
-           
+          [object Object]
+          
+          
           
         </span>
       </p>
@@ -112,14 +109,9 @@ Array [
         className="typo-normal"
       >
         <span>
-          <p
-            className="typo-normal lenkepanel__heading"
-          >
-            <span>
-              Her vises informasjon til meldekortbrukere
-            </span>
-          </p>
-           
+          [object Object]
+          
+          
           
         </span>
       </p>
@@ -179,12 +171,9 @@ exports[`InformasjonsMeldinger with general 1`] = `
       className="typo-normal"
     >
       <span>
-        <p
-          className="typo-normal lenkepanel__heading"
-        >
-          Hello
-        </p>
-         
+        [object Object]
+        
+        
         
       </span>
     </p>
@@ -243,14 +232,9 @@ exports[`InformasjonsMeldinger with meldekort 1`] = `
       className="typo-normal"
     >
       <span>
-        <p
-          className="typo-normal lenkepanel__heading"
-        >
-          <span>
-            Her vises informasjon til meldekortbrukere
-          </span>
-        </p>
-         
+        [object Object]
+        
+        
         
       </span>
     </p>

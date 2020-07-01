@@ -17,6 +17,7 @@ class InformasjonsMeldinger extends Component {
           className="beskjed"
           overskrift={generellInfoOverskrift}
           key="generell"
+          erInformasjonsmelding
         >
           <IkonBeskjed />
         </PanelMedIkon>,
@@ -31,6 +32,7 @@ class InformasjonsMeldinger extends Component {
           className="beskjed"
           overskrift={meldekortOverskrift}
           key="melderkort"
+          erInformasjonsmelding
         >
           <IkonBeskjed />
         </PanelMedIkon>,

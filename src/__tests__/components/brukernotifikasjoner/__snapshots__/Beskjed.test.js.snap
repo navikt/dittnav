@@ -46,15 +46,7 @@ exports[`Beskjed with empty link 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        
-      </span>
-    </p>
+    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -124,24 +116,7 @@ exports[`Beskjed with link 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
-      </span>
-    </p>
+    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -211,15 +186,7 @@ exports[`Beskjed with null as link 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        
-      </span>
-    </p>
+    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -289,24 +256,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
-      </span>
-    </p>
+    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -376,24 +326,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
-      </span>
-    </p>
+    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -463,26 +396,9 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        <span>
-          Du har fått en beskjed.
-        </span>
-         
-        <a
-          className="lenke panel-lenke"
-          href="undefined"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Logg inn med høyere sikkerhetsnivå for å se beskjeden
-          </span>
-        </a>
-      </span>
-    </p>
+    <span>
+      Du har fått en beskjed.
+    </span>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -538,24 +454,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <p
-      className="typo-normal"
-    >
-      <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
-      </span>
-    </p>
+    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
     <p
       className="typo-undertekst beskjed__etikett"
     >

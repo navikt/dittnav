@@ -55,24 +55,7 @@ exports[`AktiveVarsler one beskjed 1`] = `
     <div
       className="beskjed__tekst"
     >
-      <p
-        className="typo-normal"
-      >
-        <span>
-          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-           
-          <a
-            className="lenke panel-lenke"
-            href="https://enNyLenke"
-            id="panel-lenke-id"
-            onClick={[Function]}
-          >
-            <span>
-              Se mer informasjon
-            </span>
-          </a>
-        </span>
-      </p>
+      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
       <p
         className="typo-undertekst beskjed__etikett"
       >
@@ -366,24 +349,7 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
     <div
       className="beskjed__tekst"
     >
-      <p
-        className="typo-normal"
-      >
-        <span>
-          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-           
-          <a
-            className="lenke panel-lenke"
-            href="https://enNyLenke"
-            id="panel-lenke-id"
-            onClick={[Function]}
-          >
-            <span>
-              Se mer informasjon
-            </span>
-          </a>
-        </span>
-      </p>
+      Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
       <p
         className="typo-undertekst beskjed__etikett"
       >
