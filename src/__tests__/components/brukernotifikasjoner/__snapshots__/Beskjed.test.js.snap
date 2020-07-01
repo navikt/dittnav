@@ -46,7 +46,28 @@ exports[`Beskjed with empty link 1`] = `
   <div
     className="beskjed__tekst"
   >
-    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    <p
+      className="typo-normal"
+    >
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -116,7 +137,28 @@ exports[`Beskjed with link 1`] = `
   <div
     className="beskjed__tekst"
   >
-    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    <p
+      className="typo-normal"
+    >
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -186,7 +228,28 @@ exports[`Beskjed with null as link 1`] = `
   <div
     className="beskjed__tekst"
   >
-    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    <p
+      className="typo-normal"
+    >
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -256,7 +319,28 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
   <div
     className="beskjed__tekst"
   >
-    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    <p
+      className="typo-normal"
+    >
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -326,7 +410,28 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
   <div
     className="beskjed__tekst"
   >
-    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    <p
+      className="typo-normal"
+    >
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -396,9 +501,25 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
   <div
     className="beskjed__tekst"
   >
-    <span>
-      Du har fått en beskjed.
-    </span>
+    <p
+      className="typo-normal"
+    >
+      <span>
+        <span>
+          Du har fått en beskjed.
+        </span>
+        <a
+          className="lenke panel-lenke"
+          href="undefined"
+          id="panel-lenke-id"
+          onClick={[Function]}
+        >
+          <span>
+            Logg inn med høyere sikkerhetsnivå for å se beskjeden
+          </span>
+        </a>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
@@ -454,7 +575,28 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
   <div
     className="beskjed__tekst"
   >
-    Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
+    <p
+      className="typo-normal"
+    >
+      <span>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
+      </span>
+    </p>
     <p
       className="typo-undertekst beskjed__etikett"
     >
