@@ -4,7 +4,7 @@ import Config from '../globalConfig';
 import LenkepanelMedIkon from './common/LenkepanelMedIkon';
 import PanelOverskrift from './common/PanelOverskrift';
 import IkonBlyant from '../../assets/IkonBlyant';
-import IkonKane from '../../assets/IkonKane';
+import IkonSparegris from '../../assets/IkonKane';
 import IkonPille from '../../assets/IkonPille';
 import IkonSkilt from '../../assets/IkonSkilt';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../utils/GoogleAnalytics';
@@ -54,7 +54,7 @@ const DittnavFliser = () => (
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.DinPensjon}
       >
-        <IkonKane />
+        <IkonSparegris />
       </LenkepanelMedIkon>
     </div>
   </>
