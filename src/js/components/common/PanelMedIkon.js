@@ -43,14 +43,18 @@ const PanelMedIkon = (props) => {
   );
 
   const panelLenke = (
-    <Lenke
-      className="panel-lenke"
-      id="panel-lenke-id"
-      href={props.lenke}
-      onClick={() => trackEvent(props.gaCategory, props.gaAction, removeFragment(props.lenke))}
-    >
-      <FormattedMessage id={props.lenkeTekst} />
-    </Lenke>
+    <>
+      {props.lenke ? (
+        <Lenke
+          className="panel-lenke"
+          id="panel-lenke-id"
+          href={props.lenke}
+          onClick={() => trackEvent(props.gaCategory, props.gaAction, removeFragment(props.lenke))}
+        >
+          <FormattedMessage id={props.lenkeTekst} />
+        </Lenke>
+      ) : ''}
+    </>
   );
 
   const utvidbarTekst = (
