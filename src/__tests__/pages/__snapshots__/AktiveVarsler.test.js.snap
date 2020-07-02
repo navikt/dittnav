@@ -65,7 +65,7 @@ exports[`AktiveVarsler one beskjed 1`] = `
           <span>
             
             <a
-              className="lenke utvid-tekst-lenke"
+              className="lenke utvid-tekst-lenke__aapne"
               href="#"
               onClick={[Function]}
             >
@@ -380,7 +380,7 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
           <span>
             
             <a
-              className="lenke utvid-tekst-lenke"
+              className="lenke utvid-tekst-lenke__aapne"
               href="#"
               onClick={[Function]}
             >

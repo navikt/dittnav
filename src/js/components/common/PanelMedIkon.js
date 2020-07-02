@@ -35,7 +35,7 @@ const PanelMedIkon = (props) => {
   const utvidTekstLenke = (
     <span>
       {linebreak(isOpen)}
-      <Lenke className="utvid-tekst-lenke" href="#" onClick={(event) => utvidTekst(event)}>
+      <Lenke className={`utvid-tekst-lenke__${isOpen ? 'skjul' : 'aapne'}`} href="#" onClick={(event) => utvidTekst(event)}>
         {(isOverflowing && !isOpen) ? 'Åpne' : 'Skjul'}
         <NavFrontendChevron type={isOpen ? 'opp' : 'ned'} />
       </Lenke>
