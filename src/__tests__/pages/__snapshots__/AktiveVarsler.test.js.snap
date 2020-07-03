@@ -59,18 +59,22 @@ exports[`AktiveVarsler one beskjed 1`] = `
         className="typo-normal"
       >
         <span>
-          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-           
-          <a
-            className="lenke panel-lenke"
-            href="https://enNyLenke"
-            id="panel-lenke-id"
-            onClick={[Function]}
-          >
-            <span>
-              Se mer informasjon
-            </span>
-          </a>
+          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+          
+          
+          <span>
+            
+            <a
+              className="lenke utvid-tekst-lenke__aapne"
+              href="#"
+              onClick={[Function]}
+            >
+              Åpne
+              <i
+                className="nav-frontend-chevron chevronboks chevron--ned"
+              />
+            </a>
+          </span>
         </span>
       </p>
       <p
@@ -370,18 +374,22 @@ exports[`AktiveVarsler several brukernotifikasjoner 1`] = `
         className="typo-normal"
       >
         <span>
-          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-           
-          <a
-            className="lenke panel-lenke"
-            href="https://enNyLenke"
-            id="panel-lenke-id"
-            onClick={[Function]}
-          >
-            <span>
-              Se mer informasjon
-            </span>
-          </a>
+          Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+          
+          
+          <span>
+            
+            <a
+              className="lenke utvid-tekst-lenke__aapne"
+              href="#"
+              onClick={[Function]}
+            >
+              Åpne
+              <i
+                className="nav-frontend-chevron chevronboks chevron--ned"
+              />
+            </a>
+          </span>
         </span>
       </p>
       <p
