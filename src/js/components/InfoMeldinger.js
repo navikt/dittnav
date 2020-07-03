@@ -19,7 +19,7 @@ import InnboksType from '../types/InnboksType';
 const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
+  // const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 
   return (
     <section className="infomeldinger-list">
@@ -35,7 +35,7 @@ const InfoMeldinger = (props) => {
       <EtterregistreringMeldekort ettereg={props.meldekort} />
       <PaabegynteSoknader paabegynteSoknader={props.paabegynteSoknader} />
       <MinInnboks mininnboks={props.mininnboks} />
-      {visInngangTilVarslinger ? <InngangVarslinger /> : null}
+      <InngangVarslinger />
     </section>
   );
 };
