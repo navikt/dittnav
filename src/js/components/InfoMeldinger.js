@@ -19,7 +19,8 @@ import InnboksType from '../types/InnboksType';
 const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  // const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
+  // eslint-disable-next-line no-unused-vars
+  const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 
   return (
     <section className="infomeldinger-list">
