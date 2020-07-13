@@ -34,3 +34,31 @@
 #panel-lenke-id {
   border-bottom: none;
 }
+
+.utvid-tekst-lenke__aapne {
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.utvid-tekst-lenke__skjul {
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: 0.625em;
+  margin-bottom: 0.315em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: @mobile-breakpoint) {
+  .utvid-tekst-lenke__skjul {
+    margin-top: 1.563em;
+    margin-bottom: 0.625em;
+  }
+}

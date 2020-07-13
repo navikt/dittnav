@@ -48,17 +48,9 @@ Array [
       className="beskjed__tekst"
     >
       <p
-        className="typo-normal"
+        className="typo-normal lenkepanel__heading"
       >
-        <span>
-          <p
-            className="typo-normal lenkepanel__heading"
-          >
-            Hello
-          </p>
-           
-          
-        </span>
+        Hello
       </p>
       
     </div>
@@ -109,18 +101,10 @@ Array [
       className="beskjed__tekst"
     >
       <p
-        className="typo-normal"
+        className="typo-normal lenkepanel__heading"
       >
         <span>
-          <p
-            className="typo-normal lenkepanel__heading"
-          >
-            <span>
-              Her vises informasjon til meldekortbrukere
-            </span>
-          </p>
-           
-          
+          Her vises informasjon til meldekortbrukere
         </span>
       </p>
       
@@ -176,17 +160,9 @@ exports[`InformasjonsMeldinger with general 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal"
+      className="typo-normal lenkepanel__heading"
     >
-      <span>
-        <p
-          className="typo-normal lenkepanel__heading"
-        >
-          Hello
-        </p>
-         
-        
-      </span>
+      Hello
     </p>
     
   </div>
@@ -240,18 +216,10 @@ exports[`InformasjonsMeldinger with meldekort 1`] = `
     className="beskjed__tekst"
   >
     <p
-      className="typo-normal"
+      className="typo-normal lenkepanel__heading"
     >
       <span>
-        <p
-          className="typo-normal lenkepanel__heading"
-        >
-          <span>
-            Her vises informasjon til meldekortbrukere
-          </span>
-        </p>
-         
-        
+        Her vises informasjon til meldekortbrukere
       </span>
     </p>
     

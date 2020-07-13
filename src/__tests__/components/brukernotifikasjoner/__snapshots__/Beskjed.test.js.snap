@@ -50,9 +50,22 @@ exports[`Beskjed with empty link 1`] = `
       className="typo-normal"
     >
       <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
         
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke__aapne"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
       </span>
     </p>
     <p
@@ -128,18 +141,22 @@ exports[`Beskjed with link 1`] = `
       className="typo-normal"
     >
       <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke__aapne"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
       </span>
     </p>
     <p
@@ -215,9 +232,22 @@ exports[`Beskjed with null as link 1`] = `
       className="typo-normal"
     >
       <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
         
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke__aapne"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
       </span>
     </p>
     <p
@@ -293,18 +323,22 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
       className="typo-normal"
     >
       <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke__aapne"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
       </span>
     </p>
     <p
@@ -380,18 +414,22 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
       className="typo-normal"
     >
       <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke__aapne"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
       </span>
     </p>
     <p
@@ -470,7 +508,6 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         <span>
           Du har fått en beskjed.
         </span>
-         
         <a
           className="lenke panel-lenke"
           href="undefined"
@@ -542,18 +579,22 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
       className="typo-normal"
     >
       <span>
-        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.
-         
-        <a
-          className="lenke panel-lenke"
-          href="https://enNyLenke"
-          id="panel-lenke-id"
-          onClick={[Function]}
-        >
-          <span>
-            Se mer informasjon
-          </span>
-        </a>
+        Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
+        
+        
+        <span>
+          
+          <a
+            className="lenke utvid-tekst-lenke__aapne"
+            href="#"
+            onClick={[Function]}
+          >
+            Åpne
+            <i
+              className="nav-frontend-chevron chevronboks chevron--ned"
+            />
+          </a>
+        </span>
       </span>
     </p>
     <p
