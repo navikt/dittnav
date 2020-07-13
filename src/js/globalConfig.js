@@ -83,6 +83,10 @@ const lenker = {
     tittel: 'Lengre saksbehandlingstider',
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`,
   },
+  koronaSituasjon: {
+    tittel: 'Din økonomiske situasjon i forbindelse med forskudd på dagpenger',
+    url: `${window.env.NAVNO_URL}/dagpenger/forskudd/oversikt`,
+  },
   dineFullmakter: {
     tittel: 'Dine fullmakter',
     url: `${window.env.NAVNO_URL}/person/pdl-fullmakt-ui`,

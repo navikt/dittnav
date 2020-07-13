@@ -39,29 +39,43 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
   const loaded = isLoaded && (!harDagpengerSakNyligOppdatert || forskuddToggle !== null);
 
   return (
-    <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
-      <KoronaVarsel
-        tittel={venstreLenke.tittel}
-        href={venstreLenke.url}
-        className="blaa-bakgrunn"
-        gaCategory={GoogleAnalyticsCategory.Forside}
-        gaAction={venstreGaAction}
-      >
-        <Normaltekst>
-          <FormattedMessage id={venstreTekst} />
-        </Normaltekst>
-      </KoronaVarsel>
-      <KoronaVarsel
-        tittel={Config.LENKER.koronaVeiviser.tittel}
-        href={Config.LENKER.koronaVeiviser.url}
-        gaCategory={GoogleAnalyticsCategory.Forside}
-        gaAction={GoogleAnalyticsAction.Koronaveiviser}
-      >
-        <Normaltekst>
-          <FormattedMessage id={'korona.virus-varsel.ingress'} />
-        </Normaltekst>
-      </KoronaVarsel>
-    </div>
+    <>
+      {forskuddToggle ? (
+        <KoronaVarsel
+          tittel={Config.LENKER.koronaSituasjon.tittel}
+          href={Config.LENKER.koronaSituasjon.url}
+          gaCategory={GoogleAnalyticsCategory.Forside}
+          gaAction={GoogleAnalyticsAction.KoronaSituasjon}
+        >
+          <Normaltekst>
+            <FormattedMessage id="korona.din.situasjon.ingress" />
+          </Normaltekst>
+        </KoronaVarsel>
+      ) : null}
+      <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
+        <KoronaVarsel
+          tittel={venstreLenke.tittel}
+          href={venstreLenke.url}
+          className="blaa-bakgrunn"
+          gaCategory={GoogleAnalyticsCategory.Forside}
+          gaAction={venstreGaAction}
+        >
+          <Normaltekst>
+            <FormattedMessage id={venstreTekst} />
+          </Normaltekst>
+        </KoronaVarsel>
+        <KoronaVarsel
+          tittel={Config.LENKER.koronaVeiviser.tittel}
+          href={Config.LENKER.koronaVeiviser.url}
+          gaCategory={GoogleAnalyticsCategory.Forside}
+          gaAction={GoogleAnalyticsAction.Koronaveiviser}
+        >
+          <Normaltekst>
+            <FormattedMessage id={'korona.virus-varsel.ingress'} />
+          </Normaltekst>
+        </KoronaVarsel>
+      </div>
+    </>
   );
 };
 
