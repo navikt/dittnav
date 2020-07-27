@@ -59,7 +59,13 @@ const RenderVarslinger = ({ api }) => {
         .catch(() => dispatchError(INAKTIVE_INNBOKSER_ERROR));
 
       api.fetchInnlogging()
-        .then((result) => dispatchResult(ADD_INNLOGGING, result))
+        .then((result) => {
+          if (!result.authenticated) {
+            api.redirectToLogin();
+          } else {
+            dispatchResult(ADD_INNLOGGING, result);
+          }
+        })
         .catch(() => dispatchError(INNLOGGING_ERROR));
     }, [],
   );

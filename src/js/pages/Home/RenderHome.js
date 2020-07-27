@@ -65,7 +65,11 @@ const RenderHome = ({ api }) => {
 
       api.fetchInnlogging()
         .then((r) => {
-          setData(d => ({ ...d, innlogging: r, fetching: d.fetching + 1 }));
+          if (!r.authenticated) {
+            api.redirectToLogin();
+          } else {
+            setData(d => ({ ...d, innlogging: r, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
 
       api.fetchOppfolging()
