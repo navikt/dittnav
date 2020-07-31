@@ -71,7 +71,7 @@
     "lint-es-fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "start": "react-scripts start",
     "build": "npm run build-less && npm run build-parcel && npm run build-lint",
-    "build-parcel": "rm -rf dist && parcel build public/index.html public/config.js --public-url ./ --out-dir dist --no-source-maps --no-content-hash",
+    "build-parcel": "rm -rf dist && parcel build public/index.html public/config.js --public-url /person/dittnav --out-dir dist --no-source-maps --no-content-hash",
     "build-less": "lessc --npm-import=\"prefix=~\" src/less/index.less src/css/index.css",
     "build-lint": "npm run lint-es",
     "test": "TZ='Europe/Oslo' react-scripts test --env=jsdom --modulePaths=src --coverage --watchAll=false",
