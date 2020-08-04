@@ -27,26 +27,6 @@ exports[`expect Login page rendering 1`] = `
                 Varsler
               </span>
             </h1>
-            <div
-              className="varslinger-inngang-wrapper"
-            >
-              <h2
-                className="typo-undertittel varslinger-inngang"
-              >
-                <a
-                  href="/dittnav/varslinger#inaktive-varsler"
-                  id="varslinger-inngang__lenke-id"
-                  onClick={[Function]}
-                >
-                  <span>
-                    Se tidligere beskjeder og oppgaver
-                  </span>
-                </a>
-                <i
-                  className="nav-frontend-chevron chevronboks varslinger-inngang__chevron chevron--hoyre"
-                />
-              </h2>
-            </div>
           </section>
           <div
             className="korona-spesial"

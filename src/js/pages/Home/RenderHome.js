@@ -56,12 +56,10 @@ const RenderHome = ({ api }) => {
           setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
 
-      /* Skrur midlertidig av denne for å se om det har en effekt på cpu-bruk i database.
       api.fetchAntallBrukernotifikasjoner()
         .then((r) => {
           setData(d => ({ ...d, antallBrukernotifikasjoner: r, fetching: d.fetching + 1 }));
         }).catch(handleError);
-       */
 
       api.fetchInnlogging()
         .then((r) => {
@@ -116,7 +114,7 @@ const RenderHome = ({ api }) => {
   );
 
   const uniqueErrors = data.errors.filter((item, i, ar) => ar.indexOf(item) === i);
-  const loading = data.fetching < 10;
+  const loading = data.fetching < 11;
 
   return (
     <PageFrame uniqueErrors={uniqueErrors}>

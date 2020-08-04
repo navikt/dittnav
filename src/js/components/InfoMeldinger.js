@@ -19,7 +19,6 @@ import InnboksType from '../types/InnboksType';
 const InfoMeldinger = (props) => {
   const { state } = useBeskjedStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  // eslint-disable-next-line no-unused-vars
   const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 
   return (
@@ -36,7 +35,7 @@ const InfoMeldinger = (props) => {
       <EtterregistreringMeldekort ettereg={props.meldekort} />
       <PaabegynteSoknader paabegynteSoknader={props.paabegynteSoknader} />
       <MinInnboks mininnboks={props.mininnboks} />
-      <InngangVarslinger />
+      {visInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
   );
 };
