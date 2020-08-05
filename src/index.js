@@ -16,6 +16,7 @@ import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
 
 import { initializeGoogleAnalytics } from './js/utils/GoogleAnalytics';
+import BeskjedStoreProvider from './js/context/BeskjedStoreProvider';
 import enableHotModuleReplacement from './js/utils/Parcel';
 import log from './js/utils/Logger';
 
@@ -27,7 +28,9 @@ const loadMessages = () => ({
 function renderApp() {
   ReactDOM.render(
     <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <App api={Api} />
+      <BeskjedStoreProvider>
+        <App api={Api} />
+      </BeskjedStoreProvider>
     </NavApp>, document.getElementById('app'),
   );
 }

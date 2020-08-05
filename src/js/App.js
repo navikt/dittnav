@@ -3,7 +3,6 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import RenderHome from './pages/Home/RenderHome';
 import RenderVarslinger from './pages/Varslinger/RenderVarslinger';
 import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
-import BeskjedStoreProvider from './context/BeskjedStoreProvider';
 import ScrollToTop from './components/scroll/ScrollToTop';
 import Config from './globalConfig';
 import '../less/index.less';
@@ -17,9 +16,7 @@ const App = ({ api }) => (
         path="/dittnav"
         exact
         render={(props) => (
-          <BeskjedStoreProvider>
-            <RenderHome {...props} api={api} />
-          </BeskjedStoreProvider>
+          <RenderHome {...props} api={api} />
         )}
       />
       {Config.VARSLINGER_FEATURE_TOGGLE && (
@@ -27,9 +24,7 @@ const App = ({ api }) => (
           path="/dittnav/varslinger"
           exact
           render={(props) => (
-            <BeskjedStoreProvider>
-              <RenderVarslinger {...props} api={api} />
-            </BeskjedStoreProvider>
+            <RenderVarslinger {...props} api={api} />
           )}
         />
       )}
@@ -38,9 +33,7 @@ const App = ({ api }) => (
           path="/dittnav/hendelser"
           exact
           render={(props) => (
-            <BeskjedStoreProvider>
-              <HendelserTestSide {...props} />
-            </BeskjedStoreProvider>
+            <HendelserTestSide {...props} />
           )}
         />
       )}
@@ -48,9 +41,7 @@ const App = ({ api }) => (
         path="/dittnav*"
         exact
         render={(props) => (
-          <BeskjedStoreProvider>
-            <RenderHome {...props} api={api} />
-          </BeskjedStoreProvider>
+          <RenderHome {...props} api={api} />
         )}
       />
     </Switch>
