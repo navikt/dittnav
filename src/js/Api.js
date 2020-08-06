@@ -5,10 +5,17 @@ const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
 };
 
+const checkTokenExpiration = (headers) => {
+  if (headers.get('x-token-expires-soon')) {
+    redirectToLogin();
+  }
+};
+
 const fetchJSON = (url) => new Promise((res, rej) => {
   fetch(url, { method: 'GET', credentials: 'include' })
     .then(r => {
       if (r.ok) {
+        checkTokenExpiration(r.headers);
         return r.json();
       }
       rej(r);
