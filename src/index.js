@@ -51,7 +51,7 @@ const checkAuthThenRenderApp = () => {
       if (e.status === 401) {
         Api.fetchInnlogging()
           .then((result) => {
-            Api.handleOpenAmToken(result.securityLevel);
+            Api.exchangeOpenAmTokenToOidc(result.securityLevel);
           })
           .catch(() => Api.redirectToLogin());
         return;

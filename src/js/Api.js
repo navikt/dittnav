@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie';
 import Config from './globalConfig';
 import log from './utils/Logger';
 
@@ -10,19 +9,11 @@ const redirectToLoginWithLevel4 = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE_LEVEL_4}`);
 };
 
-const hasOpenAmToken = Cookies.get('nav-esso');
-
 const exchangeOpenAmTokenToOidc = (securityLevel) => {
   if (securityLevel === '4') {
     redirectToLoginWithLevel4();
   } else {
     redirectToLogin();
-  }
-};
-
-const handleOpenAmToken = (securityLevel) => {
-  if (hasOpenAmToken) {
-    exchangeOpenAmTokenToOidc(securityLevel);
   }
 };
 
@@ -174,5 +165,4 @@ export default {
   redirectToLogin,
   redirectToLoginWithLevel4,
   exchangeOpenAmTokenToOidc,
-  handleOpenAmToken,
 };
