@@ -5,6 +5,18 @@ const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
 };
 
+const redirectToLoginWithLevel4 = () => {
+  window.location.assign(`${Config.dittNav.LOGINSERVICE_LEVEL_4}`);
+};
+
+const exchangeOpenAmTokenToOidc = (securityLevel) => {
+  if (securityLevel === '4') {
+    redirectToLoginWithLevel4();
+  } else {
+    redirectToLogin();
+  }
+};
+
 const checkTokenExpiration = (headers) => {
   if (headers.get('x-token-expires-soon')) {
     redirectToLogin();
@@ -151,4 +163,6 @@ export default {
   postDoneAll,
   postDone,
   redirectToLogin,
+  redirectToLoginWithLevel4,
+  exchangeOpenAmTokenToOidc,
 };

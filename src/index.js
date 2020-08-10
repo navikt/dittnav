@@ -49,7 +49,11 @@ const checkAuthThenRenderApp = () => {
         return;
       }
       if (e.status === 401) {
-        Api.redirectToLogin();
+        Api.fetchInnlogging()
+          .then((result) => {
+            Api.exchangeOpenAmTokenToOidc(result.securityLevel);
+          })
+          .catch(() => Api.redirectToLogin());
         return;
       }
       log(`Unexpected backend error, some page content may be unavailable: ${e}`);
