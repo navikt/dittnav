@@ -15,21 +15,42 @@ import {
   GoogleAnalyticsCategory,
   trackEvent,
 } from '../../utils/GoogleAnalytics';
+import InnloggingsModal from '../common/InnloggingsModal';
+import useModal from '../../hooks/useModal';
 
-const remove = (beskjed, dispatch) => dispatch({
-  type: REMOVE_BESKJED,
-  payload: beskjed,
-});
+const remove = (beskjed, dispatch) => {
+  // TODO : do api call. When ready, dispatch a new action with headers as payload
+  dispatch({
+    type: REMOVE_BESKJED,
+    payload: beskjed,
+  });
+};
 
 const addInaktiv = (beskjed, dispatch) => dispatch({
   type: ADD_INAKTIV_BESKJED,
   payload: beskjed,
 });
 
-const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
+const addTilInaktiveHvisErAktiv = (beskjed, dispatch, erAktiv) => {
+  if (erAktiv) {
+    addInaktiv(beskjed, dispatch);
+    window.location.hash = '';
+  }
+};
+
+const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
+  remove(beskjed, dispatch);
+  addTilInaktiveHvisErAktiv(beskjed, dispatch, erAktiv);
+  hotjarTrigger('beskjed_trykket_ok');
+  trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
+};
+
+const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv, tokenExpiresSoon }) => {
+  const [visModal, toggleModal, handleModal] = useModal();
   const location = useLocation();
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
+
   useEffect(() => {
     hotjarSafetyStub();
   }, []);
@@ -39,16 +60,11 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 
-  const onClickBeskjed = () => {
-    remove(beskjed, dispatch);
-    hotjarTrigger('beskjed_trykket_ok');
-    trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
-
-    if (erAktiv) {
-      addInaktiv(beskjed, dispatch);
-      location.hash = '';
-    }
-  };
+  if (tokenExpiresSoon) {
+    return (
+      <InnloggingsModal isOpen onClick={handleModal} />
+    );
+  }
 
   return (
     <PanelMedIkon
@@ -56,7 +72,7 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
       alt="Beskjed"
       overskrift={sikkerhetsnivaa.tekst}
       etikett={lokalDatoTid}
-      onClick={() => onClickBeskjed()}
+      onClick={() => onClickBeskjed(beskjed, dispatch, erAktiv)}
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
@@ -74,6 +90,7 @@ Beskjed.propTypes = {
   innlogging: InnloggingType,
   erAktiv: bool,
   erInaktiv: bool,
+  tokenExpiresSoon: bool.isRequired,
 };
 
 Beskjed.defaultProps = {

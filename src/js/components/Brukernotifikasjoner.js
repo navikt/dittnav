@@ -9,6 +9,7 @@ import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingType from '../types/InnloggingType';
+import useBeskjedStore from '../hooks/useBeskjedStore';
 
 const byEventTidspunkt = (a, b) => {
   const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
@@ -17,19 +18,43 @@ const byEventTidspunkt = (a, b) => {
   return momentB.diff(momentA);
 };
 
-const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => (
-  <>
-    {oppgaver && innlogging && oppgaver.sort(byEventTidspunkt).map(o => (
-      <Oppgave key={o.eventId} oppgave={o} innlogging={innlogging} />
-    ))}
-    {beskjeder && innlogging && beskjeder.sort(byEventTidspunkt).map(b => (
-      <Beskjed key={b.uid} beskjed={b} beskjeder={beskjeder} innlogging={innlogging} erAktiv={erAktiv} erInaktiv={erInaktiv} />
-    ))}
-    {innbokser && innlogging && innbokser.sort(byEventTidspunkt).map(i => (
-      <Innboks key={i.eventId} innboks={i} innlogging={innlogging} />
-    ))}
-  </>
-);
+const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => {
+  const { state } = useBeskjedStore();
+  const tokenExpiresSoon = state.visInnloggingsModal;
+
+  return (
+    <>
+      {oppgaver && innlogging && oppgaver.sort(byEventTidspunkt)
+        .map(o => (
+          <Oppgave
+            key={o.eventId}
+            oppgave={o}
+            innlogging={innlogging}
+          />
+        ))}
+      {beskjeder && innlogging && beskjeder.sort(byEventTidspunkt)
+        .map(b => (
+          <Beskjed
+            key={b.uid}
+            beskjed={b}
+            beskjeder={beskjeder}
+            innlogging={innlogging}
+            erAktiv={erAktiv}
+            erInaktiv={erInaktiv}
+            tokenExpiresSoon={tokenExpiresSoon}
+          />
+        ))}
+      {innbokser && innlogging && innbokser.sort(byEventTidspunkt)
+        .map(i => (
+          <Innboks
+            key={i.eventId}
+            innboks={i}
+            innlogging={innlogging}
+          />
+        ))}
+    </>
+  );
+};
 
 Brukernotifikasjoner.propTypes = {
   beskjeder: arrayOf(BeskjedType),

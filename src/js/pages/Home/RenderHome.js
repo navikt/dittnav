@@ -4,6 +4,8 @@ import PageFrame from '../PageFrame';
 import Home from './Home';
 import { ADD_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
+import InnloggingsModal from '../../components/common/InnloggingsModal';
+import useModal from '../../hooks/useModal';
 
 const RenderHome = ({ api }) => {
   const [data, setData] = useState({
@@ -24,6 +26,7 @@ const RenderHome = ({ api }) => {
   });
 
   const { dispatch } = useBeskjedStore();
+  const [visModal, toggleModal, handleModal] = useModal();
 
   const handleOppfolgingError = () => {
     setData(d => ({ ...d, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1, oppfolgingHasLoaded: true }));
@@ -41,74 +44,110 @@ const RenderHome = ({ api }) => {
       };
 
       api.fetchBeskjeder()
-        .then((r) => {
-          incrementFetching();
-          dispatch({ type: ADD_BESKJEDER, payload: r });
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            incrementFetching();
+            dispatch({ type: ADD_BESKJEDER, payload: content });
+          }
         }).catch(handleError);
 
       api.fetchOppgaver()
-        .then((r) => {
-          setData(d => ({ ...d, oppgaver: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, oppgaver: content, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
 
       api.fetchInnbokser()
-        .then((r) => {
-          setData(d => ({ ...d, innbokser: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, innbokser: content, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
 
       api.fetchAntallBrukernotifikasjoner()
-        .then((r) => {
-          setData(d => ({ ...d, antallBrukernotifikasjoner: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, antallBrukernotifikasjoner: content, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
 
       api.fetchInnlogging()
-        .then((r) => {
-          if (!r.authenticated) {
+        .then(([content]) => {
+          if (!content.authenticated) {
             api.redirectToLogin();
           } else {
-            setData(d => ({ ...d, innlogging: r, fetching: d.fetching + 1 }));
+            setData(d => ({ ...d, innlogging: content, fetching: d.fetching + 1 }));
           }
         }).catch(handleError);
 
       api.fetchOppfolging()
-        .then((r) => {
-          setData(d => ({ ...d, oppfolging: r, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, oppfolging: content, oppfolgingHasLoaded: true, fetching: d.fetching + 1 }));
+          }
         }).catch(handleOppfolgingError);
 
       api.fetchMeldekort()
-        .then((r) => {
-          setData(d => ({ ...d, meldekort: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, meldekort: content, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
 
       api.fetchPersonNavn()
-        .then((r) => {
-          setData(d => ({ ...d, person: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, person: content, fetching: d.fetching + 1 }));
+          }
         }).catch(() => {
           api.fetchPersonIdent()
-            .then(r => {
-              setData(d => ({ ...d, identifikator: r, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1 }));
+            .then(content => {
+              setData(d => ({ ...d, identifikator: content, errors: [...d.errors, 'error.baksystemer'], fetching: d.fetching + 1 }));
             })
             .catch(handleError);
         });
 
       api.fetchSaker()
-        .then((r) => {
-          const { feilendeBaksystem } = r;
+        .then(([content]) => {
+          const { feilendeBaksystem } = content;
           if (feilendeBaksystem.length > 0) {
-            setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1, errors: [...d.errors, 'error.baksystemer'] }));
+            setData(d => ({ ...d, paabegynteSoknader: content, fetching: d.fetching + 1, errors: [...d.errors, 'error.baksystemer'] }));
           } else {
-            setData(d => ({ ...d, paabegynteSoknader: r, fetching: d.fetching + 1 }));
+            setData(d => ({ ...d, paabegynteSoknader: content, fetching: d.fetching + 1 }));
           }
         }).catch(handleError);
 
       api.fetchMeldinger()
-        .then((r) => {
-          setData(d => ({ ...d, mininnboks: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, mininnboks: content, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
 
       api.fetchSakstema()
-        .then((r) => {
-          setData(d => ({ ...d, sakstema: r, fetching: d.fetching + 1 }));
+        .then(([content, headers]) => {
+          if (api.tokenExpiresSoon(headers)) {
+            toggleModal();
+          } else {
+            setData(d => ({ ...d, sakstema: content, fetching: d.fetching + 1 }));
+          }
         }).catch(handleError);
     }, [],
   );
@@ -118,7 +157,9 @@ const RenderHome = ({ api }) => {
 
   return (
     <PageFrame uniqueErrors={uniqueErrors}>
-      <Home data={data} loading={loading} />
+      {visModal
+        ? <InnloggingsModal isOpen onClick={handleModal} />
+        : <Home data={data} loading={loading} />}
     </PageFrame>
   );
 };

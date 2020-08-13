@@ -1,28 +1,31 @@
 import Config from './globalConfig';
-import log from './utils/Logger';
 
 const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
 };
 
-const checkTokenExpiration = (headers) => {
-  if (headers.get('x-token-expires-soon')) {
-    redirectToLogin();
-  }
+const redirectToNavNo = () => {
+  window.location.assign(`${Config.dittNav.NAVNO_URL}`);
 };
 
-const fetchJSON = (url) => new Promise((res, rej) => {
+const tokenExpiresSoon = (headers) => (
+  headers.get('x-token-expires-soon')
+);
+
+const fetchJSON = (url) => new Promise((resolve, reject) => {
   fetch(url, { method: 'GET', credentials: 'include' })
-    .then(r => {
-      if (r.ok) {
-        checkTokenExpiration(r.headers);
-        return r.json();
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+          .then(json => [json, response.headers]);
       }
-      rej(r);
+      reject(response);
       return null;
     })
-    .then(r => res(r))
-    .catch(e => rej(e));
+    .then(([content, headers]) => {
+      resolve([content, headers]);
+    })
+    .catch(e => reject(e));
 });
 
 const checkAuth = () => new Promise((res, rej) => {
@@ -43,7 +46,7 @@ const checkApiStatus = () => new Promise((res, rej) => {
     .catch(e => rej(e));
 });
 
-const postJSON = (url, content) => {
+const postJSON = (url, content) => new Promise((resolve, reject) => {
   fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -53,9 +56,10 @@ const postJSON = (url, content) => {
     },
     body: JSON.stringify(content),
   })
-    .then((r) => r.status)
-    .catch((e) => log(`Error: ${e}`));
-};
+    .then(response => response.headers)
+    .then((headers) => resolve(headers))
+    .catch((e) => reject(e));
+});
 
 const fetchOppfolging = () => (
   fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`)
@@ -151,4 +155,6 @@ export default {
   postDoneAll,
   postDone,
   redirectToLogin,
+  redirectToNavNo,
+  tokenExpiresSoon,
 };

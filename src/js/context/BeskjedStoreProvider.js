@@ -4,14 +4,28 @@ import Api from '../Api';
 import {
   ADD_BESKJEDER,
   ADD_INAKTIVE_BESKJEDER,
-  ADD_INAKTIV_BESKJED, REMOVE_BESKJED,
+  ADD_INAKTIV_BESKJED,
+  REMOVE_BESKJED,
 } from '../types/Actions';
 import BeskjedType from '../types/BeskjedType';
 
 const initialState = (beskjeder, inaktiveBeskjeder) => ({
   beskjeder,
   inaktiveBeskjeder,
+  visInnloggingsModal: false,
 });
+
+const postAndCheckTokenExpiration = async (action) => {
+
+  const response = await Api.postDone({
+    eventId: action.payload.eventId,
+    uid: action.payload.uid,
+  });
+
+  const headers = Promise.resolve(response);
+
+  return Api.tokenExpiresSoon(headers);
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -30,8 +44,12 @@ const reducer = (state = initialState, action) => {
         eventId: action.payload.eventId,
         uid: action.payload.uid,
       });
+
+      // console.log(Promise.resolve(Promise.resolve(postAndCheckTokenExpiration(action))));
+
       return {
         ...state,
+        visInnloggingsModal: postAndCheckTokenExpiration(action),
         beskjeder: state.beskjeder.filter(b => action.payload.uid !== b.uid),
       };
     case ADD_INAKTIV_BESKJED:
