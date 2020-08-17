@@ -34,14 +34,17 @@ jobs:
           git tag $TAG
           git push origin $TAG
 
-      - name: Sjekk om slack-integrering er mulig
-        run: echo "::set-env name=SLACK_URL_SPECIFIED::$([[ ! -z $WEBHOOK_URL ]] && echo 'true' || echo 'false')"
-        env:
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+      - name: Sjekk om prodsetting er mulig
+        run: echo "::set-env name=PROD_SBS_VARS_TEMPLATE_DEFINED::$([[ -f ./nais/prod-sbs/default.json ]] && echo 'true' || echo 'false')"
 
-      - name: Vis deploy-knapper i slack
-        if: env.SLACK_URL_SPECIFIED == 'true'
-        uses: navikt/deploy-trigger-slack-integration@v1
-        with:
-          slack_channel: "#dittnav-deploy-actions"
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
+      - name: 'Deploy-er til default i prod-sbs'
+        if: env.PROD_SBS_VARS_TEMPLATE_DEFINED == 'true'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          REF: ${{ github.sha }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-sbs
+          RESOURCE: ./nais/nais.yaml
+          VARS: ./nais/prod-sbs/default.json
+          VAR: version=${{ env.IMAGE }}
+          PRINT_PAYLOAD: true

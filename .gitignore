@@ -30,3 +30,6 @@ deploy.sh
 dittnav.iml
 .devcontainer/Dockerfile
 .devcontainer/devcontainer.json
+
+# Ignore temp files crated when used from dittnav-meta-repo
+.gradle
