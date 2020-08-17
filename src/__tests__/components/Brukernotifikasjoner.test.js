@@ -79,7 +79,9 @@ const innlogging = {
 test('Brukernotifikasjoner empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={null} />
+      <BeskjedStoreProvider>
+        <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={null} />
+      </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();

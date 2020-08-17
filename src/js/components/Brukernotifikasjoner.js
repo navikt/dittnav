@@ -24,7 +24,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAk
 
   if (state.visInnloggingsModal) {
     return (
-      <InnloggingsModal isOpen onClick={null} />
+      <InnloggingsModal isOpen onClick={() => null} />
     );
   }
 

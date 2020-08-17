@@ -1,6 +1,5 @@
 import React, { createContext, useReducer } from 'react';
 import { arrayOf, node } from 'prop-types';
-import Api from '../Api';
 import {
   ADD_BESKJEDER,
   ADD_INAKTIVE_BESKJEDER,

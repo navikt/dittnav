@@ -7,7 +7,7 @@ import { hotjarTrigger, hotjarSafetyStub } from '../../utils/Hotjar';
 import transformTolokalDatoTid from '../../utils/DatoUtils';
 import PanelMedIkon from '../common/PanelMedIkon';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
-import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
+import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED, VIS_INNLOGGINGSMODAL } from '../../types/Actions';
 import InnloggingType from '../../types/InnloggingType';
 import BeskjedType from '../../types/BeskjedType';
 import {
@@ -24,12 +24,11 @@ const remove = (beskjed, dispatch) => {
   }).then((headers) => {
     if (Api.tokenExpiresSoon(headers)) {
       dispatch({
-        type: 'VIS_INNLOGGINGS_MODAL',
+        type: VIS_INNLOGGINGSMODAL,
         payload: true,
       });
     }
   });
-
   dispatch({
     type: REMOVE_BESKJED,
     payload: beskjed,

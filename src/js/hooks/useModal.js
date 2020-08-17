@@ -7,7 +7,6 @@ const useModal = () => {
     setVisModal(true)
   );
 
-  /* no-op */
   const handleModal = () => null;
 
   return [visModal, toggleModal, handleModal];

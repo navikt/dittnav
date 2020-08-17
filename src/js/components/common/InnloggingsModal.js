@@ -3,7 +3,9 @@ import { func, bool } from 'prop-types';
 import ModalWrapper from 'nav-frontend-modal';
 import Veilederpanel from 'nav-frontend-veilederpanel';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
+import { FormattedMessage } from 'react-intl';
 import IkonVeileder from '../../../assets/IkonVeileder';
+import Config from '../../globalConfig';
 
 const InnloggingsModal = ({ isOpen, onClick }) => (
   <ModalWrapper
@@ -25,11 +27,11 @@ const InnloggingsModal = ({ isOpen, onClick }) => (
         </div>
       </Veilederpanel>
       <div className="modal-box__knapp-container">
-        <a href="#som-lenke" className="modal-box__lenkeknapp knapp">
-          Gå til forsiden på nav.no
+        <a href={Config.dittNav.NAVNO_URL} className="modal-box__lenkeknapp knapp">
+          <FormattedMessage id="innloggingsmodal.forside" />
         </a>
-        <a href="#som-lenke" className="modal-box__lenkeknapp knapp knapp--hoved">
-          Logg inn på nytt
+        <a href={Config.dittNav.LOGINSERVICE} className="modal-box__lenkeknapp knapp knapp--hoved">
+          <FormattedMessage id="innloggingsmodal.logg.inn" />
         </a>
       </div>
     </div>
