@@ -10,6 +10,7 @@ import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingType from '../types/InnloggingType';
 import useBeskjedStore from '../hooks/useBeskjedStore';
+import InnloggingsModal from './common/InnloggingsModal';
 
 const byEventTidspunkt = (a, b) => {
   const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
@@ -20,7 +21,12 @@ const byEventTidspunkt = (a, b) => {
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => {
   const { state } = useBeskjedStore();
-  const tokenExpiresSoon = state.visInnloggingsModal;
+
+  if (state.visInnloggingsModal) {
+    return (
+      <InnloggingsModal isOpen onClick={null} />
+    );
+  }
 
   return (
     <>
@@ -41,7 +47,6 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAk
             innlogging={innlogging}
             erAktiv={erAktiv}
             erInaktiv={erInaktiv}
-            tokenExpiresSoon={tokenExpiresSoon}
           />
         ))}
       {innbokser && innlogging && innbokser.sort(byEventTidspunkt)

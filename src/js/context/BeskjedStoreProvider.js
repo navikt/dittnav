@@ -15,18 +15,6 @@ const initialState = (beskjeder, inaktiveBeskjeder) => ({
   visInnloggingsModal: false,
 });
 
-const postAndCheckTokenExpiration = async (action) => {
-
-  const response = await Api.postDone({
-    eventId: action.payload.eventId,
-    uid: action.payload.uid,
-  });
-
-  const headers = Promise.resolve(response);
-
-  return Api.tokenExpiresSoon(headers);
-};
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BESKJEDER:
@@ -40,22 +28,19 @@ const reducer = (state = initialState, action) => {
         inaktiveBeskjeder: action.payload,
       };
     case REMOVE_BESKJED:
-      Api.postDone({
-        eventId: action.payload.eventId,
-        uid: action.payload.uid,
-      });
-
-      // console.log(Promise.resolve(Promise.resolve(postAndCheckTokenExpiration(action))));
-
       return {
         ...state,
-        visInnloggingsModal: postAndCheckTokenExpiration(action),
         beskjeder: state.beskjeder.filter(b => action.payload.uid !== b.uid),
       };
     case ADD_INAKTIV_BESKJED:
       return {
         ...state,
         inaktiveBeskjeder: [...state.inaktiveBeskjeder, action.payload],
+      };
+    case 'VIS_INNLOGGINGS_MODAL':
+      return {
+        ...state,
+        visInnloggingsModal: true,
       };
     default:
       return state;

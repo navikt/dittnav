@@ -15,11 +15,21 @@ import {
   GoogleAnalyticsCategory,
   trackEvent,
 } from '../../utils/GoogleAnalytics';
-import InnloggingsModal from '../common/InnloggingsModal';
-import useModal from '../../hooks/useModal';
+import Api from '../../Api';
 
 const remove = (beskjed, dispatch) => {
-  // TODO : do api call. When ready, dispatch a new action with headers as payload
+  Api.postDone({
+    eventId: beskjed.eventId,
+    uid: beskjed.uid,
+  }).then((headers) => {
+    if (Api.tokenExpiresSoon(headers)) {
+      dispatch({
+        type: 'VIS_INNLOGGINGS_MODAL',
+        payload: true,
+      });
+    }
+  });
+
   dispatch({
     type: REMOVE_BESKJED,
     payload: beskjed,
@@ -45,8 +55,7 @@ const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
   trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
 };
 
-const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv, tokenExpiresSoon }) => {
-  const [visModal, toggleModal, handleModal] = useModal();
+const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
   const location = useLocation();
   const { dispatch } = useBeskjedStore();
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
@@ -59,12 +68,6 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv, tokenExpiresSoon }) 
   const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
-
-  if (tokenExpiresSoon) {
-    return (
-      <InnloggingsModal isOpen onClick={handleModal} />
-    );
-  }
 
   return (
     <PanelMedIkon
@@ -90,7 +93,6 @@ Beskjed.propTypes = {
   innlogging: InnloggingType,
   erAktiv: bool,
   erInaktiv: bool,
-  tokenExpiresSoon: bool.isRequired,
 };
 
 Beskjed.defaultProps = {
