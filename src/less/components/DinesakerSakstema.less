@@ -5,23 +5,9 @@
   flex-direction: column;
   flex-grow: 1;
 
-  margin-top: 0.5em;
+  margin-top: 0.85em;
 
   .sak-lenke {
-    &:hover {
-      .sak-temanavn {
-        text-decoration: underline;
-      }
-
-      .sak-chevron {
-        left: 6px;
-      }
-    }
-
-    &:not(:hover) {
-      color: inherit;
-    }
-
     &:focus,
     &--focus {
       color: @navBla;
@@ -35,13 +21,6 @@
     flex-direction: row;
     justify-content: space-between;
     flex-grow: 1;
-  }
-
-  .sak-chevron {
-    align-self: center;
-    color: @navMorkGra;
-    left: 0;
-    transition: left 250ms;
   }
 
   .sak-status {
