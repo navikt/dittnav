@@ -1,9 +1,9 @@
 import React from 'react';
 import { func, bool } from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import ModalWrapper from 'nav-frontend-modal';
 import Veilederpanel from 'nav-frontend-veilederpanel';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
-import { FormattedMessage } from 'react-intl';
 import IkonVeileder from '../../../assets/IkonVeileder';
 import Config from '../../globalConfig';
 
@@ -19,10 +19,10 @@ const InnloggingsModal = ({ isOpen, onClick }) => (
       <Veilederpanel fargetema="advarsel" svg={IkonVeileder}>
         <div className="modal-box__tekst-container">
           <Undertittel>
-            Du er i ferd med å bli logget ut
+            <FormattedMessage id="innloggingsmodal.tittel" />
           </Undertittel>
           <Normaltekst>
-            Du kan logge inn på nytt for å fortsette.
+            <FormattedMessage id="innloggingsmodal.ingress" />
           </Normaltekst>
         </div>
       </Veilederpanel>
