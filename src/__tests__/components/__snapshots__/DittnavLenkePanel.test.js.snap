@@ -97,13 +97,13 @@ exports[`Snapshot test med saker 1`] = `
         </a>
       </div>
     </div>
-    <a
-      className="lenke"
-      href="http://localhost:9222/saksoversikt"
-      id="oversiktspanel__header-lenke-id"
+    <p
+      className="typo-element oversiktspanel__header-lenke"
     >
-      <p
-        className="typo-element oversiktspanel__header-lenke"
+      <a
+        className="lenke"
+        href="http://localhost:9222/saksoversikt"
+        id="oversiktspanel__header-lenke-id"
       >
         <span>
           Se alle dine saker (6)
@@ -111,8 +111,8 @@ exports[`Snapshot test med saker 1`] = `
         <i
           className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
         />
-      </p>
-    </a>
+      </a>
+    </p>
   </div>
   <div
     className="dittnav-lenkepanel-liten"

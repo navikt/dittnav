@@ -35,12 +35,12 @@ class OversiktspanelMedListe extends React.Component {
             </>
           )
           : null }
-        <Lenke href={headerLenkeHref} id="oversiktspanel__header-lenke-id">
-          <Element className="oversiktspanel__header-lenke">
+        <Element className="oversiktspanel__header-lenke">
+          <Lenke href={headerLenkeHref} id="oversiktspanel__header-lenke-id">
             {headerLenkeTekst}
             <HoyreChevron className="oversiktspanel__chevron" />
-          </Element>
-        </Lenke>
+          </Lenke>
+        </Element>
       </PanelBase>
     );
   }
