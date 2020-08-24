@@ -28,22 +28,22 @@ const fetchJSON = (url) => new Promise((resolve, reject) => {
     .catch(e => reject(e));
 });
 
-const checkAuth = () => new Promise((res, rej) => {
+const checkAuth = () => new Promise((resolve, reject) => {
   fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}?ts=${Date.now()}`)
-    .then(r => {
-      if (r.authenticated) {
-        res(r);
+    .then(([response]) => {
+      if (response.authenticated) {
+        resolve(response);
       } else {
-        rej(new Error('not authenticated'));
+        reject(new Error('not authenticated'));
       }
     })
-    .catch(() => rej(new Error('not authenticated')));
+    .catch(() => reject(new Error('not authenticated')));
 });
 
-const checkApiStatus = () => new Promise((res, rej) => {
+const checkApiStatus = () => new Promise((resolve, reject) => {
   fetchJSON(`${Config.dittNav.DITTNAV_API_AUTH_URL}`)
-    .then(r => res(r))
-    .catch(e => rej(e));
+    .then(([response]) => resolve(response))
+    .catch(e => reject(e));
 });
 
 const postJSON = (url, content) => new Promise((resolve, reject) => {
