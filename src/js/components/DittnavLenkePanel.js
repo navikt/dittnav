@@ -24,7 +24,7 @@ class DittnavLenkePanel extends React.Component {
               overskrift={<F id="saksoversikt.overskrift" />}
               headerLenkeTekst={<F id="saksoversikt.alle.saker" values={{ count: sakstema.antallSakstema }} />}
               headerLenkeHref={Config.LENKER.saksoversikt.url}
-              border
+              border={false}
               liste={
                 sakstema.sakstemaList
                   .slice(0, antallSakstemaVist)
