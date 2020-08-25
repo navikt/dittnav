@@ -4,10 +4,6 @@ const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
 };
 
-const redirectToNavNo = () => {
-  window.location.assign(`${Config.dittNav.NAVNO_URL}`);
-};
-
 const tokenExpiresSoon = (headers) => (
   headers.get('x-token-expires-soon')
 );
@@ -42,8 +38,12 @@ const checkAuth = () => new Promise((resolve, reject) => {
 
 const checkApiStatus = () => new Promise((resolve, reject) => {
   fetchJSON(`${Config.dittNav.DITTNAV_API_AUTH_URL}`)
-    .then(([response]) => resolve(response))
-    .catch(e => reject(e));
+    .then(([response]) => {
+      resolve(response);
+    })
+    .catch(e => {
+      reject(e);
+    });
 });
 
 const postJSON = (url, content) => new Promise((resolve, reject) => {
@@ -155,6 +155,5 @@ export default {
   postDoneAll,
   postDone,
   redirectToLogin,
-  redirectToNavNo,
   tokenExpiresSoon,
 };
