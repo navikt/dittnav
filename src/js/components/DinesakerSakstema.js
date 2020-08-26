@@ -5,7 +5,6 @@ import moment from 'moment';
 
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
-import HoyreChevron from 'nav-frontend-chevron';
 
 import i18n from '../../translations/i18n';
 
@@ -60,11 +59,10 @@ class DinesakerSakstema extends React.Component {
             removeFragment(this.getTemaUrl()),
           )}
         >
-          <div className="sak-temanavn">
+          <div className="sak-temanavn lenke">
             <Undertittel>
               { temanavn }
             </Undertittel>
-            <HoyreChevron className="sak-chevron" />
           </div>
 
           <div className="sak-status">
