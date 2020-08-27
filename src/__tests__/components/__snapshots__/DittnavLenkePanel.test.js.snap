@@ -5,7 +5,7 @@ exports[`Snapshot test med saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="panel oversiktspanel dittnav-lenkepanel-stor panel--border"
+    className="panel oversiktspanel dittnav-lenkepanel-stor"
   >
     <div
       className="oversiktspanel__header"
@@ -21,24 +21,7 @@ exports[`Snapshot test med saker 1`] = `
           </span>
         </h2>
       </div>
-      <a
-        className="lenke"
-        href="http://localhost:9222/saksoversikt"
-        id="oversiktspanel__header-lenke-id"
-      >
-        <p
-          className="typo-normal oversiktspanel__header-lenke"
-        >
-          <span>
-            Se alle dine saker (6)
-          </span>
-          <i
-            className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
-          />
-        </p>
-      </a>
     </div>
-    <hr />
     <div
       className="oversiktspanel__liste"
     >
@@ -52,16 +35,13 @@ exports[`Snapshot test med saker 1`] = `
           onClick={[Function]}
         >
           <div
-            className="sak-temanavn"
+            className="sak-temanavn lenke"
           >
             <h2
               className="typo-undertittel"
             >
               Barnetrygd
             </h2>
-            <i
-              className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
-            />
           </div>
           <div
             className="sak-status"
@@ -89,16 +69,13 @@ exports[`Snapshot test med saker 1`] = `
           onClick={[Function]}
         >
           <div
-            className="sak-temanavn"
+            className="sak-temanavn lenke"
           >
             <h2
               className="typo-undertittel"
             >
               Sykepenger og oppfølging
             </h2>
-            <i
-              className="nav-frontend-chevron chevronboks sak-chevron chevron--hoyre"
-            />
           </div>
           <div
             className="sak-status"
@@ -120,6 +97,22 @@ exports[`Snapshot test med saker 1`] = `
         </a>
       </div>
     </div>
+    <p
+      className="typo-element oversiktspanel__header-lenke"
+    >
+      <a
+        className="lenke"
+        href="http://localhost:9222/saksoversikt"
+        id="oversiktspanel__header-lenke-id"
+      >
+        <span>
+          Se alle dine saker (6)
+        </span>
+        <i
+          className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
+        />
+      </a>
+    </p>
   </div>
   <div
     className="dittnav-lenkepanel-liten"

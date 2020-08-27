@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import HoyreChevron from 'nav-frontend-chevron';
 import PanelBase from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
-import { Normaltekst, Systemtittel } from 'nav-frontend-typografi';
+import { Element, Systemtittel } from 'nav-frontend-typografi';
 
 class OversiktspanelMedListe extends React.Component {
   render() {
@@ -25,23 +25,22 @@ class OversiktspanelMedListe extends React.Component {
               {overskrift}
             </Systemtittel>
           </div>
-          <Lenke href={headerLenkeHref} id="oversiktspanel__header-lenke-id">
-            <Normaltekst className="oversiktspanel__header-lenke">
-              {headerLenkeTekst}
-              <HoyreChevron className="oversiktspanel__chevron" />
-            </Normaltekst>
-          </Lenke>
         </div>
         { liste && liste.length > 0
           ? (
             <>
-              <hr />
               <div className="oversiktspanel__liste">
                 {liste}
               </div>
             </>
           )
           : null }
+        <Element className="oversiktspanel__header-lenke">
+          <Lenke href={headerLenkeHref} id="oversiktspanel__header-lenke-id">
+            {headerLenkeTekst}
+            <HoyreChevron className="oversiktspanel__chevron" />
+          </Lenke>
+        </Element>
       </PanelBase>
     );
   }
