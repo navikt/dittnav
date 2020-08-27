@@ -7,7 +7,7 @@
   "homepage": "/person/dittnav",
   "dependencies": {
     "@babel/preset-env": "^7.7.1",
-    "@babel/runtime-corejs2": "^7.7.2",
+    "@babel/runtime-corejs2": "^7.10.5",
     "@navikt/fnrvalidator": "^1.1.0",
     "classnames": "^2.2.6",
     "core-js": "^3.4.1",
@@ -27,7 +27,7 @@
     "nav-frontend-js-utils": "^1.0.8",
     "nav-frontend-knapper": "^1.0.38",
     "nav-frontend-knapper-style": "^0.3.33",
-    "nav-frontend-lenkepanel": "^1.0.34",
+    "nav-frontend-lenkepanel": "^1.0.46",
     "nav-frontend-lenkepanel-style": "^0.3.27",
     "nav-frontend-lenker": "^1.0.32",
     "nav-frontend-lenker-style": "^0.2.24",
@@ -35,7 +35,7 @@
     "nav-frontend-lukknapp-style": "^0.2.21",
     "nav-frontend-paneler": "^1.0.21",
     "nav-frontend-paneler-style": "^0.3.17",
-    "nav-frontend-popover": "0.0.3",
+    "nav-frontend-popover": "0.0.28",
     "nav-frontend-popover-style": "0.0.2",
     "nav-frontend-skjema": "^2.0.13",
     "nav-frontend-skjema-style": "^1.0.48",
@@ -96,7 +96,7 @@
     "less-watch-compiler": "^1.14.1",
     "less-plugin-npm-import": "^2.1.0",
     "react-test-renderer": "^16.12.0",
-    "react-scripts": "^3.4.0"
+    "react-scripts": "^3.4.3"
   },
   "babel": {
     "presets": [
