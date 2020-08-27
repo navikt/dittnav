@@ -96,7 +96,7 @@
     "less-watch-compiler": "^1.14.1",
     "less-plugin-npm-import": "^2.1.0",
     "react-test-renderer": "^16.12.0",
-    "react-scripts": "^3.4.0"
+    "react-scripts": "^3.4.3"
   },
   "babel": {
     "presets": [
