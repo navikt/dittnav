@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 import 'intl';
 import './js/Polyfills';
 import NavApp from './js/NavApp';
-import Config from './js/globalConfig';
 import App from './js/App';
 import Api from './js/Api';
 
@@ -18,7 +17,6 @@ import enMessages from './translations/en.json';
 import { initializeGoogleAnalytics } from './js/utils/GoogleAnalytics';
 import BeskjedStoreProvider from './js/context/BeskjedStoreProvider';
 import enableHotModuleReplacement from './js/utils/Parcel';
-import log from './js/utils/Logger';
 
 const loadMessages = () => ({
   nb: nbMessages,
@@ -40,10 +38,6 @@ const checkAuthThenRenderApp = () => {
     .then(() => Api.checkApiStatus())
     .then(() => renderApp())
     .catch((e) => {
-      if (Config.IS_DEV) {
-        renderApp();
-        return;
-      }
       if (e.message === 'not authenticated') {
         Api.redirectToLogin();
         return;
@@ -52,7 +46,6 @@ const checkAuthThenRenderApp = () => {
         Api.redirectToLogin();
         return;
       }
-      log(`Unexpected backend error, some page content may be unavailable: ${e}`);
       renderApp();
     });
 };

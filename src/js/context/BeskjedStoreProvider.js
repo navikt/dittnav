@@ -1,16 +1,17 @@
 import React, { createContext, useReducer } from 'react';
 import { arrayOf, node } from 'prop-types';
-import Api from '../Api';
 import {
   ADD_BESKJEDER,
   ADD_INAKTIVE_BESKJEDER,
-  ADD_INAKTIV_BESKJED, REMOVE_BESKJED,
+  ADD_INAKTIV_BESKJED,
+  REMOVE_BESKJED,
 } from '../types/Actions';
 import BeskjedType from '../types/BeskjedType';
 
 const initialState = (beskjeder, inaktiveBeskjeder) => ({
   beskjeder,
   inaktiveBeskjeder,
+  visInnloggingsModal: false,
 });
 
 const reducer = (state = initialState, action) => {
@@ -26,10 +27,6 @@ const reducer = (state = initialState, action) => {
         inaktiveBeskjeder: action.payload,
       };
     case REMOVE_BESKJED:
-      Api.postDone({
-        eventId: action.payload.eventId,
-        uid: action.payload.uid,
-      });
       return {
         ...state,
         beskjeder: state.beskjeder.filter(b => action.payload.uid !== b.uid),
@@ -38,6 +35,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         inaktiveBeskjeder: [...state.inaktiveBeskjeder, action.payload],
+      };
+    case 'VIS_INNLOGGINGS_MODAL':
+      return {
+        ...state,
+        visInnloggingsModal: true,
       };
     default:
       return state;
