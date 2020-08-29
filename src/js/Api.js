@@ -89,7 +89,7 @@ const fetchSakstema = () => (
   fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL)
 );
 
-const fetchInnlogging = () => (
+const fetchInnloggingsstatus = () => (
   fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
 );
 
@@ -143,7 +143,7 @@ export default {
   fetchSaker,
   fetchMeldinger,
   fetchSakstema,
-  fetchInnlogging,
+  fetchInnloggingsstatus,
   fetchBeskjeder,
   fetchOppgaver,
   fetchInnbokser,

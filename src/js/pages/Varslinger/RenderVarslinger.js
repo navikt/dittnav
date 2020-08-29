@@ -93,7 +93,7 @@ const RenderVarslinger = ({ api }) => {
         })
         .catch(() => dispatchError(INAKTIVE_INNBOKSER_ERROR));
 
-      api.fetchInnlogging()
+      api.fetchInnloggingsstatus()
         .then(([result]) => {
           if (!result.authenticated) {
             api.redirectToLogin();

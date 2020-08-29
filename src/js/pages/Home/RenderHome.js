@@ -80,7 +80,7 @@ const RenderHome = ({ api }) => {
           }
         }).catch(handleError);
 
-      api.fetchInnlogging()
+      api.fetchInnloggingsstatus()
         .then(([content]) => {
           if (!content.authenticated) {
             api.redirectToLogin();

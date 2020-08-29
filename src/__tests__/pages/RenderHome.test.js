@@ -15,7 +15,7 @@ const mockApi = () => (
     fetchBeskjeder: () => new Promise((resolve, reject) => {}),
     fetchOppgaver: () => new Promise((resolve, reject) => {}),
     fetchInnbokser: () => new Promise((resolve, reject) => {}),
-    fetchInnlogging: () => new Promise((resolve, reject) => {}),
+    fetchInnloggingsstatus: () => new Promise((resolve, reject) => {}),
     fetchOppfolging: () => new Promise((resolve, reject) => {}),
     fetchMeldekort: () => new Promise((resolve, reject) => {}),
     fetchPersonNavn: () => new Promise((resolve, reject) => {}),

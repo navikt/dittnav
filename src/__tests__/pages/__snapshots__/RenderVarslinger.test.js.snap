@@ -21,6 +21,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
           "fetchInaktiveOppgaver": [Function],
           "fetchInnbokser": [Function],
           "fetchInnlogging": [Function],
+          "fetchInnloggingsstatus": [Function],
           "fetchOppgaver": [Function],
         }
       }
