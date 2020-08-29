@@ -3,7 +3,7 @@ import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import useBeskjedStore from '../../../hooks/useBeskjedStore';
+import useStore from '../../../hooks/useStore';
 import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
@@ -11,7 +11,7 @@ import InnboksType from '../../../types/InnboksType';
 const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
 
 const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
-  const { state } = useBeskjedStore();
+  const { state } = useStore();
   const antallAktiveVarsler = antallVarsler(state.beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
   return (

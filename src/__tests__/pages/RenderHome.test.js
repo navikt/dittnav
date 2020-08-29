@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import RenderHome from 'js/pages/Home/RenderHome';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import wrapIntl from 'js/IntlTestHelper';
-import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
+import StoreProvider from '../../js/context/StoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');
@@ -38,9 +38,9 @@ it('renders without crashing', () => {
 
   ReactDOM.render(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <RenderHome api={mockApi()} />
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ), div);
   ReactDOM.unmountComponentAtNode(div);
@@ -50,9 +50,9 @@ it('expect Login page rendering', () => {
   const api = mockApi();
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <RenderHome api={api} />
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();

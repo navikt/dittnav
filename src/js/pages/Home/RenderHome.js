@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
+import useStore from '../../hooks/useStore';
 import PageFrame from '../PageFrame';
 import Home from './Home';
-import { ADD_BESKJEDER } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 import useModal from '../../hooks/useModal';
@@ -25,7 +24,7 @@ const RenderHome = ({ api }) => {
     oppfolgingHasLoaded: false,
   });
 
-  const { dispatch } = useBeskjedStore();
+  const { addBeskjeder } = useStore();
   const [visModal, toggleModal, handleModal] = useModal();
 
   const handleOppfolgingError = () => {
@@ -49,7 +48,7 @@ const RenderHome = ({ api }) => {
             toggleModal();
           } else {
             incrementFetching();
-            dispatch({ type: ADD_BESKJEDER, payload: content });
+            addBeskjeder(content);
           }
         }).catch(handleError);
 

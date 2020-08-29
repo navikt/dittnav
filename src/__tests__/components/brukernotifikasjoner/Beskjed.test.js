@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import Beskjed from 'js/components/brukernotifikasjoner/Beskjed';
-import BeskjedStoreProvider from '../../../js/context/BeskjedStoreProvider';
+import StoreProvider from '../../../js/context/StoreProvider';
 import wrapIntl from 'js/IntlTestHelper';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -25,9 +25,9 @@ test('Beskjed with link', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -51,9 +51,9 @@ test('Beskjed with empty link', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -77,9 +77,9 @@ test('Beskjed with null as link', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -103,9 +103,9 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -129,9 +129,9 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -155,9 +155,9 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -181,9 +181,9 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <Beskjed beskjed={beskjed} beskjeder={null} innloggingsstatus={innloggingsstatus}/>
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
   expect(component.toJSON()).toMatchSnapshot();

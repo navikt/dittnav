@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
+import StoreProvider from '../../js/context/StoreProvider';
 
 jest.mock('react-ga');
 
@@ -29,9 +29,9 @@ it('renders without crashing', () => {
 
   ReactDOM.render(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <RenderVarslinger api={mockApi()} />
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ), div);
   ReactDOM.unmountComponentAtNode(div);
@@ -119,9 +119,9 @@ it('expect Brukernotifikasjoner fetching', async () => {
 
   renderer.render(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <RenderVarslinger api={api} />
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
 

@@ -1,13 +1,13 @@
 import React, { useEffect, useReducer } from 'react';
 import { useLocation } from 'react-router-dom';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
+import useStore from '../../hooks/useStore';
 import { varslingerReducer, initialVarslingerState } from '../../reducers/varslingerReducer';
 import PageFrame from '../PageFrame';
 import Varslinger from './Varslinger';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import scroll from '../../utils/scroll';
 import {
-  ADD_BESKJEDER, ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_BESKJEDER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER,
+  ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER,
   ADD_INNLOGGINGSSTATUS, SET_BESKJEDER_LOADING, SET_INAKTIVE_BESKJEDER_LOADING, BESKJEDER_ERROR, OPPGAVER_ERROR,
   INNBOKSER_ERROR, INAKTIVE_BESKJEDER_ERROR, INAKTIVE_OPPGAVER_ERROR, INNLOGGINGSSTATUS_ERROR, INAKTIVE_INNBOKSER_ERROR,
 } from '../../types/Actions';
@@ -18,7 +18,7 @@ import InnloggingsModal from '../../components/common/InnloggingsModal';
 const RenderVarslinger = ({ api }) => {
   const [state, dispatch] = useReducer(varslingerReducer, initialVarslingerState);
   const [visModal, toggleModal, handleModal] = useModal();
-  const store = useBeskjedStore();
+  const { addBeskjeder, addInaktiveBeskjeder } = useStore();
   const location = useLocation();
 
   const dispatchResult = (type, result, _dispatch = dispatch) => (
@@ -36,7 +36,7 @@ const RenderVarslinger = ({ api }) => {
           if (api.tokenExpiresSoon(headers)) {
             toggleModal();
           } else {
-            dispatchResult(ADD_BESKJEDER, result, store.dispatch);
+            addBeskjeder(result);
             dispatchResult(SET_BESKJEDER_LOADING, result);
           }
         })
@@ -67,7 +67,7 @@ const RenderVarslinger = ({ api }) => {
           if (api.tokenExpiresSoon(headers)) {
             toggleModal();
           } else {
-            dispatchResult(ADD_INAKTIVE_BESKJEDER, result, store.dispatch);
+            addInaktiveBeskjeder(result);
             dispatchResult(SET_INAKTIVE_BESKJEDER_LOADING, result);
           }
         })

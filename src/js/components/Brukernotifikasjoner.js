@@ -9,7 +9,7 @@ import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingsstatusType from '../types/InnloggingsstatusType';
-import useBeskjedStore from '../hooks/useBeskjedStore';
+import useStore from '../hooks/useStore';
 import InnloggingsModal from './common/InnloggingsModal';
 
 const byEventTidspunkt = (a, b) => {
@@ -20,7 +20,7 @@ const byEventTidspunkt = (a, b) => {
 };
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innloggingsstatus, erAktiv, erInaktiv }) => {
-  const { state } = useBeskjedStore();
+  const { state } = useStore();
 
   if (state.visInnloggingsModal) {
     return (

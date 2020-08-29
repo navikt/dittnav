@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf, number } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
-import useBeskjedStore from '../hooks/useBeskjedStore';
+import useStore from '../hooks/useStore';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
 import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
@@ -17,7 +17,7 @@ import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 
 const InfoMeldinger = (props) => {
-  const { state } = useBeskjedStore();
+  const { state } = useStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
   const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 

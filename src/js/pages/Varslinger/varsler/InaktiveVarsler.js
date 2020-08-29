@@ -3,13 +3,13 @@ import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import useBeskjedStore from '../../../hooks/useBeskjedStore';
+import useStore from '../../../hooks/useStore';
 import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
 
 const InaktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
-  const { state } = useBeskjedStore();
+  const { state } = useStore();
 
   return (
     <div className="inaktive-varsler" id="inaktive-varsler">

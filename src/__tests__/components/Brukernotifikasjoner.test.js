@@ -1,7 +1,7 @@
 import * as React from 'react';
 import wrapIntl from 'js/IntlTestHelper';
 import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
-import BeskjedStoreProvider from 'js/context/BeskjedStoreProvider';
+import BeskjedStoreProvider from 'js/context/StoreProvider';
 import { MemoryRouter } from 'react-router-dom';
 const ReactTestRenderer = require('react-test-renderer');
 
