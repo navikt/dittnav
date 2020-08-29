@@ -21,8 +21,8 @@ const RenderVarslinger = ({ api }) => {
   const { addBeskjeder, addInaktiveBeskjeder } = useStore();
   const location = useLocation();
 
-  const dispatchResult = (type, result, _dispatch = dispatch) => (
-    _dispatch({ type, payload: result })
+  const dispatchResult = (type, result) => (
+    dispatch({ type, payload: result })
   );
 
   const dispatchError = (type) => (
