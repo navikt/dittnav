@@ -8,7 +8,7 @@ import transformTolokalDatoTid from '../../utils/DatoUtils';
 import PanelMedIkon from '../common/PanelMedIkon';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED, VIS_INNLOGGINGSMODAL } from '../../types/Actions';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import BeskjedType from '../../types/BeskjedType';
 import {
   GoogleAnalyticsAction,
@@ -89,7 +89,7 @@ const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
 
 Beskjed.propTypes = {
   beskjed: BeskjedType,
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
   erAktiv: bool,
   erInaktiv: bool,
 };

@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
 import useBeskjedStore from '../../../hooks/useBeskjedStore';
-import InnloggingType from '../../../types/InnloggingType';
+import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
 
@@ -37,7 +37,7 @@ const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
 AktiveVarsler.propTypes = {
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 AktiveVarsler.defaultProps = {

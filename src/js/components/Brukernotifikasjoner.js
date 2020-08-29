@@ -8,7 +8,7 @@ import Innboks from './brukernotifikasjoner/Innboks';
 import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
-import InnloggingType from '../types/InnloggingType';
+import InnloggingsstatusType from '../types/InnloggingsstatusType';
 import useBeskjedStore from '../hooks/useBeskjedStore';
 import InnloggingsModal from './common/InnloggingsModal';
 
@@ -65,7 +65,7 @@ Brukernotifikasjoner.propTypes = {
   beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
   erAktiv: bool,
   erInaktiv: bool,
 };

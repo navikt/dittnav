@@ -6,7 +6,7 @@ import transformTolokalDatoTid from '../../utils/DatoUtils';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import OppgaveType from '../../types/OppgaveType';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
 
 const Oppgave = ({ oppgave, innloggingsstatus }) => {
@@ -33,7 +33,7 @@ const Oppgave = ({ oppgave, innloggingsstatus }) => {
 
 Oppgave.propTypes = {
   oppgave: OppgaveType,
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 Oppgave.defaultProps = {

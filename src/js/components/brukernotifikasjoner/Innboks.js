@@ -5,7 +5,7 @@ import transformTolokalDatoTid from '../../utils/DatoUtils';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import IkonInnboks from '../../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';
 import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
 
@@ -33,7 +33,7 @@ const Innboks = ({ innboks, innloggingsstatus }) => {
 
 Innboks.propTypes = {
   innboks: InnboksType,
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 Innboks.defaultProps = {

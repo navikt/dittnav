@@ -12,7 +12,7 @@ import InngangVarslinger from './InngangVarslinger';
 import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
-import InnloggingType from '../types/InnloggingType';
+import InnloggingsstatusType from '../types/InnloggingsstatusType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 
@@ -44,7 +44,7 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
   antallBrukernotifikasjoner: number,

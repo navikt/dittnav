@@ -10,7 +10,7 @@ import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 import {
@@ -71,7 +71,7 @@ Varslinger.propTypes = {
   innbokser: arrayOf(InnboksType),
   inaktiveOppgaver: arrayOf(OppgaveType),
   inaktiveInnbokser: arrayOf(InnboksType),
-  innloggingsstatus: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 Varslinger.defaultProps = {
