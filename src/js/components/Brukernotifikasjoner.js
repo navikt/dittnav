@@ -19,7 +19,7 @@ const byEventTidspunkt = (a, b) => {
   return momentB.diff(momentA);
 };
 
-const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => {
+const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innloggingsstatus, erAktiv, erInaktiv }) => {
   const { state } = useBeskjedStore();
 
   if (state.visInnloggingsModal) {
@@ -30,31 +30,31 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAk
 
   return (
     <>
-      {oppgaver && innlogging && oppgaver.sort(byEventTidspunkt)
+      {oppgaver && innloggingsstatus && oppgaver.sort(byEventTidspunkt)
         .map(o => (
           <Oppgave
             key={o.eventId}
             oppgave={o}
-            innlogging={innlogging}
+            innloggingsstatus={innloggingsstatus}
           />
         ))}
-      {beskjeder && innlogging && beskjeder.sort(byEventTidspunkt)
+      {beskjeder && innloggingsstatus && beskjeder.sort(byEventTidspunkt)
         .map(b => (
           <Beskjed
             key={b.uid}
             beskjed={b}
             beskjeder={beskjeder}
-            innlogging={innlogging}
+            innloggingsstatus={innloggingsstatus}
             erAktiv={erAktiv}
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innlogging && innbokser.sort(byEventTidspunkt)
+      {innbokser && innloggingsstatus && innbokser.sort(byEventTidspunkt)
         .map(i => (
           <Innboks
             key={i.eventId}
             innboks={i}
-            innlogging={innlogging}
+            innloggingsstatus={innloggingsstatus}
           />
         ))}
     </>
@@ -65,7 +65,7 @@ Brukernotifikasjoner.propTypes = {
   beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingType,
   erAktiv: bool,
   erInaktiv: bool,
 };
@@ -74,7 +74,7 @@ Brukernotifikasjoner.defaultProps = {
   beskjeder: null,
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
   erAktiv: false,
   erInaktiv: false,
 };

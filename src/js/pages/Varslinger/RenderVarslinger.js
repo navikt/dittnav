@@ -8,8 +8,8 @@ import DelayedSpinner from '../../components/DelayedSpinner';
 import scroll from '../../utils/scroll';
 import {
   ADD_BESKJEDER, ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_BESKJEDER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER,
-  ADD_INNLOGGING, SET_BESKJEDER_LOADING, SET_INAKTIVE_BESKJEDER_LOADING, BESKJEDER_ERROR, OPPGAVER_ERROR,
-  INNBOKSER_ERROR, INAKTIVE_BESKJEDER_ERROR, INAKTIVE_OPPGAVER_ERROR, INNLOGGING_ERROR, INAKTIVE_INNBOKSER_ERROR,
+  ADD_INNLOGGINGSSTATUS, SET_BESKJEDER_LOADING, SET_INAKTIVE_BESKJEDER_LOADING, BESKJEDER_ERROR, OPPGAVER_ERROR,
+  INNBOKSER_ERROR, INAKTIVE_BESKJEDER_ERROR, INAKTIVE_OPPGAVER_ERROR, INNLOGGINGSSTATUS_ERROR, INAKTIVE_INNBOKSER_ERROR,
 } from '../../types/Actions';
 import ApiType from '../../types/ApiType';
 import useModal from '../../hooks/useModal';
@@ -98,10 +98,10 @@ const RenderVarslinger = ({ api }) => {
           if (!result.authenticated) {
             api.redirectToLogin();
           } else {
-            dispatchResult(ADD_INNLOGGING, result);
+            dispatchResult(ADD_INNLOGGINGSSTATUS, result);
           }
         })
-        .catch(() => dispatchError(INNLOGGING_ERROR));
+        .catch(() => dispatchError(INNLOGGINGSSTATUS_ERROR));
     }, [],
   );
 
@@ -127,7 +127,7 @@ const RenderVarslinger = ({ api }) => {
               innbokser={state.innbokser.data}
               inaktiveOppgaver={state.inaktiveOppgaver.data}
               inaktiveInnbokser={state.inaktiveInnbokser.data}
-              innlogging={state.innlogging.data}
+              innloggingsstatus={state.innloggingsstatus.data}
             />
           </PageFrame>
         )}

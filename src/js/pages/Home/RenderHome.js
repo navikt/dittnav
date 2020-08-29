@@ -16,7 +16,7 @@ const RenderHome = ({ api }) => {
     paabegynteSoknader: null,
     mininnboks: [],
     sakstema: { antallSakstema: 0, sakstemaList: [] },
-    innlogging: null,
+    innloggingsstatus: null,
     oppgaver: null,
     innbokser: null,
     antallBrukernotifikasjoner: 0,
@@ -85,7 +85,7 @@ const RenderHome = ({ api }) => {
           if (!content.authenticated) {
             api.redirectToLogin();
           } else {
-            setData(d => ({ ...d, innlogging: content, fetching: d.fetching + 1 }));
+            setData(d => ({ ...d, innloggingsstatus: content, fetching: d.fetching + 1 }));
           }
         }).catch(handleError);
 

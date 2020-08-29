@@ -9,9 +9,9 @@ import InnloggingType from '../../types/InnloggingType';
 import InnboksType from '../../types/InnboksType';
 import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
 
-const Innboks = ({ innboks, innlogging }) => {
+const Innboks = ({ innboks, innloggingsstatus }) => {
   const location = useLocation();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(innboks, 'innboks', innlogging);
+  const sikkerhetsnivaa = useSikkerhetsnivaa(innboks, 'innboks', innloggingsstatus);
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
   const lokalDatoTid = transformTolokalDatoTid(innboks.eventTidspunkt);
 
@@ -33,12 +33,12 @@ const Innboks = ({ innboks, innlogging }) => {
 
 Innboks.propTypes = {
   innboks: InnboksType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingType,
 };
 
 Innboks.defaultProps = {
   innboks: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default Innboks;

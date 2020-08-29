@@ -8,7 +8,7 @@ import InnloggingType from '../../../types/InnloggingType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
 
-const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
+const InaktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
   const { state } = useBeskjedStore();
 
   return (
@@ -24,7 +24,7 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
         beskjeder={state.inaktiveBeskjeder}
         oppgaver={oppgaver}
         innbokser={innbokser}
-        innlogging={innlogging}
+        innloggingsstatus={innloggingsstatus}
         erInaktiv
       />
     </div>
@@ -34,13 +34,13 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
 InaktiveVarsler.propTypes = {
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingType,
 };
 
 InaktiveVarsler.defaultProps = {
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default InaktiveVarsler;

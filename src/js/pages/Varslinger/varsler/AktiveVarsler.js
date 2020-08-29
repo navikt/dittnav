@@ -10,7 +10,7 @@ import InnboksType from '../../../types/InnboksType';
 
 const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
 
-const AktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
+const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
   const { state } = useBeskjedStore();
   const antallAktiveVarsler = antallVarsler(state.beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
@@ -27,7 +27,7 @@ const AktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
         beskjeder={state.beskjeder}
         oppgaver={oppgaver}
         innbokser={innbokser}
-        innlogging={innlogging}
+        innloggingsstatus={innloggingsstatus}
         erAktiv
       />
     </div>
@@ -37,13 +37,13 @@ const AktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
 AktiveVarsler.propTypes = {
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingType,
 };
 
 AktiveVarsler.defaultProps = {
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default AktiveVarsler;

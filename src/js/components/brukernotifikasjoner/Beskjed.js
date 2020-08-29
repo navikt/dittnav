@@ -54,10 +54,10 @@ const onClickBeskjed = (beskjed, dispatch, erAktiv) => {
   trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
 };
 
-const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
+const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
   const location = useLocation();
   const { dispatch } = useBeskjedStore();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
+  const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
 
   useEffect(() => {
     hotjarSafetyStub();
@@ -89,14 +89,14 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
 
 Beskjed.propTypes = {
   beskjed: BeskjedType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingType,
   erAktiv: bool,
   erInaktiv: bool,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
-  innlogging: null,
+  innloggingsstatus: null,
   erAktiv: false,
   erInaktiv: false,
 };

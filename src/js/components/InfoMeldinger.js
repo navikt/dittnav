@@ -28,7 +28,7 @@ const InfoMeldinger = (props) => {
         beskjeder={state.beskjeder}
         oppgaver={props.oppgaver}
         innbokser={props.innbokser}
-        innlogging={props.innlogging}
+        innloggingsstatus={props.innloggingsstatus}
       />
       <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
       {isMeldeKortUser ? <Meldekort meldekort={props.meldekort} /> : null}
@@ -44,7 +44,7 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingType,
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
   antallBrukernotifikasjoner: number,
@@ -54,7 +54,7 @@ InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
-  innlogging: null,
+  innloggingsstatus: null,
   oppgaver: null,
   innbokser: null,
   antallBrukernotifikasjoner: 0,

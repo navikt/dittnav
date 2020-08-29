@@ -44,7 +44,7 @@ const innbokser = [
   },
 ];
 
-const innlogging = {
+const innloggingsstatus = {
   securityLevel: '4', // eslint-disable-line no-unused-vars
 };
 
@@ -52,7 +52,7 @@ test('InaktiveVarsler empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider>
-        <InaktiveVarsler oppgaver={null} innbokser={null} innlogging={null} />
+        <InaktiveVarsler oppgaver={null} innbokser={null} innloggingsstatus={null} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -63,7 +63,7 @@ test('InaktiveVarsler one beskjed', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider beskjeder={beskjeder}>
-        <InaktiveVarsler oppgaver={null} innbokser={null} innlogging={innlogging} />
+        <InaktiveVarsler oppgaver={null} innbokser={null} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -74,7 +74,7 @@ test('InaktiveVarsler one oppgave', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider>
-        <InaktiveVarsler oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
+        <InaktiveVarsler oppgaver={oppgaver} innbokser={null} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -85,7 +85,7 @@ test('InaktiveVarsler one innboks', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider>
-        <InaktiveVarsler oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
+        <InaktiveVarsler oppgaver={null} innbokser={innbokser} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -96,7 +96,7 @@ test('InaktiveVarsler several brukernotifikasjoner', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider beskjeder={beskjeder}>
-        <InaktiveVarsler oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+        <InaktiveVarsler oppgaver={oppgaver} innbokser={innbokser} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));

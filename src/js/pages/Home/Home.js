@@ -33,7 +33,7 @@ const Home = ({ data, loading }) => {
               meldekort={data.meldekort}
               paabegynteSoknader={data.paabegynteSoknader}
               mininnboks={data.mininnboks}
-              innlogging={data.innlogging}
+              innlogging={data.innloggingsstatus}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
               antallBrukernotifikasjoner={data.antallBrukernotifikasjoner}
