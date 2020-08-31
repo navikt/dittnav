@@ -1,7 +1,7 @@
 import * as React from 'react';
 import wrapIntl from 'js/IntlTestHelper';
 import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
-import BeskjedStoreProvider from 'js/context/BeskjedStoreProvider';
+import BeskjedStoreProvider from 'js/context/StoreProvider';
 import { MemoryRouter } from 'react-router-dom';
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -72,7 +72,7 @@ const innbokser = [
   },
 ];
 
-const innlogging = {
+const innloggingsstatus = {
   securityLevel: '4',
 };
 
@@ -80,7 +80,7 @@ test('Brukernotifikasjoner empty', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider>
-        <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={null} />
+        <Brukernotifikasjoner oppgaver={null} innbokser={null} innloggingsstatus={null} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -91,7 +91,7 @@ test('Brukernotifikasjoner with beskjeder', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider beskjeder={beskjeder}>
-        <Brukernotifikasjoner oppgaver={null} innbokser={null} innlogging={innlogging} />
+        <Brukernotifikasjoner oppgaver={null} innbokser={null} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -103,7 +103,7 @@ test('Brukernotifikasjoner with oppgaver', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider>
-        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={null} innlogging={innlogging} />
+        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={null} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -114,7 +114,7 @@ test('Brukernotifikasjoner with innbokser', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider>
-        <Brukernotifikasjoner oppgaver={null} innbokser={innbokser} innlogging={innlogging} />
+        <Brukernotifikasjoner oppgaver={null} innbokser={innbokser} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -125,7 +125,7 @@ test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider beskjeder={beskjeder}>
-        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={innlogging} />
+        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innloggingsstatus={innloggingsstatus} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));
@@ -136,7 +136,7 @@ test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser, but no innlog
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
       <BeskjedStoreProvider beskjeder={beskjeder}>
-        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innlogging={null} />
+        <Brukernotifikasjoner oppgaver={oppgaver} innbokser={innbokser} innloggingsstatus={null} />
       </BeskjedStoreProvider>
     </MemoryRouter>,
   ));

@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf, number } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
-import useBeskjedStore from '../hooks/useBeskjedStore';
+import useStore from '../hooks/useStore';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
 import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
@@ -12,12 +12,12 @@ import InngangVarslinger from './InngangVarslinger';
 import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
-import InnloggingType from '../types/InnloggingType';
+import InnloggingsstatusType from '../types/InnloggingsstatusType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 
 const InfoMeldinger = (props) => {
-  const { state } = useBeskjedStore();
+  const { state } = useStore();
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
   const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 
@@ -28,7 +28,7 @@ const InfoMeldinger = (props) => {
         beskjeder={state.beskjeder}
         oppgaver={props.oppgaver}
         innbokser={props.innbokser}
-        innlogging={props.innlogging}
+        innloggingsstatus={props.innloggingsstatus}
       />
       <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
       {isMeldeKortUser ? <Meldekort meldekort={props.meldekort} /> : null}
@@ -44,7 +44,7 @@ InfoMeldinger.propTypes = {
   meldekort: MeldekortType,
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
   antallBrukernotifikasjoner: number,
@@ -54,7 +54,7 @@ InfoMeldinger.defaultProps = {
   paabegynteSoknader: null,
   meldekort: null,
   mininnboks: [],
-  innlogging: null,
+  innloggingsstatus: null,
   oppgaver: null,
   innbokser: null,
   antallBrukernotifikasjoner: 0,
