@@ -31,7 +31,7 @@ jobs:
       - name: Bygg, tag og push Docker image
         uses: navikt/pb-common-gh-actions/docker-publish@v1
         with:
-          TAG_LASTEST: "false"
+          TAG_LATEST: "false"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Vis deploy-knapper i slack
