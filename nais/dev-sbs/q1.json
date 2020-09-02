@@ -1,6 +1,7 @@
 {
   "namespace": "q1",
   "ingresses": [
+    "https://www.dev.nav.no/person",
     "https://dittnav-q1.nais.oera-q.local",
     "https://dittnav-q1.dev-sbs.nais.io",
     "https://www-q1.nav.no/person/dittnav",
