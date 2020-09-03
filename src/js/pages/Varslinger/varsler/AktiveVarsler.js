@@ -3,15 +3,15 @@ import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import useBeskjedStore from '../../../hooks/useBeskjedStore';
-import InnloggingType from '../../../types/InnloggingType';
+import useStore from '../../../hooks/useStore';
+import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
 
 const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
 
-const AktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
-  const { state } = useBeskjedStore();
+const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
+  const { state } = useStore();
   const antallAktiveVarsler = antallVarsler(state.beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
   return (
@@ -27,7 +27,7 @@ const AktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
         beskjeder={state.beskjeder}
         oppgaver={oppgaver}
         innbokser={innbokser}
-        innlogging={innlogging}
+        innloggingsstatus={innloggingsstatus}
         erAktiv
       />
     </div>
@@ -37,13 +37,13 @@ const AktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
 AktiveVarsler.propTypes = {
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 AktiveVarsler.defaultProps = {
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default AktiveVarsler;

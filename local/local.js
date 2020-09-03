@@ -1,11 +1,15 @@
 const jsdom = require('jsdom');
 const path = require('path');
 const { JSDOM } = jsdom;
+
+// eslint-disable-next-line import/no-extraneous-dependencies
 const eproxy = require('express-http-proxy');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const app = require('express')();
+// eslint-disable-next-line import/no-extraneous-dependencies
+const proxy = require('express')();
 
 const Bundler = require('parcel-bundler');
-const app = require('express')();
-const proxy = require('express')();
 const cors = require('cors');
 
 const getDecorator = require('./decorator.js');
@@ -80,6 +84,10 @@ app.get('/dittnav-api/brukernotifikasjon/count', (req, res) => (
 
 app.get('/person/dittnav/api/feature', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/unleash.json'))
+));
+
+app.get('/dittnav-api/authPing', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/auth-ping.json'))
 ));
 
 app.post('/dittnav-api/produce/done', (req, res) => (

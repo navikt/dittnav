@@ -1,7 +1,7 @@
 import {
-  ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER, ADD_INNLOGGING, SET_BESKJEDER_LOADING,
+  ADD_OPPGAVER, ADD_INNBOKSER, ADD_INAKTIVE_OPPGAVER, ADD_INAKTIVE_INNBOKSER, ADD_INNLOGGINGSSTATUS, SET_BESKJEDER_LOADING,
   SET_INAKTIVE_BESKJEDER_LOADING, BESKJEDER_ERROR, OPPGAVER_ERROR, INNBOKSER_ERROR, INAKTIVE_BESKJEDER_ERROR,
-  INAKTIVE_OPPGAVER_ERROR, INAKTIVE_INNBOKSER_ERROR, INNLOGGING_ERROR,
+  INAKTIVE_OPPGAVER_ERROR, INAKTIVE_INNBOKSER_ERROR, INNLOGGINGSSTATUS_ERROR,
 } from '../types/Actions';
 
 export const initialVarslingerState = {
@@ -11,7 +11,7 @@ export const initialVarslingerState = {
   inaktiveBeskjeder: { loading: true },
   inaktiveOppgaver: { data: null, loading: true },
   inaktiveInnbokser: { data: null, loading: true },
-  innlogging: { data: null, loading: true },
+  innloggingsstatus: { data: null, loading: true },
   error: [],
 };
 
@@ -47,10 +47,10 @@ export const varslingerReducer = (state, action) => {
         ...state,
         inaktiveInnbokser: { data: action.payload, loading: false },
       };
-    case ADD_INNLOGGING:
+    case ADD_INNLOGGINGSSTATUS:
       return {
         ...state,
-        innlogging: { data: action.payload, loading: false },
+        innloggingsstatus: { data: action.payload, loading: false },
       };
     case BESKJEDER_ERROR:
       return {
@@ -88,10 +88,10 @@ export const varslingerReducer = (state, action) => {
         inaktiveInnbokser: { ...state.inaktiveInnbokser.data, loading: false },
         error: [action.payload],
       };
-    case INNLOGGING_ERROR:
+    case INNLOGGINGSSTATUS_ERROR:
       return {
         ...state,
-        innlogging: { ...state.innlogging.data, loading: false },
+        innloggingsstatus: { ...state.innloggingsstatus.data, loading: false },
         error: [action.payload],
       };
     default:

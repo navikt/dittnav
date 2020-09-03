@@ -10,7 +10,7 @@ import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 import {
@@ -19,7 +19,7 @@ import {
   trackEvent,
 } from '../../utils/GoogleAnalytics';
 
-const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, innlogging }) => (
+const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, innloggingsstatus }) => (
   <div className="row">
     <div className="brodsmulesti-row">
       <Brodsmulesti />
@@ -32,12 +32,12 @@ const Varslinger = ({ oppgaver, innbokser, inaktiveOppgaver, inaktiveInnbokser, 
           <AktiveVarsler
             oppgaver={oppgaver}
             innbokser={innbokser}
-            innlogging={innlogging}
+            innloggingsstatus={innloggingsstatus}
           />
           <InaktiveVarsler
             oppgaver={inaktiveOppgaver}
             innbokser={inaktiveInnbokser}
-            innlogging={innlogging}
+            innloggingsstatus={innloggingsstatus}
           />
           <Panel className="mininnboks-panel">
             <Normaltekst>
@@ -71,13 +71,13 @@ Varslinger.propTypes = {
   innbokser: arrayOf(InnboksType),
   inaktiveOppgaver: arrayOf(OppgaveType),
   inaktiveInnbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 Varslinger.defaultProps = {
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
   inaktiveOppgaver: null,
   inaktiveInnbokser: null,
 };
