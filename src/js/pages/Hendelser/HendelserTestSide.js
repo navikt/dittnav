@@ -23,7 +23,7 @@ const HendelserTestSide = () => {
     .postDoneAll();
 
   useEffect(() => {
-    Api.fetchInnlogging()
+    Api.fetchInnloggingsstatus()
       .then((r) => {
         setInnlogging(r);
       })
