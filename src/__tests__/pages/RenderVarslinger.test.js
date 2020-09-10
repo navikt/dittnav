@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import RenderVarslinger from 'js/pages/Varslinger/RenderVarslinger';
 import wrapIntl from 'js/IntlTestHelper';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import BeskjedStoreProvider from '../../js/context/BeskjedStoreProvider';
+import StoreProvider from '../../js/context/StoreProvider';
 
 jest.mock('react-ga');
 
@@ -13,7 +13,7 @@ const mockApi = () => (
     fetchBeskjeder: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchOppgaver: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchInnbokser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
-    fetchInnlogging: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
+    fetchInnloggingsstatus: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchInaktiveBeskjeder: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchInaktiveOppgaver: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
     fetchInaktiveInnbokser: () => new Promise((resolve, reject) => {}), // eslint-disable-line no-unused-vars
@@ -29,9 +29,9 @@ it('renders without crashing', () => {
 
   ReactDOM.render(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <RenderVarslinger api={mockApi()} />
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ), div);
   ReactDOM.unmountComponentAtNode(div);
@@ -119,9 +119,9 @@ it('expect Brukernotifikasjoner fetching', async () => {
 
   renderer.render(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav/varslinger']}>
-      <BeskjedStoreProvider>
+      <StoreProvider>
         <RenderVarslinger api={api} />
-      </BeskjedStoreProvider>
+      </StoreProvider>
     </MemoryRouter>,
   ));
 

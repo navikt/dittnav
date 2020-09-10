@@ -8,7 +8,9 @@ import Innboks from './brukernotifikasjoner/Innboks';
 import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
-import InnloggingType from '../types/InnloggingType';
+import InnloggingsstatusType from '../types/InnloggingsstatusType';
+import useStore from '../hooks/useStore';
+import InnloggingsModal from './common/InnloggingsModal';
 
 const byEventTidspunkt = (a, b) => {
   const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
@@ -17,25 +19,53 @@ const byEventTidspunkt = (a, b) => {
   return momentB.diff(momentA);
 };
 
-const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innlogging, erAktiv, erInaktiv }) => (
-  <>
-    {oppgaver && innlogging && oppgaver.sort(byEventTidspunkt).map(o => (
-      <Oppgave key={o.eventId} oppgave={o} innlogging={innlogging} />
-    ))}
-    {beskjeder && innlogging && beskjeder.sort(byEventTidspunkt).map(b => (
-      <Beskjed key={b.uid} beskjed={b} beskjeder={beskjeder} innlogging={innlogging} erAktiv={erAktiv} erInaktiv={erInaktiv} />
-    ))}
-    {innbokser && innlogging && innbokser.sort(byEventTidspunkt).map(i => (
-      <Innboks key={i.eventId} innboks={i} innlogging={innlogging} />
-    ))}
-  </>
-);
+const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innloggingsstatus, erAktiv, erInaktiv }) => {
+  const { state } = useStore();
+
+  if (state.visInnloggingsModal) {
+    return (
+      <InnloggingsModal isOpen onClick={() => null} />
+    );
+  }
+
+  return (
+    <>
+      {oppgaver && innloggingsstatus && oppgaver.sort(byEventTidspunkt)
+        .map(o => (
+          <Oppgave
+            key={o.eventId}
+            oppgave={o}
+            innloggingsstatus={innloggingsstatus}
+          />
+        ))}
+      {beskjeder && innloggingsstatus && beskjeder.sort(byEventTidspunkt)
+        .map(b => (
+          <Beskjed
+            key={b.uid}
+            beskjed={b}
+            beskjeder={beskjeder}
+            innloggingsstatus={innloggingsstatus}
+            erAktiv={erAktiv}
+            erInaktiv={erInaktiv}
+          />
+        ))}
+      {innbokser && innloggingsstatus && innbokser.sort(byEventTidspunkt)
+        .map(i => (
+          <Innboks
+            key={i.eventId}
+            innboks={i}
+            innloggingsstatus={innloggingsstatus}
+          />
+        ))}
+    </>
+  );
+};
 
 Brukernotifikasjoner.propTypes = {
   beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
   erAktiv: bool,
   erInaktiv: bool,
 };
@@ -44,7 +74,7 @@ Brukernotifikasjoner.defaultProps = {
   beskjeder: null,
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
   erAktiv: false,
   erInaktiv: false,
 };

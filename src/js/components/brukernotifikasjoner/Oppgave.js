@@ -6,12 +6,12 @@ import transformTolokalDatoTid from '../../utils/DatoUtils';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import OppgaveType from '../../types/OppgaveType';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
 
-const Oppgave = ({ oppgave, innlogging }) => {
+const Oppgave = ({ oppgave, innloggingsstatus }) => {
   const location = useLocation();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(oppgave, 'oppgave', innlogging);
+  const sikkerhetsnivaa = useSikkerhetsnivaa(oppgave, 'oppgave', innloggingsstatus);
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
   const lokalDatoTid = transformTolokalDatoTid(oppgave.eventTidspunkt);
 
@@ -33,12 +33,12 @@ const Oppgave = ({ oppgave, innlogging }) => {
 
 Oppgave.propTypes = {
   oppgave: OppgaveType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 Oppgave.defaultProps = {
   oppgave: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default Oppgave;

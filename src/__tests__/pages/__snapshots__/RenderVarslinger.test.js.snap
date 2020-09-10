@@ -8,7 +8,7 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
     ]
   }
 >
-  <BeskjedStoreProvider
+  <StoreProvider
     beskjeder={null}
     inaktiveBeskjeder={null}
   >
@@ -21,10 +21,11 @@ exports[`expect Brukernotifikasjoner fetching 1`] = `
           "fetchInaktiveOppgaver": [Function],
           "fetchInnbokser": [Function],
           "fetchInnlogging": [Function],
+          "fetchInnloggingsstatus": [Function],
           "fetchOppgaver": [Function],
         }
       }
     />
-  </BeskjedStoreProvider>
+  </StoreProvider>
 </MemoryRouter>
 `;
