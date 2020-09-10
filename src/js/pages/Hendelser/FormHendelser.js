@@ -3,12 +3,12 @@ import { func, string } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import { Input } from 'nav-frontend-skjema';
 import { Knapp } from 'nav-frontend-knapper';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
+import useStore from '../../hooks/useStore';
 import Api from '../../Api';
 import { ADD_BESKJEDER } from '../../types/Actions';
 
 const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, setInnbokser }) => {
-  const { dispatch } = useBeskjedStore();
+  const { dispatch } = useStore();
   const [tekstError, setTekstError] = useState({ tekst: '', value: false });
   const [lenkeError, setLenkeError] = useState({ tekst: '', value: false });
   const disabled = tekstError.value || lenkeError.value;

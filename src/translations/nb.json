@@ -31,6 +31,11 @@
   "fliser.dine.utbetalinger": "Dine utbetalinger",
   "fliser.innboks": "Innboks",
 
+  "innloggingsmodal.forside": "Gå til forsiden på nav.no",
+  "innloggingsmodal.logg.inn": "Logg inn på nytt",
+  "innloggingsmodal.tittel": "Du er i ferd med å bli logget ut",
+  "innloggingsmodal.ingress": "Du kan logge inn på nytt for å fortsette.",
+
   "beskjed.maskert.tekst": "Du har fått en beskjed.",
   "oppgave.maskert.tekst": "Du har fått en oppgave, logg inn med høyere sikkerhetsnivå for å se oppgaven.",
   "innboks.maskert.tekst": "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.",

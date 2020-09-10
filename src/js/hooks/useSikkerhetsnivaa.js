@@ -2,8 +2,8 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import Config from '../globalConfig';
 
-const useSikkerhetsnivaa = (brukernotifikasjon, type, innlogging) => {
-  const skalMaskeres = brukernotifikasjon.sikkerhetsnivaa === 4 && innlogging.securityLevel === '3';
+const useSikkerhetsnivaa = (brukernotifikasjon, type, innloggingsstatus) => {
+  const skalMaskeres = brukernotifikasjon.sikkerhetsnivaa === 4 && innloggingsstatus.securityLevel === '3';
 
   const tekst = skalMaskeres
     ? <FormattedMessage id={`${type}.maskert.tekst`} />

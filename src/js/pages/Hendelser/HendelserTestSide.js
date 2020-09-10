@@ -8,7 +8,7 @@ import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
 import log from '../../utils/Logger';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
+import useStore from '../../hooks/useStore';
 
 const HendelserTestSide = () => {
   const [oppgaver, setOppgaver] = useState(null);
@@ -17,13 +17,13 @@ const HendelserTestSide = () => {
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
   const [valg, setValg] = useState('beskjed');
-  const { state } = useBeskjedStore();
+  const { state } = useStore();
 
   const removeHendelser = () => Api
     .postDoneAll();
 
   useEffect(() => {
-    Api.fetchInnlogging()
+    Api.fetchInnloggingsstatus()
       .then((r) => {
         setInnlogging(r);
       })

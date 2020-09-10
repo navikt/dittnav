@@ -3,13 +3,13 @@ import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import useBeskjedStore from '../../../hooks/useBeskjedStore';
-import InnloggingType from '../../../types/InnloggingType';
+import useStore from '../../../hooks/useStore';
+import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
 
-const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
-  const { state } = useBeskjedStore();
+const InaktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
+  const { state } = useStore();
 
   return (
     <div className="inaktive-varsler" id="inaktive-varsler">
@@ -24,7 +24,7 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
         beskjeder={state.inaktiveBeskjeder}
         oppgaver={oppgaver}
         innbokser={innbokser}
-        innlogging={innlogging}
+        innloggingsstatus={innloggingsstatus}
         erInaktiv
       />
     </div>
@@ -34,13 +34,13 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innlogging }) => {
 InaktiveVarsler.propTypes = {
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 InaktiveVarsler.defaultProps = {
   oppgaver: null,
   innbokser: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default InaktiveVarsler;
