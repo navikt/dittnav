@@ -1,49 +1,52 @@
 import Config from './globalConfig';
-import log from './utils/Logger';
 
 const redirectToLogin = () => {
   window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
 };
 
-const checkTokenExpiration = (headers) => {
-  if (headers.get('x-token-expires-soon')) {
-    redirectToLogin();
-  }
-};
+const tokenExpiresSoon = (headers) => (
+  headers.get('x-token-expires-soon')
+);
 
-const fetchJSON = (url) => new Promise((res, rej) => {
+const fetchJSON = (url) => new Promise((resolve, reject) => {
   fetch(url, { method: 'GET', credentials: 'include' })
-    .then(r => {
-      if (r.ok) {
-        checkTokenExpiration(r.headers);
-        return r.json();
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+          .then(json => [json, response.headers]);
       }
-      rej(r);
+      reject(response);
       return null;
     })
-    .then(r => res(r))
-    .catch(e => rej(e));
+    .then(([content, headers]) => {
+      resolve([content, headers]);
+    })
+    .catch(e => reject(e));
 });
 
-const checkAuth = () => new Promise((res, rej) => {
+const checkAuth = () => new Promise((resolve, reject) => {
   fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}?ts=${Date.now()}`)
-    .then(r => {
-      if (r.authenticated) {
-        res(r);
+    .then(([response]) => {
+      if (response.authenticated) {
+        resolve(response);
       } else {
-        rej(new Error('not authenticated'));
+        reject(new Error('not authenticated'));
       }
     })
-    .catch(() => rej(new Error('not authenticated')));
+    .catch(() => reject(new Error('not authenticated')));
 });
 
-const checkApiStatus = () => new Promise((res, rej) => {
+const checkApiStatus = () => new Promise((resolve, reject) => {
   fetchJSON(`${Config.dittNav.DITTNAV_API_AUTH_URL}`)
-    .then(r => res(r))
-    .catch(e => rej(e));
+    .then(([response]) => {
+      resolve(response);
+    })
+    .catch(e => {
+      reject(e);
+    });
 });
 
-const postJSON = (url, content) => {
+const postJSON = (url, content) => new Promise((resolve, reject) => {
   fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -53,9 +56,10 @@ const postJSON = (url, content) => {
     },
     body: JSON.stringify(content),
   })
-    .then((r) => r.status)
-    .catch((e) => log(`Error: ${e}`));
-};
+    .then(response => response.headers)
+    .then((headers) => resolve(headers))
+    .catch((e) => reject(e));
+});
 
 const fetchOppfolging = () => (
   fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`)
@@ -85,7 +89,7 @@ const fetchSakstema = () => (
   fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL)
 );
 
-const fetchInnlogging = () => (
+const fetchInnloggingsstatus = () => (
   fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
 );
 
@@ -139,7 +143,7 @@ export default {
   fetchSaker,
   fetchMeldinger,
   fetchSakstema,
-  fetchInnlogging,
+  fetchInnloggingsstatus,
   fetchBeskjeder,
   fetchOppgaver,
   fetchInnbokser,
@@ -151,4 +155,5 @@ export default {
   postDoneAll,
   postDone,
   redirectToLogin,
+  tokenExpiresSoon,
 };

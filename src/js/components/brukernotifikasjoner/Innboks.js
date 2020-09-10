@@ -5,13 +5,13 @@ import transformTolokalDatoTid from '../../utils/DatoUtils';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import IkonInnboks from '../../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';
 import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
 
-const Innboks = ({ innboks, innlogging }) => {
+const Innboks = ({ innboks, innloggingsstatus }) => {
   const location = useLocation();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(innboks, 'innboks', innlogging);
+  const sikkerhetsnivaa = useSikkerhetsnivaa(innboks, 'innboks', innloggingsstatus);
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
   const lokalDatoTid = transformTolokalDatoTid(innboks.eventTidspunkt);
 
@@ -33,12 +33,12 @@ const Innboks = ({ innboks, innlogging }) => {
 
 Innboks.propTypes = {
   innboks: InnboksType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
 };
 
 Innboks.defaultProps = {
   innboks: null,
-  innlogging: null,
+  innloggingsstatus: null,
 };
 
 export default Innboks;
