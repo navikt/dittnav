@@ -52,7 +52,6 @@ exports[`Beskjed with empty link 1`] = `
       <span>
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
         
-        
         <span>
           
           <a
@@ -142,7 +141,6 @@ exports[`Beskjed with link 1`] = `
     >
       <span>
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
-        
         
         <span>
           
@@ -234,7 +232,6 @@ exports[`Beskjed with null as link 1`] = `
       <span>
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
         
-        
         <span>
           
           <a
@@ -325,7 +322,6 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
       <span>
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
         
-        
         <span>
           
           <a
@@ -415,7 +411,6 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
     >
       <span>
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
-        
         
         <span>
           
@@ -580,7 +575,6 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
     >
       <span>
         Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepen... 
-        
         
         <span>
           
