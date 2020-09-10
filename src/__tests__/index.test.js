@@ -5,7 +5,7 @@ import Api from '../js/Api';
 import NavApp from '../js/NavApp';
 import nbMessages from 'translations/nb.json';
 import enMessages from 'translations/en.json';
-import BeskjedStoreProvider from '../js/context/BeskjedStoreProvider';
+import StoreProvider from '../js/context/StoreProvider';
 
 jest.mock('react-dom', () => ({render: jest.fn()}));
 jest.mock('react-ga');
@@ -19,9 +19,9 @@ const loadMessages = () => {
 
 const wrapNavApp = (children, props = { defaultSprak: 'nb', messages: loadMessages() }) => (
   <NavApp {...props}>
-    <BeskjedStoreProvider>
+    <StoreProvider>
     {children}
-    </BeskjedStoreProvider>
+    </StoreProvider>
   </NavApp>
 );
 
@@ -37,6 +37,7 @@ it('index renders without crashing', async () => {
 
   await require('../index');
   await flushPromises();
+
   expect(expectedF).toHaveBeenCalled();
   expect(ReactDOM.render).toHaveBeenCalledWith(wrapNavApp(<App api={Api} />), null);
 });

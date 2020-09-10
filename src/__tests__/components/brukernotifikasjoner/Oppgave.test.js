@@ -17,13 +17,13 @@ test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
     sikkerhetsnivaa: 4,
   };
 
-  const innlogging = {
+  const innloggingsstatus = {
     securityLevel: '4',
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <Oppgave oppgave={oppgave} innlogging={innlogging}/>
+      <Oppgave oppgave={oppgave} innloggingsstatus={innloggingsstatus}/>
     </MemoryRouter>
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -40,13 +40,13 @@ test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
     sikkerhetsnivaa: 4,
   };
 
-  const innlogging = {
+  const innloggingsstatus = {
     securityLevel: '3',
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <Oppgave oppgave={oppgave} innlogging={innlogging}/>
+      <Oppgave oppgave={oppgave} innloggingsstatus={innloggingsstatus}/>
     </MemoryRouter>
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -63,13 +63,13 @@ test('Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
     sikkerhetsnivaa: 3,
   };
 
-  const innlogging = {
+  const innloggingsstatus = {
     securityLevel: '3',
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <Oppgave oppgave={oppgave} innlogging={innlogging}/>
+      <Oppgave oppgave={oppgave} innloggingsstatus={innloggingsstatus}/>
     </MemoryRouter>
   ));
   expect(component.toJSON()).toMatchSnapshot();
@@ -86,13 +86,13 @@ test('Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
     sikkerhetsnivaa: 3,
   };
 
-  const innlogging = {
+  const innloggingsstatus = {
     securityLevel: '4',
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <Oppgave oppgave={oppgave} innlogging={innlogging}/>
+      <Oppgave oppgave={oppgave} innloggingsstatus={innloggingsstatus}/>
     </MemoryRouter>
   ));
   expect(component.toJSON()).toMatchSnapshot();

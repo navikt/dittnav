@@ -11,7 +11,7 @@ import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import Config from '../../globalConfig';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import OppgaveType from '../../types/OppgaveType';
 import InnboksType from '../../types/InnboksType';
 
@@ -33,7 +33,7 @@ const Home = ({ data, loading }) => {
               meldekort={data.meldekort}
               paabegynteSoknader={data.paabegynteSoknader}
               mininnboks={data.mininnboks}
-              innlogging={data.innlogging}
+              innloggingsstatus={data.innloggingsstatus}
               oppgaver={data.oppgaver}
               innbokser={data.innbokser}
               antallBrukernotifikasjoner={data.antallBrukernotifikasjoner}
@@ -69,7 +69,7 @@ Home.propTypes = {
     oppfolgingHasLoaded: any.isRequired, // eslint-disable-line react/forbid-prop-types
     oppgaver: arrayOf(OppgaveType),
     innbokser: arrayOf(InnboksType),
-    innlogging: InnloggingType,
+    innloggingsstatus: InnloggingsstatusType,
     antallBrukernotifikasjoner: number,
   }),
   loading: bool.isRequired,
@@ -82,7 +82,7 @@ Home.defaultProps = {
     person: null,
     identifikator: null,
     paabegynteSoknader: null,
-    innlogging: null,
+    innloggingsstatus: null,
     oppgaver: null,
     innbokser: null,
     antallBrukernotifikasjoner: 0,

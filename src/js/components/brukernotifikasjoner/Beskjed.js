@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
-import useBeskjedStore from '../../hooks/useBeskjedStore';
+import useStore from '../../hooks/useStore';
 import { hotjarTrigger, hotjarSafetyStub } from '../../utils/Hotjar';
 import transformTolokalDatoTid from '../../utils/DatoUtils';
 import PanelMedIkon from '../common/PanelMedIkon';
+import Api from '../../Api';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
-import { REMOVE_BESKJED, ADD_INAKTIV_BESKJED } from '../../types/Actions';
-import InnloggingType from '../../types/InnloggingType';
+import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import BeskjedType from '../../types/BeskjedType';
 import {
   GoogleAnalyticsAction,
@@ -16,20 +16,37 @@ import {
   trackEvent,
 } from '../../utils/GoogleAnalytics';
 
-const remove = (beskjed, dispatch) => dispatch({
-  type: REMOVE_BESKJED,
-  payload: beskjed,
-});
+const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
+  Api.postDone({
+    eventId: beskjed.eventId,
+    uid: beskjed.uid,
+  }).then((headers) => {
+    if (Api.tokenExpiresSoon(headers)) {
+      visInnloggingsModal();
+    }
+  });
+  removeBeskjed(beskjed);
+};
 
-const addInaktiv = (beskjed, dispatch) => dispatch({
-  type: ADD_INAKTIV_BESKJED,
-  payload: beskjed,
-});
+const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
+  if (erAktiv) {
+    addInaktivBeskjed(beskjed);
+    window.location.hash = '';
+  }
+};
 
-const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
+const onClickBeskjed = (beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv) => {
+  remove(beskjed, removeBeskjed, visInnloggingsModal);
+  addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);
+  hotjarTrigger('beskjed_trykket_ok');
+  trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
+};
+
+const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
   const location = useLocation();
-  const { dispatch } = useBeskjedStore();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innlogging);
+  const { removeBeskjed, addInaktivBeskjed, visInnloggingsModal } = useStore();
+  const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
+
   useEffect(() => {
     hotjarSafetyStub();
   }, []);
@@ -39,24 +56,13 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 
-  const onClickBeskjed = () => {
-    remove(beskjed, dispatch);
-    hotjarTrigger('beskjed_trykket_ok');
-    trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
-
-    if (erAktiv) {
-      addInaktiv(beskjed, dispatch);
-      location.hash = '';
-    }
-  };
-
   return (
     <PanelMedIkon
       className="beskjed"
       alt="Beskjed"
       overskrift={sikkerhetsnivaa.tekst}
       etikett={lokalDatoTid}
-      onClick={() => onClickBeskjed()}
+      onClick={() => onClickBeskjed(beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv)}
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
@@ -71,14 +77,14 @@ const Beskjed = ({ beskjed, innlogging, erAktiv, erInaktiv }) => {
 
 Beskjed.propTypes = {
   beskjed: BeskjedType,
-  innlogging: InnloggingType,
+  innloggingsstatus: InnloggingsstatusType,
   erAktiv: bool,
   erInaktiv: bool,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
-  innlogging: null,
+  innloggingsstatus: null,
   erAktiv: false,
   erInaktiv: false,
 };
