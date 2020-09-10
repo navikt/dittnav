@@ -12,7 +12,6 @@ import {
   checkForFormattedMessage,
   finnTekstBase,
   avkortTekst,
-  mellomrom,
   ellipse,
   linebreak,
 } from '../../utils/tekst';
@@ -60,7 +59,6 @@ const PanelMedIkon = (props) => {
   const utvidbarTekst = (
     <>
       {tekst + (isOpen ? avkortetTekst : '')}
-      {mellomrom(isOverflowing && isOpen)}
       {visPanelLenke ? panelLenke : ''}
       {isOverflowing ? utvidTekstLenke : ''}
     </>

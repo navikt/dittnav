@@ -16,10 +16,6 @@ export const checkForFormattedMessage = (tekst) => (
   typeof tekst === 'object' && tekst.type.displayName === 'FormattedMessage'
 );
 
-export const mellomrom = (skalVise) => (
-  skalVise ? ' ' : ''
-);
-
 export const ellipse = (skalVise) => (
   skalVise ? '... ' : ''
 );
