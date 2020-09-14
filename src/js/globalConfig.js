@@ -84,7 +84,7 @@ const lenker = {
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`,
   },
   koronaSituasjon: {
-    tittel: 'Fra 1.september starter vi å trekke forskudd på dagpenger',
+    tittel: 'Tilbakebetaling av forskudd på dagpenger er i gang',
     url: `${window.env.NAVNO_URL}/dagpenger/forskudd/oversikt`,
   },
   dineFullmakter: {
