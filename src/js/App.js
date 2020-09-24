@@ -19,15 +19,13 @@ const App = ({ api }) => (
           <RenderHome {...props} api={api} />
         )}
       />
-      {Config.VARSLINGER_FEATURE_TOGGLE && (
-        <Route
-          path="/dittnav/varslinger"
-          exact
-          render={(props) => (
-            <RenderVarslinger {...props} api={api} />
-          )}
-        />
-      )}
+      <Route
+        path="/dittnav/varslinger"
+        exact
+        render={(props) => (
+          <RenderVarslinger {...props} api={api} />
+        )}
+      />
       {Config.TEST_SIDE_FEATURE_TOGGLE && (
         <Route
           path="/dittnav/hendelser"
