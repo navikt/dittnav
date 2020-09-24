@@ -129,6 +129,7 @@ export default {
     DITTNAV_SAKER_URL: `${window.env.DITTNAV_API_URL}/saker/paabegynte`,
     DITTNAV_MELDINGER_URL: `${window.env.DITTNAV_API_URL}/meldinger/ubehandlede`,
     DITTNAV_SAKSTEMA_URL: `${window.env.DITTNAV_API_URL}/saker/sakstema`,
+    DINE_PLEIEPENGER_URL: `${window.env.DINE_PLEIEPENGER}/familie/sykdom-i-familien/soknad/innsyn/`,
 
     DITTNAV_BESKJED: `${window.env.DITTNAV_API_URL}/beskjed`,
     DITTNAV_OPPGAVE: `${window.env.DITTNAV_API_URL}/oppgave`,
