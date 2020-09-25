@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from 'react';
 import { useLocation } from 'react-router-dom';
 import useStore from '../../hooks/useStore';
 import { varslingerReducer, initialVarslingerState } from '../../reducers/varslingerReducer';
-import PageFrame from '../PageFrame';
+import PageBase from '../PageBase';
 import Varslinger from './Varslinger';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import scroll from '../../utils/scroll';
@@ -121,7 +121,7 @@ const RenderVarslinger = ({ api }) => {
       {isLoading
         ? <DelayedSpinner delay={500} spinnerClass="header-spinner spinner-container" />
         : (
-          <PageFrame uniqueErrors={state.error}>
+          <PageBase uniqueErrors={state.error}>
             <Varslinger
               oppgaver={state.oppgaver.data}
               innbokser={state.innbokser.data}
@@ -129,7 +129,7 @@ const RenderVarslinger = ({ api }) => {
               inaktiveInnbokser={state.inaktiveInnbokser.data}
               innloggingsstatus={state.innloggingsstatus.data}
             />
-          </PageFrame>
+          </PageBase>
         )}
     </>
   );

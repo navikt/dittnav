@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useStore from '../../hooks/useStore';
-import PageFrame from '../PageFrame';
+import PageBase from '../PageBase';
 import Home from './Home';
 import ApiType from '../../types/ApiType';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
@@ -155,11 +155,11 @@ const RenderHome = ({ api }) => {
   const loading = data.fetching < 11;
 
   return (
-    <PageFrame uniqueErrors={uniqueErrors}>
+    <PageBase uniqueErrors={uniqueErrors}>
       {visModal
         ? <InnloggingsModal isOpen onClick={handleModal} />
         : <Home data={data} loading={loading} />}
-    </PageFrame>
+    </PageBase>
   );
 };
 
