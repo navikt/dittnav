@@ -13,7 +13,7 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
 
   return (
     <div className="inaktive-varsler" id="inaktive-varsler">
-      {(state.inaktiveBeskjeder || oppgaver || innbokser) && (
+      {(state.inaktiveBeskjeder.data || oppgaver || innbokser) && (
         <div className="inaktive-varsler__tittel">
           <Systemtittel>
             <FormattedMessage id="varslinger.inaktive.tittel" />
@@ -21,7 +21,7 @@ const InaktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
         </div>
       )}
       <Brukernotifikasjoner
-        beskjeder={state.inaktiveBeskjeder}
+        beskjeder={state.inaktiveBeskjeder.data}
         oppgaver={oppgaver}
         innbokser={innbokser}
         innloggingsstatus={innloggingsstatus}

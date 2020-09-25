@@ -12,11 +12,11 @@ const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
 
 const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
   const { state } = useStore();
-  const antallAktiveVarsler = antallVarsler(state.beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
+  const antallAktiveVarsler = antallVarsler(state.beskjeder.data) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
   return (
     <div className="aktive-varsler">
-      {state.beskjeder && oppgaver && innbokser && (
+      {state.beskjeder.data && oppgaver && innbokser && (
         <div className="aktive-varsler__tittel">
           <Systemtittel>
             <FormattedMessage id="varslinger.aktive.tittel" values={{ antall: antallAktiveVarsler }} />
@@ -24,7 +24,7 @@ const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
         </div>
       )}
       <Brukernotifikasjoner
-        beskjeder={state.beskjeder}
+        beskjeder={state.beskjeder.data}
         oppgaver={oppgaver}
         innbokser={innbokser}
         innloggingsstatus={innloggingsstatus}

@@ -1,14 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import { arrayOf, node } from 'prop-types';
 import storeReducer, { initialStoreState } from '../reducers/storeReducer';
-import {
-  ADD_BESKJEDER,
-  ADD_INAKTIVE_BESKJEDER,
-  ADD_INAKTIV_BESKJED,
-  REMOVE_BESKJED,
-  VIS_INNLOGGINGSMODAL,
-} from '../types/Actions';
-
 import BeskjedType from '../types/BeskjedType';
 
 export const StoreContext = createContext(null);
@@ -17,27 +9,27 @@ const StoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
   const [state, dispatch] = useReducer(storeReducer, initialStoreState(beskjeder, inaktiveBeskjeder));
 
   const addBeskjeder = (nyeBeskjeder) => dispatch({
-    type: ADD_BESKJEDER,
+    type: 'ADD_BESKJEDER',
     payload: nyeBeskjeder,
   });
 
   const addInaktiveBeskjeder = (nyeBeskjeder) => dispatch({
-    type: ADD_INAKTIVE_BESKJEDER,
+    type: 'ADD_INAKTIVE_BESKJEDER',
     payload: nyeBeskjeder,
   });
 
   const removeBeskjed = (beskjed) => dispatch({
-    type: REMOVE_BESKJED,
+    type: 'REMOVE_BESKJED',
     payload: beskjed,
   });
 
   const addInaktivBeskjed = (beskjed) => dispatch({
-    type: ADD_INAKTIV_BESKJED,
+    type: 'ADD_INAKTIV_BESKJED',
     payload: beskjed,
   });
 
-  const visInnloggingsModal = () => dispatch({
-    type: VIS_INNLOGGINGSMODAL,
+  const toggleInnloggingsModal = () => dispatch({
+    type: 'TOGGLE_INNLOGGINGSMODAL',
   });
 
   const addOppgaver = (oppgaver) => dispatch({
@@ -63,10 +55,6 @@ const StoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
   const addInnloggingsstatus = (innloggingsstatus) => dispatch({
     type: 'ADD_INNLOGGINGSSTATUS',
     payload: innloggingsstatus,
-  });
-
-  const setError = () => dispatch({
-    type: 'ERROR',
   });
 
   const addOppfolging = (oppfolging) => dispatch({
@@ -104,6 +92,10 @@ const StoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
     payload: sakstema,
   });
 
+  const setError = () => dispatch({
+    type: 'ERROR',
+  });
+
   return (
     <StoreContext.Provider value={{
       state,
@@ -123,7 +115,7 @@ const StoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
       addMeldinger,
       addSakstema,
       removeBeskjed,
-      visInnloggingsModal,
+      toggleInnloggingsModal,
       setError,
     }}
     >

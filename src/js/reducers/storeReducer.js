@@ -1,52 +1,45 @@
-import {
-  ADD_BESKJEDER,
-  ADD_INAKTIV_BESKJED,
-  ADD_INAKTIVE_BESKJEDER,
-  REMOVE_BESKJED,
-  VIS_INNLOGGINGSMODAL,
-} from '../types/Actions';
-
 export const initialStoreState = (beskjeder, inaktiveBeskjeder) => ({
-  beskjeder,
-  oppgaver: null,
-  innbokser: null,
-  inaktiveBeskjeder,
-  inaktiveOppgaver: null,
-  inaktiveInnbokser: null,
-  innloggingsstatus: null,
-  oppfolging: null,
-  navn: null,
-  ident: null,
-  paabegynteSoknader: null,
-  meldinger: null,
-  sakstema: null,
+  beskjeder: { data: null, loading: true },
+  oppgaver: { data: null, loading: true },
+  innbokser: { data: null, loading: true },
+  inaktiveBeskjeder: { data: null, loading: true },
+  inaktiveOppgaver: { data: null, loading: true },
+  inaktiveInnbokser: { data: null, loading: true },
+  innloggingsstatus: { data: null, loading: true },
+  oppfolging: { data: null, loading: true },
+  meldekort: { data: null, loading: true },
+  navn: { data: null, loading: true },
+  ident: { data: null },
+  paabegynteSoknader: { data: null, loading: true },
+  meldinger: { data: null, loading: true },
+  sakstema: { data: null, loading: true },
   visInnloggingsModal: false,
-  error: false,
+  error: [],
 });
 
 const storeReducer = (state = initialStoreState, action) => {
   switch (action.type) {
-    case ADD_BESKJEDER:
+    case 'ADD_BESKJEDER':
       return {
         ...state,
-        beskjeder: action.payload,
+        beskjeder: { data: action.payload, loading: false },
       };
-    case ADD_INAKTIVE_BESKJEDER:
+    case 'ADD_INAKTIVE_BESKJEDER':
       return {
         ...state,
-        inaktiveBeskjeder: action.payload,
+        inaktiveBeskjeder: { data: action.payload, loading: false },
       };
-    case REMOVE_BESKJED:
+    case 'REMOVE_BESKJED':
       return {
         ...state,
-        beskjeder: state.beskjeder.filter(b => action.payload.uid !== b.uid),
+        beskjeder: state.beskjeder.data.filter(b => action.payload.uid !== b.uid),
       };
-    case ADD_INAKTIV_BESKJED:
+    case 'ADD_INAKTIV_BESKJED':
       return {
         ...state,
-        inaktiveBeskjeder: [...state.inaktiveBeskjeder, action.payload],
+        inaktiveBeskjeder: { data: [...state.inaktiveBeskjeder.data, action.payload], ...state.inaktiveBeskjeder },
       };
-    case VIS_INNLOGGINGSMODAL:
+    case 'TOGGLE_INNLOGGINGSMODAL':
       return {
         ...state,
         visInnloggingsModal: true,
@@ -54,67 +47,67 @@ const storeReducer = (state = initialStoreState, action) => {
     case 'ADD_OPPGAVER':
       return {
         ...state,
-        oppgaver: action.payload,
+        oppgaver: { data: action.payload, loading: false },
       };
     case 'ADD_INNBOKSER':
       return {
         ...state,
-        innbokser: action.payload,
+        innbokser: { data: action.payload, loading: false },
       };
     case 'ADD_INAKTIVE_OPPGAVER':
       return {
         ...state,
-        inaktiveOppgaver: action.payload,
+        inaktiveOppgaver: { data: action.payload, loading: false },
       };
     case 'ADD_INAKTIVE_INNBOKSER':
       return {
         ...state,
-        inaktiveInnbokser: action.payload,
+        inaktiveInnbokser: { data: action.payload, loading: false },
       };
     case 'ADD_INNLOGGINGSSTATUS':
       return {
         ...state,
-        innloggingsstatus: action.payload,
+        innloggingsstatus: { data: action.payload, loading: false },
       };
     case 'ADD_OPPFOLGING':
       return {
         ...state,
-        oppfolging: action.payload,
+        oppfolging: { data: action.payload, loading: false },
       };
     case 'ADD_MELDEKORT':
       return {
         ...state,
-        meldekort: action.payload,
+        meldekort: { data: action.payload, loading: false },
       };
     case 'ADD_NAVN':
       return {
         ...state,
-        navn: action.payload,
+        navn: { data: action.payload, loading: false },
       };
     case 'ADD_IDENT':
       return {
         ...state,
-        iddent: action.payload,
+        ident: { data: action.payload },
       };
     case 'ADD_PAABEGYNTESOKNADER':
       return {
         ...state,
-        paabegynteSoknader: action.payload,
+        paabegynteSoknader: { data: action.payload, loading: false },
       };
     case 'ADD_MELDINGER':
       return {
         ...state,
-        meldinger: action.payload,
+        meldinger: { data: action.payload, loading: false },
       };
     case 'ADD_SAKSTEMA':
       return {
         ...state,
-        sakstema: action.payload,
+        sakstema: { data: action.payload, loading: false },
       };
     case 'ERROR':
       return {
         ...state,
-        error: true,
+        error: ['error.baksystemer'],
       };
     default:
       return state;

@@ -25,7 +25,7 @@ const InfoMeldinger = (props) => {
     <section className="infomeldinger-list">
       <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
       <Brukernotifikasjoner
-        beskjeder={state.beskjeder}
+        beskjeder={state.beskjeder.data}
         oppgaver={props.oppgaver}
         innbokser={props.innbokser}
         innloggingsstatus={props.innloggingsstatus}

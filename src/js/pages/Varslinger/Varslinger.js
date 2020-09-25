@@ -13,10 +13,15 @@ import InaktiveVarsler from './varsler/InaktiveVarsler';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/GoogleAnalytics';
 import PageBase from '../PageBase';
 import DelayedSpinner from '../../components/DelayedSpinner';
+import InnloggingsModal from '../../components/common/InnloggingsModal';
 
 const Varslinger = () => {
   const { state } = useStore();
-  const loading = false; // TODO: state.loading
+  const isLoading = Object.keys(state).some((key) => state[key].loading);
+
+  if (state.visInnloggingsModal) {
+    return (<InnloggingsModal onClick={() => null} isOpen />);
+  }
 
   return (
     <PageBase uniqueErrors={[]}>
@@ -27,18 +32,18 @@ const Varslinger = () => {
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
             <Tittel className="varslinger-tittel" tittelId="varslinger.tittel" />
-            {loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
+            {isLoading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <section className="infomeldinger-list">
               <AdvarselBox />
               <AktiveVarsler
-                oppgaver={state.oppgaver}
-                innbokser={state.innbokser}
-                innloggingsstatus={state.innloggingsstatus}
+                oppgaver={state.oppgaver.data}
+                innbokser={state.innbokser.data}
+                innloggingsstatus={state.innloggingsstatus.data}
               />
               <InaktiveVarsler
-                oppgaver={state.inaktiveOppgaver}
-                innbokser={state.inaktiveInnbokser}
-                innloggingsstatus={state.innloggingsstatus}
+                oppgaver={state.inaktiveOppgaver.data}
+                innbokser={state.inaktiveInnbokser.data}
+                innloggingsstatus={state.innloggingsstatus.data}
               />
               <Panel className="mininnboks-panel">
                 <Normaltekst>

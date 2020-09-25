@@ -13,44 +13,40 @@ import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import PageBase from '../PageBase';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
-import useModal from '../../hooks/useModal';
 
 const Home = () => {
-  const [handleModal] = useModal();
   const { state } = useStore();
-
-  const erUnderOppfolging = state.oppfolging && state.oppfolging.erBrukerUnderOppfolging;
+  const erUnderOppfolging = state.oppfolging.data && state.oppfolging.data.erBrukerUnderOppfolging;
   const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
-  const loading = false; // TODO: state.loading
-  const oppfolgingHasLoaded = true; // TODO: tate.oppfolgingHasLoaded
-  const uniqueErrors = []; // TODO: state.error
+  const isLoading = Object.keys(state).some((key) => state[key].loading);
 
   if (state.visInnloggingsModal) {
-    return (<InnloggingsModal onClick={handleModal} isOpen />);
+    return (<InnloggingsModal onClick={() => null} isOpen />);
   }
+
   // TODO: fix antallBrukernotifikasjoner
   return (
-    <PageBase uniqueErrors={uniqueErrors}>
+    <PageBase uniqueErrors={state.error}>
       <div className="row">
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
-            <PersonInfo person={state.navn} identifikator={state.ident} />
-            {loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
+            <PersonInfo person={state.navn.data} identifikator={state.ident.data} />
+            {isLoading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger
-              meldekort={state.meldekort}
-              paabegynteSoknader={state.paabegynteSoknader}
-              mininnboks={state.meldinger}
-              innloggingsstatus={state.innloggingsstatus}
-              oppgaver={state.oppgaver}
-              innbokser={state.innbokser}
+              meldekort={state.meldekort.data}
+              paabegynteSoknader={state.paabegynteSoknader.data}
+              mininnboks={state.meldinger.data}
+              innloggingsstatus={state.innloggingsstatus.data}
+              oppgaver={state.oppgaver.data}
+              innbokser={state.innbokser.data}
               antallBrukernotifikasjoner={state.antallBrukernotifikasjoner}
             />
             <KoronaSpesial
-              sakstema={state.sakstema}
-              isLoaded={!loading}
+              sakstema={state.sakstema.data}
+              isLoaded={!isLoading}
             />
-            <DittnavLenkePanel sakstema={state.sakstema} />
-            {oppfolgingHasLoaded ? generelleEllerVta : null}
+            <DittnavLenkePanel sakstema={state.sakstema.data} />
+            {!state.oppfolging.loading ? generelleEllerVta : null}
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
             </Undertittel>
