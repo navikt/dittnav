@@ -1,4 +1,4 @@
-export const initialStoreState = (beskjeder, inaktiveBeskjeder) => ({
+export const initialStoreState = () => ({
   beskjeder: { data: null, loading: true },
   oppgaver: { data: null, loading: true },
   innbokser: { data: null, loading: true },

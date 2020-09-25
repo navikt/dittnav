@@ -8,12 +8,7 @@ import Api from './Api';
 import useStore from './hooks/useStore';
 import Home from './pages/Home/Home';
 import Varslinger from './pages/Varslinger/Varslinger';
-
-const checkIfModalShouldBeToggled = (headers, toggleInnloggingsModal) => {
-  if (Api.tokenExpiresSoon(headers)) {
-    toggleInnloggingsModal();
-  }
-};
+import checkIfModalShouldBeToggled from './utils/modal';
 
 const App = () => {
   const { addBeskjeder, addInaktiveBeskjeder, addOppgaver, addInnbokser, addInaktiveOppgaver } = useStore();

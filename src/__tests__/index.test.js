@@ -20,7 +20,7 @@ const loadMessages = () => {
 const wrapNavApp = (children, props = { defaultSprak: 'nb', messages: loadMessages() }) => (
   <NavApp {...props}>
     <StoreProvider>
-    {children}
+      {children}
     </StoreProvider>
   </NavApp>
 );
