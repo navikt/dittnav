@@ -29,6 +29,7 @@ const InfoMeldinger = (props) => {
         oppgaver={props.oppgaver}
         innbokser={props.innbokser}
         innloggingsstatus={props.innloggingsstatus}
+        erAktiv
       />
       <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
       {isMeldeKortUser ? <Meldekort meldekort={props.meldekort} /> : null}

@@ -29,7 +29,6 @@ const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
   }
 };
 
-// TODO: fix beskjed.
 const onClickBeskjed = (beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv) => {
   remove(beskjed, removeBeskjed, visInnloggingsModal);
   addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);
