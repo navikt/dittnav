@@ -26,10 +26,10 @@ const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
 const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
   if (erAktiv) {
     addInaktivBeskjed(beskjed);
-    window.location.hash = '';
   }
 };
 
+// TODO: fix beskjed.
 const onClickBeskjed = (beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv) => {
   remove(beskjed, removeBeskjed, visInnloggingsModal);
   addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);

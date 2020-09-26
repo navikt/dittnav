@@ -32,12 +32,12 @@ const storeReducer = (state = initialStoreState, action) => {
     case 'REMOVE_BESKJED':
       return {
         ...state,
-        beskjeder: state.beskjeder.data.filter(b => action.payload.uid !== b.uid),
+        beskjeder: { data: state.beskjeder.data.filter(b => action.payload.uid !== b.uid), loading: state.beskjeder.loading },
       };
     case 'ADD_INAKTIV_BESKJED':
       return {
         ...state,
-        inaktiveBeskjeder: { data: [...state.inaktiveBeskjeder.data, action.payload], ...state.inaktiveBeskjeder },
+        inaktiveBeskjeder: { data: [...state.inaktiveBeskjeder.data, action.payload], loading: state.inaktiveBeskjeder.loading },
       };
     case 'TOGGLE_INNLOGGINGSMODAL':
       return {

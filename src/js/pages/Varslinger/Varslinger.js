@@ -42,7 +42,7 @@ const Varslinger = () => {
                 innloggingsstatus={state.innloggingsstatus.data}
               />
               <InaktiveVarsler
-                beskjeder={state.beskjeder.data}
+                beskjeder={state.inaktiveBeskjeder.data}
                 oppgaver={state.inaktiveOppgaver.data}
                 innbokser={state.inaktiveInnbokser.data}
                 innloggingsstatus={state.innloggingsstatus.data}

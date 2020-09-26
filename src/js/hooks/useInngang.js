@@ -2,16 +2,8 @@ import { useState, useEffect } from 'react';
 
 const isEmpty = (array) => array.length === 0;
 
-const checkInaktiveBeskjeder = (inaktiveBeskjeder) => (
-  inaktiveBeskjeder && !isEmpty(inaktiveBeskjeder)
-);
-
-const checkInaktiveOppgaver = (inaktiveOppgaver) => (
-  inaktiveOppgaver && !isEmpty(inaktiveOppgaver)
-);
-
-const checkInaktiveInnbokser = (inaktiveInnbokser) => (
-  inaktiveInnbokser && !isEmpty(inaktiveInnbokser)
+const ifUserHas = (inaktivBrukernotifikasjon) => (
+  inaktivBrukernotifikasjon && !isEmpty(inaktivBrukernotifikasjon)
 );
 
 const useInngang = (inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser) => {
@@ -19,9 +11,9 @@ const useInngang = (inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser) => {
 
   useEffect(() => {
     setVisInngang(
-      checkInaktiveBeskjeder(inaktiveBeskjeder)
-      && checkInaktiveOppgaver(inaktiveOppgaver)
-      && checkInaktiveInnbokser(inaktiveInnbokser),
+      ifUserHas(inaktiveBeskjeder)
+      && ifUserHas(inaktiveOppgaver)
+      && ifUserHas(inaktiveInnbokser),
     );
   }, [inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser]);
 
