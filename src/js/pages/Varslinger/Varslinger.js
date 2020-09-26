@@ -36,11 +36,13 @@ const Varslinger = () => {
             <section className="infomeldinger-list">
               <AdvarselBox />
               <AktiveVarsler
+                beskjeder={state.beskjeder.data}
                 oppgaver={state.oppgaver.data}
                 innbokser={state.innbokser.data}
                 innloggingsstatus={state.innloggingsstatus.data}
               />
               <InaktiveVarsler
+                beskjeder={state.beskjeder.data}
                 oppgaver={state.inaktiveOppgaver.data}
                 innbokser={state.inaktiveInnbokser.data}
                 innloggingsstatus={state.innloggingsstatus.data}

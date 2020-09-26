@@ -4,6 +4,7 @@ import { Undertittel } from 'nav-frontend-typografi';
 import Config from '../../globalConfig';
 import useStore from '../../hooks/useStore';
 import Vta from '../../components/VTA';
+import PageBase from '../PageBase';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import DittnavFliser from '../../components/DittnavFliser';
@@ -11,7 +12,6 @@ import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
-import PageBase from '../PageBase';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 
 const Home = () => {
@@ -24,7 +24,6 @@ const Home = () => {
     return (<InnloggingsModal onClick={() => null} isOpen />);
   }
 
-  // TODO: fix antallBrukernotifikasjoner
   return (
     <PageBase uniqueErrors={state.error}>
       <div className="row">
@@ -37,9 +36,12 @@ const Home = () => {
               paabegynteSoknader={state.paabegynteSoknader.data}
               mininnboks={state.meldinger.data}
               innloggingsstatus={state.innloggingsstatus.data}
+              beskjeder={state.beskjeder.data}
               oppgaver={state.oppgaver.data}
               innbokser={state.innbokser.data}
-              antallBrukernotifikasjoner={state.antallBrukernotifikasjoner}
+              inaktiveBeskjeder={state.inaktiveBeskjeder.data}
+              inaktiveOppgaver={state.inaktiveOppgaver.data}
+              inaktiveInnbokser={state.inaktiveInnbokser.data}
             />
             <KoronaSpesial
               sakstema={state.sakstema.data}

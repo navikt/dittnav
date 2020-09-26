@@ -3,20 +3,19 @@ import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import useStore from '../../../hooks/useStore';
 import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
 import OppgaveType from '../../../types/OppgaveType';
 import InnboksType from '../../../types/InnboksType';
+import BeskjedType from '../../../types/BeskjedType';
 
 const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
 
-const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
-  const { state } = useStore();
-  const antallAktiveVarsler = antallVarsler(state.beskjeder.data) + antallVarsler(oppgaver) + antallVarsler(innbokser);
+const AktiveVarsler = ({ beskjeder, oppgaver, innbokser, innloggingsstatus }) => {
+  const antallAktiveVarsler = antallVarsler(beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
   return (
     <div className="aktive-varsler">
-      {state.beskjeder.data && oppgaver && innbokser && (
+      {beskjeder && oppgaver && innbokser && (
         <div className="aktive-varsler__tittel">
           <Systemtittel>
             <FormattedMessage id="varslinger.aktive.tittel" values={{ antall: antallAktiveVarsler }} />
@@ -24,7 +23,7 @@ const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
         </div>
       )}
       <Brukernotifikasjoner
-        beskjeder={state.beskjeder.data}
+        beskjeder={beskjeder}
         oppgaver={oppgaver}
         innbokser={innbokser}
         innloggingsstatus={innloggingsstatus}
@@ -35,12 +34,14 @@ const AktiveVarsler = ({ oppgaver, innbokser, innloggingsstatus }) => {
 };
 
 AktiveVarsler.propTypes = {
+  beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
   innloggingsstatus: InnloggingsstatusType,
 };
 
 AktiveVarsler.defaultProps = {
+  beskjeder: null,
   oppgaver: null,
   innbokser: null,
   innloggingsstatus: null,

@@ -1,12 +1,11 @@
 import React, { createContext, useReducer } from 'react';
-import { arrayOf, node } from 'prop-types';
+import { node } from 'prop-types';
 import storeReducer, { initialStoreState } from '../reducers/storeReducer';
-import BeskjedType from '../types/BeskjedType';
 
 export const StoreContext = createContext(null);
 
-const StoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
-  const [state, dispatch] = useReducer(storeReducer, initialStoreState(beskjeder, inaktiveBeskjeder));
+const StoreProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(storeReducer, initialStoreState());
 
   const addBeskjeder = (nyeBeskjeder) => dispatch({
     type: 'ADD_BESKJEDER',
@@ -125,14 +124,7 @@ const StoreProvider = ({ beskjeder, inaktiveBeskjeder, children }) => {
 };
 
 StoreProvider.propTypes = {
-  beskjeder: arrayOf(BeskjedType),
-  inaktiveBeskjeder: arrayOf(BeskjedType),
   children: node.isRequired,
-};
-
-StoreProvider.defaultProps = {
-  beskjeder: null,
-  inaktiveBeskjeder: null,
 };
 
 export default StoreProvider;
