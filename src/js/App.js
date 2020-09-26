@@ -11,9 +11,9 @@ import Varslinger from './pages/Varslinger/Varslinger';
 import checkIfModalShouldBeToggled from './utils/modal';
 
 const App = () => {
-  const { addBeskjeder, addInaktiveBeskjeder, addOppgaver, addInnbokser, addInaktiveOppgaver } = useStore();
-  const { addInaktiveInnbokser, addInnloggingsstatus, addOppfolging, addMeldekort, addNavn, addIdent } = useStore();
-  const { addPaabegynteSoknader, addMeldinger, addSakstema, toggleInnloggingsModal, setError } = useStore();
+  const { addBeskjeder, addInaktiveBeskjeder, addOppgaver, addInnbokser, addInaktiveOppgaver, addInaktiveInnbokser } = useStore();
+  const { addInnloggingsstatus, addOppfolging, addMeldekort, addNavn, addIdent, addPaabegynteSoknader } = useStore();
+  const { addMeldinger, addSakstema, toggleInnloggingsModal, setOppfolgingFailed, setError } = useStore();
 
   useEffect(
     () => {
@@ -88,6 +88,7 @@ const App = () => {
           checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
           addOppfolging(result);
         }).catch(() => {
+          setOppfolgingFailed();
           setError();
         });
 

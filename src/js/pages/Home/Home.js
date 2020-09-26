@@ -48,7 +48,7 @@ const Home = () => {
               isLoaded={!isLoading}
             />
             <DittnavLenkePanel sakstema={state.sakstema.data} />
-            {!state.oppfolging.loading ? generelleEllerVta : null}
+            {!state.oppfolging.loading || state.oppfolging.failed ? generelleEllerVta : null}
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
             </Undertittel>

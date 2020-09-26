@@ -6,7 +6,7 @@ export const initialStoreState = () => ({
   inaktiveOppgaver: { data: null, loading: true },
   inaktiveInnbokser: { data: null, loading: true },
   innloggingsstatus: { data: null, loading: true },
-  oppfolging: { data: null, loading: true },
+  oppfolging: { data: null, loading: true, failed: false },
   meldekort: { data: null, loading: true },
   navn: { data: null, loading: true },
   ident: { data: null },
@@ -72,7 +72,12 @@ const storeReducer = (state = initialStoreState, action) => {
     case 'ADD_OPPFOLGING':
       return {
         ...state,
-        oppfolging: { data: action.payload, loading: false },
+        oppfolging: { ...state.oppfolging, data: action.payload, loading: false },
+      };
+    case 'OPPFOLGING_FAILED':
+      return {
+        ...state,
+        oppfolging: { ...state.oppfolging, failed: true, loading: false },
       };
     case 'ADD_MELDEKORT':
       return {

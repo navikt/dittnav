@@ -91,6 +91,10 @@ const StoreProvider = ({ children }) => {
     payload: sakstema,
   });
 
+  const setOppfolgingFailed = () => dispatch({
+    type: 'OPPFOLGING_FAILED',
+  });
+
   const setError = () => dispatch({
     type: 'ERROR',
   });
@@ -115,6 +119,7 @@ const StoreProvider = ({ children }) => {
       addSakstema,
       removeBeskjed,
       toggleInnloggingsModal,
+      setOppfolgingFailed,
       setError,
     }}
     >
