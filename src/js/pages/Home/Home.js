@@ -26,7 +26,7 @@ const Home = () => {
   }
 
   return (
-    <PageBase uniqueErrors={state.error} breadcrumbs={Brodsmuler.varslinger}>
+    <PageBase uniqueErrors={state.error} breadcrumbs={Brodsmuler.dittnav}>
       <div className="row">
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
