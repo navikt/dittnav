@@ -14,6 +14,7 @@ import {
 import ApiType from '../../types/ApiType';
 import useModal from '../../hooks/useModal';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
+import Brodsmuler from '../../utils/brodsmuler';
 
 const RenderVarslinger = ({ api }) => {
   const [state, dispatch] = useReducer(varslingerReducer, initialVarslingerState);
@@ -121,7 +122,7 @@ const RenderVarslinger = ({ api }) => {
       {isLoading
         ? <DelayedSpinner delay={500} spinnerClass="header-spinner spinner-container" />
         : (
-          <PageFrame uniqueErrors={state.error}>
+          <PageFrame uniqueErrors={state.error} breadcrumbs={Brodsmuler.varslinger}>
             <Varslinger
               oppgaver={state.oppgaver.data}
               innbokser={state.innbokser.data}

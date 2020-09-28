@@ -127,9 +127,6 @@ const shimproxy = () => {
                 const { document } = new JSDOM(originalData).window;
                 document.head.appendChild(fragments.scripts);
                 document.head.appendChild(fragments.styles);
-                document.head.appendChild(fragments.megamenu);
-
-                document.body.insertBefore(fragments.skiplinks, document.body.firstChild);
                 document.body.insertBefore(fragments.header, document.body.firstChild);
                 document.body.appendChild(fragments.footer);
                 return document.documentElement.outerHTML;
