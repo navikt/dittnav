@@ -9,6 +9,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/runtime-corejs2": "^7.10.5",
     "@navikt/fnrvalidator": "^1.1.0",
+    "@navikt/nav-dekoratoren-moduler": "^1.0.21",
     "classnames": "^2.2.6",
     "core-js": "^3.4.1",
     "cors": "^2.8.5",

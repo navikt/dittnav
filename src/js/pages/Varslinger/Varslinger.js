@@ -5,7 +5,6 @@ import Lenke from 'nav-frontend-lenker';
 import { Normaltekst } from 'nav-frontend-typografi';
 import useStore from '../../hooks/useStore';
 import Config from '../../globalConfig';
-import Brodsmulesti from '../../components/brodsmulesti/Brodsmulesti';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
@@ -14,6 +13,7 @@ import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../.
 import PageBase from '../PageBase';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
+import Brodsmuler from '../../utils/brodsmuler';
 
 const Varslinger = () => {
   const { state } = useStore();
@@ -24,11 +24,8 @@ const Varslinger = () => {
   }
 
   return (
-    <PageBase uniqueErrors={[]}>
+    <PageBase uniqueErrors={state.error} breadcrumbs={Brodsmuler.varslinger}>
       <div className="row">
-        <div className="brodsmulesti-row">
-          <Brodsmulesti />
-        </div>
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
             <Tittel className="varslinger-tittel" tittelId="varslinger.tittel" />
