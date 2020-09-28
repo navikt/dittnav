@@ -13,6 +13,7 @@ import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
+import Brodsmuler from '../../utils/brodsmuler';
 
 const Home = () => {
   const { state } = useStore();
@@ -25,7 +26,7 @@ const Home = () => {
   }
 
   return (
-    <PageBase uniqueErrors={state.error}>
+    <PageBase uniqueErrors={state.error} breadcrumbs={Brodsmuler.varslinger}>
       <div className="row">
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
