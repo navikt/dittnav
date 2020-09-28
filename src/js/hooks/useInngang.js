@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 const isEmpty = (array) => array.length === 0;
 
-const ifUserHas = (inaktivBrukernotifikasjon) => (
-  inaktivBrukernotifikasjon && !isEmpty(inaktivBrukernotifikasjon)
+const ifUserHas = (inaktiveBrukernotifikasjoner) => (
+  inaktiveBrukernotifikasjoner && !isEmpty(inaktiveBrukernotifikasjoner)
 );
 
 const useInngang = (inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser) => {
