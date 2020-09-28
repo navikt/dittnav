@@ -5,6 +5,7 @@ import Home from './Home';
 import ApiType from '../../types/ApiType';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 import useModal from '../../hooks/useModal';
+import Brodsmuler from '../../utils/brodsmuler';
 
 const RenderHome = ({ api }) => {
   const [data, setData] = useState({
@@ -155,7 +156,7 @@ const RenderHome = ({ api }) => {
   const loading = data.fetching < 11;
 
   return (
-    <PageFrame uniqueErrors={uniqueErrors}>
+    <PageFrame uniqueErrors={uniqueErrors} breadcrumbs={Brodsmuler.dittnav}>
       {visModal
         ? <InnloggingsModal isOpen onClick={handleModal} />
         : <Home data={data} loading={loading} />}
