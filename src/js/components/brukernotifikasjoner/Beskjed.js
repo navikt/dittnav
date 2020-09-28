@@ -26,7 +26,6 @@ const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
 const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
   if (erAktiv) {
     addInaktivBeskjed(beskjed);
-    window.location.hash = '';
   }
 };
 

@@ -9,8 +9,8 @@ import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingsstatusType from '../types/InnloggingsstatusType';
-import useStore from '../hooks/useStore';
 import InnloggingsModal from './common/InnloggingsModal';
+import useStore from '../hooks/useStore';
 
 const byEventTidspunkt = (a, b) => {
   const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);

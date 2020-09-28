@@ -3,7 +3,7 @@ import { arrayOf, oneOfType, node, object, string } from 'prop-types';
 import { setBreadcrumbs } from '@navikt/nav-dekoratoren-moduler';
 import FeilMeldinger from '../components/FeilMeldinger';
 
-const PageFrame = (props) => {
+const PageBase = (props) => {
   setBreadcrumbs(props.breadcrumbs);
 
   return (
@@ -16,10 +16,10 @@ const PageFrame = (props) => {
   );
 };
 
-PageFrame.propTypes = {
+PageBase.propTypes = {
   breadcrumbs: arrayOf(object).isRequired,
   uniqueErrors: arrayOf(oneOfType([string])).isRequired,
   children: node.isRequired,
 };
 
-export default PageFrame;
+export default PageBase;
