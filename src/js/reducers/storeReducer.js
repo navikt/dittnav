@@ -74,11 +74,6 @@ const storeReducer = (state = initialStoreState, action) => {
         ...state,
         oppfolging: { ...state.oppfolging, data: action.payload, loading: false },
       };
-    case 'OPPFOLGING_FAILED':
-      return {
-        ...state,
-        oppfolging: { ...state.oppfolging, failed: true, loading: false },
-      };
     case 'ADD_MELDEKORT':
       return {
         ...state,
@@ -109,9 +104,89 @@ const storeReducer = (state = initialStoreState, action) => {
         ...state,
         sakstema: { data: action.payload, loading: false },
       };
-    case 'ERROR':
+    case 'ERROR_BESKJEDER':
       return {
         ...state,
+        beskjeder: { ...state.beskjeder, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_INAKTIVE_BESKJEDER':
+      return {
+        ...state,
+        inaktiveBeskjeder: { ...state.inaktiveBeskjeder, loading: false },
+        error: ['error.baksystemer'],
+
+      };
+    case 'ERROR_OPPGAVER':
+      return {
+        ...state,
+        oppgaver: { ...state.oppgaver, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_INNBOKSER':
+      return {
+        ...state,
+        innbokser: { ...state.innbokser, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_INAKTIVE_OPPGAVER':
+      return {
+        ...state,
+        inaktiveOppgaver: { ...state.inaktiveOppgaver, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_INAKTIVE_INNBOKSER':
+      return {
+        ...state,
+        inaktiveInnbokser: { ...state.inaktiveInnbokser, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_INNLOGGINGSSTATUS':
+      return {
+        ...state,
+        innloggingsstatus: { ...state.innloggingsstatus, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_OPPFOLGING':
+      return {
+        ...state,
+        oppfolging: { ...state.oppfolging, failed: true, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_MELDEKORT':
+      return {
+        ...state,
+        meldekort: { ...state.meldekort, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_NAVN':
+      return {
+        ...state,
+        navn: { ...state.navn, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_IDENT':
+      return {
+        ...state,
+        ident: { ...state.ident, data: action.payload },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_PAABEGYNTESOKNADER':
+      return {
+        ...state,
+        paabegynteSoknader: { ...state.paabegynteSoknader, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_MELDINGER':
+      return {
+        ...state,
+        meldinger: { ...state.meldinger, loading: false },
+        error: ['error.baksystemer'],
+      };
+    case 'ERROR_SAKSTEMA':
+      return {
+        ...state,
+        sakstema: { ...state.sakstema, loading: false },
         error: ['error.baksystemer'],
       };
     default:

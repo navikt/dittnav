@@ -12,8 +12,11 @@ import checkIfModalShouldBeToggled from './utils/modal';
 
 const App = () => {
   const { addBeskjeder, addInaktiveBeskjeder, addOppgaver, addInnbokser, addInaktiveOppgaver, addInaktiveInnbokser } = useStore();
-  const { addInnloggingsstatus, addOppfolging, addMeldekort, addNavn, addIdent, addPaabegynteSoknader } = useStore();
-  const { addMeldinger, addSakstema, toggleInnloggingsModal, setOppfolgingFailed, setError } = useStore();
+  const { addInnloggingsstatus, addOppfolging, addMeldekort, addNavn, addIdent, addPaabegynteSoknader, addMeldinger } = useStore();
+  const { addSakstema, toggleInnloggingsModal, setErrorBeskjeder, setErrorInaktiveBeskjeder, setErrorOppgaver } = useStore();
+  const { setErrorInaktiveOppgaver, setErrorInaktiveInnbokser, setErrorInnloggingsstatus, setErrorOppfolging } = useStore();
+  const { setErrorMeldekort, setErrorNavn, setErrorIdent, setErrorPaabegynteSoknader, setErrorMeldinger } = useStore();
+  const { setErrorSakstema, setErrorInnbokser } = useStore();
 
   useEffect(
     () => {
@@ -23,7 +26,7 @@ const App = () => {
           addBeskjeder(content);
         })
         .catch(() => {
-          setError();
+          setErrorBeskjeder();
         });
 
       Api.fetchOppgaver()
@@ -32,7 +35,7 @@ const App = () => {
           addOppgaver(content);
         })
         .catch(() => {
-          setError();
+          setErrorOppgaver();
         });
 
       Api.fetchInnbokser()
@@ -41,7 +44,7 @@ const App = () => {
           addInnbokser(content);
         })
         .catch(() => {
-          setError();
+          setErrorInnbokser();
         });
 
       Api.fetchInaktiveBeskjeder()
@@ -50,7 +53,7 @@ const App = () => {
           addInaktiveBeskjeder(content);
         })
         .catch(() => {
-          setError();
+          setErrorInaktiveBeskjeder();
         });
 
       Api.fetchInaktiveOppgaver()
@@ -59,7 +62,7 @@ const App = () => {
           addInaktiveOppgaver(content);
         })
         .catch(() => {
-          setError();
+          setErrorInaktiveOppgaver();
         });
 
       Api.fetchInaktiveInnbokser()
@@ -68,7 +71,7 @@ const App = () => {
           addInaktiveInnbokser(content);
         })
         .catch(() => {
-          setError();
+          setErrorInaktiveInnbokser();
         });
 
       Api.fetchInnloggingsstatus()
@@ -76,7 +79,7 @@ const App = () => {
           addInnloggingsstatus(content);
         })
         .catch(() => {
-          setError();
+          setErrorInnloggingsstatus();
         });
     }, [],
   );
@@ -88,8 +91,7 @@ const App = () => {
           checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
           addOppfolging(content);
         }).catch(() => {
-          setOppfolgingFailed();
-          setError();
+          setErrorOppfolging();
         });
 
       Api.fetchMeldekort()
@@ -97,7 +99,7 @@ const App = () => {
           checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
           addMeldekort(content);
         }).catch(() => {
-          setError();
+          setErrorMeldekort();
         });
 
       Api.fetchPersonNavn()
@@ -108,10 +110,10 @@ const App = () => {
           Api.fetchPersonIdent()
             .then(([content]) => {
               addIdent(content);
-              setError();
+              setErrorNavn();
             })
             .catch(() => {
-              setError();
+              setErrorIdent();
             });
         });
 
@@ -120,13 +122,13 @@ const App = () => {
           const { feilendeBaksystem } = content;
           if (feilendeBaksystem.length > 0) {
             addPaabegynteSoknader(content);
-            setError();
+            setErrorPaabegynteSoknader();
           } else {
             checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
             addPaabegynteSoknader(content);
           }
         }).catch(() => {
-          setError();
+          setErrorPaabegynteSoknader();
         });
 
       Api.fetchMeldinger()
@@ -134,7 +136,7 @@ const App = () => {
           checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
           addMeldinger(content);
         }).catch(() => {
-          setError();
+          setErrorMeldinger();
         });
 
       Api.fetchSakstema()
@@ -142,7 +144,7 @@ const App = () => {
           checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
           addSakstema(content);
         }).catch(() => {
-          setError();
+          setErrorSakstema();
         });
     }, [],
   );

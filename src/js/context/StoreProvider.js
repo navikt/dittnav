@@ -91,12 +91,60 @@ const StoreProvider = ({ children }) => {
     payload: sakstema,
   });
 
-  const setOppfolgingFailed = () => dispatch({
-    type: 'OPPFOLGING_FAILED',
+  const setErrorBeskjeder = () => dispatch({
+    type: 'ERROR_BESKJEDER',
   });
 
-  const setError = () => dispatch({
-    type: 'ERROR',
+  const setErrorInaktiveBeskjeder = () => dispatch({
+    type: 'ERROR_INAKTIVE_BESKJEDER',
+  });
+
+  const setErrorOppgaver = () => dispatch({
+    type: 'ERROR_OPPGAVER',
+  });
+
+  const setErrorInnbokser = () => dispatch({
+    type: 'ERROR_INNBOKSER',
+  });
+
+  const setErrorInaktiveOppgaver = () => dispatch({
+    type: 'ERROR_INAKTIVE_OPPGAVER',
+  });
+
+  const setErrorInaktiveInnbokser = () => dispatch({
+    type: 'ERROR_INAKTIVE_INNBOKSER',
+  });
+
+  const setErrorInnloggingsstatus = () => dispatch({
+    type: 'ERROR_INNLOGGINGSSTATUS',
+  });
+
+  const setErrorOppfolging = () => dispatch({
+    type: 'ERROR_OPPFOLGING',
+  });
+
+  const setErrorMeldekort = () => dispatch({
+    type: 'ERROR_MELDEKORT',
+  });
+
+  const setErrorNavn = () => dispatch({
+    type: 'ERROR_NAVN',
+  });
+
+  const setErrorIdent = () => dispatch({
+    type: 'ERROR_IDENT',
+  });
+
+  const setErrorPaabegynteSoknader = () => dispatch({
+    type: 'ERROR_PAABEGYNTESOKNADER',
+  });
+
+  const setErrorMeldinger = () => dispatch({
+    type: 'ERROR_MELDINGER',
+  });
+
+  const setErrorSakstema = () => dispatch({
+    type: 'ERROR_SAKSTEMA',
   });
 
   return (
@@ -119,8 +167,20 @@ const StoreProvider = ({ children }) => {
       addSakstema,
       removeBeskjed,
       toggleInnloggingsModal,
-      setOppfolgingFailed,
-      setError,
+      setErrorBeskjeder,
+      setErrorInaktiveBeskjeder,
+      setErrorOppgaver,
+      setErrorInnbokser,
+      setErrorInaktiveOppgaver,
+      setErrorInaktiveInnbokser,
+      setErrorInnloggingsstatus,
+      setErrorOppfolging,
+      setErrorMeldekort,
+      setErrorNavn,
+      setErrorIdent,
+      setErrorPaabegynteSoknader,
+      setErrorMeldinger,
+      setErrorSakstema,
     }}
     >
       {children}
