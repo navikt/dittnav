@@ -11,9 +11,7 @@ const useInngang = (inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser) => {
 
   useEffect(() => {
     setVisInngang(
-      ifUserHas(inaktiveBeskjeder)
-      && ifUserHas(inaktiveOppgaver)
-      && ifUserHas(inaktiveInnbokser),
+      ifUserHas(inaktiveBeskjeder) || ifUserHas(inaktiveOppgaver) || ifUserHas(inaktiveInnbokser),
     );
   }, [inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser]);
 
