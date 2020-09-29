@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 
-const FeilMeldinger = (props) => (
+const FeilMeldinger = ({ errors }) => (
   <>
-    {props.errors.length > 0 && (
+    {errors.length > 0 && (
       <section className="service-notification">
         <h1 className="typo-element">
-          {props.errors.map(e => (<span key={e}><F id={e} /></span>))}
+          {errors.map(e => (<span key={e}><F id={e} /></span>))}
         </h1>
       </section>
     )}
