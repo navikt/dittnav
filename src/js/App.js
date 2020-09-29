@@ -11,75 +11,70 @@ import Varslinger from './pages/Varslinger/Varslinger';
 import checkIfModalShouldBeToggled from './utils/modal';
 
 const App = () => {
-  const { addBeskjeder, addInaktiveBeskjeder, addOppgaver, addInnbokser, addInaktiveOppgaver, addInaktiveInnbokser } = useStore();
-  const { addInnloggingsstatus, addOppfolging, addMeldekort, addNavn, addIdent, addPaabegynteSoknader, addMeldinger } = useStore();
-  const { addSakstema, toggleInnloggingsModal, setErrorBeskjeder, setErrorInaktiveBeskjeder, setErrorOppgaver } = useStore();
-  const { setErrorInaktiveOppgaver, setErrorInaktiveInnbokser, setErrorInnloggingsstatus, setErrorOppfolging } = useStore();
-  const { setErrorMeldekort, setErrorNavn, setErrorIdent, setErrorPaabegynteSoknader, setErrorMeldinger } = useStore();
-  const { setErrorSakstema, setErrorInnbokser } = useStore();
+  const store = useStore();
 
   useEffect(
     () => {
       Api.fetchBeskjeder()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addBeskjeder(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addBeskjeder(content);
         })
         .catch(() => {
-          setErrorBeskjeder();
+          store.setErrorBeskjeder();
         });
 
       Api.fetchOppgaver()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addOppgaver(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addOppgaver(content);
         })
         .catch(() => {
-          setErrorOppgaver();
+          store.setErrorOppgaver();
         });
 
       Api.fetchInnbokser()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addInnbokser(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addInnbokser(content);
         })
         .catch(() => {
-          setErrorInnbokser();
+          store.setErrorInnbokser();
         });
 
       Api.fetchInaktiveBeskjeder()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addInaktiveBeskjeder(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addInaktiveBeskjeder(content);
         })
         .catch(() => {
-          setErrorInaktiveBeskjeder();
+          store.setErrorInaktiveBeskjeder();
         });
 
       Api.fetchInaktiveOppgaver()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addInaktiveOppgaver(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addInaktiveOppgaver(content);
         })
         .catch(() => {
-          setErrorInaktiveOppgaver();
+          store.setErrorInaktiveOppgaver();
         });
 
       Api.fetchInaktiveInnbokser()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addInaktiveInnbokser(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addInaktiveInnbokser(content);
         })
         .catch(() => {
-          setErrorInaktiveInnbokser();
+          store.setErrorInaktiveInnbokser();
         });
 
       Api.fetchInnloggingsstatus()
         .then(([content]) => {
-          addInnloggingsstatus(content);
+          store.addInnloggingsstatus(content);
         })
         .catch(() => {
-          setErrorInnloggingsstatus();
+          store.setErrorInnloggingsstatus();
         });
     }, [],
   );
@@ -88,32 +83,32 @@ const App = () => {
     () => {
       Api.fetchOppfolging()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addOppfolging(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addOppfolging(content);
         }).catch(() => {
-          setErrorOppfolging();
+          store.setErrorOppfolging();
         });
 
       Api.fetchMeldekort()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addMeldekort(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addMeldekort(content);
         }).catch(() => {
-          setErrorMeldekort();
+          store.setErrorMeldekort();
         });
 
       Api.fetchPersonNavn()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addNavn(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addNavn(content);
         }).catch(() => {
           Api.fetchPersonIdent()
             .then(([content]) => {
-              addIdent(content);
-              setErrorNavn();
+              store.addIdent(content);
+              store.setErrorNavn();
             })
             .catch(() => {
-              setErrorIdent();
+              store.setErrorIdent();
             });
         });
 
@@ -121,30 +116,30 @@ const App = () => {
         .then(([content, headers]) => {
           const { feilendeBaksystem } = content;
           if (feilendeBaksystem.length > 0) {
-            addPaabegynteSoknader(content);
-            setErrorPaabegynteSoknader();
+            store.addPaabegynteSoknader(content);
+            store.setErrorPaabegynteSoknader();
           } else {
-            checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-            addPaabegynteSoknader(content);
+            checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+            store.addPaabegynteSoknader(content);
           }
         }).catch(() => {
-          setErrorPaabegynteSoknader();
+          store.setErrorPaabegynteSoknader();
         });
 
       Api.fetchMeldinger()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addMeldinger(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addMeldinger(content);
         }).catch(() => {
-          setErrorMeldinger();
+          store.setErrorMeldinger();
         });
 
       Api.fetchSakstema()
         .then(([content, headers]) => {
-          checkIfModalShouldBeToggled(headers, toggleInnloggingsModal);
-          addSakstema(content);
+          checkIfModalShouldBeToggled(headers, store.toggleInnloggingsModal);
+          store.addSakstema(content);
         }).catch(() => {
-          setErrorSakstema();
+          store.setErrorSakstema();
         });
     }, [],
   );
