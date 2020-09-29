@@ -3,7 +3,6 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
 import ScrollToTop from './components/scroll/ScrollToTop';
 import Config from './globalConfig';
-import '../less/index.less';
 import Api from './Api';
 import useStore from './hooks/useStore';
 import Home from './pages/Home/Home';
