@@ -5,7 +5,7 @@ import LenkepanelMedIkon from './common/LenkepanelMedIkon';
 import PanelOverskrift from './common/PanelOverskrift';
 import IkonBlyant from '../../assets/IkonBlyant';
 import IkonSparegris from '../../assets/IkonKane';
-import IkonPille from '../../assets/IkonPille';
+import IkonPlaster from '../../assets/IkonPlaster';
 import IkonSkilt from '../../assets/IkonSkilt';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../utils/GoogleAnalytics';
 
@@ -21,7 +21,7 @@ const DittnavFliser = () => (
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.DittSykefravaer}
       >
-        <IkonPille />
+        <IkonPlaster />
       </LenkepanelMedIkon>
       <LenkepanelMedIkon
         alt="Mistet jobben?"
