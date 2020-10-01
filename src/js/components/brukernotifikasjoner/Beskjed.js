@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useStore from '../../hooks/useStore';
-import { hotjarTrigger, hotjarSafetyStub } from '../../utils/Hotjar';
 import transformTolokalDatoTid from '../../utils/DatoUtils';
 import PanelMedIkon from '../common/PanelMedIkon';
 import Api from '../../Api';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import BeskjedType from '../../types/BeskjedType';
-import {
-  GoogleAnalyticsAction,
-  GoogleAnalyticsCategory,
-  trackEvent,
-} from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/GoogleAnalytics';
 
 const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
   Api.postDone({
@@ -31,26 +26,20 @@ const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
 const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
   if (erAktiv) {
     addInaktivBeskjed(beskjed);
-    window.location.hash = '';
   }
 };
 
 const onClickBeskjed = (beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv) => {
   remove(beskjed, removeBeskjed, visInnloggingsModal);
   addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);
-  hotjarTrigger('beskjed_trykket_ok');
   trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
 };
 
 const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
   const location = useLocation();
   const { removeBeskjed, addInaktivBeskjed, visInnloggingsModal } = useStore();
+
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
-
-  useEffect(() => {
-    hotjarSafetyStub();
-  }, []);
-
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
   const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
