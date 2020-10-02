@@ -84,7 +84,7 @@ const lenker = {
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`,
   },
   koronaSituasjon: {
-    tittel: 'Fra 1.september starter vi å trekke forskudd på dagpenger',
+    tittel: 'Tilbakebetaling av forskudd på dagpenger er i gang',
     url: `${window.env.NAVNO_URL}/dagpenger/forskudd/oversikt`,
   },
   dineFullmakter: {
@@ -160,7 +160,6 @@ export default {
   PSELV_LOGIN_LINK_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf',
   PSELV_LOGIN_LINK_UT_URL: '/pselv/tilleggsfunksjonalitet/innlogging.jsf?context=ut',
   LENKER: lenker,
-  VARSLINGER_FEATURE_TOGGLE: window.env.VARSLINGER_FEATURE_TOGGLE === 'true',
   TEST_SIDE_FEATURE_TOGGLE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
 
   IS_DEV: window.env.ER_DEV === 'true',

@@ -3,7 +3,6 @@ import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import Config from '../globalConfig';
-
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
@@ -95,7 +94,11 @@ DittnavLenkePanel.propTypes = {
       sisteOppdatering: PropTypes.string.isRequired,
       antallStatusUnderBehandling: PropTypes.number.isRequired,
     })).isRequired,
-  }).isRequired,
+  }),
+};
+
+DittnavLenkePanel.defaultProps = {
+  sakstema: null,
 };
 
 export default DittnavLenkePanel;
