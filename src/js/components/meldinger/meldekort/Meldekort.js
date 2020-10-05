@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import conf from '../../../globalConfig';
+import { Path } from '../../../constants';
 import i18n from '../../../../translations/i18n';
 import PanelOverskrift from '../../common/PanelOverskrift';
 import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
@@ -9,6 +9,7 @@ import IkonBeskjed from '../../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../../assets/IkonOppgave';
 import MeldekortType from '../../../types/MeldekortType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/GoogleAnalytics';
+import { buildNavNoUrl } from '../../../utils/api';
 
 const Meldekort = ({ meldekort, intl }) => {
   if (!meldekort) {
@@ -53,7 +54,7 @@ const Meldekort = ({ meldekort, intl }) => {
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(true)} type="Element" />}
         ingress={ingress(true)}
-        href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
+        href={`${buildNavNoUrl(Path.MELDEKORT)}`}
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.MeldekortKlar}
       >
@@ -69,7 +70,7 @@ const Meldekort = ({ meldekort, intl }) => {
         alt="Melding om meldekort"
         overskrift={<PanelOverskrift overskrift={overskrift(false)} type="Element" />}
         ingress={ingress(false)}
-        href={`${conf.dittNav.NAVNO_URL}${conf.MELDEKORT_PATH}`}
+        href={`${buildNavNoUrl(Path.MELDEKORT)}`}
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.MeldekortVent}
       >

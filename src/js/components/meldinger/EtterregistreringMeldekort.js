@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import conf from '../../globalConfig';
+import { NAV_NO_URL, Path } from '../../constants';
 import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -28,7 +28,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         className="infomelding oppgave"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}
-        href={`${conf.dittNav.NAVNO_URL}${conf.ETTERREGISTRERT_PATH}`}
+        href={`${NAV_NO_URL}${Path.ETTERREGISTRERT}`}
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.EtterregistrerteMeldekort}
       >

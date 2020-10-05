@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
-import Config from '../../globalConfig';
+import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
 import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
@@ -54,8 +54,8 @@ const Home = () => {
               <F id="flere.tjenester.header" />
             </Undertittel>
             {erUnderOppfolging
-              ? <Lenkelister links={Config.dittNav.OPPFOLGINGS_LENKER} />
-              : <Lenkelister links={Config.dittNav.GENERELLE_LENKER} />}
+              ? <Lenkelister links={oppfolgingsLenker} />
+              : <Lenkelister links={generelleLenker} />}
           </div>
         </div>
       </div>

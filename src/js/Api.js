@@ -1,7 +1,7 @@
-import Config from './globalConfig';
+import { Dittnav, Innlogging, TestProducer } from './constants';
 
 const redirectToLogin = () => {
-  window.location.assign(`${Config.dittNav.LOGINSERVICE}`);
+  window.location.assign(`${Innlogging.LOGINSERVICE_URL}`);
 };
 
 const tokenExpiresSoon = (headers) => (
@@ -25,7 +25,7 @@ const fetchJSON = (url) => new Promise((resolve, reject) => {
 });
 
 const checkAuth = () => new Promise((resolve, reject) => {
-  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}?ts=${Date.now()}`)
+  fetchJSON(`${Innlogging.INNLOGGINGSLINJE_AUTH_URL}?ts=${Date.now()}`)
     .then(([response]) => {
       if (response.authenticated) {
         resolve(response);
@@ -37,7 +37,7 @@ const checkAuth = () => new Promise((resolve, reject) => {
 });
 
 const checkApiStatus = () => new Promise((resolve, reject) => {
-  fetchJSON(`${Config.dittNav.DITTNAV_API_AUTH_URL}`)
+  fetchJSON(`${Dittnav.API_AUTH_URL}`)
     .then(([response]) => {
       resolve(response);
     })
@@ -62,75 +62,71 @@ const postJSON = (url, content) => new Promise((resolve, reject) => {
 });
 
 const fetchOppfolging = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_OPPFOLGING_URL}`)
+  fetchJSON(`${Dittnav.OPPFOLGING_URL}`)
 );
 
 const fetchMeldekort = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_MELDEKORT_URL}`)
+  fetchJSON(`${Dittnav.MELDEKORT_URL}`)
 );
 
 const fetchPersonNavn = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_PERSON_NAVN_URL}`)
+  fetchJSON(`${Dittnav.PERSON_NAVN_URL}`)
 );
 
 const fetchPersonIdent = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_PERSON_IDENT_URL}`)
+  fetchJSON(`${Dittnav.PERSON_IDENT_URL}`)
 );
 
 const fetchSaker = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_SAKER_URL}`)
+  fetchJSON(`${Dittnav.SAKER_URL}`)
 );
 
 const fetchMeldinger = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_MELDINGER_URL}`)
+  fetchJSON(`${Dittnav.MELDINGER_URL}`)
 );
 
 const fetchSakstema = () => (
-  fetchJSON(Config.dittNav.DITTNAV_SAKSTEMA_URL)
+  fetchJSON(Dittnav.SAKSTEMA_URL)
 );
 
 const fetchInnloggingsstatus = () => (
-  fetchJSON(`${Config.INNLOGGINGSLINJE_AUTH}`)
+  fetchJSON(`${Innlogging.INNLOGGINGSLINJE_AUTH_URL}`)
 );
 
 const fetchBeskjeder = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_BESKJED}`)
+  fetchJSON(`${Dittnav.BESKJED_URL}`)
 );
 
 const fetchOppgaver = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE}`)
+  fetchJSON(`${Dittnav.OPPGAVE_URL}`)
 );
 
 const fetchInnbokser = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS}`)
+  fetchJSON(`${Dittnav.INNBOKS_URL}`)
 );
 
 const fetchInaktiveBeskjeder = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_BESKJED_INAKTIV}`)
+  fetchJSON(`${Dittnav.BESKJED_INAKTIV_URL}`)
 );
 
 const fetchInaktiveOppgaver = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_OPPGAVE_INAKTIV}`)
+  fetchJSON(`${Dittnav.OPPGAVE_INAKTIV_URL}`)
 );
 
 const fetchInaktiveInnbokser = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_INNBOKS_INAKTIV}`)
-);
-
-const fetchAntallBrukernotifikasjoner = () => (
-  fetchJSON(`${Config.dittNav.DITTNAV_BRUKERNOTIFIKASJONER_COUNT}`)
+  fetchJSON(`${Dittnav.INNBOKS_INAKTIV_URL}`)
 );
 
 const postHendelse = (path, content) => (
-  postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_URL}/${path}`, content)
+  postJSON(`${TestProducer.URL}/${path}`, content)
 );
 
 const postDoneAll = () => (
-  postJSON(`${Config.dittNav.EVENT_TEST_PRODUCER_DONE_ALL_URL}`, null)
+  postJSON(`${TestProducer.DONE_ALL_URL}`, null)
 );
 
 const postDone = (content) => (
-  postJSON(`${Config.dittNav.DITTNAV_DONE_URL}`, content)
+  postJSON(`${TestProducer.DONE_URL}`, content)
 );
 
 export default {
@@ -150,7 +146,6 @@ export default {
   fetchInaktiveBeskjeder,
   fetchInaktiveOppgaver,
   fetchInaktiveInnbokser,
-  fetchAntallBrukernotifikasjoner,
   postHendelse,
   postDoneAll,
   postDone,

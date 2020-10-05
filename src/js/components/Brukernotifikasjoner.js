@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf, bool } from 'prop-types';
 import moment from 'moment';
-import Config from '../globalConfig';
+import { Format } from '../constants';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
@@ -13,8 +13,8 @@ import InnloggingsModal from './common/InnloggingsModal';
 import useStore from '../hooks/useStore';
 
 const byEventTidspunkt = (a, b) => {
-  const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
-  const momentB = moment(b.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
+  const momentA = moment(a.eventTidspunkt, Format.BRUKERNOTIFIKASJONER);
+  const momentB = moment(b.eventTidspunkt, Format.BRUKERNOTIFIKASJONER);
 
   return momentB.diff(momentA);
 };
