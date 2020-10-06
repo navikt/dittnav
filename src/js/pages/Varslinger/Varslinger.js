@@ -4,7 +4,6 @@ import Panel from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
 import { Normaltekst } from 'nav-frontend-typografi';
 import useStore from '../../hooks/useStore';
-import Config from '../../globalConfig';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
@@ -14,6 +13,7 @@ import PageBase from '../PageBase';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 import Brodsmuler from '../../utils/brodsmuler';
+import { lenker } from '../../utils/lenker';
 
 const Varslinger = () => {
   const { state } = useStore();
@@ -51,11 +51,11 @@ const Varslinger = () => {
                     values={{
                       innboksen: (
                         <Lenke
-                          href={Config.LENKER.innboks.url}
+                          href={lenker.innboks.url}
                           onClick={() => trackEvent(
                             GoogleAnalyticsCategory.Varslinger,
                             GoogleAnalyticsAction.Innboks,
-                            Config.LENKER.innboks.url,
+                            lenker.innboks.url,
                           )}
                         >
                           innboksen
