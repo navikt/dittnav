@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
-import transformTolokalDatoTid from '../../utils/DatoUtils';
+import { transformTolokalDatoTid } from '../../utils/DatoUtils';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import OppgaveType from '../../types/OppgaveType';
