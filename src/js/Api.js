@@ -126,7 +126,7 @@ const postDoneAll = () => (
 );
 
 const postDone = (content) => (
-  postJSON(`${TestProducer.DONE_URL}`, content)
+  postJSON(`${Dittnav.DONE_URL}`, content)
 );
 
 export default {
