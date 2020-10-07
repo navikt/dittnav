@@ -1,7 +1,7 @@
 export const buildApiUrl = (path) => {
   const apiBaseUrl = window.env.DITTNAV_API_URL;
 
-  return `${apiBaseUrl}${path || ''}}`;
+  return `${apiBaseUrl}${path || ''}`;
 };
 
 export const buildTestProducerUrl = (path) => {
