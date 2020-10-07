@@ -1,7 +1,7 @@
-import Config from '../globalConfig';
+import { Toggle } from '../constants';
 
 const log = (message) => {
-  if (!Config.IS_TEST) {
+  if (!Toggle.IS_TEST) {
     // eslint-disable-next-line no-console
     console.log(message);
   }

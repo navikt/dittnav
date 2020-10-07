@@ -3,12 +3,8 @@ import AlertStripe from 'nav-frontend-alertstriper';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
-import Config from '../../../globalConfig';
-import {
-  GoogleAnalyticsAction,
-  GoogleAnalyticsCategory,
-  trackEvent,
-} from '../../../utils/GoogleAnalytics';
+import { lenker } from '../../../utils/lenker';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../../utils/GoogleAnalytics';
 
 const AdvarselBox = () => (
   <div className="alertbox">
@@ -22,11 +18,11 @@ const AdvarselBox = () => (
           values={{
             innboks: (
               <Lenke
-                href={Config.LENKER.innboks.url}
+                href={lenker.innboks.url}
                 onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Varslinger,
                   GoogleAnalyticsAction.Innboks,
-                  Config.LENKER.innboks.url,
+                  lenker.innboks.url,
                 )}
               >
                 innboksen
@@ -34,11 +30,11 @@ const AdvarselBox = () => (
             ),
             saksoversikt: (
               <Lenke
-                href={Config.LENKER.saksoversikt.url}
+                href={lenker.saksoversikt.url}
                 onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Varslinger,
                   GoogleAnalyticsAction.DineSaker,
-                  Config.LENKER.saksoversikt.url,
+                  lenker.saksoversikt.url,
                 )}
               >
                 Dine saker

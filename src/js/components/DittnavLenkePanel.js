@@ -2,11 +2,10 @@ import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import PropTypes from 'prop-types';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
-import Config from '../globalConfig';
-
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
+import { lenker } from '../utils/lenker';
 
 const antallSakstemaVist = 2;
 
@@ -23,7 +22,7 @@ class DittnavLenkePanel extends React.Component {
               className="dittnav-lenkepanel-stor"
               overskrift={<F id="saksoversikt.overskrift" />}
               headerLenkeTekst={<F id="saksoversikt.alle.saker" values={{ count: sakstema.antallSakstema }} />}
-              headerLenkeHref={Config.LENKER.saksoversikt.url}
+              headerLenkeHref={lenker.saksoversikt.url}
               border={false}
               liste={
                 sakstema.sakstemaList
@@ -43,11 +42,11 @@ class DittnavLenkePanel extends React.Component {
               <Lenkepanel
                 alt="Dine saker"
                 className="dittnav-lenkepanel-liten-item"
-                href={Config.LENKER.saksoversikt.url}
+                href={lenker.saksoversikt.url}
                 onClick={() => trackEvent(
                   GoogleAnalyticsCategory.Forside,
                   GoogleAnalyticsAction.DineSaker,
-                  Config.LENKER.saksoversikt.url,
+                  lenker.saksoversikt.url,
                 )}
                 border
               >
@@ -57,11 +56,11 @@ class DittnavLenkePanel extends React.Component {
           <Lenkepanel
             alt="Utbetalinger"
             className="dittnav-lenkepanel-liten-item"
-            href={Config.LENKER.utbetalingsoversikt.url}
+            href={lenker.utbetalingsoversikt.url}
             onClick={() => trackEvent(
               GoogleAnalyticsCategory.Forside,
               GoogleAnalyticsAction.Utbetalinger,
-              Config.LENKER.utbetalingsoversikt.url,
+              lenker.utbetalingsoversikt.url,
             )}
             border
           >
@@ -70,11 +69,11 @@ class DittnavLenkePanel extends React.Component {
           <Lenkepanel
             alt="Innboks"
             className="dittnav-lenkepanel-liten-item last"
-            href={Config.LENKER.innboks.url}
+            href={lenker.innboks.url}
             onClick={() => trackEvent(
               GoogleAnalyticsCategory.Forside,
               GoogleAnalyticsAction.MinInnboks,
-              Config.LENKER.innboks.url,
+              lenker.innboks.url,
             )}
             border
           >
@@ -95,7 +94,11 @@ DittnavLenkePanel.propTypes = {
       sisteOppdatering: PropTypes.string.isRequired,
       antallStatusUnderBehandling: PropTypes.number.isRequired,
     })).isRequired,
-  }).isRequired,
+  }),
+};
+
+DittnavLenkePanel.defaultProps = {
+  sakstema: null,
 };
 
 export default DittnavLenkePanel;

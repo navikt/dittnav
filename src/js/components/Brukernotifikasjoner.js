@@ -1,7 +1,5 @@
 import React from 'react';
 import { arrayOf, bool } from 'prop-types';
-import moment from 'moment';
-import Config from '../globalConfig';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
@@ -9,15 +7,9 @@ import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 import InnloggingsstatusType from '../types/InnloggingsstatusType';
-import useStore from '../hooks/useStore';
 import InnloggingsModal from './common/InnloggingsModal';
-
-const byEventTidspunkt = (a, b) => {
-  const momentA = moment(a.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
-  const momentB = moment(b.eventTidspunkt, Config.BRUKERNOTIFIKASJONER_FORMAT);
-
-  return momentB.diff(momentA);
-};
+import useStore from '../hooks/useStore';
+import { byEventTidspunkt } from '../utils/datoUtils';
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innloggingsstatus, erAktiv, erInaktiv }) => {
   const { state } = useStore();
