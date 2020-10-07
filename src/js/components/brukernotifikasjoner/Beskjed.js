@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useStore from '../../hooks/useStore';
-import { transformTolokalDatoTid } from '../../utils/DatoUtils';
+import { transformTolokalDatoTid } from '../../utils/datoUtils';
 import PanelMedIkon from '../common/PanelMedIkon';
 import Api from '../../Api';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
