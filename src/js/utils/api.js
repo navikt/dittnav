@@ -1,13 +1,13 @@
 export const buildApiUrl = (path) => {
   const apiBaseUrl = window.env.DITTNAV_API_URL;
 
-  return `${apiBaseUrl}${path}`;
+  return `${apiBaseUrl}${path || ''}`;
 };
 
 export const buildTestProducerUrl = (path) => {
   const testProducerBaseUrl = window.env.EVENT_TEST_PRODUCER_URL;
 
-  return `${testProducerBaseUrl}${path}`;
+  return `${testProducerBaseUrl}${path || ''}`;
 };
 
 export const buildNavNoUrl = (path) => {
