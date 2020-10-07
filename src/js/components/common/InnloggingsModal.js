@@ -5,7 +5,7 @@ import ModalWrapper from 'nav-frontend-modal';
 import Veilederpanel from 'nav-frontend-veilederpanel';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import IkonVeileder from '../../../assets/IkonVeileder';
-import Config from '../../globalConfig';
+import { NAV_NO_URL, Innlogging } from '../../constants';
 
 const InnloggingsModal = ({ isOpen, onClick }) => (
   <ModalWrapper
@@ -27,10 +27,10 @@ const InnloggingsModal = ({ isOpen, onClick }) => (
         </div>
       </Veilederpanel>
       <div className="modal-box__knapp-container">
-        <a href={Config.dittNav.NAVNO_URL} className="modal-box__lenkeknapp knapp">
+        <a href={NAV_NO_URL} className="modal-box__lenkeknapp knapp">
           <FormattedMessage id="innloggingsmodal.forside" />
         </a>
-        <a href={Config.dittNav.LOGINSERVICE} className="modal-box__lenkeknapp knapp knapp--hoved">
+        <a href={Innlogging.LOGINSERVICE_URL} className="modal-box__lenkeknapp knapp knapp--hoved">
           <FormattedMessage id="innloggingsmodal.logg.inn" />
         </a>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react';
-import { arrayOf, number } from 'prop-types';
+import { arrayOf } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
-import useStore from '../hooks/useStore';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
 import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
@@ -13,22 +12,24 @@ import PaabegynteSoknaderType from '../types/PaabegynteSoknaderType';
 import MeldekortType from '../types/MeldekortType';
 import MinInnboksType from '../types/MinInnboksType';
 import InnloggingsstatusType from '../types/InnloggingsstatusType';
+import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
+import useInngang from '../hooks/useInngang';
 
 const InfoMeldinger = (props) => {
-  const { state } = useStore();
+  const [visInngangTilVarslinger] = useInngang(props.inaktiveBeskjeder, props.inaktiveOppgaver, props.inaktiveInnbokser);
   const isMeldeKortUser = props.meldekort ? props.meldekort.meldekortbruker : false;
-  const visInngangTilVarslinger = props.antallBrukernotifikasjoner > 0;
 
   return (
     <section className="infomeldinger-list">
       <h1 className="skjermleser"><F id="dittnav.infomeldinger.varsler" /></h1>
       <Brukernotifikasjoner
-        beskjeder={state.beskjeder}
+        beskjeder={props.beskjeder}
         oppgaver={props.oppgaver}
         innbokser={props.innbokser}
         innloggingsstatus={props.innloggingsstatus}
+        erAktiv
       />
       <InformasjonsMeldinger isMeldeKortUser={isMeldeKortUser} />
       {isMeldeKortUser ? <Meldekort meldekort={props.meldekort} /> : null}
@@ -45,9 +46,12 @@ InfoMeldinger.propTypes = {
   paabegynteSoknader: PaabegynteSoknaderType,
   mininnboks: MinInnboksType,
   innloggingsstatus: InnloggingsstatusType,
+  beskjeder: arrayOf(BeskjedType),
   oppgaver: arrayOf(OppgaveType),
   innbokser: arrayOf(InnboksType),
-  antallBrukernotifikasjoner: number,
+  inaktiveBeskjeder: arrayOf(BeskjedType),
+  inaktiveOppgaver: arrayOf(OppgaveType),
+  inaktiveInnbokser: arrayOf(InnboksType),
 };
 
 InfoMeldinger.defaultProps = {
@@ -55,9 +59,12 @@ InfoMeldinger.defaultProps = {
   meldekort: null,
   mininnboks: [],
   innloggingsstatus: null,
+  beskjeder: null,
   oppgaver: null,
   innbokser: null,
-  antallBrukernotifikasjoner: 0,
+  inaktiveBeskjeder: null,
+  inaktiveOppgaver: null,
+  inaktiveInnbokser: null,
 };
 
 export default InfoMeldinger;

@@ -2,7 +2,7 @@
   "korona.virus-varsel.ingress": "Se informasjon om rettighetene dine.",
   "korona.dagpenger-forskudd.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknaden din. Derfor kan du søke om forskudd.",
   "korona.behandlingstid.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknader. Les om endringene.",
-  "korona.din.situasjon.ingress": "Her vil du som har fått forskudd på dagpenger se mottatt beløp, restbeløp, informasjon om nedbetaling og frister for å søke om nytt forskudd.",
+  "korona.din.situasjon.ingress": "Her vil du som har fått forskudd på dagpenger se mottatt beløp, restbeløpet og kunne endre tilbakebetalingen.",
 
   "dittnav.infomeldinger.varsler": "Varsler",
   "dittnav.infomeldinger.inngang.varslinger": "Se tidligere beskjeder og oppgaver",
@@ -53,7 +53,6 @@
 
   "brodsmulesti.dittnav": "Ditt NAV",
   "brodsmulesti.varslinger": "Beskjeder og oppgaver",
-  "brodsmulesti.skjermleser": "Du er her:",
 
   "varslinger.under.utvikling.tittel": "Denne siden er under utvikling",
   "varslinger.under.utvikling.ingress": "Her vil du kunne se alle tidligere meldinger fra NAV, men akkurat nå vises bare noen av beskjedene og oppgavene. Vi jobber med å forbedre siden og vil oppdatere den fortløpende. Du kan finne flere meldinger i {innboks} eller se informasjon om sakene dine i {saksoversikt}.",

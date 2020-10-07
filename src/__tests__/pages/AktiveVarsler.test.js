@@ -62,8 +62,8 @@ test('AktiveVarsler empty', () => {
 test('AktiveVarsler one beskjed', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <StoreProvider beskjeder={beskjeder}>
-        <AktiveVarsler oppgaver={null} innbokser={null} innloggingsstatus={innloggingsstatus} />
+      <StoreProvider>
+        <AktiveVarsler beskjeder={beskjeder} oppgaver={null} innbokser={null} innloggingsstatus={innloggingsstatus} />
       </StoreProvider>
     </MemoryRouter>,
   ));
@@ -95,8 +95,8 @@ test('AktiveVarsler one innboks', () => {
 test('AktiveVarsler several brukernotifikasjoner', () => {
   const component = ReactTestRenderer.create(wrapIntl(
     <MemoryRouter initialEntries={['/person/dittnav']}>
-      <StoreProvider beskjeder={beskjeder}>
-        <AktiveVarsler oppgaver={oppgaver} innbokser={innbokser} innloggingsstatus={innloggingsstatus} />
+      <StoreProvider>
+        <AktiveVarsler beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} innloggingsstatus={innloggingsstatus} />
       </StoreProvider>
     </MemoryRouter>,
   ));

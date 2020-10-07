@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import HoyreChevron from 'nav-frontend-chevron';
-import Config from '../globalConfig';
+import { Dittnav } from '../constants';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
 
 const InngangVarslinger = () => (
@@ -15,7 +15,7 @@ const InngangVarslinger = () => (
         onClick={() => trackEvent(
           GoogleAnalyticsCategory.Forside,
           GoogleAnalyticsAction.Varslinger,
-          `${Config.dittNav.DITTNAV_VARSLINGER}`,
+          `${Dittnav.VARSLINGER_URL}`,
         )}
       >
         <FormattedMessage id="dittnav.infomeldinger.inngang.varslinger" />
