@@ -1,10 +1,13 @@
 import React from 'react';
 import { arrayOf, oneOfType, node, object, string } from 'prop-types';
-import { setBreadcrumbs } from '@navikt/nav-dekoratoren-moduler';
+import { setParams } from '@navikt/nav-dekoratoren-moduler';
 import FeilMeldinger from '../components/FeilMeldinger';
 
 const PageBase = (props) => {
-  setBreadcrumbs(props.breadcrumbs);
+  setParams({
+    context: 'privatperson',
+    breadcrumbs: props.breadcrumbs,
+  });
 
   return (
     <main role="main">

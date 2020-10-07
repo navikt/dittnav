@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Config from '../globalConfig';
+import { Innlogging } from '../constants';
 
 const useSikkerhetsnivaa = (brukernotifikasjon, type, innloggingsstatus) => {
   const skalMaskeres = brukernotifikasjon.sikkerhetsnivaa === 4 && innloggingsstatus.securityLevel === '3';
@@ -10,7 +10,7 @@ const useSikkerhetsnivaa = (brukernotifikasjon, type, innloggingsstatus) => {
     : brukernotifikasjon.tekst;
 
   const lenke = skalMaskeres
-    ? `${Config.dittNav.LOGINSERVICE_LEVEL_4}`
+    ? `${Innlogging.LOGINSERVICE_LEVEL_4_URL}`
     : brukernotifikasjon.link;
 
   return {
