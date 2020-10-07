@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
 import ScrollToTop from './components/scroll/ScrollToTop';
-import Config from './globalConfig';
+import { Toggle } from './constants';
 import Api from './Api';
 import useStore from './hooks/useStore';
 import Home from './pages/Home/Home';
@@ -157,7 +157,7 @@ const App = () => {
           exact
           component={Varslinger}
         />
-        {Config.TEST_SIDE_FEATURE_TOGGLE && (
+        {Toggle.TEST_SIDE && (
           <Route
             path="/dittnav/hendelser"
             exact
