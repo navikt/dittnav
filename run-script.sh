@@ -1,7 +1,6 @@
 #!/bin/bash
 
 if [[ -z "$DITTNAV_API_URL" ]] ||
-  [[ -z "$SYKDOM_I_FAMILIEN_URL" ]] ||
   [[ -z "$TJENESTER_URL" ]] ||
   [[ -z "$NAVNO_URL" ]] ||
   [[ -z "$LOGIN_URL" ]] ||
@@ -9,10 +8,11 @@ if [[ -z "$DITTNAV_API_URL" ]] ||
   [[ -z "$INNLOGGINGSLINJE_API_URL" ]] ||
   [[ -z "$ARBEIDSSOKERREGISTRERING_URL" ]] ||
   [[ -z "$AKTIVITETSPLAN_URL" ]] ||
-  [[ -z "$TEST_SIDE_FEATURE_TOGGLE" ]]; then
+  [[ -z "$TEST_SIDE_FEATURE_TOGGLE" ]] ||
+  [[ -z "$SYKDOM_I_FAMILIEN_URL" ]]; then
   echo "For å kunne starte applikasjonen må variablene DITTNAV_API_URL, TJENESTER_URL,
   NAVNO_URL, LOGIN_URL, VTA_URL, INNLOGGINGSLINJE_API_URL, ARBEIDSSOKERREGISTRERING_URL,
-  AKTIVITETSPLAN_URL og TEST_SIDE_FEATURE_TOGGLE være satt."
+  AKTIVITETSPLAN_URL, TEST_SIDE_FEATURE_TOGGLE og SYKDOM_I_FAMILIEN_URL være satt."
   echo "Avbryter oppstart."
   exit 1
 fi
