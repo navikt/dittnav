@@ -93,8 +93,8 @@ export const lenker = {
   },
   sykdomIFamilien: {
     tittel: 'Din oversikt - Sykdom i familien',
-    url: `${window.env.SYKDOM_I_FAMILIEN}/familie/sykdom-i-familien/soknad/innsyn/`
-  }
+    url: `${window.env.SYKDOM_I_FAMILIEN}/familie/sykdom-i-familien/soknad/innsyn/`,
+  },
 };
 
 export const generelleLenker = [
