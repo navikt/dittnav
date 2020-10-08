@@ -11,15 +11,19 @@ declare -A variables=(
   [SYKDOM_I_FAMILIEN_URL]=$SYKDOM_I_FAMILIEN_URL
 )
 
-checkAvailableEnvVariables () {
+forEachVariable() {
   for variable in "${!variables[@]}"
-  do
-    if [[ -z ${variables[$variable]} ]]; then
-      echo "For å kunne starte applikasjonen må ${variable} være satt."
-      echo "Avbryter oppstart."
-      exit 1
-    fi
-  done
+    do
+      ($1 $variable) || exit $?
+    done
+}
+
+checkAvailability () {
+  if [[ -z ${variables[$1]} ]]; then
+    echo "For å kunne starte applikasjonen må ${1} være satt."
+    echo "Avbryter oppstart."
+    exit 1
+  fi
 }
 
 checkTestConfigFile() {
@@ -33,24 +37,20 @@ checkTestConfigFile() {
 }
 
 printAvailability () {
-  echo "Tilgjengeliggjør følgende miljøvariabler for frontend-en:"
-  for variable in "${!variables[@]}"
-  do
-    echo "* $variable"
-  done
+  echo "* ${1}"
 }
 
-makeEnvVariablesAvailable() {
-  echo "window.env={};" > /app/config.js
-  for variable in "${!variables[@]}"
-  do
-    echo "window.env.${variable}=\"${variables[$variable]}\";" >> /app/config.js
-  done
+makeAvailable() {
+  echo "window.env.${1}=\"${variables[$1]}\";" >> /app/config.js
 }
 
-checkAvailableEnvVariables
+(forEachVariable checkAvailability) || exit $?
 checkTestConfigFile
-printAvailability
-makeEnvVariablesAvailable
+
+echo "Tilgjengeliggjør følgende miljøvariabler for frontend-en:"
+forEachVariable printAvailability
+
+echo "window.env={};" > /app/config.js
+forEachVariable makeAvailable
 
 /run.sh
