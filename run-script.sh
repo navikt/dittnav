@@ -53,6 +53,6 @@ echo "window.env.EVENT_TEST_PRODUCER_URL=\"$EVENT_TEST_PRODUCER_URL\";" >> /app/
 # Midlertidig frem til feature-toggles pr namespace/miljø fungerer med pus-dekoratør og naiserator.
 echo "window.env.VARSLINGER_FEATURE_TOGGLE=\"$VARSLINGER_FEATURE_TOGGLE\";" >> /app/config.js
 echo "window.env.TEST_SIDE_FEATURE_TOGGLE=\"$TEST_SIDE_FEATURE_TOGGLE\";" >> /app/config.js
-echo "window.env.SYKDOM_I_FAMILIEN_URL\"$SYKDOM_I_FAMILIEN_URL\";" >> /app/config.js
+echo "window.env.SYKDOM_I_FAMILIEN_URL=\"$SYKDOM_I_FAMILIEN_URL\";" >> /app/config.js
 
 /run.sh
