@@ -91,9 +91,9 @@ const lenker = {
     tittel: 'Dine fullmakter',
     url: `${window.env.NAVNO_URL}/person/pdl-fullmakt-ui`,
   },
-  dinePleiepenger: {
-    tittel: 'Dine pleiepenger',
-    url: `${window.env.NAVNO_URL}/familie/sykdom-i-familien/soknad/innsyn/`
+  sykdomIFamilien: {
+    tittel: 'Din oversikt - Sykdom i familien',
+    url: `${window.env.SYKDOM_I_FAMILIEN}/familie/sykdom-i-familien/soknad/innsyn/`
   }
 };
 
@@ -107,7 +107,7 @@ const generelleLenker = [
   lenker.dineStillingssok,
   lenker.personopplysninger,
   lenker.dineFullmakter,
-  lenker.dinePleiepenger,
+  lenker.sykdomIFamilien,
 ];
 
 const oppfolgingsLenker = [
@@ -119,7 +119,7 @@ const oppfolgingsLenker = [
   lenker.meldekort,
   lenker.personopplysninger,
   lenker.dineFullmakter,
-  lenker.dinePleiepenger,
+  lenker.sykdomIFamilien,
 ];
 
 export default {
