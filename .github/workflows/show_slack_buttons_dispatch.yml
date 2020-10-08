@@ -20,7 +20,7 @@ jobs:
         run: |
           git fetch --no-tags --prune origin +refs/heads/*:refs/remotes/origin/*
           git checkout $COMMIT_BRANCH
-          echo "::set-env name=CURRENT_REF::$(git log -1 --pretty='%H')"
+          echo "CURRENT_REF=$(git log -1 --pretty='%H')" >> $GITHUB_ENV
 
       - name: Setup java
         uses: actions/setup-java@v1

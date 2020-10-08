@@ -50,7 +50,7 @@ jobs:
           git push origin $TAG
 
       - name: Sjekk om prodsetting er mulig
-        run: echo "::set-env name=PROD_SBS_VARS_TEMPLATE_DEFINED::$([[ -f ./nais/prod-sbs/default.json ]] && echo 'true' || echo 'false')"
+        run: echo "PROD_SBS_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-sbs/default.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
 
       - name: 'Deploy-er til default i prod-sbs'
         if: env.PROD_SBS_VARS_TEMPLATE_DEFINED == 'true'
