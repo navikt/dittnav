@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [[ -z "$DITTNAV_API_URL" ]] ||
+  [[ -z "$SYKDOM_I_FAMILIEN_URL" ]] ||
   [[ -z "$TJENESTER_URL" ]] ||
   [[ -z "$NAVNO_URL" ]] ||
   [[ -z "$LOGIN_URL" ]] ||
@@ -25,6 +26,7 @@ if test -f "${TEST_CONFIG_FILE}"; then
 fi
 
 echo "Tilgjengeliggjør følgende miljøvariabler for frontend-en:"
+echo "* SYKDOM_I_FAMILIEN_URL"
 echo "* DITTNAV_API_URL"
 echo "* TJENESTER_URL"
 echo "* NAVNO_URL"
@@ -51,5 +53,6 @@ echo "window.env.EVENT_TEST_PRODUCER_URL=\"$EVENT_TEST_PRODUCER_URL\";" >> /app/
 # Midlertidig frem til feature-toggles pr namespace/miljø fungerer med pus-dekoratør og naiserator.
 echo "window.env.VARSLINGER_FEATURE_TOGGLE=\"$VARSLINGER_FEATURE_TOGGLE\";" >> /app/config.js
 echo "window.env.TEST_SIDE_FEATURE_TOGGLE=\"$TEST_SIDE_FEATURE_TOGGLE\";" >> /app/config.js
+echo "window.env.SYKDOM_I_FAMILIEN_URL"\"$SYKDOM_I_FAMILIEN_URL\";" >> /app/config.js
 
 /run.sh
