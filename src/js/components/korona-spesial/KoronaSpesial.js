@@ -5,9 +5,9 @@ import { FormattedMessage } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { KoronaVarsel } from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
-import Config from '../../globalConfig';
 import SakstemaType from '../../types/SakstemaType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { lenker } from '../../utils/lenker';
 
 const visForskuddLenkeFra = '01-03-2020';
 
@@ -25,8 +25,8 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
   }, [harDagpengerSakNyligOppdatert]);
 
   const venstreLenke = forskuddToggle
-    ? Config.LENKER.dagpengerForskudd
-    : Config.LENKER.koronaBehandlingstid;
+    ? lenker.dagpengerForskudd
+    : lenker.koronaBehandlingstid;
 
   const venstreTekst = forskuddToggle
     ? 'korona.dagpenger-forskudd.ingress'
@@ -42,8 +42,8 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
     <>
       {forskuddToggle ? (
         <KoronaVarsel
-          tittel={Config.LENKER.koronaSituasjon.tittel}
-          href={Config.LENKER.koronaSituasjon.url}
+          tittel={lenker.koronaSituasjon.tittel}
+          href={lenker.koronaSituasjon.url}
           gaCategory={GoogleAnalyticsCategory.Forside}
           gaAction={GoogleAnalyticsAction.KoronaSituasjon}
         >
@@ -65,8 +65,8 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
           </Normaltekst>
         </KoronaVarsel>
         <KoronaVarsel
-          tittel={Config.LENKER.koronaVeiviser.tittel}
-          href={Config.LENKER.koronaVeiviser.url}
+          tittel={lenker.koronaVeiviser.tittel}
+          href={lenker.koronaVeiviser.url}
           gaCategory={GoogleAnalyticsCategory.Forside}
           gaAction={GoogleAnalyticsAction.Koronaveiviser}
         >

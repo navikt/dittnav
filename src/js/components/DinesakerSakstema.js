@@ -2,28 +2,21 @@ import React from 'react';
 import { FormattedDate, FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
-
 import i18n from '../../translations/i18n';
-
-import Config from '../globalConfig';
-import {
-  GoogleAnalyticsAction,
-  GoogleAnalyticsCategory,
-  trackEvent,
-  removeFragment,
-} from '../utils/GoogleAnalytics';
+import { lenker } from '../utils/lenker';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent, removeFragment } from '../utils/GoogleAnalytics';
+import { Format } from '../constants';
 
 const sakstemaUrlOverride = {
-  KOM: Config.LENKER.digisos.url,
+  KOM: lenker.digisos.url,
 };
 
 class DinesakerSakstema extends React.Component {
   getTemaUrl() {
     const { temakode } = this.props.tema;
-    return sakstemaUrlOverride[temakode] || `${Config.LENKER.saksoversiktTema.url}/${temakode}`;
+    return sakstemaUrlOverride[temakode] || `${lenker.saksoversiktTema.url}/${temakode}`;
   }
 
   getStatusMelding() {
@@ -73,7 +66,7 @@ class DinesakerSakstema extends React.Component {
                 sisteOppdatering && sisteOppdatering !== ''
                   ? (
                     <FormattedDate
-                      value={moment(sisteOppdatering, Config.SAKSTEMA_DATOTID_FORMAT)}
+                      value={moment(sisteOppdatering, Format.SAKSTEMA)}
                       year="numeric"
                       month="short"
                       day="numeric"

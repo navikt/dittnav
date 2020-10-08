@@ -1,8 +1,10 @@
 import React from 'react';
-import { shape, arrayOf, any, bool, number } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
+import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
+import useStore from '../../hooks/useStore';
 import Vta from '../../components/VTA';
+import PageBase from '../PageBase';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import DittnavFliser from '../../components/DittnavFliser';
@@ -10,40 +12,44 @@ import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
-import Config from '../../globalConfig';
-import InnloggingsstatusType from '../../types/InnloggingsstatusType';
-import OppgaveType from '../../types/OppgaveType';
-import InnboksType from '../../types/InnboksType';
+import InnloggingsModal from '../../components/common/InnloggingsModal';
+import Brodsmuler from '../../utils/brodsmuler';
 
-const Home = ({ data, loading }) => {
-  const erUnderOppfolging = data.oppfolging && data.oppfolging.erBrukerUnderOppfolging;
+const Home = () => {
+  const { state } = useStore();
+  const erUnderOppfolging = state.oppfolging.data && state.oppfolging.data.erBrukerUnderOppfolging;
   const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
-  const oppfolgingsLenker = Config.dittNav.OPPFOLGINGS_LENKER;
-  const generelleLenker = Config.dittNav.GENERELLE_LENKER;
+  const isLoading = Object.keys(state).some((key) => state[key].loading);
+
+  if (state.visInnloggingsModal) {
+    return (<InnloggingsModal onClick={() => null} isOpen />);
+  }
 
   return (
-    <>
+    <PageBase uniqueErrors={state.error} breadcrumbs={Brodsmuler.dittnav}>
       <div className="row">
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
-            <PersonInfo person={data.person} identifikator={data.identifikator} />
-            {loading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
+            <PersonInfo person={state.navn.data} identifikator={state.ident.data} />
+            {isLoading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger
-              sakstema={data.sakstema}
-              meldekort={data.meldekort}
-              paabegynteSoknader={data.paabegynteSoknader}
-              mininnboks={data.mininnboks}
-              innloggingsstatus={data.innloggingsstatus}
-              oppgaver={data.oppgaver}
-              innbokser={data.innbokser}
-              antallBrukernotifikasjoner={data.antallBrukernotifikasjoner}
+              meldekort={state.meldekort.data}
+              paabegynteSoknader={state.paabegynteSoknader.data}
+              mininnboks={state.meldinger.data}
+              innloggingsstatus={state.innloggingsstatus.data}
+              beskjeder={state.beskjeder.data}
+              oppgaver={state.oppgaver.data}
+              innbokser={state.innbokser.data}
+              inaktiveBeskjeder={state.inaktiveBeskjeder.data}
+              inaktiveOppgaver={state.inaktiveOppgaver.data}
+              inaktiveInnbokser={state.inaktiveInnbokser.data}
             />
             <KoronaSpesial
-              sakstema={data.sakstema}
-              isLoaded={!loading}
+              sakstema={state.sakstema.data}
+              isLoaded={!isLoading}
             />
-            <DittnavLenkePanel sakstema={data.sakstema} />
-            {data.oppfolgingHasLoaded ? generelleEllerVta : null}
+            <DittnavLenkePanel sakstema={state.sakstema.data} />
+            {!state.oppfolging.loading || state.oppfolging.failed ? generelleEllerVta : null}
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
             </Undertittel>
@@ -53,40 +59,8 @@ const Home = ({ data, loading }) => {
           </div>
         </div>
       </div>
-    </>
+    </PageBase>
   );
-};
-
-Home.propTypes = {
-  data: shape({
-    oppfolging: any, // eslint-disable-line react/forbid-prop-types
-    meldekort: any, // eslint-disable-line react/forbid-prop-types
-    person: any, // eslint-disable-line react/forbid-prop-types
-    identifikator: any, // eslint-disable-line react/forbid-prop-types
-    paabegynteSoknader: any, // eslint-disable-line react/forbid-prop-types
-    mininnboks: any.isRequired, // eslint-disable-line react/forbid-prop-types
-    sakstema: any.isRequired, // eslint-disable-line react/forbid-prop-types
-    oppfolgingHasLoaded: any.isRequired, // eslint-disable-line react/forbid-prop-types
-    oppgaver: arrayOf(OppgaveType),
-    innbokser: arrayOf(InnboksType),
-    innloggingsstatus: InnloggingsstatusType,
-    antallBrukernotifikasjoner: number,
-  }),
-  loading: bool.isRequired,
-};
-
-Home.defaultProps = {
-  data: shape({
-    oppfolging: null,
-    meldekort: null,
-    person: null,
-    identifikator: null,
-    paabegynteSoknader: null,
-    innloggingsstatus: null,
-    oppgaver: null,
-    innbokser: null,
-    antallBrukernotifikasjoner: 0,
-  }),
 };
 
 export default Home;

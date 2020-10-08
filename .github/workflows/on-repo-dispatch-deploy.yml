@@ -33,14 +33,14 @@ jobs:
           SHORT_SHA=$(echo $RELEASE_VERSION | cut -c16-23)
           git fetch --prune origin +refs/heads/*:refs/remotes/origin/*
           git checkout $SHORT_SHA
-          echo "::set-env name=COMMIT_SHA::$(git log -1 --pretty='%H')"
+          echo "COMMIT_SHA=$(git log -1 --pretty='%H')" >> $GITHUB_ENV
 
       - name: Utleder komplett image-navn basert på release-version, tilgjengeliggjør dette for deploy-steget
         if: env.RELEASE_VERSION != ''
         run: |
           APP_NAME="${GITHUB_REPOSITORY//navikt\//}"
           IMAGE_BASE="docker.pkg.github.com/$GITHUB_REPOSITORY/$APP_NAME"
-          echo "::set-env name=IMAGE::$IMAGE_BASE:$RELEASE_VERSION"
+          echo "IMAGE=$IMAGE_BASE:$RELEASE_VERSION" >> $GITHUB_ENV
 
       - name: Utleder komplett image-navn basert på gitt commit, tilgjengeliggjør dette for deploy-steget
         if: env.RELEASE_VERSION == ''
@@ -48,7 +48,7 @@ jobs:
           APP_NAME="${GITHUB_REPOSITORY//navikt\//}"
           IMAGE_BASE="docker.pkg.github.com/$GITHUB_REPOSITORY/$APP_NAME"
           IMAGE_TAG="$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(git log -1 --pretty='%h')"
-          echo "::set-env name=IMAGE::$IMAGE_BASE:$IMAGE_TAG"
+          echo "IMAGE=$IMAGE_BASE:$IMAGE_TAG" >> $GITHUB_ENV
 
       - name: 'Deploy-er til ${{ env.NAMESPACE }} i ${{ env.CLUSTER }}'
         uses: 'nais/deploy/actions/deploy@v1'

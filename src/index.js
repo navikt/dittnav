@@ -4,7 +4,6 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
-import './js/Polyfills';
 import NavApp from './js/NavApp';
 import App from './js/App';
 import Api from './js/Api';
