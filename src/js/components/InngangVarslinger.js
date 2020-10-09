@@ -11,7 +11,7 @@ const InngangVarslinger = () => (
     <Undertittel className="varslinger-inngang">
       <Link
         id="varslinger-inngang__lenke-id"
-        to="/dittnav/varslinger#inaktive-varsler"
+        to="/dittnav/varslinger"
         onClick={() => trackEvent(
           GoogleAnalyticsCategory.Forside,
           GoogleAnalyticsAction.Varslinger,
