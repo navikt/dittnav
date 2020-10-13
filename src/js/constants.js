@@ -42,6 +42,8 @@ export const TestProducer = Object.freeze({
     buildTestProducerUrl(),
   DONE_ALL_URL:
     buildTestProducerUrl('/produce/done/all'),
+  STATUSOPPDATERING_URL:
+    buildTestProducerUrl('/produce/statusoppdatering'),
 });
 
 export const Innlogging = Object.freeze({

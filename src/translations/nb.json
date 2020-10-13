@@ -46,6 +46,9 @@
 
   "panel.knapp.skjermleser.lukk": "Lukk",
 
+  "statusoppdatering.tittel": "Oppretelse av statusoppdateringer",
+  "statusoppdatering.send": "Send statusoppdatering",
+
   "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",

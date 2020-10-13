@@ -129,6 +129,10 @@ const postDone = (content) => (
   postJSON(`${Dittnav.DONE_URL}`, content)
 );
 
+const postStatusoppdatering = (content) => (
+  postJSON(`${TestProducer.STATUSOPPDATERING_URL}`, content)
+);
+
 export default {
   checkAuth,
   checkApiStatus,
@@ -146,6 +150,7 @@ export default {
   fetchInaktiveBeskjeder,
   fetchInaktiveOppgaver,
   fetchInaktiveInnbokser,
+  postStatusoppdatering,
   postHendelse,
   postDoneAll,
   postDone,

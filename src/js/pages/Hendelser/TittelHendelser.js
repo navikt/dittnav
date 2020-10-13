@@ -3,8 +3,8 @@ import { FormattedMessage as F } from 'react-intl';
 import React from 'react';
 
 const TittelHendelser = () => (
-  <div className="hendelser__tittel-box">
-    <Innholdstittel className="hendelser__tittel">
+  <div className="testpage-panel__tittel-box">
+    <Innholdstittel className="testpage-panel__tittel">
       <F id="hendelser.tittel" />
     </Innholdstittel>
   </div>
