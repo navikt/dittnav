@@ -31,8 +31,8 @@ const HendelserTestSide = () => {
   }, []);
 
   return (
-    <div className="hendelser-content">
-      <Panel className="hendelser" border>
+    <div className="testpage-content">
+      <Panel className="testpage-panel" border>
         <TittelHendelser />
         <SelectHendelser setValg={setValg} />
         <FormHendelser
@@ -48,7 +48,6 @@ const HendelserTestSide = () => {
           <F id="hendelser.fjern" />
         </Fareknapp>
       </Panel>
-
       <div className="infomeldinger-list">
         <div className="infomeldinger-list__container">
           <Brukernotifikasjoner
