@@ -16,3 +16,5 @@ window.env.EVENT_TEST_PRODUCER_URL="http://localhost:1234/dittnav-event-test-pro
 window.env.ER_DEV="true"
 window.env.TEST_SIDE_FEATURE_TOGGLE="true"
 window.env.INNLOGGINGSLINJE_API_URL="http://localhost:1234/innloggingslinje-api"
+window.env.TIDSLINJE_URL="http://localhost:1234/tidslinje-api"
+

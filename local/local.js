@@ -110,6 +110,10 @@ app.post('/dittnav-event-test-producer/produce/done/all', (req, res) => (
   res.send('Done-eventer er produsert for alle identen: {ident} sine brukernotifikasjoner.')
 ));
 
+app.get('/tidslinje-api/tidslinje', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/tidslinje.json'))
+));
+
 app.use(bundler.middleware());
 
 // Listen on port 1234

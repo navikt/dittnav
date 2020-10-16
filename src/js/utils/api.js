@@ -10,6 +10,12 @@ export const buildTestProducerUrl = (path) => {
   return `${testProducerBaseUrl}${path || ''}`;
 };
 
+export const buildTidslinjeUrl = (path, query) => {
+  const tidslinjeBaseUrl = window.env.TIDSLINJE_URL;
+
+  return `${tidslinjeBaseUrl}${path || ''}${query || ''}`;
+};
+
 export const buildNavNoUrl = (path) => {
   const navNoBaseUrl = window.env.NAVNO_URL;
 

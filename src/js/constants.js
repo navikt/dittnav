@@ -1,4 +1,4 @@
-import { buildApiUrl, buildNavNoUrl, buildTestProducerUrl, buildLoginserviceUrl } from './utils/api';
+import { buildApiUrl, buildNavNoUrl, buildTestProducerUrl, buildLoginserviceUrl, buildTidslinjeUrl } from './utils/api';
 
 export const NAV_NO_URL = buildNavNoUrl();
 
@@ -72,4 +72,13 @@ export const Toggle = Object.freeze({
   TEST_SIDE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
   IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
+});
+
+export const TidslinjeApi = Object.freeze({
+  URL:
+    buildTidslinjeUrl('/tidslinje'),
+  PRODUSENT:
+    '***',
+  GRUPPERINGS_ID:
+    '1234',
 });
