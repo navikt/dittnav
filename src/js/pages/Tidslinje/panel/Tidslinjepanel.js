@@ -1,34 +1,34 @@
 import React from 'react';
 import { Panel } from 'nav-frontend-paneler';
 import { Systemtittel } from 'nav-frontend-typografi';
-import { arrayOf, object } from 'prop-types';
-import Sekvens from '../Sekvens';
-import Future from '../Future';
+import { arrayOf, object, string } from 'prop-types';
+import SekvensMedIkon from '../sekvens/SekvensMedIkon';
+import Sekvens from '../sekvens/Sekvens';
 
-const Tidslinjepanel = ({ data }) => (
+const Tidslinjepanel = ({ notifikasjoner, forventninger }) => (
   <Panel className="tidslinje">
     <div className="sakspanel-container">
       <Systemtittel className="saksprosess-tittel">
         Saksprossesen
       </Systemtittel>
-      {[
-        { tekst: 'Dersom søknaden din blir godkjent vil du bli bedt om å sende meldekort, og du vil få første utbetaling 2-3 virkedager etter fristen for innsending av meldekort' },
-        { tekst: 'Vi vil gi deg svar på søknaden din innen 6 uker etter at du har lastet opp all nødvendig dokumentasjon' }].map((el) => (
-          <Future element={el} />
+      {forventninger.map((tekst) => (
+        <Sekvens tekst={tekst} />
       ))}
-      {data.map((el) => (
-        <Sekvens element={el} />
+      {notifikasjoner.map((notifikasjon) => (
+        <SekvensMedIkon notifikasjon={notifikasjon} />
       ))}
     </div>
   </Panel>
 );
 
 Tidslinjepanel.propTypes = {
-  data: arrayOf(object),
+  notifikasjoner: arrayOf(object),
+  forventninger: arrayOf(string),
 };
 
 Tidslinjepanel.defaultProps = {
-  data: null,
+  notifikasjoner: null,
+  forventninger: null,
 };
 
 export default Tidslinjepanel;

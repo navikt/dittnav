@@ -9,11 +9,15 @@ import Dokumentpanel from './panel/Dokumentpanel';
 import StatusPanel from './panel/Statupanel';
 import Tidslinjepanel from './panel/Tidslinjepanel';
 
-const fetchTidslinje = async () => {
-  const path = '/tidslinje';
-  const query = `?grupperingsid=${TidslinjeApi.GRUPPERINGS_ID}&produsent=${TidslinjeApi.PRODUSENT}`;
+const forventninger = [
+  'Dersom søknaden din blir godkjent vil du bli bedt om å sende meldekort, og du vil få første utbetaling 2-3 virkedager etter fristen for innsending av meldekort',
+  'Vi vil gi deg svar på søknaden din innen 6 uker etter at du har lastet opp all nødvendig dokumentasjon',
+];
 
-  const response = await fetch(buildTidslinjeUrl(path, query));
+const fetchTidslinje = async () => {
+  const query = `?grupperingsid=${TidslinjeApi.GRUPPERINGS_ID}&produsent=${TidslinjeApi.PRODUSENT}`;
+  const response = await fetch(buildTidslinjeUrl('/tidslinje', query));
+
   return response.json();
 };
 
@@ -34,7 +38,7 @@ const Tidslinje = () => {
             </Sidetittel>
             <Dokumentpanel />
             <StatusPanel />
-            <Tidslinjepanel data={data} />
+            <Tidslinjepanel notifikasjoner={data} forventninger={forventninger} />
           </div>
         </div>
       </div>
