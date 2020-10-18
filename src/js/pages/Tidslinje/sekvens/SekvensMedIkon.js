@@ -1,6 +1,6 @@
 import React from 'react';
 import { Normaltekst } from 'nav-frontend-typografi';
-import { objectOf, any } from 'prop-types';
+import { objectOf, any, string } from 'prop-types';
 import IkonInformasjon from '../../../../assets/IkonInformasjon';
 import IkonAdvarsel from '../../../../assets/IkonAdvarsel';
 import IkonStatus from '../../../../assets/IkonStatus';
@@ -17,12 +17,12 @@ const tidslinjeIcon = (type) => ({
   Statusoppdatering: <IkonStatus />,
 }[type]);
 
-const SekvensMedIkon = ({ notifikasjon }) => (
-  <div className="sekvens-med-ikon">
-    <div className="sekvens-med-ikon__ikon">
+const SekvensMedIkon = ({ notifikasjon, className }) => (
+  <div className={className}>
+    <div className={`${className}__ikon`}>
       {tidslinjeIcon(notifikasjon.type)}
     </div>
-    <div className="sekvens-med-ikon__tekst">
+    <div className={`${className}__tekst`}>
       <Normaltekst>
         {tidslinjeText(notifikasjon)}
       </Normaltekst>
@@ -31,12 +31,13 @@ const SekvensMedIkon = ({ notifikasjon }) => (
 );
 
 SekvensMedIkon.propTypes = {
-  // TODO: use PropTypes.oneOfType([PropTypes.object], ...)
   notifikasjon: objectOf(any),
+  className: string,
 };
 
 SekvensMedIkon.defaultProps = {
   notifikasjon: null,
+  className: null,
 };
 
 export default SekvensMedIkon;

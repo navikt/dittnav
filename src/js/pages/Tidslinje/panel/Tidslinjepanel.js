@@ -2,8 +2,7 @@ import React from 'react';
 import { Panel } from 'nav-frontend-paneler';
 import { Systemtittel } from 'nav-frontend-typografi';
 import { arrayOf, object, string } from 'prop-types';
-import SekvensMedIkon from '../sekvens/SekvensMedIkon';
-import Sekvens from '../sekvens/Sekvens';
+import TidslinjeSekvens from '../sekvens/Tidslinjesekvens';
 
 const Tidslinjepanel = ({ notifikasjoner, forventninger }) => (
   <Panel className="tidslinje">
@@ -12,10 +11,10 @@ const Tidslinjepanel = ({ notifikasjoner, forventninger }) => (
         Saksprossesen
       </Systemtittel>
       {forventninger.map((tekst) => (
-        <Sekvens tekst={tekst} />
+        <TidslinjeSekvens key={tekst} type="sekvens" className="sekvens" tekst={tekst} />
       ))}
       {notifikasjoner.map((notifikasjon) => (
-        <SekvensMedIkon notifikasjon={notifikasjon} />
+        <TidslinjeSekvens key={notifikasjon.eventId} type="sekvensMedIkon" className="sekvens-med-ikon" notifikasjon={notifikasjon} />
       ))}
     </div>
   </Panel>
