@@ -1,14 +1,16 @@
 import React from 'react';
-import { Normaltekst } from 'nav-frontend-typografi';
 import { objectOf, any, string } from 'prop-types';
+import { Normaltekst } from 'nav-frontend-typografi';
+import { formattedMessage } from '../../../utils/tidslinje';
 import IkonInformasjon from '../../../../assets/IkonInformasjon';
 import IkonAdvarsel from '../../../../assets/IkonAdvarsel';
 import IkonStatus from '../../../../assets/IkonStatus';
 
 const tidslinjeText = (notifikasjon) => ({
-  SENDT: 'Status i saken din: Sendt',
-  MOTTATT: 'Status i saken din: Mottatt',
-  UNDER_BEHANDLING: 'Ny status i saken din: Under behandling',
+  SENDT: formattedMessage('tidslinje.status.sendt'),
+  MOTTATT: formattedMessage('tidslinje.status.mottatt'),
+  UNDER_BEHANDLING: formattedMessage('tidslinje.status.under.behandling'),
+  FERDIG: formattedMessage('tidslinje.status.ferdig'),
 }[notifikasjon.statusGlobal] || notifikasjon.tekst);
 
 const tidslinjeIcon = (type) => ({

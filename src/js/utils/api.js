@@ -10,10 +10,10 @@ export const buildTestProducerUrl = (path) => {
   return `${testProducerBaseUrl}${path || ''}`;
 };
 
-export const buildTidslinjeUrl = (path, query) => {
+export const buildTidslinjeUrl = (path, queryString) => {
   const tidslinjeBaseUrl = window.env.TIDSLINJE_URL;
 
-  return `${tidslinjeBaseUrl}${path || ''}${query || ''}`;
+  return `${tidslinjeBaseUrl}${path || ''}${queryString || ''}`;
 };
 
 export const buildNavNoUrl = (path) => {

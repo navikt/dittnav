@@ -1,28 +1,25 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { Sidetittel } from 'nav-frontend-typografi';
-import Brodsmuler from '../../utils/brodsmuler';
+import { FormattedMessage } from 'react-intl';
 import PageBase from '../PageBase';
-import { buildTidslinjeUrl } from '../../utils/api';
-import { TidslinjeApi } from '../../constants';
+import Statuspanel from './panel/Statuspanel';
 import Dokumentpanel from './panel/Dokumentpanel';
-import StatusPanel from './panel/Statupanel';
 import Tidslinjepanel from './panel/Tidslinjepanel';
+import Brodsmuler from '../../utils/brodsmuler';
+import { forventninger } from '../../utils/tidslinje';
+import { TidslinjeApi } from '../../constants';
+import { buildTidslinjeUrl } from '../../utils/api';
 
-const forventninger = [
-  'Dersom søknaden din blir godkjent vil du bli bedt om å sende meldekort, og du vil få første utbetaling 2-3 virkedager etter fristen for innsending av meldekort',
-  'Vi vil gi deg svar på søknaden din innen 6 uker etter at du har lastet opp all nødvendig dokumentasjon',
-];
-
-const fetchTidslinje = async () => {
-  const query = `?grupperingsid=${TidslinjeApi.GRUPPERINGS_ID}&produsent=${TidslinjeApi.PRODUSENT}`;
-  const response = await fetch(buildTidslinjeUrl('/tidslinje', query));
+export const fetchTidslinje = async () => {
+  const queryString = `?grupperingsid=${TidslinjeApi.GRUPPERINGS_ID}&produsent=${TidslinjeApi.PRODUSENT}`;
+  const response = await fetch(buildTidslinjeUrl('/tidslinje', queryString));
 
   return response.json();
 };
 
 const Tidslinje = () => {
-  const { status, data } = useQuery('tidslinje', fetchTidslinje);
+  const { status, data } = useQuery('tidslinje', fetchTidslinje, { retry: 0 });
 
   if (status === 'loading') {
     return null;
@@ -34,10 +31,10 @@ const Tidslinje = () => {
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
             <Sidetittel className="sakstittel">
-              Dine arbeidsavklaringspenger
+              <FormattedMessage id="tidslinje.sakstittel" />
             </Sidetittel>
+            <Statuspanel />
             <Dokumentpanel />
-            <StatusPanel />
             <Tidslinjepanel notifikasjoner={data} forventninger={forventninger} />
           </div>
         </div>
