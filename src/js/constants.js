@@ -76,7 +76,7 @@ export const Toggle = Object.freeze({
 
 export const TidslinjeApi = Object.freeze({
   PRODUSENT:
-    window.env.TIDSLINJE_PRODUSENT,
+    `${window.env.TIDSLINJE_PRODUSENT}`,
   GRUPPERINGS_ID:
     '1234',
 });
