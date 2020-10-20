@@ -73,3 +73,10 @@ export const Toggle = Object.freeze({
   IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
 });
+
+export const TidslinjeApi = Object.freeze({
+  PRODUSENT:
+    `${window.env.TIDSLINJE_PRODUSENT}`,
+  GRUPPERINGS_ID:
+    '1234',
+});
