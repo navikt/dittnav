@@ -11,6 +11,13 @@ import { forventninger } from '../../utils/tidslinje';
 import { TidslinjeApi } from '../../constants';
 import { buildTidslinjeUrl } from '../../utils/api';
 
+const queryConfig = {
+  retry: 0,
+  refetchOnMount: false,
+  refetchOnWindowFocus: false,
+  refetchOnReconnect: false,
+};
+
 export const fetchTidslinje = async () => {
   const queryString = `?grupperingsid=${TidslinjeApi.GRUPPERINGS_ID}&produsent=${TidslinjeApi.PRODUSENT}`;
   const response = await fetch(buildTidslinjeUrl('/tidslinje', queryString));
@@ -19,7 +26,7 @@ export const fetchTidslinje = async () => {
 };
 
 const Tidslinje = () => {
-  const { status, data } = useQuery('tidslinje', fetchTidslinje, { retry: 0 });
+  const { status, data } = useQuery('tidslinje', fetchTidslinje, queryConfig);
 
   if (status === 'loading') {
     return null;
