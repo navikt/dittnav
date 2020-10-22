@@ -46,6 +46,9 @@
 
   "panel.knapp.skjermleser.lukk": "Lukk",
 
+  "statusoppdatering.tittel": "Oppretelse av statusoppdateringer",
+  "statusoppdatering.send": "Send statusoppdatering",
+
   "hendelser.tittel": "Opprettelse og visning av hendelser",
   "hendelser.hent": "Hent hendelser",
   "hendelser.send": "Send hendelse",
@@ -60,6 +63,19 @@
   "varslinger.aktive.tittel": "Du har {antall} beskjeder eller oppgaver fra NAV",
   "varslinger.inaktive.tittel": "Tidligere beskjeder og oppgaver",
   "varslinger.mininnboks.melding": "Finner du ikke meldingen du leter etter? Den ligger kanskje i {innboksen} din.",
+
+  "tidslinje.sakstittel": "Dine arbeidsavklaringspenger",
+  "tidslinje.statustittel": "Status for søknaden",
+  "tidslinje.status.dato": "08.05.2020: Mottatt",
+  "tidslinje.dokumenttittel": "Dokumenter",
+  "tidslinje.dokumentlenke.kvittering": "Kvittering på innsendt søknad",
+  "tidslinje.dokumentlenke.soknad": "Søknad om arbeidsavklaringspenger (Send av deg 8. mai 2020 kl. 15:39)",
+  "tidslinje.dokumentlenke.vedlegg": "Vedlegg til søknad: inntektsopplysninger.pdf",
+  "tidslinje.saksprosess.tittel": "Saksprosessen",
+  "tidslinje.status.sendt": "Status i saken din: Sendt",
+  "tidslinje.status.mottatt": "Status i saken din: Mottatt",
+  "tidslinje.status.under.behandling": "Ny status i saken din: Under behandling",
+  "tidslinje.status.ferdig": "Søknaden din er ferdig behandlet: Godkjent",
 
   "fliser.ditt.sykevravaer": "Ditt sykefravær",
   "fliser.ditt.sykevravaer.ingress": "Dine sykmeldinger og oppgaver",

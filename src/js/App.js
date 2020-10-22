@@ -8,6 +8,8 @@ import useStore from './hooks/useStore';
 import Home from './pages/Home/Home';
 import Varslinger from './pages/Varslinger/Varslinger';
 import checkIfModalShouldBeToggled from './utils/modal';
+import Tidslinje from './pages/Tidslinje/Tidslinje';
+import Statusoppdatering from './pages/Statusoppdatering/Statusoppdatering';
 
 const App = () => {
   const store = useStore();
@@ -162,6 +164,20 @@ const App = () => {
             path="/dittnav/hendelser"
             exact
             component={HendelserTestSide}
+          />
+        )}
+        {Toggle.TEST_SIDE && (
+          <Route
+            path="/dittnav/statusoppdatering"
+            exact
+            component={Statusoppdatering}
+          />
+        )}
+        {Toggle.TEST_SIDE && (
+          <Route
+            path="/dittnav/tidslinje"
+            exact
+            component={Tidslinje}
           />
         )}
         <Route

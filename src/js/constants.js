@@ -42,6 +42,8 @@ export const TestProducer = Object.freeze({
     buildTestProducerUrl(),
   DONE_ALL_URL:
     buildTestProducerUrl('/produce/done/all'),
+  STATUSOPPDATERING_URL:
+    buildTestProducerUrl('/produce/statusoppdatering'),
 });
 
 export const Innlogging = Object.freeze({
@@ -70,4 +72,11 @@ export const Toggle = Object.freeze({
   TEST_SIDE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
   IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
+});
+
+export const TidslinjeApi = Object.freeze({
+  PRODUSENT:
+    `${window.env.TIDSLINJE_PRODUSENT}`,
+  GRUPPERINGS_ID:
+    '1234',
 });

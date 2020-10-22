@@ -1,0 +1,107 @@
+.tidslinje {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.sekvens-med-ikon {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.35em;
+  position: relative;
+
+  &__ikon {
+    padding-right: 0.65em;
+    z-index: 2;
+  }
+}
+
+.sekvens-med-ikon:last-child {
+  padding-bottom: 0;
+}
+
+.sekvens-med-ikon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.65rem;
+  border: black solid 0.5px ;
+}
+
+.saksprosess-tittel {
+  padding-bottom: 1.25rem;
+}
+
+.sakspanel-container {
+  padding-left: 0.35em;
+  padding-right: 0.35em;
+}
+
+.statuspanel-container {
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+.sakstittel {
+  text-align: center;
+  padding-bottom: 2.65rem;
+}
+
+.dokument-tittel {
+  padding-bottom: 0.25rem;
+}
+
+.dokument-lenke-liste {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.25em;
+}
+
+.dokument-lenke {
+  margin-bottom: 0.25em;
+}
+
+.status-tittel {
+  padding-bottom: 0.25rem;
+}
+
+.sakspanel {
+  margin-bottom: 3rem;
+}
+
+.dato-etikett {
+  padding-bottom: 1.25rem;
+}
+
+.sekvens {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.35em;
+  position: relative;
+
+  &__tekst {
+    padding-left: 2.15em;
+  }
+}
+
+.sekvens::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  border: black dashed 0.5px ;
+}
+
+.sekvens::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.45px dashed black;
+  background-color: white;
+}

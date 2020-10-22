@@ -11,6 +11,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
   const [tekstError, setTekstError] = useState({ tekst: '', value: false });
   const [lenkeError, setLenkeError] = useState({ tekst: '', value: false });
   const disabled = tekstError.value || lenkeError.value;
+  const [grupperingsid, setGrupperingsid] = useState('');
 
   const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
@@ -32,6 +33,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
   const clearInput = () => {
     setTekst('');
     setLenke('');
+    setGrupperingsid('');
   };
 
   const handleSubmit = (event) => {
@@ -40,6 +42,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
       `produce/${valg}`,
       {
         tekst,
+        grupperingsid,
         link: lenke,
       },
     );
@@ -66,6 +69,10 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
     checkInputLength(lenke, setLenkeError, 200, 'Maks lengde på lenken er 200 tegn');
   };
 
+  const handleGrupperingsid = (event) => {
+    setGrupperingsid(event.target.value);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <Input
@@ -79,6 +86,11 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         value={lenke}
         onChange={e => handleLenkeValidation(e)}
         feil={lenkeError.tekst}
+      />
+      <Input
+        label="Skriv inn ny grupperingsid:"
+        value={grupperingsid}
+        onChange={e => handleGrupperingsid(e)}
       />
       <div className="knapper">
         <Knapp className="knapper__send" htmlType="submit" disabled={disabled}>
