@@ -10,7 +10,7 @@ import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/GoogleAnalytics';
 import PageBase from '../PageBase';
-import DelayedSpinner from '../../components/DelayedSpinner';
+import DelayedSpinner from '../../components/common/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 import Brodsmuler from '../../utils/brodsmuler';
 import { lenker } from '../../utils/lenker';

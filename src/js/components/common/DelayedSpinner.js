@@ -24,7 +24,7 @@ class DelayedSpinner extends Component {
   render() {
     return this.state.showSpinner && (
       <div className={this.props.spinnerClass}>
-        <NavFrontendSpinner className="spinner" />
+        <NavFrontendSpinner className="spinner" aria="hidden" />
         <Undertittel>
           <FormattedMessage id="spinner.melding" />
         </Undertittel>
