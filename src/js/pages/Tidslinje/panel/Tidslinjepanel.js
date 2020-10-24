@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel } from 'nav-frontend-paneler';
+import Panel from 'nav-frontend-paneler';
 import { Systemtittel } from 'nav-frontend-typografi';
 import { arrayOf, object, string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
