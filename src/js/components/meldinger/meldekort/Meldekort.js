@@ -7,29 +7,32 @@ import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import IkonBeskjed from '../../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../../assets/IkonOppgave';
-import MeldekortType from '../../../types/MeldekortType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/GoogleAnalytics';
 import { buildNavNoUrl } from '../../../utils/api';
+import { useMeldekort } from '../../../hooks/api/usePerson';
 
-const Meldekort = ({ meldekort, intl }) => {
+const Meldekort = ({ intl }) => {
+  const [{ data: meldekort }] = useMeldekort();
+
   if (!meldekort) {
     return null;
   }
+
   const { formatDateMonth, formatDayAndMonth, numberToWord } = i18n[intl.locale];
-  const { antallNyeMeldekort } = meldekort.nyeMeldekort;
-  const risikererTrekk = meldekort.nyeMeldekort.nesteMeldekort && meldekort.nyeMeldekort.nesteMeldekort.risikererTrekk;
+  const { antallNyeMeldekort } = meldekort.content.nyeMeldekort;
+  const risikererTrekk = meldekort.content.nyeMeldekort.nesteMeldekort && meldekort.content.nyeMeldekort.nesteMeldekort.risikererTrekk;
 
   const overskrift = (klarForInnsending) => (
     klarForInnsending ? (
       <>
-        <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
-        <span>{melding(meldekort.nyeMeldekort.nesteMeldekort, antallNyeMeldekort, formatDayAndMonth, numberToWord)} </span>
-        <span>{trekk(!risikererTrekk, formatDateMonth, meldekort.nyeMeldekort.nesteMeldekort)} </span>
+        <span>{fremtidig(meldekort.content.nyeMeldekort, formatDateMonth)} </span>
+        <span>{melding(meldekort.content.nyeMeldekort.nesteMeldekort, antallNyeMeldekort, formatDayAndMonth, numberToWord)} </span>
+        <span>{trekk(!risikererTrekk, formatDateMonth, meldekort.content.nyeMeldekort.nesteMeldekort)} </span>
         <span>{advarsel(risikererTrekk)} </span>
       </>
     ) : (
       <>
-        <span>{fremtidig(meldekort.nyeMeldekort, formatDateMonth)} </span>
+        <span>{fremtidig(meldekort.content.nyeMeldekort, formatDateMonth)} </span>
         <span>{advarsel(risikererTrekk)} </span>
       </>
     )
@@ -38,11 +41,11 @@ const Meldekort = ({ meldekort, intl }) => {
   const ingress = (klarForInnsending) => (
     klarForInnsending ? (
       <>
-        <span>{feriedager(meldekort)} {(antallNyeMeldekort > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}.</span>
+        <span>{feriedager(meldekort.content)} {(antallNyeMeldekort > 1 ? <F id="meldekort.se.oversikt" /> : <F id="meldekort.send" />)}.</span>
       </>
     ) : (
       <>
-        {feriedager(meldekort)}
+        {feriedager(meldekort.content)}
       </>
     )
   );
@@ -63,7 +66,7 @@ const Meldekort = ({ meldekort, intl }) => {
     );
   }
 
-  if (meldekort.nyeMeldekort.nesteInnsendingAvMeldekort) {
+  if (meldekort.content.nyeMeldekort.nesteInnsendingAvMeldekort) {
     return (
       <LenkepanelMedIkon
         className="infomelding meldekort-innsendt"
@@ -82,12 +85,7 @@ const Meldekort = ({ meldekort, intl }) => {
 };
 
 Meldekort.propTypes = {
-  meldekort: MeldekortType,
   intl: intlShape.isRequired,
-};
-
-Meldekort.defaultProps = {
-  meldekort: null,
 };
 
 export default injectIntl(Meldekort);

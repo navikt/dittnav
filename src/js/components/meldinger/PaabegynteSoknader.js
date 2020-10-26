@@ -4,8 +4,8 @@ import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
-import PaabegynteSoknaderType from '../../types/PaabegynteSoknaderType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { usePaabegynteSoknader } from '../../hooks/api/useSaker';
 
 const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
   <PanelOverskrift
@@ -14,19 +14,21 @@ const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
   />
 );
 
-const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
-  if (!paabegynteSoknader || paabegynteSoknader.antallPaabegynte === 0) {
+const PaabegynteSoknader = ({ intl }) => {
+  const [{ data: paabegynteSoknader }] = usePaabegynteSoknader();
+
+  if (!paabegynteSoknader || paabegynteSoknader.content.antallPaabegynte === 0) {
     return null;
   }
-  const soknadstekst = paabegynteSoknader.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere';
+  const soknadstekst = paabegynteSoknader && paabegynteSoknader.content.antallPaabegynte === 1 ? 'saksoversikt.soknad.en' : 'saksoversikt.soknad.flere';
 
   return (
     <LenkepanelMedIkon
       className="infomelding paabegynte-soknader"
       alt="Melding om Søknader"
-      overskrift={createOverskrift(paabegynteSoknader, soknadstekst, intl)}
+      overskrift={createOverskrift(paabegynteSoknader.content, soknadstekst, intl)}
       ingress={<F id="saksoversikt.lenke" />}
-      href={paabegynteSoknader.url}
+      href={paabegynteSoknader.content.url}
       gaCategory={GoogleAnalyticsCategory.Forside}
       gaAction={GoogleAnalyticsAction.PaabegynteSoknader}
     >
@@ -37,11 +39,6 @@ const PaabegynteSoknader = ({ paabegynteSoknader, intl }) => {
 
 PaabegynteSoknader.propTypes = {
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos
-  paabegynteSoknader: PaabegynteSoknaderType,
-};
-
-PaabegynteSoknader.defaultProps = {
-  paabegynteSoknader: null,
 };
 
 export default injectIntl(PaabegynteSoknader);

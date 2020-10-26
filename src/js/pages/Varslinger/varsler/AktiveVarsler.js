@@ -1,17 +1,14 @@
 import React from 'react';
-import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
-import OppgaveType from '../../../types/OppgaveType';
-import InnboksType from '../../../types/InnboksType';
-import BeskjedType from '../../../types/BeskjedType';
+import useBrukernotifikasjoner from '../../../hooks/api/useBrukernotifikasjoner';
 
-const antallVarsler = (varsler) => (varsler ? varsler.length : 0);
+const antallVarsler = (varsler) => (varsler && varsler.content ? varsler.content.length : 0);
 
-const AktiveVarsler = ({ beskjeder, oppgaver, innbokser, innloggingsstatus }) => {
-  const antallAktiveVarsler = antallVarsler(beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
+const AktiveVarsler = () => {
+  const [beskjeder, oppgaver, innbokser] = useBrukernotifikasjoner();
+  const antallAktiveVarsler = antallVarsler(beskjeder) + antallVarsler(oppgaver.data) + antallVarsler(innbokser.data);
 
   return (
     <div className="aktive-varsler">
@@ -26,25 +23,10 @@ const AktiveVarsler = ({ beskjeder, oppgaver, innbokser, innloggingsstatus }) =>
         beskjeder={beskjeder}
         oppgaver={oppgaver}
         innbokser={innbokser}
-        innloggingsstatus={innloggingsstatus}
         erAktiv
       />
     </div>
   );
-};
-
-AktiveVarsler.propTypes = {
-  beskjeder: arrayOf(BeskjedType),
-  oppgaver: arrayOf(OppgaveType),
-  innbokser: arrayOf(InnboksType),
-  innloggingsstatus: InnloggingsstatusType,
-};
-
-AktiveVarsler.defaultProps = {
-  beskjeder: null,
-  oppgaver: null,
-  innbokser: null,
-  innloggingsstatus: null,
 };
 
 export default AktiveVarsler;

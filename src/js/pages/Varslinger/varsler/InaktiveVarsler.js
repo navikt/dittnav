@@ -1,44 +1,33 @@
 import React from 'react';
-import { arrayOf } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
+import useInaktiveBrukernotifikasjoner from '../../../hooks/api/useInaktiveBrukernotifikasjoner';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import InnloggingsstatusType from '../../../types/InnloggingsstatusType';
-import BeskjedType from '../../../types/BeskjedType';
-import OppgaveType from '../../../types/OppgaveType';
-import InnboksType from '../../../types/InnboksType';
 
-const InaktiveVarsler = ({ beskjeder, oppgaver, innbokser, innloggingsstatus }) => (
-  <div className="inaktive-varsler" id="inaktive-varsler">
-    {(beskjeder || oppgaver || innbokser) && (
-      <div className="inaktive-varsler__tittel">
-        <Systemtittel>
-          <FormattedMessage id="varslinger.inaktive.tittel" />
-        </Systemtittel>
-      </div>
-    )}
-    <Brukernotifikasjoner
-      beskjeder={beskjeder}
-      oppgaver={oppgaver}
-      innbokser={innbokser}
-      innloggingsstatus={innloggingsstatus}
-      erInaktiv
-    />
-  </div>
-);
+const InaktiveVarsler = () => {
+  const [inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser] = useInaktiveBrukernotifikasjoner();
 
-InaktiveVarsler.propTypes = {
-  beskjeder: arrayOf(BeskjedType),
-  oppgaver: arrayOf(OppgaveType),
-  innbokser: arrayOf(InnboksType),
-  innloggingsstatus: InnloggingsstatusType,
-};
+  if (!inaktiveBeskjeder || !inaktiveOppgaver || !inaktiveInnbokser) {
+    return null;
+  }
 
-InaktiveVarsler.defaultProps = {
-  beskjeder: null,
-  oppgaver: null,
-  innbokser: null,
-  innloggingsstatus: null,
+  return (
+    <div className="inaktive-varsler" id="inaktive-varsler">
+      {(inaktiveBeskjeder || inaktiveOppgaver || inaktiveInnbokser) && (
+        <div className="inaktive-varsler__tittel">
+          <Systemtittel>
+            <FormattedMessage id="varslinger.inaktive.tittel" />
+          </Systemtittel>
+        </div>
+      )}
+      <Brukernotifikasjoner
+        beskjeder={inaktiveBeskjeder}
+        oppgaver={inaktiveOppgaver}
+        innbokser={inaktiveInnbokser}
+        erInaktiv
+      />
+    </div>
+  );
 };
 
 export default InaktiveVarsler;

@@ -5,16 +5,17 @@ import { FormattedMessage } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { KoronaVarsel } from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
-import SakstemaType from '../../types/SakstemaType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 import { lenker } from '../../utils/lenker';
+import { useSakstema } from '../../hooks/api/useSaker';
 
 const visForskuddLenkeFra = '01-03-2020';
 
-const KoronaSpesial = ({ sakstema, isLoaded }) => {
+const KoronaSpesial = ({ isLoaded }) => {
   const [forskuddToggle, setForskuddToggle] = useState(null);
+  const [{ data: sakstema }] = useSakstema();
 
-  const harDagpengerSakNyligOppdatert = sakstema && sakstema.sakstemaList && sakstema.sakstemaList
+  const harDagpengerSakNyligOppdatert = sakstema && sakstema.content.sakstemaList && sakstema.content.sakstemaList
     .some(tema => tema.temakode === 'DAG'
       && moment(tema.sisteOppdatering).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY')));
 
@@ -80,12 +81,10 @@ const KoronaSpesial = ({ sakstema, isLoaded }) => {
 };
 
 KoronaSpesial.propTypes = {
-  sakstema: SakstemaType,
   isLoaded: bool,
 };
 
 KoronaSpesial.defaultProps = {
-  sakstema: null,
   isLoaded: false,
 };
 

@@ -5,8 +5,8 @@ import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
-import MeldekortType from '../../types/MeldekortType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { useMeldekort } from '../../hooks/api/usePerson';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
@@ -21,13 +21,15 @@ const createOverskrift = (ettereg, intl) => {
   return <PanelOverskrift overskrift={overskrift} type="Element" />;
 };
 
-const EtterregistreringMeldekort = ({ ettereg, intl }) => {
-  if (ettereg && ettereg.etterregistrerteMeldekort && ettereg.etterregistrerteMeldekort > 0) {
+const EtterregistreringMeldekort = ({ intl }) => {
+  const [{ data: meldekort }] = useMeldekort();
+
+  if (meldekort && meldekort.content.etterregistrerteMeldekort && meldekort.content.etterregistrerteMeldekort > 0) {
     return (
       <LenkepanelMedIkon
         className="infomelding oppgave"
         alt="Melding om etterregistrerte meldekort"
-        overskrift={createOverskrift(ettereg, intl)}
+        overskrift={createOverskrift(meldekort.content, intl)}
         href={`${NAV_NO_URL}${Path.ETTERREGISTRERT}`}
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.EtterregistrerteMeldekort}
@@ -41,12 +43,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
 
 
 EtterregistreringMeldekort.propTypes = {
-  ettereg: MeldekortType,
-  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
-};
-
-EtterregistreringMeldekort.defaultProps = {
-  ettereg: null,
+  intl: intlShape.isRequired,
 };
 
 export default injectIntl(EtterregistreringMeldekort);

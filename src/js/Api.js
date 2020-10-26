@@ -19,16 +19,16 @@ const fetchJSON = (url) => new Promise((resolve, reject) => {
       return null;
     })
     .then(([content, headers]) => {
-      resolve([content, headers]);
+      resolve({ content, headers });
     })
     .catch(e => reject(e));
 });
 
 const checkAuth = () => new Promise((resolve, reject) => {
   fetchJSON(`${Innlogging.INNLOGGINGSLINJE_AUTH_URL}?ts=${Date.now()}`)
-    .then(([response]) => {
-      if (response.authenticated) {
-        resolve(response);
+    .then(({ content }) => {
+      if (content.authenticated) {
+        resolve(content);
       } else {
         reject(new Error('not authenticated'));
       }

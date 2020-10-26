@@ -5,8 +5,8 @@ import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import IkonInnboks from '../../../assets/IkonInnboks';
-import MinInnboksType from '../../types/MinInnboksType';
 import { GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { useMeldinger } from '../../hooks/api/usePerson';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
@@ -35,13 +35,14 @@ const createOverskrift = (message, numberToWord, formatFlereEn) => {
   );
 };
 
-const MinInnboks = ({ mininnboks, intl }) => {
+const MinInnboks = ({ intl }) => {
+  const [{ data: meldinger }] = useMeldinger();
   const { numberToWord } = i18n[intl.locale];
   const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
   return (
     <>
-      {mininnboks && mininnboks.map(message => (
+      {meldinger && meldinger.content.map(message => (
         <LenkepanelMedIkon
           key={message.type}
           className="infomelding innboks"
@@ -59,12 +60,7 @@ const MinInnboks = ({ mininnboks, intl }) => {
 };
 
 MinInnboks.propTypes = {
-  mininnboks: MinInnboksType,
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos
-};
-
-MinInnboks.defaultProps = {
-  mininnboks: [],
 };
 
 export default injectIntl(MinInnboks);

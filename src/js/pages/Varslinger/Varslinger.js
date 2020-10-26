@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import Panel from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
 import { Normaltekst } from 'nav-frontend-typografi';
+import { useIsFetching } from 'react-query';
 import useStore from '../../hooks/useStore';
 import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
@@ -17,7 +18,7 @@ import { lenker } from '../../utils/lenker';
 
 const Varslinger = () => {
   const { state } = useStore();
-  const isLoading = Object.keys(state).some((key) => state[key].loading);
+  const isFetching = useIsFetching();
 
   if (state.visInnloggingsModal) {
     return (<InnloggingsModal onClick={() => null} isOpen />);
@@ -29,21 +30,11 @@ const Varslinger = () => {
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
             <Tittel className="varslinger-tittel" tittelId="varslinger.tittel" />
-            {isLoading ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
+            {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <section className="infomeldinger-list">
               <AdvarselBox />
-              <AktiveVarsler
-                beskjeder={state.beskjeder.data}
-                oppgaver={state.oppgaver.data}
-                innbokser={state.innbokser.data}
-                innloggingsstatus={state.innloggingsstatus.data}
-              />
-              <InaktiveVarsler
-                beskjeder={state.inaktiveBeskjeder.data}
-                oppgaver={state.inaktiveOppgaver.data}
-                innbokser={state.inaktiveInnbokser.data}
-                innloggingsstatus={state.innloggingsstatus.data}
-              />
+              <AktiveVarsler />
+              <InaktiveVarsler />
               <Panel className="mininnboks-panel">
                 <Normaltekst>
                   <FormattedMessage
