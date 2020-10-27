@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { func, string, bool } from 'prop-types';
+import { func, string } from 'prop-types';
 import { FormattedMessage as F } from 'react-intl';
 import { Input } from 'nav-frontend-skjema';
 import { Knapp } from 'nav-frontend-knapper';
@@ -125,7 +125,7 @@ FormHendelser.propTypes = {
   tekst: string.isRequired,
   lenke: string.isRequired,
   valg: string.isRequired,
-  eksternVarsling: bool.isRequired,
+  eksternVarsling: string.isRequired,
   setTekst: func.isRequired,
   setLenke: func.isRequired,
   setOppgaver: func.isRequired,
