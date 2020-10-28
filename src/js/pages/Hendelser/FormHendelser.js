@@ -44,14 +44,14 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke
 
   const postContentForBeskjedAndOppgave = {
     tekst,
-    grupperingsid,
+    grupperingsid: grupperingsid || 'default-grupperingsid',
     link: lenke,
     eksternVarsling: convertStringToBoolean(eksternVarsling),
   };
 
   const postContentForInnboks = {
     tekst,
-    grupperingsid,
+    grupperingsid: grupperingsid || 'default-grupperingsid',
     link: lenke,
   };
 
