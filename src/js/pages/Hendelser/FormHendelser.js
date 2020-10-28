@@ -44,14 +44,14 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke
 
   const postContentForBeskjedAndOppgave = {
     tekst,
-    grupperingsid: grupperingsid || '123',
+    grupperingsid: grupperingsid || '010100',
     link: lenke,
     eksternVarsling: convertStringToBoolean(eksternVarsling),
   };
 
   const postContentForInnboks = {
     tekst,
-    grupperingsid: grupperingsid || '123',
+    grupperingsid: grupperingsid || '010100',
     link: lenke,
   };
 
@@ -108,7 +108,7 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke
         label="Skriv inn ny grupperingsid:"
         value={grupperingsid}
         onChange={e => handleGrupperingsid(e)}
-        placeholder="123"
+        placeholder="010100"
       />
       <div className="knapper">
         <Knapp className="knapper__send" htmlType="submit" disabled={disabled}>
