@@ -10,7 +10,7 @@
     "url": "git+https://github.com/navikt/dittnav.git"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
     "@babel/runtime-corejs2": "^7.10.5",
     "@navikt/fnrvalidator": "^1.1.3",
     "@navikt/nav-dekoratoren-moduler": "^1.0.21",
