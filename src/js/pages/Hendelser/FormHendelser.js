@@ -6,12 +6,12 @@ import { Knapp } from 'nav-frontend-knapper';
 import useStore from '../../hooks/useStore';
 import Api from '../../Api';
 
-const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, setInnbokser }) => {
+const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke, setOppgaver, setInnbokser }) => {
   const { addBeskjeder } = useStore();
   const [tekstError, setTekstError] = useState({ tekst: '', value: false });
   const [lenkeError, setLenkeError] = useState({ tekst: '', value: false });
-  const disabled = tekstError.value || lenkeError.value;
   const [grupperingsid, setGrupperingsid] = useState('');
+  const disabled = tekstError.value || lenkeError.value;
 
   const getBrukernotifikasjoner = () => {
     Api.fetchBeskjeder()
@@ -36,15 +36,32 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
     setGrupperingsid('');
   };
 
+  const shouldSendEksternVarsling = valg === 'beskjed' || valg === 'oppgave';
+
+  const convertStringToBoolean = (value) => (
+    value === 'true'
+  );
+
+  const postContentForBeskjedAndOppgave = {
+    tekst,
+    grupperingsid,
+    link: lenke,
+    eksternVarsling: convertStringToBoolean(eksternVarsling),
+  };
+
+  const postContentForInnboks = {
+    tekst,
+    grupperingsid,
+    link: lenke,
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     Api.postHendelse(
       `produce/${valg}`,
-      {
-        tekst,
-        grupperingsid,
-        link: lenke,
-      },
+      shouldSendEksternVarsling
+        ? postContentForBeskjedAndOppgave
+        : postContentForInnboks,
     );
     clearInput();
   };
@@ -108,6 +125,7 @@ FormHendelser.propTypes = {
   tekst: string.isRequired,
   lenke: string.isRequired,
   valg: string.isRequired,
+  eksternVarsling: string.isRequired,
   setTekst: func.isRequired,
   setLenke: func.isRequired,
   setOppgaver: func.isRequired,
