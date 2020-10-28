@@ -9,6 +9,7 @@ import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
 import log from '../../utils/Logger';
 import useStore from '../../hooks/useStore';
+import SelectEksternVarsling from './SelectEksetrnVarsling';
 
 const HendelserTestSide = () => {
   const [oppgaver, setOppgaver] = useState(null);
@@ -17,6 +18,8 @@ const HendelserTestSide = () => {
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
   const [valg, setValg] = useState('beskjed');
+  const [eksternVarsling, setEksternVarsling] = useState(false);
+
   const { state } = useStore();
 
   const removeHendelser = () => Api
@@ -35,10 +38,12 @@ const HendelserTestSide = () => {
       <Panel className="testpage-panel" border>
         <TittelHendelser />
         <SelectHendelser setValg={setValg} />
+        <SelectEksternVarsling setEksternVarsling={setEksternVarsling} />
         <FormHendelser
           tekst={tekst}
           lenke={lenke}
           valg={valg}
+          eksternVarsling={eksternVarsling}
           setTekst={setTekst}
           setLenke={setLenke}
           setOppgaver={setOppgaver}
