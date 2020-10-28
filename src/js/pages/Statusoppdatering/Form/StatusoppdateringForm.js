@@ -8,7 +8,7 @@ import Api from '../../../Api';
 const initialState = {
   statusGlobal: 'SENDT',
   statusIntern: '',
-  grupperingsid: '',
+  grupperingsid: '123',
   link: '',
   sakstema: '',
 };
@@ -48,6 +48,7 @@ const StatusoppdateringForm = () => {
           name="grupperingsid"
           value={values.grupperingsid}
           onChange={e => handleChange(e)}
+          placeholder="123"
         />
         <div className="knapper">
           <Knapp className="knapper__send" htmlType="submit">

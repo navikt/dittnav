@@ -42,7 +42,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
       `produce/${valg}`,
       {
         tekst,
-        grupperingsid,
+        grupperingsid: grupperingsid || '123',
         link: lenke,
       },
     );
@@ -91,6 +91,7 @@ const FormHendelser = ({ tekst, lenke, valg, setTekst, setLenke, setOppgaver, se
         label="Skriv inn ny grupperingsid:"
         value={grupperingsid}
         onChange={e => handleGrupperingsid(e)}
+        placeholder="123"
       />
       <div className="knapper">
         <Knapp className="knapper__send" htmlType="submit" disabled={disabled}>
