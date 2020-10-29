@@ -1,17 +1,35 @@
 import * as React from 'react';
-const ReactTestRenderer = require('react-test-renderer');
+import sinon from 'sinon';
 import PaabegynteSoknader from 'js/components/meldinger/PaabegynteSoknader';
 import wrapIntl from 'js/IntlTestHelper';
+import * as useSaker from '../../../js/hooks/api/useSaker';
+import StoreProvider from '../../../js/context/StoreProvider';
+const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');
+let sandbox = null;
 
-test('PaabegynteSoknader green test', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader />));
-  expect(component.toJSON()).toMatchSnapshot();
+beforeEach(() => {
+  sandbox = sinon.createSandbox();
+});
+
+afterEach(() => {
+  useSaker.usePaabegynteSoknader.restore();
 });
 
 test('PaabegynteSoknader empty array', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSoknader={null} />));
+  sandbox.stub(useSaker, 'usePaabegynteSoknader')
+    .returns([{
+      data: { content: null },
+      isLoading: false,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <PaabegynteSoknader paabegynteSoknader={null}/>
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -20,7 +38,19 @@ test('PaabegynteSoknader one soknad', () => {
     "url": "http://nav.no",
     "antallPaabegynte": 1
   };
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />));
+
+  sandbox.stub(useSaker, 'usePaabegynteSoknader')
+    .returns([{
+      data: { content: paabegynteSoknader },
+      isLoading: false,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
@@ -29,6 +59,18 @@ test('PaabegynteSoknader several soknader', () => {
     "url": "https://tjenester-t6.nav.no/",
     "antallPaabegynte": 3
   };
-  const component = ReactTestRenderer.create(wrapIntl(<PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />));
+
+  sandbox.stub(useSaker, 'usePaabegynteSoknader')
+    .returns([{
+      data: { content: paabegynteSoknader },
+      isLoading: false,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
+    </StoreProvider>
+    ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });

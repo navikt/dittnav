@@ -4,9 +4,9 @@ import { useIdent, useNavn } from '../hooks/api/usePerson';
 
 const PersonInfo = () => {
   const [{ data: personNavn, isError: navnFailed }] = useNavn();
-  const [{ data: personIdent }] = useIdent(false);
+  const [{ data: personIdent, isError: personIdentFailed }] = useIdent(false);
 
-  if (!personNavn && !personIdent) {
+  if ((!personNavn && !personIdent) || personIdentFailed) {
     return null;
   }
 

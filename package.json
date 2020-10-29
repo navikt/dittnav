@@ -59,6 +59,7 @@
     "react-router-dom": "^5.1.2",
     "regenerator-runtime": "^0.13.3",
     "request": "^2.88.0",
+    "sinon": "^9.2.1",
     "translations": "^2.2.1",
     "uuid": "^7.0.2",
     "whatwg-fetch": "^3.3.1"
