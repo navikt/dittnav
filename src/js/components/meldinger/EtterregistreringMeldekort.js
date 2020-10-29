@@ -29,7 +29,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         className="infomelding oppgave"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}
-        href={`${buildNavNoUrl(Path.MELDEKORT)}`}
+        href={`${buildNavNoUrl(Path.ETTERREGISTRERTE_MELDEKORT)}`}
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.EtterregistrerteMeldekort}
       >
