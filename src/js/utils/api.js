@@ -19,7 +19,7 @@ export const buildTidslinjeUrl = (path, queryString) => {
 export const buildNavNoUrl = (path) => {
   const navNoBaseUrl = window.env.NAVNO_URL;
 
-  return `${navNoBaseUrl}${path}`;
+  return `${navNoBaseUrl}${path || ''}`;
 };
 
 export const buildLoginserviceUrl = (level) => {
