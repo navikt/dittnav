@@ -1,30 +1,19 @@
-# Ditt nav
+# DittNAV
 
-Kildekoden til frontend-appen for ny ditt nav.
+Kildekoden til frontend-appen for DittNAV.
 
-# Komme i gang
+# Kom i gang
 
-For å kjøre opp app-en i dev:
-
-1. `npm install`
-2. `npm run build`
-3. `npm run start`
-4. gå til `http://localhost:9002/person/dittnav`
-
-For å kjøre tester:
-
-1. `npm install`
-2. `npm run test:watch`
-
-Bygge for prod:
-
-1. `npm install`
-2. `npm run build`
-
+1. Installer npm-pakker ved å kjøre `npm install`
+1. Bygg dittnav ved å kjøre `npm run build`
+2. Start appen ved å kjøre `npm run start`
+4. Appen nås på http://localhost:9002/person/dittnav´
+  * Lytt på less/css endringer ved å kjøre `npm run build:css`
+  * Test appen ved å kjøre `npm run test:watch`
 
 # Henvendelser
 
-Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på github.
+Spørsmål knyttet til koden eller prosjektet kan rettes mot https://github.com/orgs/navikt/teams/personbruker
 
 ## For NAV-ansatte
 
