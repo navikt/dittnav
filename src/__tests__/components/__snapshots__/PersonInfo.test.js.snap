@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-<div
-  className="person-info"
->
-  <img
-    alt=""
-    className="person-info__ikon"
-    src="person.svg"
-  />
-  <h1>
-    123
-  </h1>
-</div>
-`;
-
 exports[`PersonInfo without person and ident 1`] = `null`;
 
 exports[`basic green PersonInfo snaphot-test 1`] = `

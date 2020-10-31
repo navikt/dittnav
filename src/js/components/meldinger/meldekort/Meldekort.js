@@ -14,7 +14,7 @@ import { useMeldekort } from '../../../hooks/api/usePerson';
 const Meldekort = ({ intl }) => {
   const [{ data: meldekort }] = useMeldekort();
 
-  if (!meldekort) {
+  if (!meldekort || !meldekort.content) {
     return null;
   }
 

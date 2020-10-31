@@ -20,13 +20,13 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
     );
   }
 
-  if (!beskjeder || !oppgaver || !innbokser || !innloggingsstatus) {
+  if (!innloggingsstatus.data || !innloggingsstatus.data.content) {
     return null;
   }
 
   return (
     <>
-      {oppgaver.data && innloggingsstatus.data && oppgaver.data.content.sort(byEventTidspunkt)
+      {oppgaver && oppgaver.data && innloggingsstatus.data && oppgaver.data.content.sort(byEventTidspunkt)
         .map(o => (
           <Oppgave
             key={o.eventId}
@@ -34,7 +34,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             innloggingsstatus={innloggingsstatus.data.content}
           />
         ))}
-      {beskjeder.content && innloggingsstatus.data && beskjeder.content.sort(byEventTidspunkt)
+      {beskjeder && beskjeder.content && innloggingsstatus.data && beskjeder.content.sort(byEventTidspunkt)
         .map(b => (
           <Beskjed
             key={b.uid}
@@ -45,7 +45,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser.data && innloggingsstatus.data && innbokser.data.content.sort(byEventTidspunkt)
+      {innbokser && innbokser.data && innloggingsstatus.data && innbokser.data.content.sort(byEventTidspunkt)
         .map(i => (
           <Innboks
             key={i.eventId}

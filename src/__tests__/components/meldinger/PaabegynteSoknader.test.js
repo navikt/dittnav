@@ -26,7 +26,7 @@ test('PaabegynteSoknader empty array', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <StoreProvider>
-      <PaabegynteSoknader paabegynteSoknader={null}/>
+      <PaabegynteSoknader />
     </StoreProvider>
   ));
 
@@ -47,7 +47,7 @@ test('PaabegynteSoknader one soknad', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <StoreProvider>
-      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
+      <PaabegynteSoknader />
     </StoreProvider>
   ));
 
@@ -68,7 +68,7 @@ test('PaabegynteSoknader several soknader', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <StoreProvider>
-      <PaabegynteSoknader paabegynteSoknader={paabegynteSoknader} />
+      <PaabegynteSoknader />
     </StoreProvider>
     ));
 

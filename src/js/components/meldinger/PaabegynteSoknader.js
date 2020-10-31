@@ -17,7 +17,7 @@ const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
 const PaabegynteSoknader = ({ intl }) => {
   const [{ data: paabegynteSoknader }] = usePaabegynteSoknader();
 
-  if (!paabegynteSoknader.content || paabegynteSoknader.content.antallPaabegynte === 0) {
+  if (!paabegynteSoknader || !paabegynteSoknader.content || paabegynteSoknader.content.antallPaabegynte === 0) {
     return null;
   }
 

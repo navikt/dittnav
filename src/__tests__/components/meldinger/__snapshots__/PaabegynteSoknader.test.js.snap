@@ -2,8 +2,6 @@
 
 exports[`PaabegynteSoknader empty array 1`] = `null`;
 
-exports[`PaabegynteSoknader green test 1`] = `null`;
-
 exports[`PaabegynteSoknader one soknad 1`] = `
 <a
   className="lenkepanel infomelding paabegynte-soknader lenkepanel--border"

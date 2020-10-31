@@ -30,7 +30,7 @@ function renderApp() {
     <NavApp defaultSprak="nb" messages={loadMessages()}>
       <ReactQueryCacheProvider queryCache={queryCache}>
         <StoreProvider>
-          <App api={Api} />
+          <App />
         </StoreProvider>
       </ReactQueryCacheProvider>
     </NavApp>, document.getElementById('app'),

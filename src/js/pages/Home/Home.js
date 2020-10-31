@@ -3,9 +3,8 @@ import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import { useIsFetching } from 'react-query';
 import { useOppfolging } from '../../hooks/api/usePerson';
+import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
-import Vta from '../../components/VTA';
-import PageBase from '../PageBase';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import DittnavFliser from '../../components/DittnavFliser';
@@ -15,7 +14,8 @@ import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 import Brodsmuler from '../../utils/brodsmuler';
-import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
+import Vta from '../../components/VTA';
+import PageBase from '../PageBase';
 
 const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();

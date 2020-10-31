@@ -24,6 +24,7 @@ test('basic green PersonInfo snaphot-test', () => {
       isLoading: false,
       isError: false,
     }]);
+
   sandbox.stub(usePerson, 'useIdent')
     .returns([{
       data: { content: null },
@@ -33,8 +34,8 @@ test('basic green PersonInfo snaphot-test', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <StoreProvider>
-      <PersonInfo/>
-    </StoreProvider>
+      <PersonInfo />
+    </StoreProvider>,
   ));
 
   expect(component.toJSON()).toMatchSnapshot();
@@ -47,6 +48,7 @@ test('basic green PersonInfo snaphot-test without person and with ident', () => 
       isLoading: false,
       isError: false,
     }]);
+
   sandbox.stub(usePerson, 'useNavn')
     .returns([{
       data: { content: null },
@@ -56,8 +58,8 @@ test('basic green PersonInfo snaphot-test without person and with ident', () => 
 
   const component = ReactTestRenderer.create(wrapIntl(
     <StoreProvider>
-      <PersonInfo/>
-    </StoreProvider>
+      <PersonInfo />
+    </StoreProvider>,
   ));
 
   expect(component.toJSON()).toMatchSnapshot();
@@ -70,6 +72,7 @@ test('PersonInfo without person and ident', () => {
       isLoading: false,
       isError: true,
     }]);
+
   sandbox.stub(usePerson, 'useIdent')
     .returns([{
       data: { content: null },
@@ -79,8 +82,8 @@ test('PersonInfo without person and ident', () => {
 
   const component = ReactTestRenderer.create(wrapIntl(
     <StoreProvider>
-      <PersonInfo/>
-    </StoreProvider>
+      <PersonInfo />
+    </StoreProvider>,
   ));
 
   expect(component.toJSON()).toMatchSnapshot();
