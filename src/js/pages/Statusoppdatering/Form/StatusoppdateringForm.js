@@ -8,7 +8,7 @@ import Api from '../../../Api';
 const initialState = {
   statusGlobal: 'SENDT',
   statusIntern: '',
-  grupperingsid: '',
+  grupperingsid: 'default-grupperingsid',
   link: '',
   sakstema: '',
 };

@@ -4,7 +4,7 @@ import { FetchError } from 'node-fetch';
 
 it('it crashes', async () => {
   expect.assertions(1);
-  await expect(Api.fetchPersonNavn()).rejects.toEqual(new FetchError('invalid json response body at undefined reason: Unexpected end of JSON input'));
+  await expect(Api.fetchPersonNavn()).rejects.toEqual(new FetchError('invalid json response body at  reason: Unexpected end of JSON input'));
 });
 
 it('handling Unauthorized', async () => {
