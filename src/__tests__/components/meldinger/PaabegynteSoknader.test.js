@@ -22,6 +22,7 @@ test('PaabegynteSoknader empty array', () => {
     .returns([{
       data: { content: null },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -43,6 +44,7 @@ test('PaabegynteSoknader one soknad', () => {
     .returns([{
       data: { content: paabegynteSoknader },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -64,6 +66,7 @@ test('PaabegynteSoknader several soknader', () => {
     .returns([{
       data: { content: paabegynteSoknader },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(

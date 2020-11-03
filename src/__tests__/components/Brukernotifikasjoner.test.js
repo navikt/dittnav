@@ -104,6 +104,7 @@ test('Brukernotifikasjoner empty', () => {
     .returns([{
       data: { content: null },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -121,6 +122,7 @@ test('Brukernotifikasjoner with beskjeder', () => {
     .returns([{
       data: { content: innloggingsstatus },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -139,6 +141,7 @@ test('Brukernotifikasjoner with oppgaver', () => {
     .returns([{
       data: { content: innloggingsstatus },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -157,6 +160,7 @@ test('Brukernotifikasjoner with innbokser', () => {
     .returns([{
       data: { content: innloggingsstatus },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -175,6 +179,7 @@ test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser', () => {
     .returns([{
       data: { content: innloggingsstatus },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -193,6 +198,7 @@ test('Brukernotifikasjoner with beskjeder, oppgaver and innbokser, but no innlog
     .returns([{
       data: { content: null },
       isLoading: false,
+      isSuccess: false,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(

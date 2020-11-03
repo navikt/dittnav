@@ -7,6 +7,14 @@ import IkonBeskjed from '../../../assets/IkonBeskjed';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 import { usePaabegynteSoknader } from '../../hooks/api/useSaker';
 
+const hasContent = (paabegynteSoknader) => (
+  paabegynteSoknader && paabegynteSoknader.content
+);
+
+const hasNoPaabegynteSoknader = (paabegynteSoknader) => (
+  paabegynteSoknader && paabegynteSoknader.content && paabegynteSoknader.content.antallPaabegynte === 0
+);
+
 const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
   <PanelOverskrift
     overskrift={<F id={soknadstekst} values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />}
@@ -15,9 +23,9 @@ const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
 );
 
 const PaabegynteSoknader = ({ intl }) => {
-  const [{ data: paabegynteSoknader }] = usePaabegynteSoknader();
+  const [{ data: paabegynteSoknader, isSuccess }] = usePaabegynteSoknader();
 
-  if (!paabegynteSoknader || !paabegynteSoknader.content || paabegynteSoknader.content.antallPaabegynte === 0) {
+  if (!isSuccess || !hasContent(paabegynteSoknader) || hasNoPaabegynteSoknader(paabegynteSoknader)) {
     return null;
   }
 

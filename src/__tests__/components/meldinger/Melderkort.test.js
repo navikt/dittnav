@@ -25,6 +25,7 @@ test('basic Meldekort test with no meldekort', () => {
     .returns([{
       data: { content: null },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -57,6 +58,7 @@ test('basic Meldekort test', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -89,6 +91,7 @@ test('basic one Meldekort test', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -120,6 +123,7 @@ test('basic one Meldekort test no risk', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -152,6 +156,7 @@ test('no cards no risk', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -183,6 +188,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -214,6 +220,7 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -245,6 +252,7 @@ test('12 Meldekort test no risk no remaining holidays', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -277,6 +285,7 @@ test('basic zero Meldekort test', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -308,6 +317,7 @@ test('nesteInnsendingAvMeldekort is null', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -331,6 +341,7 @@ test('Meldekort without next card test', () => {
     .returns([{
       data: { content: meldekort },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(

@@ -12,9 +12,9 @@ import { buildNavNoUrl } from '../../../utils/api';
 import { useMeldekort } from '../../../hooks/api/usePerson';
 
 const Meldekort = ({ intl }) => {
-  const [{ data: meldekort }] = useMeldekort();
+  const [{ data: meldekort, isSuccess }] = useMeldekort();
 
-  if (!meldekort || !meldekort.content) {
+  if (!isSuccess || !meldekort.content) {
     return null;
   }
 

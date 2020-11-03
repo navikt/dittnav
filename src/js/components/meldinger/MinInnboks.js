@@ -36,13 +36,17 @@ const createOverskrift = (message, numberToWord, formatFlereEn) => {
 };
 
 const MinInnboks = ({ intl }) => {
-  const [{ data: meldinger }] = useMeldinger();
+  const [{ data: meldinger, isSuccess }] = useMeldinger();
   const { numberToWord } = i18n[intl.locale];
   const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
+  if (!isSuccess) {
+    return null;
+  }
+
   return (
     <>
-      {meldinger && meldinger.content.map(message => (
+      {meldinger.content.map(message => (
         <LenkepanelMedIkon
           key={message.type}
           className="infomelding innboks"

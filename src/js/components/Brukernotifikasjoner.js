@@ -12,7 +12,7 @@ import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInaktiv }) => {
-  const [innloggingsstatus] = useInnloggingsstatus();
+  const [{ data: innloggingsstatus, isSuccess }] = useInnloggingsstatus();
 
   if (useStore().state.visInnloggingsModal) {
     return (
@@ -20,37 +20,43 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
     );
   }
 
-  if (!innloggingsstatus.data || !innloggingsstatus.data.content) {
+  /*
+  if (!innloggingsstatus || !innloggingsstatus.content) {
+    return null;
+  }
+   */
+
+  if (!isSuccess) {
     return null;
   }
 
   return (
     <>
-      {oppgaver && oppgaver.data && innloggingsstatus.data && oppgaver.data.content.sort(byEventTidspunkt)
+      {oppgaver && oppgaver.data && innloggingsstatus && oppgaver.data.content.sort(byEventTidspunkt)
         .map(o => (
           <Oppgave
             key={o.eventId}
             oppgave={o}
-            innloggingsstatus={innloggingsstatus.data.content}
+            innloggingsstatus={innloggingsstatus.content}
           />
         ))}
-      {beskjeder && beskjeder.content && innloggingsstatus.data && beskjeder.content.sort(byEventTidspunkt)
+      {beskjeder && beskjeder.content && innloggingsstatus && beskjeder.content.sort(byEventTidspunkt)
         .map(b => (
           <Beskjed
             key={b.uid}
             beskjed={b}
             beskjeder={b}
-            innloggingsstatus={innloggingsstatus.data.content}
+            innloggingsstatus={innloggingsstatus.content}
             erAktiv={erAktiv}
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innbokser.data && innloggingsstatus.data && innbokser.data.content.sort(byEventTidspunkt)
+      {innbokser && innbokser.data && innloggingsstatus && innbokser.data.content.sort(byEventTidspunkt)
         .map(i => (
           <Innboks
             key={i.eventId}
             innboks={i}
-            innloggingsstatus={innloggingsstatus.data.content}
+            innloggingsstatus={innloggingsstatus.content}
           />
         ))}
     </>

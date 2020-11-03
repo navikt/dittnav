@@ -22,9 +22,13 @@ const createOverskrift = (ettereg, intl) => {
 };
 
 const EtterregistreringMeldekort = ({ intl }) => {
-  const [{ data: meldekort }] = useMeldekort();
+  const [{ data: meldekort, isSuccess }] = useMeldekort();
 
-  if (meldekort && meldekort.content.etterregistrerteMeldekort && meldekort.content.etterregistrerteMeldekort > 0) {
+  if (!isSuccess) {
+    return null;
+  }
+
+  if (meldekort.content.etterregistrerteMeldekort && meldekort.content.etterregistrerteMeldekort > 0) {
     return (
       <LenkepanelMedIkon
         className="infomelding oppgave"

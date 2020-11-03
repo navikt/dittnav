@@ -24,6 +24,7 @@ test('MinInnboks with one document', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -43,6 +44,7 @@ test('MinInnboks with two documents', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -63,6 +65,7 @@ test('MinInnboks with two documents but different types', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -80,6 +83,7 @@ test('MinInnboks with one task', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -98,6 +102,7 @@ test('MinInnboks with two tasks', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -116,6 +121,7 @@ test('MinInnboks with zero tasks', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -137,6 +143,7 @@ test('MinInnboks with one unread task and one unread', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -155,6 +162,7 @@ test('MinInnboks with two unread', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -173,6 +181,7 @@ test('MinInnboks with one unanswered', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -191,6 +200,7 @@ test('MinInnboks with two unanswered', () => {
     .returns([{
       data: { content: mininnboks },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -207,6 +217,7 @@ test('MinInnboks with empty input', () => {
     .returns([{
       data: { content: [] },
       isLoading: false,
+      isSuccess: true,
     }]);
 
   const component = ReactTestRenderer.create(wrapIntl(
