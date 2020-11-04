@@ -3,7 +3,7 @@ import Meldekort from 'js/components/meldinger/meldekort/Meldekort';
 import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
 import StoreProvider from '../../../js/context/StoreProvider';
-import * as usePerson from '../../../js/hooks/api/usePerson';
+import * as usePerson from '../../../js/hooks/usePerson';
 import sinon from 'sinon';
 const ReactTestRenderer = require('react-test-renderer');
 

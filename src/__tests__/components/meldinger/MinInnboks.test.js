@@ -4,7 +4,7 @@ import MinInnboks from 'js/components/meldinger/MinInnboks'
 import wrapIntl from 'js/IntlTestHelper';
 import sinon from 'sinon';
 import StoreProvider from '../../../js/context/StoreProvider';
-import * as usePerson from '../../../js/hooks/api/usePerson';
+import * as usePerson from '../../../js/hooks/usePerson';
 
 jest.mock('react-ga');
 let sandbox = null;

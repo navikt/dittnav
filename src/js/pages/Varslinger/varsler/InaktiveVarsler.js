@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
-import useInaktiveBrukernotifikasjoner from '../../../hooks/api/useInaktiveBrukernotifikasjoner';
+import useInaktiveBrukernotifikasjoner from '../../../hooks/useInaktiveBrukernotifikasjoner';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
 
 const InaktiveVarsler = () => {

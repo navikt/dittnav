@@ -9,7 +9,7 @@ import IkonBeskjed from '../../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../../assets/IkonOppgave';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/GoogleAnalytics';
 import { buildNavNoUrl } from '../../../utils/api';
-import { useMeldekort } from '../../../hooks/api/usePerson';
+import { useMeldekort } from '../../../hooks/usePerson';
 
 const Meldekort = ({ intl }) => {
   const [{ data: meldekort, isSuccess }] = useMeldekort();

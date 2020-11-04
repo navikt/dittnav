@@ -5,7 +5,7 @@ import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
-import { usePaabegynteSoknader } from '../../hooks/api/useSaker';
+import { usePaabegynteSoknader } from '../../hooks/useSaker';
 
 const hasContent = (paabegynteSoknader) => (
   paabegynteSoknader && paabegynteSoknader.content

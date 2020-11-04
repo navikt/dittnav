@@ -6,7 +6,7 @@ import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import IkonInnboks from '../../../assets/IkonInnboks';
 import { GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
-import { useMeldinger } from '../../hooks/api/usePerson';
+import { useMeldinger } from '../../hooks/usePerson';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {

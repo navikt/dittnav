@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { Toggle } from './constants';
-import useApiQueries from './hooks/api/useApiQueries';
+import useApiQueries from './hooks/useApiQueries';
 import ScrollToTop from './components/scroll/ScrollToTop';
 import Home from './pages/Home/Home';
 import Varslinger from './pages/Varslinger/Varslinger';

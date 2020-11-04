@@ -6,7 +6,7 @@ import Innboks from './brukernotifikasjoner/Innboks';
 import InnloggingsModal from './common/InnloggingsModal';
 import useStore from '../hooks/useStore';
 import { byEventTidspunkt } from '../utils/datoUtils';
-import useInnloggingsstatus from '../hooks/api/useInnloggingsstatus';
+import useInnloggingsstatus from '../hooks/useInnloggingsstatus';
 import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';

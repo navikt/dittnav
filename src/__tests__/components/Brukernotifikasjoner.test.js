@@ -4,7 +4,7 @@ import wrapIntl from 'js/IntlTestHelper';
 import sinon from 'sinon';
 import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
 import BeskjedStoreProvider from 'js/context/StoreProvider';
-import * as useInnloggingsstatus from '../../js/hooks/api/useInnloggingsstatus';
+import * as useInnloggingsstatus from '../../js/hooks/useInnloggingsstatus';
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');

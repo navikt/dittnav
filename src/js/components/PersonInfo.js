@@ -1,6 +1,6 @@
 import React from 'react';
 import Personikon from '../../assets/person.svg';
-import { useIdent, useNavn } from '../hooks/api/usePerson';
+import { useIdent, useNavn } from '../hooks/usePerson';
 
 const PersonInfo = () => {
   const [{ data: personNavn, isError: navnFailed }] = useNavn();

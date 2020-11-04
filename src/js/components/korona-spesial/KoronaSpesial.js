@@ -7,7 +7,7 @@ import { KoronaVarsel } from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
 import { lenker } from '../../utils/lenker';
-import { useSakstema } from '../../hooks/api/useSaker';
+import { useSakstema } from '../../hooks/useSaker';
 
 const visForskuddLenkeFra = '01-03-2020';
 

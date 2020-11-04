@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import useInngang from '../hooks/useInngang';
-import useBrukernotifikasjoner from '../hooks/api/useBrukernotifikasjoner';
-import useInaktiveBrukernotifikasjoner from '../hooks/api/useInaktiveBrukernotifikasjoner';
+import useBrukernotifikasjoner from '../hooks/useBrukernotifikasjoner';
+import useInaktiveBrukernotifikasjoner from '../hooks/useInaktiveBrukernotifikasjoner';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
 import PaabegynteSoknader from './meldinger/PaabegynteSoknader';

@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Systemtittel } from 'nav-frontend-typografi';
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
-import useBrukernotifikasjoner from '../../../hooks/api/useBrukernotifikasjoner';
+import useBrukernotifikasjoner from '../../../hooks/useBrukernotifikasjoner';
 
 const antallVarsler = (varsler) => (varsler && varsler.content ? varsler.content.length : 0);
 

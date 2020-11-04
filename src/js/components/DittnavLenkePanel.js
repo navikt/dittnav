@@ -5,7 +5,7 @@ import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
 import { lenker } from '../utils/lenker';
-import { useSakstema } from '../hooks/api/useSaker';
+import { useSakstema } from '../hooks/useSaker';
 
 const antallSakstemaVist = 2;
 

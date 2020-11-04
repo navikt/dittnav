@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import wrapIntl from 'js/IntlTestHelper';
 import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 import BeskjedStoreProvider from 'js/context/StoreProvider';
-import * as useSaker from '../../js/hooks/api/useSaker';
+import * as useSaker from '../../js/hooks/useSaker';
 
 const ReactTestRenderer = require('react-test-renderer');
 

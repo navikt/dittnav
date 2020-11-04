@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import { useIsFetching } from 'react-query';
-import { useOppfolging } from '../../hooks/api/usePerson';
+import { useOppfolging } from '../../hooks/usePerson';
 import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
 import PersonInfo from '../../components/PersonInfo';

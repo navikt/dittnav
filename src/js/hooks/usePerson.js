@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
-import Api from '../../Api';
-import useStore from '../useStore';
+import Api from '../Api';
+import useStore from './useStore';
 
 export const useOppfolging = () => (
   [useQuery('oppfolging', Api.fetchOppfolging, { onError: useStore().setError })]
