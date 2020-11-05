@@ -18,7 +18,7 @@ const useInaktiveOppgaver = () => (
 );
 
 const useInaktiveInnbokser = () => (
-  useQuery('inaktiveInnbokser', Api.fetchInnbokser, { onError: useStore().setError })
+  useQuery('inaktiveInnbokser', Api.fetchInaktiveInnbokser, { onError: useStore().setError })
 );
 
 const useInaktiveBrukernotifikasjoner = () => (

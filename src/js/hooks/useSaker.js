@@ -6,9 +6,17 @@ export const useSakstema = () => (
   [useQuery('sakstema', Api.fetchSakstema, { onError: useStore().setError })]
 );
 
-export const usePaabegynteSoknader = () => (
-  [useQuery('paabegynteSoknader', Api.fetchSaker, { onError: useStore().setError })]
-);
+export const usePaabegynteSoknader = () => {
+  const store = useStore();
+
+  const checkForFeilendeBaksystem = (data) => {
+    if (data.content.feilendeBaksystem.length > 0) {
+      store.setError();
+    }
+  };
+
+  return [useQuery('paabegynteSoknader', Api.fetchSaker, { onSuccess: checkForFeilendeBaksystem, onError: store.setError })];
+};
 
 const useSaker = () => (
   [useSakstema(), usePaabegynteSoknader()]

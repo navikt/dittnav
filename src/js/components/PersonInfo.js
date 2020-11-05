@@ -3,14 +3,14 @@ import Personikon from '../../assets/person.svg';
 import { useIdent, useNavn } from '../hooks/usePerson';
 
 const PersonInfo = () => {
-  const [{ data: personNavn, isError: navnFailed }] = useNavn();
-  const [{ data: personIdent, isError: personIdentFailed }] = useIdent(false);
+  const [{ data: personNavn, isError: personNavnFailed }] = useNavn();
+  const [{ data: personIdent, isError: personIdentFailed }] = useIdent(personNavnFailed);
 
   if ((!personNavn && !personIdent) || personIdentFailed) {
     return null;
   }
 
-  const navnOrIdent = navnFailed ? personIdent.content.ident : personNavn.content.navn.toLowerCase();
+  const navnOrIdent = personNavnFailed ? personIdent.content.ident : personNavn.content.navn.toLowerCase();
 
   return (
     <div className="person-info">

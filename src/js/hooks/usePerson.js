@@ -19,11 +19,11 @@ export const useIdent = (enabled) => (
 );
 
 export const useNavn = () => (
-  [useQuery('navn', Api.fetchPersonNavn, { onError: useIdent })]
+  [useQuery('navn', Api.fetchPersonNavn, { onError: useStore().setError })]
 );
 
 const usePerson = () => (
-  [useOppfolging(), useMeldekort(), useMeldinger(), useIdent(), useNavn()]
+  [useOppfolging(), useMeldekort(), useMeldinger(), useNavn()]
 );
 
 export default usePerson;
