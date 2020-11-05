@@ -12,7 +12,7 @@ import MinInnboks from './meldinger/MinInnboks';
 import InngangVarslinger from './InngangVarslinger';
 
 const InfoMeldinger = () => {
-  const [beskjeder, oppgaver, innbokser] = useBrukernotifikasjoner();
+  const [beskjeder, { data: oppgaver }, { data: innbokser }] = useBrukernotifikasjoner();
   const [inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser] = useInaktiveBrukernotifikasjoner();
   const [visInngangTilVarslinger] = useInngang(inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser);
 

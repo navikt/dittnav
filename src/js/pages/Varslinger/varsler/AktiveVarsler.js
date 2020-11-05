@@ -7,8 +7,8 @@ import useBrukernotifikasjoner from '../../../hooks/useBrukernotifikasjoner';
 const antallVarsler = (varsler) => (varsler && varsler.content ? varsler.content.length : 0);
 
 const AktiveVarsler = () => {
-  const [beskjeder, oppgaver, innbokser] = useBrukernotifikasjoner();
-  const antallAktiveVarsler = antallVarsler(beskjeder) + antallVarsler(oppgaver.data) + antallVarsler(innbokser.data);
+  const [beskjeder, { data: oppgaver }, { data: innbokser }] = useBrukernotifikasjoner();
+  const antallAktiveVarsler = antallVarsler(beskjeder) + antallVarsler(oppgaver) + antallVarsler(innbokser);
 
   return (
     <div className="aktive-varsler">

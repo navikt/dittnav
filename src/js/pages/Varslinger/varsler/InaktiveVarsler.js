@@ -5,7 +5,7 @@ import useInaktiveBrukernotifikasjoner from '../../../hooks/useInaktiveBrukernot
 import Brukernotifikasjoner from '../../../components/Brukernotifikasjoner';
 
 const InaktiveVarsler = () => {
-  const [inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser] = useInaktiveBrukernotifikasjoner();
+  const [inaktiveBeskjeder, { data: inaktiveOppgaver }, { data: inaktiveInnbokser }] = useInaktiveBrukernotifikasjoner();
 
   if (!inaktiveBeskjeder || !inaktiveOppgaver || !inaktiveInnbokser) {
     return null;

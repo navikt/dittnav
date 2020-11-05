@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, bool } from 'prop-types';
+import { bool } from 'prop-types';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
@@ -20,19 +20,13 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
     );
   }
 
-  /*
-  if (!innloggingsstatus || !innloggingsstatus.content) {
-    return null;
-  }
-   */
-
   if (!isSuccess) {
     return null;
   }
 
   return (
     <>
-      {oppgaver && oppgaver.data && innloggingsstatus && oppgaver.data.content.sort(byEventTidspunkt)
+      {oppgaver && innloggingsstatus && oppgaver.content.sort(byEventTidspunkt)
         .map(o => (
           <Oppgave
             key={o.eventId}
@@ -51,7 +45,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innbokser.data && innloggingsstatus && innbokser.data.content.sort(byEventTidspunkt)
+      {innbokser && innloggingsstatus && innbokser.content.sort(byEventTidspunkt)
         .map(i => (
           <Innboks
             key={i.eventId}
@@ -64,9 +58,9 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
 };
 
 Brukernotifikasjoner.propTypes = {
-  beskjeder: arrayOf(BeskjedType),
-  oppgaver: arrayOf(OppgaveType),
-  innbokser: arrayOf(InnboksType),
+  beskjeder: BeskjedType,
+  oppgaver: OppgaveType,
+  innbokser: InnboksType,
   erAktiv: bool,
   erInaktiv: bool,
 };
