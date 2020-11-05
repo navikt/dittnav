@@ -11,10 +11,14 @@ import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/G
 import { buildNavNoUrl } from '../../../utils/api';
 import { useMeldekort } from '../../../hooks/usePerson';
 
+const isMeldekortbruker = (meldekort) => (
+  meldekort && meldekort.content ? meldekort.content.meldekortbruker : false
+);
+
 const Meldekort = ({ intl }) => {
   const [{ data: meldekort, isSuccess }] = useMeldekort();
 
-  if (!isSuccess || !meldekort.content) {
+  if (!isSuccess || !meldekort.content || !isMeldekortbruker(meldekort)) {
     return null;
   }
 

@@ -39,6 +39,7 @@ test('basic Meldekort test with no meldekort', () => {
 
 test('basic Meldekort test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 2,
       nesteMeldekort: {
@@ -72,6 +73,7 @@ test('basic Meldekort test', () => {
 
 test('basic one Meldekort test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -105,6 +107,7 @@ test('basic one Meldekort test', () => {
 
 test('basic one Meldekort test no risk', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -137,6 +140,7 @@ test('basic one Meldekort test no risk', () => {
 
 test('no cards no risk', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
@@ -170,6 +174,7 @@ test('no cards no risk', () => {
 
 test('basic one Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -202,6 +207,7 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
 
 test('more than 13 Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 13,
       nesteMeldekort: {
@@ -234,6 +240,7 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
 
 test('12 Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 12,
       nesteMeldekort: {
@@ -266,6 +273,7 @@ test('12 Meldekort test no risk no remaining holidays', () => {
 
 test('basic zero Meldekort test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
@@ -299,6 +307,7 @@ test('basic zero Meldekort test', () => {
 
 test('nesteInnsendingAvMeldekort is null', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -331,6 +340,7 @@ test('nesteInnsendingAvMeldekort is null', () => {
 
 test('Meldekort without next card test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 0,
     },
