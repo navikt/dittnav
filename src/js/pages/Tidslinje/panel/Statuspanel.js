@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel } from 'nav-frontend-paneler';
+import Panel from 'nav-frontend-paneler';
 import { Systemtittel, Element } from 'nav-frontend-typografi';
 import { FormattedMessage } from 'react-intl';
 import Oppgave from '../../../components/brukernotifikasjoner/Oppgave';

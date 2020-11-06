@@ -1,12 +1,13 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import { NAV_NO_URL, Path } from '../../constants';
+import { Path } from '../../constants';
 import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import MeldekortType from '../../types/MeldekortType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { buildNavNoUrl } from '../../utils/api';
 
 const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort === 1 ? translater.oneNeuter() : translater.numberToWord(antallMeldekort));
 
@@ -28,7 +29,7 @@ const EtterregistreringMeldekort = ({ ettereg, intl }) => {
         className="infomelding oppgave"
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(ettereg, intl)}
-        href={`${NAV_NO_URL}${Path.ETTERREGISTRERT}`}
+        href={`${buildNavNoUrl(Path.ETTERREGISTRERTE_MELDEKORT)}`}
         gaCategory={GoogleAnalyticsCategory.Forside}
         gaAction={GoogleAnalyticsAction.EtterregistrerteMeldekort}
       >
