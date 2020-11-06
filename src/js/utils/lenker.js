@@ -53,7 +53,7 @@ export const lenker = {
   },
   saksoversikt: {
     tittel: 'Dine saker',
-    url: `${window.env.TJENESTER_URL}/saksoversikt`,
+    url: `${window.env.TJENESTER_URL}/esso/saml2/jsp/spSSOInit.jsp?metaAlias=/sp&idpEntityID=idporten.difi.no-v4&NameIDFormat=transient&goto=https://tjenester.nav.no/saksoversikt/&AuthLevel=4`,
   },
   saksoversiktTema: {
     tittel: 'Dine saker',
@@ -65,7 +65,7 @@ export const lenker = {
   },
   innboks: {
     tittel: 'Innboks',
-    url: `${window.env.TJENESTER_URL}/mininnboks`,
+    url: `${window.env.TJENESTER_URL}/esso/saml2/jsp/spSSOInit.jsp?metaAlias=/sp&idpEntityID=idporten.difi.no-v4&NameIDFormat=transient&goto=https://tjenester.nav.no/mininnboks/&AuthLevel=4`,
   },
   digisos: {
     tittel: 'Digisos',
