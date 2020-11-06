@@ -11,7 +11,7 @@ import DittnavFliser from '../../components/DittnavFliser';
 import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
-import DelayedSpinner from '../../components/DelayedSpinner';
+import DelayedSpinner from '../../components/common/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
 import Brodsmuler from '../../utils/brodsmuler';
 import Vta from '../../components/VTA';

@@ -59,7 +59,7 @@ export const Path = Object.freeze({
   CONTEXT: '/person/dittnav',
   VTA: window.env.VTA_URL,
   MELDEKORT: '/meldekort',
-  ETTERREGISTRERT: '/meldekort/etterregistrer-meldekort',
+  ETTERREGISTRERTE_MELDEKORT: '/meldekort/etterregistrer-meldekort',
 });
 
 export const Format = Object.freeze({
