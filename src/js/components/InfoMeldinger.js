@@ -13,7 +13,7 @@ import InngangVarslinger from './InngangVarslinger';
 
 const InfoMeldinger = () => {
   const [beskjeder, { data: oppgaver }, { data: innbokser }] = useBrukernotifikasjoner();
-  const [inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser] = useInaktiveBrukernotifikasjoner();
+  const [inaktiveBeskjeder, { data: inaktiveOppgaver }, { data: inaktiveInnbokser }] = useInaktiveBrukernotifikasjoner();
   const [visInngangTilVarslinger] = useInngang(inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser);
 
   return (
