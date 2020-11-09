@@ -9,7 +9,7 @@ import Api from '../../Api';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import BeskjedType from '../../types/BeskjedType';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/googleAnalytics';
 
 const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
   Api.postDone({

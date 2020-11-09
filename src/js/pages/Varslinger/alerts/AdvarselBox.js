@@ -4,7 +4,7 @@ import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
 import { lenker } from '../../../utils/lenker';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../../utils/googleAnalytics';
 
 const AdvarselBox = () => (
   <div className="alertbox">

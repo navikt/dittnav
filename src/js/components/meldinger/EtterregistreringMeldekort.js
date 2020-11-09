@@ -5,7 +5,7 @@ import i18n from '../../../translations/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { useMeldekort } from '../../hooks/usePerson';
 import { buildNavNoUrl } from '../../utils/api';
 

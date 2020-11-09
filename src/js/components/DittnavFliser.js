@@ -6,7 +6,7 @@ import IkonBlyant from '../../assets/IkonBlyant';
 import IkonSparegris from '../../assets/IkonKane';
 import IkonPlaster from '../../assets/IkonPlaster';
 import IkonSkilt from '../../assets/IkonSkilt';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../utils/googleAnalytics';
 import { lenker } from '../utils/lenker';
 
 const DittnavFliser = () => (

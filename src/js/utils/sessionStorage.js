@@ -1,4 +1,4 @@
-import log from './Logger';
+import log from './logger';
 
 export const setStorageItem = (key, value) => {
   try {

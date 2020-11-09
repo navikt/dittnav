@@ -1,7 +1,7 @@
 import * as React from 'react';
 import sinon from 'sinon';
 import PaabegynteSoknader from 'js/components/meldinger/PaabegynteSoknader';
-import wrapIntl from 'js/IntlTestHelper';
+import wrapIntl from 'js/utils/intlTestHelper';
 import * as useSaker from '../../../js/hooks/useSaker';
 import StoreProvider from '../../../js/context/StoreProvider';
 const ReactTestRenderer = require('react-test-renderer');

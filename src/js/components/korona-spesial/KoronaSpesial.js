@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { KoronaVarsel } from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { lenker } from '../../utils/lenker';
 import { useSakstema } from '../../hooks/useSaker';
 

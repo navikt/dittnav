@@ -7,7 +7,7 @@ import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import OppgaveType from '../../types/OppgaveType';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
-import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, removeFragment } from '../../utils/googleAnalytics';
 
 const Oppgave = ({ oppgave, innloggingsstatus }) => {
   const location = useLocation();

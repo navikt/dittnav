@@ -7,7 +7,7 @@ import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import IkonBeskjed from '../../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../../assets/IkonOppgave';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/googleAnalytics';
 import { buildNavNoUrl } from '../../../utils/api';
 import { useMeldekort } from '../../../hooks/usePerson';
 
