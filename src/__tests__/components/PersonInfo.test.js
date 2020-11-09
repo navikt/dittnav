@@ -1,23 +1,90 @@
 import * as React from 'react';
+import sinon from 'sinon';
 import PersonInfo from 'js/components/PersonInfo';
 import wrapIntl from 'js/IntlTestHelper';
+import * as usePerson from '../../js/hooks/usePerson';
+import StoreProvider from '../../js/context/StoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
+let sandbox = null;
+
+beforeEach(() => {
+  sandbox = sinon.createSandbox();
+});
+
+afterEach(() => {
+  usePerson.useIdent.restore();
+  usePerson.useNavn.restore();
+});
+
 test('basic green PersonInfo snaphot-test', () => {
-  const person = { navn: 'Hello' };
-  const ident = { ident: 123 };
-  const component = ReactTestRenderer.create(wrapIntl(<PersonInfo person={person} identifikator={ident} />));
+  sandbox.stub(usePerson, 'useNavn')
+    .returns([{
+      data: { content: { navn: 'Hello' } },
+      isLoading: false,
+      isError: false,
+    }]);
+
+  sandbox.stub(usePerson, 'useIdent')
+    .returns([{
+      data: { content: null },
+      isLoading: false,
+      isError: false,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <PersonInfo />
+    </StoreProvider>,
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('basic green PersonInfo snaphot-test without person and with ident', () => {
-  const person = null;
-  const ident = { ident: 123 };
-  const component = ReactTestRenderer.create(wrapIntl(<PersonInfo person={person} identifikator={ident} />));
+  sandbox.stub(usePerson, 'useIdent')
+    .returns([{
+      data: { content: { ident: 123 } },
+      isLoading: false,
+      isError: false,
+    }]);
+
+  sandbox.stub(usePerson, 'useNavn')
+    .returns([{
+      data: { content: null },
+      isLoading: false,
+      isError: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <PersonInfo />
+    </StoreProvider>,
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('PersonInfo without person and ident', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<PersonInfo />));
+  sandbox.stub(usePerson, 'useNavn')
+    .returns([{
+      data: { content: null },
+      isLoading: false,
+      isError: true,
+    }]);
+
+  sandbox.stub(usePerson, 'useIdent')
+    .returns([{
+      data: { content: null },
+      isLoading: false,
+      isError: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <PersonInfo />
+    </StoreProvider>,
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const isEmpty = (array) => array.length === 0;
 
 const ifUserHas = (inaktiveBrukernotifikasjoner) => (
-  inaktiveBrukernotifikasjoner && !isEmpty(inaktiveBrukernotifikasjoner)
+  inaktiveBrukernotifikasjoner && inaktiveBrukernotifikasjoner.content && !isEmpty(inaktiveBrukernotifikasjoner.content)
 );
 
 const useInngang = (inaktiveBeskjeder, inaktiveOppgaver, inaktiveInnbokser) => {

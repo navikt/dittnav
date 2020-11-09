@@ -2,19 +2,44 @@ import * as React from 'react';
 import Meldekort from 'js/components/meldinger/meldekort/Meldekort';
 import wrapIntl from 'js/IntlTestHelper';
 import i18n from 'translations/i18n';
+import StoreProvider from '../../../js/context/StoreProvider';
+import * as usePerson from '../../../js/hooks/usePerson';
+import sinon from 'sinon';
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');
+let sandbox = null;
+
+beforeEach(() => {
+  sandbox = sinon.createSandbox();
+});
+
+afterEach(() => {
+  usePerson.useMeldekort.restore();
+});
 
 i18n.nb.formatDate = date => new Date(date).toLocaleDateString('en-US');
 
 test('basic Meldekort test with no meldekort', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: null },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort/>
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('basic Meldekort test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 2,
       nesteMeldekort: {
@@ -30,12 +55,25 @@ test('basic Meldekort test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('basic one Meldekort test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -51,12 +89,25 @@ test('basic one Meldekort test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('basic one Meldekort test no risk', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -71,12 +122,25 @@ test('basic one Meldekort test no risk', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('no cards no risk', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
@@ -92,12 +156,25 @@ test('no cards no risk', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('basic one Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -112,12 +189,25 @@ test('basic one Meldekort test no risk no remaining holidays', () => {
     resterendeFeriedager: null,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+    ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('more than 13 Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 13,
       nesteMeldekort: {
@@ -132,12 +222,25 @@ test('more than 13 Meldekort test no risk no remaining holidays', () => {
     resterendeFeriedager: null,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('12 Meldekort test no risk no remaining holidays', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 12,
       nesteMeldekort: {
@@ -152,12 +255,25 @@ test('12 Meldekort test no risk no remaining holidays', () => {
     resterendeFeriedager: null,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('basic zero Meldekort test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 0,
       nesteMeldekort: {
@@ -173,12 +289,25 @@ test('basic zero Meldekort test', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('nesteInnsendingAvMeldekort is null', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 1,
       nesteMeldekort: {
@@ -193,18 +322,43 @@ test('nesteInnsendingAvMeldekort is null', () => {
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Meldekort without next card test', () => {
   const meldekort = {
+    meldekortbruker: true,
     nyeMeldekort: {
       antallNyeMeldekort: 0,
     },
     resterendeFeriedager: 12,
   };
 
-  const component = ReactTestRenderer.create(wrapIntl(<Meldekort meldekort={meldekort} />));
+  sandbox.stub(usePerson, 'useMeldekort')
+    .returns([{
+      data: { content: meldekort },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <StoreProvider>
+      <Meldekort />
+    </StoreProvider>
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });

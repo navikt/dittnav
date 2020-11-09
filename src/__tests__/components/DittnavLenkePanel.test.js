@@ -1,10 +1,22 @@
 import * as React from 'react';
+import sinon from 'sinon';
 import wrapIntl from 'js/IntlTestHelper';
 import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
+import BeskjedStoreProvider from 'js/context/StoreProvider';
+import * as useSaker from '../../js/hooks/useSaker';
 
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');
+let sandbox = null;
+
+beforeEach(() => {
+  sandbox = sinon.createSandbox();
+});
+
+afterEach(() => {
+  useSaker.useSakstema.restore();
+});
 
 const sakstemaMedSaker = {
   antallSakstema: 6,
@@ -30,11 +42,35 @@ const sakstemaUtenSaker = {
 };
 
 test('Snapshot test med saker', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<DittnavLenkePanel sakstema={sakstemaMedSaker} />));
+  sandbox.stub(useSaker, 'useSakstema')
+    .returns([{
+      data: { content: sakstemaMedSaker },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <BeskjedStoreProvider>
+      <DittnavLenkePanel />
+    </BeskjedStoreProvider>,
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('Snapshot test uten saker', () => {
-  const component = ReactTestRenderer.create(wrapIntl(<DittnavLenkePanel sakstema={sakstemaUtenSaker} />));
+  sandbox.stub(useSaker, 'useSakstema')
+    .returns([{
+      data: { content: sakstemaUtenSaker },
+      isLoading: false,
+      isSuccess: true,
+    }]);
+
+  const component = ReactTestRenderer.create(wrapIntl(
+    <BeskjedStoreProvider>
+      <DittnavLenkePanel />
+    </BeskjedStoreProvider>,
+  ));
+
   expect(component.toJSON()).toMatchSnapshot();
 });
