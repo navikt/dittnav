@@ -7,7 +7,7 @@ import IkonInnboks from '../../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';
-import { GoogleAnalyticsAction, removeFragment } from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, removeFragment } from '../../utils/googleAnalytics';
 
 const Innboks = ({ innboks, innloggingsstatus }) => {
   const location = useLocation();

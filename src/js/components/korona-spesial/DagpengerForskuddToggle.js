@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
-import { getStorageItem, setStorageItem } from '../../utils/SessionStorage';
+import { getStorageItem, setStorageItem } from '../../utils/sessionStorage';
 import Cookies from 'js-cookie';
-import log from "../../utils/Logger";
+import log from "../../utils/logger";
 
 const sessionIdKey = 'forskudd-dagpenger-session-id';
 const toggleCookieKey = 'forskudd-dagpenger-vises';

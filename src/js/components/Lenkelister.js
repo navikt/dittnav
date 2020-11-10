@@ -1,7 +1,7 @@
 import React from 'react';
 import { shape, arrayOf, string } from 'prop-types';
 import { Normaltekst } from 'nav-frontend-typografi';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
 
 const Lenkelister = (props) => (
   <div className="flere-tjenester">

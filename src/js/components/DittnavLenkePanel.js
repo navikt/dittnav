@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
 import { lenker } from '../utils/lenker';
 import { useSakstema } from '../hooks/useSaker';
 

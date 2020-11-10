@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import wrapIntl from 'js/IntlTestHelper';
+import wrapIntl from 'js/utils/intlTestHelper';
 import sinon from 'sinon';
 import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
 import BeskjedStoreProvider from 'js/context/StoreProvider';

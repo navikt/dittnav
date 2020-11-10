@@ -6,7 +6,7 @@ import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
 import i18n from '../../translations/i18n';
 import { lenker } from '../utils/lenker';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent, removeFragment } from '../utils/GoogleAnalytics';
+import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent, removeFragment } from '../utils/googleAnalytics';
 import { Format } from '../constants';
 
 const sakstemaUrlOverride = {

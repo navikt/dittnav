@@ -1,6 +1,6 @@
 import * as React from 'react';
 import sinon from 'sinon';
-import wrapIntl from 'js/IntlTestHelper';
+import wrapIntl from 'js/utils/intlTestHelper';
 import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
 import BeskjedStoreProvider from 'js/context/StoreProvider';
 import * as useSaker from '../../js/hooks/useSaker';

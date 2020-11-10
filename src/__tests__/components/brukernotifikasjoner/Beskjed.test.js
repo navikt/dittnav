@@ -2,7 +2,7 @@ import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
 import Beskjed from 'js/components/brukernotifikasjoner/Beskjed';
 import StoreProvider from '../../../js/context/StoreProvider';
-import wrapIntl from 'js/IntlTestHelper';
+import wrapIntl from 'js/utils/intlTestHelper';
 import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('react-ga');

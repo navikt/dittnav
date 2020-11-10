@@ -1,7 +1,7 @@
 import * as React from 'react';
 import sinon from 'sinon';
 import PersonInfo from 'js/components/PersonInfo';
-import wrapIntl from 'js/IntlTestHelper';
+import wrapIntl from 'js/utils/intlTestHelper';
 import * as usePerson from '../../js/hooks/usePerson';
 import StoreProvider from '../../js/context/StoreProvider';
 const ReactTestRenderer = require('react-test-renderer');

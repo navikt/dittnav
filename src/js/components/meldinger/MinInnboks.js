@@ -5,7 +5,7 @@ import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../../assets/IkonOppgave';
 import IkonInnboks from '../../../assets/IkonInnboks';
-import { GoogleAnalyticsCategory } from '../../utils/GoogleAnalytics';
+import { GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { useMeldinger } from '../../hooks/usePerson';
 
 const getMinInnboksIcon = (type) => {

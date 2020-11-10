@@ -7,7 +7,7 @@ import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
 import SelectHendelser from './SelectHendelser';
-import log from '../../utils/Logger';
+import log from '../../utils/logger';
 import useStore from '../../hooks/useStore';
 import SelectEksternVarsling from './SelectEksetrnVarsling';
 

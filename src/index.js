@@ -14,16 +14,15 @@ import './css/index.css';
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
 
-import { initializeGoogleAnalytics } from './js/utils/GoogleAnalytics';
+import { initializeGoogleAnalytics } from './js/utils/googleAnalytics';
 import StoreProvider from './js/context/StoreProvider';
-import enableHotModuleReplacement from './js/utils/Parcel';
+import enableHotModuleReplacement from './js/utils/parcel';
 import queryCache from './js/utils/query';
 
 const loadMessages = () => ({
   nb: nbMessages,
   en: enMessages,
 });
-
 
 function renderApp() {
   ReactDOM.render(
