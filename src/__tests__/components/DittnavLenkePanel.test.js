@@ -1,9 +1,9 @@
 import * as React from 'react';
 import sinon from 'sinon';
-import wrapIntl from 'js/utils/intlTestHelper';
-import DittnavLenkePanel from 'js/components/DittnavLenkePanel';
-import BeskjedStoreProvider from 'js/context/StoreProvider';
-import * as useSaker from '../../js/hooks/useSaker';
+import wrapIntl from 'utils/intlTestHelper';
+import DittnavLenkePanel from 'components/DittnavLenkePanel';
+import BeskjedStoreProvider from 'context/StoreProvider';
+import * as useSaker from '../../hooks/useSaker';
 
 const ReactTestRenderer = require('react-test-renderer');
 

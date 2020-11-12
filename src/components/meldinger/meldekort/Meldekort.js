@@ -1,12 +1,12 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import { Path } from '../../../constants';
-import i18n from '../../../../translations/i18n';
+import i18n from '../../../language/i18n';
 import PanelOverskrift from '../../common/PanelOverskrift';
 import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
-import IkonBeskjed from '../../../../assets/IkonBeskjed';
-import IkonOppgave from '../../../../assets/IkonOppgave';
+import IkonBeskjed from '../../../assets/IkonBeskjed';
+import IkonOppgave from '../../../assets/IkonOppgave';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/googleAnalytics';
 import { buildNavNoUrl } from '../../../utils/api';
 import { useMeldekort } from '../../../hooks/usePerson';

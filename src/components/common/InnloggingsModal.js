@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import ModalWrapper from 'nav-frontend-modal';
 import Veilederpanel from 'nav-frontend-veilederpanel';
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
-import IkonVeileder from '../../../assets/IkonVeileder';
+import IkonVeileder from '../../assets/IkonVeileder';
 import { NAV_NO_URL, Innlogging } from '../../constants';
 
 const InnloggingsModal = ({ isOpen, onClick }) => (

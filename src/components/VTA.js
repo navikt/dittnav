@@ -1,5 +1,5 @@
 import React from 'react';
-import NAVSPA from '../../NAVSPA';
+import NAVSPA from '../NAVSPA';
 import { Path } from '../constants';
 
 const VTA = NAVSPA.importer('vta');

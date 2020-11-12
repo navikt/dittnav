@@ -1,6 +1,6 @@
-import Api from 'js/Api';
-/*global global*/
-import { FetchError } from 'node-fetch';
+import Api from 'Api';
+/* global */
+import { FetchError } from 'node-fetch'; // eslint-disable-line import/no-extraneous-dependencies
 
 it('it crashes', async () => {
   expect.assertions(1);
@@ -8,9 +8,9 @@ it('it crashes', async () => {
 });
 
 it('handling Unauthorized', async () => {
-  fetch.mockResponseOnce(JSON.stringify({}), {status: 401});
+  fetch.mockResponseOnce(JSON.stringify({ }), { status: 401 });
   expect.assertions(1);
-  jest.spyOn(window.location, 'assign').mockImplementation( l => {
+  jest.spyOn(window.location, 'assign').mockImplementation(l => {
     expect(l).toEqual('http://localhost:5000');
   });
   await expect(Api.redirectToLogin());

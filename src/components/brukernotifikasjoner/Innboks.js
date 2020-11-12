@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import { transformTolokalDatoTid } from '../../utils/datoUtils';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
-import IkonInnboks from '../../../assets/IkonInnboks';
+import IkonInnboks from '../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';

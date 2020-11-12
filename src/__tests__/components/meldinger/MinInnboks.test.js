@@ -1,10 +1,10 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
-import MinInnboks from 'js/components/meldinger/MinInnboks'
-import wrapIntl from 'js/utils/intlTestHelper';
+import MinInnboks from 'components/meldinger/MinInnboks'
+import wrapIntl from 'utils/intlTestHelper';
 import sinon from 'sinon';
-import StoreProvider from '../../../js/context/StoreProvider';
-import * as usePerson from '../../../js/hooks/usePerson';
+import StoreProvider from '../../../context/StoreProvider';
+import * as usePerson from '../../../hooks/usePerson';
 
 jest.mock('react-ga');
 let sandbox = null;

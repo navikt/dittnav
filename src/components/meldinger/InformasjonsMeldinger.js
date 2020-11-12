@@ -3,7 +3,7 @@ import { node, bool } from 'prop-types';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
-import IkonBeskjed from '../../../assets/IkonBeskjed';
+import IkonBeskjed from '../../assets/IkonBeskjed';
 
 class InformasjonsMeldinger extends Component {
   render() {

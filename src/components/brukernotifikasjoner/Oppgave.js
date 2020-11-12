@@ -4,7 +4,7 @@ import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import { transformTolokalDatoTid } from '../../utils/datoUtils';
 import PanelOverskrift from '../common/PanelOverskrift';
-import IkonOppgave from '../../../assets/IkonOppgave';
+import IkonOppgave from '../../assets/IkonOppgave';
 import OppgaveType from '../../types/OppgaveType';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import { GoogleAnalyticsAction, removeFragment } from '../../utils/googleAnalytics';

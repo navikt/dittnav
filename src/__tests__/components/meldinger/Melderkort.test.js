@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Meldekort from 'js/components/meldinger/meldekort/Meldekort';
-import wrapIntl from 'js/utils/intlTestHelper';
-import i18n from 'translations/i18n';
-import StoreProvider from '../../../js/context/StoreProvider';
-import * as usePerson from '../../../js/hooks/usePerson';
+import Meldekort from 'components/meldinger/meldekort/Meldekort';
+import wrapIntl from 'utils/intlTestHelper';
+import i18n from 'language/i18n';
+import StoreProvider from '../../../context/StoreProvider';
+import * as usePerson from '../../../hooks/usePerson';
 import sinon from 'sinon';
 const ReactTestRenderer = require('react-test-renderer');
 

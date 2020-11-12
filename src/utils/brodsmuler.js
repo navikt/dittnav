@@ -1,4 +1,4 @@
-import translations from '../../translations/nb.json';
+import translations from '../language/nb.json';
 
 const Brodsmuler = {
   dittnav: [
