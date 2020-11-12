@@ -102,7 +102,7 @@ exports[`Snapshot test med saker 1`] = `
     >
       <a
         className="lenke"
-        href="http://localhost:9222/saksoversikt"
+        href="http://localhost:9222/esso/saml2/jsp/spSSOInit.jsp?metaAlias=/sp&idpEntityID=idporten.difi.no-v4&NameIDFormat=transient&goto=https://tjenester.nav.no/saksoversikt/&AuthLevel=4"
         id="oversiktspanel__header-lenke-id"
       >
         <span>
@@ -138,7 +138,7 @@ exports[`Snapshot test med saker 1`] = `
     <a
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
-      href="http://localhost:9222/mininnboks"
+      href="http://localhost:9222/esso/saml2/jsp/spSSOInit.jsp?metaAlias=/sp&idpEntityID=idporten.difi.no-v4&NameIDFormat=transient&goto=https://tjenester.nav.no/mininnboks/&AuthLevel=4"
       onClick={[Function]}
     >
       <span
@@ -167,7 +167,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-      href="http://localhost:9222/saksoversikt"
+      href="http://localhost:9222/esso/saml2/jsp/spSSOInit.jsp?metaAlias=/sp&idpEntityID=idporten.difi.no-v4&NameIDFormat=transient&goto=https://tjenester.nav.no/saksoversikt/&AuthLevel=4"
       onClick={[Function]}
     >
       <span
@@ -201,7 +201,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
-      href="http://localhost:9222/mininnboks"
+      href="http://localhost:9222/esso/saml2/jsp/spSSOInit.jsp?metaAlias=/sp&idpEntityID=idporten.difi.no-v4&NameIDFormat=transient&goto=https://tjenester.nav.no/mininnboks/&AuthLevel=4"
       onClick={[Function]}
     >
       <span
