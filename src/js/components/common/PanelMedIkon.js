@@ -6,7 +6,7 @@ import Panel from 'nav-frontend-paneler';
 import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
 import NavFrontendChevron from 'nav-frontend-chevron';
-import { trackEvent, removeFragment } from '../../utils/GoogleAnalytics';
+import { trackEvent, removeFragment } from '../../utils/googleAnalytics';
 import {
   checkOverflow,
   checkForFormattedMessage,

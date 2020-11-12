@@ -1,52 +1,56 @@
 import React from 'react';
-import { arrayOf, bool } from 'prop-types';
+import { bool } from 'prop-types';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
-import BeskjedType from '../types/BeskjedType';
-import OppgaveType from '../types/OppgaveType';
-import InnboksType from '../types/InnboksType';
-import InnloggingsstatusType from '../types/InnloggingsstatusType';
 import InnloggingsModal from './common/InnloggingsModal';
 import useStore from '../hooks/useStore';
 import { byEventTidspunkt } from '../utils/datoUtils';
+import useInnloggingsstatus from '../hooks/useInnloggingsstatus';
+import BeskjedType from '../types/BeskjedType';
+import OppgaveType from '../types/OppgaveType';
+import InnboksType from '../types/InnboksType';
 
-const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innloggingsstatus, erAktiv, erInaktiv }) => {
-  const { state } = useStore();
+const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInaktiv }) => {
+  const [{ data: innloggingsstatus, isSuccess }] = useInnloggingsstatus();
 
-  if (state.visInnloggingsModal) {
+  if (useStore().state.visInnloggingsModal) {
     return (
       <InnloggingsModal isOpen onClick={() => null} />
     );
   }
 
+  if (!isSuccess) {
+    return null;
+  }
+
   return (
     <>
-      {oppgaver && innloggingsstatus && oppgaver.sort(byEventTidspunkt)
+      {oppgaver && innloggingsstatus && oppgaver.content.sort(byEventTidspunkt)
         .map(o => (
           <Oppgave
             key={o.eventId}
             oppgave={o}
-            innloggingsstatus={innloggingsstatus}
+            innloggingsstatus={innloggingsstatus.content}
           />
         ))}
-      {beskjeder && innloggingsstatus && beskjeder.sort(byEventTidspunkt)
+      {beskjeder && beskjeder.content && innloggingsstatus && beskjeder.content.sort(byEventTidspunkt)
         .map(b => (
           <Beskjed
             key={b.uid}
             beskjed={b}
-            beskjeder={beskjeder}
-            innloggingsstatus={innloggingsstatus}
+            beskjeder={b}
+            innloggingsstatus={innloggingsstatus.content}
             erAktiv={erAktiv}
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innloggingsstatus && innbokser.sort(byEventTidspunkt)
+      {innbokser && innloggingsstatus && innbokser.content.sort(byEventTidspunkt)
         .map(i => (
           <Innboks
             key={i.eventId}
             innboks={i}
-            innloggingsstatus={innloggingsstatus}
+            innloggingsstatus={innloggingsstatus.content}
           />
         ))}
     </>
@@ -54,10 +58,9 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, innloggingsstatu
 };
 
 Brukernotifikasjoner.propTypes = {
-  beskjeder: arrayOf(BeskjedType),
-  oppgaver: arrayOf(OppgaveType),
-  innbokser: arrayOf(InnboksType),
-  innloggingsstatus: InnloggingsstatusType,
+  beskjeder: BeskjedType,
+  oppgaver: OppgaveType,
+  innbokser: InnboksType,
   erAktiv: bool,
   erInaktiv: bool,
 };
@@ -66,7 +69,6 @@ Brukernotifikasjoner.defaultProps = {
   beskjeder: null,
   oppgaver: null,
   innbokser: null,
-  innloggingsstatus: null,
   erAktiv: false,
   erInaktiv: false,
 };

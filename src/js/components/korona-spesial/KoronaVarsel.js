@@ -1,7 +1,7 @@
 import React from "react";
 import { Undertittel } from "nav-frontend-typografi";
 import { LenkepanelBase } from "nav-frontend-lenkepanel/lib";
-import { trackEvent } from '../../utils/GoogleAnalytics';
+import { trackEvent } from '../../utils/googleAnalytics';
 
 const cssPrefix = "korona-varsel";
 

@@ -1,14 +1,15 @@
-name: Bygg og publiser docker-image for master
+name: Bygg og publiser docker-image for main
 
 on:
   push:
     branches:
       - master
+      - main
     paths-ignore:
       - .github/workflows/**
 
 jobs:
-  build-and-publish-on-master:
+  build-and-publish-on-main:
     runs-on: ubuntu-latest
     steps:
 

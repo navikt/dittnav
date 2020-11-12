@@ -4,6 +4,7 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
+import { ReactQueryCacheProvider } from 'react-query';
 import NavApp from './js/NavApp';
 import App from './js/App';
 import Api from './js/Api';
@@ -13,9 +14,10 @@ import './css/index.css';
 import nbMessages from './translations/nb.json';
 import enMessages from './translations/en.json';
 
-import { initializeGoogleAnalytics } from './js/utils/GoogleAnalytics';
+import { initializeGoogleAnalytics } from './js/utils/googleAnalytics';
 import StoreProvider from './js/context/StoreProvider';
-import enableHotModuleReplacement from './js/utils/Parcel';
+import enableHotModuleReplacement from './js/utils/parcel';
+import queryCache from './js/utils/query';
 
 const loadMessages = () => ({
   nb: nbMessages,
@@ -25,9 +27,11 @@ const loadMessages = () => ({
 function renderApp() {
   ReactDOM.render(
     <NavApp defaultSprak="nb" messages={loadMessages()}>
-      <StoreProvider>
-        <App api={Api} />
-      </StoreProvider>
+      <ReactQueryCacheProvider queryCache={queryCache}>
+        <StoreProvider>
+          <App />
+        </StoreProvider>
+      </ReactQueryCacheProvider>
     </NavApp>, document.getElementById('app'),
   );
 }

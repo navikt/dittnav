@@ -2,10 +2,6 @@
 
 exports[`MinInnboks with empty input 1`] = `null`;
 
-exports[`MinInnboks with no input 1`] = `null`;
-
-exports[`MinInnboks with null input 1`] = `null`;
-
 exports[`MinInnboks with one document 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
@@ -795,5 +791,3 @@ exports[`MinInnboks with zero tasks 1`] = `
   />
 </a>
 `;
-
-exports[`MinInnboks without any messages 1`] = `null`;
