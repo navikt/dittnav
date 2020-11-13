@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
-import i18n from '../../../translations/i18n';
+import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
-import IkonOppgave from '../../../assets/IkonOppgave';
-import IkonInnboks from '../../../assets/IkonInnboks';
+import IkonOppgave from '../../assets/IkonOppgave';
+import IkonInnboks from '../../assets/IkonInnboks';
 import { GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { useMeldinger } from '../../hooks/usePerson';
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import * as React from 'react';
-import { FeatureToggleWrapper, FeatureToggles } from '../../js/components/FeatureToggles';
+import { FeatureToggleWrapper, FeatureToggles } from '../../components/FeatureToggles';
 
 const ReactTestRenderer = require('react-test-renderer');
 const C = props => (props.isFeatureEnabled ? <div>Hello, the feature is enabled</div> : <div>Not hello, the feature is disabled</div>);

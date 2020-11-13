@@ -2,9 +2,9 @@ import React from 'react';
 import { objectOf, any, string } from 'prop-types';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { formattedMessage } from '../../../utils/tidslinje';
-import IkonInformasjon from '../../../../assets/IkonInformasjon';
-import IkonAdvarsel from '../../../../assets/IkonAdvarsel';
-import IkonStatus from '../../../../assets/IkonStatus';
+import IkonInformasjon from '../../../assets/IkonInformasjon';
+import IkonAdvarsel from '../../../assets/IkonAdvarsel';
+import IkonStatus from '../../../assets/IkonStatus';
 
 const tidslinjeText = (notifikasjon) => ({
   SENDT: formattedMessage('tidslinje.status.sendt'),

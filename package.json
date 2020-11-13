@@ -99,8 +99,8 @@
     "test": "TZ='Europe/Oslo' react-scripts test --env=jsdom --modulePaths=src --coverage --watchAll=false",
     "test:fix": "TZ='Europe/Oslo' react-scripts test --modulePaths=src --env=jsdom -u",
     "test:watch": "TZ='Europe/Oslo' react-scripts test  --modulePaths=src --env=jsdom",
-    "lint": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore",
-    "lint:fix": "eslint src/js/**/*.js src/__tests__/**/*.js --no-ignore --fix",
+    "lint": "eslint src/**/*.js src/__tests__/**/*.js --no-ignore",
+    "lint:fix": "eslint src/**/*.js src/__tests__/**/*.js --no-ignore --fix",
     "eject": "react-scripts eject"
   },
   "jest": {

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import sinon from 'sinon';
-import PersonInfo from 'js/components/PersonInfo';
-import wrapIntl from 'js/utils/intlTestHelper';
-import * as usePerson from '../../js/hooks/usePerson';
-import StoreProvider from '../../js/context/StoreProvider';
+import PersonInfo from 'components/PersonInfo';
+import wrapIntl from 'utils/intlTestHelper';
+import * as usePerson from '../../hooks/usePerson';
+import StoreProvider from '../../context/StoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
 let sandbox = null;

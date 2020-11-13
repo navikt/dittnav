@@ -2,10 +2,10 @@ import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import LenkepanelMedIkon from './common/LenkepanelMedIkon';
 import PanelOverskrift from './common/PanelOverskrift';
-import IkonBlyant from '../../assets/IkonBlyant';
-import IkonSparegris from '../../assets/IkonKane';
-import IkonPlaster from '../../assets/IkonPlaster';
-import IkonSkilt from '../../assets/IkonSkilt';
+import IkonBlyant from '../assets/IkonBlyant';
+import IkonSparegris from '../assets/IkonKane';
+import IkonPlaster from '../assets/IkonPlaster';
+import IkonSkilt from '../assets/IkonSkilt';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../utils/googleAnalytics';
 import { lenker } from '../utils/lenker';
 

@@ -5,19 +5,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
 import { ReactQueryCacheProvider } from 'react-query';
-import NavApp from './js/NavApp';
-import App from './js/App';
-import Api from './js/Api';
+import NavApp from './NavApp';
+import App from './App';
+import Api from './Api';
 
 import './css/index.css';
 
-import nbMessages from './translations/nb.json';
-import enMessages from './translations/en.json';
+import nbMessages from './language/nb.json';
+import enMessages from './language/en.json';
 
-import { initializeGoogleAnalytics } from './js/utils/googleAnalytics';
-import StoreProvider from './js/context/StoreProvider';
-import enableHotModuleReplacement from './js/utils/parcel';
-import queryCache from './js/utils/query';
+import { initializeGoogleAnalytics } from './utils/googleAnalytics';
+import StoreProvider from './context/StoreProvider';
+import enableHotModuleReplacement from './utils/parcel';
+import queryCache from './utils/query';
 
 const loadMessages = () => ({
   nb: nbMessages,

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import sinon from 'sinon';
-import PaabegynteSoknader from 'js/components/meldinger/PaabegynteSoknader';
-import wrapIntl from 'js/utils/intlTestHelper';
-import * as useSaker from '../../../js/hooks/useSaker';
-import StoreProvider from '../../../js/context/StoreProvider';
+import PaabegynteSoknader from 'components/meldinger/PaabegynteSoknader';
+import wrapIntl from 'utils/intlTestHelper';
+import * as useSaker from '../../../hooks/useSaker';
+import StoreProvider from '../../../context/StoreProvider';
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');
