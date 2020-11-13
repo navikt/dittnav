@@ -4,7 +4,7 @@ import { FormattedMessage as F } from 'react-intl';
 import { Input } from 'nav-frontend-skjema';
 import { Knapp } from 'nav-frontend-knapper';
 import useStore from '../../hooks/useStore';
-import Api from '../../Api';
+import { fetchBeskjeder, fetchOppgaver, fetchInnbokser, postHendelse } from '../../Api';
 
 const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke, setOppgaver, setInnbokser }) => {
   const { addBeskjeder } = useStore();
@@ -14,17 +14,17 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke
   const disabled = tekstError.value || lenkeError.value;
 
   const getBrukernotifikasjoner = () => {
-    Api.fetchBeskjeder()
+    fetchBeskjeder()
       .then(([r]) => {
         addBeskjeder(r);
       });
 
-    Api.fetchOppgaver()
+    fetchOppgaver()
       .then(([r]) => {
         setOppgaver(r);
       });
 
-    Api.fetchInnbokser()
+    fetchInnbokser()
       .then(([r]) => {
         setInnbokser(r);
       });
@@ -57,7 +57,7 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    Api.postHendelse(
+    postHendelse(
       `produce/${valg}`,
       shouldSendEksternVarsling
         ? postContentForBeskjedAndOppgave

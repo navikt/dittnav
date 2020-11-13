@@ -1,11 +1,11 @@
 import { useQuery } from 'react-query';
-import Api from '../Api';
+import { fetchInaktiveBeskjeder, fetchInaktiveOppgaver, fetchInaktiveInnbokser } from '../Api';
 import useStore from './useStore';
 
 const useInaktiveBeskjeder = () => {
   const { state, addInaktiveBeskjeder, setError } = useStore();
 
-  useQuery('inaktiveBeskjeder', Api.fetchInaktiveBeskjeder, {
+  useQuery('inaktiveBeskjeder', fetchInaktiveBeskjeder, {
     onSuccess: addInaktiveBeskjeder,
     onError: setError,
   });
@@ -14,11 +14,11 @@ const useInaktiveBeskjeder = () => {
 };
 
 const useInaktiveOppgaver = () => (
-  useQuery('inaktiveOppgaver', Api.fetchInaktiveOppgaver, { onError: useStore().setError })
+  useQuery('inaktiveOppgaver', fetchInaktiveOppgaver, { onError: useStore().setError })
 );
 
 const useInaktiveInnbokser = () => (
-  useQuery('inaktiveInnbokser', Api.fetchInaktiveInnbokser, { onError: useStore().setError })
+  useQuery('inaktiveInnbokser', fetchInaktiveInnbokser, { onError: useStore().setError })
 );
 
 const useInaktiveBrukernotifikasjoner = () => (

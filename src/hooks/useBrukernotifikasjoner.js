@@ -1,11 +1,11 @@
 import { useQuery } from 'react-query';
-import Api from '../Api';
+import { fetchBeskjeder, fetchOppgaver, fetchInnbokser } from '../Api';
 import useStore from './useStore';
 
 const useBeskjeder = () => {
   const { state, addBeskjeder, setError } = useStore();
 
-  useQuery('beskjeder', Api.fetchBeskjeder, {
+  useQuery('beskjeder', fetchBeskjeder, {
     onSuccess: addBeskjeder,
     onError: setError,
   });
@@ -14,11 +14,11 @@ const useBeskjeder = () => {
 };
 
 const useOppgaver = () => (
-  useQuery('oppgaver', Api.fetchOppgaver, { onError: useStore().setError })
+  useQuery('oppgaver', fetchOppgaver, { onError: useStore().setError })
 );
 
 const useInnbokser = () => (
-  useQuery('innbokser', Api.fetchInnbokser, { onError: useStore().setError })
+  useQuery('innbokser', fetchInnbokser, { onError: useStore().setError })
 );
 
 const useBrukernotifikasjoner = () => (

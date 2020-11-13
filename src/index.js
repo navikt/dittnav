@@ -3,9 +3,9 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
-import App from './App';
-import Api from './Api';
 import './css/index.css';
+import App from './App';
+import { checkAuth, checkApiStatus, redirectToLogin } from './Api';
 import { initializeGoogleAnalytics } from './utils/googleAnalytics';
 import enableHotModuleReplacement from './utils/parcel';
 import Providers from './context/Providers';
@@ -19,16 +19,16 @@ function renderApp() {
 }
 
 const checkAuthThenRenderApp = () => {
-  Api.checkAuth()
-    .then(() => Api.checkApiStatus())
+  checkAuth()
+    .then(() => checkApiStatus())
     .then(() => renderApp())
     .catch((e) => {
       if (e.message === 'not authenticated') {
-        Api.redirectToLogin();
+        redirectToLogin();
         return;
       }
       if (e.status === 401) {
-        Api.redirectToLogin();
+        redirectToLogin();
         return;
       }
       renderApp();

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Fareknapp } from 'nav-frontend-knapper';
 import Panel from 'nav-frontend-paneler';
-import Api from '../../Api';
+import { postDoneAll, fetchInnloggingsstatus } from '../../Api';
 import TittelHendelser from './TittelHendelser';
 import FormHendelser from './FormHendelser';
 import Brukernotifikasjoner from '../../components/Brukernotifikasjoner';
@@ -22,11 +22,12 @@ const HendelserTestSide = () => {
 
   const { state } = useStore();
 
-  const removeHendelser = () => Api
-    .postDoneAll();
+  const removeHendelser = () => (
+    postDoneAll()
+  );
 
   useEffect(() => {
-    Api.fetchInnloggingsstatus()
+    fetchInnloggingsstatus()
       .then((r) => {
         setInnlogging(r);
       })
