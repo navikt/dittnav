@@ -1,10 +1,10 @@
 import { Dittnav, Innlogging, TestProducer } from './constants';
 
-const redirectToLogin = () => {
+export const redirectToLogin = () => {
   window.location.assign(`${Innlogging.LOGINSERVICE_URL}`);
 };
 
-const tokenExpiresSoon = (headers) => (
+export const tokenExpiresSoon = (headers) => (
   headers.get('x-token-expires-soon')
 );
 
@@ -24,7 +24,7 @@ const fetchJSON = (url) => new Promise((resolve, reject) => {
     .catch(e => reject(e));
 });
 
-const checkAuth = () => new Promise((resolve, reject) => {
+export const checkAuth = () => new Promise((resolve, reject) => {
   fetchJSON(`${Innlogging.INNLOGGINGSLINJE_AUTH_URL}?ts=${Date.now()}`)
     .then(({ content }) => {
       if (content.authenticated) {
@@ -36,7 +36,7 @@ const checkAuth = () => new Promise((resolve, reject) => {
     .catch(() => reject(new Error('not authenticated')));
 });
 
-const checkApiStatus = () => new Promise((resolve, reject) => {
+export const checkApiStatus = () => new Promise((resolve, reject) => {
   fetchJSON(`${Dittnav.API_AUTH_URL}`)
     .then(([response]) => {
       resolve(response);
@@ -61,99 +61,74 @@ const postJSON = (url, content) => new Promise((resolve, reject) => {
     .catch((e) => reject(e));
 });
 
-const fetchOppfolging = () => (
-  fetchJSON(`${Dittnav.OPPFOLGING_URL}`)
+export const fetchOppfolging = () => (
+  fetchJSON(Dittnav.OPPFOLGING_URL)
 );
 
-const fetchMeldekort = () => (
-  fetchJSON(`${Dittnav.MELDEKORT_URL}`)
+export const fetchMeldekort = () => (
+  fetchJSON(Dittnav.MELDEKORT_URL)
 );
 
-const fetchPersonNavn = () => (
-  fetchJSON(`${Dittnav.PERSON_NAVN_URL}`)
+export const fetchPersonNavn = () => (
+  fetchJSON(Dittnav.PERSON_NAVN_URL)
 );
 
-const fetchPersonIdent = () => (
-  fetchJSON(`${Dittnav.PERSON_IDENT_URL}`)
+export const fetchPersonIdent = () => (
+  fetchJSON(Dittnav.PERSON_IDENT_URL)
 );
 
-const fetchSaker = () => (
-  fetchJSON(`${Dittnav.SAKER_URL}`)
+export const fetchSaker = () => (
+  fetchJSON(Dittnav.SAKER_URL)
 );
 
-const fetchMeldinger = () => (
-  fetchJSON(`${Dittnav.MELDINGER_URL}`)
+export const fetchMeldinger = () => (
+  fetchJSON(Dittnav.MELDINGER_URL)
 );
 
-const fetchSakstema = () => (
+export const fetchSakstema = () => (
   fetchJSON(Dittnav.SAKSTEMA_URL)
 );
 
-const fetchInnloggingsstatus = () => (
-  fetchJSON(`${Innlogging.INNLOGGINGSLINJE_AUTH_URL}`)
+export const fetchInnloggingsstatus = () => (
+  fetchJSON(Innlogging.INNLOGGINGSLINJE_AUTH_URL)
 );
 
-const fetchBeskjeder = () => (
-  fetchJSON(`${Dittnav.BESKJED_URL}`)
+export const fetchBeskjeder = () => (
+  fetchJSON(Dittnav.BESKJED_URL)
 );
 
-const fetchOppgaver = () => (
-  fetchJSON(`${Dittnav.OPPGAVE_URL}`)
+export const fetchOppgaver = () => (
+  fetchJSON(Dittnav.OPPGAVE_URL)
 );
 
-const fetchInnbokser = () => (
-  fetchJSON(`${Dittnav.INNBOKS_URL}`)
+export const fetchInnbokser = () => (
+  fetchJSON(Dittnav.INNBOKS_URL)
 );
 
-const fetchInaktiveBeskjeder = () => (
-  fetchJSON(`${Dittnav.BESKJED_INAKTIV_URL}`)
+export const fetchInaktiveBeskjeder = () => (
+  fetchJSON(Dittnav.BESKJED_INAKTIV_URL)
 );
 
-const fetchInaktiveOppgaver = () => (
-  fetchJSON(`${Dittnav.OPPGAVE_INAKTIV_URL}`)
+export const fetchInaktiveOppgaver = () => (
+  fetchJSON(Dittnav.OPPGAVE_INAKTIV_URL)
 );
 
-const fetchInaktiveInnbokser = () => (
-  fetchJSON(`${Dittnav.INNBOKS_INAKTIV_URL}`)
+export const fetchInaktiveInnbokser = () => (
+  fetchJSON(Dittnav.INNBOKS_INAKTIV_URL)
 );
 
-const postHendelse = (path, content) => (
+export const postHendelse = (path, content) => (
   postJSON(`${TestProducer.URL}/${path}`, content)
 );
 
-const postDoneAll = () => (
+export const postDoneAll = () => (
   postJSON(`${TestProducer.DONE_ALL_URL}`, null)
 );
 
-const postDone = (content) => (
+export const postDone = (content) => (
   postJSON(`${Dittnav.DONE_URL}`, content)
 );
 
-const postStatusoppdatering = (content) => (
+export const postStatusoppdatering = (content) => (
   postJSON(`${TestProducer.STATUSOPPDATERING_URL}`, content)
 );
-
-export default {
-  checkAuth,
-  checkApiStatus,
-  fetchOppfolging,
-  fetchMeldekort,
-  fetchPersonNavn,
-  fetchPersonIdent,
-  fetchSaker,
-  fetchMeldinger,
-  fetchSakstema,
-  fetchInnloggingsstatus,
-  fetchBeskjeder,
-  fetchOppgaver,
-  fetchInnbokser,
-  fetchInaktiveBeskjeder,
-  fetchInaktiveOppgaver,
-  fetchInaktiveInnbokser,
-  postStatusoppdatering,
-  postHendelse,
-  postDoneAll,
-  postDone,
-  redirectToLogin,
-  tokenExpiresSoon,
-};

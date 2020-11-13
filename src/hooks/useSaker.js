@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
-import Api from '../Api';
+import { fetchSakstema, fetchSaker } from '../Api';
 import useStore from './useStore';
 
 export const useSakstema = () => (
-  [useQuery('sakstema', Api.fetchSakstema, { onError: useStore().setError })]
+  [useQuery('sakstema', fetchSakstema, { onError: useStore().setError })]
 );
 
 export const usePaabegynteSoknader = () => {
@@ -15,7 +15,7 @@ export const usePaabegynteSoknader = () => {
     }
   };
 
-  return [useQuery('paabegynteSoknader', Api.fetchSaker, { onSuccess: checkForFeilendeBaksystem, onError: store.setError })];
+  return [useQuery('paabegynteSoknader', fetchSaker, { onSuccess: checkForFeilendeBaksystem, onError: store.setError })];
 };
 
 const useSaker = () => (

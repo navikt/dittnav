@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import { Input, Select } from 'nav-frontend-skjema';
 import { Knapp } from 'nav-frontend-knapper';
 import useForm from '../../../hooks/useForm';
-import Api from '../../../Api';
+import { postStatusoppdatering } from '../../../Api';
 
 const initialState = {
   statusGlobal: 'SENDT',
@@ -14,7 +14,7 @@ const initialState = {
 };
 
 const StatusoppdateringForm = () => {
-  const [values, handleChange, handleSubmit] = useForm(initialState, Api.postStatusoppdatering);
+  const [values, handleChange, handleSubmit] = useForm(initialState, postStatusoppdatering);
 
   return (
     <>

@@ -1,25 +1,25 @@
 import { useQuery } from 'react-query';
-import Api from '../Api';
+import { fetchOppfolging, fetchMeldekort, fetchMeldinger, fetchPersonIdent, fetchPersonNavn } from '../Api';
 import useStore from './useStore';
 
 export const useOppfolging = () => (
-  [useQuery('oppfolging', Api.fetchOppfolging, { onError: useStore().setError })]
+  [useQuery('oppfolging', fetchOppfolging, { onError: useStore().setError })]
 );
 
 export const useMeldekort = () => (
-  [useQuery('meldekort', Api.fetchMeldekort, { onError: useStore().setError })]
+  [useQuery('meldekort', fetchMeldekort, { onError: useStore().setError })]
 );
 
 export const useMeldinger = () => (
-  [useQuery('meldinger', Api.fetchMeldinger, { onError: useStore().setError })]
+  [useQuery('meldinger', fetchMeldinger, { onError: useStore().setError })]
 );
 
 export const useIdent = (enabled) => (
-  [useQuery('ident', Api.fetchPersonIdent, { enabled, onError: useStore().setError })]
+  [useQuery('ident', fetchPersonIdent, { enabled, onError: useStore().setError })]
 );
 
 export const useNavn = () => (
-  [useQuery('navn', Api.fetchPersonNavn, { onError: useStore().setError })]
+  [useQuery('navn', fetchPersonNavn, { onError: useStore().setError })]
 );
 
 const usePerson = () => (
