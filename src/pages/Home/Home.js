@@ -7,7 +7,6 @@ import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
-import DittnavFliser from '../../components/DittnavFliser';
 import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
@@ -18,12 +17,11 @@ import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
 
 const Home = () => {
-  const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
+  const [{ data: oppfolging }] = useOppfolging();
   const isFetching = useIsFetching();
   const { state } = useStore();
 
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
-  const generelleEllerVta = erUnderOppfolging ? <Vta /> : <DittnavFliser />;
 
   if (state.visInnloggingsModal) {
     return (<InnloggingsModal onClick={() => null} isOpen />);
@@ -39,7 +37,7 @@ const Home = () => {
             <InfoMeldinger />
             <KoronaSpesial isLoaded={!isFetching} />
             <DittnavLenkePanel />
-            {!oppfolgingIsLoading || oppfolgingIsError ? generelleEllerVta : null}
+            <Vta />
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
             </Undertittel>
