@@ -64,3 +64,4 @@ jobs:
           VARS: ./nais/prod-sbs/default.json
           VAR: version=${{ env.IMAGE }}
           PRINT_PAYLOAD: true
+          DRY_RUN: true
