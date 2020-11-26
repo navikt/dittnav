@@ -78,7 +78,7 @@ export const lenker = {
   dagpengerForskudd: {
     tittel: 'Trenger du forskudd på dagpenger?',
     url: `${window.env.NAVNO_URL}/dagpenger/forskudd`,
-  },
+  }, 
   koronaBehandlingstid: {
     tittel: 'Lengre saksbehandlingstider',
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`,
