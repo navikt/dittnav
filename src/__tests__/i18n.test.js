@@ -1,14 +1,14 @@
-import i18n from '../translations/i18n';
+import i18n from '../language/i18n';
 
-it('nb 1',  () => {
+it('nb 1', () => {
   expect(i18n.nb.numberToWord(1)).toEqual(undefined);
 });
 
-it('nb 2',  () => {
+it('nb 2', () => {
   expect(i18n.nb.numberToWord(2)).toEqual('to');
 });
 
-it('nb 12',  () => {
+it('nb 12', () => {
   expect(i18n.nb.numberToWord(12)).toEqual('tolv');
 });
 

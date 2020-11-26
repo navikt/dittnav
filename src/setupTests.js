@@ -6,4 +6,5 @@ window.env = {
   ARBEIDSSOKERREGISTRERING_URL: 'http://localhost:9222/veiledearbeidssoker/mistet-jobben/registrering',
   CONTEXT_PATH: '/dittnav',
 };
-global.fetch = require('jest-fetch-mock'); // eslint-disable-line import/no-extraneous-dependenciesn
+
+global.fetch = require('jest-fetch-mock'); // eslint-disable-line import/no-extraneous-dependencies

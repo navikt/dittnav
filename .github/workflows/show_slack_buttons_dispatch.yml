@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Bygg, tag og push Docker image
-        uses: navikt/pb-common-gh-actions/docker-publish@v1
+        uses: navikt/pb-common-gh-actions/docker-publish@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

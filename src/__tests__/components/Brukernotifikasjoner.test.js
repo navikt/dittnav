@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import wrapIntl from 'js/utils/intlTestHelper';
+import wrapIntl from 'utils/intlTestHelper';
 import sinon from 'sinon';
-import Brukernotifikasjoner from 'js/components/Brukernotifikasjoner';
-import BeskjedStoreProvider from 'js/context/StoreProvider';
-import * as useInnloggingsstatus from '../../js/hooks/useInnloggingsstatus';
+import Brukernotifikasjoner from 'components/Brukernotifikasjoner';
+import BeskjedStoreProvider from 'context/StoreProvider';
+import * as useInnloggingsstatus from '../../hooks/useInnloggingsstatus';
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');

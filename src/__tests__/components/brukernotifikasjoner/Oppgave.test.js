@@ -1,7 +1,7 @@
 import * as React from 'react';
 const ReactTestRenderer = require('react-test-renderer');
-import Oppgave from 'js/components/brukernotifikasjoner/Oppgave';
-import wrapIntl from 'js/utils/intlTestHelper';
+import Oppgave from 'components/brukernotifikasjoner/Oppgave';
+import wrapIntl from 'utils/intlTestHelper';
 import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('react-ga');

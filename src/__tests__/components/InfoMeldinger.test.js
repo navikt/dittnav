@@ -1,6 +1,6 @@
 import * as React from 'react';
-import InfoMeldinger from 'js/components/InfoMeldinger';
-import wrapIntl from 'js/utils/intlTestHelper';
+import InfoMeldinger from 'components/InfoMeldinger';
+import wrapIntl from 'utils/intlTestHelper';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 test('render empty InfoMeldinger component', () => {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Lenkelister from 'js/components/Lenkelister';
+import Lenkelister from 'components/Lenkelister';
 const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-ga');
