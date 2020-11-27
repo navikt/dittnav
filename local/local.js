@@ -50,8 +50,8 @@ app.get('/dittnav-api/saker/sakstema', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/sakstema.json'))
 ));
 
-app.get('/innloggingslinje-api/auth', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/innloggingslinje.json'))
+app.get('/innloggingsstatus-url/summary', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/innloggingsstatus.json'))
 ));
 
 app.get('/dittnav-api/beskjed', (req, res) => (

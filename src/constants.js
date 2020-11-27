@@ -51,8 +51,8 @@ export const Innlogging = Object.freeze({
     buildLoginserviceUrl(),
   LOGINSERVICE_LEVEL_4_URL:
     buildLoginserviceUrl(4),
-  INNLOGGINGSLINJE_AUTH_URL:
-    `${window.env.INNLOGGINGSLINJE_API_URL}/auth`,
+  INNLOGGINGSSTATUS_URL:
+    `${window.env.INNLOGGINGSSTATUS_URL}/summary`,
 });
 
 export const Path = Object.freeze({
