@@ -1,0 +1,12 @@
+{
+  "authLevel": 3,
+  "authenticated": true,
+  "oidc": {
+    "authLevel":3,
+    "issueTime":"2020-01-01T10:00:00",
+    "expiryTime":"2020-01-01T11:00:00"
+  },
+  "openAM": {
+    "authLevel":4
+  }
+}
