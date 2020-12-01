@@ -90,7 +90,7 @@ const innbokser = {
 };
 
 const innloggingsstatus = {
-  securityLevel: '4',
+  authLevel: 4,
 };
 
 test('Brukernotifikasjoner empty', () => {

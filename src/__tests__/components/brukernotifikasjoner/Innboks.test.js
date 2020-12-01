@@ -18,7 +18,7 @@ test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   };
 
   const innloggingsstatus = {
-    securityLevel: '4',
+    authLevel: 4,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -41,7 +41,7 @@ test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
   };
 
   const innloggingsstatus = {
-    securityLevel: '3',
+    authLevel: 3,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -64,7 +64,7 @@ test('Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
   };
 
   const innloggingsstatus = {
-    securityLevel: '3',
+    authLevel: 3,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -87,7 +87,7 @@ test('Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
   };
 
   const innloggingsstatus = {
-    securityLevel: '4',
+    authLevel: 4,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
