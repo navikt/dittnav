@@ -3,30 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script charset='UTF-8'>
-      window['adrum-start-time'] = new Date().getTime();
-      (function (config) {
-
-        function isRunningInProd() {
-          return (window.location.href.indexOf("//nav.no") > -1) || (window.location.href.indexOf("//www.nav.no") > -1);
-        }
-
-        if (isRunningInProd()) {
-          config.adrumExtUrlHttps = 'https://jsagent.nav.no';
-          config.beaconUrlHttps = 'https://eumgw.nav.no';
-          config.appKey = 'EUM-AAB-AWU';
-
-        } else {
-          config.adrumExtUrlHttps = 'https://jsagent.adeo.no';
-          config.beaconUrlHttps = 'https://eumgw.adeo.no';
-          config.appKey = 'EUM-AAB-AWT';
-        }
-
-        config.xd = {enable: false};
-
-      })(window['adrum-config'] || (window['adrum-config'] = {}));
-    </script>
+    <script type="application/javascript" src="appdynamics.js" charset='UTF-8'></script>
     <script src='https://jsagent.nav.no/adrum/adrum.js'></script>
     <script src='config.js'></script>
     <title>Ditt NAV</title>
