@@ -64,3 +64,18 @@ jobs:
           VARS: ./nais/prod-sbs/default.json
           VAR: version=${{ env.IMAGE }}
           PRINT_PAYLOAD: true
+
+      - name: Sjekk om deploy til personbruker i dev er mulig
+        run: echo "DEV_SBS_PERSONBRUKER_CONFIG_DEFINED=$([[ -f ./nais/dev-sbs/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
+
+      - name: 'Deploy-er til personbruker i dev-sbs'
+        if: env.DEV_SBS_PERSONBRUKER_CONFIG_DEFINED == 'true'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          REF: ${{ github.sha }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-sbs
+          RESOURCE: ./nais/nais.yaml
+          VARS: ./nais/dev-sbs/personbruker.json
+          VAR: version=${{ env.IMAGE }}
+          PRINT_PAYLOAD: true
