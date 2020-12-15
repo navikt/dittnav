@@ -25,7 +25,7 @@ const fetchJSON = (url) => new Promise((resolve, reject) => {
 });
 
 export const checkAuth = () => new Promise((resolve, reject) => {
-  fetchJSON(`${Innlogging.INNLOGGINGSLINJE_AUTH_URL}?ts=${Date.now()}`)
+  fetchJSON(`${Innlogging.INNLOGGINGSSTATUS_URL}?ts=${Date.now()}`)
     .then(({ content }) => {
       if (content.authenticated) {
         resolve(content);
@@ -90,7 +90,7 @@ export const fetchSakstema = () => (
 );
 
 export const fetchInnloggingsstatus = () => (
-  fetchJSON(Innlogging.INNLOGGINGSLINJE_AUTH_URL)
+  fetchJSON(Innlogging.INNLOGGINGSSTATUS_URL)
 );
 
 export const fetchBeskjeder = () => (

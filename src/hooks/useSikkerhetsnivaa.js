@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { Innlogging } from '../constants';
 
 const useSikkerhetsnivaa = (brukernotifikasjon, type, innloggingsstatus) => {
-  const skalMaskeres = brukernotifikasjon.sikkerhetsnivaa === 4 && innloggingsstatus.securityLevel === '3';
+  const skalMaskeres = brukernotifikasjon.sikkerhetsnivaa === 4 && innloggingsstatus.authLevel === 3;
 
   const tekst = skalMaskeres
     ? <FormattedMessage id={`${type}.maskert.tekst`} />
