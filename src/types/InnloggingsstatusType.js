@@ -1,7 +1,8 @@
-import { shape, string } from 'prop-types';
+import { bool, number, shape } from 'prop-types';
 
 const InnloggingsstatusType = shape({
-  securityLevel: string.isRequired,
+  authLevel: number.isRequired,
+  authenticated: bool.isRequired,
 });
 
 export default InnloggingsstatusType;
