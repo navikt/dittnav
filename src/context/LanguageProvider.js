@@ -1,5 +1,5 @@
 import React from 'react';
-import { any, node, objectOf, shape, string } from 'prop-types';
+import { node, objectOf, shape, string } from 'prop-types';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import nb from 'react-intl/locale-data/nb';
 import en from 'react-intl/locale-data/en';
@@ -16,8 +16,8 @@ const LanguageProvider = ({ defaultSprak, messages, children }) => (
 LanguageProvider.propTypes = {
   defaultSprak: string.isRequired,
   messages: shape({
-    nb: objectOf(any),
-    en: objectOf(any),
+    nb: objectOf(string),
+    en: objectOf(string),
   }).isRequired,
   children: node.isRequired,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, oneOfType, node, object, string } from 'prop-types';
+import { arrayOf, oneOfType, node, string, shape } from 'prop-types';
 import { setParams } from '@navikt/nav-dekoratoren-moduler';
 import FeilMeldinger from '../components/FeilMeldinger';
 
@@ -20,7 +20,10 @@ const PageBase = (props) => {
 };
 
 PageBase.propTypes = {
-  breadcrumbs: arrayOf(object).isRequired,
+  breadcrumbs: arrayOf(shape({
+    title: string,
+    url: string,
+  })).isRequired,
   uniqueErrors: arrayOf(oneOfType([string])).isRequired,
   children: node.isRequired,
 };

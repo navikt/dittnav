@@ -21,6 +21,7 @@ test('Beskjed with link', () => {
 
   const innloggingsstatus = {
     authLevel: 4,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -47,6 +48,7 @@ test('Beskjed with empty link', () => {
 
   const innloggingsstatus = {
     authLevel: 4,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -73,6 +75,7 @@ test('Beskjed with null as link', () => {
 
   const innloggingsstatus = {
     authLevel: 4,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -99,6 +102,7 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
 
   const innloggingsstatus = {
     authLevel: 4,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -125,6 +129,7 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
 
   const innloggingsstatus = {
     authLevel: 3,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -151,6 +156,7 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
 
   const innloggingsstatus = {
     authLevel: 3,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
@@ -177,6 +183,7 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
 
   const innloggingsstatus = {
     authLevel: 4,
+    authenticated: true,
   };
 
   const component = ReactTestRenderer.create(wrapIntl(
