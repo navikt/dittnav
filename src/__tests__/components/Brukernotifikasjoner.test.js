@@ -91,6 +91,7 @@ const innbokser = {
 
 const innloggingsstatus = {
   authLevel: 4,
+  authenticated: true,
 };
 
 test('Brukernotifikasjoner empty', () => {
@@ -128,7 +129,6 @@ test('Brukernotifikasjoner with beskjeder', () => {
   ));
   expect(component.toJSON()).toMatchSnapshot();
 });
-
 
 test('Brukernotifikasjoner with oppgaver', () => {
   sandbox.stub(useInnloggingsstatus, 'default')

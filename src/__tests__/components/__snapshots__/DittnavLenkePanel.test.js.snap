@@ -108,7 +108,7 @@ exports[`Snapshot test med saker 1`] = `
         <span>
           Se alle dine saker (6)
         </span>
-        <i
+        <span
           className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
         />
       </a>

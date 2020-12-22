@@ -60,7 +60,7 @@ exports[`Beskjed with empty link 1`] = `
             onClick={[Function]}
           >
             Åpne
-            <i
+            <span
               className="nav-frontend-chevron chevronboks chevron--ned"
             />
           </a>
@@ -150,7 +150,7 @@ exports[`Beskjed with link 1`] = `
             onClick={[Function]}
           >
             Åpne
-            <i
+            <span
               className="nav-frontend-chevron chevronboks chevron--ned"
             />
           </a>
@@ -240,7 +240,7 @@ exports[`Beskjed with null as link 1`] = `
             onClick={[Function]}
           >
             Åpne
-            <i
+            <span
               className="nav-frontend-chevron chevronboks chevron--ned"
             />
           </a>
@@ -330,7 +330,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
             onClick={[Function]}
           >
             Åpne
-            <i
+            <span
               className="nav-frontend-chevron chevronboks chevron--ned"
             />
           </a>
@@ -420,7 +420,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
             onClick={[Function]}
           >
             Åpne
-            <i
+            <span
               className="nav-frontend-chevron chevronboks chevron--ned"
             />
           </a>
@@ -584,7 +584,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
             onClick={[Function]}
           >
             Åpne
-            <i
+            <span
               className="nav-frontend-chevron chevronboks chevron--ned"
             />
           </a>
