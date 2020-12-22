@@ -10,7 +10,7 @@ it('it crashes', async () => {
 it('handling Unauthorized', async () => {
   Object.defineProperty(window, 'location', {
     writable: true,
-    value: { assign: jest.fn() }
+    value: { assign: jest.fn() },
   });
 
   fetch.mockResponseOnce(JSON.stringify({ }), { status: 401 });
