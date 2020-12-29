@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { shape, node, func, oneOfType, any, bool, string } from 'prop-types';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { Normaltekst, Undertekst } from 'nav-frontend-typografi';
 import Panel from 'nav-frontend-paneler';
 import Lukknapp from 'nav-frontend-lukknapp';
@@ -19,6 +19,7 @@ import {
 const limit = 90;
 
 const PanelMedIkon = (props) => {
+  const intl = useIntl();
   const [isOpen, setIsOpen] = useState(false);
   const isOverflowing = checkOverflow(props.overskrift, limit);
   const isFormattedMessage = checkForFormattedMessage(props.overskrift);
@@ -102,8 +103,8 @@ const PanelMedIkon = (props) => {
             <div className={`${props.className}__knapp`}>
               <Lukknapp bla onClick={props.onClick}>
                 {props.skjermleserTekst
-                  ? props.intl.formatMessage({ id: props.skjermleserTekst })
-                  : props.intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
+                  ? intl.formatMessage({ id: props.skjermleserTekst })
+                  : intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
               </Lukknapp>
             </div>
           )
@@ -130,7 +131,6 @@ PanelMedIkon.propTypes = {
   lenkeTekst: string,
   skjermleserTekst: string,
   erInformasjonsmelding: bool,
-  intl: intlShape.isRequired,
 };
 
 PanelMedIkon.defaultProps = {
@@ -147,4 +147,4 @@ PanelMedIkon.defaultProps = {
   erInformasjonsmelding: false,
 };
 
-export default injectIntl(PanelMedIkon);
+export default PanelMedIkon;

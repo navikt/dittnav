@@ -9,6 +9,7 @@ import { checkAuth, checkApiStatus, redirectToLogin } from './Api';
 import { initializeGoogleAnalytics } from './utils/googleAnalytics';
 import enableHotModuleReplacement from './utils/parcel';
 import Providers from './context/Providers';
+import './utils/polyfills';
 
 function renderApp() {
   ReactDOM.render(

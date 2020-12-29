@@ -54,16 +54,12 @@ exports[`PaabegynteSoknader one soknad 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har en søknad som du ikke har sendt
-        </span>
+        Du har en søknad som du ikke har sendt
       </p>
       <p
         className="typo-normal"
       >
-        <span>
-          Fortsett innsending
-        </span>
+        Fortsett innsending
       </p>
       
     </div>
@@ -126,16 +122,12 @@ exports[`PaabegynteSoknader several soknader 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har tre søknader som du ikke har sendt
-        </span>
+        Du har tre søknader som du ikke har sendt
       </p>
       <p
         className="typo-normal"
       >
-        <span>
-          Fortsett innsending
-        </span>
+        Fortsett innsending
       </p>
       
     </div>

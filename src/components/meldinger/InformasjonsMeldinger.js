@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { node, bool } from 'prop-types';
-import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage as F } from 'react-intl';
 import PanelMedIkon from '../common/PanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../assets/IkonBeskjed';
@@ -48,7 +48,6 @@ InformasjonsMeldinger.propTypes = {
   isMeldeKortUser: bool,
   meldekortOverskrift: node,
   generellInfo: node,
-  intl: intlShape.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 InformasjonsMeldinger.defaultProps = {
@@ -59,4 +58,4 @@ InformasjonsMeldinger.defaultProps = {
   generellInfo: <F id="generell.informasjonsmelding" />,
 };
 
-export default injectIntl(InformasjonsMeldinger);
+export default InformasjonsMeldinger;

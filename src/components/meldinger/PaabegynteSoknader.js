@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage as F, useIntl } from 'react-intl';
 import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -16,14 +16,12 @@ const hasNoPaabegynteSoknader = (paabegynteSoknader) => (
 );
 
 const createOverskrift = (paabegynteSoknader, soknadstekst, intl) => (
-  <PanelOverskrift
-    overskrift={<F id={soknadstekst} values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />}
-    type="Element"
-  />
+  <PanelOverskrift overskrift={<F id={soknadstekst} values={{ count: i18n[intl.locale].numberToWord(paabegynteSoknader.antallPaabegynte) }} />} type="Element" />
 );
 
-const PaabegynteSoknader = ({ intl }) => {
+const PaabegynteSoknader = () => {
   const [{ data: paabegynteSoknader, isSuccess }] = usePaabegynteSoknader();
+  const intl = useIntl();
 
   if (!isSuccess || !hasContent(paabegynteSoknader) || hasNoPaabegynteSoknader(paabegynteSoknader)) {
     return null;
@@ -46,8 +44,4 @@ const PaabegynteSoknader = ({ intl }) => {
   );
 };
 
-PaabegynteSoknader.propTypes = {
-  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
-};
-
-export default injectIntl(PaabegynteSoknader);
+export default PaabegynteSoknader;

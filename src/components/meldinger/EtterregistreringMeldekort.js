@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage as F, useIntl } from 'react-intl';
 import { Path } from '../../constants';
 import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
@@ -13,17 +13,15 @@ const tallordForMeldekort = (antallMeldekort, translater) => (antallMeldekort ==
 
 const createOverskrift = (ettereg, intl) => {
   const overskrift = (
-    <F
-      id="meldekort.etterregistreringer"
-      values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }}
-    />
+    <F id="meldekort.etterregistreringer" values={{ etterregistreringer: tallordForMeldekort(ettereg.etterregistrerteMeldekort, i18n[intl.locale]) }} />
   );
 
   return <PanelOverskrift overskrift={overskrift} type="Element" />;
 };
 
-const EtterregistreringMeldekort = ({ intl }) => {
+const EtterregistreringMeldekort = () => {
   const [{ data: meldekort, isSuccess }] = useMeldekort();
+  const intl = useIntl();
 
   if (!isSuccess) {
     return null;
@@ -46,9 +44,4 @@ const EtterregistreringMeldekort = ({ intl }) => {
   return null;
 };
 
-
-EtterregistreringMeldekort.propTypes = {
-  intl: intlShape.isRequired,
-};
-
-export default injectIntl(EtterregistreringMeldekort);
+export default EtterregistreringMeldekort;

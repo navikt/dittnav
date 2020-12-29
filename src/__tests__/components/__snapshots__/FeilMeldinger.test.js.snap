@@ -10,9 +10,7 @@ exports[`render one error FeilMeldinger 1`] = `
     className="typo-element"
   >
     <span>
-      <span>
-        Error fetching data
-      </span>
+      Error fetching data
     </span>
   </h1>
 </section>

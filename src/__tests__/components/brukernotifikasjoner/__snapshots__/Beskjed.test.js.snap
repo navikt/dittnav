@@ -500,18 +500,14 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
       className="typo-normal"
     >
       <span>
-        <span>
-          Du har fått en beskjed.
-        </span>
+        Du har fått en beskjed.
         <a
           className="lenke panel-lenke"
           href="undefined"
           id="panel-lenke-id"
           onClick={[Function]}
         >
-          <span>
-            Logg inn med høyere sikkerhetsnivå for å se beskjeden
-          </span>
+          Logg inn med høyere sikkerhetsnivå for å se beskjeden
         </a>
       </span>
     </p>
