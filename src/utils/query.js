@@ -1,7 +1,7 @@
-import { QueryCache } from 'react-query';
+import { QueryClient } from 'react-query';
 
-const queryCache = new QueryCache({
-  defaultConfig: {
+const queryClient = new QueryClient({
+  defaultOptions: {
     queries: {
       retry: 0,
       cacheTime: Infinity,
@@ -12,4 +12,4 @@ const queryCache = new QueryCache({
   },
 });
 
-export default queryCache;
+export default queryClient;
