@@ -60,9 +60,7 @@ Array [
             id="panel-lenke-id"
             onClick={[Function]}
           >
-            <span>
-              Se mer informasjon
-            </span>
+            Se mer informasjon
           </a>
           
         </span>
@@ -144,9 +142,7 @@ Array [
             id="panel-lenke-id"
             onClick={[Function]}
           >
-            <span>
-              Se mer informasjon
-            </span>
+            Se mer informasjon
           </a>
           
         </span>
@@ -363,9 +359,7 @@ Array [
             id="panel-lenke-id"
             onClick={[Function]}
           >
-            <span>
-              Se mer informasjon
-            </span>
+            Se mer informasjon
           </a>
           
         </span>
@@ -447,9 +441,7 @@ Array [
             id="panel-lenke-id"
             onClick={[Function]}
           >
-            <span>
-              Se mer informasjon
-            </span>
+            Se mer informasjon
           </a>
           
         </span>

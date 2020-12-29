@@ -4,10 +4,7 @@ import { FormattedMessage as F } from 'react-intl';
 const fremtidig = (nyeMeldekort, formatDateMonth) => {
   if (nyeMeldekort.nesteInnsendingAvMeldekort) {
     return (
-      <F
-        id="meldekort.melding.fremtidig"
-        values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }}
-      />
+      <F id="meldekort.melding.fremtidig" values={{ dato: formatDateMonth(nyeMeldekort.nesteInnsendingAvMeldekort) }} />
     );
   }
   return null;
@@ -16,10 +13,7 @@ const fremtidig = (nyeMeldekort, formatDateMonth) => {
 const feriedager = (meldekort) => {
   if (meldekort.resterendeFeriedager && meldekort.resterendeFeriedager > 0) {
     return (
-      <F
-        id="meldekort.feriedager"
-        values={{ feriedager: meldekort.resterendeFeriedager }}
-      />
+      <F id="meldekort.feriedager" values={{ feriedager: meldekort.resterendeFeriedager }} />
     );
   }
   return null;
@@ -52,10 +46,7 @@ const melding = (next, count, formatDayAndMonth, numberToWord) => {
 const trekk = (skalViseTrekkdato, formatDateMonth, next) => {
   if (skalViseTrekkdato) {
     return (
-      <F
-        id="meldekort.info.om.trekk"
-        values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }}
-      />
+      <F id="meldekort.info.om.trekk" values={{ dato: formatDateMonth(next.sisteDatoForTrekk) }} />
     );
   }
   return null;

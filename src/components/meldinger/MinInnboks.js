@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage as F, useIntl } from 'react-intl';
 import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -21,23 +21,17 @@ const getMinInnboksIcon = (type) => {
 
 const createOverskrift = (message, numberToWord, formatFlereEn) => {
   const overskrift = (
-    <F
-      id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)}
-      values={{ count: numberToWord(message.antall) }}
-    />
+    <F id={formatFlereEn(message.antall, `mininnboks.${message.type.toLowerCase()}.meldinger.`)} values={{ count: numberToWord(message.antall) }} />
   );
 
   return (
-    <PanelOverskrift
-      overskrift={overskrift}
-      type="Element"
-    />
+    <PanelOverskrift overskrift={overskrift} type="Element" />
   );
 };
 
-const MinInnboks = ({ intl }) => {
+const MinInnboks = () => {
   const [{ data: meldinger, isSuccess }] = useMeldinger();
-  const { numberToWord } = i18n[intl.locale];
+  const { numberToWord } = i18n[useIntl().locale];
   const formatFlereEn = (length, i18String) => `${i18String}${length === 1 ? 'en' : 'flere'}`;
 
   if (!isSuccess) {
@@ -63,8 +57,4 @@ const MinInnboks = ({ intl }) => {
   );
 };
 
-MinInnboks.propTypes = {
-  intl: intlShape.isRequired, // eslint-disable-line react/no-typos
-};
-
-export default injectIntl(MinInnboks);
+export default MinInnboks;

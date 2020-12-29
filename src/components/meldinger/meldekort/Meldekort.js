@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage as F, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage as F, useIntl } from 'react-intl';
 import { Path } from '../../../constants';
 import i18n from '../../../language/i18n';
 import PanelOverskrift from '../../common/PanelOverskrift';
@@ -15,8 +15,9 @@ const isMeldekortbruker = (meldekort) => (
   meldekort && meldekort.content ? meldekort.content.meldekortbruker : false
 );
 
-const Meldekort = ({ intl }) => {
+const Meldekort = () => {
   const [{ data: meldekort, isSuccess }] = useMeldekort();
+  const intl = useIntl();
 
   if (!isSuccess || !meldekort.content || !isMeldekortbruker(meldekort)) {
     return null;
@@ -88,8 +89,4 @@ const Meldekort = ({ intl }) => {
   return null;
 };
 
-Meldekort.propTypes = {
-  intl: intlShape.isRequired,
-};
-
-export default injectIntl(Meldekort);
+export default Meldekort;

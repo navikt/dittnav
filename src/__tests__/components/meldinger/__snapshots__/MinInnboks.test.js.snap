@@ -54,9 +54,7 @@ exports[`MinInnboks with one document 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har ett ulest dokument i din innboks
-        </span>
+        Du har ett ulest dokument i din innboks
       </p>
       
       
@@ -120,9 +118,7 @@ exports[`MinInnboks with one task 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har én ulest oppgave
-        </span>
+        Du har én ulest oppgave
       </p>
       
       
@@ -186,9 +182,7 @@ exports[`MinInnboks with one unanswered 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har ett ubesvart spørsmål i din innboks
-        </span>
+        Du har ett ubesvart spørsmål i din innboks
       </p>
       
       
@@ -253,9 +247,7 @@ Array [
         <p
           className="typo-element lenkepanel__heading"
         >
-          <span>
-            Du har én ulest oppgave
-          </span>
+          Du har én ulest oppgave
         </p>
         
         
@@ -316,9 +308,7 @@ Array [
         <p
           className="typo-element lenkepanel__heading"
         >
-          <span>
-            Du har én ulest melding i din innboks
-          </span>
+          Du har én ulest melding i din innboks
         </p>
         
         
@@ -383,9 +373,7 @@ exports[`MinInnboks with two documents 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har to uleste dokumenter i din innboks
-        </span>
+        Du har to uleste dokumenter i din innboks
       </p>
       
       
@@ -450,9 +438,7 @@ Array [
         <p
           className="typo-element lenkepanel__heading"
         >
-          <span>
-            Du har  uleste dokumenter i din innboks
-          </span>
+          Du har  uleste dokumenter i din innboks
         </p>
         
         
@@ -513,9 +499,7 @@ Array [
         <p
           className="typo-element lenkepanel__heading"
         >
-          <span>
-            Du har  ubesvarte spørsmål i din innboks
-          </span>
+          Du har  ubesvarte spørsmål i din innboks
         </p>
         
         
@@ -580,9 +564,7 @@ exports[`MinInnboks with two tasks 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har én ulest oppgave
-        </span>
+        Du har én ulest oppgave
       </p>
       
       
@@ -646,9 +628,7 @@ exports[`MinInnboks with two unanswered 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har to ubesvarte spørsmål i din innboks
-        </span>
+        Du har to ubesvarte spørsmål i din innboks
       </p>
       
       
@@ -712,9 +692,7 @@ exports[`MinInnboks with two unread 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har to uleste meldinger i din innboks
-        </span>
+        Du har to uleste meldinger i din innboks
       </p>
       
       
@@ -778,9 +756,7 @@ exports[`MinInnboks with zero tasks 1`] = `
       <p
         className="typo-element lenkepanel__heading"
       >
-        <span>
-          Du har  uleste oppgaver
-        </span>
+        Du har  uleste oppgaver
       </p>
       
       

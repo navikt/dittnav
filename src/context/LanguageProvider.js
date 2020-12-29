@@ -1,24 +1,22 @@
 import React from 'react';
-import { node, objectOf, shape, string } from 'prop-types';
-import { IntlProvider, addLocaleData } from 'react-intl';
-import nb from 'react-intl/locale-data/nb';
-import en from 'react-intl/locale-data/en';
-import nn from 'react-intl/locale-data/nn';
+import { node, string } from 'prop-types';
+import { IntlProvider } from 'react-intl';
+import nbMessages from '../language/nb.json';
+import enMessages from '../language/en.json';
 
-addLocaleData([...nb, ...en, ...nn]);
+const loadMessages = (sprak) => ({
+  nb: nbMessages,
+  en: enMessages,
+}[sprak]);
 
-const LanguageProvider = ({ defaultSprak, messages, children }) => (
-  <IntlProvider locale={defaultSprak} messages={messages[defaultSprak]}>
+const LanguageProvider = ({ defaultSprak, children }) => (
+  <IntlProvider locale={defaultSprak} messages={loadMessages(defaultSprak)}>
     {children}
   </IntlProvider>
 );
 
 LanguageProvider.propTypes = {
   defaultSprak: string.isRequired,
-  messages: shape({
-    nb: objectOf(string),
-    en: objectOf(string),
-  }).isRequired,
   children: node.isRequired,
 };
 

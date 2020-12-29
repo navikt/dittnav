@@ -16,9 +16,7 @@ exports[`Snapshot test med saker 1`] = `
         <h2
           className="typo-systemtittel"
         >
-          <span>
-            Dine siste saker
-          </span>
+          Dine siste saker
         </h2>
       </div>
     </div>
@@ -49,12 +47,8 @@ exports[`Snapshot test med saker 1`] = `
             <p
               className="typo-undertekst"
             >
-              <span>
-                Sist oppdatert: 
-              </span>
-              <span>
-                15. aug. 2019
-              </span>
+              Sist oppdatert: 
+              15. aug. 2019
             </p>
           </div>
         </a>
@@ -83,15 +77,9 @@ exports[`Snapshot test med saker 1`] = `
             <p
               className="typo-undertekst"
             >
-              <span>
-                Du har ti søknader under behandling. 
-              </span>
-              <span>
-                Sist oppdatert: 
-              </span>
-              <span>
-                14. aug. 2019
-              </span>
+              Du har ti søknader under behandling. 
+              Sist oppdatert: 
+              14. aug. 2019
             </p>
           </div>
         </a>
@@ -105,9 +93,7 @@ exports[`Snapshot test med saker 1`] = `
         href="http://localhost:9222/saksoversikt"
         id="oversiktspanel__header-lenke-id"
       >
-        <span>
-          Se alle dine saker (6)
-        </span>
+        Se alle dine saker (6)
         <span
           className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
         />
@@ -127,9 +113,7 @@ exports[`Snapshot test med saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine utbetalinger
-        </span>
+        Dine utbetalinger
       </span>
       <span
         className="lenkepanel__indikator"
@@ -144,9 +128,7 @@ exports[`Snapshot test med saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Innboks
-        </span>
+        Innboks
       </span>
       <span
         className="lenkepanel__indikator"
@@ -173,9 +155,7 @@ exports[`Snapshot test uten saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine saker
-        </span>
+        Dine saker
       </span>
       <span
         className="lenkepanel__indikator"
@@ -190,9 +170,7 @@ exports[`Snapshot test uten saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Dine utbetalinger
-        </span>
+        Dine utbetalinger
       </span>
       <span
         className="lenkepanel__indikator"
@@ -207,9 +185,7 @@ exports[`Snapshot test uten saker 1`] = `
       <span
         className="typo-undertittel lenkepanel__heading"
       >
-        <span>
-          Innboks
-        </span>
+        Innboks
       </span>
       <span
         className="lenkepanel__indikator"

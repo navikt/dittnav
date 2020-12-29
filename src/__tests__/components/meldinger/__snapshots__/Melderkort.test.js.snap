@@ -53,21 +53,15 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
-          <span>
-            Du har tolv meldekort klare for innsending
-          </span>
+          Du har tolv meldekort klare for innsending
            
         </span>
         <span>
-          <span>
-            (Siste innsendingsfrist før trekk: 17. juli 2018)
-          </span>
+          (Siste innsendingsfrist før trekk: 17. juli 2018)
            
         </span>
         <span>
@@ -79,9 +73,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
       >
         <span>
            
-          <span>
-            Oversikt over meldekort
-          </span>
+          Oversikt over meldekort
           .
         </span>
       </p>
@@ -149,15 +141,11 @@ exports[`basic Meldekort test 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
-          <span>
-            Du har to meldekort klare for innsending
-          </span>
+          Du har to meldekort klare for innsending
            
         </span>
         <span>
@@ -165,9 +153,7 @@ exports[`basic Meldekort test 1`] = `
         </span>
         <span>
           <span>
-            <span>
-              (Send inn nå, du risikerer trekk!)
-            </span>
+            (Send inn nå, du risikerer trekk!)
           </span>
            
         </span>
@@ -176,13 +162,9 @@ exports[`basic Meldekort test 1`] = `
         className="typo-normal"
       >
         <span>
-          <span>
-            Du har gjenstående 12 feriedager ved dagpenger.
-          </span>
+          Du har gjenstående 12 feriedager ved dagpenger.
            
-          <span>
-            Oversikt over meldekort
-          </span>
+          Oversikt over meldekort
           .
         </span>
       </p>
@@ -250,15 +232,11 @@ exports[`basic one Meldekort test 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
-          <span>
-            Du har ett meldekort for uke 42-43 (17.07.2018-17.07.2018) klart for innsending
-          </span>
+          Du har ett meldekort for uke 42-43 (17.07.2018-17.07.2018) klart for innsending
            
         </span>
         <span>
@@ -266,9 +244,7 @@ exports[`basic one Meldekort test 1`] = `
         </span>
         <span>
           <span>
-            <span>
-              (Send inn nå, du risikerer trekk!)
-            </span>
+            (Send inn nå, du risikerer trekk!)
           </span>
            
         </span>
@@ -277,13 +253,9 @@ exports[`basic one Meldekort test 1`] = `
         className="typo-normal"
       >
         <span>
-          <span>
-            Du har gjenstående 12 feriedager ved dagpenger.
-          </span>
+          Du har gjenstående 12 feriedager ved dagpenger.
            
-          <span>
-            Send meldekort
-          </span>
+          Send meldekort
           .
         </span>
       </p>
@@ -349,21 +321,15 @@ exports[`basic one Meldekort test no risk 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
-          <span>
-            Du har ett meldekort for uke 42-43 (17.07.2018-17.07.2018) klart for innsending
-          </span>
+          Du har ett meldekort for uke 42-43 (17.07.2018-17.07.2018) klart for innsending
            
         </span>
         <span>
-          <span>
-            (Siste innsendingsfrist før trekk: 9. august 2018)
-          </span>
+          (Siste innsendingsfrist før trekk: 9. august 2018)
            
         </span>
         <span>
@@ -374,13 +340,9 @@ exports[`basic one Meldekort test no risk 1`] = `
         className="typo-normal"
       >
         <span>
-          <span>
-            Du har gjenstående 12 feriedager ved dagpenger.
-          </span>
+          Du har gjenstående 12 feriedager ved dagpenger.
            
-          <span>
-            Send meldekort
-          </span>
+          Send meldekort
           .
         </span>
       </p>
@@ -446,21 +408,15 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
-          <span>
-            Du har ett meldekort for uke week 42 (17.07.2018-17.07.2018) klart for innsending
-          </span>
+          Du har ett meldekort for uke week 42 (17.07.2018-17.07.2018) klart for innsending
            
         </span>
         <span>
-          <span>
-            (Siste innsendingsfrist før trekk: 17. juli 2018)
-          </span>
+          (Siste innsendingsfrist før trekk: 17. juli 2018)
            
         </span>
         <span>
@@ -472,9 +428,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
       >
         <span>
            
-          <span>
-            Send meldekort
-          </span>
+          Send meldekort
           .
         </span>
       </p>
@@ -540,16 +494,12 @@ exports[`basic zero Meldekort test 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
           <span>
-            <span>
-              (Send inn nå, du risikerer trekk!)
-            </span>
+            (Send inn nå, du risikerer trekk!)
           </span>
            
         </span>
@@ -557,9 +507,7 @@ exports[`basic zero Meldekort test 1`] = `
       <p
         className="typo-normal"
       >
-        <span>
-          Du har gjenstående 12 feriedager ved dagpenger.
-        </span>
+        Du har gjenstående 12 feriedager ved dagpenger.
       </p>
       
     </div>
@@ -623,21 +571,15 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
-          <span>
-            Du har 13 meldekort klare for innsending
-          </span>
+          Du har 13 meldekort klare for innsending
            
         </span>
         <span>
-          <span>
-            (Siste innsendingsfrist før trekk: 17. juli 2018)
-          </span>
+          (Siste innsendingsfrist før trekk: 17. juli 2018)
            
         </span>
         <span>
@@ -649,9 +591,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
       >
         <span>
            
-          <span>
-            Oversikt over meldekort
-          </span>
+          Oversikt over meldekort
           .
         </span>
       </p>
@@ -720,15 +660,11 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
            
         </span>
         <span>
-          <span>
-            Du har ett meldekort for uke 42-43 (17.07.2018-17.07.2018) klart for innsending
-          </span>
+          Du har ett meldekort for uke 42-43 (17.07.2018-17.07.2018) klart for innsending
            
         </span>
         <span>
-          <span>
-            (Siste innsendingsfrist før trekk: 9. august 2018)
-          </span>
+          (Siste innsendingsfrist før trekk: 9. august 2018)
            
         </span>
         <span>
@@ -739,13 +675,9 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
         className="typo-normal"
       >
         <span>
-          <span>
-            Du har gjenstående 12 feriedager ved dagpenger.
-          </span>
+          Du har gjenstående 12 feriedager ved dagpenger.
            
-          <span>
-            Send meldekort
-          </span>
+          Send meldekort
           .
         </span>
       </p>
@@ -811,9 +743,7 @@ exports[`no cards no risk 1`] = `
         className="typo-element lenkepanel__heading"
       >
         <span>
-          <span>
-            Neste meldekort kan sendes fra 10. november 2018
-          </span>
+          Neste meldekort kan sendes fra 10. november 2018
            
         </span>
         <span>
@@ -823,9 +753,7 @@ exports[`no cards no risk 1`] = `
       <p
         className="typo-normal"
       >
-        <span>
-          Du har gjenstående 12 feriedager ved dagpenger.
-        </span>
+        Du har gjenstående 12 feriedager ved dagpenger.
       </p>
       
     </div>
