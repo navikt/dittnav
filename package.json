@@ -21,7 +21,6 @@
     "core-js": "3.8.1",
     "cors": "2.8.5",
     "eslint-import-resolver-node": "0.3.4",
-    "i": "0.3.6",
     "intl": "1.2.5",
     "js": "0.1.0",
     "js-cookie": "2.2.1",
