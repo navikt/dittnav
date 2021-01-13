@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: veientilarbeid
+  namespace: personbruker
+spec:
+  type: ExternalName
+  externalName: veientilarbeid.default.svc.nais.local
