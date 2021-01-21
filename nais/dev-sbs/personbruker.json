@@ -1,6 +1,7 @@
 {
   "namespace": "personbruker",
   "ingresses": [
-    "https://www.dev.nav.no/person/dittnav"
+    "https://www.dev.nav.no/person/dittnav",
+    "https://dittnav.dev.nav.no/person/dittnav"
   ]
 }
