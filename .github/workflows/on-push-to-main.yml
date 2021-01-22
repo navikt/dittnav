@@ -51,7 +51,7 @@ jobs:
           git push origin $TAG
 
       - name: Sjekk om prodsetting er mulig
-        run: echo "PROD_SBS_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-sbs/default.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
+        run: echo "PROD_SBS_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-sbs/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
 
       - name: 'Deploy-er til default i prod-sbs'
         if: env.PROD_SBS_VARS_TEMPLATE_DEFINED == 'true'
@@ -61,7 +61,7 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-sbs
           RESOURCE: ./nais/nais.yaml
-          VARS: ./nais/prod-sbs/default.json
+          VARS: ./nais/prod-sbs/personbruker.json
           VAR: version=${{ env.IMAGE }}
           PRINT_PAYLOAD: true
 
