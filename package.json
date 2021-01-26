@@ -18,7 +18,7 @@
     "@navikt/nav-dekoratoren-moduler": "1.0.21",
     "@types/react-modal": "3.10.6",
     "classnames": "2.2.6",
-    "core-js": "3.8.1",
+    "core-js": "3.8.2",
     "cors": "2.8.5",
     "eslint-import-resolver-node": "0.3.4",
     "intl": "1.2.5",
