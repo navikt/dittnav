@@ -61,7 +61,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-ga": "3.3.0",
-    "react-intl": "5.10.10",
+    "react-intl": "5.10.13",
     "react-modal": "3.12.1",
     "react-query": "3.5.9",
     "react-router-dom": "5.2.0",
