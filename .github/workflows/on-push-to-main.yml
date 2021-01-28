@@ -53,7 +53,7 @@ jobs:
       - name: Sjekk om prodsetting er mulig
         run: echo "PROD_SBS_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-sbs/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
 
-      - name: 'Deploy-er til default i prod-sbs'
+      - name: 'Deploy-er til personbruker i prod-sbs'
         if: env.PROD_SBS_VARS_TEMPLATE_DEFINED == 'true'
         uses: 'nais/deploy/actions/deploy@v1'
         env:
