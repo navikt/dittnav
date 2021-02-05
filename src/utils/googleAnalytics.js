@@ -1,4 +1,5 @@
 import ReactGA from 'react-ga';
+import { loggAktivitet } from './amplitudeUtils';
 
 const trackingId = 'UA-9127381-16';
 
@@ -36,13 +37,19 @@ export const initializeGoogleAnalytics = () => ReactGA.initialize(trackingId, {
   debug: false,
 });
 
-export const trackEvent = (category, action, label) => (
+export const trackEvent = (category, action, label) => {
   ReactGA.event({
     category,
     action,
     label,
-  })
-);
+  });
+
+  if (action === GoogleAnalyticsAction.MeldekortKlar
+    || action === GoogleAnalyticsAction.MeldekortVent) {
+    // Begrens mengden data sendt til Amplitude inntil vi har avklart behovet bedre
+    loggAktivitet(action);
+  }
+};
 
 export const removeFragment = (url) => {
   const fragmentPattern = '/#[a-z0-9]+/gi';
