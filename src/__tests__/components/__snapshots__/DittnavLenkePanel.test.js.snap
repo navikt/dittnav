@@ -122,7 +122,7 @@ exports[`Snapshot test med saker 1`] = `
     <a
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
-      href="http://localhost:9222/mininnboks"
+      href="undefined"
       onClick={[Function]}
     >
       <span
@@ -179,7 +179,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
-      href="http://localhost:9222/mininnboks"
+      href="undefined"
       onClick={[Function]}
     >
       <span
