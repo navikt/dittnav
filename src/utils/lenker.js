@@ -65,7 +65,7 @@ export const lenker = {
   },
   innboks: {
     tittel: 'Innboks',
-    url: `${window.env.TJENESTER_URL}/mininnboks`,
+    url: `${window.env.MIN_INNBOKS_URL}`,
   },
   digisos: {
     tittel: 'Digisos',
