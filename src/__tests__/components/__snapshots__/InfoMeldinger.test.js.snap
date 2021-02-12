@@ -4,6 +4,7 @@ exports[`render empty InfoMeldinger component 1`] = `
 <Context.Provider
   value={
     Object {
+      "__addMessages": [Function],
       "defaultFormats": Object {},
       "defaultLocale": "en",
       "defaultRichTextElements": undefined,
