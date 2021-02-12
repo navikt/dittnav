@@ -49,7 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Vis deploy-knapper i slack
-        uses: navikt/deploy-trigger-slack-integration@v1
+        uses: navikt/deploy-trigger-slack-integration@v2
         with:
           slack_channel: "#dittnav-deploy-actions"
           webhook_url: ${{ secrets.WEBHOOK_URL }}
