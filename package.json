@@ -64,7 +64,7 @@
     "react-ga": "3.3.0",
     "react-intl": "5.10.15",
     "react-modal": "3.12.1",
-    "react-query": "3.6.1",
+    "react-query": "3.9.2",
     "react-router-dom": "5.2.0",
     "regenerator-runtime": "0.13.7",
     "request": "2.88.2",
