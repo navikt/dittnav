@@ -23,7 +23,7 @@ const tidslinjeIcon = (type) => ({
 const SekvensMedIkon = ({ notifikasjon, className }) => (
   <div className={className}>
     <div className={`${className}__ikon`}>
-      {tidslinjeIcon(notifikasjon.type)}
+      {tidslinjeIcon(notifikasjon.eventtype)}
     </div>
     <div className={`${className}__tekst`}>
       <Normaltekst>
