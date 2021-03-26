@@ -8,7 +8,7 @@
     "produsent": "grafana-navn-srv-bruker",
     "sistOppdatert": "2020-10-14T11:00:05.445749Z",
     "sikkerhetsnivaa": 4,
-    "type": "Beskjed"
+    "eventtype": "Beskjed"
   },
   {
     "produsent": "grafana-navn-srv-bruker",
@@ -21,7 +21,7 @@
     "statusGlobal": "UNDER_BEHANDLING",
     "statusIntern": "dummyStatusIntern",
     "sakstema": "dummySakstema",
-    "type": "Statusoppdatering"
+    "eventtype": "Statusoppdatering"
   },
   {
     "eventTidspunkt": "2020-10-14T11:00:16.983Z",
@@ -31,7 +31,7 @@
     "produsent": "grafana-navn-srv-bruker",
     "sistOppdatert": "2020-10-14T11:00:17.111426Z",
     "sikkerhetsnivaa": 4,
-    "type": "Oppgave"
+    "eventtype": "Oppgave"
   },
   {
     "uid": "5e632788-51c9-4963-81dd-ac9674eecce8",
@@ -42,7 +42,7 @@
     "produsent": "grafana-navn-srv-bruker",
     "sistOppdatert": "2020-10-14T11:00:05.445749Z",
     "sikkerhetsnivaa": 4,
-    "type": "Beskjed"
+    "eventtype": "Beskjed"
   },
   {
     "produsent": "grafana-navn-srv-bruker",
@@ -55,7 +55,7 @@
     "statusGlobal": "MOTTATT",
     "statusIntern": "dummyStatusIntern",
     "sakstema": "dummySakstema",
-    "type": "Statusoppdatering"
+    "eventtype": "Statusoppdatering"
   },
   {
     "uid": "5e832788-51c9-4963-81dd-ac9674eecce8",
@@ -66,7 +66,7 @@
     "produsent": "grafana-navn-srv-bruker",
     "sistOppdatert": "2020-10-14T11:00:05.445749Z",
     "sikkerhetsnivaa": 4,
-    "type": "Beskjed"
+    "eventtype": "Beskjed"
   },
   {
     "produsent": "grafana-navn-srv-bruker",
@@ -79,6 +79,6 @@
     "statusGlobal": "SENDT",
     "statusIntern": "dummyStatusIntern",
     "sakstema": "dummySakstema",
-    "type": "Statusoppdatering"
+    "eventtype": "Statusoppdatering"
   }
 ]
