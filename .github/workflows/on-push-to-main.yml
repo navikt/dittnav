@@ -50,7 +50,7 @@ jobs:
           git tag $TAG
           git push origin $TAG
 
-      - name: Sjekk om prodsetting er mulig
+      - name: Sjekk om prodsetting til sbs er mulig
         run: echo "PROD_SBS_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-sbs/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
 
       - name: 'Deploy-er til personbruker i prod-sbs'
@@ -65,7 +65,7 @@ jobs:
           VAR: version=${{ env.IMAGE }}
           PRINT_PAYLOAD: true
 
-      - name: Sjekk om deploy til personbruker i dev er mulig
+      - name: Sjekk om deploy til sbs i dev er mulig
         run: echo "DEV_SBS_PERSONBRUKER_CONFIG_DEFINED=$([[ -f ./nais/dev-sbs/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
 
       - name: 'Deploy-er til personbruker i dev-sbs'
@@ -77,5 +77,35 @@ jobs:
           CLUSTER: dev-sbs
           RESOURCE: ./nais/nais.yaml
           VARS: ./nais/dev-sbs/personbruker.json
+          VAR: version=${{ env.IMAGE }}
+          PRINT_PAYLOAD: true
+
+      - name: Sjekk om prodsetting i gcp er mulig
+        run: echo "PROD_GCP_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-gcp/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
+
+      - name: 'Deploy-er til personbruker i prod-gcp'
+        if: env.PROD_GCP_VARS_TEMPLATE_DEFINED == 'true'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          REF: ${{ github.sha }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          RESOURCE: ./nais/nais.yaml
+          VARS: ./nais/prod-gcp/personbruker.json
+          VAR: version=${{ env.IMAGE }}
+          PRINT_PAYLOAD: true
+
+      - name: Sjekk om deploy til gcp i dev er mulig
+        run: echo "DEV_GCP_PERSONBRUKER_CONFIG_DEFINED=$([[ -f ./nais/dev-gcp/personbruker.json ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
+
+      - name: 'Deploy-er til personbruker i dev-gcp'
+        if: env.DEV_GCP_PERSONBRUKER_CONFIG_DEFINED == 'true'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          REF: ${{ github.sha }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          RESOURCE: ./nais/nais.yaml
+          VARS: ./nais/dev-gcp/personbruker.json
           VAR: version=${{ env.IMAGE }}
           PRINT_PAYLOAD: true
