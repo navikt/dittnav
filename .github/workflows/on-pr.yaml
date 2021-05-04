@@ -9,6 +9,7 @@ jobs:
       && github.repository != 'navikt/dittnav-kafka-backup-reader' && github.repository != 'navikt/dittnav-nightly-usage-statistics-reporter'
         && github.repository != 'navikt/innloggingsstatus' && github.repository != 'navikt/pb-workflow-authority'
         && github.repository != 'navikt/dittnav-periodic-metrics-reporter' && github.repository != 'navikt/pb-oidc-provider-gui'
+        && github.repository != 'navikt/mine-saker' && github.repository != 'navikt/mine-saker-api'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
