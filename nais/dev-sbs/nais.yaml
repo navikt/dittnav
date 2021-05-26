@@ -1,0 +1,38 @@
+kind: Application
+apiVersion: nais.io/v1alpha1
+metadata:
+  name: dittnav
+  namespace: personbruker
+  labels:
+    team: personbruker
+spec:
+  image: {{version}}
+  ingresses:
+     - "https://www.dev.nav.no/person/dittnav"
+     - "https://dittnav.dev.nav.no/person/dittnav"
+     - "https://dittnav.personbruker.nais.oera-q.local"
+  vault:
+    enabled: true
+  liveness:
+    path: person/dittnav/internal/isAlive
+    port: 8080
+    initialDelay: 10
+  port: 8080
+  prometheus:
+    enabled: true
+    path: person/dittnav/internal/metrics
+  readiness:
+    path: person/dittnav/internal/isReady
+    port: 8080
+    initialDelay: 10
+  replicas:
+    min: 2
+    max: 4
+    cpuThresholdPercentage: 50
+  resources:
+    limits:
+      cpu: "3"
+      memory: 768Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
