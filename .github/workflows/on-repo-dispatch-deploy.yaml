@@ -56,7 +56,6 @@ jobs:
           REF: ${{ env.COMMIT_SHA }}
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: ${{ env.CLUSTER }}
-          RESOURCE: ./nais/nais.yaml
-          VARS: ./nais/${{ env.CLUSTER }}/${{ env.NAMESPACE }}.json
+          RESOURCE: ./nais/${{ env.CLUSTER }}/nais.yaml
           VAR: version=${{ env.IMAGE }}
           PRINT_PAYLOAD: true
