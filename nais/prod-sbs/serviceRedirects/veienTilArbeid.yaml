@@ -5,4 +5,4 @@ metadata:
   namespace: personbruker
 spec:
   type: ExternalName
-  externalName: veientilarbeid.default.svc.nais.local
+  externalName: veientilarbeid.paw.svc.nais.local
