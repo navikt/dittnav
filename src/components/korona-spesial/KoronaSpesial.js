@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { bool } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
-import { KoronaVarsel } from './KoronaVarsel';
+import KoronaVarsel from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { lenker } from '../../utils/lenker';
@@ -11,7 +10,7 @@ import { useSakstema } from '../../hooks/useSaker';
 
 const visForskuddLenkeFra = '01-03-2020';
 
-const KoronaSpesial = ({ isLoaded }) => {
+const KoronaSpesial = () => {
   const [forskuddToggle, setForskuddToggle] = useState(null);
   const [{ data: sakstema }] = useSakstema();
 
@@ -54,14 +53,6 @@ const KoronaSpesial = ({ isLoaded }) => {
       </div>
     </>
   );
-};
-
-KoronaSpesial.propTypes = {
-  isLoaded: bool,
-};
-
-KoronaSpesial.defaultProps = {
-  isLoaded: false,
 };
 
 export default KoronaSpesial;

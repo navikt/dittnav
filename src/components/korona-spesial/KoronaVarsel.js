@@ -5,7 +5,7 @@ import { trackEvent } from '../../utils/googleAnalytics';
 
 const cssPrefix = 'korona-varsel';
 
-export const KoronaVarsel = ({ tittel, href, visIkon = false, children, className, gaCategory, gaAction }) => (
+const KoronaVarsel = ({ tittel, href, visIkon = false, children, className, gaCategory, gaAction }) => (
   <LenkepanelBase
     className={`${cssPrefix}${className ? ` ${className}` : ''}`}
     href={href}
@@ -19,7 +19,7 @@ export const KoronaVarsel = ({ tittel, href, visIkon = false, children, classNam
       </div>
     )}
     <div className={`${cssPrefix}__tekst-kol`}>
-      <Undertittel className={`lenkepanel__heading`}>
+      <Undertittel className="lenkepanel__heading">
         {tittel}
       </Undertittel>
       {children && (
@@ -30,3 +30,5 @@ export const KoronaVarsel = ({ tittel, href, visIkon = false, children, classNam
     </div>
   </LenkepanelBase>
 );
+
+export default KoronaVarsel;
