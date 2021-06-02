@@ -25,46 +25,23 @@ const KoronaSpesial = ({ isLoaded }) => {
     }
   }, [harDagpengerSakNyligOppdatert]);
 
-  const venstreLenke = forskuddToggle
-    ? lenker.dagpengerForskudd
-    : lenker.koronaBehandlingstid;
-
-  const venstreTekst = forskuddToggle
-    ? 'korona.dagpenger-forskudd.ingress'
-    : 'korona.behandlingstid.ingress';
-
-  const venstreGaAction = forskuddToggle
-    ? GoogleAnalyticsAction.DagpengerForskudd
-    : GoogleAnalyticsAction.Behandlingstid;
-
   const loaded = isLoaded && (!harDagpengerSakNyligOppdatert || forskuddToggle !== null);
 
   return (
     <>
-      {forskuddToggle ? (
-        <KoronaVarsel
-          tittel={lenker.koronaSituasjon.tittel}
-          href={lenker.koronaSituasjon.url}
-          gaCategory={GoogleAnalyticsCategory.Forside}
-          gaAction={GoogleAnalyticsAction.KoronaSituasjon}
-        >
-          <Normaltekst>
-            <FormattedMessage id="korona.din.situasjon.ingress" />
-          </Normaltekst>
-        </KoronaVarsel>
-      ) : null}
       <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
-        <KoronaVarsel
-          tittel={venstreLenke.tittel}
-          href={venstreLenke.url}
-          className="blaa-bakgrunn"
-          gaCategory={GoogleAnalyticsCategory.Forside}
-          gaAction={venstreGaAction}
-        >
-          <Normaltekst>
-            <FormattedMessage id={venstreTekst} />
-          </Normaltekst>
-        </KoronaVarsel>
+        {forskuddToggle ? (
+          <KoronaVarsel
+            tittel={lenker.koronaSituasjon.tittel}
+            href={lenker.koronaSituasjon.url}
+            gaCategory={GoogleAnalyticsCategory.Forside}
+            gaAction={GoogleAnalyticsAction.KoronaSituasjon}
+          >
+            <Normaltekst>
+              <FormattedMessage id="korona.din.situasjon.ingress" />
+            </Normaltekst>
+          </KoronaVarsel>
+        ) : null}
         <KoronaVarsel
           tittel={lenker.koronaVeiviser.tittel}
           href={lenker.koronaVeiviser.url}
@@ -72,7 +49,7 @@ const KoronaSpesial = ({ isLoaded }) => {
           gaAction={GoogleAnalyticsAction.Koronaveiviser}
         >
           <Normaltekst>
-            <FormattedMessage id={'korona.virus-varsel.ingress'} />
+            <FormattedMessage id="korona.virus-varsel.ingress" />
           </Normaltekst>
         </KoronaVarsel>
       </div>
