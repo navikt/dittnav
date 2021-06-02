@@ -1,9 +1,9 @@
-import React from "react";
-import { Undertittel } from "nav-frontend-typografi";
-import { LenkepanelBase } from "nav-frontend-lenkepanel/lib";
+import React from 'react';
+import { Undertittel } from 'nav-frontend-typografi';
+import { LenkepanelBase } from 'nav-frontend-lenkepanel/lib';
 import { trackEvent } from '../../utils/googleAnalytics';
 
-const cssPrefix = "korona-varsel";
+const cssPrefix = 'korona-varsel';
 
 export const KoronaVarsel = ({ tittel, href, visIkon = false, children, className, gaCategory, gaAction }) => (
   <LenkepanelBase

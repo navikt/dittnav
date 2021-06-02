@@ -25,15 +25,14 @@ const KoronaSpesial = ({ isLoaded }) => {
     }
   }, [harDagpengerSakNyligOppdatert]);
 
-  const loaded = isLoaded && (!harDagpengerSakNyligOppdatert || forskuddToggle !== null);
-
   return (
     <>
-      <div className={`korona-spesial${loaded ? ' korona-spesial--loaded' : ''}`}>
+      <div className={forskuddToggle ? 'korona-container' : ''}>
         {forskuddToggle ? (
           <KoronaVarsel
             tittel={lenker.koronaSituasjon.tittel}
             href={lenker.koronaSituasjon.url}
+            className="tilbakebetaling"
             gaCategory={GoogleAnalyticsCategory.Forside}
             gaAction={GoogleAnalyticsAction.KoronaSituasjon}
           >
