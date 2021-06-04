@@ -37,7 +37,7 @@ const Home = () => {
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger />
-            <KoronaSpesial isLoaded={!isFetching} />
+            <KoronaSpesial />
             <DittnavLenkePanel />
             {oppfolgingIsLoading ? null : generelleEllerVta}
             <Undertittel className="flere-tjenester__subheader">
