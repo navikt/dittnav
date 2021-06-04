@@ -11,6 +11,25 @@
   }
 }
 
+.korona-container {
+  display: flex;
+}
+
+.tilbakebetaling {
+  margin-right: 1rem;
+}
+
+@media (max-width: @tablet-breakpoint) {
+  .korona-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tilbakebetaling {
+    margin-right: 0rem;
+  }
+}
+
 .korona-spesial {
   display: flex;
   flex-direction: row;
