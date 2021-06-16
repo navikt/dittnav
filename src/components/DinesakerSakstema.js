@@ -11,7 +11,6 @@ import { Format } from '../constants';
 
 const sakstemaUrlOverride = {
   KOM: lenker.digisos.url,
-  DAG: lenker.dagpenger.url,
 };
 
 const DinesakerSakstema = (props) => {
