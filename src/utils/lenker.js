@@ -15,10 +15,6 @@ export const lenker = {
     tittel: 'Aktivitetsplan',
     url: `${window.env.AKTIVITETSPLAN_URL}`,
   },
-  dagpenger: {
-    tittel: 'Dagpenger',
-    url: `${window.env.DAGPENGER_URL}`,
-  },
   meldekort: {
     tittel: 'Meldekort',
     url: `${window.env.NAVNO_URL}/meldekort/om-meldekort`,
