@@ -95,6 +95,10 @@ export const lenker = {
     tittel: 'Dine pleiepenger',
     url: `${window.env.DINE_PLEIEPENGER_URL}`,
   },
+  hjelpemidler: {
+    tittel: 'Hjelpemidler',
+    url: `${window.env.HJELPEMIDLER_URL}`,
+  },
   dagpenger: {
     tittel: 'Dagpenger',
     url: `${window.env.DAGPENGER_URL}`,
