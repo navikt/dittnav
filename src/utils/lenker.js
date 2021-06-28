@@ -116,6 +116,7 @@ export const generelleLenker = [
   lenker.personopplysninger,
   lenker.dineFullmakter,
   lenker.dinePleiepenger,
+  lenker.hjelpemidler,
 ];
 
 export const oppfolgingsLenker = [
@@ -128,4 +129,5 @@ export const oppfolgingsLenker = [
   lenker.personopplysninger,
   lenker.dineFullmakter,
   lenker.dinePleiepenger,
+  lenker.hjelpemidler,
 ];
