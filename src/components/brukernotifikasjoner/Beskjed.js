@@ -16,7 +16,6 @@ const remove = (beskjed, removeBeskjed) => {
     postDigisosDone({
       eventId: beskjed.eventId,
       grupperingsId: beskjed.grupperingsId,
-      uid: beskjed.uid,
     });
   }
   postDone({
