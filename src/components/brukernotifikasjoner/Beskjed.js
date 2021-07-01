@@ -17,11 +17,12 @@ const remove = (beskjed, removeBeskjed) => {
       eventId: beskjed.eventId,
       grupperingsId: beskjed.grupperingsId,
     });
+  } else {
+    postDone({
+      eventId: beskjed.eventId,
+      uid: beskjed.uid,
+    });
   }
-  postDone({
-    eventId: beskjed.eventId,
-    uid: beskjed.uid,
-  });
 
   removeBeskjed(beskjed);
 };
