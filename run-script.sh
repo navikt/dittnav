@@ -20,6 +20,7 @@ declare -A variables=(
   [ER_DEV]=$ER_DEV
   [MIN_INNBOKS_URL]=$MIN_INNBOKS_URL
   [DAGPENGER_URL]=$DAGPENGER_URL
+  [HJELPEMIDLER_URL]=$HJELPEMIDLER_URL
 )
 
 forEachVariable() {
