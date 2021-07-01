@@ -129,6 +129,10 @@ export const postDone = (content) => (
   postJSON(`${Dittnav.DONE_URL}`, content)
 );
 
+export const postDigisosDone = (content) => (
+  postJSON(`${Dittnav.DIGISOS_DONE_URL}`, content)
+);
+
 export const postStatusoppdatering = (content) => (
   postJSON(`${TestProducer.STATUSOPPDATERING_URL}`, content)
 );

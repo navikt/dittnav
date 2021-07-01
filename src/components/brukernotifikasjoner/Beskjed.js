@@ -5,21 +5,24 @@ import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useStore from '../../hooks/useStore';
 import { transformTolokalDatoTid } from '../../utils/datoUtils';
 import PanelMedIkon from '../common/PanelMedIkon';
-import { postDone, tokenExpiresSoon } from '../../Api';
+import { postDigisosDone, postDone } from '../../Api';
 import IkonBeskjed from '../../assets/IkonBeskjed';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import BeskjedType from '../../types/BeskjedType';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/googleAnalytics';
 
-const remove = (beskjed, removeBeskjed, visInnloggingsModal) => {
+const remove = (beskjed, removeBeskjed) => {
+  if (beskjed.produsent === 'digiSos') {
+    postDigisosDone({
+      eventId: beskjed.eventId,
+      grupperingsId: beskjed.grupperingsId,
+    });
+  }
   postDone({
     eventId: beskjed.eventId,
     uid: beskjed.uid,
-  }).then((headers) => {
-    if (tokenExpiresSoon(headers)) {
-      visInnloggingsModal();
-    }
   });
+
   removeBeskjed(beskjed);
 };
 
