@@ -1,6 +1,6 @@
 proxy:
   - contextPath: /person/dittnav/veientilarbeid
-    baseUrl: http://veientilarbeid
+    baseUrl: {{ VEIENTILARBEID_URL }}
     validateOidcToken: false
     requestRewrite: REMOVE_CONTEXT_PATH
     minSecurityLevel: 3
