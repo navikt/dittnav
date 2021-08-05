@@ -18,17 +18,7 @@ const getDecorator = () => new Promise((resolve, reject) => {
   if (decorator) {
     resolve(decorator);
   } else {
-    const params = {
-      redirectToApp: true,
-      breadcrumbs: JSON.stringify([
-        { url: 'https://www.nav.no/person/dittnav', title: 'Ditt NAV' },
-        { url: 'https://www.nav.no/utbetalingsoversikt', title: 'Utbetalingsoversikt' },
-      ]),
-    };
-
-    const url = `${process.env.DECORATOR_URL}/?${Object.entries(params)
-      .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-      .join('&')}`;
+    const url = process.env.DECORATOR_URL;
 
     request(url, (error, response, body) => {
       if (!error && response.statusCode >= 200 && response.statusCode < 400) {
