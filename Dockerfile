@@ -1,9 +1,15 @@
-FROM node:14-alpine
+FROM node:14
 ENV NODE_ENV production
 
 WORKDIR usr/src/app
+
+COPY run-script.sh run-script.sh
+
 COPY server server/
 COPY dist dist/
+
+RUN chmod +x run-script.sh
+RUN ./run-script.sh
 
 WORKDIR server
 RUN npm install
