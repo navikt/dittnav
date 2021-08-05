@@ -53,7 +53,7 @@ printAvailability () {
 }
 
 makeAvailable() {
-  echo "window.env.${1}=\"${variables[$1]}\";" >> /dist/config.js
+  echo "window.env.${1}=\"${variables[$1]}\";" >> ../dist/config.js
 }
 
 (forEachVariable checkAvailability) || exit $?
@@ -62,7 +62,9 @@ checkTestConfigFile
 echo "Tilgjengeliggjør følgende miljøvariabler for frontend-en:"
 forEachVariable printAvailability
 
-echo "window.env={};" > /dist/config.js
+echo "window.env={};" > ../dist/config.js
 forEachVariable makeAvailable
+
+node server.js
 
 /run.sh
