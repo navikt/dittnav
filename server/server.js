@@ -33,7 +33,7 @@ server.get(`${basePath}/internal/isReady`, (req, res) => res.sendStatus(200));
 
 // VTA
 server.get(`${basePath}/veientilarbeid/path/to/assets`, (req, res) => res.sendStatus(200));
-server.get(`${basePath}/veientilarbeid/path/to/auth`, (req, res) => res.sendStatus(200));
+server.get(`${basePath}/veientilarbeid/api/auth`, (req, res) => res.sendStatus(200));
 
 server.use(basePath, express.static(buildPath, {
   index: false,
