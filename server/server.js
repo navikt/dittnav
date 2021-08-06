@@ -5,6 +5,7 @@ const express = require('express');
 const promBundle = require('express-prom-bundle');
 const path = require('path');
 const mustacheExpress = require('mustache-express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const logger = require('./logger');
 const getDecorator = require('./dekorator');
 const buildPath = path.resolve(__dirname, '../dist');
@@ -26,6 +27,8 @@ server.use((req, res, next) => {
   res.removeHeader('X-Powered-By');
   next();
 });
+
+server.use(`${basePath}/veientilarbeid/*`, createProxyMiddleware({ target: 'https://veientilarbeid.dev.nav.no', changeOrigin: true }));
 
 server.get(`${basePath}/internal/isAlive`, (req, res) => res.sendStatus(200));
 
