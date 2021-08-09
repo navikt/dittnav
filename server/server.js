@@ -17,6 +17,12 @@ const prometheus = promBundle({
   metricsPath: `${basePath}/internal/metrics`,
 });
 
+const proxy = createProxyMiddleware({
+  target: 'https://veientilarbeid.dev.nav.no',
+  changeOrigin: true,
+  logLevel: 'debug',
+});
+
 server.set('views', `${__dirname}/../dist`);
 server.set('view engine', 'mustache');
 server.engine('html', mustacheExpress());
@@ -28,11 +34,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(`${basePath}/veientilarbeid/api/auth`, createProxyMiddleware({
-  target: 'https://veientilarbeid.dev.nav.no',
-  changeOrigin: true,
-  logLevel: 'debug',
-}));
+server.use(`${basePath}/veientilarbeid/api/auth`, proxy);
 
 server.get(`${basePath}/internal/isAlive`, (req, res) => res.sendStatus(200));
 
