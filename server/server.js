@@ -28,8 +28,8 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(`${basePath}/veientilarbeid`, createProxyMiddleware({
-  target: 'https://veientilarbeid.dev.nav.no',
+server.use(`${basePath}/veientilarbeid/api/auth`, createProxyMiddleware({
+  target: 'https://veientilarbeid.dev.nav.no/api/auth',
   changeOrigin: true,
   logLevel: 'debug',
 }));
