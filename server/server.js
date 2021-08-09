@@ -28,7 +28,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(`${basePath}/veientilarbeid/*`, createProxyMiddleware({
+server.use(`${basePath}/veientilarbeid`, createProxyMiddleware({
   target: 'https://veientilarbeid.dev.nav.no',
   changeOrigin: true,
   logLevel: 'debug',
