@@ -17,10 +17,15 @@ const prometheus = promBundle({
   metricsPath: `${basePath}/internal/metrics`,
 });
 
+const removeBasePath = (proxyPath) => {
+  return proxyPath.replace('/person/dittnav', '');
+};
+
 const proxy = createProxyMiddleware({
   target: 'https://veientilarbeid.dev.nav.no',
   changeOrigin: true,
   logLevel: 'debug',
+  pathRewrite: removeBasePath,
 });
 
 server.set('views', `${__dirname}/../dist`);
@@ -34,7 +39,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(`${basePath}/veientilarbeid/api/auth`, proxy);
+server.use(`${basePath}/veientilarbeid`, proxy);
 
 server.get(`${basePath}/internal/isAlive`, (req, res) => res.sendStatus(200));
 
