@@ -45,6 +45,7 @@ server.use(basePath, express.static(buildPath, {
 // Match everything except internal og static
 server.use(/^(?!.*\/(internal|static|veientilarbeid)\/).*$/, (req, res) => getDecorator()
   .then(fragments => {
+    console.log('Rendering page...');
     res.render('index.html', fragments);
   })
   .catch(e => {
