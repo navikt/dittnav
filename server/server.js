@@ -31,6 +31,7 @@ server.use((req, res, next) => {
 server.use(`${basePath}/veientilarbeid/*`, createProxyMiddleware({
   target: 'https://veientilarbeid.dev.nav.no',
   changeOrigin: true,
+  logLevel: 'debug',
 }));
 
 server.get(`${basePath}/internal/isAlive`, (req, res) => res.sendStatus(200));
