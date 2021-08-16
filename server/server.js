@@ -25,7 +25,6 @@ const proxy = createProxyMiddleware({
   target: 'https://veientilarbeid.dev.nav.no',
   changeOrigin: true,
   logLevel: 'debug',
-  autoRewrite: true,
   pathRewrite: removeBasePath,
 });
 
