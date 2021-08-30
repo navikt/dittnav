@@ -42,9 +42,14 @@ jobs:
         with:
           java-version: '13'
 
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.READ_PACKAGES_PAT }}
+
       - name: 'Pull dittnav-docker-compose'
         run: |
-          echo "${{ secrets.DOCKER_PKG_TOKEN }}" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           cd dittnav-docker-compose
           docker-compose pull
           cd ..
@@ -53,7 +58,7 @@ jobs:
         run: |
           ./gradlew clean assemble
           APP_NAME=$(echo $GITHUB_REPOSITORY | rev | cut -f1 -d"/" | rev )
-          IMAGE_BASE="docker.pkg.github.com/$GITHUB_REPOSITORY/$APP_NAME"
+          IMAGE_BASE="ghcr.io/$GITHUB_REPOSITORY/$APP_NAME"
           IMAGE_LATEST="$IMAGE_BASE:latest"
           docker build --tag $IMAGE_LATEST .
 
