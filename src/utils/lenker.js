@@ -43,10 +43,6 @@ export const lenker = {
     tittel: 'Registrer deg som arbeidssøker',
     url: `${window.env.ARBEIDSSOKERREGISTRERING_URL}`,
   },
-  dittSykefravaer: {
-    tittel: 'Ditt sykefravær',
-    url: `${window.env.TJENESTER_URL}/sykefravaer`,
-  },
   utbetalingsoversikt: {
     tittel: 'Dine utbetalinger',
     url: `${window.env.TJENESTER_URL}/utbetalingsoversikt`,
@@ -94,6 +90,10 @@ export const lenker = {
   dinePleiepenger: {
     tittel: 'Dine pleiepenger',
     url: `${window.env.DINE_PLEIEPENGER_URL}`,
+  },
+  dittSykefravaer: {
+    tittel: 'Ditt sykefravær',
+    url: `${window.env.DITT_SYKEFRAVAER_URL}`,
   },
   hjelpemidler: {
     tittel: 'Hjelpemidler',
