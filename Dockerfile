@@ -15,8 +15,8 @@ COPY --from=navikt-common /dumb-init /dumb-init
 
 COPY run-script.sh /run-script.sh
 
-RUN chown -R 1069 /app
-RUN chmod -R u+rw /app
+RUN chown 1069 /app/config.js
+RUN chmod u+rw /app/config.js
 
 RUN chmod +x /entrypoint.sh /run-script.sh
 
