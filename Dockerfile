@@ -15,6 +15,9 @@ COPY --from=navikt-common /dumb-init /dumb-init
 
 COPY run-script.sh /run-script.sh
 
+RUN chown -R 1069 /app
+RUN chmod -R +rwu /app
+
 RUN chmod +x /entrypoint.sh /run-script.sh
 
 # Entrypoint-scriptet kopieres fra NAVs baseimage. Dette sørger for at init-scripts blir kjørt for å sette env-variablene som hentes fra Vault.
