@@ -1,5 +1,5 @@
 FROM navikt/common:0.1 AS navikt-common
-FROM docker.pkg.github.com/navikt/pus-decorator/pus-decorator
+FROM ghcr.io/navikt/pus-decorator/pus-decorator:latest
 
 ENV APPLICATION_NAME=dittnav
 ENV CONTEXT_PATH=person/dittnav
@@ -14,6 +14,9 @@ COPY --from=navikt-common /entrypoint.sh /entrypoint.sh
 COPY --from=navikt-common /dumb-init /dumb-init
 
 COPY run-script.sh /run-script.sh
+
+RUN chown 1069 /app/config.js
+RUN chmod u+rw /app/config.js
 
 RUN chmod +x /entrypoint.sh /run-script.sh
 
