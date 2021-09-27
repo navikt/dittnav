@@ -5,7 +5,6 @@ import moment from 'moment';
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
 import { lenker } from '../utils/lenker';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent, removeFragment } from '../utils/googleAnalytics';
 import { Format } from '../constants';
 
 const sakstemaUrlOverride = {
@@ -28,11 +27,6 @@ const DinesakerSakstema = (props) => {
         href={getTemaUrl()}
         className="sak-lenke"
         id="sak-lenke-id"
-        onClick={() => trackEvent(
-          GoogleAnalyticsCategory.Forside,
-          GoogleAnalyticsAction.DineSisteSaker,
-          removeFragment(getTemaUrl()),
-        )}
       >
         <div className="sak-temanavn lenke">
           <Undertittel>

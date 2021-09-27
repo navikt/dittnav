@@ -3,7 +3,6 @@ import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
 import { lenker } from '../utils/lenker';
 import { useSakstema } from '../hooks/useSaker';
 
@@ -42,11 +41,6 @@ const DittnavLenkePanel = () => {
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
               href={lenker.saksoversikt.url}
-              onClick={() => trackEvent(
-                GoogleAnalyticsCategory.Forside,
-                GoogleAnalyticsAction.DineSaker,
-                lenker.saksoversikt.url,
-              )}
               border
             >
               <F id="fliser.dine.saker" />
@@ -56,11 +50,6 @@ const DittnavLenkePanel = () => {
           alt="Utbetalinger"
           className="dittnav-lenkepanel-liten-item"
           href={lenker.utbetalingsoversikt.url}
-          onClick={() => trackEvent(
-            GoogleAnalyticsCategory.Forside,
-            GoogleAnalyticsAction.Utbetalinger,
-            lenker.utbetalingsoversikt.url,
-          )}
           border
         >
           <F id="fliser.dine.utbetalinger" />
@@ -69,11 +58,6 @@ const DittnavLenkePanel = () => {
           alt="Innboks"
           className="dittnav-lenkepanel-liten-item last"
           href={lenker.innboks.url}
-          onClick={() => trackEvent(
-            GoogleAnalyticsCategory.Forside,
-            GoogleAnalyticsAction.MinInnboks,
-            lenker.innboks.url,
-          )}
           border
         >
           <F id="fliser.innboks" />
