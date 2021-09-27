@@ -136,7 +136,7 @@
   "saksoversikt.har.flere.saker": "Du har {count} flere saker.",
   "saksoversikt.alle.saker": "Se alle dine saker ({count})",
 
-  "innboks.flere.meldinger": "Du har {count} meldinger i innboksen",
+  "innboks.flere.meldinger": "Du har {count} meldinger i din innboksen",
 
   "spinner.melding": "Laster innhold..."
 }

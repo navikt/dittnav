@@ -7,8 +7,9 @@ import IkonInnboks from '../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';
+import Innboks from './Innboks';
 
-const Innboks = ({ innbokser, innloggingsstatus }) => {
+const Innbokser = ({ innbokser, innloggingsstatus }) => {
   const intl = useIntl();
   const sikkerhetsnivaa = useSikkerhetsnivaa(innbokser[0], 'innboks', innloggingsstatus);
   let overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
@@ -35,14 +36,14 @@ const Innboks = ({ innbokser, innloggingsstatus }) => {
   );
 };
 
-Innboks.propTypes = {
+Innbokser.propTypes = {
   innbokser: arrayOf(InnboksType),
   innloggingsstatus: InnloggingsstatusType,
 };
 
-Innboks.defaultProps = {
+Innbokser.defaultProps = {
   innbokser: null,
   innloggingsstatus: null,
 };
 
-export default Innboks;
+export default Innbokser;
