@@ -1,4 +1,6 @@
-[
+{
+  "sakerURL": "https//person.nav.no/mine-saker",
+  "sakstemaer": [
     {
       "navn": "Dagpenger og oppfølging",
       "kode": "DAG",
@@ -109,4 +111,5 @@
       "kode": "SAK",
       "sistEndret": "2014-03-13T12:00:00+01:00"
     }
-]
+  ]
+}

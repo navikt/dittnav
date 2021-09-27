@@ -18,7 +18,7 @@ const DinesakerSakstema = (props) => {
 
   const getTemaUrl = () => {
     const { kode } = props.tema;
-    return sakstemaUrlOverride[kode] || `${lenker.saksoversiktTema.url}/${kode}`;
+    return sakstemaUrlOverride[kode] || `${props.url}/tema/${kode}`;
   };
 
   return (
@@ -61,6 +61,7 @@ DinesakerSakstema.propTypes = {
     navn: PropTypes.string.isRequired,
     sistEndret: PropTypes.string.isRequired,
   }).isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default DinesakerSakstema;

@@ -10,7 +10,8 @@ const antallSakstemaVist = 2;
 
 const DittnavLenkePanel = () => {
   const [{ data: saker }] = useSakstema();
-  const visStortSakspanel = saker && saker.content.length > 0;
+  const visStortSakspanel = saker && saker.content.sakstemaer?.length > 0;
+  const sakerURL = saker?.content?.sakerURL;
 
   return (
     <div className="dittnav-lenkepanel-top-container">
@@ -19,16 +20,17 @@ const DittnavLenkePanel = () => {
           <OversiktspanelMedListe
             className="dittnav-lenkepanel-stor"
             overskrift={<F id="saksoversikt.overskrift" />}
-            headerLenkeTekst={<F id="saksoversikt.alle.saker" values={{ count: 0 }} />}
-            headerLenkeHref={lenker.saksoversikt.url}
+            headerLenkeTekst={<F id="saksoversikt.alle.saker" />}
+            headerLenkeHref={sakerURL}
             border={false}
             liste={
-              saker.content
+              saker.content.sakstemaer
                 .slice(0, antallSakstemaVist)
                 .map((sak) => (
                   <DinesakerSakstema
                     key={sak.kode}
                     tema={sak}
+                    url={sakerURL}
                   />
                 ))
             }
@@ -40,7 +42,7 @@ const DittnavLenkePanel = () => {
             <Lenkepanel
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
-              href={lenker.saksoversikt.url}
+              href={saker?.content.sakerURL}
               border
             >
               <F id="fliser.dine.saker" />
