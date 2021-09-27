@@ -2,7 +2,7 @@ import React from 'react';
 import { bool } from 'prop-types';
 import Beskjed from './brukernotifikasjoner/Beskjed';
 import Oppgave from './brukernotifikasjoner/Oppgave';
-import Innbokser from './brukernotifikasjoner/Innbokser';
+import Innboks from './brukernotifikasjoner/Innboks';
 import InnloggingsModal from './common/InnloggingsModal';
 import useStore from '../hooks/useStore';
 import { byEventTidspunkt } from '../utils/datoUtils';
@@ -46,7 +46,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
           />
         ))}
       {innbokser && innloggingsstatus && (
-        <Innbokser innbokser={innbokser && innbokser.content} innloggingsstatus={innloggingsstatus.content} />
+        <Innboks innbokser={innbokser && innbokser.content} innloggingsstatus={innloggingsstatus.content} />
       )}
     </>
   );
