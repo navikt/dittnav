@@ -10,6 +10,7 @@ import useInnloggingsstatus from '../hooks/useInnloggingsstatus';
 import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
 import InnboksType from '../types/InnboksType';
+import Innbokser from './brukernotifikasjoner/Innbokser';
 
 const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInaktiv }) => {
   const [{ data: innloggingsstatus, isSuccess }] = useInnloggingsstatus();
@@ -45,14 +46,9 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innloggingsstatus && innbokser.content.sort(byEventTidspunkt)
-        .map(i => (
-          <Innboks
-            key={i.eventId}
-            innboks={i}
-            innloggingsstatus={innloggingsstatus.content}
-          />
-        ))}
+      {innbokser && innloggingsstatus && (
+        <Innbokser innbokser={innbokser && innbokser.content} innloggingsstatus={innloggingsstatus.content} />
+      )}
     </>
   );
 };
