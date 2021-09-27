@@ -107,7 +107,7 @@ exports[`render empty InfoMeldinger component 1`] = `
         "paalogging.alternativ.om.lenketekst": "Logg inn med ID-porten",
         "paalogging.alternativ.om.tittel": "Om alternativ pålogging",
         "panel.knapp.skjermleser.lukk": "Lukk",
-        "saksoversikt.alle.saker": "Se alle dine saker ({count})",
+        "saksoversikt.alle.saker": "Se alle dine saker",
         "saksoversikt.har.entil.sak": "Du har én sak til.",
         "saksoversikt.har.flere.saker": "Du har {count} flere saker.",
         "saksoversikt.har.ingen.saker": "Du har ingen saker. ",
