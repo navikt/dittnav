@@ -467,105 +467,12 @@ Array [
       </button>
     </div>
   </div>,
-  <a
-    className="lenkepanel innboks-notifikasjon lenkepanel--border"
-    href="undefined"
-    onClick={[Function]}
-  >
-    <div
-      className="lenkepanel__innhold"
-    >
-      <div
-        className="lenkepanel__ikon"
-      >
-        <svg
-          fill="none"
-          height="48"
-          viewBox="0 0 54 54"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="27"
-            cy="27"
-            fill="#C2EAF7"
-            r="27"
-          />
-          <path
-            clipRule="evenodd"
-            d="M36.8182 35.3636H17.1818C15.9785 35.3636 15 34.3851 15 33.1818V21.1818C15 19.9785 15.9785 19 17.1818 19H36.8182C38.0215 19 39 19.9785 39 21.1818V33.1818C39 34.3851 38.0215 35.3636 36.8182 35.3636ZM16.1473 20.8355C16.1107 20.9443 16.0909 21.0608 16.0909 21.1818V33.1818C16.0909 33.7829 16.5796 34.2727 17.1818 34.2727H36.8182C37.4204 34.2727 37.9091 33.7829 37.9091 33.1818V21.1818C37.9091 21.0611 37.8894 20.9449 37.853 20.8362L27.342 29.2449C27.2417 29.3235 27.1206 29.3639 27.0006 29.3639C26.8806 29.3639 26.7595 29.3235 26.6591 29.2449L16.1473 20.8355ZM16.9874 20.1082C17.0505 20.0969 17.1155 20.0909 17.1818 20.0909H36.8182C36.8855 20.0909 36.9514 20.097 37.0154 20.1088L27.0006 28.1202L16.9874 20.1082Z"
-            fill="#262626"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div>
-        <p
-          className="typo-element lenkepanel__heading"
-        >
-          Du har 2 meldinger i din innboks
-        </p>
-        
-        
-      </div>
-    </div>
-    <span
-      className="lenkepanel__indikator"
-    />
-  </a>,
 ]
 `;
 
 exports[`Brukernotifikasjoner with beskjeder, oppgaver and innbokser, but no innlogging 1`] = `null`;
 
-exports[`Brukernotifikasjoner with innbokser 1`] = `
-<a
-  className="lenkepanel innboks-notifikasjon lenkepanel--border"
-  href="undefined"
-  onClick={[Function]}
->
-  <div
-    className="lenkepanel__innhold"
-  >
-    <div
-      className="lenkepanel__ikon"
-    >
-      <svg
-        fill="none"
-        height="48"
-        viewBox="0 0 54 54"
-        width="48"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="27"
-          cy="27"
-          fill="#C2EAF7"
-          r="27"
-        />
-        <path
-          clipRule="evenodd"
-          d="M36.8182 35.3636H17.1818C15.9785 35.3636 15 34.3851 15 33.1818V21.1818C15 19.9785 15.9785 19 17.1818 19H36.8182C38.0215 19 39 19.9785 39 21.1818V33.1818C39 34.3851 38.0215 35.3636 36.8182 35.3636ZM16.1473 20.8355C16.1107 20.9443 16.0909 21.0608 16.0909 21.1818V33.1818C16.0909 33.7829 16.5796 34.2727 17.1818 34.2727H36.8182C37.4204 34.2727 37.9091 33.7829 37.9091 33.1818V21.1818C37.9091 21.0611 37.8894 20.9449 37.853 20.8362L27.342 29.2449C27.2417 29.3235 27.1206 29.3639 27.0006 29.3639C26.8806 29.3639 26.7595 29.3235 26.6591 29.2449L16.1473 20.8355ZM16.9874 20.1082C17.0505 20.0969 17.1155 20.0909 17.1818 20.0909H36.8182C36.8855 20.0909 36.9514 20.097 37.0154 20.1088L27.0006 28.1202L16.9874 20.1082Z"
-          fill="#262626"
-          fillRule="evenodd"
-        />
-      </svg>
-    </div>
-    <div>
-      <p
-        className="typo-element lenkepanel__heading"
-      >
-        Du har 2 meldinger i din innboks
-      </p>
-      
-      
-    </div>
-  </div>
-  <span
-    className="lenkepanel__indikator"
-  />
-</a>
-`;
+exports[`Brukernotifikasjoner with innbokser 1`] = `null`;
 
 exports[`Brukernotifikasjoner with oppgaver 1`] = `
 Array [
