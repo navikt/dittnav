@@ -20,7 +20,7 @@ const Innboks = ({ innbokser, innloggingsstatus }) => {
 
   return (
     <LenkepanelMedIkon
-      className="innboks"
+      className="innboks-notifikasjon"
       alt="Innboks"
       overskrift={overskrift}
       etikett={gruppert ? null : lokalDatoTid}
