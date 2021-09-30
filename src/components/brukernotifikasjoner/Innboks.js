@@ -24,7 +24,7 @@ const Innboks = ({ innbokser, innloggingsstatus }) => {
       alt="Innboks"
       overskrift={overskrift}
       etikett={gruppert ? null : lokalDatoTid}
-      href={gruppert ? lenker.minInnboks : sikkerhetsnivaa.lenke}
+      href={gruppert ? lenker.minInnboks.url : sikkerhetsnivaa.lenke}
     >
       <IkonInnboks />
     </LenkepanelMedIkon>
