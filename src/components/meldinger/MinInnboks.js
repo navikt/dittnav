@@ -4,18 +4,18 @@ import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../assets/IkonOppgave';
-import IkonInnboks from '../../assets/IkonInnboks';
+import IkonMinInnboks from '../../assets/IkonMinInnboks';
 import { GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { useMeldinger } from '../../hooks/usePerson';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return <IkonInnboks />;
+      return <IkonMinInnboks />;
     case 'OPPGAVE_VARSEL':
       return <IkonOppgave />;
     default:
-      return <IkonInnboks />;
+      return <IkonMinInnboks />;
   }
 };
 
