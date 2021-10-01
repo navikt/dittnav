@@ -45,8 +45,8 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innloggingsstatus && innbokser.length > 0 && (
-        <Innboks innbokser={innbokser && innbokser.content} innloggingsstatus={innloggingsstatus.content} />
+      {innbokser && innloggingsstatus && (
+        <Innboks innbokser={innbokser.content} innloggingsstatus={innloggingsstatus.content} />
       )}
     </>
   );

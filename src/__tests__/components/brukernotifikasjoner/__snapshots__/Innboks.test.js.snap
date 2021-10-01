@@ -22,7 +22,7 @@ exports[`Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
         <circle
           cx="27"
           cy="27"
-          fill="#C2EAF7"
+          fill="#97E6FF"
           r="27"
         />
         <path
@@ -75,7 +75,7 @@ exports[`Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
         <circle
           cx="27"
           cy="27"
-          fill="#C2EAF7"
+          fill="#97E6FF"
           r="27"
         />
         <path
@@ -128,7 +128,7 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
         <circle
           cx="27"
           cy="27"
-          fill="#C2EAF7"
+          fill="#97E6FF"
           r="27"
         />
         <path
@@ -181,7 +181,7 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
         <circle
           cx="27"
           cy="27"
-          fill="#C2EAF7"
+          fill="#97E6FF"
           r="27"
         />
         <path

@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf } from 'prop-types';
 import { useIntl } from 'react-intl';
-import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
+import sikkerhetsContext from '../../hooks/useSikkerhetsnivaa';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import IkonInnboks from '../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
@@ -12,7 +12,12 @@ import { lenker } from '../../utils/lenker';
 
 const Innboks = ({ innbokser, innloggingsstatus }) => {
   const intl = useIntl();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(innbokser[0], 'innboks', innloggingsstatus);
+
+  if (innbokser.length === 0) {
+    return null;
+  }
+
+  const sikkerhetsnivaa = sikkerhetsContext(innbokser[0], 'innboks', innloggingsstatus);
   const gruppert = innbokser.length > 1;
   const gruppertTekst = intl.formatMessage({ id: 'innboks.flere.meldinger' }, { count: innbokser.length });
   const overskrift = <PanelOverskrift overskrift={gruppert ? gruppertTekst : sikkerhetsnivaa.tekst} type="Element" />;
