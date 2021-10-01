@@ -2,7 +2,7 @@ import React from 'react';
 
 const IkonInnboks = () => (
   <svg width="48" height="48" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="27" cy="27" r="27" fill="#C2EAF7" />
+    <circle cx="27" cy="27" r="27" fill="#97E6FF" />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -10,6 +10,7 @@ const IkonInnboks = () => (
       fill="#262626"
     />
   </svg>
+
 );
 
 export default IkonInnboks;
