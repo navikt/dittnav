@@ -36,33 +36,21 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, setTekst, setLenke
     setGrupperingsid('');
   };
 
-  const shouldSendEksternVarsling = valg === 'beskjed' || valg === 'oppgave';
-
   const convertStringToBoolean = (value) => (
     value === 'true'
   );
 
-  const postContentForBeskjedAndOppgave = {
+  const postContent = {
     tekst,
     grupperingsid: grupperingsid || 'default-grupperingsid',
     link: lenke,
     eksternVarsling: convertStringToBoolean(eksternVarsling),
   };
 
-  const postContentForInnboks = {
-    tekst,
-    grupperingsid: grupperingsid || 'default-grupperingsid',
-    link: lenke,
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    postHendelse(
-      `produce/${valg}`,
-      shouldSendEksternVarsling
-        ? postContentForBeskjedAndOppgave
-        : postContentForInnboks,
-    );
+    postHendelse(`produce/${valg}`, postContent);
     clearInput();
   };
 
