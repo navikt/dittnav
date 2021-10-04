@@ -7,17 +7,22 @@ import IkonOppgave from '../../assets/IkonOppgave';
 import IkonMinInnboks from '../../assets/IkonMinInnboks';
 import { GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
 import { useMeldinger } from '../../hooks/usePerson';
+import IkonBrevVedtak from '../../assets/IkonBrevVedtak';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return <IkonMinInnboks />;
+      return <IkonBrevVedtak />;
     case 'OPPGAVE_VARSEL':
       return <IkonOppgave />;
     default:
       return <IkonMinInnboks />;
   }
 };
+
+const isDokumentVarsel = (type) => (
+  type === 'DOKUMENT_VARSEL'
+);
 
 const createOverskrift = (message, numberToWord, formatFlereEn) => {
   const overskrift = (
@@ -43,7 +48,7 @@ const MinInnboks = () => {
       {meldinger.content.map(message => (
         <LenkepanelMedIkon
           key={message.type}
-          className="infomelding innboks"
+          className={isDokumentVarsel(message.type) ? 'infomelding beskjed' : 'infomelding innboks'}
           alt="Melding fra mininnboks"
           overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
           href={message.url}
