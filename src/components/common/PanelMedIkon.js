@@ -6,6 +6,7 @@ import Panel from 'nav-frontend-paneler';
 import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
 import NavFrontendChevron from 'nav-frontend-chevron';
+import ArkiverKnapp from './ArkiverKnapp';
 import { trackEvent, removeFragment } from '../../utils/googleAnalytics';
 import {
   checkOverflow,
@@ -101,11 +102,11 @@ const PanelMedIkon = (props) => {
         {props.knapp
           ? (
             <div className={`${props.className}__knapp`}>
-              <Lukknapp bla onClick={props.onClick}>
+              <ArkiverKnapp bla onClick={props.onClick}>
                 {props.skjermleserTekst
                   ? intl.formatMessage({ id: props.skjermleserTekst })
                   : intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
-              </Lukknapp>
+              </ArkiverKnapp>
             </div>
           )
           : null}
