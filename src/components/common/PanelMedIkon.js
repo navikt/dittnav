@@ -3,7 +3,6 @@ import { shape, node, func, oneOfType, any, bool, string } from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Normaltekst, Undertekst } from 'nav-frontend-typografi';
 import Panel from 'nav-frontend-paneler';
-import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
 import NavFrontendChevron from 'nav-frontend-chevron';
 import ArkiverKnapp from './ArkiverKnapp';
