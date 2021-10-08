@@ -6,6 +6,7 @@ import Panel from 'nav-frontend-paneler';
 import Lenke from 'nav-frontend-lenker';
 import NavFrontendChevron from 'nav-frontend-chevron';
 import ArkiverKnapp from './ArkiverKnapp';
+import IkonArkivBoks from '../../assets/IkonArkivBoks';
 import { trackEvent, removeFragment } from '../../utils/googleAnalytics';
 import {
   checkOverflow,
@@ -21,11 +22,13 @@ const limit = 90;
 const PanelMedIkon = (props) => {
   const intl = useIntl();
   const [isOpen, setIsOpen] = useState(false);
+  const [showArkivIkon, setShowArkivIkon] = useState(false);
   const isOverflowing = checkOverflow(props.overskrift, limit);
   const isFormattedMessage = checkForFormattedMessage(props.overskrift);
   const visPanelLenke = (props.lenke && isOpen) || (props.lenke && !isOverflowing) || isFormattedMessage;
   const tekst = finnTekstBase(props.overskrift, limit) + ellipse(!isOpen && isOverflowing);
   const avkortetTekst = avkortTekst(props.overskrift, limit);
+  const { onAnimationEnd } = props;
 
   const utvidTekst = (event) => {
     event.preventDefault();
@@ -65,10 +68,20 @@ const PanelMedIkon = (props) => {
     </>
   );
 
+  const handleMouseEnter = () => {
+    setShowArkivIkon(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowArkivIkon(false);
+  };
+
   return (
-    <Panel className={props.className} border>
-      <div className={`${props.className}__ikon`}>
-        {props.children}
+    <Panel className={props.className} border onAnimationEnd={onAnimationEnd}>
+      <div className={`${props.className}__ikon`}> 
+        {showArkivIkon ? <IkonArkivBoks /> : (
+          props.children
+        )}   
       </div>
       <div className={`${props.className}__tekst`}>
         {props.erInformasjonsmelding ? props.overskrift : (
@@ -101,7 +114,7 @@ const PanelMedIkon = (props) => {
         {props.knapp
           ? (
             <div className={`${props.className}__knapp`}>
-              <ArkiverKnapp bla onClick={props.onClick}>
+              <ArkiverKnapp bla onClick={props.onClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 {props.skjermleserTekst
                   ? intl.formatMessage({ id: props.skjermleserTekst })
                   : intl.formatMessage({ id: 'panel.knapp.skjermleser.lukk' })}
@@ -131,6 +144,7 @@ PanelMedIkon.propTypes = {
   lenkeTekst: string,
   skjermleserTekst: string,
   erInformasjonsmelding: bool,
+  onAnimationEnd: func,
 };
 
 PanelMedIkon.defaultProps = {
@@ -145,6 +159,7 @@ PanelMedIkon.defaultProps = {
   lenkeTekst: null,
   skjermleserTekst: null,
   erInformasjonsmelding: false,
+  onAnimationEnd: false,
 };
 
 export default PanelMedIkon;

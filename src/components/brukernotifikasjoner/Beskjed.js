@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
@@ -33,29 +33,40 @@ const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
   }
 };
 
-const onClickBeskjed = (beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv) => {
-  remove(beskjed, removeBeskjed, visInnloggingsModal);
-  addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);
-  trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
-};
+
 
 const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
   const location = useLocation();
   const { removeBeskjed, addInaktivBeskjed, visInnloggingsModal } = useStore();
+  const [isBeingRemoved, setIsBeingRemoved] = useState(false);
 
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
   const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
+  const onClickBeskjed = () => {
+    setIsBeingRemoved(true);
+  };
 
+  const handleArkiverBeskjed = () => {
+    remove(beskjed, removeBeskjed, visInnloggingsModal);
+    addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);
+    trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
+  };
+
+  const onAnimationEnd = () => {
+    handleArkiverBeskjed();
+  };
+  
   return (
     <PanelMedIkon
-      className="beskjed"
+      className={isBeingRemoved ? 'remove beskjed' : 'beskjed'}
       alt="Beskjed"
       overskrift={sikkerhetsnivaa.tekst}
       etikett={lokalDatoTid}
-      onClick={() => onClickBeskjed(beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv)}
+      onClick={() => onClickBeskjed()}
+      onAnimationEnd={onAnimationEnd}
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
