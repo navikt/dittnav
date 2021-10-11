@@ -23,7 +23,7 @@ export const buildNavNoUrl = (path) => {
 };
 
 export const buildLoginserviceUrl = (level) => {
-  const loginserviceUrl = `${window.env.LOGIN_URL}${window.location.search}`;
+  const loginserviceUrl = `${window.env.LOGIN_URL}/${window.location.search}`;
   const loginServiceLevelFourUrl = window.env.LOGIN_LEVEL_4_URL;
 
   return level ? loginServiceLevelFourUrl : loginserviceUrl;
