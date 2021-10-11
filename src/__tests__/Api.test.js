@@ -16,7 +16,7 @@ it('handling Unauthorized', async () => {
   fetch.mockResponseOnce(JSON.stringify({ }), { status: 401 });
   expect.assertions(1);
   jest.spyOn(window.location, 'assign').mockImplementation(l => {
-    expect(l).toEqual('http://localhost:5000/');
+    expect(l).toEqual('https://loginservice.dev.nav.no/login?level=Level3&redirect=https://www.dev.nav.no/person/dittnav/');
   });
   await expect(redirectToLogin());
 });
