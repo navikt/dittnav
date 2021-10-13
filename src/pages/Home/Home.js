@@ -23,24 +23,13 @@ const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
   const isFetching = useIsFetching();
   const { state } = useStore();
-  const [{ data: dagpengerSistEndret }] = useSakstema();
-  const [showCoronaSpesial, setShowCoronaSpesial] = useState(false);
 
-  const visForskuddLenkeFra = '01-03-2020';
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
 
   if (state.visInnloggingsModal) {
     return (<InnloggingsModal onClick={() => null} isOpen />);
   }
-
-  useEffect(() => {
-    if (dagpengerSistEndret !== undefined) {
-      if (moment(dagpengerSistEndret.content.dagpengerSistEndret).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY'))) {
-        setShowCoronaSpesial(true);
-      }
-    }
-  }, [dagpengerSistEndret]);
 
   return (
     <PageBase uniqueErrors={state.error} breadcrumbs={Brodsmuler.dittnav}>
@@ -50,7 +39,7 @@ const Home = () => {
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger />
-            {showCoronaSpesial ? <KoronaSpesial /> : null}
+            <KoronaSpesial />
             <DittnavLenkePanel />
             {oppfolgingIsLoading ? null : generelleEllerVta}
             <Undertittel className="flere-tjenester__subheader">

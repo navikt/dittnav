@@ -14,16 +14,14 @@ const KoronaSpesial = () => {
   const [forskuddToggle, setForskuddToggle] = useState(null);
   const [{ data: sakstema }] = useSakstema();
 
-  const harDagpengerSakNyligOppdatert = sakstema && sakstema.content.sakstemaList && sakstema.content.sakstemaList
-    .some(tema => tema.temakode === 'DAG'
-      && moment(tema.sisteOppdatering).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY')));
+  const harDagpengerSakNyligOppdatert = sakstema && moment(sakstema.content.dagpengerSistEndret).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY'));
 
   useEffect(() => {
     if (harDagpengerSakNyligOppdatert) {
       getForskuddToggle(setForskuddToggle);
     }
   }, [harDagpengerSakNyligOppdatert]);
-
+  
   return (
     <>
       <div className={forskuddToggle ? 'korona-container' : ''}>
