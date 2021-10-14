@@ -60,13 +60,11 @@ test('Snapshot test med saker', () => {
     },
   ]);
 
-  const component = ReactTestRenderer.create(
-    wrapIntl(
-      <BeskjedStoreProvider>
-        <DittnavLenkePanel />
-      </BeskjedStoreProvider>
-    )
-  );
+  const component = ReactTestRenderer.create(wrapIntl(
+    <BeskjedStoreProvider>
+      <DittnavLenkePanel />
+    </BeskjedStoreProvider>,
+  ));
 
   expect(component.toJSON()).toMatchSnapshot();
 });
@@ -88,13 +86,11 @@ test('Snapshot test uten saker', () => {
     },
   ]);
 
-  const component = ReactTestRenderer.create(
-    wrapIntl(
-      <BeskjedStoreProvider>
-        <DittnavLenkePanel />
-      </BeskjedStoreProvider>
-    )
-  );
+  const component = ReactTestRenderer.create(wrapIntl(
+    <BeskjedStoreProvider>
+      <DittnavLenkePanel />
+    </BeskjedStoreProvider>,
+  ));
 
   expect(component.toJSON()).toMatchSnapshot();
 });
