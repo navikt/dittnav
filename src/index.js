@@ -3,7 +3,7 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
-// import './css/index.css';
+import './css/index.css';
 import './less/index.less';
 import App from './App';
 import { checkAuth, checkApiStatus, redirectToLogin } from './Api';
