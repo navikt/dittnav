@@ -1,7 +1,7 @@
 import { Dittnav, Innlogging, TestProducer } from './constants';
 
 export const redirectToLogin = () => {
-  window.location.assign(`${Innlogging.LOGINSERVICE_URL}`);
+  window.location.assign(Innlogging.LOGINSERVICE_URL);
 };
 
 export const tokenExpiresSoon = (headers) => (
