@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
@@ -12,7 +12,7 @@ import KommunikasjonFlis from './KommunikasjonFlis';
 const Utbetalingerpanel = (additionalClassName) => (
   <Lenkepanel
     alt="Utbetalinger"
-    className={`${additionalClassName}dittnav-lenkepanel-liten-item top-element`}
+    className={`${additionalClassName}dittnav-lenkepanel-liten-item`}
     href={lenker.utbetalingsoversikt.url}
     onClick={() => trackEvent(
       GoogleAnalyticsCategory.Forside,
@@ -30,17 +30,22 @@ const antallSakstemaVist = 2;
 const DittnavLenkePanel = () => {
   const [{ data: sakstema }] = useSakstema();
   const [{ data: oppfolging }] = useOppfolging();
+  const [utbetalingOverst, setUtbetalingOverst] = useState(false);
 
   const brukerUnderOppfolging = oppfolging && oppfolging.content.erBrukerUnderOppfolging;
   const visStortSakspanel = sakstema && sakstema.content.sakstemaList && sakstema.content.sakstemaList.length > 0;
-  const UtbetalingOverst = !brukerUnderOppfolging && visStortSakspanel;
+
+  useEffect(() => {
+    setUtbetalingOverst(!brukerUnderOppfolging && visStortSakspanel);
+  }, [visStortSakspanel, brukerUnderOppfolging]);
 
   return (
     <div className="dittnav-lenkepanel-top-container">
-      {UtbetalingOverst ? Utbetalingerpanel('utbetalingerpanel ') : ''}
+      {utbetalingOverst ? Utbetalingerpanel('utbetalingerpanel ') : ''}
+      
       <div className="dittnav-lenkepanel-tokol">
         <div className="dittnav-lenkepanel-venstre">
-          {!UtbetalingOverst ? Utbetalingerpanel('') : ''}
+          {!utbetalingOverst ? Utbetalingerpanel('') : ''}
 
           {visStortSakspanel ? (
             <OversiktspanelMedListe

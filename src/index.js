@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'intl';
 import './css/index.css';
-import './less/index.less';
 import App from './App';
 import { checkAuth, checkApiStatus, redirectToLogin } from './Api';
 import { initializeGoogleAnalytics } from './utils/googleAnalytics';

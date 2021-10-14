@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 
 const KommunikasjonFlisElement = ({ className, Ikon, tittel, undertekst, linkUrl }) => (
-  <div className={`KommunikasjonFlis-element ${className}`}>
-    <Lenke className="KommunikasjonFlis-lenke" href={linkUrl}>
+  <div className={`kommunikasjon-flis-element ${className}`}>
+    <Lenke className="kommunikasjon-flis-lenke" href={linkUrl}>
       <Undertittel>
         <Ikon />   
-        <span className="KommunikasjonFlis-element-tittel">{tittel}</span>
+        <span className="kommunikasjon-flis-element-tittel">{tittel}</span>
       </Undertittel>   
 
       <Undertekst>

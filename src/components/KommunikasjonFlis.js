@@ -12,15 +12,15 @@ import KommunikasjonFlisElement from './KommunikasjonFlisElement';
 import { lenker } from '../utils/lenker';
 import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
 
-const KommunikasjonsFlis = ({ oppfolging }) => (
-  <PanelBase className="KommunikasjonsFlis">
+const KommunikasjonFlis = ({ oppfolging }) => (
+  <PanelBase className="kommunikasjon-flis">
   
-    <Systemtittel className="KommunikasjonsFlis-overskrift">
+    <Systemtittel className="kommunikasjon-flis-overskrift">
       <F id="kommunikasjon.med.nav.overskrift" />
     </Systemtittel>
 
     <KommunikasjonFlisElement
-      className="KommunikasjonsFlis-innboks" 
+      className="kommunikasjon-flis-innboks" 
       tittel={<F id="kommunikasjon.med.nav.innboks" />} 
       undertekst={<F id="kommunikasjon.med.nav.innboks.undertekst" />}
       Ikon={IkonEmail}
@@ -34,7 +34,7 @@ const KommunikasjonsFlis = ({ oppfolging }) => (
     {oppfolging 
       ? (
         <KommunikasjonFlisElement
-          className="KommunikasjonsFlis-dialog" 
+          className="kommunikasjon-flis-dialog" 
           tittel={<F id="kommunikasjon.med.nav.dialog.veileder" />} 
           undertekst={<F id="kommunikasjon.med.nav.dialog.veileder.undertekst" />}
           Ikon={IkonDialogMedVeileder}
@@ -48,7 +48,7 @@ const KommunikasjonsFlis = ({ oppfolging }) => (
       )
       : ''}
     <KommunikasjonFlisElement 
-      className="KommunikasjonsFlis-brev-vedtak" 
+      className="kommunikasjon-flis-brev-vedtak" 
       tittel={<F id="kommunikasjon.med.nav.brev.vedtak" />}  
       undertekst={<F id="kommunikasjon.med.nav.brev.vedtak.undertekst" />}
       Ikon={IkonBrevVedtak}
@@ -62,11 +62,11 @@ const KommunikasjonsFlis = ({ oppfolging }) => (
   </PanelBase>
 );
 
-KommunikasjonsFlis.propTypes = {
+KommunikasjonFlis.propTypes = {
   oppfolging: PropTypes.bool,
 };
 
-KommunikasjonsFlis.defaultProps = {
+KommunikasjonFlis.defaultProps = {
   oppfolging: false,
 };
-export default KommunikasjonsFlis;
+export default KommunikasjonFlis;

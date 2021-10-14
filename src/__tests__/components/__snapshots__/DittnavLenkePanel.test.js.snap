@@ -4,28 +4,28 @@ exports[`Snapshot test med saker 1`] = `
 <div
   className="dittnav-lenkepanel-top-container"
 >
-  <a
-    alt="Utbetalinger"
-    className="lenkepanel utbetalingerpanel dittnav-lenkepanel-liten-item top-element lenkepanel--border"
-    href="http://localhost:9222/utbetalingsoversikt"
-    onClick={[Function]}
-  >
-    <span
-      className="typo-undertittel lenkepanel__heading"
-    >
-      Dine utbetalinger
-    </span>
-    <span
-      className="lenkepanel__indikator"
-    />
-  </a>
+  
   <div
     className="dittnav-lenkepanel-tokol"
   >
     <div
       className="dittnav-lenkepanel-venstre"
     >
-      
+      <a
+        alt="Utbetalinger"
+        className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+        href="http://localhost:9222/utbetalingsoversikt"
+        onClick={[Function]}
+      >
+        <span
+          className="typo-undertittel lenkepanel__heading"
+        >
+          Dine utbetalinger
+        </span>
+        <span
+          className="lenkepanel__indikator"
+        />
+      </a>
       <div
         className="panel oversiktspanel dittnav-lenkepanel-stor"
       >
@@ -124,18 +124,18 @@ exports[`Snapshot test med saker 1`] = `
       </div>
     </div>
     <div
-      className="panel KommunikasjonsFlis"
+      className="panel kommunikasjon-flis"
     >
       <h2
-        className="typo-systemtittel KommunikasjonsFlis-overskrift"
+        className="typo-systemtittel kommunikasjon-flis-overskrift"
       >
         Kommunikasjon med Nav
       </h2>
       <div
-        className="KommunikasjonFlis-element KommunikasjonsFlis-innboks"
+        className="kommunikasjon-flis-element kommunikasjon-flis-innboks"
       >
         <a
-          className="lenke KommunikasjonFlis-lenke"
+          className="lenke kommunikasjon-flis-lenke"
           href="undefined"
         >
           <h2
@@ -161,7 +161,7 @@ exports[`Snapshot test med saker 1`] = `
               />
             </svg>
             <span
-              className="KommunikasjonFlis-element-tittel"
+              className="kommunikasjon-flis-element-tittel"
             >
               Innboks
             </span>
@@ -175,10 +175,10 @@ exports[`Snapshot test med saker 1`] = `
       </div>
       
       <div
-        className="KommunikasjonFlis-element KommunikasjonsFlis-brev-vedtak"
+        className="kommunikasjon-flis-element kommunikasjon-flis-brev-vedtak"
       >
         <a
-          className="lenke KommunikasjonFlis-lenke"
+          className="lenke kommunikasjon-flis-lenke"
           href="undefined"
         >
           <h2
@@ -199,7 +199,7 @@ exports[`Snapshot test med saker 1`] = `
               />
             </svg>
             <span
-              className="KommunikasjonFlis-element-tittel"
+              className="kommunikasjon-flis-element-tittel"
             >
               Brev og vedtak
             </span>
@@ -229,7 +229,7 @@ exports[`Snapshot test uten saker 1`] = `
     >
       <a
         alt="Utbetalinger"
-        className="lenkepanel dittnav-lenkepanel-liten-item top-element lenkepanel--border"
+        className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
         href="http://localhost:9222/utbetalingsoversikt"
         onClick={[Function]}
       >
@@ -259,18 +259,18 @@ exports[`Snapshot test uten saker 1`] = `
       </a>
     </div>
     <div
-      className="panel KommunikasjonsFlis"
+      className="panel kommunikasjon-flis"
     >
       <h2
-        className="typo-systemtittel KommunikasjonsFlis-overskrift"
+        className="typo-systemtittel kommunikasjon-flis-overskrift"
       >
         Kommunikasjon med Nav
       </h2>
       <div
-        className="KommunikasjonFlis-element KommunikasjonsFlis-innboks"
+        className="kommunikasjon-flis-element kommunikasjon-flis-innboks"
       >
         <a
-          className="lenke KommunikasjonFlis-lenke"
+          className="lenke kommunikasjon-flis-lenke"
           href="undefined"
         >
           <h2
@@ -296,7 +296,7 @@ exports[`Snapshot test uten saker 1`] = `
               />
             </svg>
             <span
-              className="KommunikasjonFlis-element-tittel"
+              className="kommunikasjon-flis-element-tittel"
             >
               Innboks
             </span>
@@ -310,10 +310,10 @@ exports[`Snapshot test uten saker 1`] = `
       </div>
       
       <div
-        className="KommunikasjonFlis-element KommunikasjonsFlis-brev-vedtak"
+        className="kommunikasjon-flis-element kommunikasjon-flis-brev-vedtak"
       >
         <a
-          className="lenke KommunikasjonFlis-lenke"
+          className="lenke kommunikasjon-flis-lenke"
           href="undefined"
         >
           <h2
@@ -334,7 +334,7 @@ exports[`Snapshot test uten saker 1`] = `
               />
             </svg>
             <span
-              className="KommunikasjonFlis-element-tittel"
+              className="kommunikasjon-flis-element-tittel"
             >
               Brev og vedtak
             </span>
