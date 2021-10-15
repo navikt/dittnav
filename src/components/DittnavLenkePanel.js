@@ -40,9 +40,9 @@ const DittnavLenkePanel = () => {
   }, [visStortSakspanel, brukerUnderOppfolging]);
 
   return (
-    <div className="dittnav-lenkepanel-top-container">
+    <div className="dittnav-lenkepanel-container">
       {utbetalingOverst ? Utbetalingerpanel('utbetalingerpanel ') : ''}
-      
+
       <div className="dittnav-lenkepanel-tokol">
         <div className="dittnav-lenkepanel-venstre">
           {!utbetalingOverst ? Utbetalingerpanel('') : ''}
