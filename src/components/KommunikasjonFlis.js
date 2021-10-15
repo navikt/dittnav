@@ -24,11 +24,11 @@ const KommunikasjonFlis = ({ oppfolging }) => (
       tittel={<F id="kommunikasjon.med.nav.innboks" />} 
       undertekst={<F id="kommunikasjon.med.nav.innboks.undertekst" />}
       Ikon={IkonEmail}
-      linkUrl={lenker.minInnboks.url}
+      linkUrl={lenker.nyInnboks.url}
       onClick={() => trackEvent(
         GoogleAnalyticsCategory.Forside,
         GoogleAnalyticsAction.DineSaker,
-        lenker.minInnboks.url,
+        lenker.nyInnboks.url,
       )}
     />
     {oppfolging 
@@ -38,11 +38,11 @@ const KommunikasjonFlis = ({ oppfolging }) => (
           tittel={<F id="kommunikasjon.med.nav.dialog.veileder" />} 
           undertekst={<F id="kommunikasjon.med.nav.dialog.veileder.undertekst" />}
           Ikon={IkonDialogMedVeileder}
-          linkUrl={lenker.veilederArbeidssoker.url}
+          linkUrl={lenker.dialogMedVeileder.url}
           onClick={() => trackEvent(
             GoogleAnalyticsCategory.Forside,
             GoogleAnalyticsAction.DineSaker,
-            lenker.minInnboks.url,
+            lenker.dialogMedVeileder.url,
           )}         
         />
       )
