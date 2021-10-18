@@ -43,12 +43,8 @@ export const trackEvent = (category, action, label) => {
     action,
     label,
   });
-
-  if (action === GoogleAnalyticsAction.MeldekortKlar
-    || action === GoogleAnalyticsAction.MeldekortVent) {
-    // Begrens mengden data sendt til Amplitude inntil vi har avklart behovet bedre
-    loggAktivitet(action);
-  }
+  
+  loggAktivitet(action);
 };
 
 export const removeFragment = (url) => {
