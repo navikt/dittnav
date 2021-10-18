@@ -27,28 +27,38 @@
     .lenkepanel__heading {
       padding: 0.5em;
     }
+    
   }
 
-  @media (min-width: @screen-sm-min) {
-    .dittnav-lenkepanel-venstre {
-      width: calc(50% - 0.5em);
-    }
-
-    .kommunikasjon-flis{
-      width: calc(50% - 0.5em);
-    }
-
-    .utbetalingerpanel {
-      width: calc(50% - 0.5em);
-    }
+  .dittnav-lenkepanel-venstre {
+    width: calc(50% - 0.5em);
   }
 
-  @media (max-width: @screen-sm-min) {
+  .kommunikasjon-flis{
+    width: calc(50% - 0.5em);
+  }
+
+  .utbetalingerpanel {
+    width: calc(50% - 0.5em);
+  }
+
+  @media (max-width: @screen-sm-min ) {
     .dittnav-lenkepanel-tokol {
       flex-direction: column;
     }
     .oversiktspanel {
       margin-bottom: 1em;
+    }
+    .dittnav-lenkepanel-venstre {
+      width: 100%;
+    }
+
+    .kommunikasjon-flis{
+      width: 100%;
+    }
+
+    .utbetalingerpanel {
+      width: 100%;
     }
   }
 
