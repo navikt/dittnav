@@ -1,30 +1,35 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
-import { transformTolokalDatoTid } from '../../utils/datoUtils';
+import { arrayOf } from 'prop-types';
+import { useIntl } from 'react-intl';
+import sikkerhetsContext from '../../hooks/useSikkerhetsnivaa';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import IkonInnboks from '../../assets/IkonInnboks';
 import PanelOverskrift from '../common/PanelOverskrift';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';
-import { GoogleAnalyticsAction, removeFragment } from '../../utils/googleAnalytics';
+import { transformTolokalDatoTid } from '../../utils/datoUtils';
+import { lenker } from '../../utils/lenker';
 
-const Innboks = ({ innboks, innloggingsstatus }) => {
-  const location = useLocation();
-  const sikkerhetsnivaa = useSikkerhetsnivaa(innboks, 'innboks', innloggingsstatus);
-  const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
-  const lokalDatoTid = transformTolokalDatoTid(innboks.eventTidspunkt);
+const Innboks = ({ innbokser, innloggingsstatus }) => {
+  const intl = useIntl();
+
+  if (innbokser.length === 0) {
+    return null;
+  }
+
+  const sikkerhetsnivaa = sikkerhetsContext(innbokser[0], 'innboks', innloggingsstatus);
+  const gruppert = innbokser.length > 1;
+  const gruppertTekst = intl.formatMessage({ id: 'innboks.flere.meldinger' }, { count: innbokser.length });
+  const overskrift = <PanelOverskrift overskrift={gruppert ? gruppertTekst : sikkerhetsnivaa.tekst} type="Element" />;
+  const lokalDatoTid = transformTolokalDatoTid(innbokser[0].eventTidspunkt);
 
   return (
     <LenkepanelMedIkon
-      className="innboks"
+      className="innboks-notifikasjon"
       alt="Innboks"
       overskrift={overskrift}
-      etikett={lokalDatoTid}
-      href={sikkerhetsnivaa.lenke}
-      gaCategory={`Ditt NAV${location.pathname}`}
-      gaAction={GoogleAnalyticsAction.Innboks}
-      gaUrl={removeFragment(sikkerhetsnivaa.lenke)}
+      etikett={gruppert ? null : lokalDatoTid}
+      href={gruppert ? lenker.minInnboks.url : sikkerhetsnivaa.lenke}
     >
       <IkonInnboks />
     </LenkepanelMedIkon>
@@ -32,12 +37,12 @@ const Innboks = ({ innboks, innloggingsstatus }) => {
 };
 
 Innboks.propTypes = {
-  innboks: InnboksType,
+  innbokser: arrayOf(InnboksType),
   innloggingsstatus: InnloggingsstatusType,
 };
 
 Innboks.defaultProps = {
-  innboks: null,
+  innbokser: null,
   innloggingsstatus: null,
 };
 

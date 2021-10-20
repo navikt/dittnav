@@ -45,14 +45,9 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             erInaktiv={erInaktiv}
           />
         ))}
-      {innbokser && innloggingsstatus && innbokser.content.sort(byEventTidspunkt)
-        .map(i => (
-          <Innboks
-            key={i.eventId}
-            innboks={i}
-            innloggingsstatus={innloggingsstatus.content}
-          />
-        ))}
+      {innbokser && innloggingsstatus && (
+        <Innboks innbokser={innbokser.content} innloggingsstatus={innloggingsstatus.content} />
+      )}
     </>
   );
 };

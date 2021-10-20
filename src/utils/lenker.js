@@ -103,6 +103,10 @@ export const lenker = {
     tittel: 'Dagpenger',
     url: `${window.env.DAGPENGER_URL}`,
   },
+  minInnboks: {
+    tittel: 'MinInnboks',
+    url: `${window.env.MIN_INNBOKS_URL}`,
+  },
 };
 
 export const generelleLenker = [

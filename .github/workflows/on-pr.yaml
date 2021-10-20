@@ -27,7 +27,7 @@ jobs:
         with:
           repository: navikt/dittnav-docker-compose
           path: dittnav-docker-compose
-          token: ${{ secrets.READ_PACKAGES_PAT }}
+          token: ${{ secrets.READER_TOKEN }}
 
       - uses: actions/cache@v2
         with:
@@ -46,7 +46,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.READ_PACKAGES_PAT }}
+          password: ${{ secrets.READER_TOKEN }}
 
       - name: 'Pull dittnav-docker-compose'
         run: |

@@ -63,6 +63,7 @@ exports[`render empty InfoMeldinger component 1`] = `
         "hendelser.hent": "Hent hendelser",
         "hendelser.send": "Send hendelse",
         "hendelser.tittel": "Opprettelse og visning av hendelser",
+        "innboks.flere.meldinger": "Du har {count} meldinger i din innboks",
         "innboks.maskert.tekst": "Du har fått en melding, logg inn med høyere sikkerhetsnivå for å se meldingen.",
         "innloggingsmodal.forside": "Gå til forsiden på nav.no",
         "innloggingsmodal.ingress": "Du kan logge inn på nytt for å fortsette.",
