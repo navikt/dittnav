@@ -41,17 +41,21 @@ const MinInnboks = () => {
   return (
     <>
       {meldinger.content.map(message => (
-        <LenkepanelMedIkon
-          key={message.type}
-          className="infomelding innboks"
-          alt="Melding fra mininnboks"
-          overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
-          href={message.url}
-          gaCategory={GoogleAnalyticsCategory.Forside}
-          gaAction={`${message.type.toLowerCase()}`}
-        >
-          {getMinInnboksIcon(message.type)}
-        </LenkepanelMedIkon>
+        (message.type === 'ULEST' || message.type === 'UBESVART') 
+          ? null 
+          : (
+            <LenkepanelMedIkon
+              key={message.type}
+              className="infomelding innboks"
+              alt="Melding fra mininnboks"
+              overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
+              href={message.url}
+              gaCategory={GoogleAnalyticsCategory.Forside}
+              gaAction={`${message.type.toLowerCase()}`}
+            >
+              {getMinInnboksIcon(message.type)}
+            </LenkepanelMedIkon>
+          )
       ))}
     </>
   );
