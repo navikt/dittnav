@@ -138,5 +138,13 @@
 
   "innboks.flere.meldinger": "Du har {count} meldinger i din innboks",
 
-  "spinner.melding": "Laster innhold..."
+  "spinner.melding": "Laster innhold...",
+
+  "kommunikasjon.med.nav.overskrift": "Kommunikasjon med Nav",
+  "kommunikasjon.med.nav.innboks": "Innboks",
+  "kommunikasjon.med.nav.innboks.undertekst": "Informasjon fra NAV og svar på henvendelser og referater fra samtaler du på telefon, chat og «Skriv til oss».",
+  "kommunikasjon.med.nav.dialog.veileder": "Dialog med den lokale veilederen din",
+  "kommunikasjon.med.nav.dialog.veileder.undertekst": "For arbeidssøkere og de som mottar AAP. Les meldinger, referater og send melding til veilederen din.",
+  "kommunikasjon.med.nav.brev.vedtak": "Brev og vedtak",
+  "kommunikasjon.med.nav.brev.vedtak.undertekst": "For deg som ikke har Digipost eller e-Boks."
 }

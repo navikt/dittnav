@@ -107,6 +107,14 @@ export const lenker = {
     tittel: 'MinInnboks',
     url: `${window.env.MIN_INNBOKS_URL}`,
   },
+  nyInnboks: {
+    tittel: 'Innboks',
+    url: `${window.env.NY_INNBOKS_URL}`,
+  },
+  dialogMedVeileder: {
+    tittel: 'Dialog med den lokale veilederen din',
+    url: `${window.env.NAVNO_URL}/person/dittnav/veientilarbeid/dialog`,
+  },
 };
 
 export const generelleLenker = [
