@@ -22,7 +22,7 @@ const KommunikasjonFlis = ({ oppfolging }) => (
       tittel={<F id="kommunikasjon.med.nav.innboks" />}
       undertekst={<F id="kommunikasjon.med.nav.innboks.undertekst" />}
       Ikon={IkonEmail}
-      linkUrl={lenker.nyInnboks.url}
+      linkUrl={lenker.innboks.url}
     />
     {oppfolging ? (
       <KommunikasjonFlisElement

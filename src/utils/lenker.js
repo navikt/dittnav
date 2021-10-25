@@ -61,7 +61,7 @@ export const lenker = {
   },
   innboks: {
     tittel: 'Innboks',
-    url: `${window.env.MIN_INNBOKS_URL}`,
+    url: `${window.env.INNBOKS_URL}`,
   },
   digisos: {
     tittel: 'Digisos',
@@ -106,10 +106,6 @@ export const lenker = {
   minInnboks: {
     tittel: 'MinInnboks',
     url: `${window.env.MIN_INNBOKS_URL}`,
-  },
-  nyInnboks: {
-    tittel: 'Innboks',
-    url: `${window.env.NY_INNBOKS_URL}`,
   },
   dialogMedVeileder: {
     tittel: 'Dialog med den lokale veilederen din',
