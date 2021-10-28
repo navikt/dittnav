@@ -4,7 +4,7 @@ import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonBeskjed from '../../assets/IkonBeskjed';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 import { usePaabegynteSoknader } from '../../hooks/useSaker';
 
 const hasContent = (paabegynteSoknader) => (
@@ -36,8 +36,8 @@ const PaabegynteSoknader = () => {
       overskrift={createOverskrift(paabegynteSoknader.content, soknadstekst, intl)}
       ingress={<F id="saksoversikt.lenke" />}
       href={paabegynteSoknader.content.url}
-      gaCategory={GoogleAnalyticsCategory.Forside}
-      gaAction={GoogleAnalyticsAction.PaabegynteSoknader}
+      amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+      amplitudeComponentName={listOfComponentNames.brukernotifikasjon.PaabegynteSoknader}
     >
       <IkonBeskjed />
     </LenkepanelMedIkon>

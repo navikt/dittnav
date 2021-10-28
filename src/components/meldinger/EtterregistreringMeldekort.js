@@ -5,7 +5,7 @@ import i18n from '../../language/i18n';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../assets/IkonOppgave';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 import { useMeldekort } from '../../hooks/usePerson';
 import { buildNavNoUrl } from '../../utils/api';
 
@@ -34,8 +34,8 @@ const EtterregistreringMeldekort = () => {
         alt="Melding om etterregistrerte meldekort"
         overskrift={createOverskrift(meldekort.content, intl)}
         href={`${buildNavNoUrl(Path.ETTERREGISTRERTE_MELDEKORT)}`}
-        gaCategory={GoogleAnalyticsCategory.Forside}
-        gaAction={GoogleAnalyticsAction.EtterregistrerteMeldekort}
+        amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+        amplitudeComponentName={listOfComponentNames.brukernotifikasjon.EtterregistreringMeldekort}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>

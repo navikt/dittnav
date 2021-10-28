@@ -3,7 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../utils/amplitudeUtils';
 import { lenker } from '../utils/lenker';
 import { useSakstema } from '../hooks/useSaker';
 
@@ -42,11 +42,7 @@ const DittnavLenkePanel = () => {
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
               href={lenker.saksoversikt.url}
-              onClick={() => trackEvent(
-                GoogleAnalyticsCategory.Forside,
-                GoogleAnalyticsAction.DineSaker,
-                lenker.saksoversikt.url,
-              )}
+              onClick={() => logAmplitudeEvent(listOfComponentNames.DineSisteSakerFlis, listOfActions.TrykkPaaLenke)}
               border
             >
               <F id="fliser.dine.saker" />
@@ -56,11 +52,7 @@ const DittnavLenkePanel = () => {
           alt="Utbetalinger"
           className="dittnav-lenkepanel-liten-item"
           href={lenker.utbetalingsoversikt.url}
-          onClick={() => trackEvent(
-            GoogleAnalyticsCategory.Forside,
-            GoogleAnalyticsAction.Utbetalinger,
-            lenker.utbetalingsoversikt.url,
-          )}
+          onClick={() => logAmplitudeEvent(listOfComponentNames.UtbetalingerFlis, listOfActions.TrykkPaaLenke)}
           border
         >
           <F id="fliser.dine.utbetalinger" />
@@ -69,11 +61,7 @@ const DittnavLenkePanel = () => {
           alt="Innboks"
           className="dittnav-lenkepanel-liten-item last"
           href={lenker.innboks.url}
-          onClick={() => trackEvent(
-            GoogleAnalyticsCategory.Forside,
-            GoogleAnalyticsAction.MinInnboks,
-            lenker.innboks.url,
-          )}
+          onClick={() => logAmplitudeEvent(listOfComponentNames.InnboksFlis, listOfActions.TrykkPaaLenke)}
           border
         >
           <F id="fliser.innboks" />

@@ -1,49 +1,56 @@
 import amplitude from 'amplitude-js';
-import { Toggle } from '../constants';
 
-let initialized = false;
+export const listOfActions = {
+  TrykkPaaBrukernotifikasjon: 'Bruker åpnet brukernotifikasjon',
+  TrykkPaaArkiverKnapp: 'Bruker arkiverte beskjed',
+  TrykkPaaLenke: 'Bruker trykket på lenke',
+};
 
-const amplitudeUrl = 'amplitude.nav.no/collect';
+export const listOfComponentNames = {
+  brukernotifikasjon: {
+    MeldekortKlar: 'Brukernotifikasjon - Meldekort klart for innsending',
+    MeldekortVent: 'Brukernotifikasjon - Meldekort/Neste meldekort kan sendes fra',
+    OppgaveMottatt: 'Brukernotifikasjon - Oppgave mottatt',
+    SykemeldingMaaGodkjennes: 'Brukernotifikasjon - Sykemelding må godkjennes',
+    BeskjedMottatt: 'Brukernotifikasjon - Beskjed mottatt',
+    SoknadMottatt: 'Brukernotifikasjon - Søknad mottatt',
+    InnboksMeldingOppsummering: 'Brukernotifikasjon - Antall meldinger i innboks',
+    EtterregistreringMeldekort: 'Brukernotifikasjon - Etterregistrering av meldekort',
+    PaabegynteSoknader: 'Brukernotifikasjon - Antall påbegynte søknader, ikke sendt',
+    UlesteDokumenter: 'Brukernotifikasjon - Antall uleste dokumenter',
+    UlesteOppgaver: 'Brukernotifikasjon - Antall uleste oppgaver',
+    TidligereBeskjederOgOppgaver: 'Lenke til tidligere beskjeder og oppgaver',
+  },
+  TilbakebetalingsFlis: 'TilbakebetalingsFlis',
+  KoronaSpesialFlis: 'KoronaSpesialFlis',
+  DineSisteSakerFlis: 'DineSisteSakerFlis', //legg til logging av spesifikke lenker
+  UtbetalingerFlis: 'UtbetalingerFlis,',
+  InnboksFlis: 'InnboksFlis',
+};
 
-// PO Arbeid - prod
-const amplitudeProdKey = 'b0bccdd4dd75081606ef7bcab668a7ed';
-
-// PO Arbeid - test
-const amplitudeTestKey = '2f190e67f31d7e4719c5ff048ad3d3e6';
-
-function initAmplitude() {
-  if (Toggle.IS_TEST) {
-    return;
-  }
-  const erProduksjon = !Toggle.IS_DEV;
-  const amplitudeKey = erProduksjon ? amplitudeProdKey : amplitudeTestKey;
-
-  const config = {
-    apiEndpoint: amplitudeUrl,
-    saveEvents: true,
+export const initializeAmplitude = () => {
+  amplitude.getInstance().init('default', '', {
+    apiEndpoint: 'amplitude.nav.no/collect-auto',
+    saveEvents: false,
     includeUtm: true,
     includeReferrer: true,
-    trackingOptions: {
-      city: false,
-      ip_address: false,
-    },
-  };
-  amplitude.getInstance()
-    .init(amplitudeKey, undefined, config);
-  initialized = true;
+    platform: window.location.toString(),        
+  });
+};
+
+export function logAmplitudeEvent(amplitudeComponentName, amplitudeAction) {
+  console.log(amplitudeComponentName, amplitudeAction)
+  amplitude.getInstance().logEvent('navigere', {
+    amplitudeComponentName,
+    amplitudeAction,
+  });
 }
 
-initAmplitude();
-
-export function amplitudeLogger(name, values) {
-  if (!initialized) {
-    return;
-  }
-  amplitude.getInstance()
-    .logEvent(name, values);
-}
-
-export function loggAktivitet(aktivitet, data) {
-  const eventData = { ...data, aktivitet };
-  amplitudeLogger('dittnav.aktivitet', eventData);
+export function logLenkeTrykkAmplitude(lenkeTekst, amplitudeAction, href) {
+  console.log(lenkeTekst, amplitudeAction, href)
+  amplitude.getInstance().logEvent('navigere', {
+    lenkeTekst,
+    amplitudeAction,
+    href,
+  });
 }

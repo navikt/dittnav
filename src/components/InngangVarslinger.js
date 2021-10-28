@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import HoyreChevron from 'nav-frontend-chevron';
 import { Dittnav } from '../constants';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../utils/amplitudeUtils';
 
 const InngangVarslinger = () => (
   <div className="varslinger-inngang-wrapper">
@@ -12,11 +12,7 @@ const InngangVarslinger = () => (
       <Link
         id="varslinger-inngang__lenke-id"
         to="/dittnav/varslinger"
-        onClick={() => trackEvent(
-          GoogleAnalyticsCategory.Forside,
-          GoogleAnalyticsAction.Varslinger,
-          `${Dittnav.VARSLINGER_URL}`,
-        )}
+        onClick={() => logAmplitudeEvent(listOfComponentNames.brukernotifikasjon.TidligereBeskjederOgOppgaver, listOfActions.TrykkPaaLenke)}
       >
         <FormattedMessage id="dittnav.infomeldinger.inngang.varslinger" />
       </Link>

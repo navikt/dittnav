@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
 import KoronaVarsel from './KoronaVarsel';
 import { getForskuddToggle } from './DagpengerForskuddToggle';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 import { lenker } from '../../utils/lenker';
 import { useSakstema } from '../../hooks/useSaker';
 
@@ -32,8 +32,8 @@ const KoronaSpesial = () => {
             tittel={lenker.koronaSituasjon.tittel}
             href={lenker.koronaSituasjon.url}
             className="tilbakebetaling"
-            gaCategory={GoogleAnalyticsCategory.Forside}
-            gaAction={GoogleAnalyticsAction.KoronaSituasjon}
+            amplitudeAction={listOfActions.TrykkPaaLenke}
+            amplitudeComponentName={listOfComponentNames.TilbakebetalingsFlis}
           >
             <Normaltekst>
               <FormattedMessage id="korona.din.situasjon.ingress" />
@@ -43,8 +43,8 @@ const KoronaSpesial = () => {
         <KoronaVarsel
           tittel={lenker.koronaVeiviser.tittel}
           href={lenker.koronaVeiviser.url}
-          gaCategory={GoogleAnalyticsCategory.Forside}
-          gaAction={GoogleAnalyticsAction.Koronaveiviser}
+          amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+          amplitudeComponentName={listOfComponentNames.KoronaSpesialFlis}
         >
           <Normaltekst>
             <FormattedMessage id="korona.virus-varsel.ingress" />

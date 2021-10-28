@@ -7,7 +7,7 @@ import LenkepanelMedIkon from '../../common/LenkepanelMedIkon';
 import { advarsel, feriedager, fremtidig, melding, trekk } from './Meldinger';
 import IkonBeskjed from '../../../assets/IkonBeskjed';
 import IkonOppgave from '../../../assets/IkonOppgave';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory } from '../../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames } from '../../../utils/amplitudeUtils';
 import { buildNavNoUrl } from '../../../utils/api';
 import { useMeldekort } from '../../../hooks/usePerson';
 
@@ -63,8 +63,8 @@ const Meldekort = () => {
         overskrift={<PanelOverskrift overskrift={overskrift(true)} type="Element" />}
         ingress={ingress(true)}
         href={`${buildNavNoUrl(Path.MELDEKORT)}`}
-        gaCategory={GoogleAnalyticsCategory.Forside}
-        gaAction={GoogleAnalyticsAction.MeldekortKlar}
+        amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+        amplitudeComponentName={listOfComponentNames.brukernotifikasjon.MeldekortKlar}
       >
         <IkonOppgave />
       </LenkepanelMedIkon>
@@ -79,8 +79,8 @@ const Meldekort = () => {
         overskrift={<PanelOverskrift overskrift={overskrift(false)} type="Element" />}
         ingress={ingress(false)}
         href={`${buildNavNoUrl(Path.MELDEKORT)}`}
-        gaCategory={GoogleAnalyticsCategory.Forside}
-        gaAction={GoogleAnalyticsAction.MeldekortVent}
+        amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+        amplitudeComponentName={listOfComponentNames.brukernotifikasjon.MeldekortVent}
       >
         <IkonBeskjed />
       </LenkepanelMedIkon>

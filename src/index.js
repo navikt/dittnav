@@ -6,7 +6,7 @@ import 'intl';
 import './css/index.css';
 import App from './App';
 import { checkAuth, checkApiStatus, redirectToLogin } from './Api';
-import { initializeGoogleAnalytics } from './utils/googleAnalytics';
+import { initializeAmplitude } from './utils/amplitudeUtils';
 import enableHotModuleReplacement from './utils/parcel';
 import Providers from './context/Providers';
 import './utils/polyfills';
@@ -36,6 +36,6 @@ const checkAuthThenRenderApp = () => {
     });
 };
 
-initializeGoogleAnalytics();
+initializeAmplitude();
 enableHotModuleReplacement();
 checkAuthThenRenderApp();

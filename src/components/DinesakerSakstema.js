@@ -6,8 +6,8 @@ import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
 import i18n from '../language/i18n';
 import { lenker } from '../utils/lenker';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent, removeFragment } from '../utils/googleAnalytics';
 import { Format } from '../constants';
+import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../utils/amplitudeUtils';
 
 const sakstemaUrlOverride = {
   KOM: lenker.digisos.url,
@@ -45,11 +45,7 @@ const DinesakerSakstema = (props) => {
         href={getTemaUrl()}
         className="sak-lenke"
         id="sak-lenke-id"
-        onClick={() => trackEvent(
-          GoogleAnalyticsCategory.Forside,
-          GoogleAnalyticsAction.DineSisteSaker,
-          removeFragment(getTemaUrl()),
-        )}
+        onClick={() => logAmplitudeEvent(listOfComponentNames.DineSisteSakerFlis, listOfActions.TrykkPaaLenke)}
       >
         <div className="sak-temanavn lenke">
           <Undertittel>
