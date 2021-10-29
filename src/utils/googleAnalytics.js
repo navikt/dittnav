@@ -1,5 +1,4 @@
 import ReactGA from 'react-ga';
-import { loggAktivitet } from './amplitudeUtils';
 
 const trackingId = 'UA-9127381-16';
 

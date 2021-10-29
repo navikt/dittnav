@@ -39,7 +39,6 @@ export const initializeAmplitude = () => {
 };
 
 export function logAmplitudeEvent(amplitudeComponentName, amplitudeAction) {
-  console.log(amplitudeComponentName, amplitudeAction)
   amplitude.getInstance().logEvent('navigere', {
     amplitudeComponentName,
     amplitudeAction,
@@ -47,7 +46,6 @@ export function logAmplitudeEvent(amplitudeComponentName, amplitudeAction) {
 }
 
 export function logLenkeTrykkAmplitude(lenkeTekst, amplitudeAction, href) {
-  console.log(lenkeTekst, amplitudeAction, href)
   amplitude.getInstance().logEvent('navigere', {
     lenkeTekst,
     amplitudeAction,
