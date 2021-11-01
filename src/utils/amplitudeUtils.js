@@ -24,7 +24,7 @@ export const listOfComponentNames = {
   TilbakebetalingsFlis: 'TilbakebetalingsFlis',
   KoronaSpesialFlis: 'KoronaSpesialFlis',
   DineSisteSakerFlis: 'DineSisteSakerFlis', //legg til logging av spesifikke lenker
-  UtbetalingerFlis: 'UtbetalingerFlis,',
+  UtbetalingerFlis: 'UtbetalingerFlis',
   InnboksFlis: 'InnboksFlis',
 };
 
@@ -45,10 +45,9 @@ export function logAmplitudeEvent(amplitudeComponentName, amplitudeAction) {
   });
 }
 
-export function logLenkeTrykkAmplitude(lenkeTekst, amplitudeAction, href) {
+export function logLenkeTrykkAmplitude(lenkeTekst, amplitudeAction) {
   amplitude.getInstance().logEvent('navigere', {
     lenkeTekst,
     amplitudeAction,
-    href,
   });
 }

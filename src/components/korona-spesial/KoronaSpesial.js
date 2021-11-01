@@ -43,7 +43,7 @@ const KoronaSpesial = () => {
         <KoronaVarsel
           tittel={lenker.koronaVeiviser.tittel}
           href={lenker.koronaVeiviser.url}
-          amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+          amplitudeAction={listOfActions.TrykkPaaLenke}
           amplitudeComponentName={listOfComponentNames.KoronaSpesialFlis}
         >
           <Normaltekst>

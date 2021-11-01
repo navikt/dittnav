@@ -12,7 +12,7 @@ const Lenkelister = (props) => (
             <a
               href={l.url}
               className="lenke flere-tjenester__link"
-              onClick={() => logLenkeTrykkAmplitude(l.tittel, listOfActions.TrykkPaaLenke, l.url)}
+              onClick={() => logLenkeTrykkAmplitude(l.tittel, listOfActions.TrykkPaaLenke)}
             >
               {l.tittel}
             </a>
