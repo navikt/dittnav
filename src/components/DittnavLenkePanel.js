@@ -21,7 +21,7 @@ const DittnavLenkePanel = () => {
             className="dittnav-lenkepanel-stor"
             overskrift={<F id="saksoversikt.overskrift" />}
             headerLenkeTekst={<F id="saksoversikt.alle.saker" />}
-            headerLenkeHref={sakerURL}
+            headerLenkeHref={lenker.saksoversikt.url}
             border={false}
             liste={
               saker?.content?.sakstemaList
@@ -42,7 +42,7 @@ const DittnavLenkePanel = () => {
             <Lenkepanel
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
-              href={saker?.content.sakerURL}
+              href={lenker.saksoversikt.url}
               border
             >
               <F id="fliser.dine.saker" />
