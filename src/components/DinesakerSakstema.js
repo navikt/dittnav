@@ -14,11 +14,11 @@ const sakstemaUrlOverride = {
 };
 
 const DinesakerSakstema = (props) => {
-  const { sistEndret, navn } = props.tema;
+  const { sisteOppdatering, temanavn } = props.tema;
 
   const getTemaUrl = () => {
-    const { kode } = props.tema;
-    return sakstemaUrlOverride[kode] || `${props.url}/tema/${kode}`;
+    const { temakode } = props.tema;
+    return sakstemaUrlOverride[temakode] || `${props.url}/tema/${temakode}`;
   };
 
   return (
@@ -30,7 +30,7 @@ const DinesakerSakstema = (props) => {
       >
         <div className="sak-temanavn lenke">
           <Undertittel>
-            {navn}
+            {temanavn}
           </Undertittel>
         </div>
 
@@ -38,10 +38,10 @@ const DinesakerSakstema = (props) => {
           <Undertekst>
             <FormattedMessage id="sakstema.sist.oppdatert" />
             {
-              sistEndret && sistEndret !== ''
+              sisteOppdatering && sisteOppdatering !== ''
                 ? (
                   <FormattedDate
-                    value={moment(sistEndret, Format.SAKSTEMA)}
+                    value={moment(sisteOppdatering, Format.SAKSTEMA)}
                     year="numeric"
                     month="short"
                     day="numeric"
