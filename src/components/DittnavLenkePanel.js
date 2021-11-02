@@ -3,15 +3,15 @@ import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
 import { lenker } from '../utils/lenker';
 import { useSakstema } from '../hooks/useSaker';
 
 const antallSakstemaVist = 2;
 
 const DittnavLenkePanel = () => {
-  const [{ data: sakstema }] = useSakstema();
-  const visStortSakspanel = sakstema && sakstema.content.sakstemaList && sakstema.content.sakstemaList.length > 0;
+  const [{ data: saker }] = useSakstema();
+  const visStortSakspanel = saker && saker.content.sakstemaer?.length > 0;
+  const sakerURL = saker?.content?.sakerURL;
 
   return (
     <div className="dittnav-lenkepanel-top-container">
@@ -20,16 +20,17 @@ const DittnavLenkePanel = () => {
           <OversiktspanelMedListe
             className="dittnav-lenkepanel-stor"
             overskrift={<F id="saksoversikt.overskrift" />}
-            headerLenkeTekst={<F id="saksoversikt.alle.saker" values={{ count: sakstema.content.antallSakstema }} />}
-            headerLenkeHref={lenker.saksoversikt.url}
+            headerLenkeTekst={<F id="saksoversikt.alle.saker" />}
+            headerLenkeHref={sakerURL}
             border={false}
             liste={
-              sakstema.content.sakstemaList
+              saker.content.sakstemaer
                 .slice(0, antallSakstemaVist)
-                .map((tema) => (
+                .map((sak) => (
                   <DinesakerSakstema
-                    key={tema.temakode}
-                    tema={tema}
+                    key={sak.kode}
+                    tema={sak}
+                    url={sakerURL}
                   />
                 ))
             }
@@ -41,12 +42,7 @@ const DittnavLenkePanel = () => {
             <Lenkepanel
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
-              href={lenker.saksoversikt.url}
-              onClick={() => trackEvent(
-                GoogleAnalyticsCategory.Forside,
-                GoogleAnalyticsAction.DineSaker,
-                lenker.saksoversikt.url,
-              )}
+              href={saker?.content.sakerURL}
               border
             >
               <F id="fliser.dine.saker" />
@@ -56,11 +52,6 @@ const DittnavLenkePanel = () => {
           alt="Utbetalinger"
           className="dittnav-lenkepanel-liten-item"
           href={lenker.utbetalingsoversikt.url}
-          onClick={() => trackEvent(
-            GoogleAnalyticsCategory.Forside,
-            GoogleAnalyticsAction.Utbetalinger,
-            lenker.utbetalingsoversikt.url,
-          )}
           border
         >
           <F id="fliser.dine.utbetalinger" />
@@ -69,11 +60,6 @@ const DittnavLenkePanel = () => {
           alt="Innboks"
           className="dittnav-lenkepanel-liten-item last"
           href={lenker.innboks.url}
-          onClick={() => trackEvent(
-            GoogleAnalyticsCategory.Forside,
-            GoogleAnalyticsAction.MinInnboks,
-            lenker.innboks.url,
-          )}
           border
         >
           <F id="fliser.innboks" />
