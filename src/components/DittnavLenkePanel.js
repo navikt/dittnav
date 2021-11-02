@@ -13,8 +13,6 @@ const DittnavLenkePanel = () => {
   const visStortSakspanel = saker && saker.content.sakstemaList && saker.content.sakstemaList.length > 0;
   const sakerURL = saker?.content?.sakerURL;
 
-  /* console.log(saker?.content?.sakstemaList.map(sak => console.log(sak))); */
-
   return (
     <div className="dittnav-lenkepanel-top-container">
       {visStortSakspanel
