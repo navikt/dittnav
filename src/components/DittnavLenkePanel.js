@@ -11,7 +11,6 @@ const antallSakstemaVist = 2;
 const DittnavLenkePanel = () => {
   const [{ data: saker }] = useSakstema();
   const visStortSakspanel = saker && saker.content.sakstemaList && saker.content.sakstemaList.length > 0;
-  const sakerURL = saker?.content?.sakerURL;
 
   return (
     <div className="dittnav-lenkepanel-top-container">
