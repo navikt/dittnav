@@ -21,7 +21,7 @@ class Vta extends React.Component {
     return (
       <>
         <link type="text/css" rel="stylesheet" href={`${Path.VTA}/micro/static/css/main.css`} />
-        { this.state.render ? <VTA /> : null }
+        { this.state.render ? <VTA {...this.props} /> : null }
       </>
     );
   }
