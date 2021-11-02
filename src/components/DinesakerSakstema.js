@@ -57,9 +57,9 @@ const DinesakerSakstema = (props) => {
 
 DinesakerSakstema.propTypes = {
   tema: PropTypes.shape({
-    kode: PropTypes.string.isRequired,
-    navn: PropTypes.string.isRequired,
-    sistEndret: PropTypes.string.isRequired,
+    temakode: PropTypes.string.isRequired,
+    temanavn: PropTypes.string.isRequired,
+    sisteOppdatering: PropTypes.string.isRequired,
   }).isRequired,
   url: PropTypes.string.isRequired,
 };
