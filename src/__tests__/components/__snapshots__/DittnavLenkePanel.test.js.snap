@@ -5,22 +5,102 @@ exports[`Snapshot test med saker 1`] = `
   className="dittnav-lenkepanel-top-container"
 >
   <div
-    className="dittnav-lenkepanel-liten"
-    id={null}
+    className="panel oversiktspanel dittnav-lenkepanel-stor"
   >
-    <a
-      alt="Dine saker"
-      className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+    <div
+      className="oversiktspanel__header"
     >
-      <span
-        className="typo-undertittel lenkepanel__heading"
+      <div
+        className="oversiktspanel__overskrift"
       >
-        Dine saker
-      </span>
-      <span
-        className="lenkepanel__indikator"
-      />
-    </a>
+        <h2
+          className="typo-systemtittel"
+        >
+          Dine siste saker
+        </h2>
+      </div>
+    </div>
+    <div
+      className="oversiktspanel__liste"
+    >
+      <div
+        className="sak-container"
+      >
+        <a
+          className="lenke sak-lenke"
+          href="http://localhost:9222/saksoversikt/tema/BAR"
+          id="sak-lenke-id"
+        >
+          <div
+            className="sak-temanavn lenke"
+          >
+            <h2
+              className="typo-undertittel"
+            >
+              Barnetrygd
+            </h2>
+          </div>
+          <div
+            className="sak-status"
+          >
+            <p
+              className="typo-undertekst"
+            >
+              Sist oppdatert: 
+              15. aug. 2019
+            </p>
+          </div>
+        </a>
+      </div>
+      <div
+        className="sak-container"
+      >
+        <a
+          className="lenke sak-lenke"
+          href="http://localhost:9222/saksoversikt/tema/SYK"
+          id="sak-lenke-id"
+        >
+          <div
+            className="sak-temanavn lenke"
+          >
+            <h2
+              className="typo-undertittel"
+            >
+              Sykepenger og oppfølging
+            </h2>
+          </div>
+          <div
+            className="sak-status"
+          >
+            <p
+              className="typo-undertekst"
+            >
+              Sist oppdatert: 
+              14. aug. 2019
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <p
+      className="typo-element oversiktspanel__header-lenke"
+    >
+      <a
+        className="lenke"
+        href="http://localhost:9222/saksoversikt"
+        id="oversiktspanel__header-lenke-id"
+      >
+        Se alle dine saker
+        <span
+          className="nav-frontend-chevron chevronboks oversiktspanel__chevron chevron--hoyre"
+        />
+      </a>
+    </p>
+  </div>
+  <div
+    className="dittnav-lenkepanel-liten"
+    id="cols-layout"
+  >
     <a
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
@@ -64,6 +144,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      href="http://localhost:9222/saksoversikt"
     >
       <span
         className="typo-undertittel lenkepanel__heading"
