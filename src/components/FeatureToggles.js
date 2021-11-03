@@ -24,8 +24,8 @@ FeatureToggleWrapper.defaultProps = {
 };
 
 const FeatureTogglesProvider = ({ children }) => {
-  const loaded = false;
-  const featureToggles = {};
+  //const loaded = false;
+  //const featureToggles = {};
   /*
   TODO: Utkommentert i påvente av at vi skriver vår egen unleash-toggle-provider istedenfor å bruke Unleash gjennom pus-dekoratør.
   */
