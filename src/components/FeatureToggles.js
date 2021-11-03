@@ -28,6 +28,7 @@ const FeatureTogglesProvider = ({ children }) => {
   const featureToggles = {};
   /*
   TODO: Utkommentert i påvente av at vi skriver vår egen unleash-toggle-provider istedenfor å bruke Unleash gjennom pus-dekoratør.
+  */
   const [featureToggles, setFeatureToggles] = useState({});
   const [loaded, setLoaded] = useState(false);
 
@@ -53,8 +54,6 @@ const FeatureTogglesProvider = ({ children }) => {
       })
       .finally(() => setLoaded(true));
   }, []);
-
-   */
 
   if (loaded) {
     return (
