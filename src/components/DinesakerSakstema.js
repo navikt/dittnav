@@ -14,11 +14,11 @@ const sakstemaUrlOverride = {
 };
 
 const DinesakerSakstema = (props) => {
-  const { sisteOppdatering, temanavn } = props.tema;
+  const { sistEndret, navn } = props.tema;
 
   const getTemaUrl = () => {
-    const { temakode } = props.tema;
-    return sakstemaUrlOverride[temakode] || `${props.url}/tema/${temakode}`;
+    const { kode } = props.tema;
+    return sakstemaUrlOverride[kode] || `${props.url}/tema/${kode}`;
   };
 
   return (
@@ -30,7 +30,7 @@ const DinesakerSakstema = (props) => {
       >
         <div className="sak-temanavn lenke">
           <Undertittel>
-            {temanavn}
+            {navn}
           </Undertittel>
         </div>
 
@@ -38,10 +38,10 @@ const DinesakerSakstema = (props) => {
           <Undertekst>
             <FormattedMessage id="sakstema.sist.oppdatert" />
             {
-              sisteOppdatering && sisteOppdatering !== ''
+              sistEndret && sistEndret !== ''
                 ? (
                   <FormattedDate
-                    value={moment(sisteOppdatering, Format.SAKSTEMA)}
+                    value={moment(sistEndret, Format.SAKSTEMA)}
                     year="numeric"
                     month="short"
                     day="numeric"
@@ -57,9 +57,9 @@ const DinesakerSakstema = (props) => {
 
 DinesakerSakstema.propTypes = {
   tema: PropTypes.shape({
-    temakode: PropTypes.string.isRequired,
-    temanavn: PropTypes.string.isRequired,
-    sisteOppdatering: PropTypes.string.isRequired,
+    kode: PropTypes.string.isRequired,
+    navn: PropTypes.string.isRequired,
+    sistEndret: PropTypes.string.isRequired,
   }).isRequired,
   url: PropTypes.string.isRequired,
 };
