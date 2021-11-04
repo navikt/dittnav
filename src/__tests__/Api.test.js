@@ -3,7 +3,7 @@ import { fetchPersonNavn, redirectToLogin } from 'Api';
 
 it('it crashes', async () => {
   expect.assertions(1);
-  await expect(fetchPersonNavn()).rejects.toEqual(new TypeError('Cannot read properties of undefined (reading \'then\')'));
+  await expect(fetchPersonNavn()).rejects.toEqual(new TypeError('Cannot read property \'then\' of undefined'));
 });
 
 it('handling Unauthorized', async () => {
