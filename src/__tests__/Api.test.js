@@ -1,6 +1,5 @@
 import { fetchPersonNavn, redirectToLogin } from 'Api';
 /* global */
-import { FetchError } from 'node-fetch'; // eslint-disable-line import/no-extraneous-dependencies
 
 it('it crashes', async () => {
   expect.assertions(1);

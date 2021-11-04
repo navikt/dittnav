@@ -4,7 +4,7 @@ import { QueryClientProvider } from 'react-query';
 import queryClient from '../utils/query';
 import StoreProvider from './StoreProvider';
 import LanguageProvider from './LanguageProvider';
-import FeatureToggleProvider from '../components/FeatureToggles'
+import FeatureToggleProvider from '../components/FeatureToggles';
 
 const Providers = ({ children }) => (
   <LanguageProvider defaultSprak="nb">
