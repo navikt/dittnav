@@ -3,7 +3,6 @@ import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
 import { lenker } from '../utils/lenker';
 import { useSakstema } from '../hooks/useSaker';
 import { useOppfolging } from '../hooks/usePerson';
@@ -14,11 +13,6 @@ const Utbetalingerpanel = (additionalClassName) => (
     alt="Utbetalinger"
     className={`${additionalClassName}dittnav-lenkepanel-liten-item`}
     href={lenker.utbetalingsoversikt.url}
-    onClick={() => trackEvent(
-      GoogleAnalyticsCategory.Forside,
-      GoogleAnalyticsAction.Utbetalinger,
-      lenker.utbetalingsoversikt.url,
-    )}
     border
   >
     <F id="fliser.dine.utbetalinger" />
@@ -28,12 +22,13 @@ const Utbetalingerpanel = (additionalClassName) => (
 const antallSakstemaVist = 2;
 
 const DittnavLenkePanel = () => {
-  const [{ data: sakstema }] = useSakstema();
+  const [{ data: saker }] = useSakstema();
   const [{ data: oppfolging }] = useOppfolging();
   const [utbetalingOverst, setUtbetalingOverst] = useState(false);
 
   const brukerUnderOppfolging = oppfolging && oppfolging.content.erBrukerUnderOppfolging;
-  const visStortSakspanel = sakstema && sakstema.content.sakstemaList && sakstema.content.sakstemaList.length > 0;
+  const visStortSakspanel = saker && saker.content.sakstemaer?.length > 0;
+  const sakerURL = saker?.content?.sakerURL;
 
   useEffect(() => {
     setUtbetalingOverst(!brukerUnderOppfolging && visStortSakspanel);
@@ -54,27 +49,26 @@ const DittnavLenkePanel = () => {
               headerLenkeTekst={(
                 <F
                   id="saksoversikt.alle.saker"
-                  values={{ count: sakstema.content.antallSakstema }}
+                  values={{ count: saker.content.antallSakstema }}
                 />
               )}
-              headerLenkeHref={lenker.saksoversikt.url}
+              headerLenkeHref={sakerURL}
               border={false}
-              liste={sakstema.content.sakstemaList
+              liste={saker.content.sakstemaer
                 .slice(0, antallSakstemaVist)
-                .map((tema) => (
-                  <DinesakerSakstema key={tema.temakode} tema={tema} />
+                .map((sak) => (
+                  <DinesakerSakstema
+                    key={sak.kode}
+                    tema={sak}
+                    url={sakerURL}
+                  />
                 ))}
             />
           ) : (
             <Lenkepanel
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
-              href={lenker.saksoversikt.url}
-              onClick={() => trackEvent(
-                GoogleAnalyticsCategory.Forside,
-                GoogleAnalyticsAction.DineSaker,
-                lenker.saksoversikt.url,
-              )}
+              href={saker?.content.sakerURL}
               border
             >
               <F id="fliser.dine.saker" />

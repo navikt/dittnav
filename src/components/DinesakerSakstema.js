@@ -1,12 +1,10 @@
 import React from 'react';
-import { FormattedDate, FormattedMessage, useIntl } from 'react-intl';
+import { FormattedDate, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
-import i18n from '../language/i18n';
 import { lenker } from '../utils/lenker';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent, removeFragment } from '../utils/googleAnalytics';
 import { Format } from '../constants';
 
 const sakstemaUrlOverride = {
@@ -16,27 +14,11 @@ const sakstemaUrlOverride = {
 };
 
 const DinesakerSakstema = (props) => {
-  const intl = useIntl();
-  const { sisteOppdatering, temanavn } = props.tema;
+  const { sistEndret, navn } = props.tema;
 
   const getTemaUrl = () => {
-    const { temakode } = props.tema;
-    return sakstemaUrlOverride[temakode] || `${lenker.saksoversiktTema.url}/${temakode}`;
-  };
-
-  const getStatusMelding = () => {
-    const { numberToWord } = i18n[intl.locale] || i18n.nb;
-    const { antallStatusUnderBehandling } = props.tema;
-
-    if (antallStatusUnderBehandling <= 0) {
-      return null;
-    }
-    if (antallStatusUnderBehandling === 1) {
-      return <FormattedMessage id="sakstema.antall.under.behandling.en" />;
-    }
-    return (
-      <FormattedMessage id="sakstema.antall.under.behandling.flere" values={{ count: numberToWord(antallStatusUnderBehandling) }} />
-    );
+    const { kode } = props.tema;
+    return sakstemaUrlOverride[kode] || `${props.url}/tema/${kode}`;
   };
 
   return (
@@ -45,27 +27,21 @@ const DinesakerSakstema = (props) => {
         href={getTemaUrl()}
         className="sak-lenke"
         id="sak-lenke-id"
-        onClick={() => trackEvent(
-          GoogleAnalyticsCategory.Forside,
-          GoogleAnalyticsAction.DineSisteSaker,
-          removeFragment(getTemaUrl()),
-        )}
       >
         <div className="sak-temanavn lenke">
           <Undertittel>
-            {temanavn}
+            {navn}
           </Undertittel>
         </div>
 
         <div className="sak-status">
           <Undertekst>
-            {getStatusMelding()}
             <FormattedMessage id="sakstema.sist.oppdatert" />
             {
-              sisteOppdatering && sisteOppdatering !== ''
+              sistEndret && sistEndret !== ''
                 ? (
                   <FormattedDate
-                    value={moment(sisteOppdatering, Format.SAKSTEMA)}
+                    value={moment(sistEndret, Format.SAKSTEMA)}
                     year="numeric"
                     month="short"
                     day="numeric"
@@ -81,11 +57,11 @@ const DinesakerSakstema = (props) => {
 
 DinesakerSakstema.propTypes = {
   tema: PropTypes.shape({
-    temakode: PropTypes.string.isRequired,
-    temanavn: PropTypes.string.isRequired,
-    sisteOppdatering: PropTypes.string.isRequired,
-    antallStatusUnderBehandling: PropTypes.number.isRequired,
+    kode: PropTypes.string.isRequired,
+    navn: PropTypes.string.isRequired,
+    sistEndret: PropTypes.string.isRequired,
   }).isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default DinesakerSakstema;
