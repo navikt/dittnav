@@ -6,7 +6,7 @@
       "navn": "Dagpenger og oppfølging",
       "kode": "DAG",
       "sistEndret": "2020-03-12T12:00:00+01:00",
-      "detaljvisningUrl": "http://localhost:9002/mine-saker/tema/DAG"
+      "detaljvisningUrl": "http://localhost:1234/arbeid/dagpenger/mine-dagpenger"
     },
     {
       "navn": "Arbeidsavklaringspenger og oppfølging",
@@ -66,7 +66,7 @@
       "navn": "Hjelpemidler",
       "kode": "HJE",
       "sistEndret": "2019-11-01T12:00:00+01:00",
-      "detaljvisningUrl": "http://localhost:9002/mine-saker/tema/HJE"
+      "detaljvisningUrl": "http://localhost:1234/hjelpemidler/dinehjelpemidler"
     },
     {
       "navn": "Unntak fra medlemskap",
