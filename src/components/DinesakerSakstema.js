@@ -4,27 +4,14 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
-import { lenker } from '../utils/lenker';
 import { Format } from '../constants';
 
-const sakstemaUrlOverride = {
-  KOM: lenker.digisos.url,
-  DAG: lenker.dagpenger.url,
-  HJE: lenker.hjelpemidler.url,
-};
-
 const DinesakerSakstema = (props) => {
-  const { sistEndret, navn } = props.tema;
-
-  const getTemaUrl = () => {
-    const { kode } = props.tema;
-    return sakstemaUrlOverride[kode] || `${props.url}/tema/${kode}`;
-  };
-
+  const { sistEndret, navn, detaljvisningUrl } = props.tema;
   return (
     <div className="sak-container">
       <Lenke
-        href={getTemaUrl()}
+        href={detaljvisningUrl}
         className="sak-lenke"
         id="sak-lenke-id"
       >
@@ -60,8 +47,8 @@ DinesakerSakstema.propTypes = {
     kode: PropTypes.string.isRequired,
     navn: PropTypes.string.isRequired,
     sistEndret: PropTypes.string.isRequired,
+    detaljvisningUrl: PropTypes.string.isRequired,
   }).isRequired,
-  url: PropTypes.string.isRequired,
 };
 
 export default DinesakerSakstema;
