@@ -37,6 +37,8 @@ export const Dittnav = Object.freeze({
     buildApiUrl('/digisos/paabegynte/done'),
   DONE_URL:
     buildApiUrl('/produce/done'),
+  UNLEASH_URL:
+    buildApiUrl('/unleash')
 });
 
 export const TestProducer = Object.freeze({

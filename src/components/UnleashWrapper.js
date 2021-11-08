@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 
+import { Dittnav } from '../constants'
+
 const queryConfig = {
   retry: 0,
   refetchOnMount: false,
@@ -10,7 +12,7 @@ const queryConfig = {
 };
 
 const fetchUnleashToggle = async (toggle) => {
-  const url = `/${toggle}`;
+  const url = `${Dittnav.UNLEASH_URL}/${toggle}`;
   const response = await fetch(url);
 
   return response.json();
