@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 
 const queryConfig = {
@@ -14,11 +16,9 @@ const fetchUnleashToggle = async (toggle) => {
   return response.json();
 };
 
-function UnleashWrapper ({ toggle, children }) {
-  if (!toggle) return null;
-  if (!children) return null;
+function UnleashWrapper({ toggle, children }) {
   const { status, data } = useQuery('unleash', fetchUnleashToggle(toggle), queryConfig);
-
+  
   if (status === 'loading') {
     return null;
   }
@@ -30,4 +30,14 @@ function UnleashWrapper ({ toggle, children }) {
   return null;
 }
 
-export default UnleashWrapper
+UnleashWrapper.propTypes = {
+  toggle: PropTypes.string,
+  children: PropTypes.node,
+};
+
+UnleashWrapper.defaultProps = {
+  toggle: '',
+  children: {},
+};
+
+export default UnleashWrapper;
