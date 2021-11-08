@@ -16,7 +16,7 @@ import Brodsmuler from '../../utils/brodsmuler';
 import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
 import DittnavFliser from '../../components/DittnavFliser';
-import { UnleashWrapper } from '../../components/UnleashWrapper'
+import UnleashWrapper from '../../components/UnleashWrapper'
 
 const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
@@ -25,6 +25,7 @@ const Home = () => {
 
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
+
   const NyVtaForStandardInnsats = () => {
     return (
       <UnleashWrapper toggle='situasjon'>

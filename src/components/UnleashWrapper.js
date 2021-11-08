@@ -14,19 +14,18 @@ const queryConfig = {
 const fetchUnleashToggle = async (toggle) => {
   const url = `${Dittnav.UNLEASH_URL}/${toggle}`;
   const response = await fetch(url);
-
   return response.json();
 };
 
 function UnleashWrapper({ toggle, children }) {
   const { status, data } = useQuery('unleash', fetchUnleashToggle(toggle), queryConfig);
   
-  if (status === 'loading') {
+  if (status === 'loading' || status === 'error') {
     return null;
   }
 
   if (data === true) {
-    return <>{children}</>;
+    return (<>{children}</>);
   }
 
   return null;
