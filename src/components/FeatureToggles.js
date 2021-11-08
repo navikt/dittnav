@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Path, Toggle } from '../constants';
 
 export const FeatureToggles = React.createContext({});
 
@@ -25,21 +24,18 @@ FeatureToggleWrapper.defaultProps = {
 };
 
 const FeatureTogglesProvider = ({ children }) => {
-  // const loaded = false;
-  // const featureToggles = {};
+  const loaded = false;
+  const featureToggles = {};
   /*
   TODO: Utkommentert i påvente av at vi skriver vår egen unleash-toggle-provider istedenfor å bruke Unleash gjennom pus-dekoratør.
-  */
   const [featureToggles, setFeatureToggles] = useState({});
   const [loaded, setLoaded] = useState(false);
-
   const UNLEASH_TIMEOUT = 1000;
-
   useEffect(() => {
     const createURL = () => {
-      const toggles = Toggle.FEATURE_TOGGLES.split(',');
+      const toggles = Config.dittNav.FEATURE_TOGGLES.split(',');
       const togglePath = toggles.reduce((accumulatedToggles, currentToggle) => `${accumulatedToggles}&feature=${currentToggle}`);
-      return `${Path.CONTEXT}/api/feature?feature=${togglePath}`;
+      return `${Config.dittNav.CONTEXT_PATH}/api/feature?feature=${togglePath}`;
     };
     Promise.race([
       fetch(createURL(), { method: 'GET' })
@@ -55,6 +51,7 @@ const FeatureTogglesProvider = ({ children }) => {
       })
       .finally(() => setLoaded(true));
   }, []);
+   */
 
   if (loaded) {
     return (
