@@ -16,7 +16,7 @@ import Brodsmuler from '../../utils/brodsmuler';
 import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
 import DittnavFliser from '../../components/DittnavFliser';
-import { FeatureToggleWrapper } from '../../components/FeatureToggles'
+import { UnleashWrapper } from '../../components/UnleashWrapper'
 
 const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
@@ -27,9 +27,9 @@ const Home = () => {
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
   const NyVtaForStandardInnsast = () => {
     return (
-      <FeatureToggleWrapper toggle='veientilarbeid.kanViseUtfraSituasjon'>
+      <UnleashWrapper toggle='situasjon'>
         <Vta kreverStandardInnsatsgruppe />
-      </FeatureToggleWrapper>
+      </UnleashWrapper>
     )
   }
   const vtaForStandardInnsats = oppfolgingIsError ? null : <NyVtaForStandardInnsast />;
