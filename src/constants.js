@@ -72,7 +72,7 @@ export const Format = Object.freeze({
 });
 
 export const Toggle = Object.freeze({
-  FEATURE_TOGGLES: 'veientilarbeid.kanViseUtfraSituasjon', // a,b,c etc..
+  FEATURE_TOGGLES: '', // a,b,c etc..
   TEST_SIDE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
   IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
