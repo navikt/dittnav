@@ -25,14 +25,14 @@ const Home = () => {
 
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
-  const NyVtaForStandardInnsast = () => {
+  const NyVtaForStandardInnsats = () => {
     return (
       <UnleashWrapper toggle='situasjon'>
         <Vta kreverStandardInnsatsgruppe />
       </UnleashWrapper>
     )
   }
-  const vtaForStandardInnsats = oppfolgingIsError ? null : <NyVtaForStandardInnsast />;
+  const vtaForStandardInnsats = oppfolgingIsError ? null : <NyVtaForStandardInnsats />;
 
   if (state.visInnloggingsModal) {
     return (<InnloggingsModal onClick={() => null} isOpen />);
