@@ -114,6 +114,10 @@ app.get('/tidslinje-api/tidslinje', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/tidslinje.json'))
 ));
 
+app.get('/dittnav-api/unleash/situasjon', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/unleash-situasjon.json'))
+));
+
 app.use(bundler.middleware());
 
 // Listen on port 1234
