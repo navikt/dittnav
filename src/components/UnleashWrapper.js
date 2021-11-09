@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 
-import { Dittnav } from '../constants';
+import { fetchUnleashToggle } from '../Api'
 
 const queryConfig = {
   retry: 0,
@@ -11,14 +11,9 @@ const queryConfig = {
   refetchOnReconnect: false,
 };
 
-const fetchUnleashToggle = async (toggle) => {
-  const url = `${Dittnav.UNLEASH_URL}/${toggle}`;
-  const response = await fetch(url);
-  return response.json();
-};
-
 function UnleashWrapper({ toggle, children }) {
-  const { status, data } = useQuery('unleash', fetchUnleashToggle(toggle), queryConfig);
+  const fetcher = fetchUnleashToggle(toggle)
+  const { status, data } = useQuery('unleash', fetcher, queryConfig);
   
   if (status === 'loading' || status === 'error') {
     return null;
