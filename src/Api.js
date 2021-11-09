@@ -137,6 +137,6 @@ export const postStatusoppdatering = (content) => (
   postJSON(`${TestProducer.STATUSOPPDATERING_URL}`, content)
 );
 
-export const fetchUnleashToggle = (path) => (
-  fetchJSON(`${Dittnav.UNLEASH_URL}/${path}`)
+export const fetchUnleashToggle = ({ queryKey }) => (
+  fetchJSON(`${Dittnav.UNLEASH_URL}/${queryKey}`)
 );

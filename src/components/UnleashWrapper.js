@@ -12,14 +12,13 @@ const queryConfig = {
 };
 
 function UnleashWrapper({ toggle, children }) {
-  const fetcher = fetchUnleashToggle(toggle);
-  const { status, data } = useQuery('unleash', fetcher, queryConfig);
+  const { status, data } = useQuery(toggle, fetchUnleashToggle, queryConfig);
   
   if (status === 'loading' || status === 'error') {
     return null;
   }
 
-  if (data === true) {
+  if (data.content === true) {
     return (<>{children}</>);
   }
 
