@@ -26,11 +26,10 @@ const Home = () => {
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
 
-  const NyVtaForStandardInnsats = ({isLoading, isError}) => {
-    if (isLoading || isError) return null;
+  const NyVtaForStandardInnsats = ({isLoading}) => {
+    if (isLoading) return null;
     return (
       <UnleashWrapper toggle='situasjon'>
-        <h1>Hallo</h1>
         <Vta kreverStandardInnsatsgruppe />
       </UnleashWrapper>
     )
@@ -49,7 +48,7 @@ const Home = () => {
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger />
-            <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError}/>
+            <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} />
             <KoronaSpesial />
             <DittnavLenkePanel />
             {oppfolgingIsLoading ? null : generelleEllerVta}
