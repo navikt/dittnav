@@ -23,7 +23,7 @@ export const listOfComponentNames = {
   },
   TilbakebetalingsFlis: 'TilbakebetalingsFlis',
   KoronaSpesialFlis: 'KoronaSpesialFlis',
-  DineSisteSakerFlis: 'DineSisteSakerFlis', //legg til logging av spesifikke lenker
+  DineSisteSakerFlis: 'DineSisteSakerFlis',
   UtbetalingerFlis: 'UtbetalingerFlis',
   InnboksFlis: 'InnboksFlis',
 };

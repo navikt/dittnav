@@ -36,16 +36,6 @@ export const initializeGoogleAnalytics = () => ReactGA.initialize(trackingId, {
   debug: false,
 });
 
-export const trackEvent = (category, action, label) => {
-  ReactGA.event({
-    category,
-    action,
-    label,
-  });
-  
-  loggAktivitet(action);
-};
-
 export const removeFragment = (url) => {
   const fragmentPattern = '/#[a-z0-9]+/gi';
 

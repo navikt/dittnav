@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import HoyreChevron from 'nav-frontend-chevron';
-import { Dittnav } from '../constants';
 import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../utils/amplitudeUtils';
 
 const InngangVarslinger = () => (
