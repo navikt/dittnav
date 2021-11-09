@@ -60,7 +60,6 @@ const DittnavLenkePanel = () => {
                   <DinesakerSakstema
                     key={sak.kode}
                     tema={sak}
-                    url={sakerURL}
                   />
                 ))}
             />

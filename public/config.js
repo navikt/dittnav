@@ -18,6 +18,5 @@ window.env.INNLOGGINGSSTATUS_URL = 'http://localhost:1234/innloggingsstatus';
 window.env.TIDSLINJE_URL = 'http://localhost:1234/tidslinje-api';
 window.env.TIDSLINJE_PRODUSENT = '***';
 window.env.MIN_INNBOKS_URL = 'http://localhost:1234/mininnboks';
-window.env.DAGPENGER_URL = 'http://localhost:1234/dagpenger';
 window.env.HJELPEMIDLER_URL = 'http://localhost:1234/hjelpemidler';
 window.env.INNBOKS_URL = 'https://uat-navdialog.cs108.force.com/Innboks/s/';
