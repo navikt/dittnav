@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
 
-import { fetchUnleashToggle } from '../Api'
+import { fetchUnleashToggle } from '../Api';
 
 const queryConfig = {
   retry: 0,
@@ -12,7 +12,7 @@ const queryConfig = {
 };
 
 function UnleashWrapper({ toggle, children }) {
-  const fetcher = fetchUnleashToggle(toggle)
+  const fetcher = fetchUnleashToggle(toggle);
   const { status, data } = useQuery('unleash', fetcher, queryConfig);
   
   if (status === 'loading' || status === 'error') {
