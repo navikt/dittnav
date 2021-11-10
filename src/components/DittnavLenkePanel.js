@@ -10,8 +10,9 @@ import { useSakstema } from '../hooks/useSaker';
 const antallSakstemaVist = 2;
 
 const DittnavLenkePanel = () => {
-  const [{ data: sakstema }] = useSakstema();
-  const visStortSakspanel = sakstema && sakstema.content.sakstemaList && sakstema.content.sakstemaList.length > 0;
+  const [{ data: saker }] = useSakstema();
+  const visStortSakspanel = saker && saker.content.sakstemaer?.length > 0;
+  const sakerURL = saker?.content?.sakerURL;
 
   return (
     <div className="dittnav-lenkepanel-top-container">
@@ -20,16 +21,16 @@ const DittnavLenkePanel = () => {
           <OversiktspanelMedListe
             className="dittnav-lenkepanel-stor"
             overskrift={<F id="saksoversikt.overskrift" />}
-            headerLenkeTekst={<F id="saksoversikt.alle.saker" values={{ count: sakstema.content.antallSakstema }} />}
-            headerLenkeHref={lenker.saksoversikt.url}
+            headerLenkeTekst={<F id="saksoversikt.alle.saker" />}
+            headerLenkeHref={sakerURL}
             border={false}
             liste={
-              sakstema.content.sakstemaList
+              saker.content.sakstemaer
                 .slice(0, antallSakstemaVist)
-                .map((tema) => (
+                .map((sak) => (
                   <DinesakerSakstema
-                    key={tema.temakode}
-                    tema={tema}
+                    key={sak.kode}
+                    tema={sak}
                   />
                 ))
             }
@@ -41,8 +42,8 @@ const DittnavLenkePanel = () => {
             <Lenkepanel
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
-              href={lenker.saksoversikt.url}
               onClick={() => logAmplitudeEvent(listOfComponentNames.DineSisteSakerFlis, listOfActions.TrykkPaaLenke)}
+              href={saker?.content.sakerURL}
               border
             >
               <F id="fliser.dine.saker" />
