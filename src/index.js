@@ -36,6 +36,9 @@ const checkAuthThenRenderApp = () => {
     });
 };
 
-initializeAmplitude();
+if (window.env.IS_PROD) {
+  initializeAmplitude();
+}
+
 enableHotModuleReplacement();
 checkAuthThenRenderApp();
