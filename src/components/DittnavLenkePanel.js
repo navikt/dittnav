@@ -14,6 +14,8 @@ const DittnavLenkePanel = () => {
   const visStortSakspanel = saker && saker.content.sakstemaer?.length > 0;
   const sakerURL = saker?.content?.sakerURL;
 
+  console.log(sakerURL)
+
   return (
     <div className="dittnav-lenkepanel-top-container">
       {visStortSakspanel

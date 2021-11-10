@@ -11,6 +11,7 @@ exports[`Snapshot test med saker 1`] = `
     <a
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -25,6 +26,7 @@ exports[`Snapshot test med saker 1`] = `
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -39,6 +41,7 @@ exports[`Snapshot test med saker 1`] = `
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
       href="undefined"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -64,6 +67,7 @@ exports[`Snapshot test uten saker 1`] = `
     <a
       alt="Dine saker"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -78,6 +82,7 @@ exports[`Snapshot test uten saker 1`] = `
       alt="Utbetalinger"
       className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
       href="http://localhost:9222/utbetalingsoversikt"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
@@ -92,6 +97,7 @@ exports[`Snapshot test uten saker 1`] = `
       alt="Innboks"
       className="lenkepanel dittnav-lenkepanel-liten-item last lenkepanel--border"
       href="undefined"
+      onClick={[Function]}
     >
       <span
         className="typo-undertittel lenkepanel__heading"
