@@ -5,6 +5,7 @@ import moment from 'moment';
 import { Undertekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
 import { Format } from '../constants';
+import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../utils/amplitudeUtils';
 
 const DinesakerSakstema = (props) => {
   const { sistEndret, navn, detaljvisningUrl } = props.tema;
@@ -14,6 +15,7 @@ const DinesakerSakstema = (props) => {
         href={detaljvisningUrl}
         className="sak-lenke"
         id="sak-lenke-id"
+        onClick={() => logAmplitudeEvent(listOfComponentNames.DineSisteSakerFlis, listOfActions.TrykkPaaLenke)}
       >
         <div className="sak-temanavn lenke">
           <Undertittel>

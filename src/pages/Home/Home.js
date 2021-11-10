@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import { useIsFetching } from 'react-query';
-import moment from 'moment';
 import { useOppfolging } from '../../hooks/usePerson';
 import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
-import { useSakstema } from '../../hooks/useSaker';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
