@@ -9,7 +9,6 @@ import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/googleAnalytics';
 import PageBase from '../PageBase';
 import DelayedSpinner from '../../components/common/DelayedSpinner';
 import InnloggingsModal from '../../components/common/InnloggingsModal';
@@ -43,11 +42,6 @@ const Varslinger = () => {
                       innboksen: (
                         <Lenke
                           href={lenker.innboks.url}
-                          onClick={() => trackEvent(
-                            GoogleAnalyticsCategory.Varslinger,
-                            GoogleAnalyticsAction.Innboks,
-                            lenker.innboks.url,
-                          )}
                         >
                           innboksen
                         </Lenke>
