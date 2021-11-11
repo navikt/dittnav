@@ -1,0 +1,18 @@
+{
+  "veientilarbeid.modal": false,
+  "veientilarbeid.feedback": false,
+  "veientilarbeid.14a-intro": true,
+  "veientilarbeid.registrert-permittert": false,
+  "veientilarbeid.dagpenger-status": false,
+  "veientilarbeid.dpstatus-for-alle": false,
+  "veientilarbeid.egenvurderinguke12": false,
+  "veientilarbeid.rydding.skjulOkonomiBoks": false,
+  "veientilarbeid.rydding.skjulAAPRad": false,
+  "veientilarbeid.visbrukerundersokelse": false,
+  "veientilarbeid.onboarding14a.situasjonsbestemt": false,
+  "veientilarbeid.onboardingMeldekort.situasjonsbestemt": false,
+  "veientilarbeid.onboardingYtelser.situasjonsbestemt": false,
+  "veientilarbeid.kanViseUtfraSituasjon": false,
+  "veientilarbeid.vis-oppdatert-styling": false,
+  "veientilarbeid.vis-egenvurdering-med-14a": false
+}

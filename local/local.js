@@ -118,6 +118,62 @@ app.get('/dittnav-api/unleash/situasjon', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/unleash-situasjon.json'))
 ));
 
+app.get('/person/dittnav/veientilarbeid/api/auth', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/auth-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/api/auth', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/auth-mock.json'))
+));
+
+app.get('/meldekort/meldekort-api/api/person/meldekortstatus', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/meldekort-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarboppfolging/api/niva3/underoppfolging', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/under-oppfolging-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/api/feature/', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/feature-toggles-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarboppfolging/api/oppfolging', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/oppfolging-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/registrering', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/brukerregistrering-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/registrering', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/brukerregistrering-mock.json'))
+));
+
+app.get('/meldekort/meldekort-api/api/person/meldekort', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/meldekort-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/startregistrering', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/bruker-info-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/saksoversikt-api/tjenester/sakstema', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-sakstema-mock/.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/saksoversikt-api/tjenester/saker/hentPaabegynteSoknader', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-pabegyntesoknader-mock/.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbdialog/api/dialog/antallUleste', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/uleste-dialoger-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbvedtakinfo/api/behovsvurdering/besvarelse', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/egenvurderingbesvarelse-mock.json'))
+));
+
 app.use(bundler.middleware());
 
 // Listen on port 1234
