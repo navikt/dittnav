@@ -6,7 +6,6 @@ import Panel from 'nav-frontend-paneler';
 import Lukknapp from 'nav-frontend-lukknapp';
 import Lenke from 'nav-frontend-lenker';
 import NavFrontendChevron from 'nav-frontend-chevron';
-import { trackEvent, removeFragment } from '../../utils/googleAnalytics';
 import {
   checkOverflow,
   checkForFormattedMessage,
@@ -49,7 +48,6 @@ const PanelMedIkon = (props) => {
           className="panel-lenke"
           id="panel-lenke-id"
           href={props.lenke}
-          onClick={() => trackEvent(props.gaCategory, props.gaAction, removeFragment(props.lenke))}
         >
           <FormattedMessage id={props.lenkeTekst} />
         </Lenke>
@@ -123,8 +121,6 @@ PanelMedIkon.propTypes = {
   ]).isRequired,
   ingress: shape({ root: any }),
   etikett: string,
-  gaCategory: string,
-  gaAction: string,
   children: node.isRequired,
   knapp: bool,
   lenke: string,
@@ -138,8 +134,6 @@ PanelMedIkon.defaultProps = {
   onClick: null,
   ingress: null,
   etikett: null,
-  gaCategory: null,
-  gaAction: null,
   knapp: null,
   lenke: null,
   lenkeTekst: null,
