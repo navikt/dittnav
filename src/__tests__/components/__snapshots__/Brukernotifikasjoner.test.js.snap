@@ -43,7 +43,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -110,7 +109,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -282,7 +280,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -349,7 +346,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>

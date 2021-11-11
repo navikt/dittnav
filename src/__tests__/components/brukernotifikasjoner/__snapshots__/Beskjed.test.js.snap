@@ -415,7 +415,6 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
           className="lenke panel-lenke"
           href="undefined"
           id="panel-lenke-id"
-          onClick={[Function]}
         >
           Logg inn med høyere sikkerhetsnivå for å se beskjeden
         </a>
