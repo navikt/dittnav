@@ -4,6 +4,7 @@ export const listOfActions = {
   TrykkPaaBrukernotifikasjon: 'Bruker åpnet brukernotifikasjon',
   TrykkPaaArkiverKnapp: 'Bruker arkiverte beskjed',
   TrykkPaaLenke: 'Bruker trykket på lenke',
+  TrykkPaaLenkeliste: 'Bruker navigerte via lenkeliste',
 };
 
 export const listOfComponentNames = {
