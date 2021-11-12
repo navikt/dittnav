@@ -24,13 +24,13 @@ const Home = () => {
   const { state } = useStore();
 
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
-  const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
+  const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta key='vta-for-resten' />;
 
   const NyVtaForStandardInnsats = ({isLoading, isError}) => {
     if (isLoading || isError) return null;
     return (
       <UnleashWrapper toggle='situasjon'>
-        <Vta kreverStandardInnsatsgruppe />
+        <Vta kreverStandardInnsatsgruppe key='vta-for-standard' />
       </UnleashWrapper>
     )
   }
