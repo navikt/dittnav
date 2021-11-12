@@ -159,11 +159,11 @@ app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/startregistrerin
 ));
 
 app.get('/person/dittnav/veientilarbeid/saksoversikt-api/tjenester/sakstema', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-sakstema-mock/.json'))
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-sakstema-mock.json'))
 ));
 
 app.get('/person/dittnav/veientilarbeid/saksoversikt-api/tjenester/saker/hentPaabegynteSoknader', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-pabegyntesoknader-mock/.json'))
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-pabegyntesoknader-mock.json'))
 ));
 
 app.get('/person/dittnav/veientilarbeid/veilarbdialog/api/dialog/antallUleste', (req, res) => (
