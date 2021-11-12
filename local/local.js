@@ -46,8 +46,8 @@ app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/ubehandlede.json'))
 ));
 
-app.get('/dittnav-api/saker/sakstema', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/sakstema.json'))
+app.get('/dittnav-api/saker', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/saker.json'))
 ));
 
 app.get('/innloggingsstatus/summary', (req, res) => (

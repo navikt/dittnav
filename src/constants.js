@@ -18,7 +18,7 @@ export const Dittnav = Object.freeze({
   MELDINGER_URL:
     buildApiUrl('/meldinger/ubehandlede'),
   SAKSTEMA_URL:
-    buildApiUrl('/saker/sakstema'),
+    buildApiUrl('/saker'),
   BESKJED_URL:
     buildApiUrl('/beskjed'),
   OPPGAVE_URL:
@@ -74,7 +74,6 @@ export const Format = Object.freeze({
 export const Toggle = Object.freeze({
   FEATURE_TOGGLES: '', // a,b,c etc..
   TEST_SIDE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
-  IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
 });
 

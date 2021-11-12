@@ -1,7 +1,7 @@
 import React from 'react';
 import { shape, arrayOf, string } from 'prop-types';
 import { Normaltekst } from 'nav-frontend-typografi';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../utils/googleAnalytics';
+import { listOfActions, logLenkeTrykkAmplitude } from '../utils/amplitudeUtils';
 
 const Lenkelister = (props) => (
   <div className="flere-tjenester">
@@ -12,11 +12,7 @@ const Lenkelister = (props) => (
             <a
               href={l.url}
               className="lenke flere-tjenester__link"
-              onClick={() => trackEvent(
-                GoogleAnalyticsCategory.Forside,
-                `${GoogleAnalyticsAction.FlereTjenester}/${l.tittel}`,
-                l.url,
-              )}
+              onClick={() => logLenkeTrykkAmplitude(l.tittel, listOfActions.TrykkPaaLenkeliste)}
             >
               {l.tittel}
             </a>
