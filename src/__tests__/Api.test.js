@@ -1,10 +1,9 @@
 import { fetchPersonNavn, redirectToLogin } from 'Api';
 /* global */
-import { FetchError } from 'node-fetch'; // eslint-disable-line import/no-extraneous-dependencies
 
 it('it crashes', async () => {
   expect.assertions(1);
-  await expect(fetchPersonNavn()).rejects.toEqual(new FetchError('Cannot read property \'then\' of undefined'));
+  await expect(fetchPersonNavn()).rejects.toEqual(new TypeError('Cannot read property \'then\' of undefined'));
 });
 
 it('handling Unauthorized', async () => {

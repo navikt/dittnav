@@ -30,9 +30,7 @@ const FeatureTogglesProvider = ({ children }) => {
   TODO: Utkommentert i påvente av at vi skriver vår egen unleash-toggle-provider istedenfor å bruke Unleash gjennom pus-dekoratør.
   const [featureToggles, setFeatureToggles] = useState({});
   const [loaded, setLoaded] = useState(false);
-
   const UNLEASH_TIMEOUT = 1000;
-
   useEffect(() => {
     const createURL = () => {
       const toggles = Config.dittNav.FEATURE_TOGGLES.split(',');
@@ -53,7 +51,6 @@ const FeatureTogglesProvider = ({ children }) => {
       })
       .finally(() => setLoaded(true));
   }, []);
-
    */
 
   if (loaded) {
