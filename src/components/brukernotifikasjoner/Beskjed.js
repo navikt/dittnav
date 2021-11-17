@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { bool } from 'prop-types';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import useStore from '../../hooks/useStore';
@@ -9,7 +8,7 @@ import { postDigisosDone, postDone } from '../../Api';
 import IkonBeskjed from '../../assets/IkonBeskjed';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import BeskjedType from '../../types/BeskjedType';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../../utils/amplitudeUtils';
 
 const remove = (beskjed, removeBeskjed) => {
   if (beskjed.produsent === 'digiSos') {
@@ -36,11 +35,10 @@ const addTilInaktiveHvisErAktiv = (beskjed, addInaktivBeskjed, erAktiv) => {
 const onClickBeskjed = (beskjed, removeBeskjed, addInaktivBeskjed, visInnloggingsModal, erAktiv) => {
   remove(beskjed, removeBeskjed, visInnloggingsModal);
   addTilInaktiveHvisErAktiv(beskjed, addInaktivBeskjed, erAktiv);
-  trackEvent(GoogleAnalyticsCategory.Forside, GoogleAnalyticsAction.BeskjedLukk, '');
+  logAmplitudeEvent(listOfComponentNames.brukernotifikasjon.BeskjedMottatt, listOfActions.TrykkPaaArkiverKnapp);
 };
 
 const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
-  const location = useLocation();
   const { removeBeskjed, addInaktivBeskjed, visInnloggingsModal } = useStore();
 
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
@@ -59,8 +57,8 @@ const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
       skjermleserTekst="beskjed.knapp.skjermleser.tekst"
       lenke={sikkerhetsnivaa.lenke}
       lenkeTekst={lenkeTekst}
-      gaCategory={`Ditt NAV${location.pathname}`}
-      gaAction={GoogleAnalyticsAction.Beskjed}
+      amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+      amplitudeComponentName={listOfComponentNames.brukernotifikasjon.BeskjedMottatt}
       knapp={visKnapp}
     >
       <IkonBeskjed />

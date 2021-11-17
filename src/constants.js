@@ -37,6 +37,8 @@ export const Dittnav = Object.freeze({
     buildApiUrl('/digisos/paabegynte/done'),
   DONE_URL:
     buildApiUrl('/produce/done'),
+  UNLEASH_URL:
+    buildApiUrl('/unleash')
 });
 
 export const TestProducer = Object.freeze({
@@ -72,7 +74,6 @@ export const Format = Object.freeze({
 export const Toggle = Object.freeze({
   FEATURE_TOGGLES: '', // a,b,c etc..
   TEST_SIDE: window.env.TEST_SIDE_FEATURE_TOGGLE === 'true',
-  IS_DEV: window.env.ER_DEV === 'true',
   IS_TEST: process.env.NODE_ENV === 'test',
 });
 

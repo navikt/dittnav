@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import { transformTolokalDatoTid } from '../../utils/datoUtils';
@@ -7,10 +6,9 @@ import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../assets/IkonOppgave';
 import OppgaveType from '../../types/OppgaveType';
 import InnloggingsstatusType from '../../types/InnloggingsstatusType';
-import { GoogleAnalyticsAction, removeFragment } from '../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 
 const Oppgave = ({ oppgave, innloggingsstatus }) => {
-  const location = useLocation();
   const sikkerhetsnivaa = useSikkerhetsnivaa(oppgave, 'oppgave', innloggingsstatus);
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
   const lokalDatoTid = transformTolokalDatoTid(oppgave.eventTidspunkt);
@@ -22,9 +20,8 @@ const Oppgave = ({ oppgave, innloggingsstatus }) => {
       overskrift={overskrift}
       etikett={lokalDatoTid}
       href={sikkerhetsnivaa.lenke}
-      gaCategory={`Ditt NAV${location.pathname}`}
-      gaAction={GoogleAnalyticsAction.Oppgave}
-      gaUrl={removeFragment(sikkerhetsnivaa.lenke)}
+      amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+      amplitudeComponentName={listOfComponentNames.brukernotifikasjon.OppgaveMottatt}
     >
       <IkonOppgave />
     </LenkepanelMedIkon>

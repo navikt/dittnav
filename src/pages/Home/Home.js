@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import { useIsFetching } from 'react-query';
-import moment from 'moment';
 import { useOppfolging } from '../../hooks/usePerson';
 import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
-import { useSakstema } from '../../hooks/useSaker';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
 import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
@@ -17,7 +15,8 @@ import InnloggingsModal from '../../components/common/InnloggingsModal';
 import Brodsmuler from '../../utils/brodsmuler';
 import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
-import DittnavFliser from '../../components/DittnavFliser';
+import DittnavFliser from '../../components/DittnavFliser'; 
+import UnleashWrapper from '../../components/UnleashWrapper'
 
 const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
@@ -25,7 +24,16 @@ const Home = () => {
   const { state } = useStore();
 
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
-  const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta />;
+  const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta key='vta-for-resten' />;
+
+  const NyVtaForStandardInnsats = ({isLoading, isError}) => {
+    if (isLoading || isError) return null;
+    return (
+      <UnleashWrapper toggle='situasjon'>
+        <Vta kreverStandardInnsatsgruppe key='vta-for-standard' />
+      </UnleashWrapper>
+    )
+  }
 
   if (state.visInnloggingsModal) {
     return (<InnloggingsModal onClick={() => null} isOpen />);
@@ -39,6 +47,7 @@ const Home = () => {
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger />
+            <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError}/>
             <KoronaSpesial />
             <DittnavLenkePanel />
             {oppfolgingIsLoading ? null : generelleEllerVta}

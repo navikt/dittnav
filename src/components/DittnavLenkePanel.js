@@ -3,6 +3,7 @@ import { FormattedMessage as F } from 'react-intl';
 import Lenkepanel from 'nav-frontend-lenkepanel/lib';
 import OversiktspanelMedListe from './common/OversiktspanelMedListe';
 import DinesakerSakstema from './DinesakerSakstema';
+import { listOfActions, listOfComponentNames, logAmplitudeEvent } from '../utils/amplitudeUtils';
 import { lenker } from '../utils/lenker';
 import { useSakstema } from '../hooks/useSaker';
 import { useOppfolging } from '../hooks/usePerson';
@@ -67,6 +68,7 @@ const DittnavLenkePanel = () => {
             <Lenkepanel
               alt="Dine saker"
               className="dittnav-lenkepanel-liten-item"
+              onClick={() => logAmplitudeEvent(listOfComponentNames.DineSisteSakerFlis, listOfActions.TrykkPaaLenke)}
               href={saker?.content.sakerURL}
               border
             >

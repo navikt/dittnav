@@ -28,6 +28,7 @@ exports[`Snapshot test med saker 1`] = `
       <a
         alt="Dine saker"
         className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+        onClick={[Function]}
       >
         <span
           className="typo-undertittel lenkepanel__heading"
@@ -160,6 +161,7 @@ exports[`Snapshot test uten saker 1`] = `
       <a
         alt="Dine saker"
         className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
+        onClick={[Function]}
       >
         <span
           className="typo-undertittel lenkepanel__heading"
