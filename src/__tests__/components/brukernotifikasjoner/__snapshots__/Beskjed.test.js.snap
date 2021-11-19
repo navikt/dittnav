@@ -3,6 +3,7 @@
 exports[`Beskjed with empty link 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -62,14 +63,14 @@ exports[`Beskjed with empty link 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="lukknapp lukknapp--bla"
+      className="arkiverknapp"
       onClick={[Function]}
+      onKeyPress={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <span
-        className="text-hide"
-      >
-        Fjern beskjeden
-      </span>
+      Arkivér
     </button>
   </div>
 </div>
@@ -78,6 +79,7 @@ exports[`Beskjed with empty link 1`] = `
 exports[`Beskjed with link 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -137,14 +139,14 @@ exports[`Beskjed with link 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="lukknapp lukknapp--bla"
+      className="arkiverknapp"
       onClick={[Function]}
+      onKeyPress={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <span
-        className="text-hide"
-      >
-        Fjern beskjeden
-      </span>
+      Arkivér
     </button>
   </div>
 </div>
@@ -153,6 +155,7 @@ exports[`Beskjed with link 1`] = `
 exports[`Beskjed with null as link 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -212,14 +215,14 @@ exports[`Beskjed with null as link 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="lukknapp lukknapp--bla"
+      className="arkiverknapp"
       onClick={[Function]}
+      onKeyPress={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <span
-        className="text-hide"
-      >
-        Fjern beskjeden
-      </span>
+      Arkivér
     </button>
   </div>
 </div>
@@ -228,6 +231,7 @@ exports[`Beskjed with null as link 1`] = `
 exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -287,14 +291,14 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="lukknapp lukknapp--bla"
+      className="arkiverknapp"
       onClick={[Function]}
+      onKeyPress={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <span
-        className="text-hide"
-      >
-        Fjern beskjeden
-      </span>
+      Arkivér
     </button>
   </div>
 </div>
@@ -303,6 +307,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
 exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -362,14 +367,14 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="lukknapp lukknapp--bla"
+      className="arkiverknapp"
       onClick={[Function]}
+      onKeyPress={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <span
-        className="text-hide"
-      >
-        Fjern beskjeden
-      </span>
+      Arkivér
     </button>
   </div>
 </div>
@@ -378,6 +383,7 @@ exports[`Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
 exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -432,6 +438,7 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
 exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
 <div
   className="panel beskjed panel--border"
+  onAnimationEnd={[Function]}
 >
   <div
     className="beskjed__ikon"
@@ -491,14 +498,14 @@ exports[`Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
     className="beskjed__knapp"
   >
     <button
-      className="lukknapp lukknapp--bla"
+      className="arkiverknapp"
       onClick={[Function]}
+      onKeyPress={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
     >
-      <span
-        className="text-hide"
-      >
-        Fjern beskjeden
-      </span>
+      Arkivér
     </button>
   </div>
 </div>
