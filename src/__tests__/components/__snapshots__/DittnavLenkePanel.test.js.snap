@@ -54,6 +54,7 @@ exports[`Snapshot test med saker 1`] = `
         <a
           className="lenke kommunikasjon-flis-lenke"
           href="undefined"
+          onClick={[Function]}
         >
           <h2
             className="typo-undertittel"
@@ -97,6 +98,7 @@ exports[`Snapshot test med saker 1`] = `
         <a
           className="lenke kommunikasjon-flis-lenke"
           href="undefined"
+          onClick={[Function]}
         >
           <h2
             className="typo-undertittel"
@@ -187,6 +189,7 @@ exports[`Snapshot test uten saker 1`] = `
         <a
           className="lenke kommunikasjon-flis-lenke"
           href="undefined"
+          onClick={[Function]}
         >
           <h2
             className="typo-undertittel"
@@ -230,6 +233,7 @@ exports[`Snapshot test uten saker 1`] = `
         <a
           className="lenke kommunikasjon-flis-lenke"
           href="undefined"
+          onClick={[Function]}
         >
           <h2
             className="typo-undertittel"
