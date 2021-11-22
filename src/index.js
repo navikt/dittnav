@@ -39,8 +39,8 @@ const checkAuthThenRenderApp = () => {
 
 if (window.env.IS_PROD) {
   initializeSentry();
-  initializeAmplitude();
 }
+initializeAmplitude();
 
 enableHotModuleReplacement();
 checkAuthThenRenderApp();
