@@ -6,7 +6,6 @@ import sinon from 'sinon';
 import StoreProvider from '../../../context/StoreProvider';
 import * as usePerson from '../../../hooks/usePerson';
 
-jest.mock('react-ga');
 let sandbox = null;
 
 beforeEach(() => {

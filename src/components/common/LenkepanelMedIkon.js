@@ -52,9 +52,6 @@ LenkepanelMedIkon.propTypes = {
   etikett: string,
   amplitudeAction: string,
   amplitudeComponentName: string,
-  gaCategory: string,
-  gaAction: string,
-  gaUrl: string,
   children: node.isRequired,
 };
 
@@ -65,9 +62,6 @@ LenkepanelMedIkon.defaultProps = {
   etikett: null,
   amplitudeAction: null,
   amplitudeComponentName: null,
-  gaCategory: null,
-  gaAction: null,
-  gaUrl: null,
 };
 
 export default LenkepanelMedIkon;
