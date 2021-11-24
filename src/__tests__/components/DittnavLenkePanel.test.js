@@ -8,7 +8,6 @@ import * as usePerson from '../../hooks/usePerson';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-jest.mock('react-ga');
 let sandbox = null;
 
 beforeEach(() => {

@@ -5,8 +5,6 @@ import StoreProvider from '../../../context/StoreProvider';
 import wrapIntl from 'utils/intlTestHelper';
 import { MemoryRouter } from 'react-router-dom';
 
-jest.mock('react-ga');
-
 test('Beskjed with link', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
