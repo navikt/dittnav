@@ -62,11 +62,6 @@ exports[`Snapshot test med saker 1`] = `
             <svg
               fill="none"
               height="24"
-              style={
-                Object {
-                  "marginTop": "3px",
-                }
-              }
               viewBox="0 0 24 24"
               width="24"
               xmlns="http://www.w3.org/2000/svg"
@@ -197,11 +192,6 @@ exports[`Snapshot test uten saker 1`] = `
             <svg
               fill="none"
               height="24"
-              style={
-                Object {
-                  "marginTop": "3px",
-                }
-              }
               viewBox="0 0 24 24"
               width="24"
               xmlns="http://www.w3.org/2000/svg"
