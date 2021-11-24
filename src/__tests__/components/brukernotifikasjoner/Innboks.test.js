@@ -4,8 +4,6 @@ import Innboks from 'components/brukernotifikasjoner/Innboks';
 import wrapIntl from 'utils/intlTestHelper';
 import { MemoryRouter } from 'react-router-dom';
 
-jest.mock('react-ga');
-
 test('Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   const innbokser = [{
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
