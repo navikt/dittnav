@@ -71,7 +71,7 @@ exports[`render empty InfoMeldinger component 1`] = `
         "innloggingsmodal.tittel": "Du er i ferd med å bli logget ut",
         "korona.behandlingstid.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknader. Les om endringene.",
         "korona.dagpenger-forskudd.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknaden din. Derfor kan du søke om forskudd.",
-        "korona.din.situasjon.ingress": "Her vil du som har fått forskudd på dagpenger se mottatt beløp, restbeløpet og kunne endre tilbakebetalingen.",
+        "korona.din.situasjon.ingress": "Her kan du som har fått forskudd på dagpenger se restbeløp og se eller velge tilbakebetalingsplan.",
         "korona.virus-varsel.ingress": "Se informasjon om rettighetene dine.",
         "meldekort.ett": "Du har ett meldekort for uke {next} ({from}-{until}) klart for innsending",
         "meldekort.etterregistreringer": "Du har fått vedtak for en periode du ikke har sendt meldekort. Du må sende {etterregistreringer} meldekort.",
