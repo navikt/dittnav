@@ -107,7 +107,7 @@ export const lenker = {
     tittel: 'MinInnboks',
     url: `${window.env.MIN_INNBOKS_URL}`,
   },
-  mineSaker:{
+  mineSaker: {
     tittel: 'Mine Saker',
     url: `${window.env.MINE_SAKER_URL}`,
   },
