@@ -80,7 +80,7 @@ export const lenker = {
     url: `${window.env.NAVNO_URL}/no/nav-og-samfunn/om-nav/saksbehandlingstider-i-nav`,
   },
   koronaSituasjon: {
-    tittel: 'Tilbakebetaling av forskudd på dagpenger er i gang',
+    tittel: 'Status på tilbakebetaling av forskudd på dagpenger',
     url: `${window.env.NAVNO_URL}/dagpenger/forskudd/oversikt`,
   },
   dineFullmakter: {
@@ -110,6 +110,10 @@ export const lenker = {
   dialogMedVeileder: {
     tittel: 'Dialog med den lokale veilederen din',
     url: `${window.env.NAVNO_URL}/person/dittnav/veientilarbeid/dialog`,
+  },
+  mineSaker: {
+    tittel: 'Mine Saker',
+    url: `${window.env.MINE_SAKER_URL}`,
   },
 };
 

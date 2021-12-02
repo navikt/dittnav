@@ -24,7 +24,7 @@ const AdvarselBox = () => (
             ),
             saksoversikt: (
               <Lenke
-                href={lenker.saksoversikt.url}
+                href={lenker.mineSaker.url}
               >
                 Dine saker
               </Lenke>
