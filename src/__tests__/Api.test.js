@@ -1,4 +1,4 @@
-import {redirectToLogin } from 'Api';
+import { redirectToLogin } from 'Api';
 /* global */
 
 it('it crashes', async () => {
