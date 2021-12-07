@@ -9,9 +9,9 @@ export const Dittnav = Object.freeze({
     buildApiUrl('/oppfolging'),
   MELDEKORT_URL:
     buildApiUrl('/meldekortinfo'),
-  PERSON_NAVN_URL:
+  NAVN_URL:
     buildApiUrl('/navn'),
-  PERSON_IDENT_URL:
+  IDENT_URL:
     buildApiUrl('/ident'),
   SAKER_URL:
     buildApiUrl('/saker/paabegynte'),
