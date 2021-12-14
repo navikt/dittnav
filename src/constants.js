@@ -9,10 +9,10 @@ export const Dittnav = Object.freeze({
     buildApiUrl('/oppfolging'),
   MELDEKORT_URL:
     buildApiUrl('/meldekortinfo'),
-  PERSON_NAVN_URL:
-    buildApiUrl('/personalia/navn'),
-  PERSON_IDENT_URL:
-    buildApiUrl('/personalia/ident'),
+  NAVN_URL:
+    buildApiUrl('/navn'),
+  IDENT_URL:
+    buildApiUrl('/ident'),
   SAKER_URL:
     buildApiUrl('/saker/paabegynte'),
   MELDINGER_URL:
@@ -38,7 +38,7 @@ export const Dittnav = Object.freeze({
   DONE_URL:
     buildApiUrl('/produce/done'),
   UNLEASH_URL:
-    buildApiUrl('/unleash')
+    buildApiUrl('/unleash'),
 });
 
 export const TestProducer = Object.freeze({
