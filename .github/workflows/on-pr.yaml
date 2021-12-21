@@ -11,6 +11,7 @@ jobs:
         && github.repository != 'navikt/dittnav-periodic-metrics-reporter' && github.repository != 'navikt/pb-oidc-provider-gui'
         && github.repository != 'navikt/mine-saker' && github.repository != 'navikt/mine-saker-api' && github.repository != 'navikt/varseldb-api'
         && github.repository != 'navikt/tms-personalia-api' && github.repository != 'navikt/tms-min-side' && github.repository != 'navikt/tms-min-side-bunn'
+        && github.repository != 'navikt/tms-min-side-topp'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
