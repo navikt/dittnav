@@ -3,7 +3,6 @@
 Kildekoden til frontend-appen for DittNAV.
 
 # Kom i gang
-
 1. Installer npm-pakker ved å kjøre `npm install`
 1. Bygg dittnav ved å kjøre `npm run build`
 2. Start appen ved å kjøre `npm run start`
