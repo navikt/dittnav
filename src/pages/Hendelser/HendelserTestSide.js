@@ -17,6 +17,11 @@ const HendelserTestSide = () => {
   const [innlogging, setInnlogging] = useState(null);
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
+  const [epostVarslingstekst, setEpostVarslingstekst] = useState('');
+  const [smsVarslingstekst, setSmsVarslingstekst] = useState('');
+  const sevenDaysFromNow = new Date()
+  sevenDaysFromNow.setDate(sevenDaysFromNow.getDate() + 7)
+  const [synligFremTil, setSynligFremTil] = useState(sevenDaysFromNow.toISOString().split("T")[0]);
   const [valg, setValg] = useState('beskjed');
   const [eksternVarsling, setEksternVarsling] = useState(false);
 
@@ -45,8 +50,14 @@ const HendelserTestSide = () => {
           lenke={lenke}
           valg={valg}
           eksternVarsling={eksternVarsling}
+          synligFremTil={synligFremTil}
+          epostVarslingstekst={epostVarslingstekst}
+          smsVarslingstekst={smsVarslingstekst}
           setTekst={setTekst}
           setLenke={setLenke}
+          setSynligFremTil={setSynligFremTil}
+          setEpostVarslingstekst={setEpostVarslingstekst}
+          setSmsVarslingstekst={setSmsVarslingstekst}
           setOppgaver={setOppgaver}
           setInnbokser={setInnbokser}
         />
