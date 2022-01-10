@@ -30,12 +30,12 @@ app.get('/dittnav-api/meldekortinfo', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/meldekortinfo.json'))
 ));
 
-app.get('/dittnav-api/personalia/navn', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/person-navn.json'))
+app.get('/dittnav-api/navn', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/navn.json'))
 ));
 
-app.get('/dittnav-api/personalia/ident', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/person-ident.json'))
+app.get('/dittnav-api/ident', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/ident.json'))
 ));
 
 app.get('/dittnav-api/saker/paabegynte', (req, res) => (

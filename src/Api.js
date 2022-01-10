@@ -69,12 +69,12 @@ export const fetchMeldekort = () => (
   fetchJSON(Dittnav.MELDEKORT_URL)
 );
 
-export const fetchPersonNavn = () => (
-  fetchJSON(Dittnav.PERSON_NAVN_URL)
+export const fetchNavn = () => (
+  fetchJSON(Dittnav.NAVN_URL)
 );
 
-export const fetchPersonIdent = () => (
-  fetchJSON(Dittnav.PERSON_IDENT_URL)
+export const fetchIdent = () => (
+  fetchJSON(Dittnav.IDENT_URL)
 );
 
 export const fetchSaker = () => (

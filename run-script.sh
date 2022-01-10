@@ -19,6 +19,7 @@ declare -A variables=(
   [TIDSLINJE_URL]=$TIDSLINJE_URL
   [TIDSLINJE_PRODUSENT]=$TIDSLINJE_PRODUSENT
   [MIN_INNBOKS_URL]=$MIN_INNBOKS_URL
+  [MINE_SAKER_URL]=$MINE_SAKER_URL
   [HJELPEMIDLER_URL]=$HJELPEMIDLER_URL
   [IS_PROD]=$IS_PROD
 )
@@ -65,4 +66,4 @@ forEachVariable printAvailability
 echo "window.env={};" > /app/config.js
 forEachVariable makeAvailable
 
-/run.sh
+../run-java.sh
