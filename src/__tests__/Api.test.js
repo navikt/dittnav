@@ -1,6 +1,5 @@
-import { fetchPersonNavn, redirectToLogin } from 'Api';
+import {redirectToLogin} from 'Api';
 /* global */
-
 
 it('handling Unauthorized', async () => {
   Object.defineProperty(window, 'location', {
