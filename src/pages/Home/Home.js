@@ -47,11 +47,11 @@ const Home = () => {
         <div className="maincontent side-innhold">
           <div className="col-md-12" id="dittnav-main-container">
             <PersonInfo />
+            {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <AlertStripe type="info" className="rapport-info">
               <b>Leter du etter årsoppgaven din?</b><br />
               Hvis du har valgt digital postkasse finner du årsoppgaven hos Digipost eller eBoks. Ellers finner du den i <Lenke href={lenker.minInnboks.url}>innboksen</Lenke> hos NAV. Dokumenter som er sendt til deg digitalt vil du i tillegg kunne finne igjen blant <Lenke href={lenker.mineSaker}>sakene dine</Lenke>.
             </AlertStripe>
-            {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger />
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
             <KoronaSpesial />
