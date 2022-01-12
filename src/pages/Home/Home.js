@@ -49,8 +49,9 @@ const Home = () => {
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <AlertStripe type="info" className="rapport-info">
-              <b>Leter du etter årsoppgaven din?</b><br />
-              Hvis du har valgt digital postkasse, finner du årsoppgaven hos Digipost eller eBoks. Ellers finner du den i <Lenke href={lenker.minInnboks.url}>innboksen</Lenke> hos NAV. Dokumenter som er sendt til deg digitalt, vil du i tillegg kunne finne igjen blant <Lenke href={lenker.mineSaker.url}>sakene dine</Lenke>.
+              <b>Leter du etter årsoppgaven din?</b>
+              <br />Dokumenter som er sendt til deg vil du kunne finne igjen blant <Lenke href={lenker.mineSaker.url}>sakene dine</Lenke>. Årsoppgaven ligger under temaet Regnskap/utbetaling.<br />
+              <br />Hvis du har valgt digital postkasse, finner du også årsoppgaven hos Digipost eller eBoks. Hvis du ikke har digital postkasse ligger den i innboksen her hos NAV, eller du får den på papir.
             </AlertStripe>
             <InfoMeldinger />
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
