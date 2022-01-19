@@ -7,6 +7,7 @@ ENV APPLICATION_NAME=dittnav
 ENV CONTEXT_PATH=person/dittnav
 ENV FOOTER_TYPE=WITH_ALPHABET
 ENV DISABLE_UNLEASH=true
+ENV DISABLE_FRONTEND_LOGGER=true
 
 COPY ./dist /app
 ADD decorator.yaml /decorator.yaml
