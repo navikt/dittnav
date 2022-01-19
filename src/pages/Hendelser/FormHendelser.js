@@ -51,8 +51,9 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
     eksternVarsling: convertStringToBoolean(eksternVarsling),
     synligFremTil: synligFremTil ? new Date(synligFremTil).toISOString() : null,
     epostVarslingstekst: epostVarslingstekst ? epostVarslingstekst : null,
-    epostVarslingstittel: epostVarslingstittel ? epostVarslingstittel : null,
-    smsVarslingstekst: smsVarslingstekst ? smsVarslingstekst : null
+    epostVarslingstittel: convertStringToBoolean(eksternVarsling) && epostVarslingstittel ? epostVarslingstittel : null,
+    smsVarslingstekst: convertStringToBoolean(eksternVarsling) && smsVarslingstekst ? smsVarslingstekst : null,
+    prefererteKanaler: convertStringToBoolean(eksternVarsling) ? ["SMS", "EPOST"] : []
   };
 
 
