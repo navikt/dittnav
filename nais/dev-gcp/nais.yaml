@@ -8,11 +8,11 @@ metadata:
   annotations:
     nais.io/read-only-file-system: "false"
 spec:
+  envFrom:
+    - secret: dittnav-secrets
   image: {{version}}
   ingresses:
     - "https://person.dev.nav.no/person/dittnav"
-  vault:
-    enabled: true
   liveness:
     path: person/dittnav/internal/isAlive
     port: 8080
