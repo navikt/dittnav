@@ -18,6 +18,7 @@ const HendelserTestSide = () => {
   const [tekst, setTekst] = useState('');
   const [lenke, setLenke] = useState('');
   const [epostVarslingstekst, setEpostVarslingstekst] = useState('');
+  const [epostVarslingstittel, setEpostVarslingstittel] = useState('');
   const [smsVarslingstekst, setSmsVarslingstekst] = useState('');
   const sevenDaysFromNow = new Date()
   sevenDaysFromNow.setDate(sevenDaysFromNow.getDate() + 7)
@@ -52,11 +53,13 @@ const HendelserTestSide = () => {
           eksternVarsling={eksternVarsling}
           synligFremTil={synligFremTil}
           epostVarslingstekst={epostVarslingstekst}
+          epostVarslingstittel={epostVarslingstittel}
           smsVarslingstekst={smsVarslingstekst}
           setTekst={setTekst}
           setLenke={setLenke}
           setSynligFremTil={setSynligFremTil}
           setEpostVarslingstekst={setEpostVarslingstekst}
+          setEpostVarslingstittel={setEpostVarslingstittel}
           setSmsVarslingstekst={setSmsVarslingstekst}
           setOppgaver={setOppgaver}
           setInnbokser={setInnbokser}

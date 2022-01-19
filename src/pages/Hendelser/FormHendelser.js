@@ -6,12 +6,13 @@ import {Knapp} from 'nav-frontend-knapper';
 import useStore from '../../hooks/useStore';
 import {fetchBeskjeder, fetchInnbokser, fetchOppgaver, postHendelse} from '../../Api';
 
-const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epostVarslingstekst, smsVarslingstekst, setTekst, setLenke, setSynligFremTil, setEpostVarslingstekst, setSmsVarslingstekst, setOppgaver, setInnbokser }) => {
+const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epostVarslingstekst, epostVarslingstittel, smsVarslingstekst, setTekst, setLenke, setSynligFremTil, setEpostVarslingstekst, setEpostVarslingstittel, setSmsVarslingstekst, setOppgaver, setInnbokser }) => {
   const { addBeskjeder } = useStore();
   const [tekstError, setTekstError] = useState({ tekst: '', value: false });
   const [lenkeError, setLenkeError] = useState({ tekst: '', value: false });
   const [synligFremTilError, setSynligFremTilError] = useState({ tekst: '', value: false });
   const [epostVarslingstekstError, setEpostVarslingstekstError] = useState({ tekst: '', value: false });
+  const [epostVarslingstittelError, setEpostVarslingstittelError] = useState({ tekst: '', value: false });
   const [smsVarslingstekstError, setSmsVarslingstekstError] = useState({ tekst: '', value: false });
   const [grupperingsid, setGrupperingsid] = useState('');
   const disabled = tekstError.value || lenkeError.value;
@@ -50,6 +51,7 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
     eksternVarsling: convertStringToBoolean(eksternVarsling),
     synligFremTil: synligFremTil ? new Date(synligFremTil).toISOString() : null,
     epostVarslingstekst: epostVarslingstekst ? epostVarslingstekst : null,
+    epostVarslingstittel: epostVarslingstittel ? epostVarslingstittel : null,
     smsVarslingstekst: smsVarslingstekst ? smsVarslingstekst : null
   };
 
@@ -90,9 +92,14 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
   useEffect(handleSynligFremTilValidation, [synligFremTil])
 
   const handleEpostVarslingstekstValidation = () => {
-    checkInputLength(epostVarslingstekst, setEpostVarslingstekstError, 50000, 'Maks lengde på epost er 50000 tegn');
+    checkInputLength(epostVarslingstekst, setEpostVarslingstekstError, 10000, 'Maks lengde på epost er 10000 tegn');
   }
   useEffect(handleEpostVarslingstekstValidation, [epostVarslingstekst])
+
+  const handleEpostVarslingstittelValidation = () => {
+    checkInputLength(epostVarslingstekst, setEpostVarslingstittelError, 200, 'Maks lengde på epost tittel er 200 tegn');
+  }
+  useEffect(handleEpostVarslingstittelValidation, [epostVarslingstittel])
 
   const handleSmsVarslingstekstValidation = () => {
     checkInputLength(smsVarslingstekst, setSmsVarslingstekstError, 160, 'Maks lengde på sms er 160 tegn');
@@ -129,6 +136,12 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
               feil={epostVarslingstekstError.tekst}
           />
           <Input
+            label="Skriv inn ny epost varslingstittel:"
+            value={epostVarslingstittel}
+            onChange={e => setEpostVarslingstittel(e.target.value)}
+            feil={epostVarslingstittelError.tekst}
+          />
+          <Input
             label="Skriv inn ny sms varslingstekst:"
             value={smsVarslingstekst}
             onChange={e => setSmsVarslingstekst(e.target.value)}
@@ -160,11 +173,13 @@ FormHendelser.propTypes = {
   eksternVarsling: string.isRequired,
   synligFremTil: string.isRequired,
   epostVarslingstekst: string.isRequired,
+  epostVarslingstittel: string.isRequired,
   smsVarslingstekst: string.isRequired,
   setTekst: func.isRequired,
   setLenke: func.isRequired,
   setSynligFremTil: func.isRequired,
   setEpostVarslingstekst: func.isRequired,
+  setEpostVarslingstittel: func.isRequired,
   setSmsVarslingstekst: func.isRequired,
   setOppgaver: func.isRequired,
   setInnbokser: func.isRequired,
