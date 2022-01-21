@@ -48,10 +48,6 @@ const Home = () => {
           <div className="col-md-12" id="dittnav-main-container">
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
-            <AlertStripe type="info" className="rapport-info">
-              <b>Leter du etter årsoppgaven din?</b>
-              <br />Dokumenter som er sendt til deg vil du kunne finne igjen blant <Lenke href={lenker.mineSaker.url}>sakene dine</Lenke>. Årsoppgaven ligger under temaet Regnskap/utbetaling.
-            </AlertStripe>
             <InfoMeldinger />
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
             <KoronaSpesial />
