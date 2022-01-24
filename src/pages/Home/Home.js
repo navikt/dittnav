@@ -2,10 +2,8 @@ import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
 import { useIsFetching } from 'react-query';
-import AlertStripe from 'nav-frontend-alertstriper';
-import Lenke from 'nav-frontend-lenker';
 import { useOppfolging } from '../../hooks/usePerson';
-import { generelleLenker, lenker, oppfolgingsLenker } from '../../utils/lenker';
+import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
@@ -48,10 +46,6 @@ const Home = () => {
           <div className="col-md-12" id="dittnav-main-container">
             <PersonInfo />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
-            <AlertStripe type="info" className="rapport-info">
-              <b>Leter du etter årsoppgaven din?</b>
-              <br />Dokumenter som er sendt til deg vil du kunne finne igjen blant <Lenke href={lenker.mineSaker.url}>sakene dine</Lenke>. Årsoppgaven ligger under temaet Regnskap/utbetaling.
-            </AlertStripe>
             <InfoMeldinger />
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
             <KoronaSpesial />
