@@ -13,6 +13,7 @@ jobs:
         && github.repository != 'navikt/tms-personalia-api' && github.repository != 'navikt/tms-min-side' && github.repository != 'navikt/tms-min-side-bunn'
         && github.repository != 'navikt/tms-min-side-topp' && github.repository != 'navikt/tms-utbetalingsoversikt-api' && github.repository != 'navikt/tms-innloggingsinfo-api'
         && github.repository != 'navikt/tms-shell' && github.repository != 'navikt/utbetalingsoversikt'
+        && github.repository != 'navikt/innloggingsinfo'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
