@@ -14,6 +14,22 @@
 @mobile-breakpoint: 576px;
 @tablet-breakpoint: @screen-tablet;
 
+.rapport-info {
+  margin-top: 1.25rem;
+  margin-left: 8.25rem;
+  margin-right: 8.25rem;
+
+  @media screen and (max-width: @screen-tablet) {
+    margin-left: 4.25rem;
+    margin-right: 4.25rem;
+  }
+
+  @media screen and (max-width: @mobile-breakpoint) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .blokk-xxl() {
   margin-bottom: 4rem;
 }
