@@ -8,6 +8,7 @@ ENV CONTEXT_PATH=person/dittnav
 ENV FOOTER_TYPE=WITH_ALPHABET
 ENV DISABLE_UNLEASH=true
 ENV DISABLE_FRONTEND_LOGGER=true
+ENV DISABLE_SENSU_METRICS=true
 
 COPY ./dist /app
 ADD decorator.yaml /decorator.yaml
