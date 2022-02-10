@@ -1,52 +1,64 @@
 @import (reference) '~nav-frontend-core/less/_variabler';
 
-.dittnav-lenkepanel-top-container {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1em;
+.dittnav-lenkepanel-container {
+  margin-bottom: 2em;
 
-  .dittnav-lenkepanel-stor {
-    flex: 2 0 auto;
-    box-sizing: border-box;
-    margin-right: 1em;
-    margin-bottom: 1em;
-  }
-
-  .dittnav-lenkepanel-liten {
+  .dittnav-lenkepanel-tokol {
     display: flex;
     flex-direction: row;
-    align-content: space-between;
-    flex: 1 1 auto;
+    justify-content: space-between;
+    width: 100%;
 
-    .dittnav-lenkepanel-liten-item {
-      flex: 1 1 auto;
-      box-sizing: border-box;
-      margin-right: 1em;
-      margin-bottom: 1em;
-      width: 100%;
-
-      .lenkepanel__heading {
-        padding: 0.5em;
-      }
-    }
-
-    .last {
-      margin-right: 0;
-    }
-
-    &#cols-layout {
+    .dittnav-lenkepanel-venstre {
+      display: flex;
       flex-direction: column;
-      margin-right: 0;
+
+      .dittnav-lenkepanel-stor {
+        padding: 1.5rem;
+      }
     }
   }
 
-  @media (max-width: @screen-sm-min) {
-    flex-direction: column;
-    .dittnav-lenkepanel-stor {
-      margin-right: 0;
+  .dittnav-lenkepanel-liten-item {
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    width: 100%;
+
+    .lenkepanel__heading {
+      padding: 0.5em;
     }
-    .dittnav-lenkepanel-liten {
+    
+  }
+
+  .dittnav-lenkepanel-venstre {
+    width: calc(50% - 0.5em);
+  }
+
+  .kommunikasjon-flis{
+    width: calc(50% - 0.5em);
+  }
+
+  .utbetalingerpanel {
+    width: calc(50% - 0.5em);
+  }
+
+  @media (max-width: @screen-sm-min ) {
+    .dittnav-lenkepanel-tokol {
       flex-direction: column;
+    }
+    .oversiktspanel {
+      margin-bottom: 1em;
+    }
+    .dittnav-lenkepanel-venstre {
+      width: 100%;
+    }
+
+    .kommunikasjon-flis{
+      width: 100%;
+    }
+
+    .utbetalingerpanel {
+      width: 100%;
     }
   }
 
@@ -57,7 +69,9 @@
     }
   }
 
-  #oversiktspanel__header-lenke-id, #sak-lenke-id {
+
+  #oversiktspanel__header-lenke-id,
+  #sak-lenke-id {
     .lenke-overstyring();
   }
 }

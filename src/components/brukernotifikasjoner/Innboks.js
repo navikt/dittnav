@@ -30,7 +30,7 @@ const Innboks = ({ innbokser, innloggingsstatus }) => {
       alt="Innboks"
       overskrift={overskrift}
       etikett={gruppert ? null : lokalDatoTid}
-      href={gruppert ? lenker.minInnboks.url : sikkerhetsnivaa.lenke}
+      href={gruppert ? lenker.innboks.url : sikkerhetsnivaa.lenke}
       amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
       amplitudeComponentName={listOfComponentNames.brukernotifikasjon.InnboksMeldingOppsummering}
     >

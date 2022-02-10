@@ -22,6 +22,11 @@ export const listOfComponentNames = {
     UlesteOppgaver: 'Brukernotifikasjon - Antall uleste oppgaver',
     TidligereBeskjederOgOppgaver: 'Lenke til tidligere beskjeder og oppgaver',
   },
+  KommunikasjonFlis: {
+    Innboks: 'KommunikasjonFlis - Innboks',
+    DialogMedLokalVeileder: 'KommunikasjonFlis - Dialog med den lokale veilederen din',
+    BrevOgVedtak: 'KommunikasjonFlis - Brev og vedtak',
+  },
   TilbakebetalingsFlis: 'TilbakebetalingsFlis',
   KoronaSpesialFlis: 'KoronaSpesialFlis',
   DineSisteSakerFlis: 'DineSisteSakerFlis',

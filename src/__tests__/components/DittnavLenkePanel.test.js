@@ -4,6 +4,7 @@ import wrapIntl from 'utils/intlTestHelper';
 import DittnavLenkePanel from 'components/DittnavLenkePanel';
 import BeskjedStoreProvider from 'context/StoreProvider';
 import * as useSaker from '../../hooks/useSaker';
+import * as usePerson from '../../hooks/usePerson';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -15,6 +16,7 @@ beforeEach(() => {
 
 afterEach(() => {
   useSaker.useSakstema.restore();
+  usePerson.useOppfolging.restore();
 });
 
 const sakstemaMedSaker = {
@@ -41,12 +43,21 @@ const sakstemaUtenSaker = {
 };
 
 test('Snapshot test med saker', () => {
-  sandbox.stub(useSaker, 'useSakstema')
-    .returns([{
+  sandbox.stub(useSaker, 'useSakstema').returns([
+    {
       data: { content: sakstemaMedSaker },
       isLoading: false,
       isSuccess: true,
-    }]);
+    },
+  ]);
+
+  sandbox.stub(usePerson, 'useOppfolging').returns([
+    {
+      data: { content: { erBrukerUnderOppfolging: false } },
+      isLoading: false,
+      isSuccess: true,
+    },
+  ]);
 
   const component = ReactTestRenderer.create(wrapIntl(
     <BeskjedStoreProvider>
@@ -58,12 +69,21 @@ test('Snapshot test med saker', () => {
 });
 
 test('Snapshot test uten saker', () => {
-  sandbox.stub(useSaker, 'useSakstema')
-    .returns([{
+  sandbox.stub(useSaker, 'useSakstema').returns([
+    {
       data: { content: sakstemaUtenSaker },
       isLoading: false,
       isSuccess: true,
-    }]);
+    },
+  ]);
+
+  sandbox.stub(usePerson, 'useOppfolging').returns([
+    {
+      data: { content: { erBrukerUnderOppfolging: false } },
+      isLoading: false,
+      isSuccess: true,
+    },
+  ]);
 
   const component = ReactTestRenderer.create(wrapIntl(
     <BeskjedStoreProvider>
