@@ -1,7 +1,7 @@
 import { Dittnav, Innlogging, TestProducer } from './constants';
 
 export const redirectToLogin = () => {
-  window.location.assign(`${Innlogging.LOGINSERVICE_URL}`);
+  window.location.assign(Innlogging.LOGINSERVICE_URL);
 };
 
 export const tokenExpiresSoon = (headers) => (
@@ -69,12 +69,12 @@ export const fetchMeldekort = () => (
   fetchJSON(Dittnav.MELDEKORT_URL)
 );
 
-export const fetchPersonNavn = () => (
-  fetchJSON(Dittnav.PERSON_NAVN_URL)
+export const fetchNavn = () => (
+  fetchJSON(Dittnav.NAVN_URL)
 );
 
-export const fetchPersonIdent = () => (
-  fetchJSON(Dittnav.PERSON_IDENT_URL)
+export const fetchIdent = () => (
+  fetchJSON(Dittnav.IDENT_URL)
 );
 
 export const fetchSaker = () => (
@@ -135,4 +135,8 @@ export const postDigisosDone = (content) => (
 
 export const postStatusoppdatering = (content) => (
   postJSON(`${TestProducer.STATUSOPPDATERING_URL}`, content)
+);
+
+export const fetchUnleashToggle = ({ queryKey }) => (
+  fetchJSON(`${Dittnav.UNLEASH_URL}/${queryKey}`)
 );

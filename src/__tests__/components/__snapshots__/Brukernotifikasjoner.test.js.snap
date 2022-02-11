@@ -6,6 +6,7 @@ exports[`Brukernotifikasjoner with beskjeder 1`] = `
 Array [
   <div
     className="panel beskjed panel--border"
+    onAnimationEnd={[Function]}
   >
     <div
       className="beskjed__ikon"
@@ -43,7 +44,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -60,19 +60,20 @@ Array [
       className="beskjed__knapp"
     >
       <button
-        className="lukknapp lukknapp--bla"
+        className="arkiverknapp"
         onClick={[Function]}
+        onKeyPress={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
       >
-        <span
-          className="text-hide"
-        >
-          Fjern beskjeden
-        </span>
+        Arkivér
       </button>
     </div>
   </div>,
   <div
     className="panel beskjed panel--border"
+    onAnimationEnd={[Function]}
   >
     <div
       className="beskjed__ikon"
@@ -110,7 +111,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -127,14 +127,14 @@ Array [
       className="beskjed__knapp"
     >
       <button
-        className="lukknapp lukknapp--bla"
+        className="arkiverknapp"
         onClick={[Function]}
+        onKeyPress={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
       >
-        <span
-          className="text-hide"
-        >
-          Fjern beskjeden
-        </span>
+        Arkivér
       </button>
     </div>
   </div>,
@@ -245,6 +245,7 @@ Array [
   </a>,
   <div
     className="panel beskjed panel--border"
+    onAnimationEnd={[Function]}
   >
     <div
       className="beskjed__ikon"
@@ -282,7 +283,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -299,19 +299,20 @@ Array [
       className="beskjed__knapp"
     >
       <button
-        className="lukknapp lukknapp--bla"
+        className="arkiverknapp"
         onClick={[Function]}
+        onKeyPress={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
       >
-        <span
-          className="text-hide"
-        >
-          Fjern beskjeden
-        </span>
+        Arkivér
       </button>
     </div>
   </div>,
   <div
     className="panel beskjed panel--border"
+    onAnimationEnd={[Function]}
   >
     <div
       className="beskjed__ikon"
@@ -349,7 +350,6 @@ Array [
             className="lenke panel-lenke"
             href="https://enNyLenke"
             id="panel-lenke-id"
-            onClick={[Function]}
           >
             Se mer informasjon
           </a>
@@ -366,14 +366,14 @@ Array [
       className="beskjed__knapp"
     >
       <button
-        className="lukknapp lukknapp--bla"
+        className="arkiverknapp"
         onClick={[Function]}
+        onKeyPress={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
       >
-        <span
-          className="text-hide"
-        >
-          Fjern beskjeden
-        </span>
+        Arkivér
       </button>
     </div>
   </div>,

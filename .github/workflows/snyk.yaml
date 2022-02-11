@@ -11,7 +11,7 @@ jobs:
 
       - name: Run Snyk for gradle to check for vulnerabilities
         if: env.IS_GRADLE_PROJECT == 'true'
-        uses: snyk/actions/gradle@master
+        uses: snyk/actions/gradle-jdk14@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:

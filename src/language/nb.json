@@ -2,7 +2,7 @@
   "korona.virus-varsel.ingress": "Se informasjon om rettighetene dine.",
   "korona.dagpenger-forskudd.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknaden din. Derfor kan du søke om forskudd.",
   "korona.behandlingstid.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknader. Les om endringene.",
-  "korona.din.situasjon.ingress": "Her vil du som har fått forskudd på dagpenger se mottatt beløp, restbeløpet og kunne endre tilbakebetalingen.",
+  "korona.din.situasjon.ingress": "Her kan du som har fått forskudd på dagpenger se restbeløp og se eller velge tilbakebetalingsplan.",
 
   "dittnav.infomeldinger.varsler": "Varsler",
   "dittnav.infomeldinger.inngang.varslinger": "Se tidligere beskjeder og oppgaver",
@@ -134,9 +134,17 @@
   "saksoversikt.har.ingen.saker": "Du har ingen saker. ",
   "saksoversikt.har.entil.sak": "Du har én sak til.",
   "saksoversikt.har.flere.saker": "Du har {count} flere saker.",
-  "saksoversikt.alle.saker": "Se alle dine saker ({count})",
+  "saksoversikt.alle.saker": "Se alle dine saker",
 
   "innboks.flere.meldinger": "Du har {count} meldinger i din innboks",
 
-  "spinner.melding": "Laster innhold..."
+  "spinner.melding": "Laster innhold...",
+
+  "kommunikasjon.med.nav.overskrift": "Kommunikasjon med Nav",
+  "kommunikasjon.med.nav.innboks": "Innboks",
+  "kommunikasjon.med.nav.innboks.undertekst": "Informasjon fra NAV og svar på henvendelser og referater fra samtaler du på telefon, chat og «Skriv til oss».",
+  "kommunikasjon.med.nav.dialog.veileder": "Dialog med den lokale veilederen din",
+  "kommunikasjon.med.nav.dialog.veileder.undertekst": "For arbeidssøkere og de som mottar AAP. Les meldinger, referater og send melding til veilederen din.",
+  "kommunikasjon.med.nav.brev.vedtak": "Brev og vedtak",
+  "kommunikasjon.med.nav.brev.vedtak.undertekst": "For deg som ikke har Digipost eller e-Boks."
 }

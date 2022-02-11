@@ -5,14 +5,14 @@ import LenkepanelMedIkon from '../common/LenkepanelMedIkon';
 import PanelOverskrift from '../common/PanelOverskrift';
 import IkonOppgave from '../../assets/IkonOppgave';
 import IkonMinInnboks from '../../assets/IkonMinInnboks';
-import { GoogleAnalyticsCategory } from '../../utils/googleAnalytics';
+import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 import { useMeldinger } from '../../hooks/usePerson';
-import IkonBrevVedtak from '../../assets/IkonBrevVedtak';
+import IkonBrevVedtakMelding from '../../assets/IkonBrevVedtakMelding';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return <IkonBrevVedtak />;
+      return <IkonBrevVedtakMelding />;
     case 'OPPGAVE_VARSEL':
       return <IkonOppgave />;
     default:
@@ -45,18 +45,24 @@ const MinInnboks = () => {
 
   return (
     <>
-      {meldinger.content.map(message => (
-        <LenkepanelMedIkon
-          key={message.type}
-          className={isDokumentVarsel(message.type) ? 'infomelding beskjed' : 'infomelding innboks'}
-          alt="Melding fra mininnboks"
-          overskrift={createOverskrift(message, numberToWord, formatFlereEn)}
-          href={message.url}
-          gaCategory={GoogleAnalyticsCategory.Forside}
-          gaAction={`${message.type.toLowerCase()}`}
-        >
-          {getMinInnboksIcon(message.type)}
-        </LenkepanelMedIkon>
+      {meldinger.content.map(melding => (
+        (melding.type === 'ULEST' || melding.type === 'UBESVART')
+          ? null
+          : (
+            <LenkepanelMedIkon
+              key={melding.type}
+              className={isDokumentVarsel(melding.type) ? 'infomelding beskjed' : 'infomelding innboks'}
+              alt="Melding fra mininnboks"
+              overskrift={createOverskrift(melding, numberToWord, formatFlereEn)}
+              href={melding.url}
+              amplitudeComponentName={melding.type === 'DOKUMENT_VARSEL'
+                ? listOfComponentNames.brukernotifikasjon.UlesteDokumenter
+                : listOfComponentNames.brukernotifikasjon.UlesteOppgaver}
+              amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+            >
+              {getMinInnboksIcon(melding.type)}
+            </LenkepanelMedIkon>
+          )
       ))}
     </>
   );

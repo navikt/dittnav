@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { fetchOppfolging, fetchMeldekort, fetchMeldinger, fetchPersonIdent, fetchPersonNavn } from '../Api';
+import { fetchOppfolging, fetchMeldekort, fetchMeldinger, fetchIdent, fetchNavn } from '../Api';
 import useStore from './useStore';
 
 export const useOppfolging = () => (
@@ -15,11 +15,11 @@ export const useMeldinger = () => (
 );
 
 export const useIdent = (enabled) => (
-  [useQuery('ident', fetchPersonIdent, { enabled, onError: useStore().setError })]
+  [useQuery('ident', fetchIdent, { enabled, onError: useStore().setError })]
 );
 
 export const useNavn = () => (
-  [useQuery('navn', fetchPersonNavn, { onError: useStore().setError })]
+  [useQuery('navn', fetchNavn, { onError: useStore().setError })]
 );
 
 const usePerson = () => (

@@ -1,0 +1,73 @@
+{
+    "maalformkode": "NO",
+    "meldeform": "EMELD",
+    "meldekort": [
+        {
+            "meldekortId": 1508463500,
+            "kortType": "ELEKTRONISK",
+            "meldeperiode": {
+                "fra": "2020-11-16T12:00:00+01:00",
+                "til": "2020-11-29T12:00:00+01:00",
+                "kortKanSendesFra": "2020-11-28T12:00:00+01:00",
+                "kanKortSendes": true,
+                "periodeKode": "202047"
+            },
+            "meldegruppe": "ARBS",
+            "kortStatus": "OPPRE",
+            "bruttoBelop": 0.0,
+            "erForskuddsPeriode": false,
+            "korrigerbart": true
+        },
+        {
+            "meldekortId": 1512255207,
+            "kortType": "ELEKTRONISK",
+            "meldeperiode": {
+                "fra": "2020-11-30T12:00:00+01:00",
+                "til": "2020-12-13T12:00:00+01:00",
+                "kortKanSendesFra": "2020-12-12T12:00:00+01:00",
+                "kanKortSendes": true,
+                "periodeKode": "202049"
+            },
+            "meldegruppe": "ARBS",
+            "kortStatus": "OPPRE",
+            "bruttoBelop": 0.0,
+            "erForskuddsPeriode": false,
+            "korrigerbart": true
+        },
+        {
+            "meldekortId": 1512255215,
+            "kortType": "ELEKTRONISK",
+            "meldeperiode": {
+                "fra": "2020-12-14T12:00:00+01:00",
+                "til": "2020-12-27T12:00:00+01:00",
+                "kortKanSendesFra": "2020-12-26T12:00:00+01:00",
+                "kanKortSendes": true,
+                "periodeKode": "202051"
+            },
+            "meldegruppe": "ARBS",
+            "kortStatus": "OPPRE",
+            "bruttoBelop": 0.0,
+            "erForskuddsPeriode": false,
+            "korrigerbart": true
+        },
+        {
+            "meldekortId": 1526772064,
+            "kortType": "ELEKTRONISK",
+            "meldeperiode": {
+                "fra": "2021-01-18T12:00:00+01:00",
+                "til": "2021-01-31T12:00:00+01:00",
+                "kortKanSendesFra": "2021-01-30T12:00:00+01:00",
+                "kanKortSendes": true,
+                "periodeKode": "202103"
+            },
+            "meldegruppe": "ARBS",
+            "kortStatus": "OPPRE",
+            "bruttoBelop": 0.0,
+            "erForskuddsPeriode": false,
+            "korrigerbart": true
+        }
+    ],
+    "etterregistrerteMeldekort": [],
+    "id": "1",
+    "antallGjenstaaendeFeriedager": 0
+}

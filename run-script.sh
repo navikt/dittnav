@@ -18,10 +18,11 @@ declare -A variables=(
   [DITT_SYKEFRAVAER_URL]=$DITT_SYKEFRAVAER_URL
   [TIDSLINJE_URL]=$TIDSLINJE_URL
   [TIDSLINJE_PRODUSENT]=$TIDSLINJE_PRODUSENT
-  [ER_DEV]=$ER_DEV
   [MIN_INNBOKS_URL]=$MIN_INNBOKS_URL
-  [DAGPENGER_URL]=$DAGPENGER_URL
+  [MINE_SAKER_URL]=$MINE_SAKER_URL
   [HJELPEMIDLER_URL]=$HJELPEMIDLER_URL
+  [INNBOKS_URL]=$INNBOKS_URL
+  [IS_PROD]=$IS_PROD
 )
 
 forEachVariable() {
@@ -66,4 +67,4 @@ forEachVariable printAvailability
 echo "window.env={};" > /app/config.js
 forEachVariable makeAvailable
 
-/run.sh
+../run-java.sh

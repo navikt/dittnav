@@ -100,7 +100,9 @@ exports[`MinInnboks with one task 1`] = `
 </a>
 `;
 
-exports[`MinInnboks with one unanswered 1`] = `
+exports[`MinInnboks with one unanswered 1`] = `null`;
+
+exports[`MinInnboks with one unread task and one unread 1`] = `
 <a
   className="lenkepanel infomelding innboks lenkepanel--border"
   href="https://tjenester-t6.nav.no/mininnboks"
@@ -113,46 +115,31 @@ exports[`MinInnboks with one unanswered 1`] = `
       className="lenkepanel__ikon"
     >
       <svg
-        height="48px"
-        version="1.1"
-        viewBox="0 0 48 48"
-        width="48px"
+        fill="none"
+        height="48"
+        viewBox="0 0 54 54"
+        width="48"
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <g
-          fill="none"
+        <circle
+          cx="27"
+          cy="27"
+          fill="#FFC166"
+          r="27"
+        />
+        <path
+          clipRule="evenodd"
+          d="M38.5 39C38.776 39 39 38.776 39 38.5V15.5C39 15.224 38.776 15 38.5 15H15.5C15.224 15 15 15.224 15 15.5V38.5C15 38.776 15.224 39 15.5 39H38.5ZM38 16V38H16V16H38ZM20.5 25C20.372 25 20.244 24.951 20.146 24.854L18.146 22.854C17.951 22.659 17.951 22.342 18.146 22.147C18.341 21.952 18.658 21.952 18.853 22.147L20.5 23.793L25.146 19.147C25.341 18.952 25.658 18.952 25.853 19.147C26.048 19.342 26.048 19.659 25.853 19.854L20.853 24.854C20.756 24.951 20.628 25 20.5 25ZM20.146 33.854C20.244 33.951 20.372 34 20.5 34C20.628 34 20.756 33.951 20.853 33.854L25.853 28.854C26.048 28.659 26.048 28.342 25.853 28.147C25.658 27.952 25.341 27.952 25.146 28.147L20.5 32.793L18.853 31.147C18.658 30.952 18.341 30.952 18.146 31.147C17.951 31.342 17.951 31.659 18.146 31.854L20.146 33.854ZM35.5 24H27.5C27.224 24 27 23.776 27 23.5C27 23.224 27.224 23 27.5 23H35.5C35.776 23 36 23.224 36 23.5C36 23.776 35.776 24 35.5 24ZM27.5 33H35.5C35.776 33 36 32.776 36 32.5C36 32.224 35.776 32 35.5 32H27.5C27.224 32 27 32.224 27 32.5C27 32.776 27.224 33 27.5 33Z"
+          fill="#262626"
           fillRule="evenodd"
-          stroke="none"
-          strokeWidth="1"
-        >
-          <g
-            transform="translate(-382.000000, -366.000000)"
-          >
-            <g
-              transform="translate(382.000000, 366.000000)"
-            >
-              <circle
-                cx="24"
-                cy="24"
-                fill="#FFBD66"
-                r="24"
-              />
-              <path
-                d="M33,16 C34.1030001,16 35,16.897 35,18 L35,29 C35,30.1030001 34.1030001,31 33,31 L15,31 C13.897,31 13,30.1030001 13,29 L13,18 C13,16.897 13.897,16 15,16 L33,16 Z M14,18 L14,29 C14,29.5510001 14.448,30 15,30 L33,30 C33.5520001,30 34,29.5510001 34,29 L34,18 C34,17.8895814 33.9820088,17.7832589 33.9487949,17.6838252 L24.313,25.391 C24.221,25.463 24.11,25.5 24,25.5 C23.89,25.5 23.779,25.463 23.687,25.391 L14.0515345,17.682841 C14.0181101,17.7825572 14,17.8892169 14,18 Z M33,17 L15,17 C14.9396359,17 14.8805155,17.0053694 14.8230887,17.0156544 L24,24.36 L33.1798974,17.0161939 C33.1215346,17.0055572 33.0614109,17 33,17 Z"
-                fill="#3E3832"
-                id="Combined-Shape"
-              />
-            </g>
-          </g>
-        </g>
+        />
       </svg>
     </div>
     <div>
       <p
         className="typo-element lenkepanel__heading"
       >
-        Du har ett ubesvart spørsmål i din innboks
+        Du har én ulest oppgave
       </p>
       
       
@@ -162,118 +149,6 @@ exports[`MinInnboks with one unanswered 1`] = `
     className="lenkepanel__indikator"
   />
 </a>
-`;
-
-exports[`MinInnboks with one unread task and one unread 1`] = `
-Array [
-  <a
-    className="lenkepanel infomelding innboks lenkepanel--border"
-    href="https://tjenester-t6.nav.no/mininnboks"
-    onClick={[Function]}
-  >
-    <div
-      className="lenkepanel__innhold"
-    >
-      <div
-        className="lenkepanel__ikon"
-      >
-        <svg
-          fill="none"
-          height="48"
-          viewBox="0 0 54 54"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="27"
-            cy="27"
-            fill="#FFC166"
-            r="27"
-          />
-          <path
-            clipRule="evenodd"
-            d="M38.5 39C38.776 39 39 38.776 39 38.5V15.5C39 15.224 38.776 15 38.5 15H15.5C15.224 15 15 15.224 15 15.5V38.5C15 38.776 15.224 39 15.5 39H38.5ZM38 16V38H16V16H38ZM20.5 25C20.372 25 20.244 24.951 20.146 24.854L18.146 22.854C17.951 22.659 17.951 22.342 18.146 22.147C18.341 21.952 18.658 21.952 18.853 22.147L20.5 23.793L25.146 19.147C25.341 18.952 25.658 18.952 25.853 19.147C26.048 19.342 26.048 19.659 25.853 19.854L20.853 24.854C20.756 24.951 20.628 25 20.5 25ZM20.146 33.854C20.244 33.951 20.372 34 20.5 34C20.628 34 20.756 33.951 20.853 33.854L25.853 28.854C26.048 28.659 26.048 28.342 25.853 28.147C25.658 27.952 25.341 27.952 25.146 28.147L20.5 32.793L18.853 31.147C18.658 30.952 18.341 30.952 18.146 31.147C17.951 31.342 17.951 31.659 18.146 31.854L20.146 33.854ZM35.5 24H27.5C27.224 24 27 23.776 27 23.5C27 23.224 27.224 23 27.5 23H35.5C35.776 23 36 23.224 36 23.5C36 23.776 35.776 24 35.5 24ZM27.5 33H35.5C35.776 33 36 32.776 36 32.5C36 32.224 35.776 32 35.5 32H27.5C27.224 32 27 32.224 27 32.5C27 32.776 27.224 33 27.5 33Z"
-            fill="#262626"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div>
-        <p
-          className="typo-element lenkepanel__heading"
-        >
-          Du har én ulest oppgave
-        </p>
-        
-        
-      </div>
-    </div>
-    <span
-      className="lenkepanel__indikator"
-    />
-  </a>,
-  <a
-    className="lenkepanel infomelding innboks lenkepanel--border"
-    href="https://tjenester-t6.nav.no/mininnboks"
-    onClick={[Function]}
-  >
-    <div
-      className="lenkepanel__innhold"
-    >
-      <div
-        className="lenkepanel__ikon"
-      >
-        <svg
-          height="48px"
-          version="1.1"
-          viewBox="0 0 48 48"
-          width="48px"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
-          <g
-            fill="none"
-            fillRule="evenodd"
-            stroke="none"
-            strokeWidth="1"
-          >
-            <g
-              transform="translate(-382.000000, -366.000000)"
-            >
-              <g
-                transform="translate(382.000000, 366.000000)"
-              >
-                <circle
-                  cx="24"
-                  cy="24"
-                  fill="#FFBD66"
-                  r="24"
-                />
-                <path
-                  d="M33,16 C34.1030001,16 35,16.897 35,18 L35,29 C35,30.1030001 34.1030001,31 33,31 L15,31 C13.897,31 13,30.1030001 13,29 L13,18 C13,16.897 13.897,16 15,16 L33,16 Z M14,18 L14,29 C14,29.5510001 14.448,30 15,30 L33,30 C33.5520001,30 34,29.5510001 34,29 L34,18 C34,17.8895814 33.9820088,17.7832589 33.9487949,17.6838252 L24.313,25.391 C24.221,25.463 24.11,25.5 24,25.5 C23.89,25.5 23.779,25.463 23.687,25.391 L14.0515345,17.682841 C14.0181101,17.7825572 14,17.8892169 14,18 Z M33,17 L15,17 C14.9396359,17 14.8805155,17.0053694 14.8230887,17.0156544 L24,24.36 L33.1798974,17.0161939 C33.1215346,17.0055572 33.0614109,17 33,17 Z"
-                  fill="#3E3832"
-                  id="Combined-Shape"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-      <div>
-        <p
-          className="typo-element lenkepanel__heading"
-        >
-          Du har én ulest melding i din innboks
-        </p>
-        
-        
-      </div>
-    </div>
-    <span
-      className="lenkepanel__indikator"
-    />
-  </a>,
-]
 `;
 
 exports[`MinInnboks with two documents 1`] = `
@@ -326,115 +201,52 @@ exports[`MinInnboks with two documents 1`] = `
 `;
 
 exports[`MinInnboks with two documents but different types 1`] = `
-Array [
-  <a
-    className="lenkepanel infomelding beskjed lenkepanel--border"
-    href="https://tjenester-t6.nav.no/mininnboks"
-    onClick={[Function]}
+<a
+  className="lenkepanel infomelding beskjed lenkepanel--border"
+  href="https://tjenester-t6.nav.no/mininnboks"
+  onClick={[Function]}
+>
+  <div
+    className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__innhold"
+      className="lenkepanel__ikon"
     >
-      <div
-        className="lenkepanel__ikon"
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 54 54"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          fill="none"
-          height="48"
-          viewBox="0 0 54 54"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="27"
-            cy="27"
-            fill="#97E6FF"
-            r="27"
-          />
-          <path
-            clipRule="evenodd"
-            d="M38.4334 36H15.6333C15.2837 36 15 35.7163 15 35.3667V17.6333C15 17.2837 15.2837 17 15.6333 17H21.9667C22.1351 17 22.296 17.0671 22.4151 17.1849L24.7622 19.5333H38.4334C38.783 19.5333 39.0667 19.8171 39.0667 20.1667V35.3667C39.0667 35.7163 38.783 36 38.4334 36ZM16.2662 34.7334H37.7996V20.8001H24.4996C24.3311 20.8001 24.1702 20.7329 24.0512 20.6151L21.704 18.2667H16.2662V34.7334Z"
-            fill="#262626"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div>
-        <p
-          className="typo-element lenkepanel__heading"
-        >
-          Du har  uleste dokumenter i brev og vedtak
-        </p>
-        
-        
-      </div>
+        <circle
+          cx="27"
+          cy="27"
+          fill="#97E6FF"
+          r="27"
+        />
+        <path
+          clipRule="evenodd"
+          d="M38.4334 36H15.6333C15.2837 36 15 35.7163 15 35.3667V17.6333C15 17.2837 15.2837 17 15.6333 17H21.9667C22.1351 17 22.296 17.0671 22.4151 17.1849L24.7622 19.5333H38.4334C38.783 19.5333 39.0667 19.8171 39.0667 20.1667V35.3667C39.0667 35.7163 38.783 36 38.4334 36ZM16.2662 34.7334H37.7996V20.8001H24.4996C24.3311 20.8001 24.1702 20.7329 24.0512 20.6151L21.704 18.2667H16.2662V34.7334Z"
+          fill="#262626"
+          fillRule="evenodd"
+        />
+      </svg>
     </div>
-    <span
-      className="lenkepanel__indikator"
-    />
-  </a>,
-  <a
-    className="lenkepanel infomelding innboks lenkepanel--border"
-    href="https://tjenester-t6.nav.no/someother"
-    onClick={[Function]}
-  >
-    <div
-      className="lenkepanel__innhold"
-    >
-      <div
-        className="lenkepanel__ikon"
+    <div>
+      <p
+        className="typo-element lenkepanel__heading"
       >
-        <svg
-          height="48px"
-          version="1.1"
-          viewBox="0 0 48 48"
-          width="48px"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
-          <g
-            fill="none"
-            fillRule="evenodd"
-            stroke="none"
-            strokeWidth="1"
-          >
-            <g
-              transform="translate(-382.000000, -366.000000)"
-            >
-              <g
-                transform="translate(382.000000, 366.000000)"
-              >
-                <circle
-                  cx="24"
-                  cy="24"
-                  fill="#FFBD66"
-                  r="24"
-                />
-                <path
-                  d="M33,16 C34.1030001,16 35,16.897 35,18 L35,29 C35,30.1030001 34.1030001,31 33,31 L15,31 C13.897,31 13,30.1030001 13,29 L13,18 C13,16.897 13.897,16 15,16 L33,16 Z M14,18 L14,29 C14,29.5510001 14.448,30 15,30 L33,30 C33.5520001,30 34,29.5510001 34,29 L34,18 C34,17.8895814 33.9820088,17.7832589 33.9487949,17.6838252 L24.313,25.391 C24.221,25.463 24.11,25.5 24,25.5 C23.89,25.5 23.779,25.463 23.687,25.391 L14.0515345,17.682841 C14.0181101,17.7825572 14,17.8892169 14,18 Z M33,17 L15,17 C14.9396359,17 14.8805155,17.0053694 14.8230887,17.0156544 L24,24.36 L33.1798974,17.0161939 C33.1215346,17.0055572 33.0614109,17 33,17 Z"
-                  fill="#3E3832"
-                  id="Combined-Shape"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-      <div>
-        <p
-          className="typo-element lenkepanel__heading"
-        >
-          Du har  ubesvarte spørsmål i din innboks
-        </p>
-        
-        
-      </div>
+        Du har  uleste dokumenter i brev og vedtak
+      </p>
+      
+      
     </div>
-    <span
-      className="lenkepanel__indikator"
-    />
-  </a>,
-]
+  </div>
+  <span
+    className="lenkepanel__indikator"
+  />
+</a>
 `;
 
 exports[`MinInnboks with two tasks 1`] = `
@@ -486,133 +298,9 @@ exports[`MinInnboks with two tasks 1`] = `
 </a>
 `;
 
-exports[`MinInnboks with two unanswered 1`] = `
-<a
-  className="lenkepanel infomelding innboks lenkepanel--border"
-  href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={[Function]}
->
-  <div
-    className="lenkepanel__innhold"
-  >
-    <div
-      className="lenkepanel__ikon"
-    >
-      <svg
-        height="48px"
-        version="1.1"
-        viewBox="0 0 48 48"
-        width="48px"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-          stroke="none"
-          strokeWidth="1"
-        >
-          <g
-            transform="translate(-382.000000, -366.000000)"
-          >
-            <g
-              transform="translate(382.000000, 366.000000)"
-            >
-              <circle
-                cx="24"
-                cy="24"
-                fill="#FFBD66"
-                r="24"
-              />
-              <path
-                d="M33,16 C34.1030001,16 35,16.897 35,18 L35,29 C35,30.1030001 34.1030001,31 33,31 L15,31 C13.897,31 13,30.1030001 13,29 L13,18 C13,16.897 13.897,16 15,16 L33,16 Z M14,18 L14,29 C14,29.5510001 14.448,30 15,30 L33,30 C33.5520001,30 34,29.5510001 34,29 L34,18 C34,17.8895814 33.9820088,17.7832589 33.9487949,17.6838252 L24.313,25.391 C24.221,25.463 24.11,25.5 24,25.5 C23.89,25.5 23.779,25.463 23.687,25.391 L14.0515345,17.682841 C14.0181101,17.7825572 14,17.8892169 14,18 Z M33,17 L15,17 C14.9396359,17 14.8805155,17.0053694 14.8230887,17.0156544 L24,24.36 L33.1798974,17.0161939 C33.1215346,17.0055572 33.0614109,17 33,17 Z"
-                fill="#3E3832"
-                id="Combined-Shape"
-              />
-            </g>
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div>
-      <p
-        className="typo-element lenkepanel__heading"
-      >
-        Du har to ubesvarte spørsmål i din innboks
-      </p>
-      
-      
-    </div>
-  </div>
-  <span
-    className="lenkepanel__indikator"
-  />
-</a>
-`;
+exports[`MinInnboks with two unanswered 1`] = `null`;
 
-exports[`MinInnboks with two unread 1`] = `
-<a
-  className="lenkepanel infomelding innboks lenkepanel--border"
-  href="https://tjenester-t6.nav.no/mininnboks"
-  onClick={[Function]}
->
-  <div
-    className="lenkepanel__innhold"
-  >
-    <div
-      className="lenkepanel__ikon"
-    >
-      <svg
-        height="48px"
-        version="1.1"
-        viewBox="0 0 48 48"
-        width="48px"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-          stroke="none"
-          strokeWidth="1"
-        >
-          <g
-            transform="translate(-382.000000, -366.000000)"
-          >
-            <g
-              transform="translate(382.000000, 366.000000)"
-            >
-              <circle
-                cx="24"
-                cy="24"
-                fill="#FFBD66"
-                r="24"
-              />
-              <path
-                d="M33,16 C34.1030001,16 35,16.897 35,18 L35,29 C35,30.1030001 34.1030001,31 33,31 L15,31 C13.897,31 13,30.1030001 13,29 L13,18 C13,16.897 13.897,16 15,16 L33,16 Z M14,18 L14,29 C14,29.5510001 14.448,30 15,30 L33,30 C33.5520001,30 34,29.5510001 34,29 L34,18 C34,17.8895814 33.9820088,17.7832589 33.9487949,17.6838252 L24.313,25.391 C24.221,25.463 24.11,25.5 24,25.5 C23.89,25.5 23.779,25.463 23.687,25.391 L14.0515345,17.682841 C14.0181101,17.7825572 14,17.8892169 14,18 Z M33,17 L15,17 C14.9396359,17 14.8805155,17.0053694 14.8230887,17.0156544 L24,24.36 L33.1798974,17.0161939 C33.1215346,17.0055572 33.0614109,17 33,17 Z"
-                fill="#3E3832"
-                id="Combined-Shape"
-              />
-            </g>
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div>
-      <p
-        className="typo-element lenkepanel__heading"
-      >
-        Du har to uleste meldinger i din innboks
-      </p>
-      
-      
-    </div>
-  </div>
-  <span
-    className="lenkepanel__indikator"
-  />
-</a>
-`;
+exports[`MinInnboks with two unread 1`] = `null`;
 
 exports[`MinInnboks with zero tasks 1`] = `
 <a

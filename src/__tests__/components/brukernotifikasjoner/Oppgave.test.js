@@ -4,8 +4,6 @@ import Oppgave from 'components/brukernotifikasjoner/Oppgave';
 import wrapIntl from 'utils/intlTestHelper';
 import { MemoryRouter } from 'react-router-dom';
 
-jest.mock('react-ga');
-
 test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   const oppgave = {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',

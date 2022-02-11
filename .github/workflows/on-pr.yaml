@@ -9,7 +9,12 @@ jobs:
       && github.repository != 'navikt/dittnav-kafka-backup-reader' && github.repository != 'navikt/dittnav-nightly-usage-statistics-reporter'
         && github.repository != 'navikt/innloggingsstatus' && github.repository != 'navikt/pb-workflow-authority'
         && github.repository != 'navikt/dittnav-periodic-metrics-reporter' && github.repository != 'navikt/pb-oidc-provider-gui'
-        && github.repository != 'navikt/mine-saker' && github.repository != 'navikt/mine-saker-api'
+        && github.repository != 'navikt/mine-saker' && github.repository != 'navikt/mine-saker-api' && github.repository != 'navikt/varseldb-api'
+        && github.repository != 'navikt/tms-personalia-api' && github.repository != 'navikt/tms-min-side' && github.repository != 'navikt/tms-min-side-bunn'
+        && github.repository != 'navikt/tms-min-side-topp' && github.repository != 'navikt/tms-utbetalingsoversikt-api' && github.repository != 'navikt/tms-innloggingsinfo-api'
+        && github.repository != 'navikt/tms-shell' && github.repository != 'navikt/utbetalingsoversikt'
+        && github.repository != 'navikt/innloggingsinfo' && github.repository != 'navikt/tms-min-side-proxy'
+        && github.repository != 'navikt/tms-min-side-utbetalingsoversikt'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,7 +32,7 @@ jobs:
         with:
           repository: navikt/dittnav-docker-compose
           path: dittnav-docker-compose
-          token: ${{ secrets.READ_PACKAGES_PAT }}
+          token: ${{ secrets.READER_TOKEN }}
 
       - uses: actions/cache@v2
         with:
@@ -46,7 +51,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.READ_PACKAGES_PAT }}
+          password: ${{ secrets.READER_TOKEN }}
 
       - name: 'Pull dittnav-docker-compose'
         run: |

@@ -7,7 +7,6 @@ import BeskjedStoreProvider from 'context/StoreProvider';
 import * as useInnloggingsstatus from '../../hooks/useInnloggingsstatus';
 const ReactTestRenderer = require('react-test-renderer');
 
-jest.mock('react-ga');
 let sandbox = null;
 
 beforeEach(() => {

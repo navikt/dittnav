@@ -4,7 +4,6 @@ import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import { FormattedMessage } from 'react-intl';
 import Lenke from 'nav-frontend-lenker';
 import { lenker } from '../../../utils/lenker';
-import { GoogleAnalyticsAction, GoogleAnalyticsCategory, trackEvent } from '../../../utils/googleAnalytics';
 
 const AdvarselBox = () => (
   <div className="alertbox">
@@ -19,23 +18,13 @@ const AdvarselBox = () => (
             innboks: (
               <Lenke
                 href={lenker.innboks.url}
-                onClick={() => trackEvent(
-                  GoogleAnalyticsCategory.Varslinger,
-                  GoogleAnalyticsAction.Innboks,
-                  lenker.innboks.url,
-                )}
               >
                 innboksen
               </Lenke>
             ),
             saksoversikt: (
               <Lenke
-                href={lenker.saksoversikt.url}
-                onClick={() => trackEvent(
-                  GoogleAnalyticsCategory.Varslinger,
-                  GoogleAnalyticsAction.DineSaker,
-                  lenker.saksoversikt.url,
-                )}
+                href={lenker.mineSaker.url}
               >
                 Dine saker
               </Lenke>

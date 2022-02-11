@@ -30,12 +30,12 @@ app.get('/dittnav-api/meldekortinfo', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/meldekortinfo.json'))
 ));
 
-app.get('/dittnav-api/personalia/navn', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/person-navn.json'))
+app.get('/dittnav-api/navn', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/navn.json'))
 ));
 
-app.get('/dittnav-api/personalia/ident', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/person-ident.json'))
+app.get('/dittnav-api/ident', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/ident.json'))
 ));
 
 app.get('/dittnav-api/saker/paabegynte', (req, res) => (
@@ -46,8 +46,8 @@ app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/ubehandlede.json'))
 ));
 
-app.get('/dittnav-api/saker/sakstema', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/sakstema.json'))
+app.get('/dittnav-api/saker', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/saker.json'))
 ));
 
 app.get('/innloggingsstatus/summary', (req, res) => (
@@ -112,6 +112,66 @@ app.post('/dittnav-event-test-producer/produce/done/all', (req, res) => (
 
 app.get('/tidslinje-api/tidslinje', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/tidslinje.json'))
+));
+
+app.get('/dittnav-api/unleash/situasjon', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/unleash-situasjon.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/api/auth', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/auth-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/api/auth', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/auth-mock.json'))
+));
+
+app.get('/meldekort/meldekort-api/api/person/meldekortstatus', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/meldekort-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarboppfolging/api/niva3/underoppfolging', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/under-oppfolging-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/api/feature/', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/feature-toggles-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarboppfolging/api/oppfolging', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/oppfolging-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/registrering', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/brukerregistrering-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/registrering', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/brukerregistrering-mock.json'))
+));
+
+app.get('/meldekort/meldekort-api/api/person/meldekort', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/meldekort-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbregistrering/api/startregistrering', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/bruker-info-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/saksoversikt-api/tjenester/sakstema', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-sakstema-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/saksoversikt-api/tjenester/saker/hentPaabegynteSoknader', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/saksoversikt-pabegyntesoknader-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbdialog/api/dialog/antallUleste', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/uleste-dialoger-mock.json'))
+));
+
+app.get('/person/dittnav/veientilarbeid/veilarbvedtakinfo/api/behovsvurdering/besvarelse', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/vta-mocks/egenvurderingbesvarelse-mock.json'))
 ));
 
 app.use(bundler.middleware());

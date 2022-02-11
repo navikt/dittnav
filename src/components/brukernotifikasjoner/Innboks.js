@@ -9,6 +9,7 @@ import InnloggingsstatusType from '../../types/InnloggingsstatusType';
 import InnboksType from '../../types/InnboksType';
 import { transformTolokalDatoTid } from '../../utils/datoUtils';
 import { lenker } from '../../utils/lenker';
+import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 
 const Innboks = ({ innbokser, innloggingsstatus }) => {
   const intl = useIntl();
@@ -29,7 +30,9 @@ const Innboks = ({ innbokser, innloggingsstatus }) => {
       alt="Innboks"
       overskrift={overskrift}
       etikett={gruppert ? null : lokalDatoTid}
-      href={gruppert ? lenker.minInnboks.url : sikkerhetsnivaa.lenke}
+      href={gruppert ? lenker.innboks.url : sikkerhetsnivaa.lenke}
+      amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+      amplitudeComponentName={listOfComponentNames.brukernotifikasjon.InnboksMeldingOppsummering}
     >
       <IkonInnboks />
     </LenkepanelMedIkon>
