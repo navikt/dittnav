@@ -88,8 +88,8 @@
 
   "flere.tjenester.header": "Flere tjenester",
 
-  "mininnboks.dokument_varsel.meldinger.en": "Du har ett ulest dokument i din innboks",
-  "mininnboks.dokument_varsel.meldinger.flere": "Du har {count} uleste dokumenter i din innboks",
+  "mininnboks.dokument_varsel.meldinger.en": "Du har ett ulest dokument i brev og vedtak",
+  "mininnboks.dokument_varsel.meldinger.flere": "Du har {count} uleste dokumenter i brev og vedtak",
   "mininnboks.oppgave_varsel.meldinger.en": "Du har én ulest oppgave",
   "mininnboks.oppgave_varsel.meldinger.flere": "Du har {count} uleste oppgaver",
   "mininnboks.ulest.meldinger.en": "Du har én ulest melding i din innboks",
