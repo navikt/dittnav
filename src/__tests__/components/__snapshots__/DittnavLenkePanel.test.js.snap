@@ -82,7 +82,7 @@ exports[`Snapshot test med saker 1`] = `
           <p
             className="typo-undertekst"
           >
-            Informasjon fra NAV og svar på henvendelser og referater fra samtaler du på telefon, chat og «Skriv til oss».
+            Informasjon fra NAV og svar på henvendelser og referater fra samtaler du har på telefon, chat og «Skriv til oss».
           </p>
         </a>
       </div>
@@ -212,7 +212,7 @@ exports[`Snapshot test uten saker 1`] = `
           <p
             className="typo-undertekst"
           >
-            Informasjon fra NAV og svar på henvendelser og referater fra samtaler du på telefon, chat og «Skriv til oss».
+            Informasjon fra NAV og svar på henvendelser og referater fra samtaler du har på telefon, chat og «Skriv til oss».
           </p>
         </a>
       </div>
