@@ -45,7 +45,7 @@ export const lenker = {
   },
   utbetalingsoversikt: {
     tittel: 'Dine utbetalinger',
-    url: `${window.env.TJENESTER_URL}/utbetalingsoversikt`,
+    url: window.env.UTBETALINGSOVERSIKT_URL,
   },
   saksoversikt: {
     tittel: 'Dine saker',
