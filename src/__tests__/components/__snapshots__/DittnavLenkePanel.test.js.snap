@@ -14,7 +14,6 @@ exports[`Snapshot test med saker 1`] = `
       <a
         alt="Utbetalinger"
         className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-        href="http://localhost:9222/utbetalingsoversikt"
       >
         <span
           className="typo-undertittel lenkepanel__heading"
@@ -144,7 +143,6 @@ exports[`Snapshot test uten saker 1`] = `
       <a
         alt="Utbetalinger"
         className="lenkepanel dittnav-lenkepanel-liten-item lenkepanel--border"
-        href="http://localhost:9222/utbetalingsoversikt"
       >
         <span
           className="typo-undertittel lenkepanel__heading"
