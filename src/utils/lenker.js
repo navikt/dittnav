@@ -45,7 +45,7 @@ export const lenker = {
   },
   utbetalingsoversikt: {
     tittel: 'Dine utbetalinger',
-    url: `${window.env.TJENESTER_URL}/utbetalingsoversikt`,
+    url: window.env.UTBETALINGSOVERSIKT_URL,
   },
   saksoversikt: {
     tittel: 'Dine saker',
@@ -61,7 +61,7 @@ export const lenker = {
   },
   innboks: {
     tittel: 'Innboks',
-    url: `${window.env.MIN_INNBOKS_URL}`,
+    url: `${window.env.INNBOKS_URL}`,
   },
   digisos: {
     tittel: 'Digisos',
@@ -106,6 +106,10 @@ export const lenker = {
   minInnboks: {
     tittel: 'MinInnboks',
     url: `${window.env.MIN_INNBOKS_URL}`,
+  },
+  dialogMedVeileder: {
+    tittel: 'Dialog med den lokale veilederen din',
+    url: `${window.env.NAVNO_URL}/person/dittnav/veientilarbeid/dialog`,
   },
   mineSaker: {
     tittel: 'Mine Saker',

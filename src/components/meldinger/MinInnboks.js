@@ -7,18 +7,22 @@ import IkonOppgave from '../../assets/IkonOppgave';
 import IkonMinInnboks from '../../assets/IkonMinInnboks';
 import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 import { useMeldinger } from '../../hooks/usePerson';
-import message from 'react-intl/src/components/message';
+import IkonBrevVedtakMelding from '../../assets/IkonBrevVedtakMelding';
 
 const getMinInnboksIcon = (type) => {
   switch (type) {
     case 'DOKUMENT_VARSEL':
-      return <IkonMinInnboks />;
+      return <IkonBrevVedtakMelding />;
     case 'OPPGAVE_VARSEL':
       return <IkonOppgave />;
     default:
       return <IkonMinInnboks />;
   }
 };
+
+const isDokumentVarsel = (type) => (
+  type === 'DOKUMENT_VARSEL'
+);
 
 const createOverskrift = (message, numberToWord, formatFlereEn) => {
   const overskrift = (
@@ -42,19 +46,23 @@ const MinInnboks = () => {
   return (
     <>
       {meldinger.content.map(melding => (
-        <LenkepanelMedIkon
-          key={melding.type}
-          className="infomelding innboks"
-          alt="Melding fra mininnboks"
-          overskrift={createOverskrift(melding, numberToWord, formatFlereEn)}
-          href={melding.url}
-          amplitudeComponentName={melding.type === 'DOKUMENT_VARSEL' 
-            ? listOfComponentNames.brukernotifikasjon.UlesteDokumenter 
-            : listOfComponentNames.brukernotifikasjon.UlesteOppgaver}
-          amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
-        >
-          {getMinInnboksIcon(melding.type)}
-        </LenkepanelMedIkon>
+        (melding.type === 'ULEST' || melding.type === 'UBESVART')
+          ? null
+          : (
+            <LenkepanelMedIkon
+              key={melding.type}
+              className={isDokumentVarsel(melding.type) ? 'infomelding beskjed' : 'infomelding innboks'}
+              alt="Melding fra mininnboks"
+              overskrift={createOverskrift(melding, numberToWord, formatFlereEn)}
+              href={melding.url}
+              amplitudeComponentName={melding.type === 'DOKUMENT_VARSEL'
+                ? listOfComponentNames.brukernotifikasjon.UlesteDokumenter
+                : listOfComponentNames.brukernotifikasjon.UlesteOppgaver}
+              amplitudeAction={listOfActions.TrykkPaaBrukernotifikasjon}
+            >
+              {getMinInnboksIcon(melding.type)}
+            </LenkepanelMedIkon>
+          )
       ))}
     </>
   );

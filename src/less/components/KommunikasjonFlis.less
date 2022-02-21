@@ -1,0 +1,41 @@
+@import (reference) '~nav-frontend-core/less/_variabler';
+
+.panel.kommunikasjon-flis, .kommunikasjon-flis {
+  box-sizing: border-box;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+
+  border-color: @navGra60;
+  .kommunikasjon-flis-overskrift {
+    margin-bottom: 1rem;
+  }
+
+  .kommunikasjon-flis-element {
+    display: flex;
+    padding-bottom: 1rem;
+
+    &-tittel {
+      margin-left: 0.5rem;
+    }
+
+    .kommunikasjon-flis-lenke {
+      text-decoration: none;
+      & .typo-undertekst {
+        color: @navMorkGra;
+      }
+
+      &:hover .typo-undertittel {
+        text-decoration: underline;
+      }
+
+      &:focus {
+        color: @navBla;
+        background-color: @white;
+        outline: @fokusFarge;
+        box-shadow: 0 0 0 2px #254b6d;
+        & svg {
+          stroke: @navBla;
+        }
+      }
+    }
+  }
+}
