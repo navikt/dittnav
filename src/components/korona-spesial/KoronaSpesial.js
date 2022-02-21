@@ -3,7 +3,6 @@ import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
 import { Normaltekst } from 'nav-frontend-typografi';
 import KoronaVarsel from './KoronaVarsel';
-import { getForskuddToggle } from './DagpengerForskuddToggle';
 import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils';
 import { lenker } from '../../utils/lenker';
 import { useSakstema } from '../../hooks/useSaker';
@@ -11,21 +10,21 @@ import { useSakstema } from '../../hooks/useSaker';
 const visForskuddLenkeFra = '01-03-2020';
 
 const KoronaSpesial = () => {
-  const [forskuddToggle, setForskuddToggle] = useState(null);
+  const [showTilbakebetaling, setShowTilbakebetaling] = useState(false);
   const [{ data: sakstema }] = useSakstema();
 
   const harDagpengerSakNyligOppdatert = sakstema && moment(sakstema?.content?.dagpengerSistEndret).isAfter(moment(visForskuddLenkeFra, 'DD-MM-YYYY'));
 
   useEffect(() => {
     if (harDagpengerSakNyligOppdatert) {
-      getForskuddToggle(setForskuddToggle);
+      setShowTilbakebetaling(true);
     }
   }, [harDagpengerSakNyligOppdatert]);
-  
+
   return (
     <>
-      <div className={forskuddToggle ? 'korona-container' : ''}>
-        {forskuddToggle ? (
+      <div className={showTilbakebetaling ? 'korona-container' : ''}>
+        {showTilbakebetaling ? (
           <KoronaVarsel
             tittel={lenker.koronaSituasjon.tittel}
             href={lenker.koronaSituasjon.url}
