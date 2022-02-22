@@ -15,6 +15,7 @@ jobs:
         && github.repository != 'navikt/tms-shell' && github.repository != 'navikt/utbetalingsoversikt'
         && github.repository != 'navikt/innloggingsinfo' && github.repository != 'navikt/tms-min-side-proxy'
         && github.repository != 'navikt/tms-min-side-utbetalingsoversikt'
+        && github.repository != 'navikt/tms-min-side-oversikt'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
