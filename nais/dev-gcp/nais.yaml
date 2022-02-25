@@ -2,9 +2,9 @@ kind: Application
 apiVersion: nais.io/v1alpha1
 metadata:
   name: dittnav
-  namespace: personbruker
+  namespace: min-side
   labels:
-    team: personbruker
+    team: min-side
   annotations:
     nais.io/read-only-file-system: "false"
 spec:
