@@ -7,6 +7,8 @@ metadata:
     team: min-side
   annotations:
     nais.io/read-only-file-system: "false"
+    config.linkerd.io/proxy-memory-limit: "512Mi"
+    config.linkerd.io/proxy-memory-request: "128Mi"
 spec:
   envFrom:
     - secret: dittnav-secrets
