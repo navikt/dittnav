@@ -33,10 +33,10 @@ spec:
   resources:
     limits:
       cpu: "3"
-      memory: 768Mi
+      memory: 1268Mi
     requests:
       cpu: 500m
-      memory: 512Mi
+      memory: 1024Mi
   env:
     - name: VEIENTILARBEID_URL
       value: "https://veientilarbeid.nav.no"
