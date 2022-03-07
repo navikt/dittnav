@@ -16,6 +16,7 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
   const [smsVarslingstekstError, setSmsVarslingstekstError] = useState({ tekst: '', value: false });
   const [grupperingsid, setGrupperingsid] = useState('');
   const disabled = tekstError.value || lenkeError.value;
+  const isInnboks = valg === 'innboks';
 
   const getBrukernotifikasjoner = () => {
     fetchBeskjeder()
@@ -44,22 +45,30 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
     value === 'true'
   );
 
-  const postContent = {
-    tekst,
-    grupperingsid: grupperingsid || 'default-grupperingsid',
-    link: lenke,
-    eksternVarsling: convertStringToBoolean(eksternVarsling),
-    synligFremTil: synligFremTil ? new Date(synligFremTil).toISOString() : null,
-    epostVarslingstekst: epostVarslingstekst ? epostVarslingstekst : null,
-    epostVarslingstittel: convertStringToBoolean(eksternVarsling) && epostVarslingstittel ? epostVarslingstittel : null,
-    smsVarslingstekst: convertStringToBoolean(eksternVarsling) && smsVarslingstekst ? smsVarslingstekst : null,
-    prefererteKanaler: convertStringToBoolean(eksternVarsling) ? ["SMS", "EPOST"] : []
+  const postContent = () => {
+    const content = {
+      tekst,
+      grupperingsid: grupperingsid || 'default-grupperingsid',
+      link: lenke,
+      eksternVarsling: convertStringToBoolean(eksternVarsling),
+      synligFremTil: synligFremTil ? new Date(synligFremTil).toISOString() : null,
+      epostVarslingstekst: epostVarslingstekst ? epostVarslingstekst : null,
+      epostVarslingstittel: convertStringToBoolean(eksternVarsling) && epostVarslingstittel ? epostVarslingstittel : null,
+      smsVarslingstekst: convertStringToBoolean(eksternVarsling) && smsVarslingstekst ? smsVarslingstekst : null,
+      prefererteKanaler: convertStringToBoolean(eksternVarsling) ? ["SMS", "EPOST"] : [],
+    };
+
+    if (valg === 'innboks') {
+      delete content.synligFremTil;
+    }
+
+    return content;
   };
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    postHendelse(`produce/${valg}`, postContent);
+    postHendelse(`produce/${valg}`, postContent());
     clearInput();
   };
 
@@ -121,20 +130,26 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
         onChange={e => setLenke(e.target.value)}
         feil={lenkeError.tekst}
       />
-      <Input
-          label="Velg synlig frem til dato:"
-          value={synligFremTil}
-          type="date"
-          onChange={e => setSynligFremTil(e.target.value)}
-          feil={synligFremTilError.tekst}
-      />
-      { convertStringToBoolean(eksternVarsling) &&
+      { !isInnboks ? (
         <>
           <Input
-              label="Skriv inn ny epost varslingstekst:"
-              value={epostVarslingstekst}
-              onChange={e => setEpostVarslingstekst(e.target.value)}
-              feil={epostVarslingstekstError.tekst}
+            label="Velg synlig frem til dato:"
+            value={synligFremTil}
+            type="date"
+            onChange={e => setSynligFremTil(e.target.value)}
+            feil={synligFremTilError.tekst}
+          />
+        </>
+      )
+        : null}
+      { convertStringToBoolean(eksternVarsling)
+        && (
+        <>
+          <Input
+            label="Skriv inn ny epost varslingstekst:"
+            value={epostVarslingstekst}
+            onChange={e => setEpostVarslingstekst(e.target.value)}
+            feil={epostVarslingstekstError.tekst}
           />
           <Input
             label="Skriv inn ny epost varslingstittel:"
@@ -149,7 +164,7 @@ const FormHendelser = ({ tekst, lenke, valg, eksternVarsling, synligFremTil, epo
             feil={smsVarslingstekstError.tekst}
           />
         </>
-      }
+        )}
       <Input
         label="Skriv inn ny grupperingsid:"
         value={grupperingsid}
