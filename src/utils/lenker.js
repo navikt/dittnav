@@ -64,7 +64,7 @@ export const lenker = {
     url: `${window.env.INNBOKS_URL}`,
   },
   digisos: {
-    tittel: 'Digisos',
+    tittel: 'Økonomisk sosialhjelp',
     url: `${window.env.NAVNO_URL}/sosialhjelp/innsyn`,
   },
   koronaVeiviser: {
@@ -120,6 +120,7 @@ export const lenker = {
 export const generelleLenker = [
   lenker.ledigeStillinger,
   lenker.uforetrygd,
+  lenker.digisos,
   lenker.dineForeldrepenger,
   lenker.aktivitetsplan,
   lenker.meldekort,
@@ -132,6 +133,7 @@ export const generelleLenker = [
 ];
 
 export const oppfolgingsLenker = [
+  lenker.digisos,
   lenker.dittSykefravaer,
   lenker.skjemaer,
   lenker.dineForeldrepenger,
