@@ -34,7 +34,7 @@ exports[`render empty InfoMeldinger component 1`] = `
         "beskjed.knapp.skjermleser.tekst": "Fjern beskjeden",
         "beskjed.lenke.stepup.tekst": "Logg inn med høyere sikkerhetsnivå for å se beskjeden",
         "beskjed.lenke.tekst": "Se mer informasjon",
-        "beskjed.maskert.tekst": "Du har fått en beskjed.",
+        "beskjed.maskert.tekst": "Du har fått en beskjed. ",
         "brodsmulesti.dittnav": "Ditt NAV",
         "brodsmulesti.varslinger": "Beskjeder og oppgaver",
         "dittnav.infomeldinger.inngang.varslinger": "Se tidligere beskjeder og oppgaver",
