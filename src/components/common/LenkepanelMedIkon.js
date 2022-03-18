@@ -2,8 +2,6 @@ import React from 'react';
 import { shape, any, node, func, string } from 'prop-types';
 import { LenkepanelBase } from 'nav-frontend-lenkepanel';
 import { Normaltekst, Undertekst } from 'nav-frontend-typografi';
-import { logAmplitudeEvent } from '../../utils/amplitudeUtils';
-import useSikkerhetsnivaa from '../../hooks/useSikkerhetsnivaa';
 
 class LenkepanelMedIkon extends React.Component {
   render() {
