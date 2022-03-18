@@ -10,7 +10,7 @@ exports[`Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 3 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -63,7 +63,7 @@ exports[`Innboks with sikkerhetsnivaa 3 and innloggingsnivaa 4 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -116,7 +116,7 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 3 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -169,7 +169,7 @@ exports[`Innboks with sikkerhetsnivaa 4 and innloggingsnivaa 4 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"

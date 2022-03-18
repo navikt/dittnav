@@ -10,7 +10,7 @@ exports[`12 Meldekort test no risk no remaining holidays 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -83,7 +83,7 @@ exports[`basic Meldekort test 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -159,7 +159,7 @@ exports[`basic one Meldekort test 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -233,7 +233,7 @@ exports[`basic one Meldekort test no risk 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -305,7 +305,7 @@ exports[`basic one Meldekort test no risk no remaining holidays 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -376,7 +376,7 @@ exports[`basic zero Meldekort test 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -438,7 +438,7 @@ exports[`more than 13 Meldekort test no risk no remaining holidays 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -509,7 +509,7 @@ exports[`nesteInnsendingAvMeldekort is null 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -580,7 +580,7 @@ exports[`no cards no risk 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"

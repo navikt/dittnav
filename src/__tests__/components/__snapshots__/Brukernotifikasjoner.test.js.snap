@@ -13,7 +13,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -63,7 +63,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -118,7 +118,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -168,7 +168,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -218,7 +218,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -268,7 +268,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -318,7 +318,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -370,7 +370,7 @@ exports[`Brukernotifikasjoner with innbokser 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon"
+      className="lenkepanel__ikon_test"
     >
       <svg
         fill="none"
@@ -420,7 +420,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
@@ -470,7 +470,7 @@ Array [
       className="lenkepanel__innhold"
     >
       <div
-        className="lenkepanel__ikon"
+        className="lenkepanel__ikon_test"
       >
         <svg
           fill="none"
