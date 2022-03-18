@@ -18,7 +18,7 @@ class LenkepanelMedIkon extends React.Component {
         border
       >
         <div className="lenkepanel__innhold">
-          <div className="lenkepanel__ikon_test">
+          <div className="lenkepanel__ikon">
             {children}
           </div>
           <div>
