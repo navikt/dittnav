@@ -12,7 +12,7 @@ exports[`MinInnboks with one document 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
@@ -61,7 +61,7 @@ exports[`MinInnboks with one task 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
@@ -112,7 +112,7 @@ exports[`MinInnboks with one unread task and one unread 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
@@ -161,7 +161,7 @@ exports[`MinInnboks with two documents 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
@@ -210,7 +210,7 @@ exports[`MinInnboks with two documents but different types 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
@@ -259,7 +259,7 @@ exports[`MinInnboks with two tasks 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
@@ -312,7 +312,7 @@ exports[`MinInnboks with zero tasks 1`] = `
     className="lenkepanel__innhold"
   >
     <div
-      className="lenkepanel__ikon_test"
+      className="lenkepanel__ikon"
     >
       <svg
         fill="none"
