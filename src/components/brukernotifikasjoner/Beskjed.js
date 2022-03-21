@@ -113,12 +113,14 @@ Beskjed.propTypes = {
   beskjed: BeskjedType,
   innloggingsstatus: InnloggingsstatusType,
   erAktiv: bool,
+  erInaktiv: bool,
 };
 
 Beskjed.defaultProps = {
   beskjed: null,
   innloggingsstatus: null,
   erAktiv: false,
+  erInaktiv: false,
 };
 
 export default Beskjed;
