@@ -49,7 +49,7 @@ export const checkApiStatus = () => new Promise((resolve, reject) => {
 const postJSON = (url, content) => new Promise((resolve, reject) => {
   fetch(url, {
     method: 'POST',
-    credentials: 'same-origin',
+    credentials: 'include',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
