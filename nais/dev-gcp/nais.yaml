@@ -13,7 +13,6 @@ spec:
   image: {{version}}
   ingresses:
     - "https://www.dev.nav.no/person/dittnav"
-    - "https://person.dev.nav.no/person/dittnav"
   liveness:
     path: person/dittnav/internal/isAlive
     port: 8080
