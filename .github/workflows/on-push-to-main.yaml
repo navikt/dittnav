@@ -9,8 +9,10 @@ on:
       - .github/workflows/**
 
 jobs:
-  build-and-publish-on-main:
+  build:
     runs-on: ubuntu-latest
+    outputs:
+        image: ${{ env.IMAGE }}
     steps:
 
       - name: Sjekk ut koden
@@ -50,58 +52,26 @@ jobs:
           git tag $TAG
           git push origin $TAG
 
-      - name: Sjekk om prodsetting til sbs er mulig
-        run: echo "PROD_SBS_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-sbs/nais.yaml ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      matrix:
+        cluster: [dev-gcp, prod-gcp, dev-sbs, prod-sbs]
+    steps:
+      - name: Sjekk ut koden
+        uses: actions/checkout@v2
 
-      - name: 'Deploy-er til personbruker i prod-sbs'
-        if: env.PROD_SBS_VARS_TEMPLATE_DEFINED == 'true'
+      - name: 'Sjekk om deploy til ${{ matrix.cluster }} er mulig'
+        run: echo "DEPLOY_CONFIG_DEFINED=$([[ -f ./nais/${{ matrix.cluster }}/nais.yaml ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
+
+      - name: 'Deploy-er til ${{ matrix.cluster }}'
+        if: env.DEPLOY_CONFIG_DEFINED == 'true'
         uses: 'nais/deploy/actions/deploy@v1'
         env:
           REF: ${{ github.sha }}
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: prod-sbs
-          RESOURCE: ./nais/prod-sbs/nais.yaml
-          VAR: version=${{ env.IMAGE }}
-          PRINT_PAYLOAD: true
-
-      - name: Sjekk om deploy til sbs i dev er mulig
-        run: echo "DEV_SBS_PERSONBRUKER_CONFIG_DEFINED=$([[ -f ./nais/dev-sbs/nais.yaml ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
-
-      - name: 'Deploy-er til personbruker i dev-sbs'
-        if: env.DEV_SBS_PERSONBRUKER_CONFIG_DEFINED == 'true'
-        uses: 'nais/deploy/actions/deploy@v1'
-        env:
-          REF: ${{ github.sha }}
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-sbs
-          RESOURCE: ./nais/dev-sbs/nais.yaml
-          VAR: version=${{ env.IMAGE }}
-          PRINT_PAYLOAD: true
-
-      - name: Sjekk om prodsetting i gcp er mulig
-        run: echo "PROD_GCP_VARS_TEMPLATE_DEFINED=$([[ -f ./nais/prod-gcp/nais.yaml ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
-
-      - name: 'Deploy-er til personbruker i prod-gcp'
-        if: env.PROD_GCP_VARS_TEMPLATE_DEFINED == 'true'
-        uses: 'nais/deploy/actions/deploy@v1'
-        env:
-          REF: ${{ github.sha }}
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: prod-gcp
-          RESOURCE: ./nais/prod-gcp/nais.yaml
-          VAR: version=${{ env.IMAGE }}
-          PRINT_PAYLOAD: true
-
-      - name: Sjekk om deploy til gcp i dev er mulig
-        run: echo "DEV_GCP_PERSONBRUKER_CONFIG_DEFINED=$([[ -f ./nais/dev-gcp/nais.yaml ]] && echo 'true' || echo 'false')" >> $GITHUB_ENV
-
-      - name: 'Deploy-er til personbruker i dev-gcp'
-        if: env.DEV_GCP_PERSONBRUKER_CONFIG_DEFINED == 'true'
-        uses: 'nais/deploy/actions/deploy@v1'
-        env:
-          REF: ${{ github.sha }}
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-gcp
-          RESOURCE: ./nais/dev-gcp/nais.yaml
-          VAR: version=${{ env.IMAGE }}
+          CLUSTER: ${{ matrix.cluster }}
+          RESOURCE: ./nais/${{ matrix.cluster }}/nais.yaml
+          VAR: version=${{ needs.build.outputs.image }}
           PRINT_PAYLOAD: true
