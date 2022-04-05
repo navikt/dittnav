@@ -23,7 +23,7 @@ const KoronaSpesial = () => {
 
   return (
     <>
-      <div className={showTilbakebetaling ? 'korona-container' : ''}>
+      <div className={true ? 'korona-container' : ''}>
         {showTilbakebetaling ? (
           <KoronaVarsel
             tittel={lenker.koronaSituasjon.tittel}
