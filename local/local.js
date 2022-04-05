@@ -38,10 +38,6 @@ app.get('/dittnav-api/ident', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/ident.json'))
 ));
 
-app.get('/dittnav-api/saker/paabegynte', (req, res) => (
-  res.sendFile(path.resolve(__dirname, './mock/paabegynte.json'))
-));
-
 app.get('/dittnav-api/meldinger/ubehandlede', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/ubehandlede.json'))
 ));
