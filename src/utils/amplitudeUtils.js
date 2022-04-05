@@ -17,7 +17,6 @@ export const listOfComponentNames = {
     SoknadMottatt: 'Brukernotifikasjon - Søknad mottatt',
     InnboksMeldingOppsummering: 'Brukernotifikasjon - Antall meldinger i innboks',
     EtterregistreringMeldekort: 'Brukernotifikasjon - Etterregistrering av meldekort',
-    PaabegynteSoknader: 'Brukernotifikasjon - Antall påbegynte søknader, ikke sendt',
     UlesteDokumenter: 'Brukernotifikasjon - Antall uleste dokumenter',
     UlesteOppgaver: 'Brukernotifikasjon - Antall uleste oppgaver',
     TidligereBeskjederOgOppgaver: 'Lenke til tidligere beskjeder og oppgaver',
