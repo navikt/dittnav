@@ -5,7 +5,6 @@ import useBrukernotifikasjoner from '../hooks/useBrukernotifikasjoner';
 import useInaktiveBrukernotifikasjoner from '../hooks/useInaktiveBrukernotifikasjoner';
 import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
-import PaabegynteSoknader from './meldinger/PaabegynteSoknader';
 import Meldekort from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
 import MinInnboks from './meldinger/MinInnboks';
