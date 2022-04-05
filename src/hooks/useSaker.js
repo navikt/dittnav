@@ -19,7 +19,7 @@ export const usePaabegynteSoknader = () => {
 };
 
 const useSaker = () => (
-  [useSakstema(), usePaabegynteSoknader()]
+  [useSakstema()]
 );
 
 export default useSaker;

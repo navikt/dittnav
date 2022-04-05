@@ -23,7 +23,6 @@ const InfoMeldinger = () => {
       <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} erAktiv />
       <InformasjonsMeldinger />
       <EtterregistreringMeldekort />
-      <PaabegynteSoknader />
       <MinInnboks />
       {visInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
