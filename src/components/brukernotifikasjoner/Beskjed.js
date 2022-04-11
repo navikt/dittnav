@@ -19,7 +19,6 @@ const remove = (beskjed, removeBeskjed) => {
   } else {
     postDone({
       eventId: beskjed.eventId,
-      uid: beskjed.uid,
     });
   }
 
