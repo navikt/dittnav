@@ -7,7 +7,6 @@ import InformasjonsMeldinger from './meldinger/InformasjonsMeldinger';
 import Brukernotifikasjoner from './Brukernotifikasjoner';
 import Meldekort from './meldinger/meldekort/Meldekort';
 import EtterregistreringMeldekort from './meldinger/EtterregistreringMeldekort';
-import MinInnboks from './meldinger/MinInnboks';
 import InngangVarslinger from './InngangVarslinger';
 
 const InfoMeldinger = () => {
@@ -22,7 +21,6 @@ const InfoMeldinger = () => {
       <Brukernotifikasjoner beskjeder={beskjeder} oppgaver={oppgaver} innbokser={innbokser} erAktiv />
       <InformasjonsMeldinger />
       <EtterregistreringMeldekort />
-      <MinInnboks />
       {visInngangTilVarslinger ? <InngangVarslinger /> : null}
     </section>
   );

@@ -81,10 +81,6 @@ export const fetchSaker = () => (
   fetchJSON(Dittnav.SAKER_URL)
 );
 
-export const fetchMeldinger = () => (
-  fetchJSON(Dittnav.MELDINGER_URL)
-);
-
 export const fetchSakstema = () => (
   fetchJSON(Dittnav.SAKSTEMA_URL)
 );
