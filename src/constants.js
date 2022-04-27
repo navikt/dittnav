@@ -13,8 +13,6 @@ export const Dittnav = Object.freeze({
     buildApiUrl('/navn'),
   IDENT_URL:
     buildApiUrl('/ident'),
-  MELDINGER_URL:
-    buildApiUrl('/meldinger/ubehandlede'),
   SAKSTEMA_URL:
     buildApiUrl('/saker'),
   BESKJED_URL:
