@@ -24,7 +24,7 @@ const storeReducer = (state = initialStoreState, action) => {
     case 'REMOVE_BESKJED':
       return {
         ...state,
-        beskjeder: { ...state.beskjeder, content: state.beskjeder.content.filter(b => action.payload.uid !== b.uid) },
+        beskjeder: { ...state.beskjeder, content: state.beskjeder.content.filter(b => action.payload.eventId !== b.eventId) },
       };
     case 'ADD_INAKTIV_BESKJED':
       return {

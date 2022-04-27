@@ -21,7 +21,6 @@ const remove = (beskjed, removeBeskjed, harIkkeLenke) => {
   } else {
     postDone({
       eventId: beskjed.eventId,
-      uid: beskjed.uid,
     });
   }
 
