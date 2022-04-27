@@ -1,7 +1,7 @@
 export const lenker = {
   ledigeStillinger: {
     tittel: 'Ledige stillinger',
-    url: 'https://arbeidsplassen.nav.no/stillinger',
+    url: `${window.env.LEDIGE_STILLINGER_URL}`,
   },
   uforetrygd: {
     tittel: 'Uføretrygd',
@@ -65,7 +65,7 @@ export const lenker = {
   },
   digisos: {
     tittel: 'Økonomisk sosialhjelp',
-    url: `${window.env.NAVNO_URL}/sosialhjelp/innsyn`,
+    url: `${window.env.DIGISOS_URL}`,
   },
   koronaVeiviser: {
     tittel: 'Koronavirus – hva gjelder i min situasjon?',
