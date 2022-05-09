@@ -146,5 +146,10 @@
   "kommunikasjon.med.nav.dialog.veileder": "Dialog med den lokale veilederen din",
   "kommunikasjon.med.nav.dialog.veileder.undertekst": "For arbeidssøkere og de som mottar AAP. Les meldinger, referater og send melding til veilederen din.",
   "kommunikasjon.med.nav.brev.vedtak": "Brev og vedtak",
-  "kommunikasjon.med.nav.brev.vedtak.undertekst": "For deg som ikke har Digipost eller e-Boks."
+  "kommunikasjon.med.nav.brev.vedtak.undertekst": "For deg som ikke har Digipost eller e-Boks.",
+
+  "uxtweak.header": "Vil du hjelpe oss med å teste nye skisser av Ditt NAV, og bidra til at løsningen blir bedre?",
+  "uxtweak.ingress-1": "Vi jobber for tiden med å redesigne Ditt NAV. I den forbindelse trenger vi hjelp til å forstå om designet og navigasjonen fungerer slik som vi har tenkt. ",
+  "uxtweak.lenketekst": "Bli med på en uformell test av klikkbare skisser (åpnes i ny fane i et verktøy som heter UXTweak).",
+  "uxtweak.ingress-2": " Testen bør ikke ta mer enn 10-15 minutter."
 }
