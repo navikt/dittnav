@@ -51,7 +51,6 @@ const Home = () => {
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
             <KoronaSpesial />
             <DittnavLenkePanel />
-            <UXTweak />
             {oppfolgingIsLoading ? null : generelleEllerVta}
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
