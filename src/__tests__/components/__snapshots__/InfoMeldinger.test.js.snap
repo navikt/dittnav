@@ -75,7 +75,7 @@ exports[`render empty InfoMeldinger component 1`] = `
         "kommunikasjon.med.nav.dialog.veileder.undertekst": "For arbeidssøkere og de som mottar AAP. Les meldinger, referater og send melding til veilederen din.",
         "kommunikasjon.med.nav.innboks": "Innboks",
         "kommunikasjon.med.nav.innboks.undertekst": "Informasjon fra NAV og svar på henvendelser og referater fra samtaler du har på telefon, chat og «Skriv til oss».",
-        "kommunikasjon.med.nav.overskrift": "Kommunikasjon med Nav",
+        "kommunikasjon.med.nav.overskrift": "Kommunikasjon med NAV",
         "korona.behandlingstid.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknader. Les om endringene.",
         "korona.dagpenger-forskudd.ingress": "Koronasituasjonen gjør at det tar lengre tid å behandle søknaden din. Derfor kan du søke om forskudd.",
         "korona.din.situasjon.ingress": "Her kan du som har fått forskudd på dagpenger se restbeløp og se eller velge tilbakebetalingsplan.",
