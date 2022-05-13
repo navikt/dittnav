@@ -45,7 +45,7 @@ exports[`Snapshot test med saker 1`] = `
       <h2
         className="typo-systemtittel kommunikasjon-flis-overskrift"
       >
-        Kommunikasjon med Nav
+        Kommunikasjon med NAV
       </h2>
       <div
         className="kommunikasjon-flis-element kommunikasjon-flis-innboks"
@@ -174,7 +174,7 @@ exports[`Snapshot test uten saker 1`] = `
       <h2
         className="typo-systemtittel kommunikasjon-flis-overskrift"
       >
-        Kommunikasjon med Nav
+        Kommunikasjon med NAV
       </h2>
       <div
         className="kommunikasjon-flis-element kommunikasjon-flis-innboks"
