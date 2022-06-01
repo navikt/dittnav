@@ -1,7 +1,6 @@
 [
   {
     "uid": "5e832788-51c9-4963-81dd-ac9674eecce8",
-    "eventTidspunkt": "2020-10-14T11:00:04.179Z",
     "eventId": "52787b1a-e00c-42ed-81b2-a9d57fd75e22",
     "tekst": "Saken din er under behandling",
     "link": "test 1 beskjed",
@@ -13,7 +12,6 @@
   {
     "produsent": "grafana-navn-srv-bruker",
     "eventId": "1b8dc4d2-2347-48e4-a05b-0a342555351a",
-    "eventTidspunkt": "2020-10-14T11:00:39.065Z",
     "grupperingsId": "1234",
     "link": "dummyLink",
     "sikkerhetsnivaa": 4,
@@ -24,7 +22,6 @@
     "eventtype": "Statusoppdatering"
   },
   {
-    "eventTidspunkt": "2020-10-14T11:00:16.983Z",
     "eventId": "e7a81e3b-2c37-4cad-862f-673839856685",
     "tekst": "Det mangler et vedlegg i søknaden",
     "link": "test 1 oppgave",
@@ -35,7 +32,6 @@
   },
   {
     "uid": "5e632788-51c9-4963-81dd-ac9674eecce8",
-    "eventTidspunkt": "2020-10-14T11:00:04.179Z",
     "eventId": "52787b1a-e00c-42ed-81b2-a9d57fd75f22",
     "tekst": "Vi har motatt søknaden din om arbeidsavklaringspenger",
     "link": "test 1 beskjed",
@@ -47,7 +43,6 @@
   {
     "produsent": "grafana-navn-srv-bruker",
     "eventId": "1b6dc4d2-2347-48e4-a05b-0a342555351a",
-    "eventTidspunkt": "2020-10-14T11:00:39.065Z",
     "grupperingsId": "1234",
     "link": "dummyLink",
     "sikkerhetsnivaa": 4,
@@ -59,7 +54,6 @@
   },
   {
     "uid": "5e832788-51c9-4963-81dd-ac9674eecce8",
-    "eventTidspunkt": "2020-10-14T11:00:04.179Z",
     "eventId": "54787b1a-e00c-42ed-81b2-a9d57fd75f22",
     "tekst": "Du har sendt søknaden din om arbeidsavklaringspenger",
     "link": "test 1 beskjed",
@@ -71,7 +65,6 @@
   {
     "produsent": "grafana-navn-srv-bruker",
     "eventId": "1b4dc4d2-2347-48e4-a05b-0a342555351a",
-    "eventTidspunkt": "2020-10-14T11:00:39.065Z",
     "grupperingsId": "1234",
     "link": "dummyLink",
     "sikkerhetsnivaa": 4,
