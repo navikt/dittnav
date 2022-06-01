@@ -7,6 +7,7 @@ import { MemoryRouter } from 'react-router-dom';
 test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   const oppgave = {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
+    forstBehandlet: '2020-03-13T08:53:24.636Z',
     eventId: '1584093204636',
     tekst: 'Du har en sykemelding som må godkjennes',
     link: 'https://enNyLenke',
@@ -31,6 +32,7 @@ test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
 test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
   const oppgave = {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
+    forstBehandlet: '2020-03-13T08:53:24.636Z',
     eventId: '1584093204636',
     tekst: 'Du har en sykemelding som må godkjennes',
     link: 'https://enNyLenke',
@@ -55,6 +57,7 @@ test('Oppgave with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
 test('Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
   const oppgave = {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
+    forstBehandlet: '2020-03-13T08:53:24.636Z',
     eventId: '1584093204636',
     tekst: 'Du har en sykemelding som må godkjennes',
     link: 'https://enNyLenke',
@@ -79,6 +82,7 @@ test('Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
 test('Oppgave with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
   const oppgave = {
     eventTidspunkt: '2020-03-13T08:53:24.636Z',
+    forstBehandlet: '2020-03-13T08:53:24.636Z',
     eventId: '1584093204636',
     tekst: 'Du har en sykemelding som må godkjennes',
     link: 'https://enNyLenke',

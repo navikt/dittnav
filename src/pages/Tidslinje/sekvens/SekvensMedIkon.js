@@ -30,7 +30,7 @@ const SekvensMedIkon = ({ notifikasjon, className }) => (
         {tidslinjeText(notifikasjon)}
       </Normaltekst>
       <Undertekst>
-        {transformTolokalDatoTid(notifikasjon.eventTidspunkt)}
+        {transformTolokalDatoTid(notifikasjon.forstBehandlet)}
       </Undertekst>
     </div>
   </div>

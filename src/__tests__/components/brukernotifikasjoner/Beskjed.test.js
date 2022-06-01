@@ -9,6 +9,7 @@ test('Beskjed with link', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: 'https://enNyLenke',
@@ -36,6 +37,7 @@ test('Beskjed with empty link', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: '',
@@ -63,6 +65,7 @@ test('Beskjed with null as link', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: null,
@@ -90,6 +93,7 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 4', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: 'https://enNyLenke',
@@ -117,6 +121,7 @@ test('Beskjed with sikkerhetsnivaa 4 and innloggingsnivaa 3', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: 'https://enNyLenke',
@@ -144,6 +149,7 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 3', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: 'https://enNyLenke',
@@ -171,6 +177,7 @@ test('Beskjed with sikkerhetsnivaa 3 and innloggingsnivaa 4', () => {
   const beskjed = {
     uid: '2313ef1a-a69a-45d9-a3ff-38e4522710e0',
     eventTidspunkt: '2020-03-13T08:53:17.47Z',
+    forstBehandlet: '2020-03-13T08:53:17.47Z',
     eventId: '1584093197470',
     tekst: 'Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.',
     link: 'https://enNyLenke',

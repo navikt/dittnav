@@ -1,6 +1,7 @@
 [
   {
     "uid": "2313ef1a-a69a-45d9-a3ff-38e4522710e0",
+    "forstBehandlet": "2020-03-13T08:53:17.47Z",
     "eventTidspunkt": "2020-03-13T08:53:17.47Z",
     "eventId": "1584093197470",
     "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger. Her kan du også ettersende vedlegg til sønakden hvis det er noe du ønsker å gjøre.",
@@ -9,9 +10,10 @@
     "sikkerhetsnivaa": 3
   },
   {
-    "eventTidspunkt": "2019-11-27T12:24:34.671Z",
-    "eventId": "1174857474672",
     "uid": "934de6ce-f94f-47de-84d2-639ac2674627",
+    "eventTidspunkt": "2019-11-27T12:24:34.671Z",
+    "forstBehandlet": "2019-11-27T12:24:34.671Z",
+    "eventId": "1174857474672",
     "tekst": "Søknad om forskudd på dagpenger er mottatt. Hvis du trenger forskudd på dagpenger eller ettersende vedlegg til sønakden din kan du trykke deg inn i den nye forskuddskøsningen ved å gå til denne siden.",
     "link": null,
     "sistOppdatert": "2019-11-27T12:24:35.014517Z",
@@ -19,6 +21,7 @@
   },
   {
     "uid": "b922506b-7789-4416-beab-409a7681f53e",
+    "forstBehandlet": "2020-03-13T09:03:01.449Z",
     "eventTidspunkt": "2020-03-13T09:03:01.449Z",
     "eventId": "1584093781449",
     "tekst": "Vi mottok søknaden din 18. september 2019. Du kan følge med på statusen i Dine foreldrepenger.",
