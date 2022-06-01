@@ -22,7 +22,7 @@ const Innboks = ({ innbokser, innloggingsstatus }) => {
   const gruppert = innbokser.length > 1;
   const gruppertTekst = intl.formatMessage({ id: 'innboks.flere.meldinger' }, { count: innbokser.length });
   const overskrift = <PanelOverskrift overskrift={gruppert ? gruppertTekst : sikkerhetsnivaa.tekst} type="Element" />;
-  const lokalDatoTid = transformTolokalDatoTid(innbokser[0].eventTidspunkt);
+  const lokalDatoTid = transformTolokalDatoTid(innbokser[0].forstBehandlet);
 
   return (
     <LenkepanelMedIkon

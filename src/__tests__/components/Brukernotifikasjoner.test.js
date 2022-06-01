@@ -20,7 +20,7 @@ afterEach(() => {
 const beskjeder = {
   content: [
     {
-      eventTidspunkt: '2020-03-13T08:53:24.636Z',
+      forstBehandlet: '2020-03-13T08:53:24.636Z',
       eventId: '1784093204636',
       uid: '934de6ce-f94f-47de-84d2-639ac2674627',
       tekst: 'Du har en sykemelding som må godkjennes',
@@ -30,7 +30,7 @@ const beskjeder = {
       sikkerhetsnivaa: 4,
     },
     {
-      eventTidspunkt: '2020-03-13T08:53:24.636Z',
+      forstBehandlet: '2020-03-13T08:53:24.636Z',
       eventId: '1584093204636',
       uid: '9346e6ce-f94f-47de-84g2-639ac2674627',
       tekst: 'Du har en sykemelding som må godkjennes',
@@ -45,7 +45,7 @@ const beskjeder = {
 const oppgaver = {
   content: [
     {
-      eventTidspunkt: '2020-03-13T08:53:24.636Z',
+      forstBehandlet: '2020-03-13T08:53:24.636Z',
       eventId: '1582093204636',
       tekst: 'Du har en sykemelding som må godkjennes',
       link: 'https://enNyLenke',
@@ -54,7 +54,7 @@ const oppgaver = {
       sikkerhetsnivaa: 4,
     },
     {
-      eventTidspunkt: '2020-03-13T08:53:24.636Z',
+      forstBehandlet: '2020-03-13T08:53:24.636Z',
       eventId: '1587093204636',
       tekst: 'Du har en sykemelding som må godkjennes',
       link: 'https://enNyLenke',
@@ -68,7 +68,7 @@ const oppgaver = {
 const innbokser = {
   content: [
     {
-      eventTidspunkt: '2020-03-13T08:53:24.636Z',
+      forstBehandlet: '2020-03-13T08:53:24.636Z',
       eventId: '2584093204636',
       tekst: 'Du har en sykemelding som må godkjennes',
       link: 'https://enNyLenke',
@@ -77,7 +77,7 @@ const innbokser = {
       sikkerhetsnivaa: 4,
     },
     {
-      eventTidspunkt: '2020-03-13T08:53:24.636Z',
+      forstBehandlet: '2020-03-13T08:53:24.636Z',
       eventId: '6584093204636',
       tekst: 'Du har en sykemelding som må godkjennes',
       link: 'https://enNyLenke',

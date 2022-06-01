@@ -37,7 +37,7 @@ const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
 
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
-  const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
+  const lokalDatoTid = transformTolokalDatoTid(beskjed.forstBehandlet);
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
   const onClickBeskjed = () => {
