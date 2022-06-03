@@ -23,7 +23,8 @@ export const buildNavNoUrl = (path) => {
 };
 
 export const buildLoginserviceUrl = (level) => {
-  const loginserviceUrl = window.location.search ? `${window.env.LOGIN_URL}/${window.location.search}` : window.env.LOGIN_URL;
+  const loginUrlPath = window.location.pathname.includes("/varslinger") ? `${window.env.LOGIN_URL}/varslinger`: window.env.LOGIN_URL;
+  const loginserviceUrl = window.location.search ? `${loginUrlPath}/${window.location.search}` : loginUrlPath;
   const loginServiceLevelFourUrl = window.env.LOGIN_LEVEL_4_URL;
 
   return level ? loginServiceLevelFourUrl : loginserviceUrl;
