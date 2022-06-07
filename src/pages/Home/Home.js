@@ -7,7 +7,6 @@ import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
 import PersonInfo from '../../components/PersonInfo';
 import InfoMeldinger from '../../components/InfoMeldinger';
-import KoronaSpesial from '../../components/korona-spesial/KoronaSpesial';
 import DittnavLenkePanel from '../../components/DittnavLenkePanel';
 import Lenkelister from '../../components/Lenkelister';
 import DelayedSpinner from '../../components/common/DelayedSpinner';
@@ -49,7 +48,6 @@ const Home = () => {
             <InfoMeldinger />
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
             <DittnavLenkePanel />
-            <DittnavFliser />
             {oppfolgingIsLoading ? null : generelleEllerVta}
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
