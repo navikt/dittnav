@@ -17,7 +17,6 @@ import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
 import DittnavFliser from '../../components/DittnavFliser';
 import UnleashWrapper from '../../components/UnleashWrapper';
-import UXTweak from '../../components/UXTweak';
 
 const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
@@ -49,8 +48,8 @@ const Home = () => {
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <InfoMeldinger />
             <NyVtaForStandardInnsats isLoading={oppfolgingIsLoading} isError={oppfolgingIsError} />
-            <KoronaSpesial />
             <DittnavLenkePanel />
+            <DittnavFliser />
             {oppfolgingIsLoading ? null : generelleEllerVta}
             <Undertittel className="flere-tjenester__subheader">
               <F id="flere.tjenester.header" />
