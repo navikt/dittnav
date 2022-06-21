@@ -148,8 +148,8 @@
   "kommunikasjon.med.nav.brev.vedtak": "Brev og vedtak",
   "kommunikasjon.med.nav.brev.vedtak.undertekst": "For deg som ikke har Digipost eller e-Boks.",
 
-  "uxtweak.header": "Vil du hjelpe oss med å teste nye skisser av Ditt NAV, og bidra til at løsningen blir bedre?",
-  "uxtweak.ingress-1": "Vi jobber for tiden med å redesigne Ditt NAV. I den forbindelse trenger vi hjelp til å forstå om designet og navigasjonen fungerer slik som vi har tenkt. ",
-  "uxtweak.lenketekst": "Bli med på en uformell test av klikkbare skisser (åpnes i ny fane i et verktøy som heter UXTweak).",
+  "uxtweak.header": "Vil du hjelpe oss å svare på noen spørsmål om Ditt NAV?",
+  "uxtweak.ingress-1": "Testen tar omtrent 3 minutter å fullføre, og du er helt anonym. Svarene dine vil hjelpe oss å gjøre Ditt NAV enklere å bruke. ",
+  "uxtweak.lenketekst": "Klikk her for å delta (testen åpnes i ny fane i et verktøy som heter UXtweak).",
   "uxtweak.ingress-2": " Testen bør ikke ta mer enn 10-15 minutter."
 }
