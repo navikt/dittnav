@@ -1,9 +1,13 @@
 import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import React from 'react';
 import { useIntl } from 'react-intl';
+import { useMediaQuery } from 'react-responsive';
 
 const UXTweak = () => {
   const translate = useIntl();
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const mobileUXTweak = 'https://study.uxtweak.com/firstclick/YNNfVhFFqOMcGOfkdml8u';
+  const desktopUXTweak = 'https://study.uxtweak.com/firstclick/K8EjYIXhrLD4BxNaYTwe2';
 
   return (
     <section className="uxtweak-wrapper">
@@ -12,10 +16,9 @@ const UXTweak = () => {
       </Undertittel>
       <Normaltekst>
         {translate.formatMessage({ id: 'uxtweak.ingress-1' })}
-        <a href="https://study.uxtweak.com/prototype/f3KnIP0FDrSHxpYm5cakH" target="_blank" rel="noreferrer">
+        <a className="uxtweak-link" href={isMobile ? mobileUXTweak : desktopUXTweak} target="_blank" rel="noreferrer">
           {translate.formatMessage({ id: 'uxtweak.lenketekst' })}
         </a>
-        {translate.formatMessage({ id: 'uxtweak.ingress-2' })}
       </Normaltekst>
     </section>
   );

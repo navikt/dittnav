@@ -66,6 +66,7 @@
     "react-intl": "5.12.5",
     "react-modal": "3.12.1",
     "react-query": "3.9.9",
+    "react-responsive": "9.0.0-beta.10",
     "react-router-dom": "5.2.0",
     "regenerator-runtime": "0.13.7",
     "request": "2.88.2",
