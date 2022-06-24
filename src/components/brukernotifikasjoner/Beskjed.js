@@ -42,11 +42,11 @@ const Beskjed = ({ beskjed, innloggingsstatus, erAktiv, erInaktiv }) => {
   const [isBeingRemoved, setIsBeingRemoved] = useState(false);
 
   const sikkerhetsnivaa = useSikkerhetsnivaa(beskjed, 'beskjed', innloggingsstatus);
-  const lokalDatoTid = transformTolokalDatoTid(beskjed.eventTidspunkt);
   const lenkeTekst = sikkerhetsnivaa.skalMaskeres ? 'beskjed.lenke.stepup.tekst' : 'beskjed.lenke.tekst';
   const harIkkeLenke = beskjed.link === null || beskjed.link === "";
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
   const overskriftInnlogging = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="LoginLenke" />;
+  const lokalDatoTid = transformTolokalDatoTid(beskjed.forstBehandlet);
 
   const visKnapp = !(sikkerhetsnivaa.skalMaskeres || erInaktiv);
 

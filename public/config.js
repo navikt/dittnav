@@ -23,3 +23,5 @@ window.env.IS_PROD = 'false';
 window.env.INNBOKS_URL = 'https://uat-navdialog.cs108.force.com/Innboks/s/';
 window.env.MINE_SAKER_URL = 'http://localhost:3000/mine-saker';
 window.env.UTBETALINGSOVERSIKT_URL = 'http://localhost:3000/utbetalingsoversikt';
+window.env.LEDIGE_STILLINGER_URL = 'http://localhost:3000/stillinger';
+window.env.DIGISOS_URL = 'http://localhost:3000/sosialhjelp/innsyn';

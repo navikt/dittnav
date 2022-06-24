@@ -5,7 +5,7 @@ import Oppgave from './brukernotifikasjoner/Oppgave';
 import Innboks from './brukernotifikasjoner/Innboks';
 import InnloggingsModal from './common/InnloggingsModal';
 import useStore from '../hooks/useStore';
-import { byEventTidspunkt } from '../utils/datoUtils';
+import { byForstBehandlet } from '../utils/datoUtils';
 import useInnloggingsstatus from '../hooks/useInnloggingsstatus';
 import BeskjedType from '../types/BeskjedType';
 import OppgaveType from '../types/OppgaveType';
@@ -26,7 +26,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
 
   return (
     <>
-      {oppgaver && innloggingsstatus && oppgaver.content.sort(byEventTidspunkt)
+      {oppgaver && innloggingsstatus && oppgaver.content.sort(byForstBehandlet)
         .map(o => (
           <Oppgave
             key={o.eventId}
@@ -34,7 +34,7 @@ const Brukernotifikasjoner = ({ beskjeder, oppgaver, innbokser, erAktiv, erInakt
             innloggingsstatus={innloggingsstatus.content}
           />
         ))}
-      {beskjeder && beskjeder.content && innloggingsstatus && beskjeder.content.sort(byEventTidspunkt)
+      {beskjeder && beskjeder.content && innloggingsstatus && beskjeder.content.sort(byForstBehandlet)
         .map(b => (
           <Beskjed
             key={b.eventId}

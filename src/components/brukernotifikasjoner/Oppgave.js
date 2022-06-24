@@ -11,7 +11,7 @@ import { listOfActions, listOfComponentNames } from '../../utils/amplitudeUtils'
 const Oppgave = ({ oppgave, innloggingsstatus }) => {
   const sikkerhetsnivaa = useSikkerhetsnivaa(oppgave, 'oppgave', innloggingsstatus);
   const overskrift = <PanelOverskrift overskrift={sikkerhetsnivaa.tekst} type="Element" />;
-  const lokalDatoTid = transformTolokalDatoTid(oppgave.eventTidspunkt);
+  const lokalDatoTid = transformTolokalDatoTid(oppgave.forstBehandlet);
 
   return (
     <LenkepanelMedIkon

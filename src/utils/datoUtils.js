@@ -11,9 +11,9 @@ export const transformTolokalDatoTid = (tidspunkt) => {
     .format('DD.MM.YYYY - HH:mm');
 };
 
-export const byEventTidspunkt = (a, b) => {
-  const momentA = moment(a.eventTidspunkt, Format.BRUKERNOTIFIKASJONER);
-  const momentB = moment(b.eventTidspunkt, Format.BRUKERNOTIFIKASJONER);
+export const byForstBehandlet = (a, b) => {
+  const momentA = moment(a.forstBehandlet, Format.BRUKERNOTIFIKASJONER);
+  const momentB = moment(b.forstBehandlet, Format.BRUKERNOTIFIKASJONER);
 
   return momentB.diff(momentA);
 };
