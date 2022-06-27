@@ -15,7 +15,7 @@ COPY --from=navikt-common /dumb-init /dumb-init
 
 RUN chmod +x /run-script.sh
 RUN chmod +x /entrypoint.sh
-RUN chmod +x /dist/config.js
+RUN chmod +x dist/config.js
 
 WORKDIR server
 RUN npm install
