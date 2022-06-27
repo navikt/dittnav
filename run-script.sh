@@ -70,4 +70,6 @@ forEachVariable printAvailability
 echo "window.env={};" > ../dist/config.js
 forEachVariable makeAvailable
 
-../run-java.sh
+node server.js
+
+/run.sh
