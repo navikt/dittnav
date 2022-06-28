@@ -9,6 +9,10 @@ const UXTweak = () => {
   const mobileUXTweak = 'https://study.uxtweak.com/firstclick/YNNfVhFFqOMcGOfkdml8u';
   const desktopUXTweak = 'https://study.uxtweak.com/firstclick/K8EjYIXhrLD4BxNaYTwe2';
 
+  if (!isMobile) {
+    return null;
+  }
+
   return (
     <section className="uxtweak-wrapper">
       <Undertittel className="uxtweak-tittel">
