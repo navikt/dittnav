@@ -7,14 +7,18 @@
     <script type="application/javascript" src="appdynamics.js" charset='UTF-8'></script>
     <script src='https://jsagent.nav.no/adrum/adrum.js'></script>
     <script src='config.js'></script>
+    {{{STYLES}}}
     <title>Ditt NAV</title>
 </head>
 
 <body>
+<div>
+    {{{HEADER}}}
     <div class="pagewrapper">
         <div id="app"></div>
     </div>
-    <script src="../src/index.js"></script>
+</div>
+{{{FOOTER}}} {{{SCRIPTS}}}
+<script src="../src/index.js"></script>
 </body>
-
 </html>
