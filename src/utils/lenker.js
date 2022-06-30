@@ -109,7 +109,7 @@ export const lenker = {
   },
   dialogMedVeileder: {
     tittel: 'Dialog med den lokale veilederen din',
-    url: `${window.env.NAVNO_URL}/person/dittnav/veientilarbeid/dialog`,
+    url: `${window.env.NAVNO_URL}/arbeid/dialog`,
   },
   mineSaker: {
     tittel: 'Mine Saker',
