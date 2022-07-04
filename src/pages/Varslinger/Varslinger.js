@@ -5,7 +5,6 @@ import Lenke from 'nav-frontend-lenker';
 import { Normaltekst } from 'nav-frontend-typografi';
 import { useIsFetching } from 'react-query';
 import useStore from '../../hooks/useStore';
-import AdvarselBox from './alerts/AdvarselBox';
 import Tittel from '../../components/common/Tittel';
 import AktiveVarsler from './varsler/AktiveVarsler';
 import InaktiveVarsler from './varsler/InaktiveVarsler';
@@ -31,7 +30,6 @@ const Varslinger = () => {
             <Tittel className="varslinger-tittel" tittelId="varslinger.tittel" />
             {isFetching ? <DelayedSpinner delay={500} spinnerClass="header-spinner" /> : null}
             <section className="infomeldinger-list">
-              <AdvarselBox />
               <AktiveVarsler />
               <InaktiveVarsler />
               <Panel className="mininnboks-panel">
