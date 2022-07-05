@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage as F } from 'react-intl';
 import { Undertittel } from 'nav-frontend-typografi';
-import { useIsFetching } from 'react-query';
+import { useIsFetching, useQuery } from 'react-query';
 import { useOppfolging } from '../../hooks/usePerson';
 import { generelleLenker, oppfolgingsLenker } from '../../utils/lenker';
 import useStore from '../../hooks/useStore';
@@ -16,14 +16,20 @@ import Vta from '../../components/VTA';
 import PageBase from '../PageBase';
 import DittnavFliser from '../../components/DittnavFliser';
 import UnleashWrapper from '../../components/UnleashWrapper';
+import { fetchUnleashToggle } from '../../Api';
 
 const Home = () => {
   const [{ data: oppfolging, isLoading: oppfolgingIsLoading, isError: oppfolgingIsError }] = useOppfolging();
+  const { data: minSideToggle } = useQuery('minside', fetchUnleashToggle);
   const isFetching = useIsFetching();
   const { state } = useStore();
 
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta key='vta-for-resten' />;
+
+  if (minSideToggle === true) {
+    window.location.assign(`${window.env.NAVNO_URL}/minside`);
+  }
 
   const NyVtaForStandardInnsats = ({isLoading, isError}) => {
     if (isLoading || isError) return null;
