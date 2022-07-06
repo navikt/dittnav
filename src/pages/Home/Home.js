@@ -27,11 +27,11 @@ const Home = () => {
   const erUnderOppfolging = oppfolging && oppfolging.content && oppfolging.content.erBrukerUnderOppfolging;
   const generelleEllerVta = oppfolgingIsError ? <DittnavFliser /> : <Vta key='vta-for-resten' />;
 
-  if (minSideToggle === true) {
+  if (minSideToggle?.content === true) {
     window.location.assign(`${window.env.NAVNO_URL}/minside`);
   }
 
-  const NyVtaForStandardInnsats = ({isLoading, isError}) => {
+  const NyVtaForStandardInnsats = ({ isLoading, isError }) => {
     if (isLoading || isError) return null;
     return (
       <UnleashWrapper toggle='situasjon'>
