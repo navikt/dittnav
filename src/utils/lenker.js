@@ -87,6 +87,10 @@ export const lenker = {
     tittel: 'Dine fullmakter',
     url: `${window.env.NAVNO_URL}/person/pdl-fullmakt-ui`,
   },
+  arbeidsavklaringspenger: {
+    tittel: 'Arbeidsavklaringspenger',
+    url: `${window.env.NAVNO_URL}/aap#kort`,
+  },
   dinePleiepenger: {
     tittel: 'Dine pleiepenger',
     url: `${window.env.DINE_PLEIEPENGER_URL}`,
@@ -137,6 +141,7 @@ export const oppfolgingsLenker = [
   lenker.dittSykefravaer,
   lenker.skjemaer,
   lenker.dineForeldrepenger,
+  lenker.arbeidsavklaringspenger,
   lenker.dinPensjon,
   lenker.uforetrygd,
   lenker.meldekort,
