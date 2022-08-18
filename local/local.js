@@ -110,6 +110,10 @@ app.get('/dittnav-api/unleash/situasjon', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/unleash-situasjon.json'))
 ));
 
+app.get('/dittnav-api/unleash/minside', (req, res) => (
+  res.sendFile(path.resolve(__dirname, './mock/unleash-minside.json'))
+));
+
 app.get('/person/dittnav/veientilarbeid/api/auth', (req, res) => (
   res.sendFile(path.resolve(__dirname, './mock/vta-mocks/auth-mock.json'))
 ));
