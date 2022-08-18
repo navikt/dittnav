@@ -57,7 +57,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        cluster: [dev-gcp, prod-gcp, dev-sbs, prod-sbs]
+        cluster: [dev-gcp, prod-gcp]
     steps:
       - name: Sjekk ut koden
         uses: actions/checkout@v2
