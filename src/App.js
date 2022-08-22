@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     if (minSideToggle?.content === true) {
-      window.location.assign(`${window.env.NAVNO_URL}/minside`);
+      // window.location.assign(`${window.env.NAVNO_URL}/minside`);
     }
   }, [minSideToggle]);
 
