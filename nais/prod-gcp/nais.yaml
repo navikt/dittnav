@@ -29,8 +29,8 @@ spec:
     port: 8080
     initialDelay: 10
   replicas:
-    min: 4
-    max: 6
+    min: 2
+    max: 4
     cpuThresholdPercentage: 50
   resources:
     limits:
