@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { Toggle } from './constants';
-import useApiQueries from './hooks/useApiQueries';
 import ScrollToTop from './components/scroll/ScrollToTop';
 import Home from './pages/Home/Home';
-import Varslinger from './pages/Varslinger/Varslinger';
 import HendelserTestSide from './pages/Hendelser/HendelserTestSide';
 import Statusoppdatering from './pages/Statusoppdatering/Statusoppdatering';
 import Tidslinje from './pages/Tidslinje/Tidslinje';
@@ -13,7 +11,6 @@ import { fetchUnleashToggle } from './Api';
 
 const App = () => {
   const { data: minSideToggle } = useQuery('minside', fetchUnleashToggle);
-  useApiQueries();
 
   useEffect(() => {
     if (minSideToggle?.content === true) {
@@ -28,12 +25,12 @@ const App = () => {
         <Route
           path="/dittnav"
           exact
-          component={Home}
+          component={null}
         />
         <Route
           path="/dittnav/varslinger"
           exact
-          component={Varslinger}
+          component={null}
         />
         {Toggle.TEST_SIDE && (
           <Route
