@@ -92,7 +92,7 @@
     "jest-fetch-mock": "3.0.3",
     "less-plugin-npm-import": "2.1.0",
     "less-watch-compiler": "1.14.6",
-    "react-scripts": "4.0.1",
+    "react-scripts": "5.0.1",
     "react-test-renderer": "16.14.0"
   },
   "scripts": {
