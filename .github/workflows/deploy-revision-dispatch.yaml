@@ -1,0 +1,97 @@
+name: Deploy revision
+
+on:
+  repository_dispatch:
+    types: deploy-revision
+
+env:
+  COMMIT_SHA: ${{ github.event.client_payload.commit }}
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      docker_image: ${{ env.IMAGE_FULL_NAME }}
+      should_build_image: ${{ env.SHOULD_BUILD_IMAGE }}
+    steps:
+
+      - name: 'Sjekk ut ønsket commit'
+        uses: 'actions/checkout@v3'
+        with:
+          ref: ${{ env.COMMIT_SHA }}
+
+      - name: 'Utled navn på docker-image basert på siste commit'
+        run: |
+          APP_NAME=$(echo $GITHUB_REPOSITORY | rev | cut -f1 -d"/" | rev )
+          TAG_NAME="$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')-$(git log -1 --pretty='%h')"
+          IMAGE_BASE="ghcr.io/$GITHUB_REPOSITORY/$APP_NAME"
+          echo "IMAGE_FULL_NAME=$IMAGE_BASE:$TAG_NAME" >> $GITHUB_ENV
+          echo "IMAGE_TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+
+      - name: 'Sjekker om docker-image eksisterer fra før av'
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u $GITHUB_REPOSITORY --password-stdin
+          RESULT=$(docker manifest inspect ${{ env.IMAGE_FULL_NAME }} > /dev/null 2> /dev/null ; echo $?)
+          echo "SHOULD_BUILD_IMAGE=$([[ $RESULT == 0 ]] && echo 'false' || echo 'true' )" >> $GITHUB_ENV
+
+  build-docker-image:
+    needs: setup
+    if: needs.setup.outputs.should_build_image == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ env.COMMIT_SHA }}
+
+      - name: 'Setup java'
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17.x'
+
+      - name: 'Finn cache-variabler'
+        uses: navikt/pb-common-gh-actions/cache-prep@v2
+
+      - name: 'Sett opp cache'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ env.CACHE_PATHS }}
+          key: ${{ runner.os }}${{ env.CACHE_KEY_NAMESPACE }}${{ hashFiles(env.CACHE_KEY_HASHED_PATH) }}
+
+      - name: 'Bygg prosjekt'
+        uses: navikt/pb-common-gh-actions/build@v2
+        with:
+          SKIP_TESTS: "true"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Bygg, tag og push Docker image'
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u $GITHUB_REPOSITORY --password-stdin
+          docker build --tag ${{ needs.setup.outputs.docker_image }} .
+          docker push ${{ needs.setup.outputs.docker_image }}
+
+  deploy:
+    needs:
+      - setup
+      - build-docker-image
+    runs-on: ubuntu-latest
+    if: |
+      always() &&
+      ( needs.build-docker-image.result == 'success' || needs.build-docker-image.result == 'skipped' )
+    strategy:
+      matrix:
+        cluster: ${{ github.event.client_payload.clusters }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ env.COMMIT_SHA }}
+
+      - name: 'Deployer til ${{ matrix.CLUSTER }}'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: ${{ matrix.CLUSTER }}
+          RESOURCE: ./nais/${{ matrix.CLUSTER }}/nais.yaml
+          VAR: version=${{ needs.setup.outputs.docker_image }}
+          PRINT_PAYLOAD: true
+          REF: ${{ env.COMMIT_SHA }}
