@@ -1,5 +1,12 @@
 name: Vulnerabilities scanning of dependencies
-on: push
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .github/workflows/**
+
 jobs:
   Vulnerability_scanning:
     runs-on: ubuntu-latest
